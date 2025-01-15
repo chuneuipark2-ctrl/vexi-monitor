@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{297D093B-CA20-4994-96DB-8CAA76DC1AF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VEXI</RootNamespace>
+    <AssemblyName>VEXI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InheritedListView">
+      <HintPath>..\UserComponent\InheritedListView\InheritedListView\bin\Debug\InheritedListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_DevDebugLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DevDebugLog.Designer.cs">
+      <DependentUpon>Form_DevDebugLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DevEventLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DevEventLog.Designer.cs">
+      <DependentUpon>Form_DevEventLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVConfig.designer.cs">
+      <DependentUpon>Form_RTVConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVDriveParam_Speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVDriveParam_Speed.Designer.cs">
+      <DependentUpon>Form_RTVDriveParam_Speed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVFeedParam_Speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVFeedParam_Speed.Designer.cs">
+      <DependentUpon>Form_RTVFeedParam_Speed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVInvertorSt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVInvertorSt.Designer.cs">
+      <DependentUpon>Form_RTVInvertorSt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVParam_CTRL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVParam_CTRL.Designer.cs">
+      <DependentUpon>Form_RTVParam_CTRL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVRack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVRack.Designer.cs">
+      <DependentUpon>Form_RTVRack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVSt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVSt.Designer.cs">
+      <DependentUpon>Form_RTVSt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTVTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTVTotal.Designer.cs">
+      <DependentUpon>Form_RTVTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RTV_CTL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RTV_CTL.Designer.cs">
+      <DependentUpon>Form_RTV_CTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DO_TestCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DO_TestCtrl.Designer.cs">
+      <DependentUpon>Form_DO_TestCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMDriveParam_Speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMDriveParam_Speed.Designer.cs">
+      <DependentUpon>Form_SRMDriveParam_Speed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMForkParam_Speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMForkParam_Speed.Designer.cs">
+      <DependentUpon>Form_SRMForkParam_Speed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMInhibitionRack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMInhibitionRack.Designer.cs">
+      <DependentUpon>Form_SRMInhibitionRack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMInvertorParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMInvertorParam.Designer.cs">
+      <DependentUpon>Form_SRMInvertorParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMInvertorSt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMInvertorSt.Designer.cs">
+      <DependentUpon>Form_SRMInvertorSt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMLiftParam_Speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMLiftParam_Speed.Designer.cs">
+      <DependentUpon>Form_SRMLiftParam_Speed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMParam_CTRL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMParam_CTRL.Designer.cs">
+      <DependentUpon>Form_SRMParam_CTRL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMSpecialRack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMSpecialRack.Designer.cs">
+      <DependentUpon>Form_SRMSpecialRack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMTotal.Designer.cs">
+      <DependentUpon>Form_SRMTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BasicSt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BasicSt.Designer.cs">
+      <DependentUpon>Form_BasicSt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ComDataDP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ComDataDP.Designer.cs">
+      <DependentUpon>Form_ComDataDP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Developer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Developer.Designer.cs">
+      <DependentUpon>Form_Developer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DevLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DevLog.Designer.cs">
+      <DependentUpon>Form_DevLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FunctionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FunctionTest.Designer.cs">
+      <DependentUpon>Form_FunctionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FWDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FWDownload.Designer.cs">
+      <DependentUpon>Form_FWDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Graph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Graph.Designer.cs">
+      <DependentUpon>Form_Graph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_IOStructureSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_IOStructureSet.Designer.cs">
+      <DependentUpon>Form_IOStructureSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_OpInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_OpInfo.Designer.cs">
+      <DependentUpon>Form_OpInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMConfig.Designer.cs">
+      <DependentUpon>Form_SRMConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMRack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMRack.Designer.cs">
+      <DependentUpon>Form_SRMRack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRMSt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRMSt.Designer.cs">
+      <DependentUpon>Form_SRMSt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SRM_CTL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SRM_CTL.Designer.cs">
+      <DependentUpon>Form_SRM_CTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_TimeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TimeInfo.Designer.cs">
+      <DependentUpon>Form_TimeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frameLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frameLogin.Designer.cs">
+      <DependentUpon>frameLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewNumberColumnSorter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uCommClass.cs" />
+    <Compile Include="uDefine_Class.cs" />
+    <Compile Include="uGlobal_Class.cs" />
+    <Compile Include="uIniFile_Class.cs" />
+    <EmbeddedResource Include="Form_DevDebugLog.resx">
+      <DependentUpon>Form_DevDebugLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DevEventLog.resx">
+      <DependentUpon>Form_DevEventLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVConfig.resx">
+      <DependentUpon>Form_RTVConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVDriveParam_Speed.resx">
+      <DependentUpon>Form_RTVDriveParam_Speed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVFeedParam_Speed.resx">
+      <DependentUpon>Form_RTVFeedParam_Speed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVInvertorSt.resx">
+      <DependentUpon>Form_RTVInvertorSt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVParam_CTRL.resx">
+      <DependentUpon>Form_RTVParam_CTRL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVRack.resx">
+      <DependentUpon>Form_RTVRack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVSt.resx">
+      <DependentUpon>Form_RTVSt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTVTotal.resx">
+      <DependentUpon>Form_RTVTotal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RTV_CTL.resx">
+      <DependentUpon>Form_RTV_CTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DO_TestCtrl.resx">
+      <DependentUpon>Form_DO_TestCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMDriveParam_Speed.resx">
+      <DependentUpon>Form_SRMDriveParam_Speed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMForkParam_Speed.resx">
+      <DependentUpon>Form_SRMForkParam_Speed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMInhibitionRack.resx">
+      <DependentUpon>Form_SRMInhibitionRack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMInvertorParam.resx">
+      <DependentUpon>Form_SRMInvertorParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMInvertorSt.resx">
+      <DependentUpon>Form_SRMInvertorSt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMLiftParam_Speed.resx">
+      <DependentUpon>Form_SRMLiftParam_Speed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMParam_CTRL.resx">
+      <DependentUpon>Form_SRMParam_CTRL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMSpecialRack.resx">
+      <DependentUpon>Form_SRMSpecialRack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMTotal.resx">
+      <DependentUpon>Form_SRMTotal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BasicSt.resx">
+      <DependentUpon>Form_BasicSt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ComDataDP.resx">
+      <DependentUpon>Form_ComDataDP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Developer.resx">
+      <DependentUpon>Form_Developer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DevLog.resx">
+      <DependentUpon>Form_DevLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FunctionTest.resx">
+      <DependentUpon>Form_FunctionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FWDownload.resx">
+      <DependentUpon>Form_FWDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Graph.resx">
+      <DependentUpon>Form_Graph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_IOStructureSet.resx">
+      <DependentUpon>Form_IOStructureSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_OpInfo.resx">
+      <DependentUpon>Form_OpInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMConfig.resx">
+      <DependentUpon>Form_SRMConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMRack.resx">
+      <DependentUpon>Form_SRMRack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRMSt.resx">
+      <DependentUpon>Form_SRMSt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SRM_CTL.resx">
+      <DependentUpon>Form_SRM_CTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_TimeInfo.resx">
+      <DependentUpon>Form_TimeInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frameLogin.resx">
+      <DependentUpon>frameLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\돋보기.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

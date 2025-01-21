@@ -347,8 +347,8 @@ namespace VEXI
             ed_Drive_CALC_RPM.Text = "0";
             cb_Drive_MotorDirection.SelectedIndex = -1;
 
-            ed_Drive_ManualOp_TokeAlarm.Text = "0.0";
-            ed_Drive_breakOpenContinueTime.Text = "0.00";
+            ed_Drive_ManualOp_TokeAlarm.Text = "0";
+            ed_Drive_breakOpenContinueTime.Text = "0";
             ed_Drive_InvertorGain.Text = "0";
         }
 

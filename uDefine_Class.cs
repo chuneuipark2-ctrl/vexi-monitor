@@ -319,12 +319,12 @@ namespace VEXI
 
         public static string[,] SRM_DI_Names2 =
         {
-            {"LSTH","7","08"                  ,"0"  },
-            {"LSTE","7","09"                ,"0"  },
+            {"LSTH","7","08"              ,"0"  },
+            {"LSTE","7","09"              ,"0"  },
             {"LD","7","10"                ,"0"  },
-            {"TSTH","7","11"                 ,"0"  },
-            {"TSTE","7","12"                 ,"0"  },
-            {"TD","7","13"                 ,"0"  }
+            {"TSTH","7","11"              ,"0"  },
+            {"TSTE","7","12"              ,"0"  },
+            {"TD","7","13"                ,"0"  }
         };
 
 
@@ -542,6 +542,145 @@ namespace VEXI
             {"EMS HP LED"                     ,"2","4"                   ,"0"  },
             {"EMS OPL LED"                    ,"2","5"                   ,"0"  },
             {"EMS OPR LED"                    ,"2","6"                   ,"0"  }
+        };
+
+        //EMS DI List
+        public static string[,] EMS_DI_Names =
+        {
+            {"EMERGENCY STOP"                     ,"0","00"                  ,"0"  },
+            {"SAFETY INPUT"                       ,"0","01"                  ,"0"  },
+            {"SAFETY CIRCUIT NORMAL"              ,"0","02"                  ,"0"  },
+            {"FORCED RESET CIRCUIT NORMAL"        ,"0","03"                  ,"0"  },
+            {"TROLLEY CONTROL(S상제어)"           ,"0","04"                  ,"0"  },
+            {"DRIVE ENABLE"                       ,"0","05"                  ,"0"  },
+            {"전방 범퍼"                          ,"0","06"                  ,"0"  },
+            {"후방 범퍼"                          ,"0","07"                  ,"0"  },
+            {"CAGE HOME_A"                        ,"0","08"                  ,"0"  },
+            {"CAGE HOME_B"                        ,"0","09"                  ,"0"  },
+            {"HLD1"                               ,"0","10"                  ,"0"  },
+            {"HLD2"                               ,"0","11"                  ,"0"  },
+            {"HLD3"                               ,"0","12"                  ,"0"  },
+            {"HLD4"                               ,"0","13"                  ,"0"  },
+            {"TRAV_OVR_F"                         ,"0","14"                  ,"0"  },
+            {"TRAV_OVR_R"                         ,"0","15"                  ,"0"  },
+            {"T_DETECT1"                          ,"0","16"                  ,"0"  },
+            {"T_DETECT2"                          ,"0","17"                  ,"0"  },
+            {"T_DETECT3"                          ,"0","18"                  ,"0"  },
+            {"TOX"                                ,"0","19"                  ,"0"  },
+            {"T_ESC_R"                            ,"0","20"                  ,"0"  },
+            {"T_ESC_L"                            ,"0","21"                  ,"0"  },
+            {"CHK_UCAT"                           ,"0","22"                  ,"0"  },
+            {"CHK_CAT"                            ,"0","23"                  ,"0"  },
+            {"CAGE_GUIDE_HP"                      ,"0","24"                  ,"0"  },
+            {"CHUCKING_S1"                        ,"0","25"                  ,"0"  },
+            {"CHUCKING_S2"                        ,"0","26"                  ,"0"  },
+            {"CHUCKING_S3"                        ,"0","27"                  ,"0"  },
+            {"ST_INTERLOCK_I1"                    ,"0","28"                  ,"0"  },
+            {"ST_INTERLOCK_I2"                    ,"0","29"                  ,"0"  },
+            {"ST_INTERLOCK_I3"                    ,"0","30"                  ,"0"  },
+            {"ST_INTERLOCK_I4"                    ,"0","31"                  ,"0"  },
+            {"ST_INTERLOCK_I5"                    ,"1","00"                  ,"0"  },
+            {"ST_INTERLOCK_I6"                    ,"1","01"                  ,"0"  },
+            {"ST_INTERLOCK_I7"                    ,"1","02"                  ,"0"  },
+            {"ST_INTERLOCK_I8"                    ,"1","03"                  ,"0"  },
+            {"Laser Scanner_I1_F"                 ,"1","04"                  ,"0"  },
+            {"Laser Scanner_I2_F"                 ,"1","05"                  ,"0"  },
+            {"Laser Scanner_I3_F"                 ,"1","06"                  ,"0"  },
+            {"Laser Scanner_I4_F"                 ,"1","07"                  ,"0"  },
+            {"Laser Scanner_I5_F"                 ,"1","08"                  ,"0"  },
+            {"Laser Scanner_I6_F"                 ,"1","09"                  ,"0"  },
+            {"Laser Scanner_I7_F"                 ,"1","10"                  ,"0"  },
+            {"Laser Scanner_I8_F"                 ,"1","11"                  ,"0"  },
+            {"Laser Scanner_I1_R"                 ,"1","12"                  ,"0"  },
+            {"Laser Scanner_I2_R"                 ,"1","13"                  ,"0"  },
+            {"Laser Scanner_I3_R"                 ,"1","14"                  ,"0"  },
+            {"Laser Scanner_I4_R"                 ,"1","15"                  ,"0"  },
+            {"Laser Scanner_I5_R"                 ,"1","16"                  ,"0"  },
+            {"Laser Scanner_I6_R"                 ,"1","17"                  ,"0"  },
+            {"Laser Scanner_I7_R"                 ,"1","18"                  ,"0"  },
+            {"Laser Scanner_I8_R"                 ,"1","19"                  ,"0"  },
+            {"CAGE_SPARE_I1"                      ,"1","20"                  ,"0"  },
+            {"CAGE_SPARE_I2"                      ,"1","21"                  ,"0"  },
+            {"CAGE_SPARE_I3"                      ,"1","22"                  ,"0"  },
+            {"CAGE_SPARE_I4"                      ,"1","23"                  ,"0"  },
+            {"CAGE_SPARE_I5"                      ,"1","24"                  ,"0"  },
+            {"CAGE_SPARE_I6"                      ,"1","25"                  ,"0"  },
+            {"CAGE_SPARE_I7"                      ,"1","26"                  ,"0"  },
+            {"CAGE_SPARE_I8"                      ,"1","27"                  ,"0"  },
+            {"CAGE_SPARE_I9"                      ,"1","28"                  ,"0"  },
+            {"CAGE_SPARE_I10"                     ,"1","29"                  ,"0"  }
+        };
+
+        //EMS DO List
+        public static string[,] EMS_DO_Names =
+        {
+            {"OPERATION READY"          ,"0","00"                  ,"0"  },
+            {"SAFETY OUTPUT"            ,"0","01"                  ,"0"  },
+            {"SAFETY CIRCUIT RESET"     ,"0","02"                  ,"0"  },
+            {"FORCED RESET"             ,"0","03"                  ,"0"  },
+            {"주행 INVH"                ,"0","04"                  ,"0"  },
+            {"승강 INVH"                ,"0","05"                  ,"0"  },
+            {"CHUCKING_M1"              ,"0","06"                  ,"0"  },
+            {"CHUCKING_M2"              ,"0","07"                  ,"0"  },
+            {"CHUCKING_M3"              ,"0","08"                  ,"0"  },
+            {"CHUCKING_M4"              ,"0","09"                  ,"0"  },
+            {"ST_INTERLOCK_O1"          ,"0","10"                  ,"0"  },
+            {"ST_INTERLOCK_O2"          ,"0","11"                  ,"0"  },
+            {"ST_INTERLOCK_O3"          ,"0","12"                  ,"0"  },
+            {"ST_INTERLOCK_O4"          ,"0","13"                  ,"0"  },
+            {"ST_INTERLOCK_O5"          ,"0","14"                  ,"0"  },
+            {"ST_INTERLOCK_O6"          ,"0","15"                  ,"0"  },
+            {"ST_INTERLOCK_O7"          ,"0","16"                  ,"0"  },
+            {"ST_INTERLOCK_O8"          ,"0","17"                  ,"0"  },
+            {"Laser Scanner_O1_F"       ,"0","18"                  ,"0"  },
+            {"Laser Scanner_O2_F"       ,"0","19"                  ,"0"  },
+            {"Laser Scanner_O3_F"       ,"0","20"                  ,"0"  },
+            {"Laser Scanner_O4_F"       ,"0","21"                  ,"0"  },
+            {"Laser Scanner_O5_F"       ,"0","22"                  ,"0"  },
+            {"Laser Scanner_O6_F"       ,"0","23"                  ,"0"  },
+            {"Laser Scanner_O7_F"       ,"0","24"                  ,"0"  },
+            {"Laser Scanner_O8_F"       ,"0","25"                  ,"0"  },
+            {"Laser Scanner_O9_F"       ,"0","26"                  ,"0"  },
+            {"Laser Scanner_O10_F"      ,"0","27"                  ,"0"  },
+            {"Laser Scanner_O11_F"      ,"0","28"                  ,"0"  },
+            {"Laser Scanner_O12_F"      ,"0","29"                  ,"0"  },
+            {"Laser Scanner_O1_R"       ,"0","30"                  ,"0"  },
+            {"Laser Scanner_O2_R"       ,"0","31"                  ,"0"  },
+            {"Laser Scanner_O3_R"       ,"1","00"                  ,"0"  },
+            {"Laser Scanner_O4_R"       ,"1","01"                  ,"0"  },
+            {"Laser Scanner_O5_R"       ,"1","02"                  ,"0"  },
+            {"Laser Scanner_O6_R"       ,"1","03"                  ,"0"  },
+            {"Laser Scanner_O7_R"       ,"1","04"                  ,"0"  },
+            {"Laser Scanner_O8_R"       ,"1","05"                  ,"0"  },
+            {"Laser Scanner_O9_R"       ,"1","06"                  ,"0"  },
+            {"Laser Scanner_O10_R"      ,"1","07"                  ,"0"  },
+            {"Laser Scanner_O11_R"      ,"1","08"                  ,"0"  },
+            {"Laser Scanner_O12_R"      ,"1","09"                  ,"0"  },
+            {"SRN_RD"                   ,"1","10"                  ,"0"  },
+            {"SRN_GN"                   ,"1","11"                  ,"0"  },
+            {"SRN_BU"                   ,"1","12"                  ,"0"  },
+            {"SRN_BZ"                   ,"1","13"                  ,"0"  },
+            {"SFY_LIGHT"                ,"1","14"                  ,"0"  },
+            {"BZ"                       ,"1","15"                  ,"0"  },
+            {"LED"                      ,"1","16"                  ,"0"  },
+            {"LED_RED_R"                ,"1","17"                  ,"0"  },
+            {"LED_GREEN_R"              ,"1","18"                  ,"0"  },
+            {"LED_BLUE_R"               ,"1","19"                  ,"0"  },
+            {"LED_RED_L"                ,"1","20"                  ,"0"  },
+            {"LED_GREEN_L"              ,"1","21"                  ,"0"  },
+            {"LED_BLUE_L"               ,"1","22"                  ,"0"  },
+            {"CAGE_SPARE_O1"            ,"1","23"                  ,"0"  },
+            {"CAGE_SPARE_O2"            ,"1","24"                  ,"0"  },
+            {"CAGE_SPARE_O3"            ,"1","25"                  ,"0"  },
+            {"CAGE_SPARE_O4"            ,"1","26"                  ,"0"  },
+            {"CAGE_SPARE_O5"            ,"1","27"                  ,"0"  },
+            {"CAGE_SPARE_O6"            ,"1","28"                  ,"0"  },
+            {"CAGE_SPARE_O7"            ,"1","29"                  ,"0"  },
+            {"CAGE_SPARE_O8"            ,"1","30"                  ,"0"  },
+            {"CAGE_SPARE_O9"            ,"1","31"                  ,"0"  },
+            {"CAGE_SPARE_O10"           ,"2","0"                  ,"0"  },
+            {"CAGE_SPARE_O11"           ,"2","1"                  ,"0"  },
+            {"CAGE_SPARE_O12"           ,"2","2"                  ,"0"  }
         };
 
 
@@ -953,6 +1092,13 @@ namespace VEXI
             public byte Work1_Type;
             public byte Work1_Step;
             public UInt32 Work1_JobNumber;
+
+            public UInt32 Position;
+            public Int16 Speed;
+
+            public UInt16 MainCode;
+            public UInt16 SubCode;
+            public UInt16 FBCode;
 
             public fixed byte DIO[29];
         }
@@ -1565,6 +1711,27 @@ namespace VEXI
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_PositionParam_Header
+        {
+            public byte RailType;
+            public byte Barcode_Direct;
+            public UInt32 Barcode_Ref;
+            public fixed byte Reserved1[10];
+            public UInt32 Ref_Start;
+            public UInt32 Ref_End;
+
+            public byte Home_SpeedType;
+            public UInt32 Home_Position;
+            public byte Service_SpeedType;
+            public UInt32 Service_Position;
+
+            public fixed byte Reserved2[20];
+
+
+            public byte PositionCount;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct TSRM_CellOffset_Header
         {
             public byte DevType;
@@ -1619,6 +1786,40 @@ namespace VEXI
             public byte AreaCount;
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_StationParamHeaderRec
+        {
+            public byte InterlockType;
+            public byte Accept_ManualInterlock;
+
+            public fixed byte Reserved1[10];
+
+            public byte stationCount;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_SpeedAreaParamHeaderRec
+        {
+            public UInt16 EMS_Width;
+            public UInt16 LineArea_StopWidth;
+            public UInt16 LineArea_StartWidth;
+            public UInt16 RoundArea_StopWidth;
+            public UInt16 RoundArea_StartWidth;
+            public byte FrontRTVPosition_TimeOut1;
+            public byte FrontRTVPosition_TimeOut2;
+            public UInt16 StopbyLiadrTimeOut;
+            public UInt16 Stop_OffsetTime;
+            public UInt16 Stop_OffsetMaxDistance;
+            public byte Lidar_Off_SafetyTime;
+            public byte DriveStopSensor;
+            public byte DriveDecelSensor;
+            public byte ErrRef_LowSpeedValue;
+            public UInt16 ErrRef_LowSpeedMin;
+
+            public fixed byte Reserved1[6];
+
+            public byte AreaCount;
+        }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct TNetworkInfoRec
@@ -1816,6 +2017,107 @@ namespace VEXI
         }
         #endregion
 
+        #region EMS 상태 조회 / 응답 구조체
+        /*!
+         * 프로토콜 "0x0030 EMS 상태 조회" 참조
+         */
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_REC_StatusReq
+        {
+            public byte IsIgnore;
+            public UInt32 SystemUTCTime;
+            public byte Reserved1;
+            public byte ControllerSt;
+            //구조체에 대한 고정배열 선언이 안됨
+            //가변배열로 해서 new로 생성은 가능하지만 그렇게 하면 구조체에 대한 주소, 크기 접근이 안되고.
+            //TRTV_REC_Interlock 사이즈가 변경되면 TRTV_REC_Interlock 배열 크기로 변경되어야 한다
+            public TRTV_REC_Interlock CV_Interlock;
+            public fixed byte OtherCV_Interlock[3 * 3];
+            public TRTV_REC_Interlock Dev_Interlock;
+            public fixed byte OtherDev_Interlock[3 * 3];
+            public fixed byte Reserved2[5];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_StatusRes
+        {
+            public byte Reserved_1;
+            public byte Reserved_2;
+            public byte PGVersion;
+            public fixed byte FWversion[4];
+            public UInt32 SystemUTCTime;
+
+            public fixed byte ProjectID[6];
+            public byte GroupID;
+            public UInt16 HogiID;
+
+            public byte RailType;
+            public fixed byte Reserved_3[2];
+
+            public byte ControllerSt;
+            public TRTV_REC_Interlock CV_Interlock;
+            public fixed byte OtherCV_Interlock[3 * 3];
+            public TRTV_REC_Interlock Dev_Interlock;
+            public fixed byte OtherDev_Interlock[3 * 3];
+
+            public byte DevMode;
+            public byte DevSt_1;
+            public byte DevSt_2;
+            public byte ActionCode;
+            public TErrorCodeRec ErrorCode;
+
+            public TRTVFeedPositionRec Feed1_Position;
+            public TRTVFeedPositionRec Feed2_Position;
+
+            public TRTVPointRec Feed1_Dest;
+            public TRTVPointRec Feed2_Dest;
+
+            public TRTVPointRec CanWorkStation;
+
+            public TRTVDriveAreaInfoRec DriveAreaInfo;
+
+            public TRTVDrivesignedPositionDistanceRec Drive_DisPosition;
+            public TRTVFeedsignedPositionDistanceRec Feed1_DisPosition;
+            public TRTVFeedsignedPositionDistanceRec Feed2_DisPosition;
+
+            public TRTVJobStatusRec FF1_Job;
+            public TRTVJobStatusRec FF2_Job;
+
+
+            public UInt32 Task_JobNumber;
+            public byte Task_JobStatus;
+            public byte Reserved_8;
+            //구조체에 대한 고정배열 선언이 안됨
+            //가변배열로 해서 new로 생성은 가능하지만 그렇게 하면 구조체에 대한 주소, 크기 접근이 안되고.
+            //TRTV_TaskJobItem 사이즈가 변경되면 TRTV_TaskJobItem 배열 크기로 변경되어야 한다
+            public TRTV_TaskJobItem TaskJobItem_1;
+            public fixed byte otherTaskJobItem[19 * 11]; //TaskJobItem_2 ~ TaskJobItem_20 은 멤버변수로 아니고 포인터로 접근할 것이기 때문에 할당만 해준다
+
+            //IO는 추후에 상세 정의
+            public fixed byte IO_Digital_IN[12];
+            public fixed byte IO_Digital_OUT[10];
+            public fixed byte IO_Digital_OUTMode_1[8];
+
+            public byte KEYIN_St_1;
+            public byte KEYIN_St_2;
+            public byte KEYIN_St_3;
+            public byte Reserved_9;
+
+            public TRTVWCS14byteRec RTVWCS14byte;
+
+
+            public UInt16 BarcodeErrCount;
+
+            public TRTVCollisionStRec BeforeCar_Collision;
+            public TRTVCollisionStRec AfterCar_Collision;
+
+            public fixed byte IO_Digital_OUTMode_2[2];
+            public fixed byte Reserved_10[8];
+
+        }
+        #endregion
+
         #region SRM 장치 구조 구조체
         /*!
          * 프로토콜 "0x0125 장치 구조 조회_SRM" 참조
@@ -1866,11 +2168,6 @@ namespace VEXI
 
         #region RTV 장치 구조 구조체
         /*!
-         * 프로토콜 "현재 미정의 상태" 참조
-         * 프로토콜 "현재 미정의 상태" 참조
-         */
-
-        /*!
         * 조회 요청 구조체는 TDEV_REC_DevConfigReq 를 사용한다. 
         */
 
@@ -1907,6 +2204,37 @@ namespace VEXI
         {
             public fixed byte CtrlFlag[3];
             public TRTV_DevConfigRes Data;
+        }
+
+        /*!
+        * 제어 응답 구조체는 TDEV_CtrlRes_2Byte 를 사용한다. 
+        */
+        #endregion
+
+        #region EMS 장치 구조 구조체
+        /*!
+        * 조회 요청 구조체는 TDEV_REC_DevConfigReq 를 사용한다. 
+        */
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_DevConfigRes
+        {
+            public byte EMSsType;
+            public byte InvetorKind;
+            public byte MovePositionSensor;
+            public byte CageType;
+            public byte LampType;
+            public byte LiftType;
+            public fixed byte Reserved1[19];
+
+            public TDSPInstallInfoRec DSPInstallInfoRec;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_DevConfigCtrl
+        {
+            public fixed byte CtrlFlag[3];
+            public TEMS_DevConfigRes Data;
         }
 
         /*!
@@ -2023,6 +2351,37 @@ namespace VEXI
         }
         #endregion
 
+        #region EMS 주행레일 설정 구조체
+        /*!
+         * 프로토콜 "0x0094_레일 주행 설정 조회" 참조
+         * 프로토콜 "0x0095_레일 주행 설정 변경" 참조
+         */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_PositionSetParamReq
+        {
+            public fixed byte Reserved[10];
+        }
+
+        /*!
+         * 조회 응답, 설정 동일 구조체 사용 (프로토콜이 동일함)
+         */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_PositionSetParam
+        {
+            public TEMS_PositionParam_Header Header;
+            public fixed UInt32 Position[200];
+        }
+
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_PositionSetCTRLRes
+        {
+            public byte Count;
+            public fixed byte Reserved[4];
+            public byte CtrlResult;
+            public byte NackReason;
+        }
+        #endregion
         #region SRM Cell Offset 설정 구조체
         /*!
          * 프로토콜 "0x0096_셀오프셋 조회" 참조
@@ -2183,6 +2542,58 @@ namespace VEXI
         }
         #endregion
 
+        #region EMS Station 설정 구조체
+        /*!
+         * 프로토콜 "0x0098_스테이션 정보 조회_1" 참조
+         * 프로토콜 "0x0099_스테이션 설정 변경_1" 참조
+         */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_StationConfigReq
+        {
+            public fixed byte Reserved[10];
+        }
+
+        /*!
+        * 서브 구조체
+        */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_StationConfigRec
+        {
+            public byte station_Type;
+            public UInt16 P_ID;
+            public UInt16 LIFT_LENGTH;
+            public UInt16 InterlockCommID;
+        }
+
+        /*!
+         * 조회 응답, 설정 동일 구조체 사용 (프로토콜이 동일함)
+         */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_StationParam
+        {
+            public TEMS_StationParamHeaderRec Header;
+
+            public TEMS_StationConfigRec Station1;
+            //구조체에 대한 고정배열 선언이 안됨
+            //public TRTV_StationConfigRec StationRec[200];  <= 안됨
+            //구조체에 대한 Sizeof가 여기서는 안됨
+            //public fixed byte OtherStationItem[199 * Sizeof(TRTV_StationConfigRec)]; <= 안됨
+            //가변배열로 해서 new로 생성은 가능하지만 그렇게 하면 구조체에 대한 주소, 크기 접근이 안되고.
+            //TRTV_StationConfigRec 사이즈가 변경되면 TRTV_StationConfigRec 배열 크기로 변경되어야 한다
+            public fixed byte OtherStationItem[199 * 7];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_StationParamCTRLRes
+        {
+            public byte AreaCount;
+            public byte CtrlResult;
+            public byte FailNo;
+            public byte Resreved1;
+            public byte NackReason;
+        }
+        #endregion
+
         #region RTV 구간 설정 구조체
         /*!
          * 프로토콜 "0x009A_구간 주행 설정 조회" 참조
@@ -2234,6 +2645,66 @@ namespace VEXI
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct TRTV_SpeedAreaGroupCTRLRes
+        {
+            public byte AreaCount;
+            public byte CtrlResult;
+            public byte FailNo;
+            public byte Resreved1;
+            public byte NackReason;
+        }
+        #endregion
+
+        #region EMS 구간 설정 구조체
+        /*!
+         * 프로토콜 "0x009A_구간 주행 설정 조회" 참조
+         * 프로토콜 "0x009B_구간 주행 설정 변경" 참조
+         */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_SpeedAreaGroupConfigReq
+        {
+            public fixed byte Reserved[10];
+        }
+
+        /*!
+        * 서브 구조체
+        */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_SpeedAreaGroupConfigRec
+        {
+            public byte Area_Type_Reserved;
+            public UInt32 Start_MM;
+            public UInt32 End_MM;
+            public UInt16 MaxSpeed;
+            public byte PrevAreaIndex;
+            public byte NextAreaIndex;
+            public byte Sensorindex;
+            public byte Region;
+            public UInt16 StopDistance;
+            public UInt16 StartDistance;
+
+
+            public byte Reserved;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_SpeedAreaGroupParam
+        {
+            public TEMS_SpeedAreaParamHeaderRec Header;
+
+
+            public TEMS_SpeedAreaGroupConfigRec Area1;
+            //구조체에 대한 고정배열 선언이 안됨
+            //public TRTV_SpeedAreaGroupConfigRec AreaRec[50];  <= 안됨
+            //구조체에 대한 Sizeof가 여기서는 안됨
+            //public fixed byte OtherSpeedAreaItem[199 * Sizeof(TRTV_SpeedAreaGroupConfigRec)]; <= 안됨
+            //가변배열로 해서 new로 생성은 가능하지만 그렇게 하면 구조체에 대한 주소, 크기 접근이 안되고.
+            //TRTV_SpeedAreaGroupConfigRec 사이즈가 변경되면 TRTV_SpeedAreaGroupConfigRec 배열 크기로 변경되어야 한다
+            public fixed byte OtherSpeedAreaItem[49 * 20];
+        }
+
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_SpeedAreaGroupCTRLRes
         {
             public byte AreaCount;
             public byte CtrlResult;
@@ -2617,6 +3088,27 @@ namespace VEXI
         * 조회 응답, 설정 동일 구조체 사용 (프로토콜이 동일함)
         */
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct EMS_IOConfig
+        {
+            public REC_Scan_EthercatSlave Scan_EthercatSlave1;
+            public fixed byte other_Scan_EthercatSlave1[9 * 2];
+            public fixed byte Reserved1[10];
+
+            public fixed byte EthercatBoard[10];
+            public fixed byte Reserved2[5];
+
+            public REC_DIConfig DIConfig;
+            public fixed byte other_DIConfig[5 * 69]; // DIConfi_2 ~ DIConfi_69은 멤버변수로 아니고 포인터로 접근할 것이기 때문에 할당만 해준다
+
+            public fixed byte Reserved3[170];
+
+            public REC_DOConfig DOConfig;
+            public fixed byte other_DOConfig[3 * 69]; // DOConfi_2 ~ DOConfi_69 은 멤버변수로 아니고 포인터로 접근할 것이기 때문에 할당만 해준다
+
+            public fixed byte Reserved4[69];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct RTV_IOConfig
         {
             public REC_Scan_EthercatSlave Scan_EthercatSlave1;
@@ -2663,6 +3155,7 @@ namespace VEXI
         {
             [FieldOffset(0)] public RTV_IOConfig RTVIO;
             [FieldOffset(0)] public SRM_IOConfig SRMIO;
+            [FieldOffset(0)] public EMS_IOConfig EMSIO;
         }
 
         /*! 제어응답은 구조체 선언 생략하고 처리 함*/
@@ -3325,6 +3818,238 @@ namespace VEXI
         /*! 제어응답은 구조체 선언 생략하고 처리 함*/
         #endregion
 
+        #region EMS 제어, 주행, 승하강 파라미터 조회/제어 구조체
+        /*!
+         * 프로토콜 "0x00A1 제어 설정 조회_1" 참조
+         * 프로토콜 "0x00A2 제어 설정 변경_1" 참조
+         * 프로토콜 "0x00A3 주행 드라이브 설정 조회_1 조회" 참조
+         * 프로토콜 "0x00A4 주행 드라이브 설정 변경_1" 참조
+         * 프로토콜 "0x00A7 피딩 드라이브 설정 조회
+         * 프로토콜 "0x00A8 피딩 드라이브 설정 변경" 참조
+         */
+
+        /*! 조회 구조체는 공통 사용 */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_REC_PARAMReq
+        {
+            public fixed byte Reserved[20];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_CTRLParamRes
+        {
+            public byte SafetyPlug_ProcessType;
+            public byte Collision_ProcessType;
+
+            public byte AutoHome_Use;
+            public UInt16 AutoHome_Position;
+            public byte AutoHome_WaitTime;
+
+            public byte Chucking_LiftBreakSet;
+            public byte AutoLiftHome_RefRunCount;
+            public fixed byte Reserved_1[20];
+
+            public byte AlarmUse_DriveLimitSetErr;
+            public byte AlarmUse_InterlockErr;
+            public byte AlarmUse_InterlcokTimeOut;
+            public fixed byte Reserved_2[20];
+
+            public UInt16 ChangeTime_InterlockToMotor;
+            public UInt16 ChangeTime_MotorToInterlock;
+
+
+            public UInt16 Loading_DelayTime_beforMove;
+            public UInt16 Loading_DelayTime_afterMove;
+            public UInt16 Loading_DelayTime_beforLiftDown;
+            public UInt16 Loading_DelayTime_afterLiftDown;
+            public UInt16 Loading_DelayTime_beforCatch;
+            public UInt16 Loading_DelayTime_afterCatch;
+            public UInt16 Loading_DelayTime_beforLiftUp;
+            public UInt16 Loading_DelayTime_afterLiftUp;
+            public UInt16 Loading_DelayTime_WorkDone;
+            public fixed byte Reserved_3[22];
+
+            public UInt16 UnLoading_DelayTime_beforMove;
+            public UInt16 UnLoading_DelayTime_afterMove;
+            public UInt16 UnLoading_DelayTime_beforLiftDown;
+            public UInt16 UnLoading_DelayTime_afterLiftDown;
+            public UInt16 UnLoading_DelayTime_beforUnCatch;
+            public UInt16 UnLoading_DelayTime_afterUnCatch;
+            public UInt16 UnLoading_DelayTime_beforLiftUp;
+            public UInt16 UnLoading_DelayTime_afterLiftUp;
+            public UInt16 UnLoading_DelayTime_WorkDone;
+            public fixed byte Reserved_4[22];
+
+            public UInt16 TimeOut_Set_LiftRef;
+            public UInt16 TimeOut_Set_ChuckRef;
+            public fixed byte Reserved_5[36];
+
+            public UInt16 TimeOut_ManualCmdRx;
+            public fixed byte Reserved_6[38];
+
+
+            public UInt16 AutoOP_TimeOut_Move;
+            public UInt16 AutoOP_TimeOut_LiftDown;
+            public UInt16 AutoOP_TimeOut_LiftUp;
+            public UInt16 AutoOP_TimeOut_LoadInterlock;
+            public UInt16 AutoOP_TimeOut_UnLoadInterlock;
+            public UInt16 AutoOP_TimeOut_Load;
+            public UInt16 AutoOP_TimeOut_UnLoad;
+            public UInt16 AutoOP_TimeOut_LoadingItemDectect;
+            public UInt16 AutoOP_TimeOut_UnLoadingItemDectect;
+            public UInt16 AutoOP_TimeOut_MoveCrip;
+            public UInt16 AutoOP_TimeOut_LiftCrip;
+            public fixed byte Reserved_7[26];
+
+            public UInt16 Time_Release_ForceMode;
+            public UInt16 Time_Polling_GMC;
+
+            public UInt16 Buzzer_Error_Time;
+            public UInt16 Buzzer_Warnning_Time;
+            public UInt16 Buzzer_AutoModeOn_Time;
+            public UInt16 Buzzer_AutoModeOff_Time;
+            public byte Buzzer_AutoMode_RepeatCount;
+            public fixed byte Reserved_8[10];
+
+            public fixed byte Reserved_9[100];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_CTRLParamCTRL
+        {
+            public fixed byte CtrlFlag[4];
+            public fixed byte Reserved_0[20];
+
+            public TEMS_CTRLParamRes ParamItemsRec;
+        }
+
+        /*! 서브 구조체 */
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMSSpeedParamRec
+        {
+            public UInt16 Speed;
+            public UInt16 Accel;
+            public UInt16 Decel;
+            public UInt16 A_jerk;
+            public UInt16 D_jerk;
+
+            public fixed byte Reserved[4];
+        }
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_DriveParamRes
+        {
+            public TEMSSpeedParamRec Speed_Auto_High;
+            public TEMSSpeedParamRec Speed_Auto_Middle;
+            public TEMSSpeedParamRec Speed_Auto_Low;
+
+            public TEMSSpeedParamRec Speed_Manual_Middle;
+            public TEMSSpeedParamRec Speed_Manual_Low;
+
+            public TEMSSpeedParamRec Speed_Force;
+            public TEMSSpeedParamRec Speed_Creep;
+            public TEMSSpeedParamRec Speed_RefSet;
+            public TEMSSpeedParamRec Speed_Emergency;
+            public TEMSSpeedParamRec Speed_Auto_Decel1;
+            public TEMSSpeedParamRec Speed_Auto_Decel2;
+
+            public TEMSSpeedParamRec Speed_Collision;
+            public TEMSSpeedParamRec Speed_Reserved2;
+            public TEMSSpeedParamRec Speed_Reserved3;
+            public TEMSSpeedParamRec Speed_Reserved4;
+            public TEMSSpeedParamRec Speed_Reserved5;
+
+            public UInt16 MAX_RPM;
+            public UInt16 CALC_MPM;
+            public UInt16 CALC_RPM;
+            public byte MotorDirection;
+
+            public UInt16 ManualOp_TokeAlarm;
+            public UInt16 breakOpenContinueTime;
+            public fixed byte Reserved1[20];
+
+            public Int32 Invertor_Reference;
+            public UInt32 Invertor_PositionGain;
+            public byte Invetor_Positiontolerance;
+            public byte Invetor_Param_Use;
+
+            public byte InPosition_Offset;
+            public byte InPosition_Hist;
+            public byte RetryInPosition_Count;
+            public UInt16 RetryInPosition_Range;
+            public UInt16 CripRange;
+            public byte CurrentDecel_OffsetTime;
+            public UInt16 CurrentDecel_OffsetMaxDistance;
+            public UInt16 CurrentLowSpeedDistance;
+            public byte Reserved_2;
+
+            public fixed byte Reserved3[20];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_DriveParamCTRL
+        {
+            public fixed byte CtrlFlag[4];
+            public fixed byte Reserved_0[30];
+
+            public TEMS_DriveParamRes ParamItemsRec;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_LiftParamRes
+        {
+            public TEMSSpeedParamRec Speed_Auto_High;
+            public TEMSSpeedParamRec Speed_Auto_Middle;
+            public TEMSSpeedParamRec Speed_Auto_Low;
+
+            public TEMSSpeedParamRec Speed_Manual_Middle;
+            public TEMSSpeedParamRec Speed_Manual_Low;
+
+            public TEMSSpeedParamRec Speed_Force;
+            public TEMSSpeedParamRec Speed_Emergency;
+
+            public TEMSSpeedParamRec Speed_Reserved1;
+            public TEMSSpeedParamRec Speed_Reserved2;
+            public TEMSSpeedParamRec Speed_Reserved3;
+            public TEMSSpeedParamRec Speed_Reserved4;
+            public TEMSSpeedParamRec Speed_Reserved5;
+
+            public UInt16 MAX_RPM;
+            public UInt16 CALC_MPM;
+            public UInt16 CALC_RPM;
+            public byte MotorDirection;
+
+            public UInt16 ManualOp_TokeAlarm;
+            public UInt16 ManualOp_Startmm;
+            public UInt16 ManualOp_Endmm;
+            public UInt16 breakOpenContinueTime;
+            public fixed byte Reserved1[20];
+
+            public Int32 Invertor_Reference;
+            public UInt32 Invertor_PositionGain;
+            public byte Invetor_Positiontolerance;
+            public byte Invetor_Param_Use;
+
+            public byte CurrenctPostion_Offset;
+            public byte CurrenctPostion_His;
+            public byte CurrenctPostion_RetryCount;
+            public UInt16 CurrenctPostion_RetryRange;
+            public fixed byte Reserved2[10];
+
+            public fixed byte Reserved3[50];
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMS_LiftParamCTRL
+        {
+            public fixed byte CtrlFlag[4];
+            public fixed byte Reserved_0[30];
+
+            public TEMS_LiftParamRes ParamItemsRec;
+        }
+
+        /*! 제어응답은 구조체 선언 생략하고 처리 함*/
+        #endregion
+
         #region SRM 반송 지령 구조체
         /*!
          * 프로토콜 "0x0040_SRM 반송 지령" 참조
@@ -3489,6 +4214,8 @@ namespace VEXI
 
             public TSRM_StatusRes srm_REC_SRMSt;
             public TRTV_StatusRes rtv_REC_RTVSt;
+            public TEMS_StatusRes ems_REC_EMSSt;
+            
             public TDEV_REC_BasicStRes dev_REC_BasicSt;
             public TDEV_REC_TestStRes dev_REC_TestSt;
             public TDEV_ManualCtrl dev_REC_ManualCtrl;
@@ -5682,6 +6409,777 @@ namespace VEXI
 
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TEMSToTalFile_Header
+        {
+            public byte fileType;
+            public TSaveCheckRec MCU_CFG_Flag;
+            public TSaveCheckRec IO_CFG_Flag;
+            public TSaveCheckRec CTRL_PARAM_Flag;
+            public TSaveCheckRec DRIVE_PARAM_Flag;
+            public TSaveCheckRec LIFT_PARAM_Flag;
+            public TSaveCheckRec RACK_CFG_Flag_Reserved;
+            public TSaveCheckRec STATION_CFG_Flag;
+            public TSaveCheckRec POSITION_CFG_Flag;
+            public TSaveCheckRec ROUND_CFG_Flag;
+            public byte reserved;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public class TEMS_ToTalFile
+        {
+            private string myFileName;
+
+            private TEMSToTalFile_Header Header;
+            public byte[] MCU_CFG_DATA;
+            public byte[] IO_CFG_DATA;
+            public byte[] CTRL_PARAM_DATA;
+            public byte[] DRIVE_PARAM_DATA;
+            public byte[] LIFT_PARAM_DATA;
+            public byte[] RACK_CFG_DATA_Reserved;
+            public byte[] STATION_CFG_DATA;
+            public byte[] POSITION_CFG_DATA;
+            public byte[] ROUND_CFG__DATA;
+
+
+            private static ushort HeaderLen = (ushort)Marshal.SizeOf(typeof(VEXI_DEFS.TRTVToTalFile_Header));
+            private static ushort DataLen_1 = 100; //MCU_CFG_DATAv
+            private static ushort DataLen_2 = 1000; //IO_CFG_DATA
+            private static ushort DataLen_3 = 1500; //CTRL_PARAM_DATA
+            private static ushort DataLen_4 = 1500; //DRIVE_PARAM_DATA
+            private static ushort DataLen_5 = 1500; //LIFT_PARAM_DATA
+            private static ushort DataLen_6 = 500; //RACK_CFG_DATA_Reserved
+            private static ushort DataLen_7 = 2000; //STATION_CFG_DATA
+            private static ushort DataLen_8 = 2000; //POSITION_CFG_DATA
+            private static ushort DataLen_9 = 2000; //ROUND_CFG__DATA
+
+            public TEMS_ToTalFile(string TmpFileName)
+            {
+                myFileName = TmpFileName;
+                MCU_CFG_DATA = new byte[DataLen_1];
+                IO_CFG_DATA = new byte[DataLen_2];
+                CTRL_PARAM_DATA = new byte[DataLen_3];
+                DRIVE_PARAM_DATA = new byte[DataLen_4];
+                LIFT_PARAM_DATA = new byte[DataLen_5];
+                RACK_CFG_DATA_Reserved = new byte[DataLen_6];
+                STATION_CFG_DATA = new byte[DataLen_7];
+                POSITION_CFG_DATA = new byte[DataLen_8];
+                ROUND_CFG__DATA = new byte[DataLen_9];
+            }
+
+            public TEMS_ToTalFile()
+            {
+                myFileName = "";
+                MCU_CFG_DATA = new byte[DataLen_1];
+                IO_CFG_DATA = new byte[DataLen_2];
+                CTRL_PARAM_DATA = new byte[DataLen_3];
+                DRIVE_PARAM_DATA = new byte[DataLen_4];
+                LIFT_PARAM_DATA = new byte[DataLen_5];
+                RACK_CFG_DATA_Reserved = new byte[DataLen_6];
+                STATION_CFG_DATA = new byte[DataLen_7];
+                POSITION_CFG_DATA = new byte[DataLen_8];
+                ROUND_CFG__DATA = new byte[DataLen_9];
+            }
+
+            public string FileName
+            {
+                get { return myFileName; }
+                set { myFileName = value; }
+            }
+
+            public TEMSToTalFile_Header myHeader
+            {
+                get { return Header; }
+            }
+
+            private bool createFile(byte TmpFileType)
+            {
+                if (myFileName == "") return false;
+
+
+                UInt16 SumLen = (UInt16)(HeaderLen + DataLen_1 + DataLen_2 + DataLen_3 + DataLen_4 + DataLen_5 + DataLen_6 + DataLen_7 + DataLen_8 + DataLen_9);
+
+                using (BinaryWriter br = new BinaryWriter(File.Open(myFileName, FileMode.Create, FileAccess.Write)))
+                {
+                    try
+                    {
+                        br.Seek(0, SeekOrigin.Begin);
+                        byte[] Savebytes = new byte[SumLen];
+                        Global_Class.UTIL_ByteArray_clear(Savebytes, SumLen);
+                        Savebytes[0] = TmpFileType;
+                        br.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        br.Close();
+                    }
+                }
+                return true;
+            }
+
+            public bool Read_Header(byte TmpFileType)
+            {
+                Header.MCU_CFG_Flag.Save_Flag = 0;
+                Header.IO_CFG_Flag.Save_Flag = 0;
+                Header.CTRL_PARAM_Flag.Save_Flag = 0;
+                Header.DRIVE_PARAM_Flag.Save_Flag = 0;
+                Header.LIFT_PARAM_Flag.Save_Flag = 0;
+                Header.RACK_CFG_Flag_Reserved.Save_Flag = 0;
+                Header.STATION_CFG_Flag.Save_Flag = 0;
+                Header.POSITION_CFG_Flag.Save_Flag = 0;
+                Header.ROUND_CFG_Flag.Save_Flag = 0;
+
+
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+
+                        if (TmpFileType == Savebytes[0])
+                        {
+                            Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+                            TmpResult = true;
+                        }
+                        else
+                        {
+                            TmpResult = false;
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Read_MCU_CFG(ref TEMS_DevConfigCtrl ems_cfg)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.MCU_CFG_Flag.Save_Flag == 1)
+                            {
+                                Savebytes = brRead.ReadBytes(DataLen_1);
+                                ems_cfg = (VEXI_DEFS.TEMS_DevConfigCtrl)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_DevConfigCtrl));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+
+            public bool Write_MCU_CFG(TEMS_DevConfigCtrl ems_cfg)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_DevConfigCtrl))];
+                        Global_Class.UTIL_StructObjectToByteArray(ems_cfg, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+                }
+                return true;
+            }
+
+            public bool Read_IO_CFG(ref EMS_IOConfig IO_cfg)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.IO_CFG_Flag.Save_Flag == 1)
+                            {
+                                brRead.ReadBytes(DataLen_1);
+                                Savebytes = brRead.ReadBytes(DataLen_2);
+                                IO_cfg = (VEXI_DEFS.EMS_IOConfig)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.EMS_IOConfig));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Write_IO_CFG(EMS_IOConfig IO_CFG)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 1 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1, SeekOrigin.Begin);
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.EMS_IOConfig))];
+                        Global_Class.UTIL_StructObjectToByteArray(IO_CFG, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+            public bool Read_EMS_CTRL_PARAM(ref TEMS_CTRLParamCTRL CTRL_PARAM)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.CTRL_PARAM_Flag.Save_Flag == 1)
+                            {
+                                //MCU_CFG 영역
+                                brRead.ReadBytes(DataLen_1);
+                                //IO_CFG 영역
+                                brRead.ReadBytes(DataLen_2);
+                                Savebytes = brRead.ReadBytes(DataLen_3);
+                                CTRL_PARAM = (VEXI_DEFS.TEMS_CTRLParamCTRL)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_CTRLParamCTRL));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Write_EMS_CTRL_PARAM(TEMS_CTRLParamCTRL CTRL_PARAM)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 2 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1 + DataLen_2, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_CTRLParamCTRL))];
+                        Global_Class.UTIL_StructObjectToByteArray(CTRL_PARAM, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+            public bool Read_EMS_DRIVE_PARAM(ref TEMS_DriveParamCTRL DRIVE_PARAM)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.DRIVE_PARAM_Flag.Save_Flag == 1)
+                            {
+                                //DEV_CFG 영역
+                                brRead.ReadBytes(DataLen_1);
+                                //IO_CFG 영역
+                                brRead.ReadBytes(DataLen_2);
+                                //CTRL_PARAM 영역
+                                brRead.ReadBytes(DataLen_3);
+                                Savebytes = brRead.ReadBytes(DataLen_4);
+                                DRIVE_PARAM = (VEXI_DEFS.TEMS_DriveParamCTRL)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_DriveParamCTRL));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+
+            public bool Write_EMS_DRIVE_PARAM(TEMS_DriveParamCTRL DRIVE_PARAM)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 3 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1 + DataLen_2 + DataLen_3, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_DriveParamCTRL))];
+                        Global_Class.UTIL_StructObjectToByteArray(DRIVE_PARAM, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+            public bool Read_EMS_LIFT_PARAM(ref TEMS_LiftParamCTRL LiftParamCTRL)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.LIFT_PARAM_Flag.Save_Flag == 1)
+                            {
+                                //DEV_CFG 영역
+                                brRead.ReadBytes(DataLen_1);
+                                //IO_CFG 영역
+                                brRead.ReadBytes(DataLen_2);
+                                //CTRL_PARAM 영역
+                                brRead.ReadBytes(DataLen_3);
+                                //DRIVE_PARAM 영역
+                                brRead.ReadBytes(DataLen_4);
+                                Savebytes = brRead.ReadBytes(DataLen_5);
+                                LiftParamCTRL = (VEXI_DEFS.TEMS_LiftParamCTRL)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_LiftParamCTRL));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Write_EMS_LIFT_PARAM(TEMS_LiftParamCTRL LiftParamCTRL)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 4 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1 + DataLen_2 + DataLen_3 + DataLen_4, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_LiftParamCTRL))];
+                        Global_Class.UTIL_StructObjectToByteArray(LiftParamCTRL, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+            public bool Read_EMS_StationParam(ref TEMS_StationParam StationParam)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.STATION_CFG_Flag.Save_Flag == 1)
+                            {
+                                //MCU_CFG 영역
+                                brRead.ReadBytes(DataLen_1);
+                                //IO_CFG 영역
+                                brRead.ReadBytes(DataLen_2);
+                                //CTRL_PARAM 영역
+                                brRead.ReadBytes(DataLen_3);
+                                //DRIVE_PARAM 영역
+                                brRead.ReadBytes(DataLen_4);
+                                //LIFT_PARAM 영역
+                                brRead.ReadBytes(DataLen_5);
+                                //RACK_CFG
+                                brRead.ReadBytes(DataLen_6);
+                                Savebytes = brRead.ReadBytes(DataLen_7);
+                                StationParam = (VEXI_DEFS.TEMS_StationParam)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_StationParam));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Write_EMS_StationParam(TEMS_StationParam StationParam)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 6 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1 + DataLen_2 + DataLen_3 + DataLen_4 + DataLen_5 + DataLen_6, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StationParam))];
+                        Global_Class.UTIL_StructObjectToByteArray(StationParam, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+            public bool Read_EMS_PositionParam(ref TEMS_PositionSetParam PositionParam)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.POSITION_CFG_Flag.Save_Flag == 1)
+                            {
+                                //MCU_CFG 영역
+                                brRead.ReadBytes(DataLen_1);
+                                //IO_CFG 영역
+                                brRead.ReadBytes(DataLen_2);
+                                //CTRL_PARAM 영역
+                                brRead.ReadBytes(DataLen_3);
+                                //DRIVE_PARAM 영역
+                                brRead.ReadBytes(DataLen_4);
+                                //LIFT_PARAM 영역
+                                brRead.ReadBytes(DataLen_5);
+                                //RACK_CFG
+                                brRead.ReadBytes(DataLen_6);
+                                //STATION_CFG 영역
+                                brRead.ReadBytes(DataLen_7);
+                                Savebytes = brRead.ReadBytes(DataLen_8);
+                                PositionParam = (VEXI_DEFS.TEMS_PositionSetParam)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_PositionSetParam));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Write_EMS_PositionParam(TEMS_PositionSetParam PositionParam)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 7 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1 + DataLen_2 + DataLen_3 + DataLen_4 + DataLen_5 + DataLen_6 + DataLen_7, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_PositionSetParam))];
+                        Global_Class.UTIL_StructObjectToByteArray(PositionParam, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+
+
+            public bool Read_EMS_SpeedAreaParam(ref TEMS_SpeedAreaGroupParam SpeedAreaParam)
+            {
+                if (myFileName == "") return false;
+
+                bool TmpResult = false;
+                if (!File.Exists(myFileName))
+                {
+                    return false;
+                }
+
+                using (BinaryReader brRead = new BinaryReader(File.Open(myFileName, FileMode.Open, FileAccess.Read)))
+                {
+                    try
+                    {
+                        byte[] Savebytes = brRead.ReadBytes(HeaderLen);
+                        Header = (VEXI_DEFS.TEMSToTalFile_Header)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMSToTalFile_Header));
+
+                        if (Header.fileType == ConstClass.TYPE_EMS)
+                        {
+                            if (Header.STATION_CFG_Flag.Save_Flag == 1)
+                            {
+                                //MCU_CFG 영역
+                                brRead.ReadBytes(DataLen_1);
+                                //IO_CFG 영역
+                                brRead.ReadBytes(DataLen_2);
+                                //CTRL_PARAM 영역
+                                brRead.ReadBytes(DataLen_3);
+                                //DRIVE_PARAM 영역
+                                brRead.ReadBytes(DataLen_4);
+                                //LIFT_PARAM 영역
+                                brRead.ReadBytes(DataLen_5);
+                                //RACK_CFG
+                                brRead.ReadBytes(DataLen_6);
+                                //Station_CFG
+                                brRead.ReadBytes(DataLen_7);
+                                //POSTIOM_CFG
+                                brRead.ReadBytes(DataLen_8);
+                                Savebytes = brRead.ReadBytes(DataLen_9);
+                                SpeedAreaParam = (VEXI_DEFS.TEMS_SpeedAreaGroupParam)Global_Class.UTIL_BytesToStructure(Savebytes, typeof(VEXI_DEFS.TEMS_SpeedAreaGroupParam));
+                                TmpResult = true;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        brRead.Close();
+
+                    }
+                    return TmpResult;
+                }
+            }
+
+            public bool Write_EMS_SpeedAreaParam(TEMS_SpeedAreaGroupParam SpeedAreaParam)
+            {
+                if (myFileName == "") return false;
+
+                if (!File.Exists(myFileName))
+                {
+                    createFile(ConstClass.TYPE_EMS);
+                }
+
+                using (BinaryWriter brWrite = new BinaryWriter(File.Open(myFileName, FileMode.Open, FileAccess.Write)))
+                {
+                    try
+                    {
+                        brWrite.Seek(0, SeekOrigin.Begin);
+                        brWrite.Write(ConstClass.TYPE_EMS);
+                        brWrite.Seek(9 * 8 + 1, SeekOrigin.Begin);
+                        brWrite.Write((byte)0x01);
+                        brWrite.Write(DateTime.Now.Ticks);
+                        brWrite.Seek(HeaderLen + DataLen_1 + DataLen_2 + DataLen_3 + DataLen_4 + DataLen_5 + DataLen_6 + DataLen_7 + DataLen_8, SeekOrigin.Begin);
+
+                        byte[] Savebytes = new byte[Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_SpeedAreaGroupParam))];
+                        Global_Class.UTIL_StructObjectToByteArray(SpeedAreaParam, Savebytes);
+                        brWrite.Write(Savebytes);
+                    }
+                    finally
+                    {
+                        brWrite.Close();
+                    }
+
+                }
+                return true;
+            }
+
+        }
         #endregion
     }
 

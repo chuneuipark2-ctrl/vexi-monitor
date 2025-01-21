@@ -1754,7 +1754,10 @@ namespace VEXI
 
                     return true;
                 case ConstClass.TYPE_EMS:
-                    return false;
+                    TmpLen = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_DevConfigRes));
+                    if (TmpLen != datas.Length) return false;
+
+                    return true;
                 default:
                     return false;
             }
@@ -2643,6 +2646,24 @@ namespace VEXI
             }
         }
 
+        public bool Check_EMS_DriveParamRes(byte devtype, byte devid, byte[] datas)
+        {
+            int test;
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_DriveParamRes));
+                    if (test != datas.Length) return false;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public bool Check_SRM_LiftParamRes(byte devtype, byte devid, byte[] datas)
         {
             switch (devtype)
@@ -2654,6 +2675,22 @@ namespace VEXI
                     return false;
                 case ConstClass.TYPE_EMS:
                     return false;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Check_EMS_LiftParamRes(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    if (Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_LiftParamRes)) != datas.Length) return false;
+                    return true;
                 default:
                     return false;
             }
@@ -2731,6 +2768,23 @@ namespace VEXI
             }
         }
 
+        public bool Check_EMS_CtrlParamRes(byte devtype, byte devid, byte[] datas)
+        {
+            int test;
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_CTRLParamRes));
+                    if (test != datas.Length) return false;
+                    return true;
+                default:
+                    return false;
+            }
+        }
         public void Serial_Send(byte TmpCMD1, byte TmpCMD2, object TmpDataRec)
         {
             TXSEQ++;

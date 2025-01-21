@@ -65,10 +65,10 @@ namespace VEXI
                     MAX_DO_COUNT_2 = ConstClass.RTV_DO_Names_2.GetLength(0);
                     break;
                 case ConstClass.TYPE_EMS:
-                    MAX_DI_COUNT_1 = ConstClass.RTV_DI_Names.GetLength(0);
+                    MAX_DI_COUNT_1 = ConstClass.EMS_DI_Names.GetLength(0);
                     MAX_DI_COUNT_2 = 0;
-                    MAX_DO_COUNT_1 = ConstClass.RTV_DO_Names_1.GetLength(0);
-                    MAX_DO_COUNT_2 = ConstClass.RTV_DO_Names_2.GetLength(0);
+                    MAX_DO_COUNT_1 = ConstClass.EMS_DO_Names.GetLength(0);
+                    MAX_DO_COUNT_2 = 0;
                     break;
                 default:
                     MAX_DI_COUNT_1 = ConstClass.RTV_DI_Names.GetLength(0);
@@ -257,7 +257,7 @@ namespace VEXI
                                     if (ConstClass.RTV_DI_Names[lvDI_Item.Index, 3] == "0") DI_EditComboxBox[i].Tag = 1;
                                     break;
                                 case ConstClass.TYPE_EMS:
-                                    if (ConstClass.RTV_DI_Names[lvDI_Item.Index, 3] == "0") DI_EditComboxBox[i].Tag = 1;
+                                    if (ConstClass.EMS_DI_Names[lvDI_Item.Index, 3] == "0") DI_EditComboxBox[i].Tag = 1;
                                     break;
                                 default:
                                     if (ConstClass.RTV_DI_Names[lvDI_Item.Index, 3] == "0") DI_EditComboxBox[i].Tag = 1;
@@ -559,7 +559,7 @@ namespace VEXI
                         listviewitem = new ListViewItem(ConstClass.RTV_DI_Names[i, 0]);
                         break;
                     case ConstClass.TYPE_EMS:
-                        listviewitem = new ListViewItem(ConstClass.RTV_DI_Names[i, 0]);
+                        listviewitem = new ListViewItem(ConstClass.EMS_DI_Names[i, 0]);
                         break;
                     default:
                         listviewitem = new ListViewItem(ConstClass.RTV_DI_Names[i, 0]);
@@ -581,7 +581,7 @@ namespace VEXI
                         else listviewitem.SubItems.Add("");
                         break;
                     case ConstClass.TYPE_EMS:
-                        if (ConstClass.RTV_DI_Names[i, 3] == "0") listviewitem.SubItems.Add("단독");
+                        if (ConstClass.EMS_DI_Names[i, 3] == "0") listviewitem.SubItems.Add("단독");
                         else listviewitem.SubItems.Add("");
                         break;
                     default:
@@ -635,7 +635,7 @@ namespace VEXI
                         listviewitem = new ListViewItem(ConstClass.RTV_DO_Names_1[i, 0]);
                         break;
                     case ConstClass.TYPE_EMS:
-                        listviewitem = new ListViewItem(ConstClass.RTV_DO_Names_1[i, 0]);
+                        listviewitem = new ListViewItem(ConstClass.EMS_DO_Names[i, 0]);
                         break;
                     default:
                         listviewitem = new ListViewItem(ConstClass.RTV_DO_Names_1[i, 0]);
@@ -820,10 +820,60 @@ namespace VEXI
                                 }
                             }
                         }
-
-
                         break;
                     case ConstClass.TYPE_EMS:
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[0] != CtrlREC.EMSIO.EthercatBoard[0]) lbl_ethercat_1.ForeColor = Color.Red; else lbl_ethercat_1.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[1] != CtrlREC.EMSIO.EthercatBoard[1]) lbl_ethercat_2.ForeColor = Color.Red; else lbl_ethercat_2.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[2] != CtrlREC.EMSIO.EthercatBoard[2]) lbl_ethercat_3.ForeColor = Color.Red; else lbl_ethercat_3.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[3] != CtrlREC.EMSIO.EthercatBoard[3]) lbl_ethercat_4.ForeColor = Color.Red; else lbl_ethercat_4.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[4] != CtrlREC.EMSIO.EthercatBoard[4]) lbl_ethercat_5.ForeColor = Color.Red; else lbl_ethercat_5.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[5] != CtrlREC.EMSIO.EthercatBoard[5]) lbl_ethercat_6.ForeColor = Color.Red; else lbl_ethercat_6.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[6] != CtrlREC.EMSIO.EthercatBoard[6]) lbl_ethercat_7.ForeColor = Color.Red; else lbl_ethercat_7.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[7] != CtrlREC.EMSIO.EthercatBoard[7]) lbl_ethercat_8.ForeColor = Color.Red; else lbl_ethercat_8.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[8] != CtrlREC.EMSIO.EthercatBoard[8]) lbl_ethercat_9.ForeColor = Color.Red; else lbl_ethercat_9.ForeColor = Color.Black;
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[9] != CtrlREC.EMSIO.EthercatBoard[9]) lbl_ethercat_10.ForeColor = Color.Red; else lbl_ethercat_10.ForeColor = Color.Black;
+
+                        fixed (VEXI_DEFS.REC_DIConfig* DIConfigStPtr = &dev_REC_IOConfig.EMSIO.DIConfig)
+                        {
+                            fixed (VEXI_DEFS.REC_DIConfig* DIConfigctrlPtr = &CtrlREC.EMSIO.DIConfig)
+                            {
+                                for (byte i = 0; i < MAX_DI_COUNT_1; i++)
+                                {
+                                    if (((DIConfigStPtr + i)->EthercatID != (DIConfigctrlPtr + i)->EthercatID) ||
+                                        ((DIConfigStPtr + i)->Pin != (DIConfigctrlPtr + i)->Pin) ||
+                                        ((DIConfigStPtr + i)->Type != (DIConfigctrlPtr + i)->Type) ||
+                                        ((DIConfigStPtr + i)->Chattering != (DIConfigctrlPtr + i)->Chattering) ||
+                                        ((DIConfigStPtr + i)->Dual != (DIConfigctrlPtr + i)->Dual))
+                                    {
+                                        lv_DI.Items[i].ForeColor = Color.Red;
+                                        IsCompareOK = false;
+                                    }
+                                    else lv_DI.Items[i].ForeColor = Color.Black;
+
+                                }
+                            }
+                        }
+
+                        fixed (VEXI_DEFS.REC_DOConfig* DOConfigStPtr = &dev_REC_IOConfig.EMSIO.DOConfig)
+                        {
+                            fixed (VEXI_DEFS.REC_DOConfig* DOConfigctrlPtr = &CtrlREC.EMSIO.DOConfig)
+                            {
+                                for (byte i = 0; i < MAX_DO_COUNT_1; i++)
+                                {
+                                    if (((DOConfigStPtr + i)->EthercatID != (DOConfigctrlPtr + i)->EthercatID) ||
+                                        ((DOConfigStPtr + i)->Pin != (DOConfigctrlPtr + i)->Pin) ||
+                                        ((DOConfigStPtr + i)->Type != (DOConfigctrlPtr + i)->Type))
+                                    {
+                                        lv_DO.Items[i].ForeColor = Color.Red;
+                                        IsCompareOK = false;
+                                    }
+                                    else lv_DO.Items[i].ForeColor = Color.Black;
+
+                                }
+                            }
+                        }
+
+                        
                         break;
                     default:
                         break;
@@ -1346,6 +1396,217 @@ namespace VEXI
 
                     break;
                 case ConstClass.TYPE_EMS:
+                    fixed (VEXI_DEFS.REC_Scan_EthercatSlave* Ptr_1 = &dev_REC_IOConfig.EMSIO.Scan_EthercatSlave1)
+                    {
+                        for (byte i = 0; i < 10; i++)
+                        {
+                            switch ((Ptr_1 + i)->BoardType)
+                            {
+                                case 0:
+                                    lbl_Scan[i].Text = "연결없음";
+                                    break;
+                                case 1:
+                                    lbl_Scan[i].Text = String.Format("MX-DIO-10X : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 2:
+                                    lbl_Scan[i].Text = String.Format("MX-DIO-20X : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 3:
+                                    lbl_Scan[i].Text = String.Format("MX-DIO-30X : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 4:
+                                    lbl_Scan[i].Text = String.Format("MX-RLY-10X : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 5:
+                                    lbl_Scan[i].Text = String.Format("MX-EXT-10X : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 6:
+                                    lbl_Scan[i].Text = String.Format("GX-MD1611 : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 7:
+                                    lbl_Scan[i].Text = String.Format("GX-ID1618 : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 8:
+                                    lbl_Scan[i].Text = String.Format("GX-ID3218 : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 9:
+                                    lbl_Scan[i].Text = String.Format("GX-EC0211 : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 10:
+                                    lbl_Scan[i].Text = String.Format("GX-MD1612 : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 50:
+                                    lbl_Scan[i].Text = String.Format("ACS380 : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                case 255:
+                                    lbl_Scan[i].Text = String.Format("Not Define : {0}", (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                                default:
+                                    lbl_Scan[i].Text = String.Format("{0} : {1}", (Ptr_1 + i)->BoardType, (Ptr_1 + i)->Slave_IDSwitch);
+                                    break;
+                            }
+                        }
+                    }
+
+                    for (byte i = 0; i < 10; i++)
+                    {
+                        switch (dev_REC_IOConfig.EMSIO.EthercatBoard[i])
+                        {
+                            case 0:
+                                lbl_Config[i].Text = "연결없음";
+                                break;
+                            case 1:
+                                lbl_Config[i].Text = "MX-DIO-10X";
+                                break;
+                            case 2:
+                                lbl_Config[i].Text = "MX-DIO-20X";
+                                break;
+                            case 3:
+                                lbl_Config[i].Text = "MX-DIO-30X";
+                                break;
+                            case 4:
+                                lbl_Config[i].Text = "MX-RLY-10X";
+                                break;
+                            case 5:
+                                lbl_Config[i].Text = "MX-EXT-10X";
+                                break;
+                            case 6:
+                                lbl_Config[i].Text = "GX-MD1611";
+                                break;
+                            case 7:
+                                lbl_Config[i].Text = "GX-ID1618";
+                                break;
+                            case 8:
+                                lbl_Config[i].Text = "GX-ID3218";
+                                break;
+                            case 9:
+                                lbl_Config[i].Text = "GX-EC0211";
+                                break;
+                            case 10:
+                                lbl_Config[i].Text = "GX-MD1612";
+                                break;
+                            case 50:
+                                lbl_Config[i].Text = "ACS380";
+                                break;
+                            case 255:
+                                lbl_Config[i].Text = "Not Define";
+                                break;
+                            default:
+                                lbl_Config[i].Text = "";
+                                cb_Config[i].SelectedIndex = -1;
+                                break;
+                        }
+
+                        if (dev_REC_IOConfig.EMSIO.EthercatBoard[i] <= 10)
+                        {
+                            if (IsLoadCtrl)
+                            {
+                                cb_Config[i].SelectedIndex = dev_REC_IOConfig.EMSIO.EthercatBoard[i];
+                            }
+                            else
+                            {
+                                if (IsResponse)
+                                {
+                                    if (cb_Config[i].SelectedIndex == -1) cb_Config[i].SelectedIndex = dev_REC_IOConfig.EMSIO.EthercatBoard[i];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            switch (dev_REC_IOConfig.EMSIO.EthercatBoard[i])
+                            {
+                                case 50:
+                                    if (IsLoadCtrl)
+                                    {
+                                        cb_Config[i].SelectedIndex = 11;
+                                    }
+                                    else
+                                    {
+                                        if (IsResponse)
+                                        {
+                                            if (cb_Config[i].SelectedIndex == -1) cb_Config[i].SelectedIndex = 11;
+                                        }
+                                    }
+                                    break;
+                                case 255:
+                                    if (IsLoadCtrl)
+                                    {
+                                        cb_Config[i].SelectedIndex = 12;
+                                    }
+                                    else
+                                    {
+                                        if (IsResponse)
+                                        {
+                                            if (cb_Config[i].SelectedIndex == -1) cb_Config[i].SelectedIndex = 12;
+                                        }
+                                    }
+                                    break;
+                            }
+
+                        }
+
+                    }
+
+
+                    fixed (VEXI_DEFS.REC_DIConfig* DICOnfigPtr = &dev_REC_IOConfig.EMSIO.DIConfig)
+                    {
+                        for (byte i = 0; i < MAX_DI_COUNT_1; i++)
+                        {
+                            if ((DICOnfigPtr + i)->EthercatID == 0) lv_DI.Items[i].SubItems[1].Text = "MCU";
+                            else if ((DICOnfigPtr + i)->EthercatID == 255) lv_DI.Items[i].SubItems[1].Text = "신호없음";
+                            else lv_DI.Items[i].SubItems[1].Text = string.Format("{0}", (DICOnfigPtr + i)->EthercatID);
+
+                            if ((DICOnfigPtr + i)->EthercatID != 255)
+                            {
+                                lv_DI.Items[i].SubItems[2].Text = string.Format("{0}", (DICOnfigPtr + i)->Pin);
+                            }
+                            else
+                            {
+                                lv_DI.Items[i].SubItems[2].Text = "없음";
+                            }
+
+                            if ((DICOnfigPtr + i)->Type != 1) lv_DI.Items[i].SubItems[3].Text = "A";
+                            else lv_DI.Items[i].SubItems[3].Text = "B";
+                            lv_DI.Items[i].SubItems[4].Text = string.Format("{0}", (DICOnfigPtr + i)->Chattering);
+
+                            if (ConstClass.EMS_DI_Names[i, 3] == "0")
+                            {
+                                lv_DI.Items[i].SubItems[5].Text = "단독";
+                            }
+                            else
+                            {
+                                if ((DICOnfigPtr + i)->Dual == 2) lv_DI.Items[i].SubItems[5].Text = "AND";
+                                else lv_DI.Items[i].SubItems[5].Text = "OR";
+                            }
+
+                            //Ptr = Ptr + 1;
+                        }
+                    }
+
+                    fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &dev_REC_IOConfig.EMSIO.DOConfig)
+                    {
+                        for (byte i = 0; i < MAX_DO_COUNT_1; i++)
+                        {
+                            if ((DOCOnfigPtr + i)->EthercatID == 0) lv_DO.Items[i].SubItems[1].Text = "MCU";
+                            else if ((DOCOnfigPtr + i)->EthercatID == 255) lv_DO.Items[i].SubItems[1].Text = "신호없음";
+                            else lv_DO.Items[i].SubItems[1].Text = string.Format("{0}", (DOCOnfigPtr + i)->EthercatID);
+
+                            if ((DOCOnfigPtr + i)->EthercatID != 255)
+                            {
+                                lv_DO.Items[i].SubItems[2].Text = string.Format("{0}", (DOCOnfigPtr + i)->Pin);
+                            }
+                            else
+                            {
+                                lv_DO.Items[i].SubItems[2].Text = "없음";
+                            }
+                            if ((DOCOnfigPtr + i)->Type != 1) lv_DO.Items[i].SubItems[3].Text = "A";
+                            else lv_DO.Items[i].SubItems[3].Text = "B";
+
+                            //Ptr = Ptr + 1;
+                        }
+
+                    }
+
                     break;
                 default:
                     break;
@@ -1362,7 +1623,7 @@ namespace VEXI
                     btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
                     break;
                 case ConstClass.TYPE_EMS:
-                    btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
+                    btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.ems_REC_EMSSt.DevMode & 0x08) != 0);
                     break;
                 default:
                     btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
@@ -2083,6 +2344,233 @@ namespace VEXI
 
                     break;
                 case ConstClass.TYPE_EMS:
+                    switch (cb_Ehtercat_1.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[0] = (byte)cb_Ehtercat_1.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[0] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[0] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_2.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[1] = (byte)cb_Ehtercat_2.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[1] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[1] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_3.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[2] = (byte)cb_Ehtercat_3.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[2] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[2] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_4.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[3] = (byte)cb_Ehtercat_4.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[3] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[3] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_5.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[4] = (byte)cb_Ehtercat_5.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[4] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[4] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_6.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[5] = (byte)cb_Ehtercat_6.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[5] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[5] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_7.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[6] = (byte)cb_Ehtercat_7.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[6] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[6] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_8.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[7] = (byte)cb_Ehtercat_8.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[7] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[7] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_9.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[8] = (byte)cb_Ehtercat_9.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[8] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[8] = 255; break;
+                    }
+
+                    switch (cb_Ehtercat_10.SelectedIndex)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10: CtrlREC.EMSIO.EthercatBoard[9] = (byte)cb_Ehtercat_10.SelectedIndex; break;
+                        case 11: CtrlREC.EMSIO.EthercatBoard[9] = 50; break;
+                        case 12: CtrlREC.EMSIO.EthercatBoard[9] = 255; break;
+                    }
+
+
+                    fixed (VEXI_DEFS.REC_DIConfig* DICOnfigPtr = &CtrlREC.EMSIO.DIConfig)
+                    {
+                        for (byte i = 0; i < MAX_DI_COUNT_1; i++)
+                        {
+                            if (lv_DI.Items[i].SubItems[1].Text == "MCU") (DICOnfigPtr + i)->EthercatID = 0;
+                            else if (lv_DI.Items[i].SubItems[1].Text == "신호없음") (DICOnfigPtr + i)->EthercatID = 255;
+                            else (DICOnfigPtr + i)->EthercatID = (byte)Global_Class.UTIL_StrToIntDef(lv_DI.Items[i].SubItems[1].Text, 1);
+
+                            if ((DICOnfigPtr + i)->EthercatID != 255)
+                            {
+                                (DICOnfigPtr + i)->Pin = (byte)Global_Class.UTIL_StrToIntDef(lv_DI.Items[i].SubItems[2].Text, 0);
+                                if (lv_DI.Items[i].SubItems[3].Text == "B") (DICOnfigPtr + i)->Type = 1;
+                                else (DICOnfigPtr + i)->Type = 0;
+                                (DICOnfigPtr + i)->Chattering = (byte)Global_Class.UTIL_StrToIntDef(lv_DI.Items[i].SubItems[4].Text, 0);
+
+                                if (ConstClass.EMS_DI_Names[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
+                                else
+                                {
+                                    if (lv_DI.Items[i].SubItems[5].Text == "OR") (DICOnfigPtr + i)->Dual = 1;
+                                    else (DICOnfigPtr + i)->Dual = 2;
+                                }
+                            }
+                            else
+                            {
+                                (DICOnfigPtr + i)->Pin = 0;
+                                (DICOnfigPtr + i)->Type = 0;
+                                (DICOnfigPtr + i)->Chattering = 0;
+                                if (ConstClass.EMS_DI_Names[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
+                                else (DICOnfigPtr + i)->Dual = 1;
+                            }
+                        }
+                    }
+
+
+                    fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &CtrlREC.EMSIO.DOConfig)
+                    {
+                        for (byte i = 0; i < MAX_DO_COUNT_1; i++)
+                        {
+                            if (lv_DO.Items[i].SubItems[1].Text == "MCU") (DOCOnfigPtr + i)->EthercatID = 0;
+                            else if (lv_DO.Items[i].SubItems[1].Text == "신호없음") (DOCOnfigPtr + i)->EthercatID = 255;
+                            else (DOCOnfigPtr + i)->EthercatID = (byte)Global_Class.UTIL_StrToIntDef(lv_DO.Items[i].SubItems[1].Text, 1);
+
+                            if ((DOCOnfigPtr + i)->EthercatID != 255)
+                            {
+                                (DOCOnfigPtr + i)->Pin = (byte)Global_Class.UTIL_StrToIntDef(lv_DO.Items[i].SubItems[2].Text, 0);
+                                if (lv_DO.Items[i].SubItems[3].Text == "B") (DOCOnfigPtr + i)->Type = 1;
+                                else (DOCOnfigPtr + i)->Type = 0;
+                            }
+                            else
+                            {
+                                (DOCOnfigPtr + i)->Pin = 0;
+                                (DOCOnfigPtr + i)->Type = 0;
+                            }
+                        }
+                    }
+
                     break;
                 default:
                     break;
@@ -2193,7 +2681,7 @@ namespace VEXI
                     saveFileDialog1.Filter = "*.RTVcfg|*.RTVCFG";
                     break;
                 case ConstClass.TYPE_EMS:
-                    saveFileDialog1.Filter = "*.RTVcfg|*.RTVcfg";
+                    saveFileDialog1.Filter = "*.EMScfg|*.EMScfg";
                     break;
                 default:
                     saveFileDialog1.Filter = "*.RTVcfg|*.RTVcfg";
@@ -2218,7 +2706,7 @@ namespace VEXI
                         form_Main.RTV_ToTalFile.Write_IO_CFG(CtrlREC.RTVIO);
                         break;
                     case ConstClass.TYPE_EMS:
-                        form_Main.RTV_ToTalFile.Write_IO_CFG(CtrlREC.RTVIO);
+                        form_Main.EMS_ToTalFile.Write_IO_CFG(CtrlREC.EMSIO);
                         break;
                     default:
                         form_Main.RTV_ToTalFile.Write_IO_CFG(CtrlREC.RTVIO);
@@ -2277,7 +2765,7 @@ namespace VEXI
                     openFileDialog1.Filter = "*.RTVcfg|*.RTVCFG";
                     break;
                 case ConstClass.TYPE_EMS:
-                    openFileDialog1.Filter = "*.RTVcfg|*.RTVCFG";
+                    openFileDialog1.Filter = "*.EMScfg|*.EMSCFG";
                     break;
                 default:
                     openFileDialog1.Filter = "*.RTVcfg|*.RTVCFG";
@@ -2314,8 +2802,8 @@ namespace VEXI
                         }
                         break;
                     case ConstClass.TYPE_EMS:
-                        form_Main.RTV_ToTalFile.FileName = openFileDialog1.FileName;
-                        if (form_Main.RTV_ToTalFile.Read_IO_CFG(ref dev_REC_IOConfig.RTVIO))
+                        form_Main.EMS_ToTalFile.FileName = openFileDialog1.FileName;
+                        if (form_Main.EMS_ToTalFile.Read_IO_CFG(ref dev_REC_IOConfig.EMSIO))
                         {
                             Display_IOConfig(false, true);
                         }

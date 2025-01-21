@@ -2347,7 +2347,6 @@ namespace VEXI
             this.ed_WifiControllerTime.Tag = "00";
             this.ed_WifiControllerTime.Text = "0";
             this.ed_WifiControllerTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_WifiControllerTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
             // 
             // label5
             // 

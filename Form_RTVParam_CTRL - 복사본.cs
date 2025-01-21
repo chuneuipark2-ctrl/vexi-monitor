@@ -281,42 +281,42 @@ namespace VEXI
             ed_RetryInPosition_Count.Text = "0";
             ed_RetryInPosition_Range.Text = "0";
             ed_CripRange.Text = "0";
-            ed_CurrentDecel_OffsetTime.Text = "0.0";
+            ed_CurrentDecel_OffsetTime.Text = "0";
             ed_CurrentDecel_OffsetMaxDistance.Text = "0";
             ed_CurrentLowSpeedDistance.Text = "0";
 
-            ed_ChangeMC_DelayTime.Text = "0.00";
-            ed_InvertorOn_DelayTime.Text = "0.00";
+            ed_ChangeMC_DelayTime.Text = "0";
+            ed_InvertorOn_DelayTime.Text = "0";
 
-            ed_Loading_DelayTime_beforMove.Text = "0.00";
-            ed_Loading_DelayTime_afterMove.Text = "0.00";
-            ed_Loading_DelayTime_beforFeed.Text = "0.00";
-            ed_Loading_DelayTime_afterFeed.Text = "0.00";
-            ed_Loading_DelayTime_Done.Text = "0.00";
+            ed_Loading_DelayTime_beforMove.Text = "0";
+            ed_Loading_DelayTime_afterMove.Text = "0";
+            ed_Loading_DelayTime_beforFeed.Text = "0";
+            ed_Loading_DelayTime_afterFeed.Text = "0";
+            ed_Loading_DelayTime_Done.Text = "0";
 
-            ed_UnLoading_DelayTime_beforMove.Text = "0.00";
-            ed_UnLoading_DelayTime_afterMove.Text = "0.00";
-            ed_UnLoading_DelayTime_beforFeed.Text = "0.00";
-            ed_UnLoading_DelayTime_afterFeed.Text = "0.00";
-            ed_UnLoading_DelayTime_Done.Text = "0.00";
+            ed_UnLoading_DelayTime_beforMove.Text = "0";
+            ed_UnLoading_DelayTime_afterMove.Text = "0";
+            ed_UnLoading_DelayTime_beforFeed.Text = "0";
+            ed_UnLoading_DelayTime_afterFeed.Text = "0";
+            ed_UnLoading_DelayTime_Done.Text = "0";
 
-            ed_OP_TimeOut_ManualCtrl.Text = "0.00";
+            ed_OP_TimeOut_ManualCtrl.Text = "0";
 
-            ed_AutoOP_TimeOut_Move.Text = "0.00";
-            ed_AutoOP_TimeOut_Interlock.Text = "0.00";
-            ed_AutoOP_TimeOut_LoadFeed.Text = "0.00";
-            ed_AutoOP_TimeOut_UnLoadFeed.Text = "0.00";
-            ed_AutoOP_TimeOut_ItemCheckLoad.Text = "0.00";
-            ed_AutoOP_TimeOut_ItemCheckUnLoad.Text = "0.00";
-            ed_AutoOP_TimeOut_Crip.Text = "0.00";
+            ed_AutoOP_TimeOut_Move.Text = "0";
+            ed_AutoOP_TimeOut_Interlock.Text = "0";
+            ed_AutoOP_TimeOut_LoadFeed.Text = "0";
+            ed_AutoOP_TimeOut_UnLoadFeed.Text = "0";
+            ed_AutoOP_TimeOut_ItemCheckLoad.Text = "0";
+            ed_AutoOP_TimeOut_ItemCheckUnLoad.Text = "0";
+            ed_AutoOP_TimeOut_Crip.Text = "0";
 
             ed_AutoInit_ForceMode.Text = "0";
             ed_WifiControllerTime.Text = "0";
 
-            ed_Buzzer_Error_Time.Text = "0.00";
-            ed_Buzzer_Warnning_Time.Text = "0.00";
-            ed_Buzzer_AutoModeOn_Time.Text = "0.00";
-            ed_Buzzer_AutoModeOff_Time.Text = "0.00";
+            ed_Buzzer_Error_Time.Text = "0";
+            ed_Buzzer_Warnning_Time.Text = "0";
+            ed_Buzzer_AutoModeOn_Time.Text = "0";
+            ed_Buzzer_AutoModeOff_Time.Text = "0";
             ed_Buzzer_AutoMode_RepeatCount.Text = "0";
         }
 

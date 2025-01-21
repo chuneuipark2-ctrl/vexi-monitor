@@ -232,6 +232,11 @@ namespace VEXI
                     lv_DevLog.Columns.Add("작업1", 80, HorizontalAlignment.Center);
                     lv_DevLog.Columns.Add("작업1_단계", 150, HorizontalAlignment.Center);
                     lv_DevLog.Columns.Add("작업1 번호", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("위치", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("속도", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("Main Code", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("Sub Code", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("FB Code", 150, HorizontalAlignment.Center);
                     lv_DevLog.Columns.Add("비고", 400, HorizontalAlignment.Center);
                     break;
             }
@@ -343,6 +348,12 @@ namespace VEXI
                             }
                             
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Work1_JobNumber));
+
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Position));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Speed));
+                            tmpListViewitem.SubItems.Add(String.Format("0x{0:X8}", logUnion.LogSRM02Rec.MainCode));
+                            tmpListViewitem.SubItems.Add(String.Format("0x{0:X8}", logUnion.LogSRM02Rec.SubCode));
+                            tmpListViewitem.SubItems.Add(String.Format("0x{0:X8}", logUnion.LogSRM02Rec.FBCode));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogSRM02Rec.DIO, 29, ConstClass.TWithSpaceFlag.WithSpace, 5));
                         }
@@ -629,6 +640,12 @@ namespace VEXI
                                 tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Work1_JobNumber));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Position));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Speed));
+                            tmpListViewitem.SubItems.Add(String.Format("0x{0:X8}", logUnion.LogSRM02Rec.MainCode));
+                            tmpListViewitem.SubItems.Add(String.Format("0x{0:X8}", logUnion.LogSRM02Rec.SubCode));
+                            tmpListViewitem.SubItems.Add(String.Format("0x{0:X8}", logUnion.LogSRM02Rec.FBCode));
+
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogSRM02Rec.DIO, 29, ConstClass.TWithSpaceFlag.WithSpace, 5));
                         }

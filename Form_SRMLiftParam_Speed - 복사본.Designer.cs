@@ -4636,7 +4636,7 @@ namespace VEXI
             this.Name = "Form_SRMLiftParam_Speed";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "[SRM] 파라미터 - 승강드라이브 설정";
+            this.Text = "파라미터 - 승강드라이브 설정";
             this.Load += new System.EventHandler(this.Form_Param_Speed_Load);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();

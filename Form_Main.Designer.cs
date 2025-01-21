@@ -712,7 +712,7 @@ namespace VEXI
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 51);
             this.label4.TabIndex = 320;
-            this.label4.Text = "VEXI\r\nVer.20250114_10";
+            this.label4.Text = "VEXI\r\nVer.20250120_10";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WatchDog
@@ -823,73 +823,73 @@ namespace VEXI
             // menu_DevBaseConfig
             // 
             this.menu_DevBaseConfig.Name = "menu_DevBaseConfig";
-            this.menu_DevBaseConfig.Size = new System.Drawing.Size(174, 22);
+            this.menu_DevBaseConfig.Size = new System.Drawing.Size(180, 22);
             this.menu_DevBaseConfig.Text = "장치 구조 설정";
             this.menu_DevBaseConfig.Click += new System.EventHandler(this.menu_DevConfig_Click);
             // 
             // menu_DEV_IO_Config
             // 
             this.menu_DEV_IO_Config.Name = "menu_DEV_IO_Config";
-            this.menu_DEV_IO_Config.Size = new System.Drawing.Size(174, 22);
+            this.menu_DEV_IO_Config.Size = new System.Drawing.Size(180, 22);
             this.menu_DEV_IO_Config.Text = "MCU 입/출력 설정";
             this.menu_DEV_IO_Config.Click += new System.EventHandler(this.menu_MCU_IO_Config_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // menu_CtrlParameter
             // 
             this.menu_CtrlParameter.Name = "menu_CtrlParameter";
-            this.menu_CtrlParameter.Size = new System.Drawing.Size(174, 22);
+            this.menu_CtrlParameter.Size = new System.Drawing.Size(180, 22);
             this.menu_CtrlParameter.Text = "제어 설정";
             this.menu_CtrlParameter.Click += new System.EventHandler(this.menu_CtrlParameter_Click);
             // 
             // menu_DriveParameter
             // 
             this.menu_DriveParameter.Name = "menu_DriveParameter";
-            this.menu_DriveParameter.Size = new System.Drawing.Size(174, 22);
+            this.menu_DriveParameter.Size = new System.Drawing.Size(180, 22);
             this.menu_DriveParameter.Text = "주행드라이브 설정";
             this.menu_DriveParameter.Click += new System.EventHandler(this.menu_DriveParameter_Click);
             // 
             // menu_LiftParameter
             // 
             this.menu_LiftParameter.Name = "menu_LiftParameter";
-            this.menu_LiftParameter.Size = new System.Drawing.Size(174, 22);
+            this.menu_LiftParameter.Size = new System.Drawing.Size(180, 22);
             this.menu_LiftParameter.Text = "승강드라이브 설정";
             this.menu_LiftParameter.Click += new System.EventHandler(this.menu_LiftParameter_Click);
             // 
             // menu_ForParameter
             // 
             this.menu_ForParameter.Name = "menu_ForParameter";
-            this.menu_ForParameter.Size = new System.Drawing.Size(174, 22);
+            this.menu_ForParameter.Size = new System.Drawing.Size(180, 22);
             this.menu_ForParameter.Text = "포크드라이브 설정";
             this.menu_ForParameter.Click += new System.EventHandler(this.menu_ForParameter_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // menu_RackBase
             // 
             this.menu_RackBase.Name = "menu_RackBase";
-            this.menu_RackBase.Size = new System.Drawing.Size(174, 22);
+            this.menu_RackBase.Size = new System.Drawing.Size(180, 22);
             this.menu_RackBase.Text = "위치 설정";
             this.menu_RackBase.Click += new System.EventHandler(this.menu_RackBase_Click);
             // 
             // menu_NoRackSet
             // 
             this.menu_NoRackSet.Name = "menu_NoRackSet";
-            this.menu_NoRackSet.Size = new System.Drawing.Size(174, 22);
+            this.menu_NoRackSet.Size = new System.Drawing.Size(180, 22);
             this.menu_NoRackSet.Text = "금지랙 설정";
             this.menu_NoRackSet.Click += new System.EventHandler(this.menu_NoRackSet_Click);
             // 
             // menu_SpecialRackSet
             // 
             this.menu_SpecialRackSet.Name = "menu_SpecialRackSet";
-            this.menu_SpecialRackSet.Size = new System.Drawing.Size(174, 22);
+            this.menu_SpecialRackSet.Size = new System.Drawing.Size(180, 22);
             this.menu_SpecialRackSet.Text = "스페셜랙 설정";
             this.menu_SpecialRackSet.Click += new System.EventHandler(this.menu_SpecialRackSet_Click);
             // 

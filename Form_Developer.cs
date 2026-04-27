@@ -212,6 +212,7 @@ namespace VEXI
         private void btn_FunCtrl_1_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             Do_FuncCtrl(Convert.ToByte(bt.Tag.ToString()));
         }

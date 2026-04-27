@@ -201,6 +201,17 @@ namespace VEXI
             this.ed_Fork_TwinFork_Gap = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label158 = new System.Windows.Forms.Label();
+            this.label159 = new System.Windows.Forms.Label();
+            this.label160 = new System.Windows.Forms.Label();
+            this.label161 = new System.Windows.Forms.Label();
+            this.label162 = new System.Windows.Forms.Label();
+            this.label163 = new System.Windows.Forms.Label();
+            this.label164 = new System.Windows.Forms.Label();
+            this.label165 = new System.Windows.Forms.Label();
+            this.label166 = new System.Windows.Forms.Label();
+            this.label167 = new System.Windows.Forms.Label();
             this.label168 = new System.Windows.Forms.Label();
             this.label169 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
@@ -336,17 +347,6 @@ namespace VEXI
             this.label183 = new System.Windows.Forms.Label();
             this.label195 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label157 = new System.Windows.Forms.Label();
-            this.label158 = new System.Windows.Forms.Label();
-            this.label159 = new System.Windows.Forms.Label();
-            this.label160 = new System.Windows.Forms.Label();
-            this.label161 = new System.Windows.Forms.Label();
-            this.label162 = new System.Windows.Forms.Label();
-            this.label163 = new System.Windows.Forms.Label();
-            this.label164 = new System.Windows.Forms.Label();
-            this.label165 = new System.Windows.Forms.Label();
-            this.label166 = new System.Windows.Forms.Label();
-            this.label167 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -2920,6 +2920,160 @@ namespace VEXI
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "자동운전 포크감속";
             // 
+            // label157
+            // 
+            this.label157.BackColor = System.Drawing.Color.Black;
+            this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label157.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label157.ForeColor = System.Drawing.Color.White;
+            this.label157.Location = new System.Drawing.Point(220, 546);
+            this.label157.Name = "label157";
+            this.label157.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label157.Size = new System.Drawing.Size(246, 21);
+            this.label157.TabIndex = 1087;
+            this.label157.Text = "부하, 우 Half -> 중심 이동";
+            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label158
+            // 
+            this.label158.BackColor = System.Drawing.Color.Black;
+            this.label158.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label158.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label158.ForeColor = System.Drawing.Color.White;
+            this.label158.Location = new System.Drawing.Point(220, 524);
+            this.label158.Name = "label158";
+            this.label158.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label158.Size = new System.Drawing.Size(246, 21);
+            this.label158.TabIndex = 1086;
+            this.label158.Text = "부하, 중심    -> 우 Half 이동";
+            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label159
+            // 
+            this.label159.BackColor = System.Drawing.Color.Black;
+            this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label159.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label159.ForeColor = System.Drawing.Color.White;
+            this.label159.Location = new System.Drawing.Point(220, 502);
+            this.label159.Name = "label159";
+            this.label159.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label159.Size = new System.Drawing.Size(246, 21);
+            this.label159.TabIndex = 1085;
+            this.label159.Text = "부하, 좌 Half -> 중심 이동";
+            this.label159.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label160
+            // 
+            this.label160.BackColor = System.Drawing.Color.Black;
+            this.label160.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label160.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label160.ForeColor = System.Drawing.Color.White;
+            this.label160.Location = new System.Drawing.Point(220, 480);
+            this.label160.Name = "label160";
+            this.label160.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label160.Size = new System.Drawing.Size(246, 21);
+            this.label160.TabIndex = 1084;
+            this.label160.Text = "부하, 중심    -> 좌 Half 이동";
+            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label161
+            // 
+            this.label161.BackColor = System.Drawing.Color.Black;
+            this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label161.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label161.ForeColor = System.Drawing.Color.White;
+            this.label161.Location = new System.Drawing.Point(220, 458);
+            this.label161.Name = "label161";
+            this.label161.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label161.Size = new System.Drawing.Size(246, 21);
+            this.label161.TabIndex = 1083;
+            this.label161.Text = "부하, 우 Middle -> 중심 이동";
+            this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label162
+            // 
+            this.label162.BackColor = System.Drawing.Color.Black;
+            this.label162.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label162.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label162.ForeColor = System.Drawing.Color.White;
+            this.label162.Location = new System.Drawing.Point(220, 436);
+            this.label162.Name = "label162";
+            this.label162.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label162.Size = new System.Drawing.Size(246, 21);
+            this.label162.TabIndex = 1082;
+            this.label162.Text = "부하, 중심        -> 우 Middle 이동";
+            this.label162.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label163
+            // 
+            this.label163.BackColor = System.Drawing.Color.Black;
+            this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label163.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label163.ForeColor = System.Drawing.Color.White;
+            this.label163.Location = new System.Drawing.Point(220, 414);
+            this.label163.Name = "label163";
+            this.label163.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label163.Size = new System.Drawing.Size(246, 21);
+            this.label163.TabIndex = 1081;
+            this.label163.Text = "부하, 좌 Middle -> 중심 이동";
+            this.label163.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label164
+            // 
+            this.label164.BackColor = System.Drawing.Color.Black;
+            this.label164.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label164.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label164.ForeColor = System.Drawing.Color.White;
+            this.label164.Location = new System.Drawing.Point(220, 392);
+            this.label164.Name = "label164";
+            this.label164.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label164.Size = new System.Drawing.Size(246, 21);
+            this.label164.TabIndex = 1080;
+            this.label164.Text = "부하, 중심        -> 좌 Middle 이동";
+            this.label164.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label165
+            // 
+            this.label165.BackColor = System.Drawing.Color.Black;
+            this.label165.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label165.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label165.ForeColor = System.Drawing.Color.White;
+            this.label165.Location = new System.Drawing.Point(220, 370);
+            this.label165.Name = "label165";
+            this.label165.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label165.Size = new System.Drawing.Size(246, 21);
+            this.label165.TabIndex = 1079;
+            this.label165.Text = "부하, 우 Full -> 중심 이동";
+            this.label165.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label166
+            // 
+            this.label166.BackColor = System.Drawing.Color.Black;
+            this.label166.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label166.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label166.ForeColor = System.Drawing.Color.White;
+            this.label166.Location = new System.Drawing.Point(220, 348);
+            this.label166.Name = "label166";
+            this.label166.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label166.Size = new System.Drawing.Size(246, 21);
+            this.label166.TabIndex = 1078;
+            this.label166.Text = "부하, 중심    -> 우 Full 이동";
+            this.label166.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label167
+            // 
+            this.label167.BackColor = System.Drawing.Color.Black;
+            this.label167.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label167.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label167.ForeColor = System.Drawing.Color.White;
+            this.label167.Location = new System.Drawing.Point(220, 326);
+            this.label167.Name = "label167";
+            this.label167.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label167.Size = new System.Drawing.Size(246, 21);
+            this.label167.TabIndex = 1077;
+            this.label167.Text = "부하, 좌 Full -> 중심 이동";
+            this.label167.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label168
             // 
             this.label168.BackColor = System.Drawing.Color.Black;
@@ -4148,6 +4302,7 @@ namespace VEXI
             this.btn_Fork_TestSpeed.Tag = "1";
             this.btn_Fork_TestSpeed.Text = "시운전 속도 초기화";
             this.btn_Fork_TestSpeed.UseVisualStyleBackColor = true;
+            this.btn_Fork_TestSpeed.Visible = false;
             this.btn_Fork_TestSpeed.Click += new System.EventHandler(this.btn_Fork_TestSpeed_Click);
             // 
             // btn_Fork_OpSpeed
@@ -4160,6 +4315,7 @@ namespace VEXI
             this.btn_Fork_OpSpeed.Tag = "2";
             this.btn_Fork_OpSpeed.Text = "운영 속도 초기화";
             this.btn_Fork_OpSpeed.UseVisualStyleBackColor = true;
+            this.btn_Fork_OpSpeed.Visible = false;
             this.btn_Fork_OpSpeed.Click += new System.EventHandler(this.btn_Drive_OpSpeed_Click);
             // 
             // label177
@@ -4826,160 +4982,6 @@ namespace VEXI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1438, 720);
             this.panel1.TabIndex = 1217;
-            // 
-            // label157
-            // 
-            this.label157.BackColor = System.Drawing.Color.Black;
-            this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label157.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label157.ForeColor = System.Drawing.Color.White;
-            this.label157.Location = new System.Drawing.Point(220, 546);
-            this.label157.Name = "label157";
-            this.label157.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label157.Size = new System.Drawing.Size(246, 21);
-            this.label157.TabIndex = 1087;
-            this.label157.Text = "부하, 우 Half -> 중심 이동";
-            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label158
-            // 
-            this.label158.BackColor = System.Drawing.Color.Black;
-            this.label158.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label158.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label158.ForeColor = System.Drawing.Color.White;
-            this.label158.Location = new System.Drawing.Point(220, 524);
-            this.label158.Name = "label158";
-            this.label158.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label158.Size = new System.Drawing.Size(246, 21);
-            this.label158.TabIndex = 1086;
-            this.label158.Text = "부하, 중심    -> 우 Half 이동";
-            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label159
-            // 
-            this.label159.BackColor = System.Drawing.Color.Black;
-            this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label159.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label159.ForeColor = System.Drawing.Color.White;
-            this.label159.Location = new System.Drawing.Point(220, 502);
-            this.label159.Name = "label159";
-            this.label159.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label159.Size = new System.Drawing.Size(246, 21);
-            this.label159.TabIndex = 1085;
-            this.label159.Text = "부하, 좌 Half -> 중심 이동";
-            this.label159.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label160
-            // 
-            this.label160.BackColor = System.Drawing.Color.Black;
-            this.label160.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label160.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label160.ForeColor = System.Drawing.Color.White;
-            this.label160.Location = new System.Drawing.Point(220, 480);
-            this.label160.Name = "label160";
-            this.label160.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label160.Size = new System.Drawing.Size(246, 21);
-            this.label160.TabIndex = 1084;
-            this.label160.Text = "부하, 중심    -> 좌 Half 이동";
-            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label161
-            // 
-            this.label161.BackColor = System.Drawing.Color.Black;
-            this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label161.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label161.ForeColor = System.Drawing.Color.White;
-            this.label161.Location = new System.Drawing.Point(220, 458);
-            this.label161.Name = "label161";
-            this.label161.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label161.Size = new System.Drawing.Size(246, 21);
-            this.label161.TabIndex = 1083;
-            this.label161.Text = "부하, 우 Middle -> 중심 이동";
-            this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label162
-            // 
-            this.label162.BackColor = System.Drawing.Color.Black;
-            this.label162.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label162.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label162.ForeColor = System.Drawing.Color.White;
-            this.label162.Location = new System.Drawing.Point(220, 436);
-            this.label162.Name = "label162";
-            this.label162.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label162.Size = new System.Drawing.Size(246, 21);
-            this.label162.TabIndex = 1082;
-            this.label162.Text = "부하, 중심        -> 우 Middle 이동";
-            this.label162.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label163
-            // 
-            this.label163.BackColor = System.Drawing.Color.Black;
-            this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label163.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label163.ForeColor = System.Drawing.Color.White;
-            this.label163.Location = new System.Drawing.Point(220, 414);
-            this.label163.Name = "label163";
-            this.label163.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label163.Size = new System.Drawing.Size(246, 21);
-            this.label163.TabIndex = 1081;
-            this.label163.Text = "부하, 좌 Middle -> 중심 이동";
-            this.label163.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label164
-            // 
-            this.label164.BackColor = System.Drawing.Color.Black;
-            this.label164.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label164.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label164.ForeColor = System.Drawing.Color.White;
-            this.label164.Location = new System.Drawing.Point(220, 392);
-            this.label164.Name = "label164";
-            this.label164.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label164.Size = new System.Drawing.Size(246, 21);
-            this.label164.TabIndex = 1080;
-            this.label164.Text = "부하, 중심        -> 좌 Middle 이동";
-            this.label164.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label165
-            // 
-            this.label165.BackColor = System.Drawing.Color.Black;
-            this.label165.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label165.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label165.ForeColor = System.Drawing.Color.White;
-            this.label165.Location = new System.Drawing.Point(220, 370);
-            this.label165.Name = "label165";
-            this.label165.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label165.Size = new System.Drawing.Size(246, 21);
-            this.label165.TabIndex = 1079;
-            this.label165.Text = "부하, 우 Full -> 중심 이동";
-            this.label165.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label166
-            // 
-            this.label166.BackColor = System.Drawing.Color.Black;
-            this.label166.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label166.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label166.ForeColor = System.Drawing.Color.White;
-            this.label166.Location = new System.Drawing.Point(220, 348);
-            this.label166.Name = "label166";
-            this.label166.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label166.Size = new System.Drawing.Size(246, 21);
-            this.label166.TabIndex = 1078;
-            this.label166.Text = "부하, 중심    -> 우 Full 이동";
-            this.label166.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label167
-            // 
-            this.label167.BackColor = System.Drawing.Color.Black;
-            this.label167.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label167.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label167.ForeColor = System.Drawing.Color.White;
-            this.label167.Location = new System.Drawing.Point(220, 326);
-            this.label167.Name = "label167";
-            this.label167.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label167.Size = new System.Drawing.Size(246, 21);
-            this.label167.TabIndex = 1077;
-            this.label167.Text = "부하, 좌 Full -> 중심 이동";
-            this.label167.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form_SRMForkParam_Speed
             // 

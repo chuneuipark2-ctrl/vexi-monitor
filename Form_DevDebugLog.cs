@@ -214,20 +214,12 @@ namespace VEXI
                     }
                     break;
                 case 2:
-                    for (int i = 1; i < 17; i++)
+                    for (int i = 1; i < 22; i++)
                     {
-                        if (i == 15)  lv_DevLog.Columns.Add("Debug_" + i.ToString(), 300, HorizontalAlignment.Center);
-                        else if (i == 16) lv_DevLog.Columns.Add("Debug_" + i.ToString(), 160, HorizontalAlignment.Center);
-                        else lv_DevLog.Columns.Add("Debug_" + i.ToString(), 80, HorizontalAlignment.Center);
+                        lv_DevLog.Columns.Add("Debug_" + i.ToString(), 80, HorizontalAlignment.Center);
                     }
                     break;
                 case 3:
-                    for (int i = 1; i < 73; i++)
-                    {
-                        lv_DevLog.Columns.Add("Debug_" + i.ToString(), 60, HorizontalAlignment.Center);
-                    }
-                    break;
-                case 4:
                     for (int i = 1; i < 73; i++)
                     {
                         lv_DevLog.Columns.Add("Debug_" + i.ToString(), 60, HorizontalAlignment.Center);
@@ -375,102 +367,16 @@ namespace VEXI
                             //tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_15.ToString());
                             tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_15.ToString());
 
-                            Reserved_Byte.Clear();
-                            for (int k = 0; k < 8; k++)
-                            {
-                                Reserved_Byte.Append(string.Format("{0:X2} ", logUnion.DebugItem_2.Debug_16[k]));
-                            }
-
-                            tmpListViewitem.SubItems.Add(Reserved_Byte.ToString());
+                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_16.ToString());
+                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_17.ToString());
+                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_18.ToString());
+                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_19.ToString());
+                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_20.ToString());
+                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_2.Debug_21.ToString());
                         }
                     }
                     break;
                 case 3:
-                    for (int i = From; i < From + Count; i++)
-                    {
-
-                        if (Form_Main.devLogManager.LogItem(i, ref logUnion))
-                        {
-                            tmpListViewitem = lv_DevLog.Items.Add(string.Format("{0}", i + 1));
-                            DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.DebugItem_1.LogTime);
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_1.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_2.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_3.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_4.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_5.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_6.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_7.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_8.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_9.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_10.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_11.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_12.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_13.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_14.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_15.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_16.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_17.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_18.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_19.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_20.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_21.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_22.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_23.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_24.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_25.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_26.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_27.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_28.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_29.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_30.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_31.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_32.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_33.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_34.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_35.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_36.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_37.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_38.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_39.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_40.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_41.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_42.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_43.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_44.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_45.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_46.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_47.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_48.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_49.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_50.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_51.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_52.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_53.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_54.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_55.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_56.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_57.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_58.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_59.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_60.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_61.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_62.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_63.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_64.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_65.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_66.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_67.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_68.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_69.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_70.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_71.ToString());
-                            tmpListViewitem.SubItems.Add(logUnion.DebugItem_1.Debug_72.ToString());
-
-                        }
-                    }
-                    break;
-                case 4:
                     for (int i = From; i < From + Count; i++)
                     {
 
@@ -627,10 +533,6 @@ namespace VEXI
                             logUnion.DebugItem_1 = (VEXI_DEFS.TDebugLogItem_1)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TDebugLogItem_1), index, Marshal.SizeOf(typeof(VEXI_DEFS.TDebugLogItem_1)));
                             index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TDebugLogItem_1));
                             break;
-                        case 4:
-                            logUnion.DebugItem_1 = (VEXI_DEFS.TDebugLogItem_1)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TDebugLogItem_1), index, Marshal.SizeOf(typeof(VEXI_DEFS.TDebugLogItem_1)));
-                            index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TDebugLogItem_1));
-                            break;
                     }
                     count++;
 
@@ -739,25 +641,35 @@ namespace VEXI
                 case 1:
                     for (int i = 1; i < 73; i++)
                     {
-                        lv_DevLog.Columns[i+1].Text = IniControl.ReadString(Title_FILE, "RTV_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                        switch (form_Main.COMMDataManager.RX_DestDevType)
+                        {
+                            case ConstClass.TYPE_SRM: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "SRM_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                            case ConstClass.TYPE_EMS: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "EMS_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                            case ConstClass.TYPE_RTV: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "RTV_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                        }
                     }
                     break;
                 case 2:
-                    for (int i = 1; i < 17; i++)
+                    for (int i = 1; i < 22; i++)
                     {
-                        lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "RTV_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                        switch (form_Main.COMMDataManager.RX_DestDevType)
+                        {
+                            case ConstClass.TYPE_SRM: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "SRM_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                            case ConstClass.TYPE_EMS: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "EMS_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                            case ConstClass.TYPE_RTV: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "RTV_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                        }
+                        
                     }
                     break;
                 case 3:
                     for (int i = 1; i < 73; i++)
                     {
-                        lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "SRM_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
-                    }
-                    break;
-                case 4:
-                    for (int i = 1; i < 73; i++)
-                    {
-                        lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "EMS_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                        switch (form_Main.COMMDataManager.RX_DestDevType)
+                        {
+                            case ConstClass.TYPE_SRM: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "SRM_DEBUG_TITLE_3", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                            case ConstClass.TYPE_EMS: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "EMS_DEBUG_TITLE_3", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                            case ConstClass.TYPE_RTV: lv_DevLog.Columns[i + 1].Text = IniControl.ReadString(Title_FILE, "RTV_DEBUG_TITLE_3", "Debug_" + i.ToString(), "Debug_" + i.ToString()); break;
+                        }
                     }
                     break;
             }
@@ -767,28 +679,26 @@ namespace VEXI
                 //StreamWriter wr = new StreamWriter(Title_FILE, false, Encoding.Unicode);
                 StreamWriter wr = new StreamWriter(Title_FILE, false, Encoding.UTF8);
 
-                wr.Close();
-
-                for (int i = 1; i < 73; i++)
-                {
-                    IniControl.WriteIni(Title_FILE, "RTV_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
-                }
-
-                for (int i = 1; i < 17; i++)
-                {
-                    IniControl.WriteIni(Title_FILE, "RTV_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString());
-                }
-
+                
 
                 for (int i = 1; i < 73; i++)
                 {
                     IniControl.WriteIni(Title_FILE, "SRM_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "RTV_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "EMS_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+
+                    IniControl.WriteIni(Title_FILE, "SRM_DEBUG_TITLE_3", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "RTV_DEBUG_TITLE_3", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "EMS_DEBUG_TITLE_3", "Debug_" + i.ToString(), "Debug_" + i.ToString());
                 }
 
-                for (int i = 1; i < 73; i++)
+                for (int i = 1; i < 22; i++)
                 {
-                    IniControl.WriteIni(Title_FILE, "EMS_DEBUG_TITLE", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "SRM_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "RTV_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString());
+                    IniControl.WriteIni(Title_FILE, "EMS_DEBUG_TITLE_2", "Debug_" + i.ToString(), "Debug_" + i.ToString());
                 }
+                wr.Close();
 
             }
         }

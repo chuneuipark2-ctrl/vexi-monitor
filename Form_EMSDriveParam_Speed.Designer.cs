@@ -131,9 +131,6 @@ namespace VEXI
             this.label59 = new System.Windows.Forms.Label();
             this.ed_Drive_ForceMode_DJerk = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.ed_Drive_RefMode_DJerk = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.ed_Drive_Emergency_Decel = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
@@ -150,19 +147,6 @@ namespace VEXI
             this.ed_Drive_Creep_Speed = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.ed_Drive_RefMode_AJerk = new System.Windows.Forms.TextBox();
-            this.ed_Drive_RefMode_Decel = new System.Windows.Forms.TextBox();
-            this.ed_Drive_RefMode_Accel = new System.Windows.Forms.TextBox();
-            this.ed_Drive_RefMode_Speed = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -177,6 +161,15 @@ namespace VEXI
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cb_Invetor_Param_Use = new System.Windows.Forms.ComboBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.ed_Invertor_PositionGain = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.ed_Invetor_Positiontolerance = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
             this.ed_Invertor_Reference = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -184,34 +177,12 @@ namespace VEXI
             this.ed_Drive_ManualOp_TokeAlarm = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.label143 = new System.Windows.Forms.Label();
-            this.ed_Drive_CALC_RPM = new System.Windows.Forms.TextBox();
-            this.label144 = new System.Windows.Forms.Label();
-            this.label145 = new System.Windows.Forms.Label();
-            this.ed_Drive_CALC_MPM = new System.Windows.Forms.TextBox();
-            this.label146 = new System.Windows.Forms.Label();
-            this.label147 = new System.Windows.Forms.Label();
-            this.ed_Drive_MAX_RPM = new System.Windows.Forms.TextBox();
-            this.label148 = new System.Windows.Forms.Label();
             this.cb_Drive_MotorDirection = new System.Windows.Forms.ComboBox();
             this.label149 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.ed_Drive_breakOpenContinueTime = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_LoadTotalFile = new System.Windows.Forms.Button();
             this.btn_SaveTotalFile = new System.Windows.Forms.Button();
             this.label177 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.ed_Invetor_Positiontolerance = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label97 = new System.Windows.Forms.Label();
-            this.ed_Invertor_PositionGain = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.cb_Invetor_Param_Use = new System.Windows.Forms.ComboBox();
-            this.label98 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label99 = new System.Windows.Forms.Label();
             this.ed_CurrentLowSpeedDistance = new System.Windows.Forms.TextBox();
@@ -237,12 +208,34 @@ namespace VEXI
             this.label134 = new System.Windows.Forms.Label();
             this.ed_InPosition_Offset = new System.Windows.Forms.TextBox();
             this.label135 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ed_Drive_RefCreep_Speed = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.ed_RetryCripRange = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ed_Drive_RetryRef_DJerk = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.ed_Drive_RetryRef_AJerk = new System.Windows.Forms.TextBox();
+            this.ed_Drive_RetryRef_Decel = new System.Windows.Forms.TextBox();
+            this.ed_Drive_RetryRef_Accel = new System.Windows.Forms.TextBox();
+            this.ed_Drive_RetryRef_Speed = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -279,6 +272,7 @@ namespace VEXI
             this.btn_Drive_TestSpeed.Tag = "1";
             this.btn_Drive_TestSpeed.Text = "시운전 속도 초기화";
             this.btn_Drive_TestSpeed.UseVisualStyleBackColor = true;
+            this.btn_Drive_TestSpeed.Visible = false;
             this.btn_Drive_TestSpeed.Click += new System.EventHandler(this.btn_Drive_TestSpeed_Click);
             // 
             // btn_Drive_OpSpeed
@@ -291,6 +285,7 @@ namespace VEXI
             this.btn_Drive_OpSpeed.Tag = "2";
             this.btn_Drive_OpSpeed.Text = "운영 속도 초기화";
             this.btn_Drive_OpSpeed.UseVisualStyleBackColor = true;
+            this.btn_Drive_OpSpeed.Visible = false;
             this.btn_Drive_OpSpeed.Click += new System.EventHandler(this.btn_Drive_OpSpeed_Click);
             // 
             // groupBox1
@@ -1495,6 +1490,26 @@ namespace VEXI
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.label26);
+            this.groupBox14.Controls.Add(this.ed_Drive_RetryRef_DJerk);
+            this.groupBox14.Controls.Add(this.label27);
+            this.groupBox14.Controls.Add(this.label28);
+            this.groupBox14.Controls.Add(this.label29);
+            this.groupBox14.Controls.Add(this.label51);
+            this.groupBox14.Controls.Add(this.label56);
+            this.groupBox14.Controls.Add(this.ed_Drive_RetryRef_AJerk);
+            this.groupBox14.Controls.Add(this.ed_Drive_RetryRef_Decel);
+            this.groupBox14.Controls.Add(this.ed_Drive_RetryRef_Accel);
+            this.groupBox14.Controls.Add(this.ed_Drive_RetryRef_Speed);
+            this.groupBox14.Controls.Add(this.label91);
+            this.groupBox14.Controls.Add(this.label94);
+            this.groupBox14.Controls.Add(this.label120);
+            this.groupBox14.Controls.Add(this.label121);
+            this.groupBox14.Controls.Add(this.label122);
+            this.groupBox14.Controls.Add(this.label20);
+            this.groupBox14.Controls.Add(this.ed_Drive_RefCreep_Speed);
+            this.groupBox14.Controls.Add(this.label21);
+            this.groupBox14.Controls.Add(this.label22);
             this.groupBox14.Controls.Add(this.label30);
             this.groupBox14.Controls.Add(this.ed_Drive_Collision_DJerk);
             this.groupBox14.Controls.Add(this.label31);
@@ -1508,9 +1523,6 @@ namespace VEXI
             this.groupBox14.Controls.Add(this.label59);
             this.groupBox14.Controls.Add(this.ed_Drive_ForceMode_DJerk);
             this.groupBox14.Controls.Add(this.label60);
-            this.groupBox14.Controls.Add(this.label51);
-            this.groupBox14.Controls.Add(this.ed_Drive_RefMode_DJerk);
-            this.groupBox14.Controls.Add(this.label56);
             this.groupBox14.Controls.Add(this.label67);
             this.groupBox14.Controls.Add(this.ed_Drive_Emergency_Decel);
             this.groupBox14.Controls.Add(this.label92);
@@ -1527,19 +1539,6 @@ namespace VEXI
             this.groupBox14.Controls.Add(this.ed_Drive_Creep_Speed);
             this.groupBox14.Controls.Add(this.label39);
             this.groupBox14.Controls.Add(this.label40);
-            this.groupBox14.Controls.Add(this.label20);
-            this.groupBox14.Controls.Add(this.label21);
-            this.groupBox14.Controls.Add(this.label22);
-            this.groupBox14.Controls.Add(this.label23);
-            this.groupBox14.Controls.Add(this.ed_Drive_RefMode_AJerk);
-            this.groupBox14.Controls.Add(this.ed_Drive_RefMode_Decel);
-            this.groupBox14.Controls.Add(this.ed_Drive_RefMode_Accel);
-            this.groupBox14.Controls.Add(this.ed_Drive_RefMode_Speed);
-            this.groupBox14.Controls.Add(this.label24);
-            this.groupBox14.Controls.Add(this.label26);
-            this.groupBox14.Controls.Add(this.label27);
-            this.groupBox14.Controls.Add(this.label28);
-            this.groupBox14.Controls.Add(this.label29);
             this.groupBox14.Controls.Add(this.label7);
             this.groupBox14.Controls.Add(this.label9);
             this.groupBox14.Controls.Add(this.label10);
@@ -1555,7 +1554,7 @@ namespace VEXI
             this.groupBox14.Controls.Add(this.label19);
             this.groupBox14.Location = new System.Drawing.Point(728, 40);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(302, 426);
+            this.groupBox14.Size = new System.Drawing.Size(302, 451);
             this.groupBox14.TabIndex = 1182;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "주행 속도 설정";
@@ -1566,7 +1565,7 @@ namespace VEXI
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label30.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(156, 319);
+            this.label30.Location = new System.Drawing.Point(156, 318);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(64, 21);
             this.label30.TabIndex = 1300;
@@ -1580,7 +1579,7 @@ namespace VEXI
             this.ed_Drive_Collision_DJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_Collision_DJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_Collision_DJerk.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_Collision_DJerk.Location = new System.Drawing.Point(224, 319);
+            this.ed_Drive_Collision_DJerk.Location = new System.Drawing.Point(224, 318);
             this.ed_Drive_Collision_DJerk.Name = "ed_Drive_Collision_DJerk";
             this.ed_Drive_Collision_DJerk.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_Collision_DJerk.TabIndex = 1295;
@@ -1594,7 +1593,7 @@ namespace VEXI
             this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label31.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(92, 319);
+            this.label31.Location = new System.Drawing.Point(92, 318);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(64, 21);
             this.label31.TabIndex = 1299;
@@ -1607,7 +1606,7 @@ namespace VEXI
             this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label35.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(156, 297);
+            this.label35.Location = new System.Drawing.Point(156, 296);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(64, 21);
             this.label35.TabIndex = 1298;
@@ -1621,7 +1620,7 @@ namespace VEXI
             this.ed_Drive_Collision_Decel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_Collision_Decel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_Collision_Decel.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_Collision_Decel.Location = new System.Drawing.Point(224, 297);
+            this.ed_Drive_Collision_Decel.Location = new System.Drawing.Point(224, 296);
             this.ed_Drive_Collision_Decel.Name = "ed_Drive_Collision_Decel";
             this.ed_Drive_Collision_Decel.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_Collision_Decel.TabIndex = 1294;
@@ -1635,7 +1634,7 @@ namespace VEXI
             this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label36.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(92, 297);
+            this.label36.Location = new System.Drawing.Point(92, 296);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(64, 21);
             this.label36.TabIndex = 1297;
@@ -1648,7 +1647,7 @@ namespace VEXI
             this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label48.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(13, 297);
+            this.label48.Location = new System.Drawing.Point(13, 296);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(78, 43);
             this.label48.TabIndex = 1296;
@@ -1661,7 +1660,7 @@ namespace VEXI
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label61.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label61.ForeColor = System.Drawing.Color.White;
-            this.label61.Location = new System.Drawing.Point(156, 271);
+            this.label61.Location = new System.Drawing.Point(156, 270);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(64, 21);
             this.label61.TabIndex = 1293;
@@ -1675,7 +1674,7 @@ namespace VEXI
             this.ed_Drive_Emergency_DJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_Emergency_DJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_Emergency_DJerk.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_Emergency_DJerk.Location = new System.Drawing.Point(224, 271);
+            this.ed_Drive_Emergency_DJerk.Location = new System.Drawing.Point(224, 270);
             this.ed_Drive_Emergency_DJerk.Name = "ed_Drive_Emergency_DJerk";
             this.ed_Drive_Emergency_DJerk.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_Emergency_DJerk.TabIndex = 11;
@@ -1689,7 +1688,7 @@ namespace VEXI
             this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label95.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label95.ForeColor = System.Drawing.Color.White;
-            this.label95.Location = new System.Drawing.Point(92, 271);
+            this.label95.Location = new System.Drawing.Point(92, 270);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(64, 21);
             this.label95.TabIndex = 1292;
@@ -1702,7 +1701,7 @@ namespace VEXI
             this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label59.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label59.ForeColor = System.Drawing.Color.White;
-            this.label59.Location = new System.Drawing.Point(156, 223);
+            this.label59.Location = new System.Drawing.Point(156, 109);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(64, 21);
             this.label59.TabIndex = 1290;
@@ -1716,7 +1715,7 @@ namespace VEXI
             this.ed_Drive_ForceMode_DJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_ForceMode_DJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_ForceMode_DJerk.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_ForceMode_DJerk.Location = new System.Drawing.Point(224, 223);
+            this.ed_Drive_ForceMode_DJerk.Location = new System.Drawing.Point(224, 109);
             this.ed_Drive_ForceMode_DJerk.Name = "ed_Drive_ForceMode_DJerk";
             this.ed_Drive_ForceMode_DJerk.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_ForceMode_DJerk.TabIndex = 9;
@@ -1730,53 +1729,12 @@ namespace VEXI
             this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label60.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label60.ForeColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(92, 223);
+            this.label60.Location = new System.Drawing.Point(92, 109);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(64, 21);
             this.label60.TabIndex = 1289;
             this.label60.Text = "감속 저크";
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label51
-            // 
-            this.label51.BackColor = System.Drawing.Color.Black;
-            this.label51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label51.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label51.ForeColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(156, 109);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(64, 21);
-            this.label51.TabIndex = 1287;
-            this.label51.Text = "ms";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Drive_RefMode_DJerk
-            // 
-            this.ed_Drive_RefMode_DJerk.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_RefMode_DJerk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_RefMode_DJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_RefMode_DJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_RefMode_DJerk.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_RefMode_DJerk.Location = new System.Drawing.Point(224, 109);
-            this.ed_Drive_RefMode_DJerk.Name = "ed_Drive_RefMode_DJerk";
-            this.ed_Drive_RefMode_DJerk.Size = new System.Drawing.Size(66, 21);
-            this.ed_Drive_RefMode_DJerk.TabIndex = 4;
-            this.ed_Drive_RefMode_DJerk.Tag = "00";
-            this.ed_Drive_RefMode_DJerk.Text = "0";
-            this.ed_Drive_RefMode_DJerk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label56
-            // 
-            this.label56.BackColor = System.Drawing.Color.Black;
-            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label56.ForeColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(92, 109);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(64, 21);
-            this.label56.TabIndex = 1286;
-            this.label56.Text = "감속 저크";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label67
             // 
@@ -1784,7 +1742,7 @@ namespace VEXI
             this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label67.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label67.ForeColor = System.Drawing.Color.White;
-            this.label67.Location = new System.Drawing.Point(156, 249);
+            this.label67.Location = new System.Drawing.Point(156, 248);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(64, 21);
             this.label67.TabIndex = 1280;
@@ -1798,7 +1756,7 @@ namespace VEXI
             this.ed_Drive_Emergency_Decel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_Emergency_Decel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_Emergency_Decel.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_Emergency_Decel.Location = new System.Drawing.Point(224, 249);
+            this.ed_Drive_Emergency_Decel.Location = new System.Drawing.Point(224, 248);
             this.ed_Drive_Emergency_Decel.Name = "ed_Drive_Emergency_Decel";
             this.ed_Drive_Emergency_Decel.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_Emergency_Decel.TabIndex = 10;
@@ -1813,7 +1771,7 @@ namespace VEXI
             this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label92.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label92.ForeColor = System.Drawing.Color.White;
-            this.label92.Location = new System.Drawing.Point(92, 249);
+            this.label92.Location = new System.Drawing.Point(92, 248);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(64, 21);
             this.label92.TabIndex = 1278;
@@ -1826,7 +1784,7 @@ namespace VEXI
             this.label93.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label93.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label93.ForeColor = System.Drawing.Color.White;
-            this.label93.Location = new System.Drawing.Point(13, 249);
+            this.label93.Location = new System.Drawing.Point(13, 248);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(78, 43);
             this.label93.TabIndex = 1277;
@@ -1839,7 +1797,7 @@ namespace VEXI
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label47.ForeColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(156, 397);
+            this.label47.Location = new System.Drawing.Point(156, 420);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(64, 21);
             this.label47.TabIndex = 1276;
@@ -1853,7 +1811,7 @@ namespace VEXI
             this.ed_Drive_AutoDecel2_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_AutoDecel2_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_AutoDecel2_Speed.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_AutoDecel2_Speed.Location = new System.Drawing.Point(224, 397);
+            this.ed_Drive_AutoDecel2_Speed.Location = new System.Drawing.Point(224, 420);
             this.ed_Drive_AutoDecel2_Speed.Name = "ed_Drive_AutoDecel2_Speed";
             this.ed_Drive_AutoDecel2_Speed.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_AutoDecel2_Speed.TabIndex = 14;
@@ -1868,7 +1826,7 @@ namespace VEXI
             this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label52.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label52.ForeColor = System.Drawing.Color.White;
-            this.label52.Location = new System.Drawing.Point(92, 397);
+            this.label52.Location = new System.Drawing.Point(92, 420);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(64, 21);
             this.label52.TabIndex = 1275;
@@ -1881,7 +1839,7 @@ namespace VEXI
             this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label53.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label53.ForeColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(13, 397);
+            this.label53.Location = new System.Drawing.Point(13, 420);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(78, 21);
             this.label53.TabIndex = 1274;
@@ -1894,7 +1852,7 @@ namespace VEXI
             this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label58.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label58.ForeColor = System.Drawing.Color.White;
-            this.label58.Location = new System.Drawing.Point(156, 371);
+            this.label58.Location = new System.Drawing.Point(156, 394);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(64, 21);
             this.label58.TabIndex = 1273;
@@ -1908,7 +1866,7 @@ namespace VEXI
             this.ed_Drive_AutoDecel1_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_AutoDecel1_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_AutoDecel1_Speed.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_AutoDecel1_Speed.Location = new System.Drawing.Point(224, 371);
+            this.ed_Drive_AutoDecel1_Speed.Location = new System.Drawing.Point(224, 394);
             this.ed_Drive_AutoDecel1_Speed.Name = "ed_Drive_AutoDecel1_Speed";
             this.ed_Drive_AutoDecel1_Speed.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_AutoDecel1_Speed.TabIndex = 13;
@@ -1923,7 +1881,7 @@ namespace VEXI
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label62.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Location = new System.Drawing.Point(92, 371);
+            this.label62.Location = new System.Drawing.Point(92, 394);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(64, 21);
             this.label62.TabIndex = 1272;
@@ -1936,7 +1894,7 @@ namespace VEXI
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label63.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label63.ForeColor = System.Drawing.Color.White;
-            this.label63.Location = new System.Drawing.Point(13, 371);
+            this.label63.Location = new System.Drawing.Point(13, 394);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(78, 22);
             this.label63.TabIndex = 1271;
@@ -1949,7 +1907,7 @@ namespace VEXI
             this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label34.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(156, 345);
+            this.label34.Location = new System.Drawing.Point(156, 344);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(64, 21);
             this.label34.TabIndex = 1268;
@@ -1963,7 +1921,7 @@ namespace VEXI
             this.ed_Drive_Creep_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_Creep_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_Creep_Speed.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_Creep_Speed.Location = new System.Drawing.Point(224, 345);
+            this.ed_Drive_Creep_Speed.Location = new System.Drawing.Point(224, 344);
             this.ed_Drive_Creep_Speed.Name = "ed_Drive_Creep_Speed";
             this.ed_Drive_Creep_Speed.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_Creep_Speed.TabIndex = 12;
@@ -1978,7 +1936,7 @@ namespace VEXI
             this.label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label39.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(92, 345);
+            this.label39.Location = new System.Drawing.Point(92, 344);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(64, 21);
             this.label39.TabIndex = 1265;
@@ -1991,193 +1949,12 @@ namespace VEXI
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label40.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label40.ForeColor = System.Drawing.Color.White;
-            this.label40.Location = new System.Drawing.Point(13, 345);
+            this.label40.Location = new System.Drawing.Point(13, 344);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(78, 21);
             this.label40.TabIndex = 1264;
             this.label40.Text = "크립";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.Black;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(156, 87);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 21);
-            this.label20.TabIndex = 1263;
-            this.label20.Text = "ms";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.Black;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(156, 65);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 21);
-            this.label21.TabIndex = 1262;
-            this.label21.Text = "mm/s²";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.Color.Black;
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(156, 43);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(64, 21);
-            this.label22.TabIndex = 1261;
-            this.label22.Text = "mm/s²";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.Black;
-            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(156, 21);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(64, 21);
-            this.label23.TabIndex = 1260;
-            this.label23.Text = "m/min";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Drive_RefMode_AJerk
-            // 
-            this.ed_Drive_RefMode_AJerk.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_RefMode_AJerk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_RefMode_AJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_RefMode_AJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_RefMode_AJerk.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_RefMode_AJerk.Location = new System.Drawing.Point(224, 87);
-            this.ed_Drive_RefMode_AJerk.Name = "ed_Drive_RefMode_AJerk";
-            this.ed_Drive_RefMode_AJerk.Size = new System.Drawing.Size(66, 21);
-            this.ed_Drive_RefMode_AJerk.TabIndex = 3;
-            this.ed_Drive_RefMode_AJerk.Tag = "00";
-            this.ed_Drive_RefMode_AJerk.Text = "0";
-            this.ed_Drive_RefMode_AJerk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_RefMode_AJerk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // ed_Drive_RefMode_Decel
-            // 
-            this.ed_Drive_RefMode_Decel.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_RefMode_Decel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_RefMode_Decel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_RefMode_Decel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_RefMode_Decel.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_RefMode_Decel.Location = new System.Drawing.Point(224, 65);
-            this.ed_Drive_RefMode_Decel.Name = "ed_Drive_RefMode_Decel";
-            this.ed_Drive_RefMode_Decel.Size = new System.Drawing.Size(66, 21);
-            this.ed_Drive_RefMode_Decel.TabIndex = 2;
-            this.ed_Drive_RefMode_Decel.Tag = "00";
-            this.ed_Drive_RefMode_Decel.Text = "0";
-            this.ed_Drive_RefMode_Decel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_RefMode_Decel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // ed_Drive_RefMode_Accel
-            // 
-            this.ed_Drive_RefMode_Accel.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_RefMode_Accel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_RefMode_Accel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_RefMode_Accel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_RefMode_Accel.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_RefMode_Accel.Location = new System.Drawing.Point(224, 43);
-            this.ed_Drive_RefMode_Accel.Name = "ed_Drive_RefMode_Accel";
-            this.ed_Drive_RefMode_Accel.Size = new System.Drawing.Size(66, 21);
-            this.ed_Drive_RefMode_Accel.TabIndex = 1;
-            this.ed_Drive_RefMode_Accel.Tag = "00";
-            this.ed_Drive_RefMode_Accel.Text = "0";
-            this.ed_Drive_RefMode_Accel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_RefMode_Accel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // ed_Drive_RefMode_Speed
-            // 
-            this.ed_Drive_RefMode_Speed.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_RefMode_Speed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_RefMode_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_RefMode_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_RefMode_Speed.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_RefMode_Speed.Location = new System.Drawing.Point(224, 21);
-            this.ed_Drive_RefMode_Speed.Name = "ed_Drive_RefMode_Speed";
-            this.ed_Drive_RefMode_Speed.Size = new System.Drawing.Size(66, 21);
-            this.ed_Drive_RefMode_Speed.TabIndex = 0;
-            this.ed_Drive_RefMode_Speed.Tag = "01";
-            this.ed_Drive_RefMode_Speed.Text = "0";
-            this.ed_Drive_RefMode_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_RefMode_Speed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label24
-            // 
-            this.label24.BackColor = System.Drawing.Color.Black;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(92, 87);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(64, 21);
-            this.label24.TabIndex = 1259;
-            this.label24.Text = "가속 저크";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label26
-            // 
-            this.label26.BackColor = System.Drawing.Color.Black;
-            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(92, 65);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(64, 21);
-            this.label26.TabIndex = 1258;
-            this.label26.Text = "감속도";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label27
-            // 
-            this.label27.BackColor = System.Drawing.Color.Black;
-            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(92, 43);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(64, 21);
-            this.label27.TabIndex = 1257;
-            this.label27.Text = "가속도";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.Black;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(92, 21);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(64, 21);
-            this.label28.TabIndex = 1256;
-            this.label28.Text = "속도";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            this.label29.BackColor = System.Drawing.Color.Black;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(13, 21);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(78, 109);
-            this.label29.TabIndex = 1255;
-            this.label29.Text = "원점확인";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -2185,7 +1962,7 @@ namespace VEXI
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(156, 201);
+            this.label7.Location = new System.Drawing.Point(156, 87);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 21);
             this.label7.TabIndex = 1254;
@@ -2198,7 +1975,7 @@ namespace VEXI
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(156, 179);
+            this.label9.Location = new System.Drawing.Point(156, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 21);
             this.label9.TabIndex = 1253;
@@ -2211,7 +1988,7 @@ namespace VEXI
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(156, 157);
+            this.label10.Location = new System.Drawing.Point(156, 43);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 21);
             this.label10.TabIndex = 1252;
@@ -2224,7 +2001,7 @@ namespace VEXI
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(156, 135);
+            this.label11.Location = new System.Drawing.Point(156, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 21);
             this.label11.TabIndex = 1251;
@@ -2238,7 +2015,7 @@ namespace VEXI
             this.ed_Drive_ForceMode_AJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_ForceMode_AJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_ForceMode_AJerk.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_ForceMode_AJerk.Location = new System.Drawing.Point(224, 201);
+            this.ed_Drive_ForceMode_AJerk.Location = new System.Drawing.Point(224, 87);
             this.ed_Drive_ForceMode_AJerk.Name = "ed_Drive_ForceMode_AJerk";
             this.ed_Drive_ForceMode_AJerk.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_ForceMode_AJerk.TabIndex = 8;
@@ -2254,7 +2031,7 @@ namespace VEXI
             this.ed_Drive_ForceMode_Decel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_ForceMode_Decel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_ForceMode_Decel.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_ForceMode_Decel.Location = new System.Drawing.Point(224, 179);
+            this.ed_Drive_ForceMode_Decel.Location = new System.Drawing.Point(224, 65);
             this.ed_Drive_ForceMode_Decel.Name = "ed_Drive_ForceMode_Decel";
             this.ed_Drive_ForceMode_Decel.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_ForceMode_Decel.TabIndex = 7;
@@ -2270,7 +2047,7 @@ namespace VEXI
             this.ed_Drive_ForceMode_Accel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_ForceMode_Accel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_ForceMode_Accel.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_ForceMode_Accel.Location = new System.Drawing.Point(224, 157);
+            this.ed_Drive_ForceMode_Accel.Location = new System.Drawing.Point(224, 43);
             this.ed_Drive_ForceMode_Accel.Name = "ed_Drive_ForceMode_Accel";
             this.ed_Drive_ForceMode_Accel.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_ForceMode_Accel.TabIndex = 6;
@@ -2286,7 +2063,7 @@ namespace VEXI
             this.ed_Drive_ForceMode_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Drive_ForceMode_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Drive_ForceMode_Speed.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_ForceMode_Speed.Location = new System.Drawing.Point(224, 135);
+            this.ed_Drive_ForceMode_Speed.Location = new System.Drawing.Point(224, 21);
             this.ed_Drive_ForceMode_Speed.Name = "ed_Drive_ForceMode_Speed";
             this.ed_Drive_ForceMode_Speed.Size = new System.Drawing.Size(66, 21);
             this.ed_Drive_ForceMode_Speed.TabIndex = 5;
@@ -2301,7 +2078,7 @@ namespace VEXI
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(92, 201);
+            this.label13.Location = new System.Drawing.Point(92, 87);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 21);
             this.label13.TabIndex = 1250;
@@ -2314,7 +2091,7 @@ namespace VEXI
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(92, 179);
+            this.label15.Location = new System.Drawing.Point(92, 65);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(64, 21);
             this.label15.TabIndex = 1249;
@@ -2327,7 +2104,7 @@ namespace VEXI
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(92, 157);
+            this.label16.Location = new System.Drawing.Point(92, 43);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(64, 21);
             this.label16.TabIndex = 1248;
@@ -2340,7 +2117,7 @@ namespace VEXI
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(92, 135);
+            this.label18.Location = new System.Drawing.Point(92, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(64, 21);
             this.label18.TabIndex = 1247;
@@ -2353,7 +2130,7 @@ namespace VEXI
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(13, 135);
+            this.label19.Location = new System.Drawing.Point(13, 21);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(78, 109);
             this.label19.TabIndex = 1246;
@@ -2373,12 +2150,137 @@ namespace VEXI
             this.groupBox5.Controls.Add(this.label65);
             this.groupBox5.Controls.Add(this.ed_Invertor_Reference);
             this.groupBox5.Controls.Add(this.label46);
-            this.groupBox5.Location = new System.Drawing.Point(12, 410);
+            this.groupBox5.Location = new System.Drawing.Point(12, 441);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(364, 113);
             this.groupBox5.TabIndex = 1190;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "인버터 파라미터 (0.001 1/s 단위까지 제어 가능)";
+            // 
+            // cb_Invetor_Param_Use
+            // 
+            this.cb_Invetor_Param_Use.BackColor = System.Drawing.Color.Blue;
+            this.cb_Invetor_Param_Use.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Invetor_Param_Use.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Invetor_Param_Use.ForeColor = System.Drawing.Color.White;
+            this.cb_Invetor_Param_Use.FormattingEnabled = true;
+            this.cb_Invetor_Param_Use.Items.AddRange(new object[] {
+            "무효",
+            "유효"});
+            this.cb_Invetor_Param_Use.Location = new System.Drawing.Point(121, 21);
+            this.cb_Invetor_Param_Use.Name = "cb_Invetor_Param_Use";
+            this.cb_Invetor_Param_Use.Size = new System.Drawing.Size(140, 20);
+            this.cb_Invetor_Param_Use.TabIndex = 1007;
+            // 
+            // label98
+            // 
+            this.label98.BackColor = System.Drawing.Color.Black;
+            this.label98.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label98.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label98.ForeColor = System.Drawing.Color.White;
+            this.label98.Location = new System.Drawing.Point(13, 21);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(107, 21);
+            this.label98.TabIndex = 1008;
+            this.label98.Text = "사용 설정";
+            this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label97
+            // 
+            this.label97.BackColor = System.Drawing.Color.Black;
+            this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label97.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label97.ForeColor = System.Drawing.Color.White;
+            this.label97.Location = new System.Drawing.Point(121, 87);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(53, 21);
+            this.label97.TabIndex = 1006;
+            this.label97.Text = "1/s";
+            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Invertor_PositionGain
+            // 
+            this.ed_Invertor_PositionGain.BackColor = System.Drawing.Color.Blue;
+            this.ed_Invertor_PositionGain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Invertor_PositionGain.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Invertor_PositionGain.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Invertor_PositionGain.ForeColor = System.Drawing.Color.White;
+            this.ed_Invertor_PositionGain.Location = new System.Drawing.Point(176, 87);
+            this.ed_Invertor_PositionGain.Name = "ed_Invertor_PositionGain";
+            this.ed_Invertor_PositionGain.Size = new System.Drawing.Size(85, 21);
+            this.ed_Invertor_PositionGain.TabIndex = 1004;
+            this.ed_Invertor_PositionGain.Tag = "01";
+            this.ed_Invertor_PositionGain.Text = "0.000";
+            this.ed_Invertor_PositionGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Invertor_PositionGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label50
+            // 
+            this.label50.BackColor = System.Drawing.Color.Black;
+            this.label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label50.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(13, 87);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(107, 21);
+            this.label50.TabIndex = 1005;
+            this.label50.Text = "위치 게인";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label90
+            // 
+            this.label90.BackColor = System.Drawing.Color.Black;
+            this.label90.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label90.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label90.ForeColor = System.Drawing.Color.White;
+            this.label90.Location = new System.Drawing.Point(121, 65);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(53, 21);
+            this.label90.TabIndex = 1002;
+            this.label90.Text = "mm";
+            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Invetor_Positiontolerance
+            // 
+            this.ed_Invetor_Positiontolerance.BackColor = System.Drawing.Color.Blue;
+            this.ed_Invetor_Positiontolerance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Invetor_Positiontolerance.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Invetor_Positiontolerance.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Invetor_Positiontolerance.ForeColor = System.Drawing.Color.White;
+            this.ed_Invetor_Positiontolerance.Location = new System.Drawing.Point(176, 65);
+            this.ed_Invetor_Positiontolerance.Name = "ed_Invetor_Positiontolerance";
+            this.ed_Invetor_Positiontolerance.Size = new System.Drawing.Size(85, 21);
+            this.ed_Invetor_Positiontolerance.TabIndex = 1000;
+            this.ed_Invetor_Positiontolerance.Tag = "00";
+            this.ed_Invetor_Positiontolerance.Text = "0";
+            this.ed_Invetor_Positiontolerance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Invetor_Positiontolerance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label96
+            // 
+            this.label96.BackColor = System.Drawing.Color.Black;
+            this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label96.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label96.ForeColor = System.Drawing.Color.White;
+            this.label96.Location = new System.Drawing.Point(13, 65);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(107, 21);
+            this.label96.TabIndex = 1001;
+            this.label96.Text = "정위치 오차";
+            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label65
+            // 
+            this.label65.BackColor = System.Drawing.Color.Black;
+            this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label65.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label65.ForeColor = System.Drawing.Color.White;
+            this.label65.Location = new System.Drawing.Point(121, 43);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(53, 21);
+            this.label65.TabIndex = 999;
+            this.label65.Text = "mm";
+            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ed_Invertor_Reference
             // 
@@ -2414,9 +2316,9 @@ namespace VEXI
             this.groupBox3.Controls.Add(this.label54);
             this.groupBox3.Controls.Add(this.ed_Drive_ManualOp_TokeAlarm);
             this.groupBox3.Controls.Add(this.label55);
-            this.groupBox3.Location = new System.Drawing.Point(12, 576);
+            this.groupBox3.Location = new System.Drawing.Point(728, 575);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(364, 48);
+            this.groupBox3.Size = new System.Drawing.Size(302, 51);
             this.groupBox3.TabIndex = 1187;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "토크력 (0.1% 단위까지 제어 가능)";
@@ -2465,149 +2367,14 @@ namespace VEXI
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.label143);
-            this.groupBox12.Controls.Add(this.ed_Drive_CALC_RPM);
-            this.groupBox12.Controls.Add(this.label144);
-            this.groupBox12.Controls.Add(this.label145);
-            this.groupBox12.Controls.Add(this.ed_Drive_CALC_MPM);
-            this.groupBox12.Controls.Add(this.label146);
-            this.groupBox12.Controls.Add(this.label147);
-            this.groupBox12.Controls.Add(this.ed_Drive_MAX_RPM);
-            this.groupBox12.Controls.Add(this.label148);
             this.groupBox12.Controls.Add(this.cb_Drive_MotorDirection);
             this.groupBox12.Controls.Add(this.label149);
-            this.groupBox12.Location = new System.Drawing.Point(728, 470);
+            this.groupBox12.Location = new System.Drawing.Point(728, 515);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(302, 124);
+            this.groupBox12.Size = new System.Drawing.Size(302, 53);
             this.groupBox12.TabIndex = 1191;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "구동 설정";
-            // 
-            // label143
-            // 
-            this.label143.BackColor = System.Drawing.Color.Black;
-            this.label143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label143.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label143.ForeColor = System.Drawing.Color.White;
-            this.label143.Location = new System.Drawing.Point(121, 86);
-            this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(53, 21);
-            this.label143.TabIndex = 998;
-            this.label143.Text = "rpm";
-            this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Drive_CALC_RPM
-            // 
-            this.ed_Drive_CALC_RPM.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_CALC_RPM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_CALC_RPM.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_CALC_RPM.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_CALC_RPM.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_CALC_RPM.Location = new System.Drawing.Point(176, 86);
-            this.ed_Drive_CALC_RPM.Name = "ed_Drive_CALC_RPM";
-            this.ed_Drive_CALC_RPM.Size = new System.Drawing.Size(85, 21);
-            this.ed_Drive_CALC_RPM.TabIndex = 3;
-            this.ed_Drive_CALC_RPM.Tag = "00";
-            this.ed_Drive_CALC_RPM.Text = "0";
-            this.ed_Drive_CALC_RPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_CALC_RPM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label144
-            // 
-            this.label144.BackColor = System.Drawing.Color.Black;
-            this.label144.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label144.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label144.ForeColor = System.Drawing.Color.White;
-            this.label144.Location = new System.Drawing.Point(13, 86);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(107, 21);
-            this.label144.TabIndex = 997;
-            this.label144.Text = "연산 RPM";
-            this.label144.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label145
-            // 
-            this.label145.BackColor = System.Drawing.Color.Black;
-            this.label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label145.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label145.ForeColor = System.Drawing.Color.White;
-            this.label145.Location = new System.Drawing.Point(121, 64);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(53, 21);
-            this.label145.TabIndex = 995;
-            this.label145.Text = "m/min";
-            this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Drive_CALC_MPM
-            // 
-            this.ed_Drive_CALC_MPM.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_CALC_MPM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_CALC_MPM.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_CALC_MPM.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_CALC_MPM.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_CALC_MPM.Location = new System.Drawing.Point(176, 64);
-            this.ed_Drive_CALC_MPM.Name = "ed_Drive_CALC_MPM";
-            this.ed_Drive_CALC_MPM.Size = new System.Drawing.Size(85, 21);
-            this.ed_Drive_CALC_MPM.TabIndex = 2;
-            this.ed_Drive_CALC_MPM.Tag = "00";
-            this.ed_Drive_CALC_MPM.Text = "0";
-            this.ed_Drive_CALC_MPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_CALC_MPM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label146
-            // 
-            this.label146.BackColor = System.Drawing.Color.Black;
-            this.label146.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label146.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label146.ForeColor = System.Drawing.Color.White;
-            this.label146.Location = new System.Drawing.Point(13, 64);
-            this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(107, 21);
-            this.label146.TabIndex = 994;
-            this.label146.Text = "연산 MPM";
-            this.label146.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label147
-            // 
-            this.label147.BackColor = System.Drawing.Color.Black;
-            this.label147.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label147.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label147.ForeColor = System.Drawing.Color.White;
-            this.label147.Location = new System.Drawing.Point(121, 42);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(53, 21);
-            this.label147.TabIndex = 992;
-            this.label147.Text = "rpm";
-            this.label147.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Drive_MAX_RPM
-            // 
-            this.ed_Drive_MAX_RPM.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_MAX_RPM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_MAX_RPM.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_MAX_RPM.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_MAX_RPM.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_MAX_RPM.Location = new System.Drawing.Point(176, 42);
-            this.ed_Drive_MAX_RPM.Name = "ed_Drive_MAX_RPM";
-            this.ed_Drive_MAX_RPM.Size = new System.Drawing.Size(85, 21);
-            this.ed_Drive_MAX_RPM.TabIndex = 1;
-            this.ed_Drive_MAX_RPM.Tag = "00";
-            this.ed_Drive_MAX_RPM.Text = "0";
-            this.ed_Drive_MAX_RPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_MAX_RPM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label148
-            // 
-            this.label148.BackColor = System.Drawing.Color.Black;
-            this.label148.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label148.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label148.ForeColor = System.Drawing.Color.White;
-            this.label148.Location = new System.Drawing.Point(13, 42);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(107, 21);
-            this.label148.TabIndex = 991;
-            this.label148.Text = "최대 RPM";
-            this.label148.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cb_Drive_MotorDirection
             // 
@@ -2636,60 +2403,6 @@ namespace VEXI
             this.label149.TabIndex = 988;
             this.label149.Text = "전진 제어방향";
             this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label91);
-            this.groupBox4.Controls.Add(this.ed_Drive_breakOpenContinueTime);
-            this.groupBox4.Controls.Add(this.label94);
-            this.groupBox4.Location = new System.Drawing.Point(12, 527);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(364, 46);
-            this.groupBox4.TabIndex = 1193;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "브레이크 개방 (0.01초 단위까지 제어 가능)";
-            // 
-            // label91
-            // 
-            this.label91.BackColor = System.Drawing.Color.Black;
-            this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label91.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label91.ForeColor = System.Drawing.Color.White;
-            this.label91.Location = new System.Drawing.Point(121, 21);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(53, 21);
-            this.label91.TabIndex = 983;
-            this.label91.Text = "s";
-            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Drive_breakOpenContinueTime
-            // 
-            this.ed_Drive_breakOpenContinueTime.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_breakOpenContinueTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_breakOpenContinueTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_breakOpenContinueTime.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_breakOpenContinueTime.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_breakOpenContinueTime.Location = new System.Drawing.Point(176, 20);
-            this.ed_Drive_breakOpenContinueTime.Name = "ed_Drive_breakOpenContinueTime";
-            this.ed_Drive_breakOpenContinueTime.Size = new System.Drawing.Size(85, 21);
-            this.ed_Drive_breakOpenContinueTime.TabIndex = 0;
-            this.ed_Drive_breakOpenContinueTime.Tag = "01";
-            this.ed_Drive_breakOpenContinueTime.Text = "0.00";
-            this.ed_Drive_breakOpenContinueTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_breakOpenContinueTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label94
-            // 
-            this.label94.BackColor = System.Drawing.Color.Black;
-            this.label94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label94.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label94.ForeColor = System.Drawing.Color.White;
-            this.label94.Location = new System.Drawing.Point(13, 20);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(107, 21);
-            this.label94.TabIndex = 982;
-            this.label94.Text = "유지시간";
-            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_LoadTotalFile
             // 
@@ -2724,133 +2437,11 @@ namespace VEXI
             this.label177.TabIndex = 1215;
             this.label177.Text = "[본 설정은 장비모드가 셋업모드인 경우에만 가능합니다]";
             // 
-            // label65
-            // 
-            this.label65.BackColor = System.Drawing.Color.Black;
-            this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label65.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(121, 43);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(53, 21);
-            this.label65.TabIndex = 999;
-            this.label65.Text = "mm";
-            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label90
-            // 
-            this.label90.BackColor = System.Drawing.Color.Black;
-            this.label90.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label90.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label90.ForeColor = System.Drawing.Color.White;
-            this.label90.Location = new System.Drawing.Point(121, 65);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(53, 21);
-            this.label90.TabIndex = 1002;
-            this.label90.Text = "mm";
-            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Invetor_Positiontolerance
-            // 
-            this.ed_Invetor_Positiontolerance.BackColor = System.Drawing.Color.Blue;
-            this.ed_Invetor_Positiontolerance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Invetor_Positiontolerance.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Invetor_Positiontolerance.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Invetor_Positiontolerance.ForeColor = System.Drawing.Color.White;
-            this.ed_Invetor_Positiontolerance.Location = new System.Drawing.Point(176, 65);
-            this.ed_Invetor_Positiontolerance.Name = "ed_Invetor_Positiontolerance";
-            this.ed_Invetor_Positiontolerance.Size = new System.Drawing.Size(85, 21);
-            this.ed_Invetor_Positiontolerance.TabIndex = 1000;
-            this.ed_Invetor_Positiontolerance.Tag = "00";
-            this.ed_Invetor_Positiontolerance.Text = "0";
-            this.ed_Invetor_Positiontolerance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Invetor_Positiontolerance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label96
-            // 
-            this.label96.BackColor = System.Drawing.Color.Black;
-            this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label96.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label96.ForeColor = System.Drawing.Color.White;
-            this.label96.Location = new System.Drawing.Point(13, 65);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(107, 21);
-            this.label96.TabIndex = 1001;
-            this.label96.Text = "정위치 오차";
-            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label97
-            // 
-            this.label97.BackColor = System.Drawing.Color.Black;
-            this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label97.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label97.ForeColor = System.Drawing.Color.White;
-            this.label97.Location = new System.Drawing.Point(121, 87);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(53, 21);
-            this.label97.TabIndex = 1006;
-            this.label97.Text = "1/s";
-            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Invertor_PositionGain
-            // 
-            this.ed_Invertor_PositionGain.BackColor = System.Drawing.Color.Blue;
-            this.ed_Invertor_PositionGain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Invertor_PositionGain.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Invertor_PositionGain.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Invertor_PositionGain.ForeColor = System.Drawing.Color.White;
-            this.ed_Invertor_PositionGain.Location = new System.Drawing.Point(176, 87);
-            this.ed_Invertor_PositionGain.Name = "ed_Invertor_PositionGain";
-            this.ed_Invertor_PositionGain.Size = new System.Drawing.Size(85, 21);
-            this.ed_Invertor_PositionGain.TabIndex = 1004;
-            this.ed_Invertor_PositionGain.Tag = "01";
-            this.ed_Invertor_PositionGain.Text = "0.000";
-            this.ed_Invertor_PositionGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Invertor_PositionGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label50
-            // 
-            this.label50.BackColor = System.Drawing.Color.Black;
-            this.label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label50.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(13, 87);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(107, 21);
-            this.label50.TabIndex = 1005;
-            this.label50.Text = "위치 게인";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cb_Invetor_Param_Use
-            // 
-            this.cb_Invetor_Param_Use.BackColor = System.Drawing.Color.Blue;
-            this.cb_Invetor_Param_Use.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Invetor_Param_Use.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Invetor_Param_Use.ForeColor = System.Drawing.Color.White;
-            this.cb_Invetor_Param_Use.FormattingEnabled = true;
-            this.cb_Invetor_Param_Use.Items.AddRange(new object[] {
-            "무효",
-            "유효"});
-            this.cb_Invetor_Param_Use.Location = new System.Drawing.Point(121, 21);
-            this.cb_Invetor_Param_Use.Name = "cb_Invetor_Param_Use";
-            this.cb_Invetor_Param_Use.Size = new System.Drawing.Size(140, 20);
-            this.cb_Invetor_Param_Use.TabIndex = 1007;
-            // 
-            // label98
-            // 
-            this.label98.BackColor = System.Drawing.Color.Black;
-            this.label98.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label98.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label98.ForeColor = System.Drawing.Color.White;
-            this.label98.Location = new System.Drawing.Point(13, 21);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(107, 21);
-            this.label98.TabIndex = 1008;
-            this.label98.Text = "사용 설정";
-            this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.ed_RetryCripRange);
+            this.groupBox8.Controls.Add(this.label24);
             this.groupBox8.Controls.Add(this.label99);
             this.groupBox8.Controls.Add(this.ed_CurrentLowSpeedDistance);
             this.groupBox8.Controls.Add(this.label100);
@@ -2877,7 +2468,7 @@ namespace VEXI
             this.groupBox8.Controls.Add(this.label135);
             this.groupBox8.Location = new System.Drawing.Point(12, 204);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(364, 202);
+            this.groupBox8.Size = new System.Drawing.Size(364, 231);
             this.groupBox8.TabIndex = 1216;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "정차 설정 (0.1초 단위까지 제어 가능)";
@@ -2888,7 +2479,7 @@ namespace VEXI
             this.label99.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label99.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label99.ForeColor = System.Drawing.Color.White;
-            this.label99.Location = new System.Drawing.Point(232, 171);
+            this.label99.Location = new System.Drawing.Point(232, 193);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(46, 21);
             this.label99.TabIndex = 1008;
@@ -2902,7 +2493,7 @@ namespace VEXI
             this.ed_CurrentLowSpeedDistance.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_CurrentLowSpeedDistance.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_CurrentLowSpeedDistance.ForeColor = System.Drawing.Color.White;
-            this.ed_CurrentLowSpeedDistance.Location = new System.Drawing.Point(280, 171);
+            this.ed_CurrentLowSpeedDistance.Location = new System.Drawing.Point(280, 193);
             this.ed_CurrentLowSpeedDistance.Name = "ed_CurrentLowSpeedDistance";
             this.ed_CurrentLowSpeedDistance.Size = new System.Drawing.Size(72, 21);
             this.ed_CurrentLowSpeedDistance.TabIndex = 1016;
@@ -2917,7 +2508,7 @@ namespace VEXI
             this.label100.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label100.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label100.ForeColor = System.Drawing.Color.White;
-            this.label100.Location = new System.Drawing.Point(13, 171);
+            this.label100.Location = new System.Drawing.Point(13, 193);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(217, 21);
             this.label100.TabIndex = 1009;
@@ -2930,7 +2521,7 @@ namespace VEXI
             this.label101.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label101.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label101.ForeColor = System.Drawing.Color.White;
-            this.label101.Location = new System.Drawing.Point(232, 149);
+            this.label101.Location = new System.Drawing.Point(232, 171);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(46, 21);
             this.label101.TabIndex = 1010;
@@ -2944,7 +2535,7 @@ namespace VEXI
             this.ed_CurrentDecel_OffsetMaxDistance.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_CurrentDecel_OffsetMaxDistance.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_CurrentDecel_OffsetMaxDistance.ForeColor = System.Drawing.Color.White;
-            this.ed_CurrentDecel_OffsetMaxDistance.Location = new System.Drawing.Point(280, 149);
+            this.ed_CurrentDecel_OffsetMaxDistance.Location = new System.Drawing.Point(280, 171);
             this.ed_CurrentDecel_OffsetMaxDistance.Name = "ed_CurrentDecel_OffsetMaxDistance";
             this.ed_CurrentDecel_OffsetMaxDistance.Size = new System.Drawing.Size(72, 21);
             this.ed_CurrentDecel_OffsetMaxDistance.TabIndex = 1015;
@@ -2959,7 +2550,7 @@ namespace VEXI
             this.label102.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label102.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label102.ForeColor = System.Drawing.Color.White;
-            this.label102.Location = new System.Drawing.Point(13, 149);
+            this.label102.Location = new System.Drawing.Point(13, 171);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(217, 21);
             this.label102.TabIndex = 1011;
@@ -2972,7 +2563,7 @@ namespace VEXI
             this.label103.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label103.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label103.ForeColor = System.Drawing.Color.White;
-            this.label103.Location = new System.Drawing.Point(232, 127);
+            this.label103.Location = new System.Drawing.Point(232, 149);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(46, 21);
             this.label103.TabIndex = 1012;
@@ -2986,7 +2577,7 @@ namespace VEXI
             this.ed_CurrentDecel_OffsetTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_CurrentDecel_OffsetTime.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_CurrentDecel_OffsetTime.ForeColor = System.Drawing.Color.White;
-            this.ed_CurrentDecel_OffsetTime.Location = new System.Drawing.Point(280, 127);
+            this.ed_CurrentDecel_OffsetTime.Location = new System.Drawing.Point(280, 149);
             this.ed_CurrentDecel_OffsetTime.Name = "ed_CurrentDecel_OffsetTime";
             this.ed_CurrentDecel_OffsetTime.Size = new System.Drawing.Size(72, 21);
             this.ed_CurrentDecel_OffsetTime.TabIndex = 1014;
@@ -3001,7 +2592,7 @@ namespace VEXI
             this.label104.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label104.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label104.ForeColor = System.Drawing.Color.White;
-            this.label104.Location = new System.Drawing.Point(13, 127);
+            this.label104.Location = new System.Drawing.Point(13, 149);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(217, 21);
             this.label104.TabIndex = 1013;
@@ -3218,6 +2809,326 @@ namespace VEXI
             this.label135.Text = "정위치 오프셋";
             this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Black;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(156, 369);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(64, 21);
+            this.label20.TabIndex = 1304;
+            this.label20.Text = "m/min";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Drive_RefCreep_Speed
+            // 
+            this.ed_Drive_RefCreep_Speed.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_RefCreep_Speed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_RefCreep_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_RefCreep_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_RefCreep_Speed.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_RefCreep_Speed.Location = new System.Drawing.Point(224, 369);
+            this.ed_Drive_RefCreep_Speed.Name = "ed_Drive_RefCreep_Speed";
+            this.ed_Drive_RefCreep_Speed.Size = new System.Drawing.Size(66, 21);
+            this.ed_Drive_RefCreep_Speed.TabIndex = 1301;
+            this.ed_Drive_RefCreep_Speed.Tag = "01";
+            this.ed_Drive_RefCreep_Speed.Text = "0";
+            this.ed_Drive_RefCreep_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_RefCreep_Speed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Black;
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(92, 369);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(64, 21);
+            this.label21.TabIndex = 1303;
+            this.label21.Text = "속도";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Black;
+            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label22.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(13, 369);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 21);
+            this.label22.TabIndex = 1302;
+            this.label22.Text = "정위치크립";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.Black;
+            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label23.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(232, 127);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 21);
+            this.label23.TabIndex = 1017;
+            this.label23.Text = "mm";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_RetryCripRange
+            // 
+            this.ed_RetryCripRange.BackColor = System.Drawing.Color.Blue;
+            this.ed_RetryCripRange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_RetryCripRange.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_RetryCripRange.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_RetryCripRange.ForeColor = System.Drawing.Color.White;
+            this.ed_RetryCripRange.Location = new System.Drawing.Point(280, 127);
+            this.ed_RetryCripRange.Name = "ed_RetryCripRange";
+            this.ed_RetryCripRange.Size = new System.Drawing.Size(72, 21);
+            this.ed_RetryCripRange.TabIndex = 1019;
+            this.ed_RetryCripRange.Tag = "00";
+            this.ed_RetryCripRange.Text = "0";
+            this.ed_RetryCripRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_RetryCripRange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label24
+            // 
+            this.label24.BackColor = System.Drawing.Color.Black;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label24.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(13, 127);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(217, 21);
+            this.label24.TabIndex = 1018;
+            this.label24.Text = "재시도 크립 거리";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.Black;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(156, 222);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(64, 21);
+            this.label26.TabIndex = 1320;
+            this.label26.Text = "ms";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Drive_RetryRef_DJerk
+            // 
+            this.ed_Drive_RetryRef_DJerk.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_RetryRef_DJerk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_RetryRef_DJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_RetryRef_DJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_RetryRef_DJerk.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_RetryRef_DJerk.Location = new System.Drawing.Point(224, 222);
+            this.ed_Drive_RetryRef_DJerk.Name = "ed_Drive_RetryRef_DJerk";
+            this.ed_Drive_RetryRef_DJerk.Size = new System.Drawing.Size(66, 21);
+            this.ed_Drive_RetryRef_DJerk.TabIndex = 1309;
+            this.ed_Drive_RetryRef_DJerk.Tag = "00";
+            this.ed_Drive_RetryRef_DJerk.Text = "0";
+            this.ed_Drive_RetryRef_DJerk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_RetryRef_DJerk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label27
+            // 
+            this.label27.BackColor = System.Drawing.Color.Black;
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(92, 222);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(64, 21);
+            this.label27.TabIndex = 1319;
+            this.label27.Text = "감속 저크";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.Black;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(156, 200);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(64, 21);
+            this.label28.TabIndex = 1318;
+            this.label28.Text = "ms";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.Black;
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label29.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(156, 178);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(64, 21);
+            this.label29.TabIndex = 1317;
+            this.label29.Text = "mm/s²";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.BackColor = System.Drawing.Color.Black;
+            this.label51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label51.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label51.ForeColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(156, 156);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(64, 21);
+            this.label51.TabIndex = 1316;
+            this.label51.Text = "mm/s²";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label56
+            // 
+            this.label56.BackColor = System.Drawing.Color.Black;
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label56.ForeColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(156, 134);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(64, 21);
+            this.label56.TabIndex = 1315;
+            this.label56.Text = "m/min";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Drive_RetryRef_AJerk
+            // 
+            this.ed_Drive_RetryRef_AJerk.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_RetryRef_AJerk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_RetryRef_AJerk.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_RetryRef_AJerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_RetryRef_AJerk.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_RetryRef_AJerk.Location = new System.Drawing.Point(224, 200);
+            this.ed_Drive_RetryRef_AJerk.Name = "ed_Drive_RetryRef_AJerk";
+            this.ed_Drive_RetryRef_AJerk.Size = new System.Drawing.Size(66, 21);
+            this.ed_Drive_RetryRef_AJerk.TabIndex = 1308;
+            this.ed_Drive_RetryRef_AJerk.Tag = "00";
+            this.ed_Drive_RetryRef_AJerk.Text = "0";
+            this.ed_Drive_RetryRef_AJerk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_RetryRef_AJerk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // ed_Drive_RetryRef_Decel
+            // 
+            this.ed_Drive_RetryRef_Decel.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_RetryRef_Decel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_RetryRef_Decel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_RetryRef_Decel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_RetryRef_Decel.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_RetryRef_Decel.Location = new System.Drawing.Point(224, 178);
+            this.ed_Drive_RetryRef_Decel.Name = "ed_Drive_RetryRef_Decel";
+            this.ed_Drive_RetryRef_Decel.Size = new System.Drawing.Size(66, 21);
+            this.ed_Drive_RetryRef_Decel.TabIndex = 1307;
+            this.ed_Drive_RetryRef_Decel.Tag = "00";
+            this.ed_Drive_RetryRef_Decel.Text = "0";
+            this.ed_Drive_RetryRef_Decel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_RetryRef_Decel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // ed_Drive_RetryRef_Accel
+            // 
+            this.ed_Drive_RetryRef_Accel.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_RetryRef_Accel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_RetryRef_Accel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_RetryRef_Accel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_RetryRef_Accel.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_RetryRef_Accel.Location = new System.Drawing.Point(224, 156);
+            this.ed_Drive_RetryRef_Accel.Name = "ed_Drive_RetryRef_Accel";
+            this.ed_Drive_RetryRef_Accel.Size = new System.Drawing.Size(66, 21);
+            this.ed_Drive_RetryRef_Accel.TabIndex = 1306;
+            this.ed_Drive_RetryRef_Accel.Tag = "00";
+            this.ed_Drive_RetryRef_Accel.Text = "0";
+            this.ed_Drive_RetryRef_Accel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_RetryRef_Accel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // ed_Drive_RetryRef_Speed
+            // 
+            this.ed_Drive_RetryRef_Speed.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_RetryRef_Speed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_RetryRef_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_RetryRef_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_RetryRef_Speed.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_RetryRef_Speed.Location = new System.Drawing.Point(224, 134);
+            this.ed_Drive_RetryRef_Speed.Name = "ed_Drive_RetryRef_Speed";
+            this.ed_Drive_RetryRef_Speed.Size = new System.Drawing.Size(66, 21);
+            this.ed_Drive_RetryRef_Speed.TabIndex = 1305;
+            this.ed_Drive_RetryRef_Speed.Tag = "01";
+            this.ed_Drive_RetryRef_Speed.Text = "0";
+            this.ed_Drive_RetryRef_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_RetryRef_Speed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label91
+            // 
+            this.label91.BackColor = System.Drawing.Color.Black;
+            this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label91.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label91.ForeColor = System.Drawing.Color.White;
+            this.label91.Location = new System.Drawing.Point(92, 200);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(64, 21);
+            this.label91.TabIndex = 1314;
+            this.label91.Text = "가속 저크";
+            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label94
+            // 
+            this.label94.BackColor = System.Drawing.Color.Black;
+            this.label94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label94.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label94.ForeColor = System.Drawing.Color.White;
+            this.label94.Location = new System.Drawing.Point(92, 178);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(64, 21);
+            this.label94.TabIndex = 1313;
+            this.label94.Text = "감속도";
+            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label120
+            // 
+            this.label120.BackColor = System.Drawing.Color.Black;
+            this.label120.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label120.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label120.ForeColor = System.Drawing.Color.White;
+            this.label120.Location = new System.Drawing.Point(92, 156);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(64, 21);
+            this.label120.TabIndex = 1312;
+            this.label120.Text = "가속도";
+            this.label120.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label121
+            // 
+            this.label121.BackColor = System.Drawing.Color.Black;
+            this.label121.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label121.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label121.ForeColor = System.Drawing.Color.White;
+            this.label121.Location = new System.Drawing.Point(92, 134);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(64, 21);
+            this.label121.TabIndex = 1311;
+            this.label121.Text = "속도";
+            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label122
+            // 
+            this.label122.BackColor = System.Drawing.Color.Black;
+            this.label122.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label122.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label122.ForeColor = System.Drawing.Color.White;
+            this.label122.Location = new System.Drawing.Point(13, 134);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(78, 109);
+            this.label122.TabIndex = 1310;
+            this.label122.Text = "정위치\r\n재시도";
+            this.label122.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form_EMSDriveParam_Speed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -3235,7 +3146,6 @@ namespace VEXI
             this.Controls.Add(this.groupBox14);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox12);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_Param_Set);
             this.Controls.Add(this.btn_Param_Load);
             this.DoubleBuffered = true;
@@ -3255,9 +3165,6 @@ namespace VEXI
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
@@ -3355,19 +3262,6 @@ namespace VEXI
         private System.Windows.Forms.TextBox ed_Drive_Creep_Speed;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox ed_Drive_RefMode_AJerk;
-        private System.Windows.Forms.TextBox ed_Drive_RefMode_Decel;
-        private System.Windows.Forms.TextBox ed_Drive_RefMode_Accel;
-        private System.Windows.Forms.TextBox ed_Drive_RefMode_Speed;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -3387,21 +3281,8 @@ namespace VEXI
         private System.Windows.Forms.TextBox ed_Drive_ManualOp_TokeAlarm;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.Label label143;
-        private System.Windows.Forms.TextBox ed_Drive_CALC_RPM;
-        private System.Windows.Forms.Label label144;
-        private System.Windows.Forms.Label label145;
-        private System.Windows.Forms.TextBox ed_Drive_CALC_MPM;
-        private System.Windows.Forms.Label label146;
-        private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.TextBox ed_Drive_MAX_RPM;
-        private System.Windows.Forms.Label label148;
         private System.Windows.Forms.ComboBox cb_Drive_MotorDirection;
         private System.Windows.Forms.Label label149;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox ed_Drive_breakOpenContinueTime;
-        private System.Windows.Forms.Label label94;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btn_LoadTotalFile;
         private System.Windows.Forms.Button btn_SaveTotalFile;
@@ -3429,9 +3310,6 @@ namespace VEXI
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TextBox ed_Drive_ForceMode_DJerk;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox ed_Drive_RefMode_DJerk;
-        private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox ed_Drive_Collision_DJerk;
         private System.Windows.Forms.Label label31;
@@ -3473,5 +3351,28 @@ namespace VEXI
         private System.Windows.Forms.Label label134;
         private System.Windows.Forms.TextBox ed_InPosition_Offset;
         private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox ed_Drive_RefCreep_Speed;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox ed_RetryCripRange;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox ed_Drive_RetryRef_DJerk;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox ed_Drive_RetryRef_AJerk;
+        private System.Windows.Forms.TextBox ed_Drive_RetryRef_Decel;
+        private System.Windows.Forms.TextBox ed_Drive_RetryRef_Accel;
+        private System.Windows.Forms.TextBox ed_Drive_RetryRef_Speed;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label label122;
     }
 }

@@ -39,6 +39,8 @@ namespace VEXI
             this.btn_StopEmergency = new System.Windows.Forms.Button();
             this.btn_Stop = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_ResponseDevFW = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lbl_DevErrorCode = new System.Windows.Forms.Label();
             this.lbl_DevError = new System.Windows.Forms.Label();
             this.lbl_SetUpMode = new System.Windows.Forms.Label();
@@ -79,6 +81,7 @@ namespace VEXI
             this.MenuItem_DevLog = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem_InvertorInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem_OpInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.movexWCSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem_DevSet_Admin = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_DetailSetLoad = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,19 +96,19 @@ namespace VEXI
             this.menu_RackBase = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_NoRackSet = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_SpecialRackSet = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_RackInitial = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_TotalSetLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_InvertorParameter = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Download = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_Debug = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_Developer = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_DebugLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_EventLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem_RunTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem_Graph = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_ViewCommData = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_AllWIndowsClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Debug = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_Graph = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_RunTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_EventLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_DebugLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Developer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_MyTest = new System.Windows.Forms.ToolStripMenuItem();
             this.DPTimer = new System.Windows.Forms.Timer(this.components);
             this.Loggingtimer = new System.Windows.Forms.Timer(this.components);
             this.panel92.SuspendLayout();
@@ -166,7 +169,7 @@ namespace VEXI
             this.button1.Size = new System.Drawing.Size(139, 28);
             this.button1.TabIndex = 332;
             this.button1.Tag = "0";
-            this.button1.Text = "수동모드 설정";
+            this.button1.Text = "Manual 모드 설정";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -180,7 +183,7 @@ namespace VEXI
             this.btn_ErrRest.Size = new System.Drawing.Size(139, 28);
             this.btn_ErrRest.TabIndex = 331;
             this.btn_ErrRest.Tag = "";
-            this.btn_ErrRest.Text = "이상리셋";
+            this.btn_ErrRest.Text = "Alarm Reset";
             this.btn_ErrRest.UseVisualStyleBackColor = false;
             this.btn_ErrRest.Click += new System.EventHandler(this.btn_ErrRest_Click);
             // 
@@ -194,7 +197,7 @@ namespace VEXI
             this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(139, 28);
             this.btn_DevMode_SetupOn.TabIndex = 330;
             this.btn_DevMode_SetupOn.Tag = "1";
-            this.btn_DevMode_SetupOn.Text = "셋업모드 설정";
+            this.btn_DevMode_SetupOn.Text = "Setup 모드 설정";
             this.btn_DevMode_SetupOn.UseVisualStyleBackColor = false;
             this.btn_DevMode_SetupOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -208,7 +211,7 @@ namespace VEXI
             this.btn_StopEmergency.Name = "btn_StopEmergency";
             this.btn_StopEmergency.Size = new System.Drawing.Size(139, 48);
             this.btn_StopEmergency.TabIndex = 327;
-            this.btn_StopEmergency.Text = "비상정지";
+            this.btn_StopEmergency.Text = "비상정지 (E.Stop)";
             this.btn_StopEmergency.UseVisualStyleBackColor = false;
             this.btn_StopEmergency.Click += new System.EventHandler(this.btn_StopEmergency_Click);
             // 
@@ -222,7 +225,7 @@ namespace VEXI
             this.btn_Stop.Name = "btn_Stop";
             this.btn_Stop.Size = new System.Drawing.Size(139, 28);
             this.btn_Stop.TabIndex = 325;
-            this.btn_Stop.Text = "정지";
+            this.btn_Stop.Text = "정지 (Stop)";
             this.btn_Stop.UseVisualStyleBackColor = false;
             this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
@@ -230,6 +233,8 @@ namespace VEXI
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lbl_ResponseDevFW);
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.lbl_DevErrorCode);
             this.panel3.Controls.Add(this.lbl_DevError);
             this.panel3.Controls.Add(this.lbl_SetUpMode);
@@ -246,6 +251,28 @@ namespace VEXI
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(176, 177);
             this.panel3.TabIndex = 324;
+            // 
+            // lbl_ResponseDevFW
+            // 
+            this.lbl_ResponseDevFW.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_ResponseDevFW.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ResponseDevFW.Location = new System.Drawing.Point(73, 63);
+            this.lbl_ResponseDevFW.Name = "lbl_ResponseDevFW";
+            this.lbl_ResponseDevFW.Size = new System.Drawing.Size(94, 17);
+            this.lbl_ResponseDevFW.TabIndex = 348;
+            this.lbl_ResponseDevFW.Text = "---";
+            this.lbl_ResponseDevFW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(8, 63);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 19);
+            this.label8.TabIndex = 347;
+            this.label8.Text = "장치 FW";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_DevErrorCode
             // 
@@ -268,9 +295,9 @@ namespace VEXI
             this.lbl_DevError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_DevError.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_DevError.ForeColor = System.Drawing.Color.Black;
-            this.lbl_DevError.Location = new System.Drawing.Point(7, 128);
+            this.lbl_DevError.Location = new System.Drawing.Point(7, 131);
             this.lbl_DevError.Name = "lbl_DevError";
-            this.lbl_DevError.Size = new System.Drawing.Size(161, 22);
+            this.lbl_DevError.Size = new System.Drawing.Size(161, 19);
             this.lbl_DevError.TabIndex = 345;
             this.lbl_DevError.Tag = "6013";
             this.lbl_DevError.Text = "정상 상태";
@@ -282,7 +309,7 @@ namespace VEXI
             this.lbl_SetUpMode.BackColor = System.Drawing.Color.Yellow;
             this.lbl_SetUpMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SetUpMode.ForeColor = System.Drawing.Color.Black;
-            this.lbl_SetUpMode.Location = new System.Drawing.Point(90, 102);
+            this.lbl_SetUpMode.Location = new System.Drawing.Point(90, 105);
             this.lbl_SetUpMode.Name = "lbl_SetUpMode";
             this.lbl_SetUpMode.Size = new System.Drawing.Size(77, 24);
             this.lbl_SetUpMode.TabIndex = 344;
@@ -295,7 +322,7 @@ namespace VEXI
             this.lbl_DevForceMode.BackColor = System.Drawing.Color.Red;
             this.lbl_DevForceMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DevForceMode.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_DevForceMode.Location = new System.Drawing.Point(8, 102);
+            this.lbl_DevForceMode.Location = new System.Drawing.Point(8, 105);
             this.lbl_DevForceMode.Name = "lbl_DevForceMode";
             this.lbl_DevForceMode.Size = new System.Drawing.Size(77, 24);
             this.lbl_DevForceMode.TabIndex = 343;
@@ -308,9 +335,9 @@ namespace VEXI
             this.lbl_ReceviceGood.BackColor = System.Drawing.Color.Gray;
             this.lbl_ReceviceGood.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_ReceviceGood.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_ReceviceGood.Location = new System.Drawing.Point(8, 77);
+            this.lbl_ReceviceGood.Location = new System.Drawing.Point(8, 83);
             this.lbl_ReceviceGood.Name = "lbl_ReceviceGood";
-            this.lbl_ReceviceGood.Size = new System.Drawing.Size(160, 22);
+            this.lbl_ReceviceGood.Size = new System.Drawing.Size(160, 19);
             this.lbl_ReceviceGood.TabIndex = 342;
             this.lbl_ReceviceGood.Tag = "6013";
             this.lbl_ReceviceGood.Text = "통신 상태";
@@ -320,7 +347,7 @@ namespace VEXI
             // 
             this.lbl_ResponseDevID.BackColor = System.Drawing.Color.Yellow;
             this.lbl_ResponseDevID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ResponseDevID.Location = new System.Drawing.Point(73, 53);
+            this.lbl_ResponseDevID.Location = new System.Drawing.Point(73, 44);
             this.lbl_ResponseDevID.Name = "lbl_ResponseDevID";
             this.lbl_ResponseDevID.Size = new System.Drawing.Size(94, 17);
             this.lbl_ResponseDevID.TabIndex = 341;
@@ -331,7 +358,7 @@ namespace VEXI
             // 
             this.lbl_ResponseDevType.BackColor = System.Drawing.Color.Yellow;
             this.lbl_ResponseDevType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ResponseDevType.Location = new System.Drawing.Point(73, 29);
+            this.lbl_ResponseDevType.Location = new System.Drawing.Point(73, 25);
             this.lbl_ResponseDevType.Name = "lbl_ResponseDevType";
             this.lbl_ResponseDevType.Size = new System.Drawing.Size(94, 17);
             this.lbl_ResponseDevType.TabIndex = 340;
@@ -343,19 +370,18 @@ namespace VEXI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 53);
+            this.label10.Location = new System.Drawing.Point(8, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 19);
             this.label10.TabIndex = 339;
             this.label10.Text = "장치 ID";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 29);
+            this.label7.Location = new System.Drawing.Point(8, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 19);
             this.label7.TabIndex = 336;
@@ -375,6 +401,7 @@ namespace VEXI
             this.label9.Tag = "";
             this.label9.Text = "연결 장치 정보";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel2
             // 
@@ -712,8 +739,9 @@ namespace VEXI
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 51);
             this.label4.TabIndex = 320;
-            this.label4.Text = "VEXI\r\nVer.20250120_10";
+            this.label4.Text = "VEXI\r\nVer.20260427_15";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // WatchDog
             // 
@@ -726,16 +754,16 @@ namespace VEXI
             this.MenuItem_Devmonitoring_User,
             this.ToolStripMenuItem,
             this.MenuItem_DevSet_Admin,
+            this.menu_Debug,
             this.menu_ViewCommData,
             this.menu_AllWIndowsClose,
-            this.toolStripMenuItem2,
-            this.menu_Debug,
-            this.menu_MyTest});
+            this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // MenuItem_Devmonitoring_User
             // 
@@ -744,51 +772,59 @@ namespace VEXI
             this.menu_DevSt,
             this.MenuItem_DevLog,
             this.MenuItem_InvertorInfo,
-            this.MenuItem_OpInfo});
+            this.MenuItem_OpInfo,
+            this.movexWCSToolStripMenuItem});
             this.MenuItem_Devmonitoring_User.Name = "MenuItem_Devmonitoring_User";
-            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(95, 20);
-            this.MenuItem_Devmonitoring_User.Text = "장치 모니터링";
+            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(110, 20);
+            this.MenuItem_Devmonitoring_User.Text = "A. 장치 모니터링";
             // 
             // MenuItem_basicSt
             // 
             this.MenuItem_basicSt.Name = "MenuItem_basicSt";
-            this.MenuItem_basicSt.Size = new System.Drawing.Size(178, 22);
-            this.MenuItem_basicSt.Text = "장치 기본정보";
+            this.MenuItem_basicSt.Size = new System.Drawing.Size(192, 22);
+            this.MenuItem_basicSt.Text = "1. 장치 기본정보";
             this.MenuItem_basicSt.Click += new System.EventHandler(this.MenuItem_basicSt_Click);
             // 
             // menu_DevSt
             // 
             this.menu_DevSt.Name = "menu_DevSt";
-            this.menu_DevSt.Size = new System.Drawing.Size(178, 22);
-            this.menu_DevSt.Text = "장치 상태";
+            this.menu_DevSt.Size = new System.Drawing.Size(192, 22);
+            this.menu_DevSt.Text = "2. 장치 상태";
             this.menu_DevSt.Click += new System.EventHandler(this.menu_DevSt_Click);
             // 
             // MenuItem_DevLog
             // 
             this.MenuItem_DevLog.Name = "MenuItem_DevLog";
-            this.MenuItem_DevLog.Size = new System.Drawing.Size(178, 22);
-            this.MenuItem_DevLog.Text = "장치 알람로그";
+            this.MenuItem_DevLog.Size = new System.Drawing.Size(192, 22);
+            this.MenuItem_DevLog.Text = "3. 장치 알람로그";
             this.MenuItem_DevLog.Click += new System.EventHandler(this.MenuItem_DevLog_Click);
             // 
             // MenuItem_InvertorInfo
             // 
             this.MenuItem_InvertorInfo.Name = "MenuItem_InvertorInfo";
-            this.MenuItem_InvertorInfo.Size = new System.Drawing.Size(178, 22);
-            this.MenuItem_InvertorInfo.Text = "장치 인버터 데이터";
+            this.MenuItem_InvertorInfo.Size = new System.Drawing.Size(192, 22);
+            this.MenuItem_InvertorInfo.Text = "4. 장치 인버터 데이터";
             this.MenuItem_InvertorInfo.Click += new System.EventHandler(this.MenuItem_InvertorInfo_Click);
             // 
             // MenuItem_OpInfo
             // 
             this.MenuItem_OpInfo.Name = "MenuItem_OpInfo";
-            this.MenuItem_OpInfo.Size = new System.Drawing.Size(178, 22);
-            this.MenuItem_OpInfo.Text = "장치 운행정보";
+            this.MenuItem_OpInfo.Size = new System.Drawing.Size(192, 22);
+            this.MenuItem_OpInfo.Text = "5. 장치 운행정보";
             this.MenuItem_OpInfo.Click += new System.EventHandler(this.MenuItem_OpInfo_Click);
+            // 
+            // movexWCSToolStripMenuItem
+            // 
+            this.movexWCSToolStripMenuItem.Name = "movexWCSToolStripMenuItem";
+            this.movexWCSToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.movexWCSToolStripMenuItem.Text = "6. Movex WCS";
+            this.movexWCSToolStripMenuItem.Click += new System.EventHandler(this.movexWCSToolStripMenuItem_Click);
             // 
             // ToolStripMenuItem
             // 
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.ToolStripMenuItem.Text = "장비 운전조작";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.ToolStripMenuItem.Text = "B. 장비 운전조작";
             this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // MenuItem_DevSet_Admin
@@ -799,8 +835,8 @@ namespace VEXI
             this.menu_InvertorParameter,
             this.Menu_Download});
             this.MenuItem_DevSet_Admin.Name = "MenuItem_DevSet_Admin";
-            this.MenuItem_DevSet_Admin.Size = new System.Drawing.Size(71, 20);
-            this.MenuItem_DevSet_Admin.Text = "장치 설정";
+            this.MenuItem_DevSet_Admin.Size = new System.Drawing.Size(86, 20);
+            this.MenuItem_DevSet_Admin.Text = "C. 장치 설정";
             // 
             // menu_DetailSetLoad
             // 
@@ -815,110 +851,165 @@ namespace VEXI
             this.toolStripSeparator2,
             this.menu_RackBase,
             this.menu_NoRackSet,
-            this.menu_SpecialRackSet});
+            this.menu_SpecialRackSet,
+            this.menu_RackInitial});
             this.menu_DetailSetLoad.Name = "menu_DetailSetLoad";
-            this.menu_DetailSetLoad.Size = new System.Drawing.Size(202, 22);
-            this.menu_DetailSetLoad.Text = "상세 설정";
+            this.menu_DetailSetLoad.Size = new System.Drawing.Size(216, 22);
+            this.menu_DetailSetLoad.Text = "1. 상세 설정";
             // 
             // menu_DevBaseConfig
             // 
             this.menu_DevBaseConfig.Name = "menu_DevBaseConfig";
-            this.menu_DevBaseConfig.Size = new System.Drawing.Size(180, 22);
-            this.menu_DevBaseConfig.Text = "장치 구조 설정";
+            this.menu_DevBaseConfig.Size = new System.Drawing.Size(231, 22);
+            this.menu_DevBaseConfig.Text = "1-1. 장치 구조 설정";
             this.menu_DevBaseConfig.Click += new System.EventHandler(this.menu_DevConfig_Click);
             // 
             // menu_DEV_IO_Config
             // 
             this.menu_DEV_IO_Config.Name = "menu_DEV_IO_Config";
-            this.menu_DEV_IO_Config.Size = new System.Drawing.Size(180, 22);
-            this.menu_DEV_IO_Config.Text = "MCU 입/출력 설정";
+            this.menu_DEV_IO_Config.Size = new System.Drawing.Size(231, 22);
+            this.menu_DEV_IO_Config.Text = "1-2. MCU 입/출력 설정";
             this.menu_DEV_IO_Config.Click += new System.EventHandler(this.menu_MCU_IO_Config_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(228, 6);
             // 
             // menu_CtrlParameter
             // 
             this.menu_CtrlParameter.Name = "menu_CtrlParameter";
-            this.menu_CtrlParameter.Size = new System.Drawing.Size(180, 22);
-            this.menu_CtrlParameter.Text = "제어 설정";
+            this.menu_CtrlParameter.Size = new System.Drawing.Size(231, 22);
+            this.menu_CtrlParameter.Text = "1-3. 제어 설정";
             this.menu_CtrlParameter.Click += new System.EventHandler(this.menu_CtrlParameter_Click);
             // 
             // menu_DriveParameter
             // 
             this.menu_DriveParameter.Name = "menu_DriveParameter";
-            this.menu_DriveParameter.Size = new System.Drawing.Size(180, 22);
-            this.menu_DriveParameter.Text = "주행드라이브 설정";
+            this.menu_DriveParameter.Size = new System.Drawing.Size(231, 22);
+            this.menu_DriveParameter.Text = "1-4. 주행드라이브 설정";
             this.menu_DriveParameter.Click += new System.EventHandler(this.menu_DriveParameter_Click);
             // 
             // menu_LiftParameter
             // 
             this.menu_LiftParameter.Name = "menu_LiftParameter";
-            this.menu_LiftParameter.Size = new System.Drawing.Size(180, 22);
-            this.menu_LiftParameter.Text = "승강드라이브 설정";
+            this.menu_LiftParameter.Size = new System.Drawing.Size(231, 22);
+            this.menu_LiftParameter.Text = "1-5. 승강드라이브 설정";
             this.menu_LiftParameter.Click += new System.EventHandler(this.menu_LiftParameter_Click);
             // 
             // menu_ForParameter
             // 
             this.menu_ForParameter.Name = "menu_ForParameter";
-            this.menu_ForParameter.Size = new System.Drawing.Size(180, 22);
-            this.menu_ForParameter.Text = "포크드라이브 설정";
+            this.menu_ForParameter.Size = new System.Drawing.Size(231, 22);
+            this.menu_ForParameter.Text = "1.6. 포크드라이브 설정";
             this.menu_ForParameter.Click += new System.EventHandler(this.menu_ForParameter_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(228, 6);
             // 
             // menu_RackBase
             // 
             this.menu_RackBase.Name = "menu_RackBase";
-            this.menu_RackBase.Size = new System.Drawing.Size(180, 22);
-            this.menu_RackBase.Text = "위치 설정";
+            this.menu_RackBase.Size = new System.Drawing.Size(231, 22);
+            this.menu_RackBase.Text = "1-7. 위치 설정";
             this.menu_RackBase.Click += new System.EventHandler(this.menu_RackBase_Click);
             // 
             // menu_NoRackSet
             // 
             this.menu_NoRackSet.Name = "menu_NoRackSet";
-            this.menu_NoRackSet.Size = new System.Drawing.Size(180, 22);
-            this.menu_NoRackSet.Text = "금지랙 설정";
+            this.menu_NoRackSet.Size = new System.Drawing.Size(231, 22);
+            this.menu_NoRackSet.Text = "1-8. 금지랙 설정";
             this.menu_NoRackSet.Click += new System.EventHandler(this.menu_NoRackSet_Click);
             // 
             // menu_SpecialRackSet
             // 
             this.menu_SpecialRackSet.Name = "menu_SpecialRackSet";
-            this.menu_SpecialRackSet.Size = new System.Drawing.Size(180, 22);
-            this.menu_SpecialRackSet.Text = "스페셜랙 설정";
+            this.menu_SpecialRackSet.Size = new System.Drawing.Size(231, 22);
+            this.menu_SpecialRackSet.Text = "1-9. 스페셜랙 설정";
             this.menu_SpecialRackSet.Click += new System.EventHandler(this.menu_SpecialRackSet_Click);
+            // 
+            // menu_RackInitial
+            // 
+            this.menu_RackInitial.Name = "menu_RackInitial";
+            this.menu_RackInitial.Size = new System.Drawing.Size(231, 22);
+            this.menu_RackInitial.Text = "1-10. 위치 및 랙 설정 초기화";
+            this.menu_RackInitial.Click += new System.EventHandler(this.menu_RackInitial_Click);
             // 
             // menu_TotalSetLoad
             // 
             this.menu_TotalSetLoad.Name = "menu_TotalSetLoad";
-            this.menu_TotalSetLoad.Size = new System.Drawing.Size(202, 22);
-            this.menu_TotalSetLoad.Text = "일괄 설정";
+            this.menu_TotalSetLoad.Size = new System.Drawing.Size(216, 22);
+            this.menu_TotalSetLoad.Text = "2. 일괄 설정";
             this.menu_TotalSetLoad.Click += new System.EventHandler(this.menu_TotalSetLoad_Click);
             // 
             // menu_InvertorParameter
             // 
             this.menu_InvertorParameter.Name = "menu_InvertorParameter";
-            this.menu_InvertorParameter.Size = new System.Drawing.Size(202, 22);
-            this.menu_InvertorParameter.Text = "인버터 파라미터";
+            this.menu_InvertorParameter.Size = new System.Drawing.Size(216, 22);
+            this.menu_InvertorParameter.Text = "3. 인버터 파라미터";
             this.menu_InvertorParameter.Click += new System.EventHandler(this.menu_InvertorParameter_Click);
             // 
             // Menu_Download
             // 
             this.Menu_Download.Name = "Menu_Download";
-            this.Menu_Download.Size = new System.Drawing.Size(202, 22);
-            this.Menu_Download.Text = "장치 프로그램 업데이트";
+            this.Menu_Download.Size = new System.Drawing.Size(216, 22);
+            this.Menu_Download.Text = "4. 장치 프로그램 업데이트";
             this.Menu_Download.Click += new System.EventHandler(this.Menu_Download_Click);
+            // 
+            // menu_Debug
+            // 
+            this.menu_Debug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_Developer,
+            this.menu_DebugLog,
+            this.menu_EventLog,
+            this.MenuItem_RunTime,
+            this.MenuItem_Graph});
+            this.menu_Debug.Name = "menu_Debug";
+            this.menu_Debug.Size = new System.Drawing.Size(71, 20);
+            this.menu_Debug.Text = "D. Debug";
+            // 
+            // menu_Developer
+            // 
+            this.menu_Developer.Name = "menu_Developer";
+            this.menu_Developer.Size = new System.Drawing.Size(180, 22);
+            this.menu_Developer.Text = "1. Developer";
+            this.menu_Developer.Click += new System.EventHandler(this.menu_Developer_Click);
+            // 
+            // menu_DebugLog
+            // 
+            this.menu_DebugLog.Name = "menu_DebugLog";
+            this.menu_DebugLog.Size = new System.Drawing.Size(180, 22);
+            this.menu_DebugLog.Text = "2. 개발자 로그";
+            this.menu_DebugLog.Click += new System.EventHandler(this.menu_DebugLog_Click);
+            // 
+            // menu_EventLog
+            // 
+            this.menu_EventLog.Name = "menu_EventLog";
+            this.menu_EventLog.Size = new System.Drawing.Size(180, 22);
+            this.menu_EventLog.Text = "3. 이벤트 로그";
+            this.menu_EventLog.Click += new System.EventHandler(this.menu_EventLog_Click);
+            // 
+            // MenuItem_RunTime
+            // 
+            this.MenuItem_RunTime.Name = "MenuItem_RunTime";
+            this.MenuItem_RunTime.Size = new System.Drawing.Size(180, 22);
+            this.MenuItem_RunTime.Text = "4. 단위시간";
+            this.MenuItem_RunTime.Click += new System.EventHandler(this.MenuItem_RunTime_Click);
+            // 
+            // MenuItem_Graph
+            // 
+            this.MenuItem_Graph.Name = "MenuItem_Graph";
+            this.MenuItem_Graph.Size = new System.Drawing.Size(180, 22);
+            this.MenuItem_Graph.Text = "5. 장치 그래프";
+            this.MenuItem_Graph.Click += new System.EventHandler(this.MenuItem_Graph_Click);
             // 
             // menu_ViewCommData
             // 
             this.menu_ViewCommData.Name = "menu_ViewCommData";
-            this.menu_ViewCommData.Size = new System.Drawing.Size(83, 20);
-            this.menu_ViewCommData.Text = "통신 데이터";
+            this.menu_ViewCommData.Size = new System.Drawing.Size(96, 20);
+            this.menu_ViewCommData.Text = "E. 통신 데이터";
             this.menu_ViewCommData.Click += new System.EventHandler(this.menu_ViewCommData_Click);
             // 
             // menu_AllWIndowsClose
@@ -932,65 +1023,9 @@ namespace VEXI
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(71, 20);
-            this.toolStripMenuItem2.Text = "출력 시험";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(84, 20);
+            this.toolStripMenuItem2.Text = "F. 출력 시험";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // menu_Debug
-            // 
-            this.menu_Debug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItem_Graph,
-            this.MenuItem_RunTime,
-            this.menu_EventLog,
-            this.menu_DebugLog,
-            this.menu_Developer});
-            this.menu_Debug.Name = "menu_Debug";
-            this.menu_Debug.Size = new System.Drawing.Size(55, 20);
-            this.menu_Debug.Text = "Debug";
-            // 
-            // MenuItem_Graph
-            // 
-            this.MenuItem_Graph.Name = "MenuItem_Graph";
-            this.MenuItem_Graph.Size = new System.Drawing.Size(138, 22);
-            this.MenuItem_Graph.Text = "장치 그래프";
-            this.MenuItem_Graph.Click += new System.EventHandler(this.MenuItem_Graph_Click);
-            // 
-            // MenuItem_RunTime
-            // 
-            this.MenuItem_RunTime.Name = "MenuItem_RunTime";
-            this.MenuItem_RunTime.Size = new System.Drawing.Size(138, 22);
-            this.MenuItem_RunTime.Text = "단위시간";
-            this.MenuItem_RunTime.Click += new System.EventHandler(this.MenuItem_RunTime_Click);
-            // 
-            // menu_EventLog
-            // 
-            this.menu_EventLog.Name = "menu_EventLog";
-            this.menu_EventLog.Size = new System.Drawing.Size(138, 22);
-            this.menu_EventLog.Text = "이벤트 로그";
-            this.menu_EventLog.Click += new System.EventHandler(this.menu_EventLog_Click);
-            // 
-            // menu_DebugLog
-            // 
-            this.menu_DebugLog.Name = "menu_DebugLog";
-            this.menu_DebugLog.Size = new System.Drawing.Size(138, 22);
-            this.menu_DebugLog.Text = "개발자 로그";
-            this.menu_DebugLog.Click += new System.EventHandler(this.menu_DebugLog_Click);
-            // 
-            // menu_Developer
-            // 
-            this.menu_Developer.Name = "menu_Developer";
-            this.menu_Developer.Size = new System.Drawing.Size(138, 22);
-            this.menu_Developer.Text = "Developer";
-            this.menu_Developer.Click += new System.EventHandler(this.menu_Developer_Click);
-            // 
-            // menu_MyTest
-            // 
-            this.menu_MyTest.Name = "menu_MyTest";
-            this.menu_MyTest.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.menu_MyTest.Size = new System.Drawing.Size(103, 20);
-            this.menu_MyTest.Text = "함수테스트화면";
-            this.menu_MyTest.Visible = false;
-            this.menu_MyTest.Click += new System.EventHandler(this.menu_MyTest_Click);
             // 
             // DPTimer
             // 
@@ -1014,7 +1049,7 @@ namespace VEXI
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VEXI";
+            this.Text = "Vexi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel92.ResumeLayout(false);
@@ -1066,7 +1101,6 @@ namespace VEXI
         private System.Windows.Forms.Label lblCommStatus;
         private System.Windows.Forms.Label lbl_SelectDev;
         private System.Windows.Forms.Timer DPTimer;
-        private System.Windows.Forms.ToolStripMenuItem menu_MyTest;
         private System.Windows.Forms.ToolStripMenuItem menu_DevSt;
         private System.Windows.Forms.Button btn_StopEmergency;
         private System.Windows.Forms.Button btn_Stop;
@@ -1113,6 +1147,10 @@ namespace VEXI
         private System.Windows.Forms.ToolStripMenuItem menu_DebugLog;
         private System.Windows.Forms.ToolStripMenuItem MenuItem_RunTime;
         private System.Windows.Forms.TextBox edAdmin;
+        private System.Windows.Forms.ToolStripMenuItem menu_RackInitial;
+        private System.Windows.Forms.ToolStripMenuItem movexWCSToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_ResponseDevFW;
+        private System.Windows.Forms.Label label8;
     }
 }
 

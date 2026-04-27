@@ -265,11 +265,11 @@ namespace VEXI
 
                     if (DevSt->FF1_Job.taskIndex == 0)
                     {
-                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
+                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetRTVJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
                     }
                     else
                     {
-                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
+                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetRTVTaskStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
                     }
 
                     //반송 or Task : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
@@ -314,11 +314,11 @@ namespace VEXI
 
                     if (DevSt->FF2_Job.taskIndex == 0)
                     {
-                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
+                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetRTVJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
                     }
                     else
                     {
-                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
+                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetRTVTaskStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
                     }
                     
                 }
@@ -403,6 +403,7 @@ namespace VEXI
                     if (rb_DIO_DigitalIn_3.Checked) SelectDIindex = 3;
                     if (rb_DIO_DigitalOut_1.Checked) SelectDOindex = 4;
                     if (rb_DIO_DigitalOut_2.Checked) SelectDOindex = 5;
+                    if (rb_DIO_DigitalOut_3.Checked) SelectDOindex = 6;
 
 
                     switch (SelectDIindex)
@@ -505,6 +506,32 @@ namespace VEXI
                                 {
                                     lbl_DO_Title[Loop - 39].BackColor = Color.DarkOliveGreen;
                                     lbl_DO_Title[Loop - 39].Text = ConstClass.RTV_DO_Names_1[Loop - 1, 0];
+                                }
+                            }
+                            break;
+                        case 6:
+                            for (Loop = 77; Loop <= 114; Loop++)
+                            {
+                                if (Loop > ConstClass.RTV_DO_Names_1.GetLength(0))
+                                {
+                                    if (Loop <= (ConstClass.RTV_DO_Names_1.GetLength(0) + ConstClass.RTV_DO_Names_2.GetLength(0)))
+                                    {
+                                        lbl_DO_Title[Loop - 77].BackColor = Color.DarkOliveGreen;
+                                        lbl_DO_Title[Loop - 77].Text = ConstClass.RTV_DO_Names_2[Loop - ConstClass.RTV_DO_Names_1.GetLength(0) - 1, 0];
+                                    }
+                                    else
+                                    {
+                                        lbl_DO_Title[Loop - 77].BackColor = Color.Gray;
+                                        lbl_DO_Title[Loop - 77].Text = "";
+
+                                        lbl_DO_ST[Loop - 77].BackColor = Color.Gray;
+                                        lbl_DO_ST[Loop - 77].Text = "";
+                                    }
+                                }
+                                else
+                                {
+                                    lbl_DO_Title[Loop - 77].BackColor = Color.DarkOliveGreen;
+                                    lbl_DO_Title[Loop - 77].Text = ConstClass.RTV_DO_Names_1[Loop - 1, 0];
                                 }
                             }
                             break;
@@ -625,6 +652,28 @@ namespace VEXI
                                 }
                             }
                             break;
+                        case 6:
+                            for (Loop = 77; Loop <= 114; Loop++)
+                            {
+                                ByteIndex = (byte)((Loop - 1) / 8);
+                                BitIndex = (byte)((Loop - 1) % 8);
+
+
+                                if (Loop <= (ConstClass.RTV_DO_Names_1.GetLength(0) + ConstClass.RTV_DO_Names_2.GetLength(0)))
+                                {
+                                    if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
+                                    {
+                                        lbl_DO_ST[Loop - 77].BackColor = Color.Yellow;
+                                        lbl_DO_ST[Loop - 77].Text = "ON";
+                                    }
+                                    else
+                                    {
+                                        lbl_DO_ST[Loop - 77].BackColor = Color.Silver;
+                                        lbl_DO_ST[Loop - 77].Text = "OFF";
+                                    }
+                                }
+                            }
+                            break;
                     }
                 }
             }
@@ -635,6 +684,7 @@ namespace VEXI
             //Display_RTV_BasicSt 내 갱신 컴포넌트들
             lblVersion.Text = "";
             lblSystemTimeUTC.Text = "";
+            lbl_Dev_AlarmCodeType.Text = "";
             lbl_DevMode_Auto.BackColor = Color.White;
             lbl_DevMode_Manual.BackColor = Color.White;
             lbl_DevMode_Force.BackColor = Color.White;
@@ -645,10 +695,14 @@ namespace VEXI
             lbl_Dev_Emergency.BackColor = Color.White;
             lbl_Dev_InvertorConn.Text = "";
             lbl_Dev_InvertorConn.BackColor = Color.White;
+            lbl_Dev_FanFault.Text = "";
+            lbl_Dev_FanFault.BackColor = Color.White;
             lbl_Dev_Error.Text = "";
             lbl_Dev_Error.BackColor = Color.White;
             lbl_DevEmergencySwitch.Text = "";
             lbl_DevEmergencySwitch.BackColor = Color.White;
+            lbl_DevmodeSwitch_0.BackColor = Color.White;
+            lbl_DevmodeSwitch_1.BackColor = Color.White;
             lbl_Dev_ActionCode.Text = "";
 
             lbl_RTV_RailType.Text = "";
@@ -672,6 +726,8 @@ namespace VEXI
             lbl_DriveSt1_2.Text = "";
             lbl_DriveSt1_1.Text = "";
             lbl_DriveSt1_0.Text = "";
+            lbl_DriveSt2_2.Text = "";
+            lbl_DriveSt2_2.BackColor = Color.White;
             lbl_DriveSt2_1.Text = "";
             lbl_DriveSt2_1.BackColor = Color.White;
             lbl_DriveSt2_0.Text = "";
@@ -683,9 +739,12 @@ namespace VEXI
             lbl_Drive_Speed.Text = "";
             lbl_Drive_Destination.Text = "";
             lbl_Drive_DestSpeed.Text = "";
-            lbl_DriveAreaInfo_RegionSt_0.BackColor = Color.White;
-            lbl_DriveAreaInfo_RegionSt_1.BackColor = Color.White;
-            lbl_DriveAreaInfo_RegionSt_2.BackColor = Color.White;
+            lbl_DriveFrontAreaInfo_RegionSt_0.BackColor = Color.White;
+            lbl_DriveFrontAreaInfo_RegionSt_1.BackColor = Color.White;
+            lbl_DriveFrontAreaInfo_RegionSt_2.BackColor = Color.White;
+            lbl_DriveRearAreaInfo_RegionSt_0.BackColor = Color.White;
+            lbl_DriveRearAreaInfo_RegionSt_1.BackColor = Color.White;
+            lbl_DriveRearAreaInfo_RegionSt_2.BackColor = Color.White;
             lbl_DriveBarcodeErrCount.Text = "";
             
 
@@ -856,13 +915,20 @@ namespace VEXI
             lbl_DriveAreaInfo_PrevArea.Text = "";
             lbl_DriveAreaInfo_NextArea.Text = "";
             lbl_DriveAreaInfo_SensorIndex.Text = "";
-            lbl_DriveAreaInfo_Region_0.BackColor = Color.White;
-            lbl_DriveAreaInfo_Region_1.BackColor = Color.White;
-            lbl_DriveAreaInfo_Region_2.BackColor = Color.White;
+            lbl_Coll_Stop.Text = "";
+            lbl_Coll_Start.Text = "";
+            lbl_DriveFrontAreaInfo_Region_0.BackColor = Color.White;
+            lbl_DriveFrontAreaInfo_Region_1.BackColor = Color.White;
+            lbl_DriveFrontAreaInfo_Region_2.BackColor = Color.White;
+            lbl_DriveRearAreaInfo_Region_0.BackColor = Color.White;
+            lbl_DriveRearAreaInfo_Region_1.BackColor = Color.White;
+            lbl_DriveRearAreaInfo_Region_2.BackColor = Color.White;
             lbl_DriveAreaInfo_AreaType_2.BackColor = Color.White;
             lbl_DriveAreaInfo_AreaType_3.BackColor = Color.White;
             lbl_DriveAreaInfo_AreaType_4.BackColor = Color.White;
             lbl_DriveAreaInfo_AreaType_5.BackColor = Color.White;
+            lbl_Coll_Stop.BackColor = Color.White;
+            lbl_Coll_Start.BackColor = Color.White;
 
             lbl_Feed1_Station.Text = "";
             lbl_Feed1_Station_Direction.Text = "";
@@ -1221,30 +1287,61 @@ namespace VEXI
                     {
                         lbl_DriveAreaInfo_SensorIndex.Text = string.Format("AREA {0}", DevSt->DriveAreaInfo.Sensorindex);
                     }
-                    if ((DevSt->DriveAreaInfo.Region & 0x01) == 0x00)
+                    
+                    if ((DevSt->DriveAreaInfo.FrontRegion & 0x01) == 0x00)
                     {
-                        lbl_DriveAreaInfo_Region_0.BackColor = Color.Silver;
+                        lbl_DriveFrontAreaInfo_Region_0.BackColor = Color.Silver;
                     }
                     else
                     {
-                        lbl_DriveAreaInfo_Region_0.BackColor = Color.Yellow;
+                        lbl_DriveFrontAreaInfo_Region_0.BackColor = Color.Yellow;
                     }
-                    if ((DevSt->DriveAreaInfo.Region & 0x02) == 0x00)
+                    if ((DevSt->DriveAreaInfo.FrontRegion & 0x02) == 0x00)
                     {
-                        lbl_DriveAreaInfo_Region_1.BackColor = Color.Silver;
+                        lbl_DriveFrontAreaInfo_Region_1.BackColor = Color.Silver;
                     }
                     else
                     {
-                        lbl_DriveAreaInfo_Region_1.BackColor = Color.Yellow;
+                        lbl_DriveFrontAreaInfo_Region_1.BackColor = Color.Yellow;
                     }
-                    if ((DevSt->DriveAreaInfo.Region & 0x04) == 0x00)
+                    if ((DevSt->DriveAreaInfo.FrontRegion & 0x04) == 0x00)
                     {
-                        lbl_DriveAreaInfo_Region_2.BackColor = Color.Silver;
+                        lbl_DriveFrontAreaInfo_Region_2.BackColor = Color.Silver;
                     }
                     else
                     {
-                        lbl_DriveAreaInfo_Region_2.BackColor = Color.Yellow;
+                        lbl_DriveFrontAreaInfo_Region_2.BackColor = Color.Yellow;
                     }
+
+
+                    if ((DevSt->DriveAreaInfo.RearRegion & 0x01) == 0x00)
+                    {
+                        lbl_DriveRearAreaInfo_Region_0.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveRearAreaInfo_Region_0.BackColor = Color.Yellow;
+                    }
+                    if ((DevSt->DriveAreaInfo.RearRegion & 0x02) == 0x00)
+                    {
+                        lbl_DriveRearAreaInfo_Region_1.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveRearAreaInfo_Region_1.BackColor = Color.Yellow;
+                    }
+                    if ((DevSt->DriveAreaInfo.RearRegion & 0x04) == 0x00)
+                    {
+                        lbl_DriveRearAreaInfo_Region_2.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveRearAreaInfo_Region_2.BackColor = Color.Yellow;
+                    }
+
+                    lbl_Coll_Stop.Text = string.Format("{0}", DevSt->DriveAreaInfo.Coll_Stop);
+                    lbl_Coll_Start.Text = string.Format("{0}", DevSt->DriveAreaInfo.Coll_Start);
+
 
                     lbl_Feed1_Station.Text = String.Format("S{0}", DevSt->Feed1_Position.PointRec.Station);
                     if (Global_Class.BitStatus(DevSt->Feed1_Position.StationInfo, 0))
@@ -1318,6 +1415,14 @@ namespace VEXI
                     DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(DevSt->SystemUTCTime);
                     lblSystemTimeUTC.Text = String.Format("{0}", PCtime);
 
+                    if (DevSt->AlarmCodeType == 1)
+                    {
+                        lbl_Dev_AlarmCodeType.Text = "MemoryMap";
+                    } else
+                    {
+                        lbl_Dev_AlarmCodeType.Text = "14Bytes";
+                    }
+
                     var convertedArray = new byte[6];
                     System.Runtime.InteropServices.Marshal.Copy((IntPtr)DevSt->ProjectID, convertedArray, 0, 6);
                     //lblProjectNo.Text = System.Text.Encoding.Default.GetString(convertedArray);
@@ -1370,6 +1475,20 @@ namespace VEXI
                         lbl_Dev_Emergency.ForeColor = Color.Black;
                     }
 
+                    if (Global_Class.BitStatus(DevSt->DevSt_1, 5))
+                    {
+                        lbl_Dev_InvertorConn.Text = "이상";
+                        lbl_Dev_InvertorConn.BackColor = Color.Red;
+                        lbl_Dev_InvertorConn.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        lbl_Dev_InvertorConn.Text = "정상";
+                        lbl_Dev_InvertorConn.BackColor = Color.Lime;
+                        lbl_Dev_InvertorConn.ForeColor = Color.Black;
+                    }
+
+
                     if (Global_Class.BitStatus(DevSt->DevSt_1, 4))
                     {
                         lbl_Dev_InvertorConn.Text = "접속";
@@ -1385,8 +1504,15 @@ namespace VEXI
 
                     if (Global_Class.BitStatus(DevSt->DevSt_1, 3))
                     {
-                        lbl_Dev_Error.Text = String.Format("{0}-{1}-{2}", DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode) +
-                                             "  " + Global_Class.UTIL_RTVAlarmName(DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode);
+                        if (DevSt->AlarmCodeType == 1)
+                        {
+                            lbl_Dev_Error.Text = String.Format("{0}-{1}-{2}", DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode) +
+                                                 "  " + Global_Class.UTIL_RTVAlarmName_MemoryMap(DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode);
+                        } else
+                        {
+                            lbl_Dev_Error.Text = String.Format("{0}-{1}-{2}", DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode) +
+                                                 "  " + Global_Class.UTIL_RTVAlarmName_14Bytes(DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode);
+                        }
                         lbl_Dev_Error.BackColor = Color.Red;
                         lbl_Dev_Error.ForeColor = Color.White;
                     }
@@ -1421,6 +1547,18 @@ namespace VEXI
                         lbl_DevEmergencySwitch.BackColor = Color.Silver;
                         lbl_DevEmergencySwitch.ForeColor = Color.Black;
                     }
+
+                    if (Global_Class.BitStatus(DevSt->DevSt_2, 6))
+                    {
+                        lbl_DevmodeSwitch_0.BackColor = Color.Silver;
+                        lbl_DevmodeSwitch_1.BackColor = Color.Lime;
+                    }
+                    else
+                    {
+                        lbl_DevmodeSwitch_0.BackColor = Color.Lime;
+                        lbl_DevmodeSwitch_1.BackColor = Color.Silver;
+                    }
+
 
                     lbl_Dev_ActionCode.Text = Global_Class.UTIL_RTVActionStText(DevSt->ActionCode);
                 }
@@ -1809,7 +1947,8 @@ namespace VEXI
                         lbl_DriveSt1_2.Text = "아님";
                         lbl_DriveSt1_1.Text = "아님";
                     }
-                    
+
+
                     if (Global_Class.BitStatus(DevSt->Drive_DisPosition.St_1, 0))
                     {
                         lbl_DriveSt1_0.Text = "동작중";
@@ -1852,6 +1991,19 @@ namespace VEXI
                         lbl_DriveSt2_1.ForeColor = Color.White;
                     }
 
+                    if (Global_Class.BitStatus(DevSt->Drive_DisPosition.St_2, 2))
+                    {
+                        lbl_DriveSt2_2.Text = "확인완료";
+                        lbl_DriveSt2_2.BackColor = Color.Lime;
+                        lbl_DriveSt2_2.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        lbl_DriveSt2_2.Text = "미확인";
+                        lbl_DriveSt2_2.BackColor = Color.Red;
+                        lbl_DriveSt2_2.ForeColor = Color.White;
+                    }
+
                     if ((DevSt->CanWorkStation.Station == 0xFF) && (DevSt->CanWorkStation.Position == 0xFF))
                     {
                         lbl_CanWork_StationIndex.Text = "-";
@@ -1865,29 +2017,55 @@ namespace VEXI
                     lbl_Drive_Destination.Text = String.Format("{0}", DevSt->Drive_DisPosition.Dest_Position);
                     lbl_Drive_DestSpeed.Text = string.Format("{0:0.0}", (double)DevSt->Drive_DisPosition.Dest_Speed / 10);
 
-                    if ((DevSt->DriveAreaInfo.RegionSt & 0x01) == 0x00)
+                    if ((DevSt->DriveAreaInfo.FrontRegionSt & 0x01) == 0x00)
                     {
-                        lbl_DriveAreaInfo_RegionSt_0.BackColor = Color.Silver;
+                        lbl_DriveFrontAreaInfo_RegionSt_0.BackColor = Color.Silver;
                     }
                     else
                     {
-                        lbl_DriveAreaInfo_RegionSt_0.BackColor = Color.Yellow;
+                        lbl_DriveFrontAreaInfo_RegionSt_0.BackColor = Color.Yellow;
                     }
-                    if ((DevSt->DriveAreaInfo.RegionSt & 0x02) == 0x00)
+                    if ((DevSt->DriveAreaInfo.FrontRegionSt & 0x02) == 0x00)
                     {
-                        lbl_DriveAreaInfo_RegionSt_1.BackColor = Color.Silver;
-                    }
-                    else
-                    {
-                        lbl_DriveAreaInfo_RegionSt_1.BackColor = Color.Yellow;
-                    }
-                    if ((DevSt->DriveAreaInfo.RegionSt & 0x04) == 0x00)
-                    {
-                        lbl_DriveAreaInfo_RegionSt_2.BackColor = Color.Silver;
+                        lbl_DriveFrontAreaInfo_RegionSt_1.BackColor = Color.Silver;
                     }
                     else
                     {
-                        lbl_DriveAreaInfo_RegionSt_2.BackColor = Color.Yellow;
+                        lbl_DriveFrontAreaInfo_RegionSt_1.BackColor = Color.Yellow;
+                    }
+                    if ((DevSt->DriveAreaInfo.FrontRegionSt & 0x04) == 0x00)
+                    {
+                        lbl_DriveFrontAreaInfo_RegionSt_2.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveFrontAreaInfo_RegionSt_2.BackColor = Color.Yellow;
+                    }
+
+
+                    if ((DevSt->RearRegion & 0x01) == 0x00)
+                    {
+                        lbl_DriveRearAreaInfo_RegionSt_0.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveRearAreaInfo_RegionSt_0.BackColor = Color.Yellow;
+                    }
+                    if ((DevSt->RearRegion & 0x02) == 0x00)
+                    {
+                        lbl_DriveRearAreaInfo_RegionSt_1.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveRearAreaInfo_RegionSt_1.BackColor = Color.Yellow;
+                    }
+                    if ((DevSt->RearRegion & 0x04) == 0x00)
+                    {
+                        lbl_DriveRearAreaInfo_RegionSt_2.BackColor = Color.Silver;
+                    }
+                    else
+                    {
+                        lbl_DriveRearAreaInfo_RegionSt_2.BackColor = Color.Yellow;
                     }
 
                     lbl_DriveBarcodeErrCount.Text = string.Format("{0}", DevSt->BarcodeErrCount);
@@ -2068,6 +2246,11 @@ namespace VEXI
         }
 
         private void rb_DIO_DigitalIn_1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_DIO_DigitalOut_3_CheckedChanged(object sender, EventArgs e)
         {
 
         }

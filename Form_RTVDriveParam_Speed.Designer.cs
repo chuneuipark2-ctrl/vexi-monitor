@@ -244,6 +244,7 @@ namespace VEXI
             this.btn_Drive_TestSpeed.Tag = "1";
             this.btn_Drive_TestSpeed.Text = "시운전 속도 초기화";
             this.btn_Drive_TestSpeed.UseVisualStyleBackColor = true;
+            this.btn_Drive_TestSpeed.Visible = false;
             this.btn_Drive_TestSpeed.Click += new System.EventHandler(this.btn_Drive_TestSpeed_Click);
             // 
             // btn_Drive_OpSpeed
@@ -256,6 +257,7 @@ namespace VEXI
             this.btn_Drive_OpSpeed.Tag = "2";
             this.btn_Drive_OpSpeed.Text = "운영 속도 초기화";
             this.btn_Drive_OpSpeed.UseVisualStyleBackColor = true;
+            this.btn_Drive_OpSpeed.Visible = false;
             this.btn_Drive_OpSpeed.Click += new System.EventHandler(this.btn_Drive_OpSpeed_Click);
             // 
             // groupBox1

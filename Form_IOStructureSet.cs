@@ -22,6 +22,10 @@ namespace VEXI
         private int MAX_DI_COUNT_2 = 0;
         private int MAX_DO_COUNT_1 = 0;
         private int MAX_DO_COUNT_2 = 0;
+
+        private bool IsSRM_New = true;
+        private bool IsRXIO = false;
+
         public Form_IOStructureSet()
         {
             InitializeComponent();
@@ -53,10 +57,10 @@ namespace VEXI
             switch (form_Main.COMMDataManager.RX_DestDevType)
             {
                 case ConstClass.TYPE_SRM:
-                    MAX_DI_COUNT_1 = ConstClass.SRM_DI_Names.GetLength(0);
-                    MAX_DI_COUNT_2 = ConstClass.SRM_DI_Names2.GetLength(0);
-                    MAX_DO_COUNT_1 = ConstClass.SRM_DO_Names.GetLength(0);
-                    MAX_DO_COUNT_2 = 0;
+                    MAX_DI_COUNT_1 = ConstClass.SRM_DI_Names_1.GetLength(0);
+                    MAX_DI_COUNT_2 = ConstClass.SRM_DI_Names_2.GetLength(0);
+                    MAX_DO_COUNT_1 = ConstClass.SRM_DO_Names_1.GetLength(0);
+                    MAX_DO_COUNT_2 = ConstClass.SRM_DO_Names_2.GetLength(0);
                     break;
                 case ConstClass.TYPE_RTV:
                     MAX_DI_COUNT_1 = ConstClass.RTV_DI_Names.GetLength(0);
@@ -78,7 +82,7 @@ namespace VEXI
                     break;
             }
 
-        Init_DI();
+            Init_DI();
             Init_DO();
             IsControl = false;
         }
@@ -247,10 +251,10 @@ namespace VEXI
                                 case ConstClass.TYPE_SRM:
                                     if (lvDI_Item.Index < MAX_DI_COUNT_1)
                                     {
-                                        if (ConstClass.SRM_DI_Names[lvDI_Item.Index, 3] == "0") DI_EditComboxBox[i].Tag = 1;
+                                        if (ConstClass.SRM_DI_Names_1[lvDI_Item.Index, 3] == "0") DI_EditComboxBox[i].Tag = 1;
                                     } else
                                     {
-                                        if (ConstClass.SRM_DI_Names2[lvDI_Item.Index- MAX_DI_COUNT_1, 3] == "0") DI_EditComboxBox[i].Tag = 1;
+                                        if (ConstClass.SRM_DI_Names_2[lvDI_Item.Index- MAX_DI_COUNT_1, 3] == "0") DI_EditComboxBox[i].Tag = 1;
                                     }
                                     break;
                                 case ConstClass.TYPE_RTV:
@@ -553,7 +557,7 @@ namespace VEXI
                 switch (form_Main.COMMDataManager.RX_DestDevType)
                 {
                     case ConstClass.TYPE_SRM:
-                        listviewitem = new ListViewItem(ConstClass.SRM_DI_Names[i, 0]);
+                        listviewitem = new ListViewItem(ConstClass.SRM_DI_Names_1[i, 0]);
                         break;
                     case ConstClass.TYPE_RTV:
                         listviewitem = new ListViewItem(ConstClass.RTV_DI_Names[i, 0]);
@@ -573,7 +577,7 @@ namespace VEXI
                 switch (form_Main.COMMDataManager.RX_DestDevType)
                 {
                     case ConstClass.TYPE_SRM:
-                        if (ConstClass.SRM_DI_Names[i, 3] == "0") listviewitem.SubItems.Add("단독");
+                        if (ConstClass.SRM_DI_Names_1[i, 3] == "0") listviewitem.SubItems.Add("단독");
                         else listviewitem.SubItems.Add("");
                         break;
                     case ConstClass.TYPE_RTV:
@@ -602,14 +606,14 @@ namespace VEXI
                     case ConstClass.TYPE_SRM:
                         for (int i = 0; i < MAX_DI_COUNT_2; i++)
                         {
-                            listviewitem = new ListViewItem(ConstClass.SRM_DI_Names2[i, 0]);
+                            listviewitem = new ListViewItem(ConstClass.SRM_DI_Names_2[i, 0]);
 
                             listviewitem.SubItems.Add("");
                             listviewitem.SubItems.Add("");
                             listviewitem.SubItems.Add("");
                             listviewitem.SubItems.Add("");
 
-                            if (ConstClass.SRM_DI_Names2[i, 3] == "0") listviewitem.SubItems.Add("단독");
+                            if (ConstClass.SRM_DI_Names_2[i, 3] == "0") listviewitem.SubItems.Add("단독");
                             else listviewitem.SubItems.Add("");
 
                             this.lv_DI.Items.Add(listviewitem);
@@ -629,7 +633,7 @@ namespace VEXI
                 switch (form_Main.COMMDataManager.RX_DestDevType)
                 {
                     case ConstClass.TYPE_SRM:
-                        listviewitem = new ListViewItem(ConstClass.SRM_DO_Names[i, 0]);
+                        listviewitem = new ListViewItem(ConstClass.SRM_DO_Names_1[i, 0]);
                         break;
                     case ConstClass.TYPE_RTV:
                         listviewitem = new ListViewItem(ConstClass.RTV_DO_Names_1[i, 0]);
@@ -653,6 +657,17 @@ namespace VEXI
             {
                 switch (form_Main.COMMDataManager.RX_DestDevType)
                 {
+                    case ConstClass.TYPE_SRM:
+                        for (int i = 0; i < MAX_DO_COUNT_2; i++)
+                        {
+                            listviewitem = new ListViewItem(ConstClass.SRM_DO_Names_2[i, 0]);
+                            listviewitem.SubItems.Add("");
+                            listviewitem.SubItems.Add("");
+                            listviewitem.SubItems.Add("");
+
+                            this.lv_DO.Items.Add(listviewitem);
+                        }
+                        break;
                     case ConstClass.TYPE_RTV:
                         for (int i = 0; i < MAX_DO_COUNT_2; i++)
                         {
@@ -748,7 +763,26 @@ namespace VEXI
                             }
                         }
 
+                        fixed (VEXI_DEFS.REC_DOConfig* DOConfigStPtr = &dev_REC_IOConfig.SRMIO.DOConfig_44)
+                        {
+                            fixed (VEXI_DEFS.REC_DOConfig* DOConfigctrlPtr = &CtrlREC.SRMIO.DOConfig_44)
+                            {
+                                for (byte i = 0; i < MAX_DO_COUNT_2; i++)
+                                {
+                                    if (((DOConfigStPtr + i)->EthercatID != (DOConfigctrlPtr + i)->EthercatID) ||
+                                        ((DOConfigStPtr + i)->Pin != (DOConfigctrlPtr + i)->Pin) ||
+                                        ((DOConfigStPtr + i)->Type != (DOConfigctrlPtr + i)->Type))
+                                    {
+                                        lv_DO.Items[MAX_DO_COUNT_1 + i].ForeColor = Color.Red;
+                                        IsCompareOK = false;
+                                    }
+                                    else lv_DO.Items[MAX_DO_COUNT_1 + i].ForeColor = Color.Black;
 
+                                }
+                            }
+                        }
+
+                        
                         break;
                     case ConstClass.TYPE_RTV:
                         if (dev_REC_IOConfig.RTVIO.EthercatBoard[0] != CtrlREC.RTVIO.EthercatBoard[0]) lbl_ethercat_1.ForeColor = Color.Red; else lbl_ethercat_1.ForeColor = Color.Black;
@@ -887,10 +921,116 @@ namespace VEXI
             }
         }
 
+
+        public unsafe void Process_SRMSt_OLDIO()
+        {
+            if (!IsSRM_New)
+            {
+                fixed (VEXI_DEFS.REC_DIConfig* DICOnfigPtr = &dev_REC_IOConfig.SRMIO.DIConfig_123)
+                {
+                    //123 -> 0
+                    //129 ~ 149 -> 6 ~ 26
+                    for (int i = 6; i <= 26; i++)
+                    {
+                        (DICOnfigPtr + i)->EthercatID = 255;
+                        (DICOnfigPtr + i)->Pin = 0;
+                        (DICOnfigPtr + i)->Type = 0;
+                        (DICOnfigPtr + i)->Chattering = 0;
+                        (DICOnfigPtr + i)->Dual = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &dev_REC_IOConfig.SRMIO.DOConfig_1)
+                {
+                    //1 -> 0
+                    //38 ~ 43 -> 37 ~ 42
+                    for (int i = 37; i <= 42; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &dev_REC_IOConfig.SRMIO.DOConfig_44)
+                {
+                    //44 -> 0
+                    //44 ~ 69 -> 0 ~ 25
+                    for (int i = 0; i <= 25; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+            }
+        }
+
+        public unsafe void Process_SRMCtrl_OLDIO()
+        {
+            if (!IsSRM_New)
+            {
+                fixed (VEXI_DEFS.REC_DIConfig* DICOnfigPtr = &CtrlREC.SRMIO.DIConfig_123)
+                {
+                    //123 -> 0
+                    //129 ~ 149 -> 6 ~ 26
+                    for (int i = 6; i <= 26; i++)
+                    {
+                        (DICOnfigPtr + i)->EthercatID = 255;
+                        (DICOnfigPtr + i)->Pin = 0;
+                        (DICOnfigPtr + i)->Type = 0;
+                        (DICOnfigPtr + i)->Chattering = 0;
+                        (DICOnfigPtr + i)->Dual = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &CtrlREC.SRMIO.DOConfig_1)
+                {
+                    //1 -> 0
+                    //38 ~ 43 -> 37 ~ 42
+                    for (int i = 37; i <= 42; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &CtrlREC.SRMIO.DOConfig_44)
+                {
+                    //44 -> 0
+                    //44 ~ 69 -> 0 ~ 25
+                    for (int i = 0; i <= 25; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+            }
+        }
+
         public void Display_IOConfig(byte[] data)
         {
             //dev_REC_IOConfig = (VEXI_DEFS.DEV_IOConfig)Global_Class.UTIL_BytesToStructure(data, typeof(VEXI_DEFS.DEV_IOConfig));
+
+            IsRXIO = true;
             dev_REC_IOConfig = (VEXI_DEFS.DevUnion_IOConfig)Global_Class.UTIL_BytesToStructure(data, data.Length, typeof(VEXI_DEFS.DevUnion_IOConfig));
+
+            
+            if (form_Main.COMMDataManager.RX_DestDevType == ConstClass.TYPE_SRM)
+            {
+                if (data.Length <= 844)
+                {
+                    //IN 135~149, OUT 44~69 추가전  (IN 128, OUT 37)
+                    IsSRM_New = false;
+                    Process_SRMSt_OLDIO();
+                } else
+                {
+                    IsSRM_New = true;
+                }
+            }
+
             Display_IOConfig(true, false);
         }
 
@@ -1085,7 +1225,7 @@ namespace VEXI
                             else lv_DI.Items[i].SubItems[3].Text = "B";
                             lv_DI.Items[i].SubItems[4].Text = string.Format("{0}", (DICOnfigPtr + i)->Chattering);
 
-                                    if (ConstClass.SRM_DI_Names[i, 3] == "0")
+                                    if (ConstClass.SRM_DI_Names_1[i, 3] == "0")
                                     {
                                         lv_DI.Items[i].SubItems[5].Text = "단독";
                                     }
@@ -1144,7 +1284,7 @@ namespace VEXI
                             else lv_DI.Items[MAX_DI_COUNT_1 + i].SubItems[3].Text = "B";
                             lv_DI.Items[MAX_DI_COUNT_1 + i].SubItems[4].Text = string.Format("{0}", (DICOnfigPtr + i)->Chattering);
 
-                            if (ConstClass.SRM_DI_Names2[i, 3] == "0")
+                            if (ConstClass.SRM_DI_Names_2[i, 3] == "0")
                             {
                                 lv_DI.Items[MAX_DI_COUNT_1 + i].SubItems[5].Text = "단독";
                             }
@@ -1156,6 +1296,30 @@ namespace VEXI
 
                             //Ptr = Ptr + 1;
                         }
+                    }
+
+                    fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &dev_REC_IOConfig.SRMIO.DOConfig_44)
+                    {
+                        for (byte i = 0; i < MAX_DO_COUNT_2; i++)
+                        {
+                            if ((DOCOnfigPtr + i)->EthercatID == 0) lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[1].Text = "MCU";
+                            else if ((DOCOnfigPtr + i)->EthercatID == 255) lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[1].Text = "신호없음";
+                            else lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[1].Text = string.Format("{0}", (DOCOnfigPtr + i)->EthercatID);
+
+                            if ((DOCOnfigPtr + i)->EthercatID != 255)
+                            {
+                                lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[2].Text = string.Format("{0}", (DOCOnfigPtr + i)->Pin);
+                            }
+                            else
+                            {
+                                lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[2].Text = "없음";
+                            }
+                            if ((DOCOnfigPtr + i)->Type != 1) lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[3].Text = "A";
+                            else lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[3].Text = "B";
+
+                            //Ptr = Ptr + 1;
+                        }
+
                     }
                     break;
                 case ConstClass.TYPE_RTV:
@@ -1617,7 +1781,7 @@ namespace VEXI
             switch (form_Main.COMMDataManager.RX_DestDevType)
             {
                 case ConstClass.TYPE_SRM:
-                    btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.srm_REC_SRMSt.DevMode & 0x08) != 0);
+                    btnSet.Enabled = ((IsRXIO) &&  (form_Main.COMMDataManager.DevRec.srm_REC_SRMSt.DevMode & 0x08) != 0);
                     break;
                 case ConstClass.TYPE_RTV:
                     btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
@@ -1738,7 +1902,7 @@ namespace VEXI
 
                     if (Loop < MAX_DI_COUNT_1)
                     {
-                        if (ConstClass.SRM_DI_Names[Loop, 3] == "0")
+                        if (ConstClass.SRM_DI_Names_1[Loop, 3] == "0")
                         {
                             lv_DI.Items[Loop].SubItems[5].Text = "단독";
                         }
@@ -1748,7 +1912,7 @@ namespace VEXI
                         }
                     } else
                     {
-                        if (ConstClass.SRM_DI_Names2[Loop - MAX_DI_COUNT_1, 3] == "0")
+                        if (ConstClass.SRM_DI_Names_2[Loop - MAX_DI_COUNT_1, 3] == "0")
                         {
                             lv_DI.Items[Loop].SubItems[5].Text = "단독";
                         }
@@ -2018,7 +2182,7 @@ namespace VEXI
                                 else (DICOnfigPtr + i)->Type = 0;
                                 (DICOnfigPtr + i)->Chattering = (byte)Global_Class.UTIL_StrToIntDef(lv_DI.Items[i].SubItems[4].Text, 0);
 
-                                if (ConstClass.SRM_DI_Names[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
+                                if (ConstClass.SRM_DI_Names_1[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
                                 else
                                 {
                                     if (lv_DI.Items[i].SubItems[5].Text == "OR") (DICOnfigPtr + i)->Dual = 1;
@@ -2030,7 +2194,7 @@ namespace VEXI
                                 (DICOnfigPtr + i)->Pin = 0;
                                 (DICOnfigPtr + i)->Type = 0;
                                 (DICOnfigPtr + i)->Chattering = 0;
-                                if (ConstClass.SRM_DI_Names[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
+                                if (ConstClass.SRM_DI_Names_1[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
                                 else (DICOnfigPtr + i)->Dual = 1;
                             }
                         }
@@ -2073,7 +2237,7 @@ namespace VEXI
                                 else (DICOnfigPtr + i)->Type = 0;
                                 (DICOnfigPtr + i)->Chattering = (byte)Global_Class.UTIL_StrToIntDef(lv_DI.Items[MAX_DI_COUNT_1 + i].SubItems[4].Text, 0);
 
-                                if (ConstClass.SRM_DI_Names2[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
+                                if (ConstClass.SRM_DI_Names_2[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
                                 else
                                 {
                                     if (lv_DI.Items[MAX_DI_COUNT_1 + i].SubItems[5].Text == "OR") (DICOnfigPtr + i)->Dual = 1;
@@ -2085,12 +2249,33 @@ namespace VEXI
                                 (DICOnfigPtr + i)->Pin = 0;
                                 (DICOnfigPtr + i)->Type = 0;
                                 (DICOnfigPtr + i)->Chattering = 0;
-                                if (ConstClass.SRM_DI_Names2[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
+                                if (ConstClass.SRM_DI_Names_2[i, 3] == "0") (DICOnfigPtr + i)->Dual = 0;
                                 else (DICOnfigPtr + i)->Dual = 1;
                             }
                         }
                     }
 
+                    fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &CtrlREC.SRMIO.DOConfig_44)
+                    {
+                        for (byte i = 0; i < MAX_DO_COUNT_2; i++)
+                        {
+                            if (lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[1].Text == "MCU") (DOCOnfigPtr + i)->EthercatID = 0;
+                            else if (lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[1].Text == "신호없음") (DOCOnfigPtr + i)->EthercatID = 255;
+                            else (DOCOnfigPtr + i)->EthercatID = (byte)Global_Class.UTIL_StrToIntDef(lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[1].Text, 1);
+
+                            if ((DOCOnfigPtr + i)->EthercatID != 255)
+                            {
+                                (DOCOnfigPtr + i)->Pin = (byte)Global_Class.UTIL_StrToIntDef(lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[2].Text, 0);
+                                if (lv_DO.Items[MAX_DO_COUNT_1 + i].SubItems[3].Text == "B") (DOCOnfigPtr + i)->Type = 1;
+                                else (DOCOnfigPtr + i)->Type = 0;
+                            }
+                            else
+                            {
+                                (DOCOnfigPtr + i)->Pin = 0;
+                                (DOCOnfigPtr + i)->Type = 0;
+                            }
+                        }
+                    }
                     break;
                 case ConstClass.TYPE_RTV:
                     switch (cb_Ehtercat_1.SelectedIndex)
@@ -2576,6 +2761,15 @@ namespace VEXI
                     break;
             }
 
+            if (form_Main.COMMDataManager.RX_DestDevType == ConstClass.TYPE_SRM)
+            {
+                //IN 135~149, OUT 44~69 추가전  (IN 128, OUT 37)
+                if (!IsSRM_New)
+                {
+                    Process_SRMCtrl_OLDIO();
+                }
+            }
+
 
             if (!isFileSave)
             {
@@ -2600,6 +2794,7 @@ namespace VEXI
                 if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "I/O 설정을 장치에 다운로드 하시겠습니까?"))
                 {
                     IsControl = true;
+
                     Do_Ctrl(false);
                 }
             } else
@@ -2749,6 +2944,14 @@ namespace VEXI
                         br.Close();
                     }
                 }
+
+                if (form_Main.COMMDataManager.RX_DestDevType == ConstClass.TYPE_SRM)
+                {
+                    if (!IsSRM_New)
+                    {
+                        Process_SRMSt_OLDIO();
+                    }
+                }
                 Display_IOConfig(false, true);
             }
         }
@@ -2783,6 +2986,10 @@ namespace VEXI
                         form_Main.SRM_ToTalFile.FileName = openFileDialog1.FileName;
                         if (form_Main.SRM_ToTalFile.Read_IO_CFG(ref dev_REC_IOConfig.SRMIO))
                         {
+                                if (!IsSRM_New)
+                                {
+                                    Process_SRMSt_OLDIO();
+                                }
                             Display_IOConfig(false, true);
                         }
                         else

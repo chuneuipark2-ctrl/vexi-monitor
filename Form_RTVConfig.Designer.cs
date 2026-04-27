@@ -90,10 +90,22 @@ namespace VEXI
             this.btn_LoadTotalFile = new System.Windows.Forms.Button();
             this.label177 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.rb_LampType_1 = new System.Windows.Forms.RadioButton();
-            this.lbl_LampType = new System.Windows.Forms.Label();
+            this.rb_FrontLampType_2 = new System.Windows.Forms.RadioButton();
+            this.rb_FrontLampType_1 = new System.Windows.Forms.RadioButton();
+            this.lbl_FrontLampType = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.rb_LampType_0 = new System.Windows.Forms.RadioButton();
+            this.rb_FrontLampType_0 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rb_RearLampType_2 = new System.Windows.Forms.RadioButton();
+            this.rb_RearLampType_1 = new System.Windows.Forms.RadioButton();
+            this.lbl_RearLampType = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rb_RearLampType_0 = new System.Windows.Forms.RadioButton();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.rb_ModeSwitchUse_1 = new System.Windows.Forms.RadioButton();
+            this.lbl_ModeSwitchUse = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rb_ModeSwitchUse_0 = new System.Windows.Forms.RadioButton();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -101,6 +113,8 @@ namespace VEXI
             this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -111,10 +125,10 @@ namespace VEXI
             this.panel5.Controls.Add(this.lbl_InvertorKind);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.rb_InvertorKind_1);
-            this.panel5.Location = new System.Drawing.Point(280, 187);
+            this.panel5.Location = new System.Drawing.Point(344, 121);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(4);
-            this.panel5.Size = new System.Drawing.Size(100, 129);
+            this.panel5.Size = new System.Drawing.Size(148, 129);
             this.panel5.TabIndex = 196;
             // 
             // rb_InvertorKind_3
@@ -147,7 +161,7 @@ namespace VEXI
             this.lbl_InvertorKind.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_InvertorKind.Location = new System.Drawing.Point(4, 24);
             this.lbl_InvertorKind.Name = "lbl_InvertorKind";
-            this.lbl_InvertorKind.Size = new System.Drawing.Size(90, 20);
+            this.lbl_InvertorKind.Size = new System.Drawing.Size(138, 20);
             this.lbl_InvertorKind.TabIndex = 187;
             this.lbl_InvertorKind.Text = "-";
             this.lbl_InvertorKind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,7 +174,7 @@ namespace VEXI
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(4, 4);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 20);
+            this.label8.Size = new System.Drawing.Size(138, 20);
             this.label8.TabIndex = 188;
             this.label8.Text = "인버터 타입";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,10 +198,10 @@ namespace VEXI
             this.panel9.Controls.Add(this.lbl_RTVsType);
             this.panel9.Controls.Add(this.label16);
             this.panel9.Controls.Add(this.rb_RTVsType_1);
-            this.panel9.Location = new System.Drawing.Point(23, 187);
+            this.panel9.Location = new System.Drawing.Point(23, 121);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(4);
-            this.panel9.Size = new System.Drawing.Size(94, 129);
+            this.panel9.Size = new System.Drawing.Size(148, 129);
             this.panel9.TabIndex = 200;
             // 
             // rb_RTVsType_3
@@ -220,7 +234,7 @@ namespace VEXI
             this.lbl_RTVsType.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_RTVsType.Location = new System.Drawing.Point(4, 24);
             this.lbl_RTVsType.Name = "lbl_RTVsType";
-            this.lbl_RTVsType.Size = new System.Drawing.Size(84, 20);
+            this.lbl_RTVsType.Size = new System.Drawing.Size(138, 20);
             this.lbl_RTVsType.TabIndex = 187;
             this.lbl_RTVsType.Text = "-";
             this.lbl_RTVsType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,7 +247,7 @@ namespace VEXI
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(4, 4);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 20);
+            this.label16.Size = new System.Drawing.Size(138, 20);
             this.label16.TabIndex = 188;
             this.label16.Text = "RTV 구성";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,7 +271,7 @@ namespace VEXI
             this.panel10.Controls.Add(this.lbl_MovePositionSensor);
             this.panel10.Controls.Add(this.label20);
             this.panel10.Controls.Add(this.rb_MovePositionSensor_1);
-            this.panel10.Location = new System.Drawing.Point(124, 187);
+            this.panel10.Location = new System.Drawing.Point(183, 121);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(4);
             this.panel10.Size = new System.Drawing.Size(148, 129);
@@ -344,7 +358,7 @@ namespace VEXI
             this.panel8.Controls.Add(this.lbl_InvertorType);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Controls.Add(this.rb_InvertorType_111);
-            this.panel8.Location = new System.Drawing.Point(23, 332);
+            this.panel8.Location = new System.Drawing.Point(23, 400);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(4);
             this.panel8.Size = new System.Drawing.Size(715, 268);
@@ -601,10 +615,10 @@ namespace VEXI
             this.panel4.Controls.Add(this.lbl_DSP_Comm);
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(521, 25);
+            this.panel4.Location = new System.Drawing.Point(516, 95);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(4);
-            this.panel4.Size = new System.Drawing.Size(217, 291);
+            this.panel4.Size = new System.Drawing.Size(217, 292);
             this.panel4.TabIndex = 207;
             // 
             // ed_DSP2_IP
@@ -818,36 +832,47 @@ namespace VEXI
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.rb_LampType_1);
-            this.panel12.Controls.Add(this.lbl_LampType);
+            this.panel12.Controls.Add(this.rb_FrontLampType_2);
+            this.panel12.Controls.Add(this.rb_FrontLampType_1);
+            this.panel12.Controls.Add(this.lbl_FrontLampType);
             this.panel12.Controls.Add(this.label7);
-            this.panel12.Controls.Add(this.rb_LampType_0);
-            this.panel12.Location = new System.Drawing.Point(387, 188);
+            this.panel12.Controls.Add(this.rb_FrontLampType_0);
+            this.panel12.Location = new System.Drawing.Point(23, 259);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(4);
-            this.panel12.Size = new System.Drawing.Size(127, 128);
+            this.panel12.Size = new System.Drawing.Size(214, 128);
             this.panel12.TabIndex = 1209;
             // 
-            // rb_LampType_1
+            // rb_FrontLampType_2
             // 
-            this.rb_LampType_1.AutoSize = true;
-            this.rb_LampType_1.Location = new System.Drawing.Point(8, 78);
-            this.rb_LampType_1.Name = "rb_LampType_1";
-            this.rb_LampType_1.Size = new System.Drawing.Size(95, 16);
-            this.rb_LampType_1.TabIndex = 3;
-            this.rb_LampType_1.Text = "Tower Lamp";
-            this.rb_LampType_1.UseVisualStyleBackColor = true;
+            this.rb_FrontLampType_2.AutoSize = true;
+            this.rb_FrontLampType_2.Location = new System.Drawing.Point(8, 99);
+            this.rb_FrontLampType_2.Name = "rb_FrontLampType_2";
+            this.rb_FrontLampType_2.Size = new System.Drawing.Size(160, 16);
+            this.rb_FrontLampType_2.TabIndex = 189;
+            this.rb_FrontLampType_2.Text = "LED BAR + Tower Lamp";
+            this.rb_FrontLampType_2.UseVisualStyleBackColor = true;
             // 
-            // lbl_LampType
+            // rb_FrontLampType_1
             // 
-            this.lbl_LampType.BackColor = System.Drawing.Color.White;
-            this.lbl_LampType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbl_LampType.Location = new System.Drawing.Point(4, 24);
-            this.lbl_LampType.Name = "lbl_LampType";
-            this.lbl_LampType.Size = new System.Drawing.Size(117, 20);
-            this.lbl_LampType.TabIndex = 187;
-            this.lbl_LampType.Text = "-";
-            this.lbl_LampType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rb_FrontLampType_1.AutoSize = true;
+            this.rb_FrontLampType_1.Location = new System.Drawing.Point(8, 78);
+            this.rb_FrontLampType_1.Name = "rb_FrontLampType_1";
+            this.rb_FrontLampType_1.Size = new System.Drawing.Size(95, 16);
+            this.rb_FrontLampType_1.TabIndex = 3;
+            this.rb_FrontLampType_1.Text = "Tower Lamp";
+            this.rb_FrontLampType_1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_FrontLampType
+            // 
+            this.lbl_FrontLampType.BackColor = System.Drawing.Color.White;
+            this.lbl_FrontLampType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_FrontLampType.Location = new System.Drawing.Point(4, 24);
+            this.lbl_FrontLampType.Name = "lbl_FrontLampType";
+            this.lbl_FrontLampType.Size = new System.Drawing.Size(204, 20);
+            this.lbl_FrontLampType.TabIndex = 187;
+            this.lbl_FrontLampType.Text = "-";
+            this.lbl_FrontLampType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -857,27 +882,158 @@ namespace VEXI
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 20);
+            this.label7.Size = new System.Drawing.Size(204, 20);
             this.label7.TabIndex = 188;
-            this.label7.Text = "제어반 램프 타입";
+            this.label7.Text = "전방 램프 타입";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rb_LampType_0
+            // rb_FrontLampType_0
             // 
-            this.rb_LampType_0.AutoSize = true;
-            this.rb_LampType_0.Location = new System.Drawing.Point(8, 56);
-            this.rb_LampType_0.Name = "rb_LampType_0";
-            this.rb_LampType_0.Size = new System.Drawing.Size(74, 16);
-            this.rb_LampType_0.TabIndex = 2;
-            this.rb_LampType_0.Text = "LED BAR";
-            this.rb_LampType_0.UseVisualStyleBackColor = true;
+            this.rb_FrontLampType_0.AutoSize = true;
+            this.rb_FrontLampType_0.Location = new System.Drawing.Point(8, 56);
+            this.rb_FrontLampType_0.Name = "rb_FrontLampType_0";
+            this.rb_FrontLampType_0.Size = new System.Drawing.Size(74, 16);
+            this.rb_FrontLampType_0.TabIndex = 2;
+            this.rb_FrontLampType_0.Text = "LED BAR";
+            this.rb_FrontLampType_0.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.rb_RearLampType_2);
+            this.panel1.Controls.Add(this.rb_RearLampType_1);
+            this.panel1.Controls.Add(this.lbl_RearLampType);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.rb_RearLampType_0);
+            this.panel1.Location = new System.Drawing.Point(253, 259);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(214, 128);
+            this.panel1.TabIndex = 1210;
+            // 
+            // rb_RearLampType_2
+            // 
+            this.rb_RearLampType_2.AutoSize = true;
+            this.rb_RearLampType_2.Location = new System.Drawing.Point(8, 99);
+            this.rb_RearLampType_2.Name = "rb_RearLampType_2";
+            this.rb_RearLampType_2.Size = new System.Drawing.Size(160, 16);
+            this.rb_RearLampType_2.TabIndex = 189;
+            this.rb_RearLampType_2.Text = "LED BAR + Tower Lamp";
+            this.rb_RearLampType_2.UseVisualStyleBackColor = true;
+            // 
+            // rb_RearLampType_1
+            // 
+            this.rb_RearLampType_1.AutoSize = true;
+            this.rb_RearLampType_1.Location = new System.Drawing.Point(8, 78);
+            this.rb_RearLampType_1.Name = "rb_RearLampType_1";
+            this.rb_RearLampType_1.Size = new System.Drawing.Size(95, 16);
+            this.rb_RearLampType_1.TabIndex = 3;
+            this.rb_RearLampType_1.Text = "Tower Lamp";
+            this.rb_RearLampType_1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_RearLampType
+            // 
+            this.lbl_RearLampType.BackColor = System.Drawing.Color.White;
+            this.lbl_RearLampType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_RearLampType.Location = new System.Drawing.Point(4, 24);
+            this.lbl_RearLampType.Name = "lbl_RearLampType";
+            this.lbl_RearLampType.Size = new System.Drawing.Size(204, 20);
+            this.lbl_RearLampType.TabIndex = 187;
+            this.lbl_RearLampType.Text = "-";
+            this.lbl_RearLampType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(4, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(204, 20);
+            this.label4.TabIndex = 188;
+            this.label4.Text = "후방 램프 타입";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rb_RearLampType_0
+            // 
+            this.rb_RearLampType_0.AutoSize = true;
+            this.rb_RearLampType_0.Location = new System.Drawing.Point(8, 56);
+            this.rb_RearLampType_0.Name = "rb_RearLampType_0";
+            this.rb_RearLampType_0.Size = new System.Drawing.Size(74, 16);
+            this.rb_RearLampType_0.TabIndex = 2;
+            this.rb_RearLampType_0.Text = "LED BAR";
+            this.rb_RearLampType_0.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.rb_ModeSwitchUse_1);
+            this.panel13.Controls.Add(this.lbl_ModeSwitchUse);
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Controls.Add(this.rb_ModeSwitchUse_0);
+            this.panel13.Location = new System.Drawing.Point(516, 9);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(4);
+            this.panel13.Size = new System.Drawing.Size(217, 77);
+            this.panel13.TabIndex = 1211;
+            // 
+            // rb_ModeSwitchUse_1
+            // 
+            this.rb_ModeSwitchUse_1.AutoSize = true;
+            this.rb_ModeSwitchUse_1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rb_ModeSwitchUse_1.Location = new System.Drawing.Point(99, 56);
+            this.rb_ModeSwitchUse_1.Name = "rb_ModeSwitchUse_1";
+            this.rb_ModeSwitchUse_1.Size = new System.Drawing.Size(47, 16);
+            this.rb_ModeSwitchUse_1.TabIndex = 3;
+            this.rb_ModeSwitchUse_1.TabStop = true;
+            this.rb_ModeSwitchUse_1.Text = "사용";
+            this.rb_ModeSwitchUse_1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_ModeSwitchUse
+            // 
+            this.lbl_ModeSwitchUse.BackColor = System.Drawing.Color.White;
+            this.lbl_ModeSwitchUse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_ModeSwitchUse.Location = new System.Drawing.Point(4, 24);
+            this.lbl_ModeSwitchUse.Name = "lbl_ModeSwitchUse";
+            this.lbl_ModeSwitchUse.Size = new System.Drawing.Size(207, 20);
+            this.lbl_ModeSwitchUse.TabIndex = 187;
+            this.lbl_ModeSwitchUse.Text = "-";
+            this.lbl_ModeSwitchUse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(4, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(207, 20);
+            this.label13.TabIndex = 188;
+            this.label13.Text = "모드 스위치 사용";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rb_ModeSwitchUse_0
+            // 
+            this.rb_ModeSwitchUse_0.AutoSize = true;
+            this.rb_ModeSwitchUse_0.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rb_ModeSwitchUse_0.Location = new System.Drawing.Point(21, 56);
+            this.rb_ModeSwitchUse_0.Name = "rb_ModeSwitchUse_0";
+            this.rb_ModeSwitchUse_0.Size = new System.Drawing.Size(59, 16);
+            this.rb_ModeSwitchUse_0.TabIndex = 2;
+            this.rb_ModeSwitchUse_0.TabStop = true;
+            this.rb_ModeSwitchUse_0.Text = "미사용";
+            this.rb_ModeSwitchUse_0.UseVisualStyleBackColor = true;
             // 
             // Form_RTVConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 608);
+            this.ClientSize = new System.Drawing.Size(761, 696);
             this.ControlBox = false;
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label177);
@@ -911,6 +1067,10 @@ namespace VEXI
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -977,10 +1137,22 @@ namespace VEXI
         private System.Windows.Forms.RadioButton rb_InvertorType_133;
         private System.Windows.Forms.RadioButton rb_InvertorType_132;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.RadioButton rb_LampType_1;
-        private System.Windows.Forms.Label lbl_LampType;
+        private System.Windows.Forms.RadioButton rb_FrontLampType_1;
+        private System.Windows.Forms.Label lbl_FrontLampType;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton rb_LampType_0;
+        private System.Windows.Forms.RadioButton rb_FrontLampType_0;
         private System.Windows.Forms.RadioButton rb_InvertorType_113;
+        private System.Windows.Forms.RadioButton rb_FrontLampType_2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rb_RearLampType_2;
+        private System.Windows.Forms.RadioButton rb_RearLampType_1;
+        private System.Windows.Forms.Label lbl_RearLampType;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton rb_RearLampType_0;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.RadioButton rb_ModeSwitchUse_1;
+        private System.Windows.Forms.Label lbl_ModeSwitchUse;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton rb_ModeSwitchUse_0;
     }
 }

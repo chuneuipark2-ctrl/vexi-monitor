@@ -25,7 +25,7 @@ namespace VEXI
         private void Login()
         {
 
-            if ((edID.Text.ToUpper().Trim() == "MOVEX1234") && (edPW.Text.Trim() == "1"))
+            if (((edID.Text.ToUpper().Trim() == "MOVEX1234") && (edPW.Text.Trim() == "1")) || ((edID.Text.ToUpper().Trim() == "ARTWARE") && (edPW.Text.Trim() == "1")))
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();

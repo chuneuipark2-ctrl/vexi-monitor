@@ -232,7 +232,8 @@ namespace VEXI
             rtv_FeedParam_CTRL.ParamItemsRec.MAX_RPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Feed_MAX_RPM.Text, 0);
             rtv_FeedParam_CTRL.ParamItemsRec.CALC_MPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Feed_CALC_MPM.Text, 0);
             rtv_FeedParam_CTRL.ParamItemsRec.CALC_RPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Feed_CALC_RPM.Text, 0);
-            if (cb_Feed_MotorDirection.SelectedIndex >= 0) rtv_FeedParam_CTRL.ParamItemsRec.MotorDirection = (byte)cb_Feed_MotorDirection.SelectedIndex;
+            if (cb_Feed1_MotorDirection.SelectedIndex >= 0) rtv_FeedParam_CTRL.ParamItemsRec.Feed1_MotorDirection = (byte)cb_Feed1_MotorDirection.SelectedIndex;
+            if (cb_Feed2_MotorDirection.SelectedIndex >= 0) rtv_FeedParam_CTRL.ParamItemsRec.Feed2_MotorDirection = (byte)cb_Feed2_MotorDirection.SelectedIndex;
 
             rtv_FeedParam_CTRL.ParamItemsRec.ManualOp_TokeAlarm = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Feed_ManualOp_TokeAlarm.Text, 0) * 10);
             rtv_FeedParam_CTRL.ParamItemsRec.breakOpenContinueTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Feed_breakOpenContinueTime.Text, 0) * 100);
@@ -289,7 +290,8 @@ namespace VEXI
             ed_Feed_MAX_RPM.Text = "0";
             ed_Feed_CALC_MPM.Text = "0";
             ed_Feed_CALC_RPM.Text = "0";
-            cb_Feed_MotorDirection.SelectedIndex = -1;
+            cb_Feed1_MotorDirection.SelectedIndex = -1;
+            cb_Feed2_MotorDirection.SelectedIndex = -1;
 
             ed_Feed_ManualOp_TokeAlarm.Text = "0";
             ed_Feed_breakOpenContinueTime.Text = "0";
@@ -344,7 +346,8 @@ namespace VEXI
             ed_Feed_Emergency_Decel.Text = string.Format("{0}", rtv_FeedParam_RES.Speed_Emergency.Decel);
             ed_Feed_Emergency_DJerk.Text = string.Format("{0}", rtv_FeedParam_RES.Speed_Emergency.D_jerk);
 
-            cb_Feed_MotorDirection.SelectedIndex = Math.Min(rtv_FeedParam_RES.MotorDirection, cb_Feed_MotorDirection.Items.Count - 1);
+            cb_Feed1_MotorDirection.SelectedIndex = Math.Min(rtv_FeedParam_RES.Feed1_MotorDirection, cb_Feed1_MotorDirection.Items.Count - 1);
+            cb_Feed2_MotorDirection.SelectedIndex = Math.Min(rtv_FeedParam_RES.Feed2_MotorDirection, cb_Feed2_MotorDirection.Items.Count - 1);
             ed_Feed_MAX_RPM.Text = string.Format("{0}", rtv_FeedParam_RES.MAX_RPM);
             ed_Feed_CALC_MPM.Text = string.Format("{0}", rtv_FeedParam_RES.CALC_MPM);
             ed_Feed_CALC_RPM.Text = string.Format("{0}", rtv_FeedParam_RES.CALC_RPM);

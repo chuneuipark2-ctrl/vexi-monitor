@@ -49,13 +49,11 @@ namespace VEXI
             if (cbStopRefresh.Checked) return;
             if (cbNoPollingData.Checked)
             {
-                if (PaketBytes[11] == ConstClass.CMD1_80)
-                {
-                    if ((PaketBytes[14] == ConstClass.CMD2_30) || (PaketBytes[14] == ConstClass.CMD2_32)) 
-                        return;
-                } else if (PaketBytes[11] == ConstClass.CMD1_81)
+                if ((PaketBytes[11] == ConstClass.CMD1_80) || (PaketBytes[11] == ConstClass.CMD1_81))
                 {
                     if ((PaketBytes[14] == ConstClass.CMD2_30) ||
+                        (PaketBytes[14] == ConstClass.CMD2_32) ||
+                        (PaketBytes[14] == ConstClass.CMD2_3D) ||
                         (PaketBytes[14] == ConstClass.CMD2_10) ||
                         (PaketBytes[14] == ConstClass.CMD2_12)) return;
                 }
@@ -167,13 +165,11 @@ namespace VEXI
             if (cbStopRefresh.Checked) return;
             if (cbNoPollingData.Checked)
             {
-                if (PaketBytes[11] == ConstClass.CMD1_00)
-                {
-                    if ((PaketBytes[14] == ConstClass.CMD2_30) || (PaketBytes[14] == ConstClass.CMD2_32)) return;
-                }
-                else if (PaketBytes[11] == ConstClass.CMD1_01)
+                if ((PaketBytes[11] == ConstClass.CMD1_00) || (PaketBytes[11] == ConstClass.CMD1_01))
                 {
                     if ((PaketBytes[14] == ConstClass.CMD2_30) ||
+                        (PaketBytes[14] == ConstClass.CMD2_32) ||
+                        (PaketBytes[14] == ConstClass.CMD2_3D) ||
                         (PaketBytes[14] == ConstClass.CMD2_10) ||
                         (PaketBytes[14] == ConstClass.CMD2_12)) return;
                 }

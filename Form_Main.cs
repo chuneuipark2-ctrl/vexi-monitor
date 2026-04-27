@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;   //DllImport
@@ -28,7 +29,7 @@ namespace VEXI
         public List<int> GLoopCnt = new List<int>();
         public List<int> GLoopCnt_backup = new List<int>();
 
-        Form_FunctionTest form_MyTest;
+        
         Form_ComDataDP form_ComDataDP;
 
         Form_BasicSt form_DevBasicSt;
@@ -36,6 +37,7 @@ namespace VEXI
         Form_DevEventLog form_DevEventLog;
         Form_DevDebugLog form_DevDebugLog;
         Form_OpInfo form_OpInfo;
+        Form_RackInitial form_RackInitial;
         Form_TimeInfo form_TimeInfo;
         Form_Graph form_Graph;
         Form_Developer form_DeveloperTest;
@@ -65,13 +67,18 @@ namespace VEXI
         Form_RTVFeedParam_Speed form_rtvParam_Feed;
         Form_RTVRack form_RTVRack;
         Form_RTVTotal form_RTVTotal;
-        Form_RTVInvertorSt form_RTVInvertorSt;
+        Form_EMSRTVInvertorSt form_EMSRTVInvertorSt;
+        Form_MovexWCSMemoryMap form_MovexWCSMemoryMap;
 
 
+        Form_EMSSt form_EMSSt;
+        Form_EMS_CTL form_EMS_CTL;
         Form_EMSConfig form_EMSConfig;
         Form_EMSParam_CTRL form_emsParam_Ctrl;
         Form_EMSDriveParam_Speed form_emsParam_Drive;
         Form_EMSLiftParam_Speed form_emsParam_Lift;
+        Form_EMSTotal form_EMSTotal;
+        Form_EMSRack form_EMSRack;
 
         private byte DebugValue_1;
         #endregion
@@ -111,6 +118,7 @@ namespace VEXI
             menu_EventLog.Visible = false;  //EL
             menu_DebugLog.Visible = false; //DL
             menu_ViewCommData.Visible = false; //CD
+            //menu_RackInitial.Visible = IsAdmin;
 
             // 통신객체 구성
             COMMDataManager.ADD_DataBuffer(ConstClass.COMM_UDP);
@@ -120,7 +128,7 @@ namespace VEXI
             COMMDataManager.OnDebugging += OnMainDebugging;
             COMMDataManager.OnPacketReceived += OnMainPacketReceived;
             COMMDataManager.OnPacketSended += OnMainPacketSended;
-            COMMDataManager.OnCheckManualCtrl += Do_ManualCtrl;
+            COMMDataManager.OnCheckJogCtrl += Do_JogCtrl;
 
 
             //연결장치 컴포넌트 초기화
@@ -171,6 +179,7 @@ namespace VEXI
             Display_CommSt();
             Display_RealDevInfo(false);
             Display_DevErrSt();
+            Display_DevFW();
             Display_DevForceMode();
             Display_DevSetupMode();
         }
@@ -251,6 +260,9 @@ namespace VEXI
                     form_RTVTotal.form_Main = this;
                     break;
                 case ConstClass.TYPE_EMS:
+                    form_EMSTotal = ShowActiveSingleForm(form_EMSTotal, typeof(Form_EMSTotal)) as Form_EMSTotal;
+
+                    form_EMSTotal.form_Main = this;
                     break;
                 default:
                     break;
@@ -460,6 +472,17 @@ namespace VEXI
                     form_RTVRack.form_Main = this;
                     break;
                 case ConstClass.TYPE_EMS:
+                    if (this.ActiveMdiChild != null)
+                    {
+                        if (this.ActiveMdiChild != form_EMSRack)
+                        {
+                            this.ActiveMdiChild.Close();
+
+                        }
+
+                    }
+                    form_EMSRack = ShowActiveChildForm(form_EMSRack, typeof(Form_EMSRack)) as Form_EMSRack;
+                    form_EMSRack.form_Main = this;
                     break;
                 default:
                     break;
@@ -490,6 +513,17 @@ namespace VEXI
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void menu_RackInitial_Click(object sender, EventArgs e)
+        {
+            frameLogin frmLogging = new frameLogin(); frmLogging.ShowDialog();
+
+            if (frmLogging.DialogResult == DialogResult.OK)
+            {
+                form_RackInitial = ShowActiveSingleForm(form_RackInitial, typeof(Form_RackInitial)) as Form_RackInitial;
+                form_RackInitial.form_Main = this;
             }
         }
 
@@ -530,10 +564,11 @@ namespace VEXI
 
         private void btn_DevMode_AutoOn_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (GlobalObj.MsgBox_Confirm_OKCancel(this, "장치의 운영모드를 변경하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 Do_Ctrl_DevMode(ConstClass.CMD2_58, Convert.ToByte(bt.Tag.ToString()));
             }
         }
@@ -548,6 +583,7 @@ namespace VEXI
             {
                 case ConstClass.TYPE_SRM:
                 case ConstClass.TYPE_RTV:
+                case ConstClass.TYPE_EMS:
 
                     if (this.ActiveMdiChild != null)
                     {
@@ -606,14 +642,10 @@ namespace VEXI
             switch (COMMDataManager.RX_DestDevType)
             {
                 case ConstClass.TYPE_SRM:
-                    form_TimeInfo = ShowActiveSingleForm(form_TimeInfo, typeof(Form_TimeInfo)) as Form_TimeInfo;
-                    form_TimeInfo.form_Main = this;
-                    break;
                 case ConstClass.TYPE_RTV:
+                case ConstClass.TYPE_EMS:
                     form_TimeInfo = ShowActiveSingleForm(form_TimeInfo, typeof(Form_TimeInfo)) as Form_TimeInfo;
                     form_TimeInfo.form_Main = this;
-                    break;
-                case ConstClass.TYPE_EMS:
                     break;
                 default:
                     break;
@@ -660,17 +692,28 @@ namespace VEXI
                 case ConstClass.TYPE_RTV:
                     if (this.ActiveMdiChild != null)
                     {
-                        if (this.ActiveMdiChild != form_RTVInvertorSt)
+                        if (this.ActiveMdiChild != form_EMSRTVInvertorSt)
                         {
                             this.ActiveMdiChild.Close();
 
                         }
 
                     }
-                    form_RTVInvertorSt = ShowActiveChildForm(form_RTVInvertorSt, typeof(Form_RTVInvertorSt)) as Form_RTVInvertorSt;
-                    form_RTVInvertorSt.form_Main = this;
+                    form_EMSRTVInvertorSt = ShowActiveChildForm(form_EMSRTVInvertorSt, typeof(Form_EMSRTVInvertorSt)) as Form_EMSRTVInvertorSt;
+                    form_EMSRTVInvertorSt.form_Main = this;
                     break;
                 case ConstClass.TYPE_EMS:
+                    if (this.ActiveMdiChild != null)
+                    {
+                        if (this.ActiveMdiChild != form_EMSRTVInvertorSt)
+                        {
+                            this.ActiveMdiChild.Close();
+
+                        }
+
+                    }
+                    form_EMSRTVInvertorSt = ShowActiveChildForm(form_EMSRTVInvertorSt, typeof(Form_EMSRTVInvertorSt)) as Form_EMSRTVInvertorSt;
+                    form_EMSRTVInvertorSt.form_Main = this;
                     break;
                 default:
                     break;
@@ -750,6 +793,9 @@ namespace VEXI
                     
                     break;
                 case ConstClass.TYPE_EMS:
+                    form_EMS_CTL = ShowActiveSingleForm(form_EMS_CTL, typeof(Form_EMS_CTL)) as Form_EMS_CTL;
+                    form_EMS_CTL.form_Main = this;
+
                     break;
                 default:
                     break;
@@ -759,11 +805,7 @@ namespace VEXI
 
         private void menu_MyTest_Click(object sender, EventArgs e)
         {
-            //함수 테스트 화면 열기 (Single)
-            //이 창은 테스트 용도의 창이므로 단축키로 열 수 있도록 메뉴는 visible = false 처리 해놨음
-            form_MyTest = ShowActiveSingleForm(form_MyTest, typeof(Form_FunctionTest)) as Form_FunctionTest;
-
-            form_MyTest.form_Main = this;
+            
         }
 
         private void menu_DevConfig_Click(object sender, EventArgs e)
@@ -860,6 +902,17 @@ namespace VEXI
                 }
             }
 
+            if (form_RackInitial != null)
+            {
+                if (!form_RackInitial.IsDisposed)
+                {
+                    //form_RackInitial.Dispose();
+                    form_RackInitial.Close();
+                }
+            }
+
+            
+
             if (form_TimeInfo != null)
             {
                 if (!form_TimeInfo.IsDisposed)
@@ -882,7 +935,6 @@ namespace VEXI
             {
                 if (!form_RTV_CTL.IsDisposed)
                 {
-                    //form_RTV_CTL.Dispose();
                     form_RTV_CTL.Close();
                 }
             }
@@ -891,8 +943,23 @@ namespace VEXI
             {
                 if (!form_RTVTotal.IsDisposed)
                 {
-                    //form_RTVTotal.Dispose();
                     form_RTVTotal.Close();
+                }
+            }
+
+            if (form_EMS_CTL != null)
+            {
+                if (!form_EMS_CTL.IsDisposed)
+                {
+                    form_EMS_CTL.Close();
+                }
+            }
+
+            if (form_EMSTotal != null)
+            {
+                if (!form_EMSTotal.IsDisposed)
+                {
+                    form_EMSTotal.Close();
                 }
             }
 
@@ -930,6 +997,17 @@ namespace VEXI
                     form_RTVSt.form_Main = this;
                     break;
                 case ConstClass.TYPE_EMS:
+                    if (this.ActiveMdiChild != null)
+                    {
+                        if (this.ActiveMdiChild != form_EMSSt)
+                        {
+                            this.ActiveMdiChild.Close();
+
+                        }
+
+                    }
+                    form_EMSSt = ShowActiveChildForm(form_EMSSt, typeof(Form_EMSSt)) as Form_EMSSt;
+                    form_EMSSt.form_Main = this;
                     break;
                 default:
                     break;
@@ -1234,6 +1312,13 @@ namespace VEXI
                                 };
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_DevBasicSt != null)
+                                {
+                                    if (!form_DevBasicSt.IsDisposed)
+                                    {
+                                        form_DevBasicSt.Display_DevBasicSt();
+                                    }
+                                };
                                 break;
                             default:
                                 break;
@@ -1265,6 +1350,44 @@ namespace VEXI
                                 };
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_DeveloperTest != null)
+                                {
+                                    if (!form_DeveloperTest.IsDisposed)
+                                    {
+                                        form_DeveloperTest.Display_DevTestSt();
+                                    }
+                                };
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                case ConstClass.CMD2_3D:
+                    if (COMMDataManager.Set_dev_REC_WCSData(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                    {
+                        switch (PaketObj.SrcDevType)
+                        {
+                            //분기가 필요한지는 3가지 장치에 대한 화면 구성이 모두 끝났을 때 결정해서 코드 정리 해야함
+                            case ConstClass.TYPE_SRM: //장치타입이 SRM이면
+                                break;
+                            case ConstClass.TYPE_RTV:
+                                if (form_MovexWCSMemoryMap != null)
+                                {
+                                    if (!form_MovexWCSMemoryMap.IsDisposed)
+                                    {
+                                        form_MovexWCSMemoryMap.SET_WCSData(PaketObj.GetDataBytes());
+                                    }
+                                };
+                                break;
+                            case ConstClass.TYPE_EMS:
+                                if (form_MovexWCSMemoryMap != null)
+                                {
+                                    if (!form_MovexWCSMemoryMap.IsDisposed)
+                                    {
+                                        form_MovexWCSMemoryMap.SET_WCSData(PaketObj.GetDataBytes());
+                                    }
+                                };
                                 break;
                             default:
                                 break;
@@ -1296,6 +1419,13 @@ namespace VEXI
                                 };
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_Graph != null)
+                                {
+                                    if (!form_Graph.IsDisposed)
+                                    {
+                                        form_Graph.Rxprocess_Graph(PaketObj.GetDataBytes());
+                                    }
+                                };
                                 break;
                             default:
                                 break;
@@ -1368,20 +1498,20 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
-                                //EMS 수정 필요
-                                //if (form_RTVTotal != null)
-                                //{
-                                //if (!form_RTVTotal.IsDisposed)
-                                //{
-                                //if (form_RTVTotal.Want_Data)
-                                //{
-                                //form_RTVTotal.Want_Data = false;
-                                //form_RTVTotal.Process_IO_CFG_Load(PaketObj.GetDataBytes());
-                                //
-                                //break;
-                                //}
-                                //}
-                                //}
+                               
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_IO_CFG_Load(PaketObj.GetDataBytes());
+                                            
+                                            break;
+                                        }
+                                    }
+                                }
 
                                 if (form_IOStructureSet != null)
                                 {
@@ -1437,6 +1567,19 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_IO_CFG(PaketObj.GetDataBytes());
+
+                                            break;
+                                        }
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -1499,20 +1642,18 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
-                                //EMS 수정 필요
-                                //if (form_EMSTotal != null)
-                                //{
-                                //    if (!form_EMSTotal.IsDisposed)
-                                //    {
-                                //        if (form_EMSTotal.Want_Data)
-                                //        {
-                                //            form_EMSTotal.Want_Data = false;
-                                //            form_EMSTotal.Process_MCU_CFG_Load(PaketObj.GetDataBytes());
-
-                                //            break;
-                                //        }
-                                //    }
-                                //}
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_MCU_CFG_Load(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
 
                                 if (form_EMSConfig != null)
                                 {
@@ -1568,6 +1709,19 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_MCU_CFGCtrl(PaketObj.GetDataBytes());
+
+                                            break;
+                                        }
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -1582,6 +1736,7 @@ namespace VEXI
                         {
                             case ConstClass.TYPE_SRM: //장치타입이 SRM이면
                                 Display_DevErrSt();
+                                Display_DevFW();
                                 Display_DevForceMode();
                                 Display_DevSetupMode();
                                 if (form_SRMSt != null)
@@ -1611,6 +1766,7 @@ namespace VEXI
                                 break;
                             case ConstClass.TYPE_RTV:
                                 Display_DevErrSt();
+                                Display_DevFW();
                                 Display_DevForceMode();
                                 Display_DevSetupMode();
                                 if (form_RTVSt != null)
@@ -1647,6 +1803,42 @@ namespace VEXI
 
                                 break;
                             case ConstClass.TYPE_EMS:
+                                Display_DevErrSt();
+                                Display_DevFW();
+                                Display_DevForceMode();
+                                Display_DevSetupMode();
+                                if (form_EMSSt != null)
+                                {
+                                    if (!form_EMSSt.IsDisposed)
+                                    {
+                                        form_EMSSt.Display_DevSt();
+                                    }
+                                }
+
+                                if (form_DO_TestCtrl != null)
+                                {
+                                    if (!form_DO_TestCtrl.IsDisposed)
+                                    {
+                                        form_DO_TestCtrl.Display_DevSt();
+                                    }
+                                }
+
+                                if (form_EMS_CTL != null)
+                                {
+                                    if (!form_EMS_CTL.IsDisposed)
+                                    {
+                                        form_EMS_CTL.Display_DevSt();
+                                    }
+                                }
+
+                                if (form_EMSRack != null)
+                                {
+                                    if (!form_EMSRack.IsDisposed)
+                                    {
+                                        form_EMSRack.Display_EMSStatus();
+                                    }
+                                }
+
                                 break;
                             default:
                                 break;
@@ -1687,6 +1879,13 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_TimeInfo != null)
+                                {
+                                    if (!form_TimeInfo.IsDisposed)
+                                    {
+                                        form_TimeInfo.Display_TimeInfo(PaketObj.GetDataBytes());
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -1710,18 +1909,17 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_RTV:
-                                if (COMMDataManager.Check_RTV_REC_InvertorInfo(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            case ConstClass.TYPE_EMS:
+                            if (COMMDataManager.Check_EMSRTV_REC_InvertorInfo(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
                                 {
-                                    if (form_RTVInvertorSt != null)
+                                    if (form_EMSRTVInvertorSt != null)
                                     {
-                                        if (!form_RTVInvertorSt.IsDisposed)
+                                        if (!form_EMSRTVInvertorSt.IsDisposed)
                                         {
-                                        form_RTVInvertorSt.Display_InvertorSt(PaketObj.GetDataBytes());
+                                        form_EMSRTVInvertorSt.SET_InvertorSt(PaketObj.GetDataBytes());
                                         }
                                     }
                                 }
-                                break;
-                        case ConstClass.TYPE_EMS:
                                 break;
                             default:
                                 break;
@@ -1776,7 +1974,28 @@ namespace VEXI
                             }
                             break;
                         case ConstClass.TYPE_RTV:
+                            if (COMMDataManager.Check_RTV_JobCtrlRes(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                if (form_RTV_CTL != null)
+                                {
+                                    if (!form_RTV_CTL.IsDisposed)
+                                    {
+                                        form_RTV_CTL.Display_JobCtrlRes(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
+                            break;
                         case ConstClass.TYPE_EMS:
+                            if (COMMDataManager.Check_EMS_JobCtrlRes(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                if (form_EMS_CTL != null)
+                                {
+                                    if (!form_EMS_CTL.IsDisposed)
+                                    {
+                                        form_EMS_CTL.Display_JobCtrlRes(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
                             break;
                     }
                     break;
@@ -1818,8 +2037,10 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_RTV:
+
                                 break;
                             case ConstClass.TYPE_EMS:
+
                                 break;
                             default:
                                 break;
@@ -1934,6 +2155,30 @@ namespace VEXI
                             }
                             break;
                         case ConstClass.TYPE_EMS:
+                            if (COMMDataManager.Check_EMS_REC_Position(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                //EMS 수정
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_EMSPosition_Load(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (form_EMSRack != null)
+                                {
+                                    if (!form_EMSRack.IsDisposed)
+                                    {
+                                        form_EMSRack.Display_EMSPosition(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
                             break;
                         default:
                             break;
@@ -1996,7 +2241,31 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
-                                break;
+                            if (COMMDataManager.Check_EMS_REC_PositionCtrl(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                //EMS 수정
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_Position_CFG(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (form_EMSRack != null)
+                                {
+                                    if (!form_EMSRack.IsDisposed)
+                                    {
+                                        form_EMSRack.Process_EMSPositionCtrlRes(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
+                            break;
                             default:
                                 break;
                         }
@@ -2129,6 +2398,30 @@ namespace VEXI
                             }
                             break;
                         case ConstClass.TYPE_EMS:
+                            if (COMMDataManager.Check_EMS_REC_StationParam(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                //EMS 수정
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_Station_CFG_Load(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (form_EMSRack != null)
+                                {
+                                    if (!form_EMSRack.IsDisposed)
+                                    {
+                                        form_EMSRack.Display_EMSStationParam(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
                             break;
                         default:
                             break;
@@ -2190,6 +2483,30 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (COMMDataManager.Check_EMS_REC_StationCtrl(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                                {
+                                    //EMS 수정    
+                                    if (form_EMSTotal != null)
+                                    {
+                                        if (!form_EMSTotal.IsDisposed)
+                                        {
+                                            if (form_EMSTotal.Want_Data)
+                                            {
+                                                form_EMSTotal.Want_Data = false;
+                                                form_EMSTotal.Response_Station_CFG(PaketObj.GetDataBytes());
+                                                break;
+                                            }
+                                        }
+                                    }
+
+                                    if (form_EMSRack != null)
+                                    {
+                                        if (!form_EMSRack.IsDisposed)
+                                        {
+                                        form_EMSRack.Process_EMSStationParamCtrlRes(PaketObj.GetDataBytes());
+                                        }
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -2225,8 +2542,34 @@ namespace VEXI
                                     }
                                 }
                                 break;
-                            
-                            default:
+                        case ConstClass.TYPE_EMS:
+                            if (COMMDataManager.Check_EMS_REC_AreaSpeed(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                //EMS 수정
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_EMS_SpeedArea_Load(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (form_EMSRack != null)
+                                {
+                                    if (!form_EMSRack.IsDisposed)
+                                    {
+                                        form_EMSRack.Display_EMSSpeedArea(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
+                            break;
+
+                        default:
                                 break;
                         }
                     break;
@@ -2262,6 +2605,30 @@ namespace VEXI
                             }
                             break;
                         case ConstClass.TYPE_EMS:
+                            if (COMMDataManager.Check_EMS_REC_AreaSpeedCtrl(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
+                            {
+                                //EMS 수정
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_SpeedArea_CFG(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (form_EMSRack != null)
+                                {
+                                    if (!form_EMSRack.IsDisposed)
+                                    {
+                                        form_EMSRack.Process_EMSSpeedAreaCtrlRes(PaketObj.GetDataBytes());
+                                    }
+                                }
+                            }
                             break;
                         default:
                             break;
@@ -2466,19 +2833,19 @@ namespace VEXI
                             if (COMMDataManager.Check_EMS_CtrlParamRes(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
                             {
                                 //EMS 수정
-                                //if (form_EMSTotal != null)
-                                //{
-                                //    if (!form_EMSTotal.IsDisposed)
-                                //    {
-                                //        if (form_EMSTotal.Want_Data)
-                                //        {
-                                //            form_EMSTotal.Want_Data = false;
-                                //            form_EMSTotal.Process_CTRL_PARAM_CFG_Load(PaketObj.GetDataBytes());
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_CTRL_PARAM_CFG_Load(PaketObj.GetDataBytes());
 
-                                //            break;
-                                //        }
-                                //    }
-                                //}
+                                            break;
+                                        }
+                                    }
+                                }
 
                                 if (form_emsParam_Ctrl != null)
                                 {
@@ -2514,8 +2881,6 @@ namespace VEXI
 
                                     }
                                 }
-
-
                                 break;
                             case ConstClass.TYPE_RTV:
                                 if(form_RTVTotal != null)
@@ -2529,11 +2894,23 @@ namespace VEXI
 
                                             break;
                                         }
-
                                     }
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_CTRL_PARAM_CFG(PaketObj.GetDataBytes());
+
+                                            break;
+                                        }
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -2600,18 +2977,18 @@ namespace VEXI
                                 if (COMMDataManager.Check_EMS_DriveParamRes(PaketObj.SrcDevType, PaketObj.SrcID, PaketObj.GetDataBytes()))
                                 {
                                     //EMS 수정
-                                    //if (form_EMSTotal != null)
-                                    //{
-                                    //    if (!form_EMSTotal.IsDisposed)
-                                    //    {
-                                    //        if (form_EMSTotal.Want_Data)
-                                    //        {
-                                    //              form_EMSTotal.Want_Data = false;
-                                    //              form_EMSTotal.Process_DRIVE_PARAM_CFG_Load(PaketObj.GetDataBytes());
-                                    //              break;
-                                    //        }
-                                    //    }
-                                    //}
+                                    if (form_EMSTotal != null)
+                                    {
+                                        if (!form_EMSTotal.IsDisposed)
+                                        {
+                                            if (form_EMSTotal.Want_Data)
+                                            {
+                                                form_EMSTotal.Want_Data = false;
+                                                form_EMSTotal.Process_DRIVE_PARAM_CFG_Load(PaketObj.GetDataBytes());
+                                                break;
+                                            }
+                                        }
+                                    }
 
                                     if (form_emsParam_Drive != null)
                                     {
@@ -2663,6 +3040,19 @@ namespace VEXI
                                 }
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_DRIVE_PARAM_CFG(PaketObj.GetDataBytes());
+
+                                            break;
+                                        }
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -2706,19 +3096,18 @@ namespace VEXI
                             {
 
                                 //EMS 수정
-                                //if (form_EMSTotal != null)
-                                //{
-                                //    if (!form_EMSTotal.IsDisposed)
-                                //    {
-                                //        if (form_EMSTotal.Want_Data)
-                                //        {
-                                //            form_EMSTotal.Want_Data = false;
-                                //            form_EMSTotal.Process_LIFT_PARAM_CFG_Load(PaketObj.GetDataBytes());
-
-                                //            break;
-                                //        }
-                                //    }
-                                //}
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Process_LIFT_PARAM_CFG_Load(PaketObj.GetDataBytes());
+                                            break;
+                                        }
+                                    }
+                                }
 
                                 if (form_emsParam_Lift != null)
                                 {
@@ -2757,6 +3146,19 @@ namespace VEXI
                             case ConstClass.TYPE_RTV:
                                 break;
                             case ConstClass.TYPE_EMS:
+                                if (form_EMSTotal != null)
+                                {
+                                    if (!form_EMSTotal.IsDisposed)
+                                    {
+                                        if (form_EMSTotal.Want_Data)
+                                        {
+                                            form_EMSTotal.Want_Data = false;
+                                            form_EMSTotal.Response_LIFT_PARAM_CFG(PaketObj.GetDataBytes());
+
+                                            break;
+                                        }
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -2967,8 +3369,9 @@ namespace VEXI
                     menu_LiftParameter.Enabled = true;
                     menu_LiftParameter.Visible = true;
                     menu_ForParameter.Enabled = true;
-                    menu_ForParameter.Text = "포크드라이브 설정";
-                    menu_RackBase.Text = "위치 설정";
+                    menu_ForParameter.Visible = true;
+                    menu_ForParameter.Text = "1.6. 포크드라이브 설정";
+                    menu_RackBase.Text = "1.7. 위치 설정";
 
                     menu_TotalSetLoad.Enabled = true;
                     menu_InvertorParameter.Enabled = true;
@@ -2999,8 +3402,9 @@ namespace VEXI
                     menu_LiftParameter.Enabled = false;//미해당
                     menu_LiftParameter.Visible = false;//미해당
                     menu_ForParameter.Enabled = true;
-                    menu_ForParameter.Text = "피딩드라이브 설정";
-                    menu_RackBase.Text = "위치 설정";
+                    menu_ForParameter.Visible = true;
+                    menu_ForParameter.Text = "1.6. 피딩드라이브 설정";
+                    menu_RackBase.Text = "1.7. 위치 설정";
 
                     menu_TotalSetLoad.Enabled = true; 
                     menu_InvertorParameter.Enabled = false; //미해당
@@ -3032,7 +3436,7 @@ namespace VEXI
                     menu_LiftParameter.Visible = true;
                     menu_ForParameter.Enabled = false; //미해당
                     menu_ForParameter.Visible = false; //미해당
-                    menu_RackBase.Text = "위치 설정";
+                    menu_RackBase.Text = "1.7. 위치 설정";
 
                     menu_TotalSetLoad.Enabled = true;
                     menu_InvertorParameter.Enabled = false; //미해당
@@ -3153,13 +3557,46 @@ namespace VEXI
                     }
                     break;
                 case ConstClass.TYPE_EMS:
+                    switch (TmpCMD2)
+                    {
+                        case ConstClass.CMD2_58:
+                            //현재의 장치의 모드값을 제어 구조체에 반영하고 나서 제어값을 만들어야 한다.
+                            byte[] ctrlValue = { 0, 0 };
+
+                            if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 0)) ctrlValue[0] = 2;
+                            else if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 1)) ctrlValue[0] = 0;
+                            else if (Global_Class.BitStatus(COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode, 3)) ctrlValue[0] = 1;
+                            if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 2)) ctrlValue[1] |= 0x01;
+
+
+                            switch (CtrlData)
+                            {
+                                case 0: //수동모드
+                                    ctrlValue[0] = 0;
+                                    break;
+                                case 1: //셋업모드
+                                    ctrlValue[0] = 1;
+                                    break;
+                                case 2: //자동모드
+                                    ctrlValue[0] = 2;
+                                    break;
+                                case 10: //강제모드 OFF
+                                    ctrlValue[1] &= 0x00;
+                                    break;
+                                case 11: //강제모드 ON
+                                    ctrlValue[1] |= 0x01;
+                                    break;
+                            }
+                            COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, TmpCMD2, ctrlValue);
+                            break;
+                    }
                     break;
                 default:
                     break;
             }
             
         }
-        public unsafe void Do_ManualCtrl()
+        public unsafe void Do_JogCtrl()
         {
             bool IStwice = false;
 
@@ -3199,7 +3636,6 @@ namespace VEXI
 
 
                 DevCtrl->LowSpeed_Ref = COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef;
-                DevCtrl->Fork_Ref = COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef;
 
 
                 switch (CtrlTypeValue)
@@ -3225,6 +3661,10 @@ namespace VEXI
                             case 43: DevCtrl->CtrlFlag[0] = 0x08; break;
                             case 44: DevCtrl->CtrlFlag[0] = 0x08; break;
                             case 45: DevCtrl->CtrlFlag[0] = 0x08; break;
+                            case 72: DevCtrl->CtrlFlag[0] = 0x0C; break;
+                            case 73: DevCtrl->CtrlFlag[0] = 0x0C; break;
+                            case 74: DevCtrl->CtrlFlag[0] = 0x0C; break;
+                            case 75: DevCtrl->CtrlFlag[0] = 0x0C; break;
                             default: DevCtrl->CtrlFlag[0] = 0x0F; break;
                         }
                         IStwice = true;
@@ -3275,7 +3715,14 @@ namespace VEXI
                         break;
                     case 34:
                         DevCtrl->CtrlFlag[0] = 0x04;
-                        DevCtrl->Fork1 = 12;
+                        if (COMMDataManager.RX_DestDevType == ConstClass.TYPE_EMS)
+                        {
+                            DevCtrl->Fork1 = 4;
+                        }
+                        else
+                        {
+                            DevCtrl->Fork1 = 12;
+                        }
                         break;
                     case 35:
                         DevCtrl->CtrlFlag[0] = 0x04;
@@ -3298,7 +3745,27 @@ namespace VEXI
                         DevCtrl->Fork2 = 12;
                         break;
                     case 45:
-                        DevCtrl->CtrlFlag[0] = 0x08;
+                        DevCtrl->CtrlFlag[0] = 0x0C;
+                        DevCtrl->Fork2 = 13;
+                        break;
+                    case 72:
+                        DevCtrl->CtrlFlag[0] = 0x0C;
+                        DevCtrl->Fork1 = 2;
+                        DevCtrl->Fork2 = 2;
+                        break;
+                    case 73:
+                        DevCtrl->CtrlFlag[0] = 0x0C;
+                        DevCtrl->Fork1 = 3;
+                        DevCtrl->Fork2 = 3;
+                        break;
+                    case 74:
+                        DevCtrl->CtrlFlag[0] = 0x0C;
+                        DevCtrl->Fork1 = 12;
+                        DevCtrl->Fork2 = 12;
+                        break;
+                    case 75:
+                        DevCtrl->CtrlFlag[0] = 0x0C;
+                        DevCtrl->Fork1 = 13;
                         DevCtrl->Fork2 = 13;
                         break;
                     default: return;
@@ -3397,7 +3864,7 @@ namespace VEXI
                     lbl_DevErrorCode.Text = String.Format("{0}-{1}-{2}", COMMDataManager.DevRec.rtv_REC_RTVSt.ErrorCode.MainCode, COMMDataManager.DevRec.rtv_REC_RTVSt.ErrorCode.SubCode, COMMDataManager.DevRec.rtv_REC_RTVSt.ErrorCode.PosCode);
                     break;
                 case ConstClass.TYPE_EMS:
-                    if (Global_Class.BitStatus(COMMDataManager.DevRec.srm_REC_SRMSt.DevSt_1, 3))
+                    if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevSt_1, 3))
                     {
                         lbl_DevError.Text = "장애 상태";
                         lbl_DevError.BackColor = System.Drawing.Color.Red;
@@ -3406,7 +3873,7 @@ namespace VEXI
                         lbl_DevErrorCode.BackColor = System.Drawing.Color.Red;
                         lbl_DevErrorCode.ForeColor = System.Drawing.Color.White;
                     }
-                    else if (Global_Class.BitStatus(COMMDataManager.DevRec.srm_REC_SRMSt.DevSt_1, 2))
+                    else if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevSt_1, 2))
                     {
                         lbl_DevError.Text = "경고 상태";
                         lbl_DevError.BackColor = System.Drawing.Color.Orange;
@@ -3422,7 +3889,7 @@ namespace VEXI
                         lbl_DevError.ForeColor = System.Drawing.Color.Black;
                         lbl_DevErrorCode.Visible = false;
                     }
-                    lbl_DevErrorCode.Text = String.Format("{0}-{1}-{2}", COMMDataManager.DevRec.srm_REC_SRMSt.ErrorCode.MainCode, COMMDataManager.DevRec.srm_REC_SRMSt.ErrorCode.SubCode, COMMDataManager.DevRec.srm_REC_SRMSt.ErrorCode.PosCode);
+                    lbl_DevErrorCode.Text = String.Format("{0}-{1}-{2}", COMMDataManager.DevRec.ems_REC_EMSSt.ErrorCode.MainCode, COMMDataManager.DevRec.ems_REC_EMSSt.ErrorCode.SubCode, COMMDataManager.DevRec.ems_REC_EMSSt.ErrorCode.PosCode);
                     break;
                 default:
                     lbl_DevError.Text = "정상 상태";
@@ -3508,10 +3975,72 @@ namespace VEXI
                     }
                     break;
                 case ConstClass.TYPE_EMS:
-                    lbl_DevForceMode.Visible = false;
+                    if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 2))
+                    {
+                        if (!lbl_DevForceMode.Visible)
+                        {
+                            lbl_DevForceMode.BackColor = System.Drawing.Color.Red;
+                            lbl_DevForceMode.ForeColor = System.Drawing.Color.Yellow;
+                            lbl_DevForceMode.Visible = true;
+                        }
+                        else
+                        {
+                            if (lbl_DevForceMode.BackColor == System.Drawing.Color.Red)
+                            {
+                                lbl_DevForceMode.BackColor = System.Drawing.Color.Yellow;
+                                lbl_DevForceMode.ForeColor = System.Drawing.Color.Black;
+                            }
+                            else
+                            {
+                                lbl_DevForceMode.BackColor = System.Drawing.Color.Red;
+                                lbl_DevForceMode.ForeColor = System.Drawing.Color.Yellow;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (lbl_DevForceMode.Visible)
+                        {
+                            lbl_DevForceMode.Visible = false;
+                        }
+                    }
                     break;
                 default:
                     lbl_DevForceMode.Visible = false;
+                    break;
+            }
+        }
+
+        private unsafe void Display_DevFW()
+        {
+            if ((COMMDataManager.CommSt == 0) || (!COMMDataManager.ISCOMM_ResponsGood))
+            {
+                lbl_ResponseDevFW.Text = "---";
+                return;
+            }
+
+            switch (COMMDataManager.RX_DestDevType)
+            {
+                case ConstClass.TYPE_SRM:
+                    fixed (VEXI_DEFS.TSRM_StatusRes* DevSt = &COMMDataManager.DevRec.srm_REC_SRMSt)
+                    {
+                        lbl_ResponseDevFW.Text = Global_Class.UTIL_ByteToFVerstr(DevSt->FWversion);
+                    }
+                    break;
+                case ConstClass.TYPE_RTV:
+                    fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &COMMDataManager.DevRec.rtv_REC_RTVSt)
+                    {
+                        lbl_ResponseDevFW.Text = Global_Class.UTIL_ByteToFVerstr(DevSt->FWversion);
+                    }
+                    break;
+                case ConstClass.TYPE_EMS:
+                    fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &COMMDataManager.DevRec.ems_REC_EMSSt)
+                    {
+                        lbl_ResponseDevFW.Text = Global_Class.UTIL_ByteToFVerstr(DevSt->FWversion);
+                    }
+                    break;
+                default:
+                    lbl_ResponseDevFW.Text = "---";
                     break;
             }
         }
@@ -3567,7 +4096,22 @@ namespace VEXI
                     }
                     break;
                 case ConstClass.TYPE_EMS:
-                    lbl_SetUpMode.Visible = false;
+                    if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 3))
+                    {
+                        if (!lbl_SetUpMode.Visible)
+                        {
+                            lbl_SetUpMode.BackColor = System.Drawing.Color.Yellow;
+                            lbl_SetUpMode.ForeColor = System.Drawing.Color.Black;
+                            lbl_SetUpMode.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        if (lbl_SetUpMode.Visible)
+                        {
+                            lbl_SetUpMode.Visible = false;
+                        }
+                    }
                     break;
                 default:
                     lbl_SetUpMode.Visible = false;
@@ -3644,6 +4188,14 @@ namespace VEXI
                 if (!form_RTV_CTL.IsDisposed)
                 {
                     form_RTV_CTL.Display_DevCommSt();
+                }
+            }
+
+            if (form_EMS_CTL != null)
+            {
+                if (!form_EMS_CTL.IsDisposed)
+                {
+                    form_EMS_CTL.Display_DevCommSt();
                 }
             }
 
@@ -3856,6 +4408,7 @@ namespace VEXI
             {
                 case ConstClass.TYPE_SRM:
                 case ConstClass.TYPE_RTV:
+                case ConstClass.TYPE_EMS:
                     if (this.ActiveMdiChild != null)
                     {
                         if (this.ActiveMdiChild != form_DO_TestCtrl)
@@ -3865,8 +4418,6 @@ namespace VEXI
                     }
                     form_DO_TestCtrl = ShowActiveChildForm(form_DO_TestCtrl, typeof(Form_DO_TestCtrl)) as Form_DO_TestCtrl;
                     form_DO_TestCtrl.form_Main = this;
-                    break;
-                case ConstClass.TYPE_EMS:
                     break;
                 default:
                     break;
@@ -4028,7 +4579,7 @@ namespace VEXI
         {
             TimeSpan dateDiff = DateTime.Now - AdminLoginView;
 
-            if (dateDiff.Seconds >= 4)
+            if (dateDiff.Seconds >= 2)
             {
                 edAdmin.Visible = true;
                 edAdmin.Text = "";
@@ -4051,31 +4602,121 @@ namespace VEXI
             {
                 if (edAdmin.Text == "GR")
                 {
-                    MenuItem_Graph.Visible = !MenuItem_Graph.Visible;
+                    MenuItem_Graph.Visible = true;
+                    MenuItem_RunTime.Visible = false;
+                    menu_EventLog.Visible = false;
+                    menu_DebugLog.Visible = false;
+                    menu_ViewCommData.Visible = false;
                 }
 
                 if (edAdmin.Text == "RT")
-                {
-                    MenuItem_RunTime.Visible = !MenuItem_RunTime.Visible;
+                { 
+                    MenuItem_Graph.Visible = false;
+                    MenuItem_RunTime.Visible = true;
+                    menu_EventLog.Visible = false;
+                    menu_DebugLog.Visible = false;
+                    menu_ViewCommData.Visible = false;
                 }
 
                 if (edAdmin.Text == "EL")
                 {
-                    menu_EventLog.Visible = !menu_EventLog.Visible;
+                    MenuItem_Graph.Visible = false;
+                    MenuItem_RunTime.Visible = false;
+                    menu_EventLog.Visible = true;
+                    menu_DebugLog.Visible = false;
+                    menu_ViewCommData.Visible = false;
                 }
 
                 if (edAdmin.Text == "DL")
                 {
-                    menu_DebugLog.Visible = !menu_DebugLog.Visible;
+                    MenuItem_Graph.Visible = false;
+                    MenuItem_RunTime.Visible = false;
+                    menu_EventLog.Visible = false;
+                    menu_DebugLog.Visible = true;
+                    menu_ViewCommData.Visible = false;
                 }
 
                 if (edAdmin.Text == "CD")
                 {
-                    menu_ViewCommData.Visible = !menu_ViewCommData.Visible;
+                    MenuItem_Graph.Visible = false;
+                    MenuItem_RunTime.Visible = false;
+                    menu_EventLog.Visible = false;
+                    menu_DebugLog.Visible = false;
+                    menu_ViewCommData.Visible = true;
+                }
+
+                if (edAdmin.Text == "ON")
+                {
+                    MenuItem_Graph.Visible = true;
+                    MenuItem_RunTime.Visible = true;
+                    menu_EventLog.Visible = true;
+                    menu_DebugLog.Visible = true;
+                    menu_ViewCommData.Visible = true;
+                }
+
+                if (edAdmin.Text == "OF")
+                {
+                    MenuItem_Graph.Visible = false;
+                    MenuItem_RunTime.Visible = false;
+                    menu_EventLog.Visible = false;
+                    menu_DebugLog.Visible = false;
+                    menu_ViewCommData.Visible = false;
                 }
 
                 edAdmin.Visible = false;
             }
+        }
+
+        private void movexWCSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (COMMDataManager.RX_DestDevType)
+            {
+                case ConstClass.TYPE_SRM:
+                    break;
+                case ConstClass.TYPE_RTV:
+                    if (this.ActiveMdiChild != null)
+                    {
+                        if (this.ActiveMdiChild != form_MovexWCSMemoryMap)
+                        {
+                            this.ActiveMdiChild.Close();
+
+                        }
+
+                    }
+                    form_MovexWCSMemoryMap = ShowActiveChildForm(form_MovexWCSMemoryMap, typeof(Form_MovexWCSMemoryMap)) as Form_MovexWCSMemoryMap;
+                    form_MovexWCSMemoryMap.form_Main = this;
+                    break;
+                case ConstClass.TYPE_EMS:
+                    if (this.ActiveMdiChild != null)
+                    {
+                        if (this.ActiveMdiChild != form_MovexWCSMemoryMap)
+                        {
+                            this.ActiveMdiChild.Close();
+
+                        }
+
+                    }
+                    form_MovexWCSMemoryMap = ShowActiveChildForm(form_MovexWCSMemoryMap, typeof(Form_MovexWCSMemoryMap)) as Form_MovexWCSMemoryMap;
+                    form_MovexWCSMemoryMap.form_Main = this;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
         }
     }
 }

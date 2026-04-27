@@ -94,7 +94,7 @@ namespace VEXI
             //if (cb_Set[6] != null) cb_Set[6].Enabled = (form_Main.RTV_ToTalFile.myHeader.RACK_CFG_Flag_Reserved.Save_Flag == 1);
             if (cb_Set[7] != null) cb_Set[7].Enabled = (form_Main.RTV_ToTalFile.myHeader.STATION_CFG_Flag.Save_Flag == 1);
             if (cb_Set[8] != null) cb_Set[8].Enabled = (form_Main.RTV_ToTalFile.myHeader.POSITION_CFG_Flag.Save_Flag == 1);
-            if (cb_Set[9] != null) cb_Set[9].Enabled = (form_Main.RTV_ToTalFile.myHeader.ROUND_CFG_Flag.Save_Flag == 1);
+            if (cb_Set[9] != null) cb_Set[9].Enabled = (form_Main.RTV_ToTalFile.myHeader.AREASPEED_CFG_Flag.Save_Flag == 1);
             if (Isinit)
             {
                 for (byte i = 1; i < 10; i++)
@@ -158,9 +158,9 @@ namespace VEXI
                     DateTime TmpDateTime = new DateTime(form_Main.RTV_ToTalFile.myHeader.POSITION_CFG_Flag.Save_Update);
                     if (lbl_DateTime[8] != null) lbl_DateTime[8].Text = TmpDateTime.ToString();
                 }
-                if (form_Main.RTV_ToTalFile.myHeader.ROUND_CFG_Flag                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            .Save_Flag == 1)
+                if (form_Main.RTV_ToTalFile.myHeader.AREASPEED_CFG_Flag.Save_Flag == 1)
                 {
-                    DateTime TmpDateTime = new DateTime(form_Main.RTV_ToTalFile.myHeader.ROUND_CFG_Flag.Save_Update);
+                    DateTime TmpDateTime = new DateTime(form_Main.RTV_ToTalFile.myHeader.AREASPEED_CFG_Flag.Save_Update);
                     if (lbl_DateTime[9] != null) lbl_DateTime[9].Text = TmpDateTime.ToString();
                 }
             }

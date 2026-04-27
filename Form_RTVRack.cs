@@ -61,9 +61,12 @@ namespace VEXI
                 null, 
                 null, 
                 cb_Area_Sensor, 
-                cb_Area_Region1, 
-                cb_Area_Region2, 
-                cb_Area_Region3, 
+                cb_FrontArea_Region1, 
+                cb_FrontArea_Region2, 
+                cb_FrontArea_Region3,
+                cb_RearArea_Region1,
+                cb_RearArea_Region2,
+                cb_RearArea_Region3,
                 cbStopSenserUse, 
                 cbDeSpeedSenserUse, 
                 cbFrontDeSpeedSenserUse, 
@@ -337,6 +340,7 @@ namespace VEXI
                     ptr->Header.Stop_OffsetTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Stop_OffsetTime.Text, (float)0.5) * 100);
                     ptr->Header.Stop_OffsetMaxDistance = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Stop_OffsetMaxDistance.Text, 0);
                     ptr->Header.Lidar_Off_SafetyTime = (byte)Global_Class.UTIL_StrToIntDef(ed_Lidar_Off_SafetyTime.Text, 0);
+                    if (cb_RTV_LidarSensor.SelectedIndex >= 0) ptr->Header.LidarSensorInstall = (byte)cb_RTV_LidarSensor.SelectedIndex;
 
                     if (cb_RTV_DriveStopSensor.SelectedIndex >= 0) ptr->Header.DriveStopSensor = (byte)cb_RTV_DriveStopSensor.SelectedIndex;
                     if (cb_RTV_DriveDecelSensor.SelectedIndex >= 0) ptr->Header.DriveDecelSensor = (byte)cb_RTV_DriveDecelSensor.SelectedIndex;
@@ -364,19 +368,19 @@ namespace VEXI
                                 Tmpbyte |= 0x03;
                             }
 
-                            if (lv_SpeedArea.Items[i].SubItems[13].Text == "사용") // 정지 거리
+                            if (lv_SpeedArea.Items[i].SubItems[16].Text == "사용") // 정지 거리
                             {
                                 Tmpbyte |= 0x04;
                             }
-                            if (lv_SpeedArea.Items[i].SubItems[14].Text == "사용")
+                            if (lv_SpeedArea.Items[i].SubItems[17].Text == "사용")
                             {
                                 Tmpbyte |= 0x08;
                             }
-                            if (lv_SpeedArea.Items[i].SubItems[15].Text == "사용")
+                            if (lv_SpeedArea.Items[i].SubItems[18].Text == "사용")
                             {
                                 Tmpbyte |= 0x10;
                             }
-                            if (lv_SpeedArea.Items[i].SubItems[16].Text == "사용") // 후진감속
+                            if (lv_SpeedArea.Items[i].SubItems[19].Text == "사용") // 후진감속
                             {
                                 Tmpbyte |= 0x20;
                             }
@@ -415,7 +419,24 @@ namespace VEXI
                                 Tmpbyte |= 0x04;
                             }
 
-                            (subptr + i)->Region = Tmpbyte;
+                            (subptr + i)->FrontRegion = Tmpbyte;
+
+
+                            Tmpbyte = 0;
+                            if (lv_SpeedArea.Items[i].SubItems[13].Text == "적용")
+                            {
+                                Tmpbyte |= 0x01;
+                            }
+                            if (lv_SpeedArea.Items[i].SubItems[14].Text == "적용")
+                            {
+                                Tmpbyte |= 0x02;
+                            }
+                            if (lv_SpeedArea.Items[i].SubItems[15].Text == "적용")
+                            {
+                                Tmpbyte |= 0x04;
+                            }
+
+                            (subptr + i)->RearRegion = Tmpbyte;
                         }
                     }
                 }
@@ -439,6 +460,7 @@ namespace VEXI
                     ptr->Header.Stop_OffsetTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Stop_OffsetTime.Text, (float)0.5) * 100);
                     ptr->Header.Stop_OffsetMaxDistance = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Stop_OffsetMaxDistance.Text, 0);
                     ptr->Header.Lidar_Off_SafetyTime = (byte)Global_Class.UTIL_StrToIntDef(ed_Lidar_Off_SafetyTime.Text, 0);
+                    if (cb_RTV_LidarSensor.SelectedIndex >= 0) ptr->Header.LidarSensorInstall = (byte)cb_RTV_LidarSensor.SelectedIndex;
 
                     if (cb_RTV_DriveStopSensor.SelectedIndex >= 0) ptr->Header.DriveStopSensor = (byte)cb_RTV_DriveStopSensor.SelectedIndex;
                     if (cb_RTV_DriveDecelSensor.SelectedIndex >= 0) ptr->Header.DriveDecelSensor = (byte)cb_RTV_DriveDecelSensor.SelectedIndex;
@@ -871,6 +893,26 @@ namespace VEXI
             lbl_AreaSpeed_Start.Text = string.Format("{0}", StartMM);
             lbl_AreaSpeed_End.Text = string.Format("{0}", EndMM);
 
+            ed_RTV_Width.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.RTV_Width);
+            ed_Linear_Stop.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.LineArea_StopWidth);
+            ed_Linear_Start.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.LineArea_StartWidth);
+            ed_Round_Stop.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.RoundArea_StopWidth);
+            ed_Round_Start.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.RoundArea_StartWidth);
+
+            ed_FrontRTVPosition_TimeOut1.Text = string.Format("{0:0.0}", (double)rtv_SpeedAreaGroupParam_Res.Header.FrontRTVPosition_TimeOut1 / 10);
+            ed_FrontRTVPosition_TimeOut2.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.FrontRTVPosition_TimeOut2);
+            ed_StopbyLiadrTimeOut.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.StopbyLiadrTimeOut);
+            ed_Stop_OffsetTime.Text = string.Format("{0:0.00}", (double)rtv_SpeedAreaGroupParam_Res.Header.Stop_OffsetTime / 100);
+            ed_Stop_OffsetMaxDistance.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.Stop_OffsetMaxDistance);
+            ed_Lidar_Off_SafetyTime.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.Lidar_Off_SafetyTime);
+            cb_RTV_LidarSensor.SelectedIndex = Math.Min(rtv_SpeedAreaGroupParam_Res.Header.LidarSensorInstall, cb_RTV_LidarSensor.Items.Count - 1);
+
+            cb_RTV_DriveStopSensor.SelectedIndex = Math.Min(rtv_SpeedAreaGroupParam_Res.Header.DriveStopSensor, cb_RTV_DriveStopSensor.Items.Count - 1);
+            cb_RTV_DriveDecelSensor.SelectedIndex = Math.Min(rtv_SpeedAreaGroupParam_Res.Header.DriveDecelSensor, cb_RTV_DriveDecelSensor.Items.Count - 1);
+
+
+            ed_ErrRef_LowSpeedValue.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.ErrRef_LowSpeedValue);
+            ed_ErrRef_LowSpeedMin.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.ErrRef_LowSpeedMin);
 
             if (rtv_SpeedAreaGroupParam_Res.Header.AreaCount == 0)
             {
@@ -882,27 +924,6 @@ namespace VEXI
             else
             {
                 ListViewItem listviewItem;
-
-                ed_RTV_Width.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.RTV_Width);
-                ed_Linear_Stop.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.LineArea_StopWidth);
-                ed_Linear_Start.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.LineArea_StartWidth);
-                ed_Round_Stop.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.RoundArea_StopWidth);
-                ed_Round_Start.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.RoundArea_StartWidth);
-
-                ed_FrontRTVPosition_TimeOut1.Text = string.Format("{0:0.0}", (double)rtv_SpeedAreaGroupParam_Res.Header.FrontRTVPosition_TimeOut1 / 10);
-                ed_FrontRTVPosition_TimeOut2.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.FrontRTVPosition_TimeOut2);
-                ed_StopbyLiadrTimeOut.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.StopbyLiadrTimeOut);
-                ed_Stop_OffsetTime.Text = string.Format("{0:0.00}", (double)rtv_SpeedAreaGroupParam_Res.Header.Stop_OffsetTime / 100);
-                ed_Stop_OffsetMaxDistance.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.Stop_OffsetMaxDistance);
-                ed_Lidar_Off_SafetyTime.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.Lidar_Off_SafetyTime);
-
-                cb_RTV_DriveStopSensor.SelectedIndex = Math.Min(rtv_SpeedAreaGroupParam_Res.Header.DriveStopSensor, cb_RTV_DriveStopSensor.Items.Count - 1);
-                cb_RTV_DriveDecelSensor.SelectedIndex = Math.Min(rtv_SpeedAreaGroupParam_Res.Header.DriveDecelSensor, cb_RTV_DriveDecelSensor.Items.Count - 1);
-
-
-                ed_ErrRef_LowSpeedValue.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.ErrRef_LowSpeedValue);
-                ed_ErrRef_LowSpeedMin.Text = string.Format("{0}", rtv_SpeedAreaGroupParam_Res.Header.ErrRef_LowSpeedMin);
-
 
                 fixed (VEXI_DEFS.TRTV_SpeedAreaGroupConfigRec* Ptr = &rtv_SpeedAreaGroupParam_Res.Area1)
                 {
@@ -933,14 +954,14 @@ namespace VEXI
                             listviewItem.SubItems.Add(string.Format("{0}", (Ptr + i)->Sensorindex));
                         }
 
-                        if (((Ptr + i)->Region & 0x01) == 0x00)
+                        if (((Ptr + i)->FrontRegion & 0x01) == 0x00)
                         {
                             listviewItem.SubItems.Add("미적용");
                         } else
                         {
                             listviewItem.SubItems.Add("적용");
                         }
-                        if (((Ptr + i)->Region & 0x02) == 0x00)
+                        if (((Ptr + i)->FrontRegion & 0x02) == 0x00)
                         {
                             listviewItem.SubItems.Add("미적용");
                         }
@@ -948,7 +969,7 @@ namespace VEXI
                         {
                             listviewItem.SubItems.Add("적용");
                         }
-                        if (((Ptr + i)->Region & 0x04) == 0x00)
+                        if (((Ptr + i)->FrontRegion & 0x04) == 0x00)
                         {
                             listviewItem.SubItems.Add("미적용");
                         }
@@ -956,6 +977,33 @@ namespace VEXI
                         {
                             listviewItem.SubItems.Add("적용");
                         }
+
+
+                        if (((Ptr + i)->RearRegion & 0x01) == 0x00)
+                        {
+                            listviewItem.SubItems.Add("미적용");
+                        }
+                        else
+                        {
+                            listviewItem.SubItems.Add("적용");
+                        }
+                        if (((Ptr + i)->RearRegion & 0x02) == 0x00)
+                        {
+                            listviewItem.SubItems.Add("미적용");
+                        }
+                        else
+                        {
+                            listviewItem.SubItems.Add("적용");
+                        }
+                        if (((Ptr + i)->RearRegion & 0x04) == 0x00)
+                        {
+                            listviewItem.SubItems.Add("미적용");
+                        }
+                        else
+                        {
+                            listviewItem.SubItems.Add("적용");
+                        }
+
 
                         if (((Ptr + i)->Area_Type & 0x04) == 0x00) //정지거리
                         {
@@ -1514,6 +1562,9 @@ namespace VEXI
             listviewItem.SubItems.Add("미적용");
             listviewItem.SubItems.Add("미적용");
             listviewItem.SubItems.Add("미적용");
+            listviewItem.SubItems.Add("미적용");
+            listviewItem.SubItems.Add("미적용");
+            listviewItem.SubItems.Add("미적용");
             listviewItem.SubItems.Add("미사용");
             listviewItem.SubItems.Add("미사용");
             listviewItem.SubItems.Add("미사용");
@@ -1561,39 +1612,50 @@ namespace VEXI
         {
             if ((lv_SpeedArea.Items.Count == 0))
             {
-                form_Main.GlobalObj.MsgBox_Info("구간 정보가 작성되지 않았습니다.", "W");
-                return;
-            }
-
-            Sort_SpeedAreaLv();
-
-            int check_Result = Check_AreaSpeedValue_Err();
-            if (check_Result != -1)
-            {
-                if (check_Result < lv_SpeedArea.Items.Count)
-                {
-                    form_Main.GlobalObj.MsgBox_Info("구간의 시작 값이 끝 값보다 큽니다.", "W");
-                    lv_Position_Set.SelectedItems.Clear();
-                    lv_Position_Set.Items[check_Result].Selected = true;
-                } else
-                {
-                    form_Main.GlobalObj.MsgBox_Info("정의되지 않은 구간이 존재합니다.", "W");
-                }
-                return;
-            }
-
-            if (Check_AreaSpeedValue_Warn() == 0)
-            {
-                if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "구간 정보를 장치로 다운로드하시겠습니까?"))
+                if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "구간 정보를 초기화 하시겠습니까?"))
                 {
                     Ctrl_SpeedArea(false);
 
                 }
-            } else
+
+                //form_Main.GlobalObj.MsgBox_Info("구간 정보가 작성되지 않았습니다.", "W");
+                //return;
+            }
+            else
             {
-                if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "곡선 구간 속도가 60m/min 이상으로 설정되었습니다. 구간 정보를 장치로 다운로드하시겠습니까?"))
+
+                Sort_SpeedAreaLv();
+
+                int check_Result = Check_AreaSpeedValue_Err();
+                if (check_Result != -1)
                 {
-                    Ctrl_SpeedArea(false);
+                    if (check_Result < lv_SpeedArea.Items.Count)
+                    {
+                        form_Main.GlobalObj.MsgBox_Info("구간의 시작 값이 끝 값보다 큽니다.", "W");
+                        lv_Position_Set.SelectedItems.Clear();
+                        lv_Position_Set.Items[check_Result].Selected = true;
+                    }
+                    else
+                    {
+                        form_Main.GlobalObj.MsgBox_Info("정의되지 않은 구간이 존재합니다.", "W");
+                    }
+                    return;
+                }
+
+                if (Check_AreaSpeedValue_Warn() == 0)
+                {
+                    if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "구간 정보를 장치로 다운로드하시겠습니까?"))
+                    {
+                        Ctrl_SpeedArea(false);
+
+                    }
+                }
+                else
+                {
+                    if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "곡선 구간 속도가 60m/min 이상으로 설정되었습니다. 구간 정보를 장치로 다운로드하시겠습니까?"))
+                    {
+                        Ctrl_SpeedArea(false);
+                    }
                 }
             }
 
@@ -2102,27 +2164,7 @@ namespace VEXI
 
         private void btn_PositionConfig_Init_Click(object sender, EventArgs e)
         {
-            Button bt = sender as Button;
-            byte[] Data = { 0, 0 };
-
-            frameLogin frmLogging = new frameLogin(); frmLogging.ShowDialog();
-
-            if (frmLogging.DialogResult == DialogResult.OK)
-            {
-                if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, bt.Text + " 을 수행하시겠습니까?"))
-                {
-                    Data[0] = 0x02;
-                    switch (bt.Tag.ToString())
-                    {
-                        case "1":
-                            Data[1] = 0x20; break;
-                        case "2":
-                            Data[1] = 0xC0; break;
-                    }
-                    form_Main.Do_Ctrl_Cmd_withbytes(ConstClass.CMD1_00, ConstClass.CMD2_A0, Data);
-                }
-
-            }
+            
         }
 
         #endregion
@@ -2320,7 +2362,7 @@ namespace VEXI
                         if ((ClickedItem.Left + this.lv_StationParam.Columns[i].Width) < 0)
                         {
                             Station_CtrlBox[i].Tag = 1;
-                            return;
+                            //return;
                         }
                         else if (ClickedItem.Left < 0) // 해당 컬럼의 Left가 화면을 벗어난 경우
                         {
@@ -2443,6 +2485,7 @@ namespace VEXI
         private void btn_AddStation_Prev_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             Edit_StationID(Convert.ToByte(bt.Tag.ToString()));
         }

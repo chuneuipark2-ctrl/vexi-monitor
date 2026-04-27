@@ -471,7 +471,7 @@ namespace VEXI
                             //I/O
                             for (Loop = 1; Loop <= 80; Loop++)
                             {
-                                if (Loop > ConstClass.SRM_DO_Names.GetLength(0))
+                                if (Loop > (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
                                 {
                                     lbl_DIO_Title[Loop - 1].BackColor = Color.Gray;
                                     lbl_DIO_Title[Loop - 1].Text = "";
@@ -487,18 +487,29 @@ namespace VEXI
                                 }
                                 else
                                 {
-                                    lbl_DIO_Title[Loop - 1].BackColor = System.Drawing.SystemColors.Highlight;
-                                    lbl_DIO_Title[Loop - 1].Text = ConstClass.SRM_DO_Names[Loop - 1, 0];
-                                    btn_OutMODE[Loop - 1].Enabled = true;
-                                    btn_OutSt[Loop - 1].Enabled = true;
+                                    if (Loop <= (ConstClass.SRM_DO_Names_1.GetLength(0)))
+                                    {
+                                        lbl_DIO_Title[Loop - 1].BackColor = System.Drawing.SystemColors.Highlight;
+                                        lbl_DIO_Title[Loop - 1].Text = ConstClass.SRM_DO_Names_1[Loop - 1, 0];
+                                        btn_OutMODE[Loop - 1].Enabled = true;
+                                        btn_OutSt[Loop - 1].Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        lbl_DIO_Title[Loop - 1].BackColor = System.Drawing.SystemColors.Highlight;
+                                        lbl_DIO_Title[Loop - 1].Text = ConstClass.SRM_DO_Names_2[Loop - ConstClass.SRM_DO_Names_1.GetLength(0) - 1, 0];
+                                        btn_OutMODE[Loop - 1].Enabled = true;
+                                        btn_OutSt[Loop - 1].Enabled = true;
+                                    }
                                 }
                             }
+
                             for (Loop = 1; Loop <= 80; Loop++)
                             {
                                 ByteIndex = (byte)((Loop - 1) / 8);
                                 BitIndex = (byte)((Loop - 1) % 8);
 
-                                if (Loop <= ConstClass.SRM_DO_Names.GetLength(0))
+                                if (Loop <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
                                 {
                                     if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
                                     {
@@ -511,21 +522,35 @@ namespace VEXI
                                         lbl_DIO_ST[Loop - 1].Text = "OFF";
                                     }
 
-                                    if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode[ByteIndex], BitIndex))
+                                    if (ByteIndex <= 4)
                                     {
-                                        lbl_DIO_MDOE[Loop - 1].BackColor = Color.Tomato;
-                                        lbl_DIO_MDOE[Loop - 1].Text = "수동";
+                                        if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_1[ByteIndex], BitIndex))
+                                        {
+                                            lbl_DIO_MDOE[Loop - 1].BackColor = Color.Tomato;
+                                            lbl_DIO_MDOE[Loop - 1].Text = "수동";
+                                        }
+                                        else
+                                        {
+                                            lbl_DIO_MDOE[Loop - 1].BackColor = Color.White;
+                                            lbl_DIO_MDOE[Loop - 1].Text = "자동";
+                                        }
                                     }
                                     else
                                     {
-                                        lbl_DIO_MDOE[Loop - 1].BackColor = Color.White;
-                                        lbl_DIO_MDOE[Loop - 1].Text = "자동";
+                                        if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_2[ByteIndex - 5], BitIndex))
+                                        {
+                                            lbl_DIO_MDOE[Loop - 1].BackColor = Color.Tomato;
+                                            lbl_DIO_MDOE[Loop - 1].Text = "수동";
+                                        }
+                                        else
+                                        {
+                                            lbl_DIO_MDOE[Loop - 1].BackColor = Color.White;
+                                            lbl_DIO_MDOE[Loop - 1].Text = "자동";
+                                        }
                                     }
                                 }
                             }
                         }
-
-
                     }
                     break;
                 case ConstClass.TYPE_RTV:
@@ -616,7 +641,71 @@ namespace VEXI
                         }
                     }
                     break;
-                case ConstClass.TYPE_EMS: break;
+                case ConstClass.TYPE_EMS:
+                    fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.ems_REC_EMSSt)
+                    {
+                        //Flag_In_XXXX 는 해당 데이터가 수신된 적이 있는지에 대한 변수임
+                        //if (form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) //호출하는데서 체크하는 걸로 수정함
+                        {
+                            //I/O
+                            for (Loop = 1; Loop <= 80; Loop++)
+                            {
+                                if (Loop > ConstClass.EMS_DO_Names.GetLength(0))
+                                {
+                                    lbl_DIO_Title[Loop - 1].BackColor = Color.Gray;
+                                    lbl_DIO_Title[Loop - 1].Text = "";
+
+                                    lbl_DIO_ST[Loop - 1].BackColor = Color.Gray;
+                                    lbl_DIO_ST[Loop - 1].Text = "";
+
+                                    lbl_DIO_MDOE[Loop - 1].BackColor = Color.Gray;
+                                    lbl_DIO_MDOE[Loop - 1].Text = "";
+
+                                    btn_OutMODE[Loop - 1].Enabled = false;
+                                    btn_OutSt[Loop - 1].Enabled = false;
+                                }
+                                else
+                                {
+                                    lbl_DIO_Title[Loop - 1].BackColor = System.Drawing.SystemColors.Highlight;
+                                    lbl_DIO_Title[Loop - 1].Text = ConstClass.EMS_DO_Names[Loop - 1, 0];
+                                    btn_OutMODE[Loop - 1].Enabled = true;
+                                    btn_OutSt[Loop - 1].Enabled = true;
+                                }
+                            }
+                            for (Loop = 1; Loop <= 80; Loop++)
+                            {
+                                ByteIndex = (byte)((Loop - 1) / 8);
+                                BitIndex = (byte)((Loop - 1) % 8);
+
+                                if (Loop <= (ConstClass.EMS_DO_Names.GetLength(0)))
+                                {
+                                    if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
+                                    {
+                                        lbl_DIO_ST[Loop - 1].BackColor = Color.Yellow;
+                                        lbl_DIO_ST[Loop - 1].Text = "ON";
+                                    }
+                                    else
+                                    {
+                                        lbl_DIO_ST[Loop - 1].BackColor = Color.Silver;
+                                        lbl_DIO_ST[Loop - 1].Text = "OFF";
+                                    }
+
+                                    if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode[ByteIndex], BitIndex))
+                                    {
+                                        lbl_DIO_MDOE[Loop - 1].BackColor = Color.Tomato;
+                                        lbl_DIO_MDOE[Loop - 1].Text = "수동";
+                                    }
+                                    else
+                                    {
+                                        lbl_DIO_MDOE[Loop - 1].BackColor = Color.White;
+                                        lbl_DIO_MDOE[Loop - 1].Text = "자동";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+
             }
         }
 
@@ -656,6 +745,7 @@ namespace VEXI
         private void Btn_ModeCtrl_1_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             Do_Ctrl_Mode(Convert.ToByte(bt.Tag.ToString()));
         }
@@ -679,16 +769,31 @@ namespace VEXI
                         ByteIndex = (byte)((TmpSignalID - 1) / 8);
                         BitIndex = (byte)((TmpSignalID - 1) % 8);
 
-                        if (TmpSignalID <= ConstClass.SRM_DO_Names.GetLength(0))
+                        if (TmpSignalID <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
                         {
-                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode[ByteIndex], BitIndex))
+                            if (ByteIndex <= 4)
                             {
-                                dev_REC_DO_Test.OutMode_Value = 0;
+                                if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_1[ByteIndex], BitIndex))
+                                {
+                                    dev_REC_DO_Test.OutMode_Value = 0;
+                                }
+                                else
+                                {
+                                    dev_REC_DO_Test.OutMode_Value = 1;
+                                }
                             }
                             else
                             {
-                                dev_REC_DO_Test.OutMode_Value = 1; 
+                                if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_2[ByteIndex - 5], BitIndex))
+                                {
+                                    dev_REC_DO_Test.OutMode_Value = 0;
+                                }
+                                else
+                                {
+                                    dev_REC_DO_Test.OutMode_Value = 1;
+                                }
                             }
+
                         }
                     }
                     break;
@@ -726,6 +831,23 @@ namespace VEXI
                     }
                     break;
                 case ConstClass.TYPE_EMS:
+                    fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.ems_REC_EMSSt)
+                    {
+                        ByteIndex = (byte)((TmpSignalID - 1) / 8);
+                        BitIndex = (byte)((TmpSignalID - 1) % 8);
+
+                        if (TmpSignalID <= ConstClass.EMS_DO_Names.GetLength(0))
+                        {
+                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode[ByteIndex], BitIndex))
+                            {
+                                dev_REC_DO_Test.OutMode_Value = 0;
+                            }
+                            else
+                            {
+                                dev_REC_DO_Test.OutMode_Value = 1;
+                            }
+                        }
+                    }
                     break;
             }
             form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_01, ConstClass.CMD2_16, dev_REC_DO_Test);
@@ -759,7 +881,7 @@ namespace VEXI
                         ByteIndex = (byte)((TmpSignalID - 1) / 8);
                         BitIndex = (byte)((TmpSignalID - 1) % 8);
 
-                        if (TmpSignalID <= ConstClass.SRM_DO_Names.GetLength(0))
+                        if (TmpSignalID <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
                         {
                             if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
                             {
@@ -792,17 +914,33 @@ namespace VEXI
                     }
                     break;
                 case ConstClass.TYPE_EMS:
+                    fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.ems_REC_EMSSt)
+                    {
+                        ByteIndex = (byte)((TmpSignalID - 1) / 8);
+                        BitIndex = (byte)((TmpSignalID - 1) % 8);
+
+                        if (TmpSignalID <= ConstClass.EMS_DO_Names.GetLength(0))
+                        {
+                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
+                            {
+                                dev_REC_DO_Test.OutCtrl_Value = 0;
+                            }
+                            else
+                            {
+                                dev_REC_DO_Test.OutCtrl_Value = 1;
+                            }
+                        }
+                    }
                     break;
             }
-             form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_01, ConstClass.CMD2_16, dev_REC_DO_Test);
+            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_01, ConstClass.CMD2_16, dev_REC_DO_Test);
         }
 
         private void Btn_DOCtrl_1_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
-
+            if (bt == null) return;
             Do_Ctrl_St(Convert.ToByte(bt.Tag.ToString()));
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)

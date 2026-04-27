@@ -68,9 +68,17 @@ namespace VEXI
         private void btn_Log_Req_Click(object sender, EventArgs e)
         {
             Form_Main.devLogManager.ClearLogList();
+
+            if (form_Main.COMMDataManager.RX_DestDevType == ConstClass.TYPE_RTV)
+            {
+                Form_Main.devLogManager.AlarmCodeType = form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.AlarmCodeType;
+            } else
+            {
+                Form_Main.devLogManager.AlarmCodeType = 0;
+            }
+
             lv_DevLog.Items.Clear();
             lblProgress.Text = "0/0";
-
 
             Disable_Btn();
             Request_Log(0);
@@ -133,7 +141,7 @@ namespace VEXI
 
             if (ts.TotalSeconds >= 2)
             {
-                Enable_Btn();
+                Enable_Btn(false);
                 NoAnswerTimer.Enabled = false;
             }
         }
@@ -174,6 +182,8 @@ namespace VEXI
                 lblProgress.Text = string.Format("{0}/{1}", Form_Main.devLogManager.LogItemCount, Form_Main.devLogManager.TotalCount);
                 DisplayLog_INSERT(Form_Main.devLogManager.TotalCount);
             }
+            Enable_Btn(false);
+
         }
         #endregion
 
@@ -208,18 +218,32 @@ namespace VEXI
                     lv_DevLog.Columns.Add("현재속도", 150, HorizontalAlignment.Center);
                     break;
                 case 20:
-                    lv_DevLog.Columns.Add("위치", 150, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("작업1", 80, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("작업1_단계", 150, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("작업2", 80, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("작업2_단계", 150, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("작업코드", 80, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("현재위치(mm)", 150, HorizontalAlignment.Center);
-                    lv_DevLog.Columns.Add("현재속도", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업 번호", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("From 위치", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("To 위치", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업상태", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업단계", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("Chucking Width", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("Cargo Height", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("주행 인버터 이상코드", 100, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("주행 위치(mm)", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("주행 속도(m/ min)", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("승강 인버터 이상코드", 100, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("승강 위치(mm)", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("승강 속도(m/ min)", 80, HorizontalAlignment.Center);
+                    break;
+                case 21:
+                    lv_DevLog.Columns.Add("작업 번호", 80, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("From 위치", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("To 위치", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업상태", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("작업단계", 150, HorizontalAlignment.Center);
+                    lv_DevLog.Columns.Add("비고", 400, HorizontalAlignment.Center);
                     break;
                 case 1:
                 case 11:
-                case 21:
                     lv_DevLog.Columns.Add("위치", 150, HorizontalAlignment.Center);
                     lv_DevLog.Columns.Add("작업1", 80, HorizontalAlignment.Center);
                     lv_DevLog.Columns.Add("작업1_단계", 150, HorizontalAlignment.Center);
@@ -265,26 +289,26 @@ namespace VEXI
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_SRMAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}-{3}", logUnion.LogSRM00Rec.ItemCell.Station, logUnion.LogSRM00Rec.ItemCell.Row, logUnion.LogSRM00Rec.ItemCell.Bay, logUnion.LogSRM00Rec.ItemCell.Level));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-R{1}-B{2}-L{3}", logUnion.LogSRM00Rec.ItemCell.Station, logUnion.LogSRM00Rec.ItemCell.Row, logUnion.LogSRM00Rec.ItemCell.Bay, logUnion.LogSRM00Rec.ItemCell.Level));
 
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM00Rec.Work1_Type));
                             if (logUnion.LogSRM00Rec.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM00Rec.Work2_Type));
                             if (logUnion.LogSRM00Rec.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
                             }
                         }
                     }
@@ -299,25 +323,25 @@ namespace VEXI
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_SRMAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}-{3}", logUnion.LogSRM01Rec.Log.ItemCell.Station, logUnion.LogSRM01Rec.Log.ItemCell.Row, logUnion.LogSRM01Rec.Log.ItemCell.Bay, logUnion.LogSRM01Rec.Log.ItemCell.Level));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-R{1}-B{2}-L{3}", logUnion.LogSRM01Rec.Log.ItemCell.Station, logUnion.LogSRM01Rec.Log.ItemCell.Row, logUnion.LogSRM01Rec.Log.ItemCell.Bay, logUnion.LogSRM01Rec.Log.ItemCell.Level));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Type));
                             if (logUnion.LogSRM01Rec.Log.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Type));
                             if (logUnion.LogSRM01Rec.Log.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
                             }
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogSRM01Rec.DIO, 29, ConstClass.TWithSpaceFlag.WithSpace, 5));
@@ -335,16 +359,16 @@ namespace VEXI
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_SRMAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}-{3}", logUnion.LogSRM02Rec.ItemCell.Station, logUnion.LogSRM02Rec.ItemCell.Row, logUnion.LogSRM02Rec.ItemCell.Bay, logUnion.LogSRM02Rec.ItemCell.Level));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-R{1}-B{2}-L{3}", logUnion.LogSRM02Rec.ItemCell.Station, logUnion.LogSRM02Rec.ItemCell.Row, logUnion.LogSRM02Rec.ItemCell.Bay, logUnion.LogSRM02Rec.ItemCell.Level));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM02Rec.Work1_Type));
                             if (logUnion.LogSRM02Rec.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
                             }
                             
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Work1_JobNumber));
@@ -370,27 +394,35 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVRec.Log.Station, logUnion.LogRTVRec.Log.Position));
+
+                            //if ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.AlarmCodeType == 1) || (Form_Main.devLogManager.AlarmCodeType == 1))
+                            if ((Form_Main.devLogManager.AlarmCodeType == 1))
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_MemoryMap(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            } else
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_14Bytes(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            }
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogRTVRec.Log.Station, logUnion.LogRTVRec.Log.Position));
 
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work1_Type));
                             if (logUnion.LogRTVRec.Log.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work2_Type));
                             if (logUnion.LogRTVRec.Log.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
                             }
 
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.Log.WorkCode));
@@ -409,26 +441,33 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVIORec.Log.Station, logUnion.LogRTVIORec.Log.Position));
+                            //if ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.AlarmCodeType == 1) || (Form_Main.devLogManager.AlarmCodeType == 1))
+                            if ((Form_Main.devLogManager.AlarmCodeType == 1))
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_MemoryMap(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            } else
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_14Bytes(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            }
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogRTVIORec.Log.Station, logUnion.LogRTVIORec.Log.Position));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work1_Type));
                             if (logUnion.LogRTVIORec.Log.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work2_Type));
                             if (logUnion.LogRTVIORec.Log.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
                             }
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogRTVIORec.DIO, 22, ConstClass.TWithSpaceFlag.WithSpace, 5));
@@ -446,32 +485,37 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVRec.Log.Station, logUnion.LogRTVRec.Log.Position));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_EMSAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
 
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Log.WorkNum));
 
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work1_Type));
-                            if (logUnion.LogRTVRec.Log.Work1_Step >= 0x80)
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.FromStation, logUnion.LogEMSRec.Log.FromPos));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.ToStation, logUnion.LogEMSRec.Log.ToPos));
+
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogEMSRec.Log.WorkCode));
+
+                            switch (logUnion.LogEMSRec.Log.Work_St)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
-                            }
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work2_Type));
-                            if (logUnion.LogRTVRec.Log.Work2_Step >= 0x80)
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
+                                case 0: tmpListViewitem.SubItems.Add("지령없음"); break;
+                                case 2: tmpListViewitem.SubItems.Add("수행중"); break;
+                                case 3: tmpListViewitem.SubItems.Add("실패"); break;
+                                case 4: tmpListViewitem.SubItems.Add("완료"); break;
+                                case 5: tmpListViewitem.SubItems.Add("중지"); break;
+                                default: tmpListViewitem.SubItems.Add(string.Format("0x{0:X2}", logUnion.LogEMSRec.Log.Work_St)); break;
                             }
 
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.Log.WorkCode));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.PositionMM));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.Speed));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetEMSJobStepTextAsValue(logUnion.LogEMSRec.Log.Work_Step));
+
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.ChuckingW));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.CargoH));
+                            
+                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogEMSRec.DriveInv_MainCode, logUnion.LogEMSRec.DriveInv_SubCode));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Drive_Postion));
+                            tmpListViewitem.SubItems.Add(string.Format("{0:0.0}", (double)logUnion.LogEMSRec.Drive_Speed / 10));
+
+                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogEMSRec.LiftInv_MainCode, logUnion.LogEMSRec.LiftInv_SubCode));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Lift_Postion));
+                            tmpListViewitem.SubItems.Add(string.Format("{0:0.0}", (double)logUnion.LogEMSRec.Lift_Speed / 10));
                         }
                     }
                     break;
@@ -485,29 +529,25 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVIORec.Log.Station, logUnion.LogRTVIORec.Log.Position));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_EMSAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
 
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work1_Type));
-                            if (logUnion.LogRTVIORec.Log.Work1_Step >= 0x80)
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
-                            }
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work2_Type));
-                            if (logUnion.LogRTVIORec.Log.Work2_Step >= 0x80)
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
-                            }
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Log.WorkNum));
 
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogRTVIORec.DIO, 22, ConstClass.TWithSpaceFlag.WithSpace, 5));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.FromStation, logUnion.LogEMSRec.Log.FromPos));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.ToStation, logUnion.LogEMSRec.Log.ToPos));
+
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogEMSRec.Log.WorkCode));
+
+                            switch (logUnion.LogEMSRec.Log.Work_St)
+                            {
+                                case 0: tmpListViewitem.SubItems.Add("지령없음"); break;
+                                case 2: tmpListViewitem.SubItems.Add("수행중"); break;
+                                case 3: tmpListViewitem.SubItems.Add("실패"); break;
+                                case 4: tmpListViewitem.SubItems.Add("완료"); break;
+                                case 5: tmpListViewitem.SubItems.Add("중지"); break;
+                                default: tmpListViewitem.SubItems.Add(string.Format("0x{0:X2}", logUnion.LogEMSRec.Log.Work_St)); break;
+                            }
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogEMSIORec.DIO, 20, ConstClass.TWithSpaceFlag.WithSpace, 5));
                         }
                     }
                     break;
@@ -558,26 +598,26 @@ namespace VEXI
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_SRMAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}-{3}", logUnion.LogSRM00Rec.ItemCell.Station, logUnion.LogSRM00Rec.ItemCell.Row, logUnion.LogSRM00Rec.ItemCell.Bay, logUnion.LogSRM00Rec.ItemCell.Level));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-R{1}-B{2}-L{3}", logUnion.LogSRM00Rec.ItemCell.Station, logUnion.LogSRM00Rec.ItemCell.Row, logUnion.LogSRM00Rec.ItemCell.Bay, logUnion.LogSRM00Rec.ItemCell.Level));
 
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM00Rec.Work1_Type));
                             if (logUnion.LogSRM00Rec.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM00Rec.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM00Rec.Work2_Type));
                             if (logUnion.LogSRM00Rec.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM00Rec.Work2_Step));
                             }
                         }
                     }
@@ -592,25 +632,25 @@ namespace VEXI
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_SRMAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}-{3}", logUnion.LogSRM01Rec.Log.ItemCell.Station, logUnion.LogSRM01Rec.Log.ItemCell.Row, logUnion.LogSRM01Rec.Log.ItemCell.Bay, logUnion.LogSRM01Rec.Log.ItemCell.Level));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-R{1}-B{2}-L{3}", logUnion.LogSRM01Rec.Log.ItemCell.Station, logUnion.LogSRM01Rec.Log.ItemCell.Row, logUnion.LogSRM01Rec.Log.ItemCell.Bay, logUnion.LogSRM01Rec.Log.ItemCell.Level));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Type));
                             if (logUnion.LogSRM01Rec.Log.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Type));
                             if (logUnion.LogSRM01Rec.Log.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM01Rec.Log.Work2_Step));
                             }
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogSRM01Rec.DIO, 29, ConstClass.TWithSpaceFlag.WithSpace, 5));
@@ -628,16 +668,16 @@ namespace VEXI
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_SRMAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}-{3}", logUnion.LogSRM02Rec.ItemCell.Station, logUnion.LogSRM02Rec.ItemCell.Row, logUnion.LogSRM02Rec.ItemCell.Bay, logUnion.LogSRM02Rec.ItemCell.Level));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-R{1}-B{2}-L{3}", logUnion.LogSRM02Rec.ItemCell.Station, logUnion.LogSRM02Rec.ItemCell.Row, logUnion.LogSRM02Rec.ItemCell.Bay, logUnion.LogSRM02Rec.ItemCell.Level));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogSRM02Rec.Work1_Type));
                             if (logUnion.LogSRM02Rec.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMTaskStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetSRMJobStepTextAsValue(logUnion.LogSRM02Rec.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Work1_JobNumber));
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogSRM02Rec.Position));
@@ -662,27 +702,35 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVRec.Log.Station, logUnion.LogRTVRec.Log.Position));
+
+                            //if ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.AlarmCodeType == 1) || (Form_Main.devLogManager.AlarmCodeType == 1))
+                            if ((Form_Main.devLogManager.AlarmCodeType == 1))
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_MemoryMap(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            } else
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_14Bytes(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            }
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogRTVRec.Log.Station, logUnion.LogRTVRec.Log.Position));
 
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work1_Type));
                             if (logUnion.LogRTVRec.Log.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work2_Type));
                             if (logUnion.LogRTVRec.Log.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
                             }
 
                             tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.Log.WorkCode));
@@ -701,26 +749,34 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVIORec.Log.Station, logUnion.LogRTVIORec.Log.Position));
+
+                            //if ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.AlarmCodeType == 1) || (Form_Main.devLogManager.AlarmCodeType == 1))
+                            if ((Form_Main.devLogManager.AlarmCodeType == 1))
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_MemoryMap(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            } else
+                            {
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName_14Bytes(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
+                            }
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogRTVIORec.Log.Station, logUnion.LogRTVIORec.Log.Position));
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work1_Type));
                             if (logUnion.LogRTVIORec.Log.Work1_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
                             }
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work2_Type));
                             if (logUnion.LogRTVIORec.Log.Work2_Step >= 0x80)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
                             }
                             else
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
+                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetRTVJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
                             }
 
                             tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogRTVIORec.DIO, 22, ConstClass.TWithSpaceFlag.WithSpace, 5));
@@ -738,32 +794,37 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVRec.Log.Station, logUnion.LogRTVRec.Log.Position));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_EMSAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
 
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Log.WorkNum));
 
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work1_Type));
-                            if (logUnion.LogRTVRec.Log.Work1_Step >= 0x80)
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.FromStation, logUnion.LogEMSRec.Log.FromPos));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.ToStation, logUnion.LogEMSRec.Log.ToPos));
+
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogEMSRec.Log.WorkCode));
+
+                            switch (logUnion.LogEMSRec.Log.Work_St)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work1_Step));
-                            }
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVRec.Log.Work2_Type));
-                            if (logUnion.LogRTVRec.Log.Work2_Step >= 0x80)
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVRec.Log.Work2_Step));
+                                case 0: tmpListViewitem.SubItems.Add("지령없음"); break;
+                                case 2: tmpListViewitem.SubItems.Add("수행중"); break;
+                                case 3: tmpListViewitem.SubItems.Add("실패"); break;
+                                case 4: tmpListViewitem.SubItems.Add("완료"); break;
+                                case 5: tmpListViewitem.SubItems.Add("중지"); break;
+                                default: tmpListViewitem.SubItems.Add(string.Format("0x{0:X2}", logUnion.LogEMSRec.Log.Work_St)); break;
                             }
 
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.Log.WorkCode));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.PositionMM));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogRTVRec.Speed));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetEMSJobStepTextAsValue(logUnion.LogEMSRec.Log.Work_Step));
+
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.ChuckingW));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.CargoH));
+
+                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogEMSRec.DriveInv_MainCode, logUnion.LogEMSRec.DriveInv_SubCode));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Drive_Postion));
+                            tmpListViewitem.SubItems.Add(string.Format("{0:0.0}", (double)logUnion.LogEMSRec.Drive_Speed / 10));
+
+                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogEMSRec.LiftInv_MainCode, logUnion.LogEMSRec.LiftInv_SubCode));
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Lift_Postion));
+                            tmpListViewitem.SubItems.Add(string.Format("{0:0.0}", (double)logUnion.LogEMSRec.Lift_Speed / 10));
                         }
                     }
                     break;
@@ -777,29 +838,26 @@ namespace VEXI
                             DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(logUnion.LogItemHeader.LogTime);
                             tmpListViewitem.SubItems.Add(String.Format("{0}", PCtime));
                             tmpListViewitem.SubItems.Add(String.Format("{0}-{1}-{2}", logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_RTVAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
-                            tmpListViewitem.SubItems.Add(String.Format("{0}-{1}", logUnion.LogRTVIORec.Log.Station, logUnion.LogRTVIORec.Log.Position));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_EMSAlarmName(logUnion.LogItemHeader.Code_1, logUnion.LogItemHeader.Code_2, logUnion.LogItemHeader.Code_3));
 
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work1_Type));
-                            if (logUnion.LogRTVIORec.Log.Work1_Step >= 0x80)
+                            tmpListViewitem.SubItems.Add(String.Format("{0}", logUnion.LogEMSRec.Log.WorkNum));
+
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.FromStation, logUnion.LogEMSRec.Log.FromPos));
+                            tmpListViewitem.SubItems.Add(String.Format("S{0}-P{1}", logUnion.LogEMSRec.Log.ToStation, logUnion.LogEMSRec.Log.ToPos));
+
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogEMSRec.Log.WorkCode));
+
+                            switch (logUnion.LogEMSRec.Log.Work_St)
                             {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work1_Step));
-                            }
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobTextAsValue(logUnion.LogRTVIORec.Log.Work2_Type));
-                            if (logUnion.LogRTVIORec.Log.Work2_Step >= 0x80)
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetTaskStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
-                            }
-                            else
-                            {
-                                tmpListViewitem.SubItems.Add(Global_Class.UTIL_GetJobStepTextAsValue(logUnion.LogRTVIORec.Log.Work2_Step));
+                                case 0: tmpListViewitem.SubItems.Add("지령없음"); break;
+                                case 2: tmpListViewitem.SubItems.Add("수행중"); break;
+                                case 3: tmpListViewitem.SubItems.Add("실패"); break;
+                                case 4: tmpListViewitem.SubItems.Add("완료"); break;
+                                case 5: tmpListViewitem.SubItems.Add("중지"); break;
+                                default: tmpListViewitem.SubItems.Add(string.Format("0x{0:X2}", logUnion.LogEMSRec.Log.Work_St)); break;
                             }
 
-                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogRTVIORec.DIO, 22, ConstClass.TWithSpaceFlag.WithSpace, 5));
+                            tmpListViewitem.SubItems.Add(Global_Class.UTIL_BytePtrToHexStr(logUnion.LogEMSIORec.DIO, 20, ConstClass.TWithSpaceFlag.WithSpace, 5));
                         }
                     }
                     break;
@@ -861,20 +919,20 @@ namespace VEXI
                         index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_SRM_02));
                         break;
                     case 10:
-                        logUnion.LogRTVRec = (VEXI_DEFS.TLOGType_RTV)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_RTV), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV)));
-                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV));
+                        logUnion.LogRTVRec = (VEXI_DEFS.TLOGType_RTV_10)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_RTV_10), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_10)));
+                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_10));
                         break;
                     case 11:
-                        logUnion.LogRTVIORec = (VEXI_DEFS.TLOGType_RTV_IO)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_RTV_IO), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_IO)));
-                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_IO));
+                        logUnion.LogRTVIORec = (VEXI_DEFS.TLOGType_RTV_11)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_RTV_11), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_11)));
+                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_11));
                         break;
                     case 20:
-                        logUnion.LogRTVRec = (VEXI_DEFS.TLOGType_RTV)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_RTV), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV)));
-                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV));
+                        logUnion.LogEMSRec = (VEXI_DEFS.TLOGType_EMS_20)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_EMS_20), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_EMS_20)));
+                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_EMS_20));
                         break;
                     case 21:
-                        logUnion.LogRTVIORec = (VEXI_DEFS.TLOGType_RTV_IO)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_RTV_IO), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_IO)));
-                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_IO));
+                        logUnion.LogEMSIORec = (VEXI_DEFS.TLOGType_EMS_21)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TLOGType_EMS_21), index, Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_EMS_21)));
+                        index = index + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_EMS_21));
                         break;
                 }
                 count++;
@@ -893,7 +951,7 @@ namespace VEXI
             if ((Form_Main.devLogManager.LogItemCount >= Form_Main.devLogManager.TotalCount) || (dev_REC_LogHeader.LogCount == 0))
             {
                 NoAnswerTimer.Enabled = false;
-                Enable_Btn();
+                Enable_Btn(true);
 
             } else
             {
@@ -909,10 +967,10 @@ namespace VEXI
             btn_Log_TextFileSave.Enabled = false;
         }
 
-        private void Enable_Btn()
+        private void Enable_Btn(bool isSavebtn)
         {
             btn_Log_Req.Enabled = true;
-            btn_Log_FileSave.Enabled = true;
+            btn_Log_FileSave.Enabled = isSavebtn;
             btn_Log_FileLoad.Enabled = true;
             btn_Log_TextFileSave.Enabled = true;
         }

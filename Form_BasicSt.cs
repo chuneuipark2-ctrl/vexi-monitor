@@ -22,7 +22,7 @@ namespace VEXI
             lbl_Link = new Label[,] {{ lbl_Link0_0, lbl_Link0_1,  null, lbl_Link0_3, lbl_Link0_4, lbl_Link0_5, lbl_Link0_6, lbl_Link0_7},
                                      { lbl_Link1_0, lbl_Link1_1, lbl_Link1_2, lbl_Link1_3, lbl_Link1_4, lbl_Link1_5, lbl_Link1_6, lbl_Link1_7},
                                      { lbl_Link2_0, lbl_Link2_1, lbl_Link2_2, lbl_Link2_3, lbl_Link2_4, lbl_Link2_5, lbl_Link2_6, lbl_Link2_7},
-                                     { lbl_Link3_0, lbl_Link3_1, lbl_Link3_2, null, null, null, null, null}};
+                                     { lbl_Link3_0, lbl_Link3_1, lbl_Link3_2, lbl_Link3_3, lbl_Link3_4, lbl_Link3_5, null, lbl_Link3_7}};
 
 
         }
@@ -42,6 +42,9 @@ namespace VEXI
         private void BtnDevicereset_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+
+            if (bt == null) return;
+            
 
             Do_Ctrl(Convert.ToByte(bt.Tag.ToString()));
 
@@ -306,6 +309,7 @@ namespace VEXI
 
                     lblPVersion.Text = Global_Class.UTIL_ByteToPVerstr(DevSt->PGVersion);
                     lblFWVersion.Text = Global_Class.UTIL_ByteToFVerstr(DevSt->FWversion);
+                    lblBootVersion.Text = Global_Class.UTIL_ByteToFVerstr(DevSt->Bootversion);
                     DateTime PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(DevSt->SystemUTCTime);
                     lblSystemTimeUTC.Text = String.Format("{0}", PCtime);
 
@@ -394,8 +398,18 @@ namespace VEXI
                     if (IsFirst) edGroupNum.Text = lblGroupNum.Text;
                     if (IsFirst) edHOGINum.Text = lblHOGINum.Text;
 
+                    if (Global_Class.BitStatus(DevSt->ModeSwitch, 0))  lbl_ModeSW_0.BackColor = System.Drawing.Color.Yellow;
+                    else lbl_ModeSW_0.BackColor = System.Drawing.Color.Gray;
 
-                    lbl_ModeSW.Text = string.Format("{0}", (DevSt->ModeSwitch & 0x0F));
+                    if (Global_Class.BitStatus(DevSt->ModeSwitch, 1)) lbl_ModeSW_1.BackColor = System.Drawing.Color.Yellow;
+                    else lbl_ModeSW_1.BackColor = System.Drawing.Color.Gray;
+
+                    if (Global_Class.BitStatus(DevSt->ModeSwitch, 2)) lbl_ModeSW_2.BackColor = System.Drawing.Color.Yellow;
+                    else lbl_ModeSW_2.BackColor = System.Drawing.Color.Gray;
+
+                    if (Global_Class.BitStatus(DevSt->ModeSwitch, 3)) lbl_ModeSW_3.BackColor = System.Drawing.Color.Yellow;
+                    else lbl_ModeSW_3.BackColor = System.Drawing.Color.Gray;
+
                     lbl_IDSW.Text   = string.Format("{0:X2}", (DevSt->IDSwitch));
 
                     for (byte i = 0; i < 4; i++)
@@ -423,6 +437,7 @@ namespace VEXI
                 {
                     lblPVersion.Text = "";
                     lblFWVersion.Text = "";
+                    lblBootVersion.Text = "";
                     lblSystemTimeUTC.Text = "";
 
                     lblDevIP_1.Text = "";
@@ -452,7 +467,10 @@ namespace VEXI
                     edGroupNum.Text = "";
                     edHOGINum.Text = "";
 
-                    lbl_ModeSW.Text = "";
+                    lbl_ModeSW_0.BackColor = System.Drawing.Color.Gray;
+                    lbl_ModeSW_1.BackColor = System.Drawing.Color.Gray;
+                    lbl_ModeSW_2.BackColor = System.Drawing.Color.Gray;
+                    lbl_ModeSW_3.BackColor = System.Drawing.Color.Gray;
                     lbl_IDSW.Text = "";
 
                     for (byte i=0; i < 4; i++)

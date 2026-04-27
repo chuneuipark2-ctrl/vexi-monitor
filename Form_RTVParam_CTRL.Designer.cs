@@ -233,7 +233,7 @@ namespace VEXI
             this.groupBox11.Size = new System.Drawing.Size(321, 42);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "안전플러그";
+            this.groupBox11.Text = "A. 안전플러그";
             // 
             // cb_SafetyPlug_ProcessType
             // 
@@ -272,7 +272,7 @@ namespace VEXI
             this.groupBox2.Size = new System.Drawing.Size(320, 42);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "광모뎀 연결 이상";
+            this.groupBox2.Text = "C. 광모뎀 연결 이상";
             // 
             // cb_AlarmUse_OpticModem
             // 
@@ -333,7 +333,7 @@ namespace VEXI
             this.groupBox8.Size = new System.Drawing.Size(364, 202);
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "정차 설정 (0.1초 단위까지 제어 가능)";
+            this.groupBox8.Text = "K. 정차 설정 (0.1초 단위까지 제어 가능)";
             // 
             // label7
             // 
@@ -374,7 +374,7 @@ namespace VEXI
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(217, 21);
             this.label8.TabIndex = 1009;
-            this.label8.Text = "정위치 저속 주행 거리값";
+            this.label8.Text = "8. 정위치 저속 주행 거리값";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -416,7 +416,7 @@ namespace VEXI
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(217, 21);
             this.label11.TabIndex = 1011;
-            this.label11.Text = "정위치 감속 오프셋 거리 최대값";
+            this.label11.Text = "7. 정위치 감속 오프셋 거리 최대값";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
@@ -458,7 +458,7 @@ namespace VEXI
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(217, 21);
             this.label22.TabIndex = 1013;
-            this.label22.Text = "정위치 감속 오프셋 시간";
+            this.label22.Text = "6. 정위치 감속 오프셋 시간";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -500,7 +500,7 @@ namespace VEXI
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(217, 21);
             this.label14.TabIndex = 0;
-            this.label14.Text = "크립 거리";
+            this.label14.Text = "5. 크립 거리";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -542,7 +542,7 @@ namespace VEXI
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(217, 21);
             this.label16.TabIndex = 0;
-            this.label16.Text = "재시도 적용범위";
+            this.label16.Text = "4. 재시도 적용범위";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
@@ -584,7 +584,7 @@ namespace VEXI
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(217, 21);
             this.label18.TabIndex = 0;
-            this.label18.Text = "정위치 정차 재시도 횟수";
+            this.label18.Text = "3. 정위치 정차 재시도 횟수";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label132
@@ -626,7 +626,7 @@ namespace VEXI
             this.label133.Name = "label133";
             this.label133.Size = new System.Drawing.Size(217, 21);
             this.label133.TabIndex = 0;
-            this.label133.Text = "정위치 히스테리시스";
+            this.label133.Text = "2. 정위치 히스테리시스";
             this.label133.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label134
@@ -668,7 +668,7 @@ namespace VEXI
             this.label135.Name = "label135";
             this.label135.Size = new System.Drawing.Size(217, 21);
             this.label135.TabIndex = 0;
-            this.label135.Text = "정위치 오프셋";
+            this.label135.Text = "1. 정위치 오프셋";
             this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox9
@@ -711,7 +711,7 @@ namespace VEXI
             this.groupBox9.Size = new System.Drawing.Size(364, 256);
             this.groupBox9.TabIndex = 12;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "적재 / 이재 인터록 지연시간 (0.01초 단위까지 제어 가능)";
+            this.groupBox9.Text = "J. 적재 / 이재 인터록 지연시간 (0.01초 단위까지 제어 가능)";
             // 
             // label43
             // 
@@ -736,7 +736,7 @@ namespace VEXI
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(157, 21);
             this.label44.TabIndex = 0;
-            this.label44.Text = "작업 완료";
+            this.label44.Text = "10. 작업 완료";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label46
@@ -777,7 +777,7 @@ namespace VEXI
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(157, 21);
             this.label47.TabIndex = 0;
-            this.label47.Text = "피딩 후";
+            this.label47.Text = "9. 피딩 후";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label48
@@ -803,7 +803,7 @@ namespace VEXI
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(157, 21);
             this.label49.TabIndex = 0;
-            this.label49.Text = "피딩 전";
+            this.label49.Text = "8. 피딩 전";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label99
@@ -829,7 +829,7 @@ namespace VEXI
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(157, 21);
             this.label100.TabIndex = 0;
-            this.label100.Text = "이동 후";
+            this.label100.Text = "7. 이동 후";
             this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label101
@@ -855,7 +855,7 @@ namespace VEXI
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(157, 21);
             this.label102.TabIndex = 0;
-            this.label102.Text = "이동 전";
+            this.label102.Text = "6. 이동 전";
             this.label102.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ed_UnLoading_DelayTime_Done
@@ -990,7 +990,7 @@ namespace VEXI
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(157, 21);
             this.label31.TabIndex = 0;
-            this.label31.Text = "작업 완료";
+            this.label31.Text = "5. 작업 완료";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
@@ -1032,7 +1032,7 @@ namespace VEXI
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(157, 21);
             this.label25.TabIndex = 0;
-            this.label25.Text = "피딩 후";
+            this.label25.Text = "4. 피딩 후";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
@@ -1074,7 +1074,7 @@ namespace VEXI
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(157, 21);
             this.label27.TabIndex = 0;
-            this.label27.Text = "피딩 전";
+            this.label27.Text = "3. 피딩 전";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
@@ -1129,7 +1129,7 @@ namespace VEXI
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(157, 21);
             this.label36.TabIndex = 0;
-            this.label36.Text = "이동 후";
+            this.label36.Text = "2. 이동 후";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label37
@@ -1171,7 +1171,7 @@ namespace VEXI
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(157, 21);
             this.label38.TabIndex = 0;
-            this.label38.Text = "이동 전";
+            this.label38.Text = "1. 이동 전";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox10
@@ -1207,7 +1207,7 @@ namespace VEXI
             this.groupBox10.Size = new System.Drawing.Size(404, 204);
             this.groupBox10.TabIndex = 13;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "타임 아웃 (0.01초 단위까지 제어 가능)";
+            this.groupBox10.Text = "L. 타임 아웃 (0.01초 단위까지 제어 가능)";
             // 
             // label21
             // 
@@ -1261,7 +1261,7 @@ namespace VEXI
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(200, 21);
             this.label105.TabIndex = 0;
-            this.label105.Text = "주행 크립 동작 시간";
+            this.label105.Text = "8. 주행 크립 동작 시간";
             this.label105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label67
@@ -1303,7 +1303,7 @@ namespace VEXI
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(200, 21);
             this.label68.TabIndex = 0;
-            this.label68.Text = "이재 후 화물 감지";
+            this.label68.Text = "7. 이재 후 화물 감지";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label54
@@ -1345,7 +1345,7 @@ namespace VEXI
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(200, 21);
             this.label55.TabIndex = 0;
-            this.label55.Text = "적재 후 화물 감지";
+            this.label55.Text = "6. 적재 후 화물 감지";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label56
@@ -1387,7 +1387,7 @@ namespace VEXI
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(200, 21);
             this.label57.TabIndex = 0;
-            this.label57.Text = "이재 피딩 동작";
+            this.label57.Text = "5. 이재 피딩 동작";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label58
@@ -1429,7 +1429,7 @@ namespace VEXI
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(200, 21);
             this.label59.TabIndex = 0;
-            this.label59.Text = "적재 피딩 동작";
+            this.label59.Text = "4. 적재 피딩 동작";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label60
@@ -1471,7 +1471,7 @@ namespace VEXI
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(200, 21);
             this.label61.TabIndex = 0;
-            this.label61.Text = "스테이션 인터록 대기";
+            this.label61.Text = "3. 스테이션 인터록 대기";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label62
@@ -1526,7 +1526,7 @@ namespace VEXI
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(200, 21);
             this.label64.TabIndex = 0;
-            this.label64.Text = "이동시간 오프셋";
+            this.label64.Text = "2. 이동시간 오프셋";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label65
@@ -1568,7 +1568,7 @@ namespace VEXI
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(200, 21);
             this.label66.TabIndex = 0;
-            this.label66.Text = "수동제어 명령 수신";
+            this.label66.Text = "1. 수동제어 명령 수신";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox12
@@ -1581,7 +1581,7 @@ namespace VEXI
             this.groupBox12.Size = new System.Drawing.Size(404, 46);
             this.groupBox12.TabIndex = 10;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "강제모드 (1초 단위까지 제어 가능)";
+            this.groupBox12.Text = "N. 강제모드 (1초 단위까지 제어 가능)";
             // 
             // label52
             // 
@@ -1638,7 +1638,7 @@ namespace VEXI
             this.groupBox13.Size = new System.Drawing.Size(321, 67);
             this.groupBox13.TabIndex = 9;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "모터 절체 지연 시간 (0.01초 단위까지 제어 가능)";
+            this.groupBox13.Text = "I. 모터 절체 지연 시간 (0.01초 단위까지 제어 가능)";
             // 
             // label19
             // 
@@ -1646,9 +1646,9 @@ namespace VEXI
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(175, 39);
+            this.label19.Location = new System.Drawing.Point(199, 39);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(46, 21);
+            this.label19.Size = new System.Drawing.Size(28, 21);
             this.label19.TabIndex = 0;
             this.label19.Text = "s";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1660,7 +1660,7 @@ namespace VEXI
             this.ed_InvertorOn_DelayTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_InvertorOn_DelayTime.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_InvertorOn_DelayTime.ForeColor = System.Drawing.Color.White;
-            this.ed_InvertorOn_DelayTime.Location = new System.Drawing.Point(223, 39);
+            this.ed_InvertorOn_DelayTime.Location = new System.Drawing.Point(228, 39);
             this.ed_InvertorOn_DelayTime.Name = "ed_InvertorOn_DelayTime";
             this.ed_InvertorOn_DelayTime.Size = new System.Drawing.Size(72, 21);
             this.ed_InvertorOn_DelayTime.TabIndex = 1001;
@@ -1677,9 +1677,9 @@ namespace VEXI
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(13, 39);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(161, 21);
+            this.label20.Size = new System.Drawing.Size(185, 21);
             this.label20.TabIndex = 0;
-            this.label20.Text = "모터 전환 -> 인버터 ON";
+            this.label20.Text = "2. 모터 전환 -> 인버터 ON";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label70
@@ -1688,9 +1688,9 @@ namespace VEXI
             this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label70.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label70.ForeColor = System.Drawing.Color.White;
-            this.label70.Location = new System.Drawing.Point(175, 17);
+            this.label70.Location = new System.Drawing.Point(199, 17);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(46, 21);
+            this.label70.Size = new System.Drawing.Size(28, 21);
             this.label70.TabIndex = 0;
             this.label70.Text = "s";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1702,7 +1702,7 @@ namespace VEXI
             this.ed_ChangeMC_DelayTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_ChangeMC_DelayTime.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_ChangeMC_DelayTime.ForeColor = System.Drawing.Color.White;
-            this.ed_ChangeMC_DelayTime.Location = new System.Drawing.Point(223, 17);
+            this.ed_ChangeMC_DelayTime.Location = new System.Drawing.Point(228, 17);
             this.ed_ChangeMC_DelayTime.Name = "ed_ChangeMC_DelayTime";
             this.ed_ChangeMC_DelayTime.Size = new System.Drawing.Size(72, 21);
             this.ed_ChangeMC_DelayTime.TabIndex = 1000;
@@ -1719,9 +1719,9 @@ namespace VEXI
             this.label69.ForeColor = System.Drawing.Color.White;
             this.label69.Location = new System.Drawing.Point(13, 17);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(161, 21);
+            this.label69.Size = new System.Drawing.Size(185, 21);
             this.label69.TabIndex = 0;
-            this.label69.Text = "인버터 OFF -> 모터 전환";
+            this.label69.Text = "1. 인버터 OFF -> 모터 전환";
             this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox14
@@ -1746,7 +1746,7 @@ namespace VEXI
             this.groupBox14.Size = new System.Drawing.Size(404, 138);
             this.groupBox14.TabIndex = 14;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "부저 동작 (0.01초 단위까지 제어 가능)";
+            this.groupBox14.Text = "M. 부저 동작 (0.01초 단위까지 제어 가능)";
             // 
             // label87
             // 
@@ -1787,7 +1787,7 @@ namespace VEXI
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(254, 21);
             this.label88.TabIndex = 0;
-            this.label88.Text = "자동모드 변경 시 점멸 횟수";
+            this.label88.Text = "5. 자동모드 변경 시 점멸 횟수";
             this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label83
@@ -1829,7 +1829,7 @@ namespace VEXI
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(254, 21);
             this.label84.TabIndex = 0;
-            this.label84.Text = "자동모드 변경 시 점멸시간 (ON)";
+            this.label84.Text = "3. 자동모드 변경 시 점멸시간 (ON)";
             this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label85
@@ -1871,7 +1871,7 @@ namespace VEXI
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(254, 21);
             this.label86.TabIndex = 0;
-            this.label86.Text = "자동모드 변경 시 점멸시간 (OFF)";
+            this.label86.Text = "4. 자동모드 변경 시 점멸시간 (OFF)";
             this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label81
@@ -1913,7 +1913,7 @@ namespace VEXI
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(254, 21);
             this.label82.TabIndex = 0;
-            this.label82.Text = "에러시 울림 유지시간";
+            this.label82.Text = "1. 에러시 울림 유지시간";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label72
@@ -1955,7 +1955,7 @@ namespace VEXI
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(254, 21);
             this.label80.TabIndex = 0;
-            this.label80.Text = "경고시 울림 유지시간";
+            this.label80.Text = "2. 경고시 울림 유지시간";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_LoadTotalFile
@@ -1989,7 +1989,7 @@ namespace VEXI
             this.groupBox1.Size = new System.Drawing.Size(321, 42);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "충돌방지";
+            this.groupBox1.Text = "B. 충돌방지";
             // 
             // cb_Collision_ProcessType
             // 
@@ -2030,7 +2030,7 @@ namespace VEXI
             this.groupBox5.Size = new System.Drawing.Size(320, 42);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "주행 범위설정 이상";
+            this.groupBox5.Text = "D. 주행 범위설정 이상";
             // 
             // cb_AlarmUse_LimitOver
             // 
@@ -2072,7 +2072,7 @@ namespace VEXI
             this.groupBox16.Size = new System.Drawing.Size(320, 66);
             this.groupBox16.TabIndex = 8;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "주행 감속구간 위치 이상";
+            this.groupBox16.Text = "H. 주행 감속구간 위치 이상";
             // 
             // label6
             // 
@@ -2080,7 +2080,7 @@ namespace VEXI
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(104, 40);
+            this.label6.Location = new System.Drawing.Point(112, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 21);
             this.label6.TabIndex = 0;
@@ -2094,7 +2094,7 @@ namespace VEXI
             this.ed_DeSpeedArea_Offset.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_DeSpeedArea_Offset.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_DeSpeedArea_Offset.ForeColor = System.Drawing.Color.White;
-            this.ed_DeSpeedArea_Offset.Location = new System.Drawing.Point(159, 40);
+            this.ed_DeSpeedArea_Offset.Location = new System.Drawing.Point(167, 40);
             this.ed_DeSpeedArea_Offset.Name = "ed_DeSpeedArea_Offset";
             this.ed_DeSpeedArea_Offset.Size = new System.Drawing.Size(80, 21);
             this.ed_DeSpeedArea_Offset.TabIndex = 0;
@@ -2111,9 +2111,9 @@ namespace VEXI
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(13, 40);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 21);
+            this.label10.Size = new System.Drawing.Size(98, 21);
             this.label10.TabIndex = 0;
-            this.label10.Text = "검출 오프셋";
+            this.label10.Text = "2. 검출 오프셋";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cb_DeSpeedArea_Type
@@ -2126,7 +2126,7 @@ namespace VEXI
             this.cb_DeSpeedArea_Type.Items.AddRange(new object[] {
             "사용안함",
             "사용"});
-            this.cb_DeSpeedArea_Type.Location = new System.Drawing.Point(104, 17);
+            this.cb_DeSpeedArea_Type.Location = new System.Drawing.Point(112, 17);
             this.cb_DeSpeedArea_Type.Name = "cb_DeSpeedArea_Type";
             this.cb_DeSpeedArea_Type.Size = new System.Drawing.Size(201, 20);
             this.cb_DeSpeedArea_Type.TabIndex = 0;
@@ -2139,9 +2139,9 @@ namespace VEXI
             this.label106.ForeColor = System.Drawing.Color.White;
             this.label106.Location = new System.Drawing.Point(13, 17);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(90, 21);
+            this.label106.Size = new System.Drawing.Size(98, 21);
             this.label106.TabIndex = 0;
-            this.label106.Text = "검출 설정";
+            this.label106.Text = "1. 검출 설정";
             this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox17
@@ -2156,7 +2156,7 @@ namespace VEXI
             this.groupBox17.Size = new System.Drawing.Size(320, 66);
             this.groupBox17.TabIndex = 7;
             this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "주행 원점센서 위치 이상";
+            this.groupBox17.Text = "G. 주행 원점센서 위치 이상";
             // 
             // label107
             // 
@@ -2164,7 +2164,7 @@ namespace VEXI
             this.label107.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label107.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label107.ForeColor = System.Drawing.Color.White;
-            this.label107.Location = new System.Drawing.Point(104, 40);
+            this.label107.Location = new System.Drawing.Point(112, 40);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(53, 21);
             this.label107.TabIndex = 0;
@@ -2178,7 +2178,7 @@ namespace VEXI
             this.ed_DriveRef_Offset.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_DriveRef_Offset.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_DriveRef_Offset.ForeColor = System.Drawing.Color.White;
-            this.ed_DriveRef_Offset.Location = new System.Drawing.Point(159, 40);
+            this.ed_DriveRef_Offset.Location = new System.Drawing.Point(167, 40);
             this.ed_DriveRef_Offset.Name = "ed_DriveRef_Offset";
             this.ed_DriveRef_Offset.Size = new System.Drawing.Size(80, 21);
             this.ed_DriveRef_Offset.TabIndex = 0;
@@ -2195,9 +2195,9 @@ namespace VEXI
             this.label108.ForeColor = System.Drawing.Color.White;
             this.label108.Location = new System.Drawing.Point(13, 40);
             this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(90, 21);
+            this.label108.Size = new System.Drawing.Size(98, 21);
             this.label108.TabIndex = 0;
-            this.label108.Text = "검출 오프셋";
+            this.label108.Text = "2. 검출 오프셋";
             this.label108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cb_DriveRef_Type
@@ -2212,7 +2212,7 @@ namespace VEXI
             "HOME",
             "END",
             "HOME + END"});
-            this.cb_DriveRef_Type.Location = new System.Drawing.Point(104, 17);
+            this.cb_DriveRef_Type.Location = new System.Drawing.Point(112, 17);
             this.cb_DriveRef_Type.Name = "cb_DriveRef_Type";
             this.cb_DriveRef_Type.Size = new System.Drawing.Size(201, 20);
             this.cb_DriveRef_Type.TabIndex = 0;
@@ -2225,9 +2225,9 @@ namespace VEXI
             this.label109.ForeColor = System.Drawing.Color.White;
             this.label109.Location = new System.Drawing.Point(13, 17);
             this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(90, 21);
+            this.label109.Size = new System.Drawing.Size(98, 21);
             this.label109.TabIndex = 0;
-            this.label109.Text = "검출 설정";
+            this.label109.Text = "1. 검출 설정";
             this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox18
@@ -2239,7 +2239,7 @@ namespace VEXI
             this.groupBox18.Size = new System.Drawing.Size(321, 42);
             this.groupBox18.TabIndex = 5;
             this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "피딩 동작중 이탈센서 감지 이상";
+            this.groupBox18.Text = "E. 피딩 동작중 이탈센서 감지 이상";
             // 
             // cb_AlarmUse_OverItemOnFeeding
             // 
@@ -2278,7 +2278,7 @@ namespace VEXI
             this.groupBox19.Size = new System.Drawing.Size(321, 41);
             this.groupBox19.TabIndex = 6;
             this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "인터록 대기시간 초과 이상";
+            this.groupBox19.Text = "F. 인터록 대기시간 초과 이상";
             // 
             // cb_AlarmUse_InterlcokTimeOut
             // 
@@ -2318,7 +2318,7 @@ namespace VEXI
             this.groupBox3.Size = new System.Drawing.Size(404, 47);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "무선 통신 (Access Point ARP Table 갱신)";
+            this.groupBox3.Text = "O. 무선 통신 (Access Point ARP Table 갱신)";
             // 
             // label3
             // 
@@ -2359,7 +2359,7 @@ namespace VEXI
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(255, 21);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Wifi Controller 연결 확인 시간";
+            this.label5.Text = "GMC 연결 확인 시간";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_RTVParam_CTRL

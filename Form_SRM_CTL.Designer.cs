@@ -50,10 +50,6 @@ namespace VEXI
             this.label132 = new System.Windows.Forms.Label();
             this.lbl_DriveSt2_2 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rb_ForkRef_3 = new System.Windows.Forms.RadioButton();
-            this.rb_ForkRef_2 = new System.Windows.Forms.RadioButton();
-            this.rb_ForkRef_1 = new System.Windows.Forms.RadioButton();
             this.label94 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btn_Fork2_Right = new System.Windows.Forms.Button();
@@ -82,6 +78,7 @@ namespace VEXI
             this.btn_Backward_LowSpeed = new System.Windows.Forms.Button();
             this.btn_Forward_LowSpeed = new System.Windows.Forms.Button();
             this.tab_Item = new System.Windows.Forms.TabPage();
+            this.lbl_JobCtrlRes = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cbJobOption_0 = new System.Windows.Forms.CheckBox();
             this.cbJobOption_1 = new System.Windows.Forms.CheckBox();
@@ -245,6 +242,24 @@ namespace VEXI
             this.btn_ChangeS_Fork1 = new System.Windows.Forms.Button();
             this.label86 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.numed_Fork2_Sticky_R = new System.Windows.Forms.NumericUpDown();
+            this.numed_Fork1_Sticky_R = new System.Windows.Forms.NumericUpDown();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.numed_Fork2_Sticky_L = new System.Windows.Forms.NumericUpDown();
+            this.numed_Fork2_Sticky_B = new System.Windows.Forms.NumericUpDown();
+            this.numed_Fork1_Sticky_L = new System.Windows.Forms.NumericUpDown();
+            this.numed_Fork1_Sticky_B = new System.Windows.Forms.NumericUpDown();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label114 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.btn_Sticky_Fork1 = new System.Windows.Forms.Button();
+            this.label116 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
             this.tab_Task = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.cbTaskOption_0 = new System.Windows.Forms.CheckBox();
@@ -304,7 +319,6 @@ namespace VEXI
             this.label375 = new System.Windows.Forms.Label();
             this.lbl_Fork2_From = new System.Windows.Forms.Label();
             this.label377 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_TaskIndex = new System.Windows.Forms.Label();
             this.lbl_Fork2_Cmd = new System.Windows.Forms.Label();
             this.lbl_Fork2_Job = new System.Windows.Forms.Label();
             this.label381 = new System.Windows.Forms.Label();
@@ -327,7 +341,6 @@ namespace VEXI
             this.label345 = new System.Windows.Forms.Label();
             this.lbl_Fork1_From = new System.Windows.Forms.Label();
             this.label342 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_TaskIndex = new System.Windows.Forms.Label();
             this.lbl_Fork1_Cmd = new System.Windows.Forms.Label();
             this.lbl_Fork1_Job = new System.Windows.Forms.Label();
             this.label338 = new System.Windows.Forms.Label();
@@ -380,6 +393,9 @@ namespace VEXI
             this.lbl_Drive_CurrentPos_L_Fork2 = new System.Windows.Forms.Label();
             this.lbl_Drive_CurrentPos_L_Fork1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label109 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_Existitem = new System.Windows.Forms.Label();
+            this.lbl_Fork2_Existitem = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.lbl_Fork2St1_7 = new System.Windows.Forms.Label();
@@ -432,10 +448,16 @@ namespace VEXI
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
-            this.lbl_JobCtrlRes = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.lbl_Fork1St2_6 = new System.Windows.Forms.Label();
+            this.btn_Fork1St2_6_ON = new System.Windows.Forms.Button();
+            this.btn_Fork1St2_6_OFF = new System.Windows.Forms.Button();
+            this.btn_Fork2St2_6_OFF = new System.Windows.Forms.Button();
+            this.btn_Fork2St2_6_ON = new System.Windows.Forms.Button();
+            this.lbl_Fork2St2_6 = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tab_Manual.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -499,6 +521,13 @@ namespace VEXI
             this.tab_Change_Station.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_ChangeS_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_ChangeS_S)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_Sticky_R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_Sticky_R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_Sticky_L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_Sticky_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_Sticky_L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_Sticky_B)).BeginInit();
             this.tab_Task.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.tab_delete.SuspendLayout();
@@ -524,10 +553,10 @@ namespace VEXI
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(88, 24);
-            this.tabControl1.Location = new System.Drawing.Point(0, 223);
+            this.tabControl1.Location = new System.Drawing.Point(0, 245);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(928, 493);
+            this.tabControl1.Size = new System.Drawing.Size(928, 478);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -551,7 +580,6 @@ namespace VEXI
             this.tab_Manual.Controls.Add(this.label132);
             this.tab_Manual.Controls.Add(this.lbl_DriveSt2_2);
             this.tab_Manual.Controls.Add(this.label113);
-            this.tab_Manual.Controls.Add(this.groupBox4);
             this.tab_Manual.Controls.Add(this.label94);
             this.tab_Manual.Controls.Add(this.groupBox9);
             this.tab_Manual.Controls.Add(this.label93);
@@ -564,14 +592,15 @@ namespace VEXI
             this.tab_Manual.Location = new System.Drawing.Point(4, 28);
             this.tab_Manual.Name = "tab_Manual";
             this.tab_Manual.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Manual.Size = new System.Drawing.Size(920, 432);
+            this.tab_Manual.Size = new System.Drawing.Size(920, 446);
             this.tab_Manual.TabIndex = 0;
-            this.tab_Manual.Text = "수동 운전명령";
+            this.tab_Manual.Text = "A. 수동 운전명령";
             this.tab_Manual.UseVisualStyleBackColor = true;
+            this.tab_Manual.Click += new System.EventHandler(this.tab_Manual_Click);
             // 
             // btn_SetRef_Fork2
             // 
-            this.btn_SetRef_Fork2.Location = new System.Drawing.Point(817, 14);
+            this.btn_SetRef_Fork2.Location = new System.Drawing.Point(822, 14);
             this.btn_SetRef_Fork2.Name = "btn_SetRef_Fork2";
             this.btn_SetRef_Fork2.Size = new System.Drawing.Size(75, 51);
             this.btn_SetRef_Fork2.TabIndex = 166;
@@ -583,7 +612,7 @@ namespace VEXI
             // 
             // btn_SetRef_Fork1
             // 
-            this.btn_SetRef_Fork1.Location = new System.Drawing.Point(736, 13);
+            this.btn_SetRef_Fork1.Location = new System.Drawing.Point(741, 13);
             this.btn_SetRef_Fork1.Name = "btn_SetRef_Fork1";
             this.btn_SetRef_Fork1.Size = new System.Drawing.Size(75, 51);
             this.btn_SetRef_Fork1.TabIndex = 165;
@@ -595,13 +624,13 @@ namespace VEXI
             // 
             // btn_SetRef_UpDown
             // 
-            this.btn_SetRef_UpDown.Location = new System.Drawing.Point(655, 13);
+            this.btn_SetRef_UpDown.Location = new System.Drawing.Point(660, 13);
             this.btn_SetRef_UpDown.Name = "btn_SetRef_UpDown";
             this.btn_SetRef_UpDown.Size = new System.Drawing.Size(75, 51);
             this.btn_SetRef_UpDown.TabIndex = 164;
             this.btn_SetRef_UpDown.TabStop = false;
             this.btn_SetRef_UpDown.Tag = "1";
-            this.btn_SetRef_UpDown.Text = "승강\r\n원점설정";
+            this.btn_SetRef_UpDown.Text = "승강(Lift)\r\n원점설정";
             this.btn_SetRef_UpDown.UseVisualStyleBackColor = true;
             this.btn_SetRef_UpDown.Click += new System.EventHandler(this.btn_SetRef_Drive_Click);
             // 
@@ -609,11 +638,11 @@ namespace VEXI
             // 
             this.btn_SetRef_Drive.Location = new System.Drawing.Point(574, 12);
             this.btn_SetRef_Drive.Name = "btn_SetRef_Drive";
-            this.btn_SetRef_Drive.Size = new System.Drawing.Size(75, 51);
+            this.btn_SetRef_Drive.Size = new System.Drawing.Size(80, 51);
             this.btn_SetRef_Drive.TabIndex = 163;
             this.btn_SetRef_Drive.TabStop = false;
             this.btn_SetRef_Drive.Tag = "0";
-            this.btn_SetRef_Drive.Text = "주행\r\n원점설정";
+            this.btn_SetRef_Drive.Text = "주행 (Drive)\r\n원점설정";
             this.btn_SetRef_Drive.UseVisualStyleBackColor = true;
             this.btn_SetRef_Drive.Click += new System.EventHandler(this.btn_SetRef_Drive_Click);
             // 
@@ -771,60 +800,12 @@ namespace VEXI
             this.label113.Text = "원점확인";
             this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.rb_ForkRef_3);
-            this.groupBox4.Controls.Add(this.rb_ForkRef_2);
-            this.groupBox4.Controls.Add(this.rb_ForkRef_1);
-            this.groupBox4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox4.Location = new System.Drawing.Point(534, 344);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(367, 76);
-            this.groupBox4.TabIndex = 48;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "포크 정위치 기준";
-            // 
-            // rb_ForkRef_3
-            // 
-            this.rb_ForkRef_3.AutoSize = true;
-            this.rb_ForkRef_3.Location = new System.Drawing.Point(252, 34);
-            this.rb_ForkRef_3.Name = "rb_ForkRef_3";
-            this.rb_ForkRef_3.Size = new System.Drawing.Size(47, 16);
-            this.rb_ForkRef_3.TabIndex = 2;
-            this.rb_ForkRef_3.Text = "Full";
-            this.rb_ForkRef_3.UseVisualStyleBackColor = true;
-            this.rb_ForkRef_3.CheckedChanged += new System.EventHandler(this.rb_LowSpeed_Fork1_CheckedChanged);
-            // 
-            // rb_ForkRef_2
-            // 
-            this.rb_ForkRef_2.AutoSize = true;
-            this.rb_ForkRef_2.Location = new System.Drawing.Point(132, 34);
-            this.rb_ForkRef_2.Name = "rb_ForkRef_2";
-            this.rb_ForkRef_2.Size = new System.Drawing.Size(67, 16);
-            this.rb_ForkRef_2.TabIndex = 1;
-            this.rb_ForkRef_2.Text = "Middle";
-            this.rb_ForkRef_2.UseVisualStyleBackColor = true;
-            this.rb_ForkRef_2.CheckedChanged += new System.EventHandler(this.rb_LowSpeed_Fork1_CheckedChanged);
-            // 
-            // rb_ForkRef_1
-            // 
-            this.rb_ForkRef_1.AutoSize = true;
-            this.rb_ForkRef_1.Checked = true;
-            this.rb_ForkRef_1.Location = new System.Drawing.Point(16, 34);
-            this.rb_ForkRef_1.Name = "rb_ForkRef_1";
-            this.rb_ForkRef_1.Size = new System.Drawing.Size(48, 16);
-            this.rb_ForkRef_1.TabIndex = 0;
-            this.rb_ForkRef_1.TabStop = true;
-            this.rb_ForkRef_1.Text = "Half";
-            this.rb_ForkRef_1.UseVisualStyleBackColor = true;
-            this.rb_ForkRef_1.CheckedChanged += new System.EventHandler(this.rb_LowSpeed_Fork1_CheckedChanged);
-            // 
             // label94
             // 
             this.label94.BackColor = System.Drawing.SystemColors.Highlight;
             this.label94.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label94.ForeColor = System.Drawing.Color.White;
-            this.label94.Location = new System.Drawing.Point(528, 213);
+            this.label94.Location = new System.Drawing.Point(528, 253);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(373, 35);
             this.label94.TabIndex = 46;
@@ -833,50 +814,54 @@ namespace VEXI
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.btn_Fork2St2_6_OFF);
+            this.groupBox9.Controls.Add(this.btn_Fork2St2_6_ON);
+            this.groupBox9.Controls.Add(this.lbl_Fork2St2_6);
+            this.groupBox9.Controls.Add(this.label122);
             this.groupBox9.Controls.Add(this.btn_Fork2_Right);
             this.groupBox9.Controls.Add(this.btn_Fork2_Center);
             this.groupBox9.Controls.Add(this.btn_Fork2_Left);
-            this.groupBox9.Location = new System.Drawing.Point(528, 241);
+            this.groupBox9.Location = new System.Drawing.Point(528, 281);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(373, 97);
+            this.groupBox9.Size = new System.Drawing.Size(373, 134);
             this.groupBox9.TabIndex = 47;
             this.groupBox9.TabStop = false;
             // 
             // btn_Fork2_Right
             // 
-            this.btn_Fork2_Right.Location = new System.Drawing.Point(241, 31);
+            this.btn_Fork2_Right.Location = new System.Drawing.Point(259, 75);
             this.btn_Fork2_Right.Name = "btn_Fork2_Right";
             this.btn_Fork2_Right.Size = new System.Drawing.Size(94, 39);
             this.btn_Fork2_Right.TabIndex = 26;
             this.btn_Fork2_Right.TabStop = false;
             this.btn_Fork2_Right.Tag = "43";
-            this.btn_Fork2_Right.Text = "Fork2 우";
+            this.btn_Fork2_Right.Text = "Fork2 우 (R)";
             this.btn_Fork2_Right.UseVisualStyleBackColor = true;
             this.btn_Fork2_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Fork2_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Fork2_Center
             // 
-            this.btn_Fork2_Center.Location = new System.Drawing.Point(139, 31);
+            this.btn_Fork2_Center.Location = new System.Drawing.Point(140, 75);
             this.btn_Fork2_Center.Name = "btn_Fork2_Center";
-            this.btn_Fork2_Center.Size = new System.Drawing.Size(94, 39);
+            this.btn_Fork2_Center.Size = new System.Drawing.Size(98, 39);
             this.btn_Fork2_Center.TabIndex = 27;
             this.btn_Fork2_Center.TabStop = false;
             this.btn_Fork2_Center.Tag = "41";
-            this.btn_Fork2_Center.Text = "Fork2 중심";
+            this.btn_Fork2_Center.Text = "Fork2 중심 (C)";
             this.btn_Fork2_Center.UseVisualStyleBackColor = true;
             this.btn_Fork2_Center.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Fork2_Center.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Fork2_Left
             // 
-            this.btn_Fork2_Left.Location = new System.Drawing.Point(36, 31);
+            this.btn_Fork2_Left.Location = new System.Drawing.Point(23, 75);
             this.btn_Fork2_Left.Name = "btn_Fork2_Left";
             this.btn_Fork2_Left.Size = new System.Drawing.Size(94, 39);
             this.btn_Fork2_Left.TabIndex = 25;
             this.btn_Fork2_Left.TabStop = false;
             this.btn_Fork2_Left.Tag = "42";
-            this.btn_Fork2_Left.Text = "Fork2 좌";
+            this.btn_Fork2_Left.Text = "Fork2 좌 (L)";
             this.btn_Fork2_Left.UseVisualStyleBackColor = true;
             this.btn_Fork2_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Fork2_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -895,50 +880,54 @@ namespace VEXI
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.btn_Fork1St2_6_OFF);
+            this.groupBox8.Controls.Add(this.btn_Fork1St2_6_ON);
+            this.groupBox8.Controls.Add(this.lbl_Fork1St2_6);
+            this.groupBox8.Controls.Add(this.label120);
             this.groupBox8.Controls.Add(this.btn_Fork1_Right);
             this.groupBox8.Controls.Add(this.btn_Fork1_Center);
             this.groupBox8.Controls.Add(this.btn_Fork1_Left);
             this.groupBox8.Location = new System.Drawing.Point(527, 107);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(373, 97);
+            this.groupBox8.Size = new System.Drawing.Size(373, 134);
             this.groupBox8.TabIndex = 45;
             this.groupBox8.TabStop = false;
             // 
             // btn_Fork1_Right
             // 
-            this.btn_Fork1_Right.Location = new System.Drawing.Point(241, 31);
+            this.btn_Fork1_Right.Location = new System.Drawing.Point(259, 75);
             this.btn_Fork1_Right.Name = "btn_Fork1_Right";
             this.btn_Fork1_Right.Size = new System.Drawing.Size(94, 39);
             this.btn_Fork1_Right.TabIndex = 26;
             this.btn_Fork1_Right.TabStop = false;
             this.btn_Fork1_Right.Tag = "33";
-            this.btn_Fork1_Right.Text = "Fork1 우";
+            this.btn_Fork1_Right.Text = "Fork1 우 (R)";
             this.btn_Fork1_Right.UseVisualStyleBackColor = true;
             this.btn_Fork1_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Fork1_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Fork1_Center
             // 
-            this.btn_Fork1_Center.Location = new System.Drawing.Point(139, 31);
+            this.btn_Fork1_Center.Location = new System.Drawing.Point(140, 75);
             this.btn_Fork1_Center.Name = "btn_Fork1_Center";
-            this.btn_Fork1_Center.Size = new System.Drawing.Size(94, 39);
+            this.btn_Fork1_Center.Size = new System.Drawing.Size(98, 39);
             this.btn_Fork1_Center.TabIndex = 27;
             this.btn_Fork1_Center.TabStop = false;
             this.btn_Fork1_Center.Tag = "31";
-            this.btn_Fork1_Center.Text = "Fork1 중심";
+            this.btn_Fork1_Center.Text = "Fork1 중심 (C)";
             this.btn_Fork1_Center.UseVisualStyleBackColor = true;
             this.btn_Fork1_Center.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Fork1_Center.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Fork1_Left
             // 
-            this.btn_Fork1_Left.Location = new System.Drawing.Point(36, 31);
+            this.btn_Fork1_Left.Location = new System.Drawing.Point(23, 75);
             this.btn_Fork1_Left.Name = "btn_Fork1_Left";
             this.btn_Fork1_Left.Size = new System.Drawing.Size(94, 39);
             this.btn_Fork1_Left.TabIndex = 25;
             this.btn_Fork1_Left.TabStop = false;
             this.btn_Fork1_Left.Tag = "32";
-            this.btn_Fork1_Left.Text = "Fork1 좌";
+            this.btn_Fork1_Left.Text = "Fork1 좌 (L)";
             this.btn_Fork1_Left.UseVisualStyleBackColor = true;
             this.btn_Fork1_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Fork1_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -975,7 +964,7 @@ namespace VEXI
             this.btn_UP_MiddleSpeed.TabIndex = 0;
             this.btn_UP_MiddleSpeed.TabStop = false;
             this.btn_UP_MiddleSpeed.Tag = "23";
-            this.btn_UP_MiddleSpeed.Text = "중속 상승";
+            this.btn_UP_MiddleSpeed.Text = "중속 상승 (M-UP)";
             this.btn_UP_MiddleSpeed.UseVisualStyleBackColor = true;
             this.btn_UP_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_UP_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -988,7 +977,7 @@ namespace VEXI
             this.btn_DOWN_MiddleSpeed.TabIndex = 1;
             this.btn_DOWN_MiddleSpeed.TabStop = false;
             this.btn_DOWN_MiddleSpeed.Tag = "24";
-            this.btn_DOWN_MiddleSpeed.Text = "중속 하강";
+            this.btn_DOWN_MiddleSpeed.Text = "중속 하강 (M-DN)";
             this.btn_DOWN_MiddleSpeed.UseVisualStyleBackColor = true;
             this.btn_DOWN_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_DOWN_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1001,7 +990,7 @@ namespace VEXI
             this.btn_Backward_MiddleSpeed.TabIndex = 4;
             this.btn_Backward_MiddleSpeed.TabStop = false;
             this.btn_Backward_MiddleSpeed.Tag = "14";
-            this.btn_Backward_MiddleSpeed.Text = "중속 후진";
+            this.btn_Backward_MiddleSpeed.Text = "중속 후진 (F-BACK)";
             this.btn_Backward_MiddleSpeed.UseVisualStyleBackColor = true;
             this.btn_Backward_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Backward_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1014,7 +1003,7 @@ namespace VEXI
             this.btn_Forward_MiddleSpeed.TabIndex = 5;
             this.btn_Forward_MiddleSpeed.TabStop = false;
             this.btn_Forward_MiddleSpeed.Tag = "13";
-            this.btn_Forward_MiddleSpeed.Text = "중속 전진";
+            this.btn_Forward_MiddleSpeed.Text = "중속 전진 (M-FWD)";
             this.btn_Forward_MiddleSpeed.UseVisualStyleBackColor = true;
             this.btn_Forward_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Forward_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1111,7 +1100,7 @@ namespace VEXI
             this.btn_UP_LowSpeed.TabIndex = 0;
             this.btn_UP_LowSpeed.TabStop = false;
             this.btn_UP_LowSpeed.Tag = "21";
-            this.btn_UP_LowSpeed.Text = "저속 상승";
+            this.btn_UP_LowSpeed.Text = "저속 상승 (L-UP)";
             this.btn_UP_LowSpeed.UseVisualStyleBackColor = true;
             this.btn_UP_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_UP_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1124,7 +1113,7 @@ namespace VEXI
             this.btn_DOWN_LowSpeed.TabIndex = 1;
             this.btn_DOWN_LowSpeed.TabStop = false;
             this.btn_DOWN_LowSpeed.Tag = "22";
-            this.btn_DOWN_LowSpeed.Text = "저속 하강";
+            this.btn_DOWN_LowSpeed.Text = "저속 하강 (L-DN)";
             this.btn_DOWN_LowSpeed.UseVisualStyleBackColor = true;
             this.btn_DOWN_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_DOWN_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1137,7 +1126,7 @@ namespace VEXI
             this.btn_Backward_LowSpeed.TabIndex = 4;
             this.btn_Backward_LowSpeed.TabStop = false;
             this.btn_Backward_LowSpeed.Tag = "12";
-            this.btn_Backward_LowSpeed.Text = "저속 후진";
+            this.btn_Backward_LowSpeed.Text = "저속 후진 (L-BACK)";
             this.btn_Backward_LowSpeed.UseVisualStyleBackColor = true;
             this.btn_Backward_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Backward_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1150,7 +1139,7 @@ namespace VEXI
             this.btn_Forward_LowSpeed.TabIndex = 5;
             this.btn_Forward_LowSpeed.TabStop = false;
             this.btn_Forward_LowSpeed.Tag = "11";
-            this.btn_Forward_LowSpeed.Text = "저속 전진";
+            this.btn_Forward_LowSpeed.Text = "저속 전진 (L-FWD)";
             this.btn_Forward_LowSpeed.UseVisualStyleBackColor = true;
             this.btn_Forward_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Forward_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -1164,10 +1153,20 @@ namespace VEXI
             this.tab_Item.Location = new System.Drawing.Point(4, 28);
             this.tab_Item.Name = "tab_Item";
             this.tab_Item.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Item.Size = new System.Drawing.Size(920, 461);
+            this.tab_Item.Size = new System.Drawing.Size(920, 446);
             this.tab_Item.TabIndex = 1;
-            this.tab_Item.Text = "반송 운전명령";
+            this.tab_Item.Text = "B. 반송 운전명령";
             this.tab_Item.UseVisualStyleBackColor = true;
+            // 
+            // lbl_JobCtrlRes
+            // 
+            this.lbl_JobCtrlRes.AutoSize = true;
+            this.lbl_JobCtrlRes.Location = new System.Drawing.Point(21, 95);
+            this.lbl_JobCtrlRes.Name = "lbl_JobCtrlRes";
+            this.lbl_JobCtrlRes.Size = new System.Drawing.Size(50, 12);
+            this.lbl_JobCtrlRes.TabIndex = 4;
+            this.lbl_JobCtrlRes.Text = "label109";
+            this.lbl_JobCtrlRes.Visible = false;
             // 
             // groupBox7
             // 
@@ -1247,9 +1246,10 @@ namespace VEXI
             this.TabControl5.Controls.Add(this.tab_SToS);
             this.TabControl5.Controls.Add(this.tab_Change_Rack);
             this.TabControl5.Controls.Add(this.tab_Change_Station);
+            this.TabControl5.Controls.Add(this.tabPage6);
             this.TabControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TabControl5.ItemSize = new System.Drawing.Size(125, 30);
-            this.TabControl5.Location = new System.Drawing.Point(3, 117);
+            this.TabControl5.ItemSize = new System.Drawing.Size(110, 30);
+            this.TabControl5.Location = new System.Drawing.Point(3, 102);
             this.TabControl5.Name = "TabControl5";
             this.TabControl5.SelectedIndex = 0;
             this.TabControl5.Size = new System.Drawing.Size(914, 341);
@@ -1339,7 +1339,7 @@ namespace VEXI
             this.numed_Fork2_Move_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Move_R.Location = new System.Drawing.Point(174, 231);
             this.numed_Fork2_Move_R.Maximum = new decimal(new int[] {
-            255,
+            6,
             0,
             0,
             0});
@@ -1363,7 +1363,7 @@ namespace VEXI
             this.numed_Fork1_Move_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Move_R.Location = new System.Drawing.Point(174, 166);
             this.numed_Fork1_Move_R.Maximum = new decimal(new int[] {
-            255,
+            6,
             0,
             0,
             0});
@@ -1691,7 +1691,7 @@ namespace VEXI
             this.numed_Fork2_Input_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Input_R.Location = new System.Drawing.Point(297, 177);
             this.numed_Fork2_Input_R.Maximum = new decimal(new int[] {
-            255,
+            6,
             0,
             0,
             0});
@@ -1714,6 +1714,11 @@ namespace VEXI
             // 
             this.numed_Fork2_Input_S.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Input_S.Location = new System.Drawing.Point(101, 177);
+            this.numed_Fork2_Input_S.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork2_Input_S.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1734,7 +1739,7 @@ namespace VEXI
             this.numed_Fork1_Input_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Input_R.Location = new System.Drawing.Point(299, 91);
             this.numed_Fork1_Input_R.Maximum = new decimal(new int[] {
-            255,
+            6,
             0,
             0,
             0});
@@ -1757,6 +1762,11 @@ namespace VEXI
             // 
             this.numed_Fork1_Input_S.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Input_S.Location = new System.Drawing.Point(103, 91);
+            this.numed_Fork1_Input_S.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork1_Input_S.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2075,6 +2085,11 @@ namespace VEXI
             // 
             this.numed_Fork2_Output_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Output_R.Location = new System.Drawing.Point(101, 177);
+            this.numed_Fork2_Output_R.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork2_Output_R.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2094,6 +2109,11 @@ namespace VEXI
             // 
             this.numed_Fork2_Output_S.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Output_S.Location = new System.Drawing.Point(521, 177);
+            this.numed_Fork2_Output_S.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork2_Output_S.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2113,6 +2133,11 @@ namespace VEXI
             // 
             this.numed_Fork1_Output_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Output_R.Location = new System.Drawing.Point(103, 91);
+            this.numed_Fork1_Output_R.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork1_Output_R.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2132,6 +2157,11 @@ namespace VEXI
             // 
             this.numed_Fork1_Output_S.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Output_S.Location = new System.Drawing.Point(523, 91);
+            this.numed_Fork1_Output_S.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork1_Output_S.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2191,6 +2221,11 @@ namespace VEXI
             // 
             this.numed_Fork2_Output_L.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Output_L.Location = new System.Drawing.Point(343, 177);
+            this.numed_Fork2_Output_L.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork2_Output_L.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2210,6 +2245,11 @@ namespace VEXI
             // 
             this.numed_Fork2_Output_B.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_Output_B.Location = new System.Drawing.Point(224, 177);
+            this.numed_Fork2_Output_B.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork2_Output_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2229,6 +2269,11 @@ namespace VEXI
             // 
             this.numed_Fork1_Output_L.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Output_L.Location = new System.Drawing.Point(345, 91);
+            this.numed_Fork1_Output_L.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork1_Output_L.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2248,6 +2293,11 @@ namespace VEXI
             // 
             this.numed_Fork1_Output_B.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_Output_B.Location = new System.Drawing.Point(226, 91);
+            this.numed_Fork1_Output_B.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork1_Output_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2405,6 +2455,11 @@ namespace VEXI
             // 
             this.numed_Fork2_RtoR_ToR.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_RtoR_ToR.Location = new System.Drawing.Point(446, 196);
+            this.numed_Fork2_RtoR_ToR.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork2_RtoR_ToR.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2424,6 +2479,11 @@ namespace VEXI
             // 
             this.numed_Fork1_RtoR_ToR.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_RtoR_ToR.Location = new System.Drawing.Point(448, 91);
+            this.numed_Fork1_RtoR_ToR.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork1_RtoR_ToR.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2463,6 +2523,11 @@ namespace VEXI
             // 
             this.numed_Fork2_RtoR_ToL.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_RtoR_ToL.Location = new System.Drawing.Point(650, 196);
+            this.numed_Fork2_RtoR_ToL.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork2_RtoR_ToL.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2482,6 +2547,11 @@ namespace VEXI
             // 
             this.numed_Fork2_RtoR_ToB.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_RtoR_ToB.Location = new System.Drawing.Point(548, 196);
+            this.numed_Fork2_RtoR_ToB.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork2_RtoR_ToB.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2501,6 +2571,11 @@ namespace VEXI
             // 
             this.numed_Fork1_RtoR_ToL.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_RtoR_ToL.Location = new System.Drawing.Point(652, 91);
+            this.numed_Fork1_RtoR_ToL.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork1_RtoR_ToL.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2520,6 +2595,11 @@ namespace VEXI
             // 
             this.numed_Fork1_RtoR_ToB.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_RtoR_ToB.Location = new System.Drawing.Point(550, 91);
+            this.numed_Fork1_RtoR_ToB.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork1_RtoR_ToB.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2612,6 +2692,11 @@ namespace VEXI
             // 
             this.numed_Fork2_RtoR_FromR.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_RtoR_FromR.Location = new System.Drawing.Point(101, 196);
+            this.numed_Fork2_RtoR_FromR.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork2_RtoR_FromR.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2631,6 +2716,11 @@ namespace VEXI
             // 
             this.numed_Fork1_RtoR_FromR.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_RtoR_FromR.Location = new System.Drawing.Point(103, 91);
+            this.numed_Fork1_RtoR_FromR.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork1_RtoR_FromR.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2670,6 +2760,11 @@ namespace VEXI
             // 
             this.numed_Fork2_RtoR_FromL.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_RtoR_FromL.Location = new System.Drawing.Point(305, 196);
+            this.numed_Fork2_RtoR_FromL.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork2_RtoR_FromL.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2689,6 +2784,11 @@ namespace VEXI
             // 
             this.numed_Fork2_RtoR_FromB.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_RtoR_FromB.Location = new System.Drawing.Point(203, 196);
+            this.numed_Fork2_RtoR_FromB.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork2_RtoR_FromB.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2708,6 +2808,11 @@ namespace VEXI
             // 
             this.numed_Fork1_RtoR_FromL.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_RtoR_FromL.Location = new System.Drawing.Point(307, 91);
+            this.numed_Fork1_RtoR_FromL.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork1_RtoR_FromL.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2727,6 +2832,11 @@ namespace VEXI
             // 
             this.numed_Fork1_RtoR_FromB.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_RtoR_FromB.Location = new System.Drawing.Point(205, 91);
+            this.numed_Fork1_RtoR_FromB.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork1_RtoR_FromB.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2868,6 +2978,11 @@ namespace VEXI
             // 
             this.numed_Fork2_StoS_FromS.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_StoS_FromS.Location = new System.Drawing.Point(117, 177);
+            this.numed_Fork2_StoS_FromS.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork2_StoS_FromS.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2887,6 +3002,11 @@ namespace VEXI
             // 
             this.numed_Fork1_StoS_FromS.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_StoS_FromS.Location = new System.Drawing.Point(119, 91);
+            this.numed_Fork1_StoS_FromS.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork1_StoS_FromS.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2959,6 +3079,11 @@ namespace VEXI
             // 
             this.numed_Fork2_StoS_ToS.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_StoS_ToS.Location = new System.Drawing.Point(315, 177);
+            this.numed_Fork2_StoS_ToS.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork2_StoS_ToS.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2978,6 +3103,11 @@ namespace VEXI
             // 
             this.numed_Fork1_StoS_ToS.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_StoS_ToS.Location = new System.Drawing.Point(317, 91);
+            this.numed_Fork1_StoS_ToS.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork1_StoS_ToS.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3084,7 +3214,7 @@ namespace VEXI
             this.tab_Change_Rack.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Change_Rack.Size = new System.Drawing.Size(906, 303);
             this.tab_Change_Rack.TabIndex = 6;
-            this.tab_Change_Rack.Text = "목적지 랙 변경";
+            this.tab_Change_Rack.Text = "랙 변경";
             this.tab_Change_Rack.UseVisualStyleBackColor = true;
             // 
             // label101
@@ -3158,6 +3288,11 @@ namespace VEXI
             // 
             this.numed_Fork2_ChangeR_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_ChangeR_R.Location = new System.Drawing.Point(165, 177);
+            this.numed_Fork2_ChangeR_R.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork2_ChangeR_R.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3177,6 +3312,11 @@ namespace VEXI
             // 
             this.numed_Fork1_ChangeR_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_ChangeR_R.Location = new System.Drawing.Point(167, 91);
+            this.numed_Fork1_ChangeR_R.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numed_Fork1_ChangeR_R.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3216,6 +3356,11 @@ namespace VEXI
             // 
             this.numed_Fork2_ChangeR_L.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_ChangeR_L.Location = new System.Drawing.Point(407, 177);
+            this.numed_Fork2_ChangeR_L.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork2_ChangeR_L.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3235,6 +3380,11 @@ namespace VEXI
             // 
             this.numed_Fork2_ChangeR_B.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_ChangeR_B.Location = new System.Drawing.Point(288, 177);
+            this.numed_Fork2_ChangeR_B.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork2_ChangeR_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3254,6 +3404,11 @@ namespace VEXI
             // 
             this.numed_Fork1_ChangeR_L.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_ChangeR_L.Location = new System.Drawing.Point(409, 91);
+            this.numed_Fork1_ChangeR_L.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numed_Fork1_ChangeR_L.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3273,6 +3428,11 @@ namespace VEXI
             // 
             this.numed_Fork1_ChangeR_B.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_ChangeR_B.Location = new System.Drawing.Point(290, 91);
+            this.numed_Fork1_ChangeR_B.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numed_Fork1_ChangeR_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3369,7 +3529,7 @@ namespace VEXI
             this.tab_Change_Station.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Change_Station.Size = new System.Drawing.Size(906, 303);
             this.tab_Change_Station.TabIndex = 7;
-            this.tab_Change_Station.Text = "목적지 스테이션 변경";
+            this.tab_Change_Station.Text = "스테이션 변경";
             this.tab_Change_Station.UseVisualStyleBackColor = true;
             // 
             // label102
@@ -3421,6 +3581,11 @@ namespace VEXI
             // 
             this.numed_Fork2_ChangeS_S.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork2_ChangeS_S.Location = new System.Drawing.Point(165, 177);
+            this.numed_Fork2_ChangeS_S.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork2_ChangeS_S.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3440,6 +3605,11 @@ namespace VEXI
             // 
             this.numed_Fork1_ChangeS_S.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Fork1_ChangeS_S.Location = new System.Drawing.Point(167, 91);
+            this.numed_Fork1_ChangeS_S.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numed_Fork1_ChangeS_S.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3519,6 +3689,295 @@ namespace VEXI
             this.label87.Text = "Fork1";
             this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.numed_Fork2_Sticky_R);
+            this.tabPage6.Controls.Add(this.numed_Fork1_Sticky_R);
+            this.tabPage6.Controls.Add(this.label110);
+            this.tabPage6.Controls.Add(this.label111);
+            this.tabPage6.Controls.Add(this.label112);
+            this.tabPage6.Controls.Add(this.numed_Fork2_Sticky_L);
+            this.tabPage6.Controls.Add(this.numed_Fork2_Sticky_B);
+            this.tabPage6.Controls.Add(this.numed_Fork1_Sticky_L);
+            this.tabPage6.Controls.Add(this.numed_Fork1_Sticky_B);
+            this.tabPage6.Controls.Add(this.button11);
+            this.tabPage6.Controls.Add(this.label114);
+            this.tabPage6.Controls.Add(this.label115);
+            this.tabPage6.Controls.Add(this.btn_Sticky_Fork1);
+            this.tabPage6.Controls.Add(this.label116);
+            this.tabPage6.Controls.Add(this.label117);
+            this.tabPage6.Controls.Add(this.label118);
+            this.tabPage6.Controls.Add(this.label119);
+            this.tabPage6.Location = new System.Drawing.Point(4, 34);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(906, 303);
+            this.tabPage6.TabIndex = 8;
+            this.tabPage6.Text = "Sticky";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // numed_Fork2_Sticky_R
+            // 
+            this.numed_Fork2_Sticky_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numed_Fork2_Sticky_R.Location = new System.Drawing.Point(166, 155);
+            this.numed_Fork2_Sticky_R.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.numed_Fork2_Sticky_R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numed_Fork2_Sticky_R.Name = "numed_Fork2_Sticky_R";
+            this.numed_Fork2_Sticky_R.Size = new System.Drawing.Size(67, 30);
+            this.numed_Fork2_Sticky_R.TabIndex = 101;
+            this.numed_Fork2_Sticky_R.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numed_Fork2_Sticky_R.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numed_Fork1_Sticky_R
+            // 
+            this.numed_Fork1_Sticky_R.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numed_Fork1_Sticky_R.Location = new System.Drawing.Point(166, 90);
+            this.numed_Fork1_Sticky_R.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.numed_Fork1_Sticky_R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numed_Fork1_Sticky_R.Name = "numed_Fork1_Sticky_R";
+            this.numed_Fork1_Sticky_R.Size = new System.Drawing.Size(67, 30);
+            this.numed_Fork1_Sticky_R.TabIndex = 100;
+            this.numed_Fork1_Sticky_R.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numed_Fork1_Sticky_R.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label110.Location = new System.Drawing.Point(240, 164);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(36, 15);
+            this.label110.TabIndex = 99;
+            this.label110.Text = "Row";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label111.Location = new System.Drawing.Point(240, 98);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(36, 15);
+            this.label111.TabIndex = 98;
+            this.label111.Text = "Row";
+            // 
+            // label112
+            // 
+            this.label112.BackColor = System.Drawing.Color.MediumBlue;
+            this.label112.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label112.ForeColor = System.Drawing.Color.White;
+            this.label112.Location = new System.Drawing.Point(13, 30);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(263, 29);
+            this.label112.TabIndex = 97;
+            this.label112.Text = "Sticky";
+            this.label112.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numed_Fork2_Sticky_L
+            // 
+            this.numed_Fork2_Sticky_L.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numed_Fork2_Sticky_L.Location = new System.Drawing.Point(419, 156);
+            this.numed_Fork2_Sticky_L.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numed_Fork2_Sticky_L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numed_Fork2_Sticky_L.Name = "numed_Fork2_Sticky_L";
+            this.numed_Fork2_Sticky_L.Size = new System.Drawing.Size(67, 30);
+            this.numed_Fork2_Sticky_L.TabIndex = 96;
+            this.numed_Fork2_Sticky_L.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numed_Fork2_Sticky_L.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numed_Fork2_Sticky_B
+            // 
+            this.numed_Fork2_Sticky_B.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numed_Fork2_Sticky_B.Location = new System.Drawing.Point(295, 154);
+            this.numed_Fork2_Sticky_B.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numed_Fork2_Sticky_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numed_Fork2_Sticky_B.Name = "numed_Fork2_Sticky_B";
+            this.numed_Fork2_Sticky_B.Size = new System.Drawing.Size(67, 30);
+            this.numed_Fork2_Sticky_B.TabIndex = 95;
+            this.numed_Fork2_Sticky_B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numed_Fork2_Sticky_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numed_Fork1_Sticky_L
+            // 
+            this.numed_Fork1_Sticky_L.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numed_Fork1_Sticky_L.Location = new System.Drawing.Point(419, 91);
+            this.numed_Fork1_Sticky_L.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numed_Fork1_Sticky_L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numed_Fork1_Sticky_L.Name = "numed_Fork1_Sticky_L";
+            this.numed_Fork1_Sticky_L.Size = new System.Drawing.Size(67, 30);
+            this.numed_Fork1_Sticky_L.TabIndex = 94;
+            this.numed_Fork1_Sticky_L.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numed_Fork1_Sticky_L.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numed_Fork1_Sticky_B
+            // 
+            this.numed_Fork1_Sticky_B.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.numed_Fork1_Sticky_B.Location = new System.Drawing.Point(295, 89);
+            this.numed_Fork1_Sticky_B.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numed_Fork1_Sticky_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numed_Fork1_Sticky_B.Name = "numed_Fork1_Sticky_B";
+            this.numed_Fork1_Sticky_B.Size = new System.Drawing.Size(67, 30);
+            this.numed_Fork1_Sticky_B.TabIndex = 93;
+            this.numed_Fork1_Sticky_B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numed_Fork1_Sticky_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(551, 155);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(111, 32);
+            this.button11.TabIndex = 92;
+            this.button11.TabStop = false;
+            this.button11.Tag = "F2";
+            this.button11.Text = "Fork2 Sticky";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.btn_Sticky_Fork1_Click);
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label114.Location = new System.Drawing.Point(492, 163);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(42, 15);
+            this.label114.TabIndex = 91;
+            this.label114.Text = "Level";
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label115.Location = new System.Drawing.Point(369, 163);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(33, 15);
+            this.label115.TabIndex = 90;
+            this.label115.Text = "Bay";
+            // 
+            // btn_Sticky_Fork1
+            // 
+            this.btn_Sticky_Fork1.Location = new System.Drawing.Point(551, 89);
+            this.btn_Sticky_Fork1.Name = "btn_Sticky_Fork1";
+            this.btn_Sticky_Fork1.Size = new System.Drawing.Size(111, 32);
+            this.btn_Sticky_Fork1.TabIndex = 89;
+            this.btn_Sticky_Fork1.TabStop = false;
+            this.btn_Sticky_Fork1.Tag = "F1";
+            this.btn_Sticky_Fork1.Text = "Fork1 Sticky";
+            this.btn_Sticky_Fork1.UseVisualStyleBackColor = true;
+            this.btn_Sticky_Fork1.Click += new System.EventHandler(this.btn_Sticky_Fork1_Click);
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label116.Location = new System.Drawing.Point(492, 97);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(42, 15);
+            this.label116.TabIndex = 88;
+            this.label116.Text = "Level";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label117.Location = new System.Drawing.Point(369, 97);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(33, 15);
+            this.label117.TabIndex = 87;
+            this.label117.Text = "Bay";
+            // 
+            // label118
+            // 
+            this.label118.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label118.ForeColor = System.Drawing.Color.White;
+            this.label118.Location = new System.Drawing.Point(15, 144);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(138, 55);
+            this.label118.TabIndex = 86;
+            this.label118.Text = "Fork2 기준";
+            this.label118.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label119
+            // 
+            this.label119.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label119.ForeColor = System.Drawing.Color.White;
+            this.label119.Location = new System.Drawing.Point(15, 78);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(138, 55);
+            this.label119.TabIndex = 85;
+            this.label119.Text = "Fork1 기준";
+            this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tab_Task
             // 
             this.tab_Task.Controls.Add(this.groupBox12);
@@ -3538,9 +3997,9 @@ namespace VEXI
             this.tab_Task.Location = new System.Drawing.Point(4, 28);
             this.tab_Task.Name = "tab_Task";
             this.tab_Task.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Task.Size = new System.Drawing.Size(920, 432);
+            this.tab_Task.Size = new System.Drawing.Size(920, 446);
             this.tab_Task.TabIndex = 2;
-            this.tab_Task.Text = "Task 운전명령";
+            this.tab_Task.Text = "C. Task 운전명령";
             this.tab_Task.UseVisualStyleBackColor = true;
             // 
             // groupBox12
@@ -3874,9 +4333,9 @@ namespace VEXI
             this.tab_delete.Location = new System.Drawing.Point(4, 28);
             this.tab_delete.Name = "tab_delete";
             this.tab_delete.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_delete.Size = new System.Drawing.Size(920, 432);
+            this.tab_delete.Size = new System.Drawing.Size(920, 446);
             this.tab_delete.TabIndex = 3;
-            this.tab_delete.Text = "운전 명령 삭제";
+            this.tab_delete.Text = "D. 운전 명령 삭제";
             this.tab_delete.UseVisualStyleBackColor = true;
             // 
             // lbl_TaskJobSt
@@ -4029,13 +4488,12 @@ namespace VEXI
             this.groupBox10.Controls.Add(this.label375);
             this.groupBox10.Controls.Add(this.lbl_Fork2_From);
             this.groupBox10.Controls.Add(this.label377);
-            this.groupBox10.Controls.Add(this.lbl_Fork2_TaskIndex);
             this.groupBox10.Controls.Add(this.lbl_Fork2_Cmd);
             this.groupBox10.Controls.Add(this.lbl_Fork2_Job);
             this.groupBox10.Controls.Add(this.label381);
-            this.groupBox10.Location = new System.Drawing.Point(20, 234);
+            this.groupBox10.Location = new System.Drawing.Point(13, 234);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(402, 189);
+            this.groupBox10.Size = new System.Drawing.Size(411, 189);
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Fork 2";
@@ -4044,9 +4502,9 @@ namespace VEXI
             // 
             this.label358.BackColor = System.Drawing.SystemColors.Highlight;
             this.label358.ForeColor = System.Drawing.Color.White;
-            this.label358.Location = new System.Drawing.Point(23, 112);
+            this.label358.Location = new System.Drawing.Point(12, 112);
             this.label358.Name = "label358";
-            this.label358.Size = new System.Drawing.Size(358, 16);
+            this.label358.Size = new System.Drawing.Size(391, 16);
             this.label358.TabIndex = 133;
             this.label358.Text = "이동 작업";
             this.label358.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4055,9 +4513,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_MoveJob_Step.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_MoveJob_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_MoveJob_Step.Location = new System.Drawing.Point(88, 163);
+            this.lbl_Fork2_MoveJob_Step.Location = new System.Drawing.Point(77, 163);
             this.lbl_Fork2_MoveJob_Step.Name = "lbl_Fork2_MoveJob_Step";
-            this.lbl_Fork2_MoveJob_Step.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork2_MoveJob_Step.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork2_MoveJob_Step.TabIndex = 132;
             this.lbl_Fork2_MoveJob_Step.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_MoveJob_Step.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4066,7 +4524,7 @@ namespace VEXI
             // 
             this.label360.BackColor = System.Drawing.SystemColors.Highlight;
             this.label360.ForeColor = System.Drawing.Color.White;
-            this.label360.Location = new System.Drawing.Point(23, 163);
+            this.label360.Location = new System.Drawing.Point(12, 163);
             this.label360.Name = "label360";
             this.label360.Size = new System.Drawing.Size(63, 16);
             this.label360.TabIndex = 131;
@@ -4077,9 +4535,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_MoveJob_St.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_MoveJob_St.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_MoveJob_St.Location = new System.Drawing.Point(88, 146);
+            this.lbl_Fork2_MoveJob_St.Location = new System.Drawing.Point(77, 146);
             this.lbl_Fork2_MoveJob_St.Name = "lbl_Fork2_MoveJob_St";
-            this.lbl_Fork2_MoveJob_St.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork2_MoveJob_St.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork2_MoveJob_St.TabIndex = 130;
             this.lbl_Fork2_MoveJob_St.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_MoveJob_St.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4088,7 +4546,7 @@ namespace VEXI
             // 
             this.label364.BackColor = System.Drawing.SystemColors.Highlight;
             this.label364.ForeColor = System.Drawing.Color.White;
-            this.label364.Location = new System.Drawing.Point(23, 146);
+            this.label364.Location = new System.Drawing.Point(12, 146);
             this.label364.Name = "label364";
             this.label364.Size = new System.Drawing.Size(63, 16);
             this.label364.TabIndex = 129;
@@ -4099,9 +4557,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_MoveJob_To.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_MoveJob_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_MoveJob_To.Location = new System.Drawing.Point(268, 129);
+            this.lbl_Fork2_MoveJob_To.Location = new System.Drawing.Point(273, 129);
             this.lbl_Fork2_MoveJob_To.Name = "lbl_Fork2_MoveJob_To";
-            this.lbl_Fork2_MoveJob_To.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork2_MoveJob_To.Size = new System.Drawing.Size(129, 16);
             this.lbl_Fork2_MoveJob_To.TabIndex = 128;
             this.lbl_Fork2_MoveJob_To.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_MoveJob_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4110,7 +4568,7 @@ namespace VEXI
             // 
             this.label366.BackColor = System.Drawing.SystemColors.Highlight;
             this.label366.ForeColor = System.Drawing.Color.White;
-            this.label366.Location = new System.Drawing.Point(203, 129);
+            this.label366.Location = new System.Drawing.Point(208, 129);
             this.label366.Name = "label366";
             this.label366.Size = new System.Drawing.Size(63, 16);
             this.label366.TabIndex = 127;
@@ -4120,9 +4578,9 @@ namespace VEXI
             // lbl_Fork2_MoveJob
             // 
             this.lbl_Fork2_MoveJob.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_MoveJob.Location = new System.Drawing.Point(88, 129);
+            this.lbl_Fork2_MoveJob.Location = new System.Drawing.Point(77, 129);
             this.lbl_Fork2_MoveJob.Name = "lbl_Fork2_MoveJob";
-            this.lbl_Fork2_MoveJob.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork2_MoveJob.Size = new System.Drawing.Size(129, 16);
             this.lbl_Fork2_MoveJob.TabIndex = 122;
             this.lbl_Fork2_MoveJob.Text = "XXXXXXXX";
             this.lbl_Fork2_MoveJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4131,7 +4589,7 @@ namespace VEXI
             // 
             this.label368.BackColor = System.Drawing.SystemColors.Highlight;
             this.label368.ForeColor = System.Drawing.Color.White;
-            this.label368.Location = new System.Drawing.Point(23, 129);
+            this.label368.Location = new System.Drawing.Point(12, 129);
             this.label368.Name = "label368";
             this.label368.Size = new System.Drawing.Size(63, 16);
             this.label368.TabIndex = 121;
@@ -4142,9 +4600,9 @@ namespace VEXI
             // 
             this.label369.BackColor = System.Drawing.SystemColors.Highlight;
             this.label369.ForeColor = System.Drawing.Color.White;
-            this.label369.Location = new System.Drawing.Point(23, 20);
+            this.label369.Location = new System.Drawing.Point(12, 20);
             this.label369.Name = "label369";
-            this.label369.Size = new System.Drawing.Size(358, 16);
+            this.label369.Size = new System.Drawing.Size(391, 16);
             this.label369.TabIndex = 120;
             this.label369.Text = "반송 및 Task 작업";
             this.label369.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4153,9 +4611,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_jobStep.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_jobStep.Location = new System.Drawing.Point(88, 88);
+            this.lbl_Fork2_jobStep.Location = new System.Drawing.Point(77, 88);
             this.lbl_Fork2_jobStep.Name = "lbl_Fork2_jobStep";
-            this.lbl_Fork2_jobStep.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork2_jobStep.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork2_jobStep.TabIndex = 119;
             this.lbl_Fork2_jobStep.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4164,7 +4622,7 @@ namespace VEXI
             // 
             this.label371.BackColor = System.Drawing.SystemColors.Highlight;
             this.label371.ForeColor = System.Drawing.Color.White;
-            this.label371.Location = new System.Drawing.Point(23, 88);
+            this.label371.Location = new System.Drawing.Point(12, 88);
             this.label371.Name = "label371";
             this.label371.Size = new System.Drawing.Size(63, 16);
             this.label371.TabIndex = 118;
@@ -4175,9 +4633,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_jobSt.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_jobSt.Location = new System.Drawing.Point(88, 71);
+            this.lbl_Fork2_jobSt.Location = new System.Drawing.Point(77, 71);
             this.lbl_Fork2_jobSt.Name = "lbl_Fork2_jobSt";
-            this.lbl_Fork2_jobSt.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork2_jobSt.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork2_jobSt.TabIndex = 117;
             this.lbl_Fork2_jobSt.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4186,7 +4644,7 @@ namespace VEXI
             // 
             this.label373.BackColor = System.Drawing.SystemColors.Highlight;
             this.label373.ForeColor = System.Drawing.Color.White;
-            this.label373.Location = new System.Drawing.Point(23, 71);
+            this.label373.Location = new System.Drawing.Point(12, 71);
             this.label373.Name = "label373";
             this.label373.Size = new System.Drawing.Size(63, 16);
             this.label373.TabIndex = 116;
@@ -4197,9 +4655,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_To.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_To.Location = new System.Drawing.Point(268, 54);
+            this.lbl_Fork2_To.Location = new System.Drawing.Point(273, 54);
             this.lbl_Fork2_To.Name = "lbl_Fork2_To";
-            this.lbl_Fork2_To.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork2_To.Size = new System.Drawing.Size(129, 16);
             this.lbl_Fork2_To.TabIndex = 115;
             this.lbl_Fork2_To.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4208,7 +4666,7 @@ namespace VEXI
             // 
             this.label375.BackColor = System.Drawing.SystemColors.Highlight;
             this.label375.ForeColor = System.Drawing.Color.White;
-            this.label375.Location = new System.Drawing.Point(203, 54);
+            this.label375.Location = new System.Drawing.Point(208, 54);
             this.label375.Name = "label375";
             this.label375.Size = new System.Drawing.Size(63, 16);
             this.label375.TabIndex = 114;
@@ -4219,9 +4677,9 @@ namespace VEXI
             // 
             this.lbl_Fork2_From.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_From.Location = new System.Drawing.Point(88, 54);
+            this.lbl_Fork2_From.Location = new System.Drawing.Point(77, 54);
             this.lbl_Fork2_From.Name = "lbl_Fork2_From";
-            this.lbl_Fork2_From.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork2_From.Size = new System.Drawing.Size(131, 16);
             this.lbl_Fork2_From.TabIndex = 113;
             this.lbl_Fork2_From.Text = "S11-R2-L12-B12";
             this.lbl_Fork2_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4230,28 +4688,18 @@ namespace VEXI
             // 
             this.label377.BackColor = System.Drawing.SystemColors.Highlight;
             this.label377.ForeColor = System.Drawing.Color.White;
-            this.label377.Location = new System.Drawing.Point(23, 54);
+            this.label377.Location = new System.Drawing.Point(12, 54);
             this.label377.Name = "label377";
             this.label377.Size = new System.Drawing.Size(63, 16);
             this.label377.TabIndex = 112;
             this.label377.Text = "FROM";
             this.label377.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_Fork2_TaskIndex
-            // 
-            this.lbl_Fork2_TaskIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_TaskIndex.Location = new System.Drawing.Point(182, 37);
-            this.lbl_Fork2_TaskIndex.Name = "lbl_Fork2_TaskIndex";
-            this.lbl_Fork2_TaskIndex.Size = new System.Drawing.Size(31, 16);
-            this.lbl_Fork2_TaskIndex.TabIndex = 111;
-            this.lbl_Fork2_TaskIndex.Text = "- 1";
-            this.lbl_Fork2_TaskIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbl_Fork2_Cmd
             // 
             this.lbl_Fork2_Cmd.BackColor = System.Drawing.Color.White;
             this.lbl_Fork2_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_Cmd.Location = new System.Drawing.Point(213, 37);
+            this.lbl_Fork2_Cmd.Location = new System.Drawing.Point(234, 37);
             this.lbl_Fork2_Cmd.Name = "lbl_Fork2_Cmd";
             this.lbl_Fork2_Cmd.Size = new System.Drawing.Size(168, 16);
             this.lbl_Fork2_Cmd.TabIndex = 110;
@@ -4261,22 +4709,22 @@ namespace VEXI
             // lbl_Fork2_Job
             // 
             this.lbl_Fork2_Job.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_Job.Location = new System.Drawing.Point(88, 37);
+            this.lbl_Fork2_Job.Location = new System.Drawing.Point(77, 37);
             this.lbl_Fork2_Job.Name = "lbl_Fork2_Job";
-            this.lbl_Fork2_Job.Size = new System.Drawing.Size(94, 16);
+            this.lbl_Fork2_Job.Size = new System.Drawing.Size(155, 16);
             this.lbl_Fork2_Job.TabIndex = 109;
-            this.lbl_Fork2_Job.Text = "XXXXXXXX";
+            this.lbl_Fork2_Job.Text = "XXXX / X";
             this.lbl_Fork2_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label381
             // 
             this.label381.BackColor = System.Drawing.SystemColors.Highlight;
             this.label381.ForeColor = System.Drawing.Color.White;
-            this.label381.Location = new System.Drawing.Point(23, 37);
+            this.label381.Location = new System.Drawing.Point(12, 37);
             this.label381.Name = "label381";
             this.label381.Size = new System.Drawing.Size(63, 16);
             this.label381.TabIndex = 97;
-            this.label381.Text = "작업";
+            this.label381.Text = "작업/화물";
             this.label381.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox11
@@ -4299,13 +4747,12 @@ namespace VEXI
             this.groupBox11.Controls.Add(this.label345);
             this.groupBox11.Controls.Add(this.lbl_Fork1_From);
             this.groupBox11.Controls.Add(this.label342);
-            this.groupBox11.Controls.Add(this.lbl_Fork1_TaskIndex);
             this.groupBox11.Controls.Add(this.lbl_Fork1_Cmd);
             this.groupBox11.Controls.Add(this.lbl_Fork1_Job);
             this.groupBox11.Controls.Add(this.label338);
-            this.groupBox11.Location = new System.Drawing.Point(21, 22);
+            this.groupBox11.Location = new System.Drawing.Point(14, 22);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(402, 189);
+            this.groupBox11.Size = new System.Drawing.Size(411, 189);
             this.groupBox11.TabIndex = 2;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Fork 1";
@@ -4314,9 +4761,9 @@ namespace VEXI
             // 
             this.label351.BackColor = System.Drawing.SystemColors.Highlight;
             this.label351.ForeColor = System.Drawing.Color.White;
-            this.label351.Location = new System.Drawing.Point(23, 112);
+            this.label351.Location = new System.Drawing.Point(12, 112);
             this.label351.Name = "label351";
-            this.label351.Size = new System.Drawing.Size(358, 16);
+            this.label351.Size = new System.Drawing.Size(391, 16);
             this.label351.TabIndex = 133;
             this.label351.Text = "이동 작업";
             this.label351.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4325,9 +4772,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_MoveJob_Step.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_MoveJob_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_MoveJob_Step.Location = new System.Drawing.Point(88, 163);
+            this.lbl_Fork1_MoveJob_Step.Location = new System.Drawing.Point(77, 163);
             this.lbl_Fork1_MoveJob_Step.Name = "lbl_Fork1_MoveJob_Step";
-            this.lbl_Fork1_MoveJob_Step.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork1_MoveJob_Step.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork1_MoveJob_Step.TabIndex = 132;
             this.lbl_Fork1_MoveJob_Step.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_MoveJob_Step.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4336,7 +4783,7 @@ namespace VEXI
             // 
             this.label353.BackColor = System.Drawing.SystemColors.Highlight;
             this.label353.ForeColor = System.Drawing.Color.White;
-            this.label353.Location = new System.Drawing.Point(23, 163);
+            this.label353.Location = new System.Drawing.Point(12, 163);
             this.label353.Name = "label353";
             this.label353.Size = new System.Drawing.Size(63, 16);
             this.label353.TabIndex = 131;
@@ -4347,9 +4794,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_MoveJob_St.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_MoveJob_St.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_MoveJob_St.Location = new System.Drawing.Point(88, 146);
+            this.lbl_Fork1_MoveJob_St.Location = new System.Drawing.Point(77, 146);
             this.lbl_Fork1_MoveJob_St.Name = "lbl_Fork1_MoveJob_St";
-            this.lbl_Fork1_MoveJob_St.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork1_MoveJob_St.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork1_MoveJob_St.TabIndex = 130;
             this.lbl_Fork1_MoveJob_St.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_MoveJob_St.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4358,7 +4805,7 @@ namespace VEXI
             // 
             this.label355.BackColor = System.Drawing.SystemColors.Highlight;
             this.label355.ForeColor = System.Drawing.Color.White;
-            this.label355.Location = new System.Drawing.Point(23, 146);
+            this.label355.Location = new System.Drawing.Point(12, 146);
             this.label355.Name = "label355";
             this.label355.Size = new System.Drawing.Size(63, 16);
             this.label355.TabIndex = 129;
@@ -4369,9 +4816,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_MoveJob_To.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_MoveJob_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_MoveJob_To.Location = new System.Drawing.Point(268, 129);
+            this.lbl_Fork1_MoveJob_To.Location = new System.Drawing.Point(273, 129);
             this.lbl_Fork1_MoveJob_To.Name = "lbl_Fork1_MoveJob_To";
-            this.lbl_Fork1_MoveJob_To.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork1_MoveJob_To.Size = new System.Drawing.Size(129, 16);
             this.lbl_Fork1_MoveJob_To.TabIndex = 128;
             this.lbl_Fork1_MoveJob_To.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_MoveJob_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4380,7 +4827,7 @@ namespace VEXI
             // 
             this.label357.BackColor = System.Drawing.SystemColors.Highlight;
             this.label357.ForeColor = System.Drawing.Color.White;
-            this.label357.Location = new System.Drawing.Point(203, 129);
+            this.label357.Location = new System.Drawing.Point(208, 129);
             this.label357.Name = "label357";
             this.label357.Size = new System.Drawing.Size(63, 16);
             this.label357.TabIndex = 127;
@@ -4390,9 +4837,9 @@ namespace VEXI
             // lbl_Fork1_MoveJob
             // 
             this.lbl_Fork1_MoveJob.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_MoveJob.Location = new System.Drawing.Point(88, 129);
+            this.lbl_Fork1_MoveJob.Location = new System.Drawing.Point(77, 129);
             this.lbl_Fork1_MoveJob.Name = "lbl_Fork1_MoveJob";
-            this.lbl_Fork1_MoveJob.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork1_MoveJob.Size = new System.Drawing.Size(129, 16);
             this.lbl_Fork1_MoveJob.TabIndex = 122;
             this.lbl_Fork1_MoveJob.Text = "XXXXXXXX";
             this.lbl_Fork1_MoveJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4401,7 +4848,7 @@ namespace VEXI
             // 
             this.label363.BackColor = System.Drawing.SystemColors.Highlight;
             this.label363.ForeColor = System.Drawing.Color.White;
-            this.label363.Location = new System.Drawing.Point(23, 129);
+            this.label363.Location = new System.Drawing.Point(12, 129);
             this.label363.Name = "label363";
             this.label363.Size = new System.Drawing.Size(63, 16);
             this.label363.TabIndex = 121;
@@ -4412,9 +4859,9 @@ namespace VEXI
             // 
             this.label350.BackColor = System.Drawing.SystemColors.Highlight;
             this.label350.ForeColor = System.Drawing.Color.White;
-            this.label350.Location = new System.Drawing.Point(23, 20);
+            this.label350.Location = new System.Drawing.Point(12, 20);
             this.label350.Name = "label350";
-            this.label350.Size = new System.Drawing.Size(358, 16);
+            this.label350.Size = new System.Drawing.Size(391, 16);
             this.label350.TabIndex = 120;
             this.label350.Text = "반송 및 Task 작업";
             this.label350.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4423,9 +4870,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_jobStep.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_jobStep.Location = new System.Drawing.Point(88, 88);
+            this.lbl_Fork1_jobStep.Location = new System.Drawing.Point(77, 88);
             this.lbl_Fork1_jobStep.Name = "lbl_Fork1_jobStep";
-            this.lbl_Fork1_jobStep.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork1_jobStep.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork1_jobStep.TabIndex = 119;
             this.lbl_Fork1_jobStep.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4434,7 +4881,7 @@ namespace VEXI
             // 
             this.label349.BackColor = System.Drawing.SystemColors.Highlight;
             this.label349.ForeColor = System.Drawing.Color.White;
-            this.label349.Location = new System.Drawing.Point(23, 88);
+            this.label349.Location = new System.Drawing.Point(12, 88);
             this.label349.Name = "label349";
             this.label349.Size = new System.Drawing.Size(63, 16);
             this.label349.TabIndex = 118;
@@ -4445,9 +4892,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_jobSt.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_jobSt.Location = new System.Drawing.Point(88, 71);
+            this.lbl_Fork1_jobSt.Location = new System.Drawing.Point(77, 71);
             this.lbl_Fork1_jobSt.Name = "lbl_Fork1_jobSt";
-            this.lbl_Fork1_jobSt.Size = new System.Drawing.Size(293, 16);
+            this.lbl_Fork1_jobSt.Size = new System.Drawing.Size(324, 16);
             this.lbl_Fork1_jobSt.TabIndex = 117;
             this.lbl_Fork1_jobSt.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4456,7 +4903,7 @@ namespace VEXI
             // 
             this.label346.BackColor = System.Drawing.SystemColors.Highlight;
             this.label346.ForeColor = System.Drawing.Color.White;
-            this.label346.Location = new System.Drawing.Point(23, 71);
+            this.label346.Location = new System.Drawing.Point(12, 71);
             this.label346.Name = "label346";
             this.label346.Size = new System.Drawing.Size(63, 16);
             this.label346.TabIndex = 116;
@@ -4467,9 +4914,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_To.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_To.Location = new System.Drawing.Point(268, 54);
+            this.lbl_Fork1_To.Location = new System.Drawing.Point(273, 54);
             this.lbl_Fork1_To.Name = "lbl_Fork1_To";
-            this.lbl_Fork1_To.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork1_To.Size = new System.Drawing.Size(129, 16);
             this.lbl_Fork1_To.TabIndex = 115;
             this.lbl_Fork1_To.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4478,7 +4925,7 @@ namespace VEXI
             // 
             this.label345.BackColor = System.Drawing.SystemColors.Highlight;
             this.label345.ForeColor = System.Drawing.Color.White;
-            this.label345.Location = new System.Drawing.Point(203, 54);
+            this.label345.Location = new System.Drawing.Point(208, 54);
             this.label345.Name = "label345";
             this.label345.Size = new System.Drawing.Size(63, 16);
             this.label345.TabIndex = 114;
@@ -4489,9 +4936,9 @@ namespace VEXI
             // 
             this.lbl_Fork1_From.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_From.Location = new System.Drawing.Point(88, 54);
+            this.lbl_Fork1_From.Location = new System.Drawing.Point(77, 54);
             this.lbl_Fork1_From.Name = "lbl_Fork1_From";
-            this.lbl_Fork1_From.Size = new System.Drawing.Size(113, 16);
+            this.lbl_Fork1_From.Size = new System.Drawing.Size(131, 16);
             this.lbl_Fork1_From.TabIndex = 113;
             this.lbl_Fork1_From.Text = "S11-R2-L12-B12";
             this.lbl_Fork1_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4500,28 +4947,18 @@ namespace VEXI
             // 
             this.label342.BackColor = System.Drawing.SystemColors.Highlight;
             this.label342.ForeColor = System.Drawing.Color.White;
-            this.label342.Location = new System.Drawing.Point(23, 54);
+            this.label342.Location = new System.Drawing.Point(12, 54);
             this.label342.Name = "label342";
             this.label342.Size = new System.Drawing.Size(63, 16);
             this.label342.TabIndex = 112;
             this.label342.Text = "FROM";
             this.label342.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_Fork1_TaskIndex
-            // 
-            this.lbl_Fork1_TaskIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_TaskIndex.Location = new System.Drawing.Point(182, 37);
-            this.lbl_Fork1_TaskIndex.Name = "lbl_Fork1_TaskIndex";
-            this.lbl_Fork1_TaskIndex.Size = new System.Drawing.Size(31, 16);
-            this.lbl_Fork1_TaskIndex.TabIndex = 111;
-            this.lbl_Fork1_TaskIndex.Text = "- 1";
-            this.lbl_Fork1_TaskIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbl_Fork1_Cmd
             // 
             this.lbl_Fork1_Cmd.BackColor = System.Drawing.Color.White;
             this.lbl_Fork1_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_Cmd.Location = new System.Drawing.Point(213, 37);
+            this.lbl_Fork1_Cmd.Location = new System.Drawing.Point(234, 37);
             this.lbl_Fork1_Cmd.Name = "lbl_Fork1_Cmd";
             this.lbl_Fork1_Cmd.Size = new System.Drawing.Size(168, 16);
             this.lbl_Fork1_Cmd.TabIndex = 110;
@@ -4531,22 +4968,22 @@ namespace VEXI
             // lbl_Fork1_Job
             // 
             this.lbl_Fork1_Job.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_Job.Location = new System.Drawing.Point(88, 37);
+            this.lbl_Fork1_Job.Location = new System.Drawing.Point(77, 37);
             this.lbl_Fork1_Job.Name = "lbl_Fork1_Job";
-            this.lbl_Fork1_Job.Size = new System.Drawing.Size(94, 16);
+            this.lbl_Fork1_Job.Size = new System.Drawing.Size(155, 16);
             this.lbl_Fork1_Job.TabIndex = 109;
-            this.lbl_Fork1_Job.Text = "XXXXXXXX";
+            this.lbl_Fork1_Job.Text = "XXXX / X";
             this.lbl_Fork1_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label338
             // 
             this.label338.BackColor = System.Drawing.SystemColors.Highlight;
             this.label338.ForeColor = System.Drawing.Color.White;
-            this.label338.Location = new System.Drawing.Point(23, 37);
+            this.label338.Location = new System.Drawing.Point(12, 37);
             this.label338.Name = "label338";
             this.label338.Size = new System.Drawing.Size(63, 16);
             this.label338.TabIndex = 97;
-            this.label338.Text = "작업";
+            this.label338.Text = "작업/화물";
             this.label338.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage1
@@ -4556,9 +4993,9 @@ namespace VEXI
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(920, 432);
+            this.tabPage1.Size = new System.Drawing.Size(920, 446);
             this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "테스트베드 데모운전";
+            this.tabPage1.Text = "E. 테스트베드 데모운전";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnDemoTest_Stop
@@ -4601,9 +5038,9 @@ namespace VEXI
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(920, 432);
+            this.tabPage2.Size = new System.Drawing.Size(920, 446);
             this.tabPage2.TabIndex = 5;
-            this.tabPage2.Text = "센서 스캔제어";
+            this.tabPage2.Text = "F. 센서 스캔제어";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button7
@@ -4751,7 +5188,7 @@ namespace VEXI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(928, 223);
+            this.panel1.Size = new System.Drawing.Size(928, 245);
             this.panel1.TabIndex = 0;
             // 
             // lbl_ReceviceGood
@@ -4775,7 +5212,7 @@ namespace VEXI
             this.tabControl2.Location = new System.Drawing.Point(414, 33);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(501, 181);
+            this.tabControl2.Size = new System.Drawing.Size(501, 205);
             this.tabControl2.TabIndex = 48;
             // 
             // tabPage3
@@ -4793,9 +5230,9 @@ namespace VEXI
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(493, 155);
+            this.tabPage3.Size = new System.Drawing.Size(493, 179);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "제어";
+            this.tabPage3.Text = "AA. 제어";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btn_Dev_Maintance
@@ -4806,7 +5243,7 @@ namespace VEXI
             this.btn_Dev_Maintance.TabIndex = 47;
             this.btn_Dev_Maintance.TabStop = false;
             this.btn_Dev_Maintance.Tag = "0";
-            this.btn_Dev_Maintance.Text = "보수위치\r\n이동";
+            this.btn_Dev_Maintance.Text = "To Maintenance";
             this.btn_Dev_Maintance.UseVisualStyleBackColor = true;
             this.btn_Dev_Maintance.Click += new System.EventHandler(this.btn_Dev_Maintance_Click);
             // 
@@ -4814,23 +5251,23 @@ namespace VEXI
             // 
             this.btn_DevMode_SetupOn.Location = new System.Drawing.Point(212, 77);
             this.btn_DevMode_SetupOn.Name = "btn_DevMode_SetupOn";
-            this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(114, 29);
             this.btn_DevMode_SetupOn.TabIndex = 46;
             this.btn_DevMode_SetupOn.TabStop = false;
             this.btn_DevMode_SetupOn.Tag = "1";
-            this.btn_DevMode_SetupOn.Text = "셋업모드 설정";
+            this.btn_DevMode_SetupOn.Text = "Setup 모드 설정";
             this.btn_DevMode_SetupOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_SetupOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
             // btn_DevMode_ForceOff
             // 
-            this.btn_DevMode_ForceOff.Location = new System.Drawing.Point(320, 112);
+            this.btn_DevMode_ForceOff.Location = new System.Drawing.Point(334, 112);
             this.btn_DevMode_ForceOff.Name = "btn_DevMode_ForceOff";
-            this.btn_DevMode_ForceOff.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_ForceOff.Size = new System.Drawing.Size(114, 29);
             this.btn_DevMode_ForceOff.TabIndex = 45;
             this.btn_DevMode_ForceOff.TabStop = false;
             this.btn_DevMode_ForceOff.Tag = "10";
-            this.btn_DevMode_ForceOff.Text = "강제모드 해제";
+            this.btn_DevMode_ForceOff.Text = "Force 모드 OFF";
             this.btn_DevMode_ForceOff.UseVisualStyleBackColor = true;
             this.btn_DevMode_ForceOff.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -4842,7 +5279,7 @@ namespace VEXI
             this.btn_Dev_AlarmReset.TabIndex = 40;
             this.btn_Dev_AlarmReset.TabStop = false;
             this.btn_Dev_AlarmReset.Tag = "0";
-            this.btn_Dev_AlarmReset.Text = "이상리셋";
+            this.btn_Dev_AlarmReset.Text = "Alarm Reset";
             this.btn_Dev_AlarmReset.UseVisualStyleBackColor = true;
             this.btn_Dev_AlarmReset.Click += new System.EventHandler(this.btn_Dev_AlarmReset_Click);
             // 
@@ -4850,11 +5287,11 @@ namespace VEXI
             // 
             this.btn_DevMode_ForceOn.Location = new System.Drawing.Point(212, 112);
             this.btn_DevMode_ForceOn.Name = "btn_DevMode_ForceOn";
-            this.btn_DevMode_ForceOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_ForceOn.Size = new System.Drawing.Size(114, 29);
             this.btn_DevMode_ForceOn.TabIndex = 44;
             this.btn_DevMode_ForceOn.TabStop = false;
             this.btn_DevMode_ForceOn.Tag = "11";
-            this.btn_DevMode_ForceOn.Text = "강제모드 설정";
+            this.btn_DevMode_ForceOn.Text = "Force 모드 ON";
             this.btn_DevMode_ForceOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_ForceOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -4866,7 +5303,7 @@ namespace VEXI
             this.btn_Dev_Home.TabIndex = 41;
             this.btn_Dev_Home.TabStop = false;
             this.btn_Dev_Home.Tag = "0";
-            this.btn_Dev_Home.Text = "홈\r\n이동";
+            this.btn_Dev_Home.Text = "To Home";
             this.btn_Dev_Home.UseVisualStyleBackColor = true;
             this.btn_Dev_Home.Click += new System.EventHandler(this.btn_Dev_Home_Click);
             // 
@@ -4874,11 +5311,11 @@ namespace VEXI
             // 
             this.btn_DevMode_ManualOn.Location = new System.Drawing.Point(212, 42);
             this.btn_DevMode_ManualOn.Name = "btn_DevMode_ManualOn";
-            this.btn_DevMode_ManualOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_ManualOn.Size = new System.Drawing.Size(114, 29);
             this.btn_DevMode_ManualOn.TabIndex = 42;
             this.btn_DevMode_ManualOn.TabStop = false;
             this.btn_DevMode_ManualOn.Tag = "0";
-            this.btn_DevMode_ManualOn.Text = "수동모드 설정";
+            this.btn_DevMode_ManualOn.Text = "Manual 모드 설정";
             this.btn_DevMode_ManualOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_ManualOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -4886,11 +5323,11 @@ namespace VEXI
             // 
             this.btn_DevMode_AutoOn.Location = new System.Drawing.Point(212, 8);
             this.btn_DevMode_AutoOn.Name = "btn_DevMode_AutoOn";
-            this.btn_DevMode_AutoOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_AutoOn.Size = new System.Drawing.Size(114, 29);
             this.btn_DevMode_AutoOn.TabIndex = 40;
             this.btn_DevMode_AutoOn.TabStop = false;
             this.btn_DevMode_AutoOn.Tag = "2";
-            this.btn_DevMode_AutoOn.Text = "자동모드 설정";
+            this.btn_DevMode_AutoOn.Text = "Auto 모드 설정";
             this.btn_DevMode_AutoOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_AutoOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -4921,9 +5358,9 @@ namespace VEXI
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(493, 155);
+            this.tabPage4.Size = new System.Drawing.Size(493, 179);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "주행/승강 위치";
+            this.tabPage4.Text = "BB. 주행/승강 위치";
             // 
             // label3
             // 
@@ -5143,6 +5580,9 @@ namespace VEXI
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage5.Controls.Add(this.label109);
+            this.tabPage5.Controls.Add(this.lbl_Fork1_Existitem);
+            this.tabPage5.Controls.Add(this.lbl_Fork2_Existitem);
             this.tabPage5.Controls.Add(this.label89);
             this.tabPage5.Controls.Add(this.label90);
             this.tabPage5.Controls.Add(this.lbl_Fork2St1_7);
@@ -5174,9 +5614,40 @@ namespace VEXI
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(493, 155);
+            this.tabPage5.Size = new System.Drawing.Size(493, 179);
             this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Fork 위치";
+            this.tabPage5.Text = "CC. Fork 위치";
+            // 
+            // label109
+            // 
+            this.label109.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label109.ForeColor = System.Drawing.Color.White;
+            this.label109.Location = new System.Drawing.Point(27, 152);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(110, 16);
+            this.label109.TabIndex = 903;
+            this.label109.Text = "화물 감지";
+            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_Existitem
+            // 
+            this.lbl_Fork1_Existitem.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_Existitem.Location = new System.Drawing.Point(141, 152);
+            this.lbl_Fork1_Existitem.Name = "lbl_Fork1_Existitem";
+            this.lbl_Fork1_Existitem.Size = new System.Drawing.Size(155, 16);
+            this.lbl_Fork1_Existitem.TabIndex = 904;
+            this.lbl_Fork1_Existitem.Text = "미감지";
+            this.lbl_Fork1_Existitem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_Existitem
+            // 
+            this.lbl_Fork2_Existitem.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_Existitem.Location = new System.Drawing.Point(302, 152);
+            this.lbl_Fork2_Existitem.Name = "lbl_Fork2_Existitem";
+            this.lbl_Fork2_Existitem.Size = new System.Drawing.Size(155, 16);
+            this.lbl_Fork2_Existitem.TabIndex = 905;
+            this.lbl_Fork2_Existitem.Text = "미감지";
+            this.lbl_Fork2_Existitem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label89
             // 
@@ -5491,7 +5962,7 @@ namespace VEXI
             this.groupBox3.Controls.Add(this.label92);
             this.groupBox3.Location = new System.Drawing.Point(11, 39);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(388, 175);
+            this.groupBox3.Size = new System.Drawing.Size(388, 195);
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "장치 상태";
@@ -5533,7 +6004,7 @@ namespace VEXI
             this.lbl_Dev_Error.BackColor = System.Drawing.Color.White;
             this.lbl_Dev_Error.Location = new System.Drawing.Point(11, 140);
             this.lbl_Dev_Error.Name = "lbl_Dev_Error";
-            this.lbl_Dev_Error.Size = new System.Drawing.Size(365, 29);
+            this.lbl_Dev_Error.Size = new System.Drawing.Size(365, 47);
             this.lbl_Dev_Error.TabIndex = 36;
             this.lbl_Dev_Error.Text = "-";
             this.lbl_Dev_Error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5737,21 +6208,103 @@ namespace VEXI
             this.label92.Text = "비상정지";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_JobCtrlRes
+            // label120
             // 
-            this.lbl_JobCtrlRes.AutoSize = true;
-            this.lbl_JobCtrlRes.Location = new System.Drawing.Point(21, 95);
-            this.lbl_JobCtrlRes.Name = "lbl_JobCtrlRes";
-            this.lbl_JobCtrlRes.Size = new System.Drawing.Size(50, 12);
-            this.lbl_JobCtrlRes.TabIndex = 4;
-            this.lbl_JobCtrlRes.Text = "label109";
-            this.lbl_JobCtrlRes.Visible = false;
+            this.label120.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label120.ForeColor = System.Drawing.Color.White;
+            this.label120.Location = new System.Drawing.Point(21, 27);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(137, 29);
+            this.label120.TabIndex = 144;
+            this.label120.Text = "Fork1 I/O 제어 모드";
+            this.label120.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1St2_6
+            // 
+            this.lbl_Fork1St2_6.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1St2_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1St2_6.Location = new System.Drawing.Point(159, 27);
+            this.lbl_Fork1St2_6.Name = "lbl_Fork1St2_6";
+            this.lbl_Fork1St2_6.Size = new System.Drawing.Size(74, 29);
+            this.lbl_Fork1St2_6.TabIndex = 158;
+            this.lbl_Fork1St2_6.Text = "비활성화";
+            this.lbl_Fork1St2_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_Fork1St2_6_ON
+            // 
+            this.btn_Fork1St2_6_ON.Location = new System.Drawing.Point(239, 27);
+            this.btn_Fork1St2_6_ON.Name = "btn_Fork1St2_6_ON";
+            this.btn_Fork1St2_6_ON.Size = new System.Drawing.Size(50, 29);
+            this.btn_Fork1St2_6_ON.TabIndex = 166;
+            this.btn_Fork1St2_6_ON.TabStop = false;
+            this.btn_Fork1St2_6_ON.Tag = "1";
+            this.btn_Fork1St2_6_ON.Text = "활성화";
+            this.btn_Fork1St2_6_ON.UseVisualStyleBackColor = true;
+            this.btn_Fork1St2_6_ON.Click += new System.EventHandler(this.btn_Fork1St2_6_OFF_Click);
+            // 
+            // btn_Fork1St2_6_OFF
+            // 
+            this.btn_Fork1St2_6_OFF.Location = new System.Drawing.Point(291, 27);
+            this.btn_Fork1St2_6_OFF.Name = "btn_Fork1St2_6_OFF";
+            this.btn_Fork1St2_6_OFF.Size = new System.Drawing.Size(62, 29);
+            this.btn_Fork1St2_6_OFF.TabIndex = 167;
+            this.btn_Fork1St2_6_OFF.TabStop = false;
+            this.btn_Fork1St2_6_OFF.Tag = "0";
+            this.btn_Fork1St2_6_OFF.Text = "비활성화";
+            this.btn_Fork1St2_6_OFF.UseVisualStyleBackColor = true;
+            this.btn_Fork1St2_6_OFF.Click += new System.EventHandler(this.btn_Fork1St2_6_OFF_Click);
+            // 
+            // btn_Fork2St2_6_OFF
+            // 
+            this.btn_Fork2St2_6_OFF.Location = new System.Drawing.Point(290, 26);
+            this.btn_Fork2St2_6_OFF.Name = "btn_Fork2St2_6_OFF";
+            this.btn_Fork2St2_6_OFF.Size = new System.Drawing.Size(62, 29);
+            this.btn_Fork2St2_6_OFF.TabIndex = 171;
+            this.btn_Fork2St2_6_OFF.TabStop = false;
+            this.btn_Fork2St2_6_OFF.Tag = "0";
+            this.btn_Fork2St2_6_OFF.Text = "비활성화";
+            this.btn_Fork2St2_6_OFF.UseVisualStyleBackColor = true;
+            this.btn_Fork2St2_6_OFF.Click += new System.EventHandler(this.btn_Fork2St2_6_OFF_Click);
+            // 
+            // btn_Fork2St2_6_ON
+            // 
+            this.btn_Fork2St2_6_ON.Location = new System.Drawing.Point(238, 26);
+            this.btn_Fork2St2_6_ON.Name = "btn_Fork2St2_6_ON";
+            this.btn_Fork2St2_6_ON.Size = new System.Drawing.Size(50, 29);
+            this.btn_Fork2St2_6_ON.TabIndex = 170;
+            this.btn_Fork2St2_6_ON.TabStop = false;
+            this.btn_Fork2St2_6_ON.Tag = "1";
+            this.btn_Fork2St2_6_ON.Text = "활성화";
+            this.btn_Fork2St2_6_ON.UseVisualStyleBackColor = true;
+            this.btn_Fork2St2_6_ON.Click += new System.EventHandler(this.btn_Fork2St2_6_OFF_Click);
+            // 
+            // lbl_Fork2St2_6
+            // 
+            this.lbl_Fork2St2_6.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2St2_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2St2_6.Location = new System.Drawing.Point(158, 26);
+            this.lbl_Fork2St2_6.Name = "lbl_Fork2St2_6";
+            this.lbl_Fork2St2_6.Size = new System.Drawing.Size(74, 29);
+            this.lbl_Fork2St2_6.TabIndex = 169;
+            this.lbl_Fork2St2_6.Text = "비활성화";
+            this.lbl_Fork2St2_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label122
+            // 
+            this.label122.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label122.ForeColor = System.Drawing.Color.White;
+            this.label122.Location = new System.Drawing.Point(20, 26);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(137, 29);
+            this.label122.TabIndex = 168;
+            this.label122.Text = "Fork2 I/O 제어 모드";
+            this.label122.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_SRM_CTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 716);
+            this.ClientSize = new System.Drawing.Size(928, 723);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -5761,13 +6314,11 @@ namespace VEXI
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "장비 운전 조작 (수동 운전명령)";
+            this.Text = "장비 운전 조작";
             this.Deactivate += new System.EventHandler(this.Form_SRM_CTL_Deactivate);
             this.Load += new System.EventHandler(this.Form_SRM_CTL_Load);
             this.tabControl1.ResumeLayout(false);
             this.tab_Manual.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -5842,6 +6393,14 @@ namespace VEXI
             this.tab_Change_Station.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_ChangeS_S)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_ChangeS_S)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_Sticky_R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_Sticky_R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_Sticky_L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork2_Sticky_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_Sticky_L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numed_Fork1_Sticky_B)).EndInit();
             this.tab_Task.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
@@ -6092,7 +6651,6 @@ namespace VEXI
         private System.Windows.Forms.Label label375;
         private System.Windows.Forms.Label lbl_Fork2_From;
         private System.Windows.Forms.Label label377;
-        private System.Windows.Forms.Label lbl_Fork2_TaskIndex;
         private System.Windows.Forms.Label lbl_Fork2_Cmd;
         private System.Windows.Forms.Label lbl_Fork2_Job;
         private System.Windows.Forms.Label label381;
@@ -6115,7 +6673,6 @@ namespace VEXI
         private System.Windows.Forms.Label label345;
         private System.Windows.Forms.Label lbl_Fork1_From;
         private System.Windows.Forms.Label label342;
-        private System.Windows.Forms.Label lbl_Fork1_TaskIndex;
         private System.Windows.Forms.Label lbl_Fork1_Cmd;
         private System.Windows.Forms.Label lbl_Fork1_Job;
         private System.Windows.Forms.Label label338;
@@ -6140,10 +6697,6 @@ namespace VEXI
         private System.Windows.Forms.Label lbl_TaskJobSt;
         private System.Windows.Forms.Label lbl_TaskJobNumber;
         private System.Windows.Forms.Label label383;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton rb_ForkRef_3;
-        private System.Windows.Forms.RadioButton rb_ForkRef_2;
-        private System.Windows.Forms.RadioButton rb_ForkRef_1;
         private System.Windows.Forms.Label label145;
         private System.Windows.Forms.Label label146;
         private System.Windows.Forms.Label lbl_UpDown_Position;
@@ -6265,5 +6818,34 @@ namespace VEXI
         private System.Windows.Forms.Label lbl_DevReady;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label lbl_JobCtrlRes;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.NumericUpDown numed_Fork2_Sticky_R;
+        private System.Windows.Forms.NumericUpDown numed_Fork1_Sticky_R;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.NumericUpDown numed_Fork2_Sticky_L;
+        private System.Windows.Forms.NumericUpDown numed_Fork2_Sticky_B;
+        private System.Windows.Forms.NumericUpDown numed_Fork1_Sticky_L;
+        private System.Windows.Forms.NumericUpDown numed_Fork1_Sticky_B;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Button btn_Sticky_Fork1;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label lbl_Fork1_Existitem;
+        private System.Windows.Forms.Label lbl_Fork2_Existitem;
+        private System.Windows.Forms.Button btn_Fork1St2_6_OFF;
+        private System.Windows.Forms.Button btn_Fork1St2_6_ON;
+        private System.Windows.Forms.Label lbl_Fork1St2_6;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Button btn_Fork2St2_6_OFF;
+        private System.Windows.Forms.Button btn_Fork2St2_6_ON;
+        private System.Windows.Forms.Label lbl_Fork2St2_6;
+        private System.Windows.Forms.Label label122;
     }
 }

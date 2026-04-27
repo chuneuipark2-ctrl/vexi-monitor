@@ -42,12 +42,6 @@ namespace VEXI
             this.label99 = new System.Windows.Forms.Label();
             this.cb_Lift_Maintance_SpeedType = new System.Windows.Forms.ComboBox();
             this.label100 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.ed_Lift_Home_Position = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
-            this.cb_Lift_Home_SpeedType = new System.Windows.Forms.ComboBox();
-            this.label96 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label56 = new System.Windows.Forms.Label();
             this.ed_Lift_ManualOp_Endmm = new System.Windows.Forms.TextBox();
@@ -325,8 +319,20 @@ namespace VEXI
             this.ed_Lift_DoubleGap = new System.Windows.Forms.TextBox();
             this.label181 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label179 = new System.Windows.Forms.Label();
+            this.ed_Lift_Sticky_Jerk = new System.Windows.Forms.TextBox();
+            this.ed_Lift_Sticky_Decel = new System.Windows.Forms.TextBox();
+            this.ed_Lift_Sticky_Accel = new System.Windows.Forms.TextBox();
+            this.ed_Lift_Sticky_Speed = new System.Windows.Forms.TextBox();
+            this.label182 = new System.Windows.Forms.Label();
+            this.label183 = new System.Windows.Forms.Label();
+            this.label184 = new System.Windows.Forms.Label();
+            this.label185 = new System.Windows.Forms.Label();
+            this.label186 = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -396,7 +402,7 @@ namespace VEXI
             this.groupBox7.Controls.Add(this.label99);
             this.groupBox7.Controls.Add(this.cb_Lift_Maintance_SpeedType);
             this.groupBox7.Controls.Add(this.label100);
-            this.groupBox7.Location = new System.Drawing.Point(661, 477);
+            this.groupBox7.Location = new System.Drawing.Point(661, 395);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(280, 75);
             this.groupBox7.TabIndex = 8;
@@ -477,95 +483,6 @@ namespace VEXI
             this.label100.TabIndex = 988;
             this.label100.Text = "동작속도";
             this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label95);
-            this.groupBox6.Controls.Add(this.ed_Lift_Home_Position);
-            this.groupBox6.Controls.Add(this.label97);
-            this.groupBox6.Controls.Add(this.cb_Lift_Home_SpeedType);
-            this.groupBox6.Controls.Add(this.label96);
-            this.groupBox6.Location = new System.Drawing.Point(661, 393);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(280, 75);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "홈";
-            // 
-            // label95
-            // 
-            this.label95.BackColor = System.Drawing.Color.Black;
-            this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label95.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label95.ForeColor = System.Drawing.Color.White;
-            this.label95.Location = new System.Drawing.Point(85, 43);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(53, 21);
-            this.label95.TabIndex = 992;
-            this.label95.Text = "mm";
-            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_Lift_Home_Position
-            // 
-            this.ed_Lift_Home_Position.BackColor = System.Drawing.Color.Blue;
-            this.ed_Lift_Home_Position.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Lift_Home_Position.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Lift_Home_Position.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Lift_Home_Position.ForeColor = System.Drawing.Color.White;
-            this.ed_Lift_Home_Position.Location = new System.Drawing.Point(140, 43);
-            this.ed_Lift_Home_Position.Name = "ed_Lift_Home_Position";
-            this.ed_Lift_Home_Position.Size = new System.Drawing.Size(85, 21);
-            this.ed_Lift_Home_Position.TabIndex = 1;
-            this.ed_Lift_Home_Position.Tag = "10";
-            this.ed_Lift_Home_Position.Text = "0";
-            this.ed_Lift_Home_Position.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Lift_Home_Position.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
-            // 
-            // label97
-            // 
-            this.label97.BackColor = System.Drawing.Color.Black;
-            this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label97.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label97.ForeColor = System.Drawing.Color.White;
-            this.label97.Location = new System.Drawing.Point(13, 43);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(70, 21);
-            this.label97.TabIndex = 991;
-            this.label97.Text = "위치";
-            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cb_Lift_Home_SpeedType
-            // 
-            this.cb_Lift_Home_SpeedType.BackColor = System.Drawing.Color.Blue;
-            this.cb_Lift_Home_SpeedType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Lift_Home_SpeedType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Lift_Home_SpeedType.ForeColor = System.Drawing.Color.White;
-            this.cb_Lift_Home_SpeedType.FormattingEnabled = true;
-            this.cb_Lift_Home_SpeedType.Items.AddRange(new object[] {
-            "자동고속",
-            "자동중속",
-            "자동저속",
-            "수동중속",
-            "수동저속",
-            "크립속도",
-            "원점확인속도"});
-            this.cb_Lift_Home_SpeedType.Location = new System.Drawing.Point(85, 20);
-            this.cb_Lift_Home_SpeedType.Name = "cb_Lift_Home_SpeedType";
-            this.cb_Lift_Home_SpeedType.Size = new System.Drawing.Size(140, 20);
-            this.cb_Lift_Home_SpeedType.TabIndex = 0;
-            // 
-            // label96
-            // 
-            this.label96.BackColor = System.Drawing.Color.Black;
-            this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label96.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label96.ForeColor = System.Drawing.Color.White;
-            this.label96.Location = new System.Drawing.Point(13, 20);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(70, 21);
-            this.label96.TabIndex = 988;
-            this.label96.Text = "동작속도";
-            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox3
             // 
@@ -1077,9 +994,9 @@ namespace VEXI
             this.groupBox9.Controls.Add(this.label116);
             this.groupBox9.Controls.Add(this.cb_Lift_SoftLimit_DetectSet);
             this.groupBox9.Controls.Add(this.label104);
-            this.groupBox9.Location = new System.Drawing.Point(350, 512);
+            this.groupBox9.Location = new System.Drawing.Point(948, 568);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(302, 96);
+            this.groupBox9.Size = new System.Drawing.Size(348, 96);
             this.groupBox9.TabIndex = 5;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "소프트웨어 리미트 이상";
@@ -1746,9 +1663,9 @@ namespace VEXI
             this.groupBox4.Controls.Add(this.label91);
             this.groupBox4.Controls.Add(this.ed_Lift_breakOpenContinueTime);
             this.groupBox4.Controls.Add(this.label94);
-            this.groupBox4.Location = new System.Drawing.Point(350, 614);
+            this.groupBox4.Location = new System.Drawing.Point(661, 478);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(302, 53);
+            this.groupBox4.Size = new System.Drawing.Size(280, 53);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "브레이크 개방 (0.01초 단위까지 제어 가능)";
@@ -2089,7 +2006,7 @@ namespace VEXI
             this.label167.Name = "label167";
             this.label167.Size = new System.Drawing.Size(78, 87);
             this.label167.TabIndex = 1260;
-            this.label167.Text = "수동 포크\r\nOUT";
+            this.label167.Text = "수동운전\r\n포크진출 후\r\n승강속도";
             this.label167.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label32
@@ -2270,7 +2187,7 @@ namespace VEXI
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(78, 87);
             this.label158.TabIndex = 1247;
-            this.label158.Text = "자동 포크\r\nOUT";
+            this.label158.Text = "자동운전\r\n포크진출 후\r\n승강속도";
             this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label105
@@ -3275,7 +3192,7 @@ namespace VEXI
             this.groupBox13.Controls.Add(this.label171);
             this.groupBox13.Controls.Add(this.cb_Lift_jerk_ForkOut_Set);
             this.groupBox13.Controls.Add(this.label172);
-            this.groupBox13.Location = new System.Drawing.Point(350, 673);
+            this.groupBox13.Location = new System.Drawing.Point(350, 614);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(302, 120);
             this.groupBox13.TabIndex = 13;
@@ -3439,6 +3356,19 @@ namespace VEXI
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.label95);
+            this.groupBox14.Controls.Add(this.label96);
+            this.groupBox14.Controls.Add(this.label97);
+            this.groupBox14.Controls.Add(this.label179);
+            this.groupBox14.Controls.Add(this.ed_Lift_Sticky_Jerk);
+            this.groupBox14.Controls.Add(this.ed_Lift_Sticky_Decel);
+            this.groupBox14.Controls.Add(this.ed_Lift_Sticky_Accel);
+            this.groupBox14.Controls.Add(this.ed_Lift_Sticky_Speed);
+            this.groupBox14.Controls.Add(this.label182);
+            this.groupBox14.Controls.Add(this.label183);
+            this.groupBox14.Controls.Add(this.label184);
+            this.groupBox14.Controls.Add(this.label185);
+            this.groupBox14.Controls.Add(this.label186);
             this.groupBox14.Controls.Add(this.label65);
             this.groupBox14.Controls.Add(this.label67);
             this.groupBox14.Controls.Add(this.ed_Lift_Emergency_Jerk);
@@ -3492,7 +3422,7 @@ namespace VEXI
             this.groupBox14.Controls.Add(this.label19);
             this.groupBox14.Location = new System.Drawing.Point(350, 137);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(302, 369);
+            this.groupBox14.Size = new System.Drawing.Size(302, 471);
             this.groupBox14.TabIndex = 1;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "승강 속도 설정";
@@ -4215,6 +4145,7 @@ namespace VEXI
             this.btn_Lift_OpSpeed.Tag = "2";
             this.btn_Lift_OpSpeed.Text = "운영 속도 초기화";
             this.btn_Lift_OpSpeed.UseVisualStyleBackColor = true;
+            this.btn_Lift_OpSpeed.Visible = false;
             this.btn_Lift_OpSpeed.Click += new System.EventHandler(this.btn_Lift_OpSpeed_Click);
             // 
             // btn_Lift_TestSpeed
@@ -4227,6 +4158,7 @@ namespace VEXI
             this.btn_Lift_TestSpeed.Tag = "1";
             this.btn_Lift_TestSpeed.Text = "시운전 속도 초기화";
             this.btn_Lift_TestSpeed.UseVisualStyleBackColor = true;
+            this.btn_Lift_TestSpeed.Visible = false;
             this.btn_Lift_TestSpeed.Click += new System.EventHandler(this.btn_Lift_TestSpeed_Click);
             // 
             // label177
@@ -4616,12 +4548,192 @@ namespace VEXI
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox7);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1328, 857);
             this.panel1.TabIndex = 1216;
+            // 
+            // label95
+            // 
+            this.label95.BackColor = System.Drawing.Color.Black;
+            this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label95.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label95.ForeColor = System.Drawing.Color.White;
+            this.label95.Location = new System.Drawing.Point(156, 430);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(64, 21);
+            this.label95.TabIndex = 1294;
+            this.label95.Text = "ms";
+            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label96
+            // 
+            this.label96.BackColor = System.Drawing.Color.Black;
+            this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label96.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label96.ForeColor = System.Drawing.Color.White;
+            this.label96.Location = new System.Drawing.Point(156, 408);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(64, 21);
+            this.label96.TabIndex = 1293;
+            this.label96.Text = "mm/s²";
+            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label97
+            // 
+            this.label97.BackColor = System.Drawing.Color.Black;
+            this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label97.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label97.ForeColor = System.Drawing.Color.White;
+            this.label97.Location = new System.Drawing.Point(156, 386);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(64, 21);
+            this.label97.TabIndex = 1292;
+            this.label97.Text = "mm/s²";
+            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label179
+            // 
+            this.label179.BackColor = System.Drawing.Color.Black;
+            this.label179.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label179.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label179.ForeColor = System.Drawing.Color.White;
+            this.label179.Location = new System.Drawing.Point(156, 364);
+            this.label179.Name = "label179";
+            this.label179.Size = new System.Drawing.Size(64, 21);
+            this.label179.TabIndex = 1291;
+            this.label179.Text = "m/min";
+            this.label179.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Lift_Sticky_Jerk
+            // 
+            this.ed_Lift_Sticky_Jerk.BackColor = System.Drawing.Color.Blue;
+            this.ed_Lift_Sticky_Jerk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Lift_Sticky_Jerk.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Lift_Sticky_Jerk.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Lift_Sticky_Jerk.ForeColor = System.Drawing.Color.White;
+            this.ed_Lift_Sticky_Jerk.Location = new System.Drawing.Point(224, 430);
+            this.ed_Lift_Sticky_Jerk.Name = "ed_Lift_Sticky_Jerk";
+            this.ed_Lift_Sticky_Jerk.Size = new System.Drawing.Size(66, 21);
+            this.ed_Lift_Sticky_Jerk.TabIndex = 1285;
+            this.ed_Lift_Sticky_Jerk.Tag = "00";
+            this.ed_Lift_Sticky_Jerk.Text = "0";
+            this.ed_Lift_Sticky_Jerk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Lift_Sticky_Jerk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // ed_Lift_Sticky_Decel
+            // 
+            this.ed_Lift_Sticky_Decel.BackColor = System.Drawing.Color.Blue;
+            this.ed_Lift_Sticky_Decel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Lift_Sticky_Decel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Lift_Sticky_Decel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Lift_Sticky_Decel.ForeColor = System.Drawing.Color.White;
+            this.ed_Lift_Sticky_Decel.Location = new System.Drawing.Point(224, 408);
+            this.ed_Lift_Sticky_Decel.Name = "ed_Lift_Sticky_Decel";
+            this.ed_Lift_Sticky_Decel.Size = new System.Drawing.Size(66, 21);
+            this.ed_Lift_Sticky_Decel.TabIndex = 1284;
+            this.ed_Lift_Sticky_Decel.Tag = "00";
+            this.ed_Lift_Sticky_Decel.Text = "0";
+            this.ed_Lift_Sticky_Decel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Lift_Sticky_Decel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // ed_Lift_Sticky_Accel
+            // 
+            this.ed_Lift_Sticky_Accel.BackColor = System.Drawing.Color.Blue;
+            this.ed_Lift_Sticky_Accel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Lift_Sticky_Accel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Lift_Sticky_Accel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Lift_Sticky_Accel.ForeColor = System.Drawing.Color.White;
+            this.ed_Lift_Sticky_Accel.Location = new System.Drawing.Point(224, 386);
+            this.ed_Lift_Sticky_Accel.Name = "ed_Lift_Sticky_Accel";
+            this.ed_Lift_Sticky_Accel.Size = new System.Drawing.Size(66, 21);
+            this.ed_Lift_Sticky_Accel.TabIndex = 1283;
+            this.ed_Lift_Sticky_Accel.Tag = "00";
+            this.ed_Lift_Sticky_Accel.Text = "0";
+            this.ed_Lift_Sticky_Accel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Lift_Sticky_Accel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // ed_Lift_Sticky_Speed
+            // 
+            this.ed_Lift_Sticky_Speed.BackColor = System.Drawing.Color.Blue;
+            this.ed_Lift_Sticky_Speed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Lift_Sticky_Speed.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Lift_Sticky_Speed.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Lift_Sticky_Speed.ForeColor = System.Drawing.Color.White;
+            this.ed_Lift_Sticky_Speed.Location = new System.Drawing.Point(224, 364);
+            this.ed_Lift_Sticky_Speed.Name = "ed_Lift_Sticky_Speed";
+            this.ed_Lift_Sticky_Speed.Size = new System.Drawing.Size(66, 21);
+            this.ed_Lift_Sticky_Speed.TabIndex = 1282;
+            this.ed_Lift_Sticky_Speed.Tag = "00";
+            this.ed_Lift_Sticky_Speed.Text = "0";
+            this.ed_Lift_Sticky_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Lift_Sticky_Speed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            // 
+            // label182
+            // 
+            this.label182.BackColor = System.Drawing.Color.Black;
+            this.label182.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label182.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label182.ForeColor = System.Drawing.Color.White;
+            this.label182.Location = new System.Drawing.Point(92, 430);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(64, 21);
+            this.label182.TabIndex = 1290;
+            this.label182.Text = "저크";
+            this.label182.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label183
+            // 
+            this.label183.BackColor = System.Drawing.Color.Black;
+            this.label183.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label183.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label183.ForeColor = System.Drawing.Color.White;
+            this.label183.Location = new System.Drawing.Point(92, 408);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(64, 21);
+            this.label183.TabIndex = 1289;
+            this.label183.Text = "감속도";
+            this.label183.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label184
+            // 
+            this.label184.BackColor = System.Drawing.Color.Black;
+            this.label184.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label184.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label184.ForeColor = System.Drawing.Color.White;
+            this.label184.Location = new System.Drawing.Point(92, 386);
+            this.label184.Name = "label184";
+            this.label184.Size = new System.Drawing.Size(64, 21);
+            this.label184.TabIndex = 1288;
+            this.label184.Text = "가속도";
+            this.label184.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label185
+            // 
+            this.label185.BackColor = System.Drawing.Color.Black;
+            this.label185.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label185.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label185.ForeColor = System.Drawing.Color.White;
+            this.label185.Location = new System.Drawing.Point(92, 364);
+            this.label185.Name = "label185";
+            this.label185.Size = new System.Drawing.Size(64, 21);
+            this.label185.TabIndex = 1287;
+            this.label185.Text = "속도";
+            this.label185.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label186
+            // 
+            this.label186.BackColor = System.Drawing.Color.Black;
+            this.label186.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label186.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label186.ForeColor = System.Drawing.Color.White;
+            this.label186.Location = new System.Drawing.Point(13, 364);
+            this.label186.Name = "label186";
+            this.label186.Size = new System.Drawing.Size(78, 87);
+            this.label186.TabIndex = 1286;
+            this.label186.Text = "Sticky\r\n승강속도";
+            this.label186.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_SRMLiftParam_Speed
             // 
@@ -4640,8 +4752,6 @@ namespace VEXI
             this.Load += new System.EventHandler(this.Form_Param_Speed_Load);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox12.ResumeLayout(false);
@@ -4688,12 +4798,6 @@ namespace VEXI
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.ComboBox cb_Lift_Maintance_SpeedType;
         private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.TextBox ed_Lift_Home_Position;
-        private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.ComboBox cb_Lift_Home_SpeedType;
-        private System.Windows.Forms.Label label96;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.TextBox ed_Lift_ManualOp_Endmm;
@@ -4971,5 +5075,18 @@ namespace VEXI
         private System.Windows.Forms.ComboBox cb_Lift_Invertor_Use;
         private System.Windows.Forms.Label label178;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label179;
+        private System.Windows.Forms.TextBox ed_Lift_Sticky_Jerk;
+        private System.Windows.Forms.TextBox ed_Lift_Sticky_Decel;
+        private System.Windows.Forms.TextBox ed_Lift_Sticky_Accel;
+        private System.Windows.Forms.TextBox ed_Lift_Sticky_Speed;
+        private System.Windows.Forms.Label label182;
+        private System.Windows.Forms.Label label183;
+        private System.Windows.Forms.Label label184;
+        private System.Windows.Forms.Label label185;
+        private System.Windows.Forms.Label label186;
     }
 }

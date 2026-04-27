@@ -163,8 +163,8 @@ namespace VEXI
             this.cb_Drive_Maintance_SpeedType = new System.Windows.Forms.ComboBox();
             this.label100 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.ed_Drive_Home_Position = new System.Windows.Forms.TextBox();
+            this.ed_Drive_Home_Index = new System.Windows.Forms.TextBox();
+            this.cb_Drive_Home_Type = new System.Windows.Forms.ComboBox();
             this.label97 = new System.Windows.Forms.Label();
             this.cb_Drive_Home_SpeedType = new System.Windows.Forms.ComboBox();
             this.label96 = new System.Windows.Forms.Label();
@@ -347,6 +347,7 @@ namespace VEXI
             this.btn_Drive_TestSpeed.Tag = "1";
             this.btn_Drive_TestSpeed.Text = "시운전 속도 초기화";
             this.btn_Drive_TestSpeed.UseVisualStyleBackColor = true;
+            this.btn_Drive_TestSpeed.Visible = false;
             this.btn_Drive_TestSpeed.Click += new System.EventHandler(this.btn_Drive_TestSpeed_Click);
             // 
             // btn_Drive_OpSpeed
@@ -359,6 +360,7 @@ namespace VEXI
             this.btn_Drive_OpSpeed.Tag = "2";
             this.btn_Drive_OpSpeed.Text = "운영 속도 초기화";
             this.btn_Drive_OpSpeed.UseVisualStyleBackColor = true;
+            this.btn_Drive_OpSpeed.Visible = false;
             this.btn_Drive_OpSpeed.Click += new System.EventHandler(this.btn_Drive_OpSpeed_Click);
             // 
             // groupBox1
@@ -2116,7 +2118,7 @@ namespace VEXI
             this.groupBox7.Controls.Add(this.label99);
             this.groupBox7.Controls.Add(this.cb_Drive_Maintance_SpeedType);
             this.groupBox7.Controls.Add(this.label100);
-            this.groupBox7.Location = new System.Drawing.Point(661, 414);
+            this.groupBox7.Location = new System.Drawing.Point(659, 435);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(273, 75);
             this.groupBox7.TabIndex = 1189;
@@ -2200,46 +2202,48 @@ namespace VEXI
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.label95);
-            this.groupBox6.Controls.Add(this.ed_Drive_Home_Position);
+            this.groupBox6.Controls.Add(this.ed_Drive_Home_Index);
+            this.groupBox6.Controls.Add(this.cb_Drive_Home_Type);
             this.groupBox6.Controls.Add(this.label97);
             this.groupBox6.Controls.Add(this.cb_Drive_Home_SpeedType);
             this.groupBox6.Controls.Add(this.label96);
             this.groupBox6.Location = new System.Drawing.Point(661, 333);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(273, 75);
+            this.groupBox6.Size = new System.Drawing.Size(273, 95);
             this.groupBox6.TabIndex = 1188;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "홈";
             // 
-            // label95
+            // ed_Drive_Home_Index
             // 
-            this.label95.BackColor = System.Drawing.Color.Black;
-            this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label95.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label95.ForeColor = System.Drawing.Color.White;
-            this.label95.Location = new System.Drawing.Point(85, 43);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(53, 21);
-            this.label95.TabIndex = 992;
-            this.label95.Text = "mm";
-            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ed_Drive_Home_Index.BackColor = System.Drawing.Color.Blue;
+            this.ed_Drive_Home_Index.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_Drive_Home_Index.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_Drive_Home_Index.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_Drive_Home_Index.ForeColor = System.Drawing.Color.White;
+            this.ed_Drive_Home_Index.Location = new System.Drawing.Point(85, 63);
+            this.ed_Drive_Home_Index.Name = "ed_Drive_Home_Index";
+            this.ed_Drive_Home_Index.Size = new System.Drawing.Size(85, 21);
+            this.ed_Drive_Home_Index.TabIndex = 993;
+            this.ed_Drive_Home_Index.Tag = "00";
+            this.ed_Drive_Home_Index.Text = "0";
+            this.ed_Drive_Home_Index.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ed_Drive_Home_Index.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
             // 
-            // ed_Drive_Home_Position
+            // cb_Drive_Home_Type
             // 
-            this.ed_Drive_Home_Position.BackColor = System.Drawing.Color.Blue;
-            this.ed_Drive_Home_Position.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_Drive_Home_Position.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_Drive_Home_Position.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_Drive_Home_Position.ForeColor = System.Drawing.Color.White;
-            this.ed_Drive_Home_Position.Location = new System.Drawing.Point(140, 43);
-            this.ed_Drive_Home_Position.Name = "ed_Drive_Home_Position";
-            this.ed_Drive_Home_Position.Size = new System.Drawing.Size(85, 21);
-            this.ed_Drive_Home_Position.TabIndex = 1;
-            this.ed_Drive_Home_Position.Tag = "10";
-            this.ed_Drive_Home_Position.Text = "0";
-            this.ed_Drive_Home_Position.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ed_Drive_Home_Position.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_KeyPress);
+            this.cb_Drive_Home_Type.BackColor = System.Drawing.Color.Blue;
+            this.cb_Drive_Home_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Drive_Home_Type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Drive_Home_Type.ForeColor = System.Drawing.Color.White;
+            this.cb_Drive_Home_Type.FormattingEnabled = true;
+            this.cb_Drive_Home_Type.Items.AddRange(new object[] {
+            "Station",
+            "Bay"});
+            this.cb_Drive_Home_Type.Location = new System.Drawing.Point(85, 43);
+            this.cb_Drive_Home_Type.Name = "cb_Drive_Home_Type";
+            this.cb_Drive_Home_Type.Size = new System.Drawing.Size(140, 20);
+            this.cb_Drive_Home_Type.TabIndex = 992;
             // 
             // label97
             // 
@@ -2249,7 +2253,7 @@ namespace VEXI
             this.label97.ForeColor = System.Drawing.Color.White;
             this.label97.Location = new System.Drawing.Point(13, 43);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(70, 21);
+            this.label97.Size = new System.Drawing.Size(70, 41);
             this.label97.TabIndex = 991;
             this.label97.Text = "위치";
             this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4032,8 +4036,6 @@ namespace VEXI
         private System.Windows.Forms.ComboBox cb_Drive_Maintance_SpeedType;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.TextBox ed_Drive_Home_Position;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.ComboBox cb_Drive_Home_SpeedType;
         private System.Windows.Forms.Label label96;
@@ -4145,5 +4147,7 @@ namespace VEXI
         private System.Windows.Forms.ComboBox cb_Drive_Invertor_Use;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox ed_Drive_Home_Index;
+        private System.Windows.Forms.ComboBox cb_Drive_Home_Type;
     }
 }

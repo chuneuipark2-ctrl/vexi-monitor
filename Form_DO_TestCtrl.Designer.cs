@@ -30,6 +30,102 @@ namespace VEXI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_DOCtrl_80 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_80 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_79 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_79 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_78 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_78 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_77 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_77 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_76 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_76 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_75 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_75 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_74 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_74 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_73 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_73 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_72 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_72 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_71 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_71 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_70 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_70 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_69 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_69 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_68 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_68 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_67 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_67 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_66 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_66 = new System.Windows.Forms.Button();
+            this.Btn_DOCtrl_65 = new System.Windows.Forms.Button();
+            this.Btn_ModeCtrl_65 = new System.Windows.Forms.Button();
+            this.lbl_IOMode_80 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_76 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_77 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_78 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_79 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_65 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_66 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_67 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_68 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_69 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_70 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_71 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_72 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_73 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_74 = new System.Windows.Forms.Label();
+            this.lbl_IOMode_75 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_80 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_80 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_76 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_77 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_78 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_79 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_76 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_77 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_78 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_79 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_65 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_66 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_67 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_68 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_69 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_70 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_71 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_72 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_73 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_74 = new System.Windows.Forms.Label();
+            this.lbl_IO_Title_75 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_65 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_66 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_67 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_68 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_69 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_70 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_71 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_72 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_73 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_74 = new System.Windows.Forms.Label();
+            this.lbl_IOSt_75 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Btn_DOCtrl_64 = new System.Windows.Forms.Button();
             this.Btn_ModeCtrl_64 = new System.Windows.Forms.Button();
@@ -415,102 +511,6 @@ namespace VEXI
             this.lbl_IOSt_27 = new System.Windows.Forms.Label();
             this.label287 = new System.Windows.Forms.Label();
             this.label288 = new System.Windows.Forms.Label();
-            this.Btn_DOCtrl_80 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_80 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_79 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_79 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_78 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_78 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_77 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_77 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_76 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_76 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_75 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_75 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_74 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_74 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_73 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_73 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_72 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_72 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_71 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_71 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_70 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_70 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_69 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_69 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_68 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_68 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_67 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_67 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_66 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_66 = new System.Windows.Forms.Button();
-            this.Btn_DOCtrl_65 = new System.Windows.Forms.Button();
-            this.Btn_ModeCtrl_65 = new System.Windows.Forms.Button();
-            this.lbl_IOMode_80 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_76 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_77 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_78 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_79 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_65 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_66 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_67 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_68 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_69 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_70 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_71 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_72 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_73 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_74 = new System.Windows.Forms.Label();
-            this.lbl_IOMode_75 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_80 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_80 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_76 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_77 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_78 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_79 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_76 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_77 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_78 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_79 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_65 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_66 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_67 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_68 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_69 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_70 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_71 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_72 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_73 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_74 = new System.Windows.Forms.Label();
-            this.lbl_IO_Title_75 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_65 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_66 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_67 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_68 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_69 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_70 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_71 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_72 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_73 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_74 = new System.Windows.Forms.Label();
-            this.lbl_IOSt_75 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1003,7 +1003,1094 @@ namespace VEXI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(977, 974);
             this.panel1.TabIndex = 0;
-            this.panel1.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_80
+            // 
+            this.Btn_DOCtrl_80.Location = new System.Drawing.Point(876, 935);
+            this.Btn_DOCtrl_80.Name = "Btn_DOCtrl_80";
+            this.Btn_DOCtrl_80.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_80.TabIndex = 1279;
+            this.Btn_DOCtrl_80.TabStop = false;
+            this.Btn_DOCtrl_80.Tag = "80";
+            this.Btn_DOCtrl_80.Text = "출력 변경";
+            this.Btn_DOCtrl_80.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_80.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_80
+            // 
+            this.Btn_ModeCtrl_80.Location = new System.Drawing.Point(801, 935);
+            this.Btn_ModeCtrl_80.Name = "Btn_ModeCtrl_80";
+            this.Btn_ModeCtrl_80.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_80.TabIndex = 1278;
+            this.Btn_ModeCtrl_80.TabStop = false;
+            this.Btn_ModeCtrl_80.Tag = "80";
+            this.Btn_ModeCtrl_80.Text = "모드 변경";
+            this.Btn_ModeCtrl_80.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_80.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_79
+            // 
+            this.Btn_DOCtrl_79.Location = new System.Drawing.Point(876, 912);
+            this.Btn_DOCtrl_79.Name = "Btn_DOCtrl_79";
+            this.Btn_DOCtrl_79.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_79.TabIndex = 1277;
+            this.Btn_DOCtrl_79.TabStop = false;
+            this.Btn_DOCtrl_79.Tag = "79";
+            this.Btn_DOCtrl_79.Text = "출력 변경";
+            this.Btn_DOCtrl_79.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_79.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_79
+            // 
+            this.Btn_ModeCtrl_79.Location = new System.Drawing.Point(801, 912);
+            this.Btn_ModeCtrl_79.Name = "Btn_ModeCtrl_79";
+            this.Btn_ModeCtrl_79.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_79.TabIndex = 1276;
+            this.Btn_ModeCtrl_79.TabStop = false;
+            this.Btn_ModeCtrl_79.Tag = "79";
+            this.Btn_ModeCtrl_79.Text = "모드 변경";
+            this.Btn_ModeCtrl_79.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_79.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_78
+            // 
+            this.Btn_DOCtrl_78.Location = new System.Drawing.Point(876, 889);
+            this.Btn_DOCtrl_78.Name = "Btn_DOCtrl_78";
+            this.Btn_DOCtrl_78.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_78.TabIndex = 1275;
+            this.Btn_DOCtrl_78.TabStop = false;
+            this.Btn_DOCtrl_78.Tag = "78";
+            this.Btn_DOCtrl_78.Text = "출력 변경";
+            this.Btn_DOCtrl_78.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_78.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_78
+            // 
+            this.Btn_ModeCtrl_78.Location = new System.Drawing.Point(801, 889);
+            this.Btn_ModeCtrl_78.Name = "Btn_ModeCtrl_78";
+            this.Btn_ModeCtrl_78.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_78.TabIndex = 1274;
+            this.Btn_ModeCtrl_78.TabStop = false;
+            this.Btn_ModeCtrl_78.Tag = "78";
+            this.Btn_ModeCtrl_78.Text = "모드 변경";
+            this.Btn_ModeCtrl_78.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_78.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_77
+            // 
+            this.Btn_DOCtrl_77.Location = new System.Drawing.Point(876, 866);
+            this.Btn_DOCtrl_77.Name = "Btn_DOCtrl_77";
+            this.Btn_DOCtrl_77.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_77.TabIndex = 1273;
+            this.Btn_DOCtrl_77.TabStop = false;
+            this.Btn_DOCtrl_77.Tag = "77";
+            this.Btn_DOCtrl_77.Text = "출력 변경";
+            this.Btn_DOCtrl_77.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_77.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_77
+            // 
+            this.Btn_ModeCtrl_77.Location = new System.Drawing.Point(801, 866);
+            this.Btn_ModeCtrl_77.Name = "Btn_ModeCtrl_77";
+            this.Btn_ModeCtrl_77.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_77.TabIndex = 1272;
+            this.Btn_ModeCtrl_77.TabStop = false;
+            this.Btn_ModeCtrl_77.Tag = "77";
+            this.Btn_ModeCtrl_77.Text = "모드 변경";
+            this.Btn_ModeCtrl_77.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_77.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_76
+            // 
+            this.Btn_DOCtrl_76.Location = new System.Drawing.Point(876, 843);
+            this.Btn_DOCtrl_76.Name = "Btn_DOCtrl_76";
+            this.Btn_DOCtrl_76.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_76.TabIndex = 1271;
+            this.Btn_DOCtrl_76.TabStop = false;
+            this.Btn_DOCtrl_76.Tag = "76";
+            this.Btn_DOCtrl_76.Text = "출력 변경";
+            this.Btn_DOCtrl_76.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_76.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_76
+            // 
+            this.Btn_ModeCtrl_76.Location = new System.Drawing.Point(801, 843);
+            this.Btn_ModeCtrl_76.Name = "Btn_ModeCtrl_76";
+            this.Btn_ModeCtrl_76.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_76.TabIndex = 1270;
+            this.Btn_ModeCtrl_76.TabStop = false;
+            this.Btn_ModeCtrl_76.Tag = "76";
+            this.Btn_ModeCtrl_76.Text = "모드 변경";
+            this.Btn_ModeCtrl_76.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_76.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_75
+            // 
+            this.Btn_DOCtrl_75.Location = new System.Drawing.Point(876, 820);
+            this.Btn_DOCtrl_75.Name = "Btn_DOCtrl_75";
+            this.Btn_DOCtrl_75.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_75.TabIndex = 1269;
+            this.Btn_DOCtrl_75.TabStop = false;
+            this.Btn_DOCtrl_75.Tag = "75";
+            this.Btn_DOCtrl_75.Text = "출력 변경";
+            this.Btn_DOCtrl_75.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_75.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_75
+            // 
+            this.Btn_ModeCtrl_75.Location = new System.Drawing.Point(801, 820);
+            this.Btn_ModeCtrl_75.Name = "Btn_ModeCtrl_75";
+            this.Btn_ModeCtrl_75.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_75.TabIndex = 1268;
+            this.Btn_ModeCtrl_75.TabStop = false;
+            this.Btn_ModeCtrl_75.Tag = "75";
+            this.Btn_ModeCtrl_75.Text = "모드 변경";
+            this.Btn_ModeCtrl_75.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_75.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_74
+            // 
+            this.Btn_DOCtrl_74.Location = new System.Drawing.Point(876, 797);
+            this.Btn_DOCtrl_74.Name = "Btn_DOCtrl_74";
+            this.Btn_DOCtrl_74.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_74.TabIndex = 1267;
+            this.Btn_DOCtrl_74.TabStop = false;
+            this.Btn_DOCtrl_74.Tag = "74";
+            this.Btn_DOCtrl_74.Text = "출력 변경";
+            this.Btn_DOCtrl_74.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_74.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_74
+            // 
+            this.Btn_ModeCtrl_74.Location = new System.Drawing.Point(801, 797);
+            this.Btn_ModeCtrl_74.Name = "Btn_ModeCtrl_74";
+            this.Btn_ModeCtrl_74.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_74.TabIndex = 1266;
+            this.Btn_ModeCtrl_74.TabStop = false;
+            this.Btn_ModeCtrl_74.Tag = "74";
+            this.Btn_ModeCtrl_74.Text = "모드 변경";
+            this.Btn_ModeCtrl_74.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_74.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_73
+            // 
+            this.Btn_DOCtrl_73.Location = new System.Drawing.Point(876, 774);
+            this.Btn_DOCtrl_73.Name = "Btn_DOCtrl_73";
+            this.Btn_DOCtrl_73.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_73.TabIndex = 1265;
+            this.Btn_DOCtrl_73.TabStop = false;
+            this.Btn_DOCtrl_73.Tag = "73";
+            this.Btn_DOCtrl_73.Text = "출력 변경";
+            this.Btn_DOCtrl_73.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_73.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_73
+            // 
+            this.Btn_ModeCtrl_73.Location = new System.Drawing.Point(801, 774);
+            this.Btn_ModeCtrl_73.Name = "Btn_ModeCtrl_73";
+            this.Btn_ModeCtrl_73.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_73.TabIndex = 1264;
+            this.Btn_ModeCtrl_73.TabStop = false;
+            this.Btn_ModeCtrl_73.Tag = "73";
+            this.Btn_ModeCtrl_73.Text = "모드 변경";
+            this.Btn_ModeCtrl_73.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_73.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_72
+            // 
+            this.Btn_DOCtrl_72.Location = new System.Drawing.Point(876, 751);
+            this.Btn_DOCtrl_72.Name = "Btn_DOCtrl_72";
+            this.Btn_DOCtrl_72.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_72.TabIndex = 1263;
+            this.Btn_DOCtrl_72.TabStop = false;
+            this.Btn_DOCtrl_72.Tag = "72";
+            this.Btn_DOCtrl_72.Text = "출력 변경";
+            this.Btn_DOCtrl_72.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_72.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_72
+            // 
+            this.Btn_ModeCtrl_72.Location = new System.Drawing.Point(801, 751);
+            this.Btn_ModeCtrl_72.Name = "Btn_ModeCtrl_72";
+            this.Btn_ModeCtrl_72.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_72.TabIndex = 1262;
+            this.Btn_ModeCtrl_72.TabStop = false;
+            this.Btn_ModeCtrl_72.Tag = "72";
+            this.Btn_ModeCtrl_72.Text = "모드 변경";
+            this.Btn_ModeCtrl_72.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_72.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_71
+            // 
+            this.Btn_DOCtrl_71.Location = new System.Drawing.Point(876, 728);
+            this.Btn_DOCtrl_71.Name = "Btn_DOCtrl_71";
+            this.Btn_DOCtrl_71.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_71.TabIndex = 1261;
+            this.Btn_DOCtrl_71.TabStop = false;
+            this.Btn_DOCtrl_71.Tag = "71";
+            this.Btn_DOCtrl_71.Text = "출력 변경";
+            this.Btn_DOCtrl_71.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_71.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_71
+            // 
+            this.Btn_ModeCtrl_71.Location = new System.Drawing.Point(801, 728);
+            this.Btn_ModeCtrl_71.Name = "Btn_ModeCtrl_71";
+            this.Btn_ModeCtrl_71.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_71.TabIndex = 1260;
+            this.Btn_ModeCtrl_71.TabStop = false;
+            this.Btn_ModeCtrl_71.Tag = "71";
+            this.Btn_ModeCtrl_71.Text = "모드 변경";
+            this.Btn_ModeCtrl_71.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_71.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_70
+            // 
+            this.Btn_DOCtrl_70.Location = new System.Drawing.Point(876, 705);
+            this.Btn_DOCtrl_70.Name = "Btn_DOCtrl_70";
+            this.Btn_DOCtrl_70.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_70.TabIndex = 1259;
+            this.Btn_DOCtrl_70.TabStop = false;
+            this.Btn_DOCtrl_70.Tag = "70";
+            this.Btn_DOCtrl_70.Text = "출력 변경";
+            this.Btn_DOCtrl_70.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_70.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_70
+            // 
+            this.Btn_ModeCtrl_70.Location = new System.Drawing.Point(801, 705);
+            this.Btn_ModeCtrl_70.Name = "Btn_ModeCtrl_70";
+            this.Btn_ModeCtrl_70.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_70.TabIndex = 1258;
+            this.Btn_ModeCtrl_70.TabStop = false;
+            this.Btn_ModeCtrl_70.Tag = "70";
+            this.Btn_ModeCtrl_70.Text = "모드 변경";
+            this.Btn_ModeCtrl_70.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_70.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_69
+            // 
+            this.Btn_DOCtrl_69.Location = new System.Drawing.Point(876, 682);
+            this.Btn_DOCtrl_69.Name = "Btn_DOCtrl_69";
+            this.Btn_DOCtrl_69.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_69.TabIndex = 1257;
+            this.Btn_DOCtrl_69.TabStop = false;
+            this.Btn_DOCtrl_69.Tag = "69";
+            this.Btn_DOCtrl_69.Text = "출력 변경";
+            this.Btn_DOCtrl_69.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_69.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_69
+            // 
+            this.Btn_ModeCtrl_69.Location = new System.Drawing.Point(801, 682);
+            this.Btn_ModeCtrl_69.Name = "Btn_ModeCtrl_69";
+            this.Btn_ModeCtrl_69.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_69.TabIndex = 1256;
+            this.Btn_ModeCtrl_69.TabStop = false;
+            this.Btn_ModeCtrl_69.Tag = "69";
+            this.Btn_ModeCtrl_69.Text = "모드 변경";
+            this.Btn_ModeCtrl_69.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_69.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_68
+            // 
+            this.Btn_DOCtrl_68.Location = new System.Drawing.Point(876, 659);
+            this.Btn_DOCtrl_68.Name = "Btn_DOCtrl_68";
+            this.Btn_DOCtrl_68.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_68.TabIndex = 1255;
+            this.Btn_DOCtrl_68.TabStop = false;
+            this.Btn_DOCtrl_68.Tag = "68";
+            this.Btn_DOCtrl_68.Text = "출력 변경";
+            this.Btn_DOCtrl_68.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_68.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_68
+            // 
+            this.Btn_ModeCtrl_68.Location = new System.Drawing.Point(801, 659);
+            this.Btn_ModeCtrl_68.Name = "Btn_ModeCtrl_68";
+            this.Btn_ModeCtrl_68.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_68.TabIndex = 1254;
+            this.Btn_ModeCtrl_68.TabStop = false;
+            this.Btn_ModeCtrl_68.Tag = "68";
+            this.Btn_ModeCtrl_68.Text = "모드 변경";
+            this.Btn_ModeCtrl_68.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_68.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_67
+            // 
+            this.Btn_DOCtrl_67.Location = new System.Drawing.Point(876, 636);
+            this.Btn_DOCtrl_67.Name = "Btn_DOCtrl_67";
+            this.Btn_DOCtrl_67.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_67.TabIndex = 1253;
+            this.Btn_DOCtrl_67.TabStop = false;
+            this.Btn_DOCtrl_67.Tag = "67";
+            this.Btn_DOCtrl_67.Text = "출력 변경";
+            this.Btn_DOCtrl_67.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_67.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_67
+            // 
+            this.Btn_ModeCtrl_67.Location = new System.Drawing.Point(801, 636);
+            this.Btn_ModeCtrl_67.Name = "Btn_ModeCtrl_67";
+            this.Btn_ModeCtrl_67.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_67.TabIndex = 1252;
+            this.Btn_ModeCtrl_67.TabStop = false;
+            this.Btn_ModeCtrl_67.Tag = "67";
+            this.Btn_ModeCtrl_67.Text = "모드 변경";
+            this.Btn_ModeCtrl_67.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_67.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_66
+            // 
+            this.Btn_DOCtrl_66.Location = new System.Drawing.Point(876, 613);
+            this.Btn_DOCtrl_66.Name = "Btn_DOCtrl_66";
+            this.Btn_DOCtrl_66.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_66.TabIndex = 1251;
+            this.Btn_DOCtrl_66.TabStop = false;
+            this.Btn_DOCtrl_66.Tag = "66";
+            this.Btn_DOCtrl_66.Text = "출력 변경";
+            this.Btn_DOCtrl_66.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_66.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_66
+            // 
+            this.Btn_ModeCtrl_66.Location = new System.Drawing.Point(801, 613);
+            this.Btn_ModeCtrl_66.Name = "Btn_ModeCtrl_66";
+            this.Btn_ModeCtrl_66.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_66.TabIndex = 1250;
+            this.Btn_ModeCtrl_66.TabStop = false;
+            this.Btn_ModeCtrl_66.Tag = "66";
+            this.Btn_ModeCtrl_66.Text = "모드 변경";
+            this.Btn_ModeCtrl_66.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_66.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // Btn_DOCtrl_65
+            // 
+            this.Btn_DOCtrl_65.Location = new System.Drawing.Point(876, 590);
+            this.Btn_DOCtrl_65.Name = "Btn_DOCtrl_65";
+            this.Btn_DOCtrl_65.Size = new System.Drawing.Size(75, 21);
+            this.Btn_DOCtrl_65.TabIndex = 1249;
+            this.Btn_DOCtrl_65.TabStop = false;
+            this.Btn_DOCtrl_65.Tag = "65";
+            this.Btn_DOCtrl_65.Text = "출력 변경";
+            this.Btn_DOCtrl_65.UseVisualStyleBackColor = true;
+            this.Btn_DOCtrl_65.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
+            // 
+            // Btn_ModeCtrl_65
+            // 
+            this.Btn_ModeCtrl_65.Location = new System.Drawing.Point(801, 590);
+            this.Btn_ModeCtrl_65.Name = "Btn_ModeCtrl_65";
+            this.Btn_ModeCtrl_65.Size = new System.Drawing.Size(75, 21);
+            this.Btn_ModeCtrl_65.TabIndex = 1248;
+            this.Btn_ModeCtrl_65.TabStop = false;
+            this.Btn_ModeCtrl_65.Tag = "65";
+            this.Btn_ModeCtrl_65.Text = "모드 변경";
+            this.Btn_ModeCtrl_65.UseVisualStyleBackColor = true;
+            this.Btn_ModeCtrl_65.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
+            // 
+            // lbl_IOMode_80
+            // 
+            this.lbl_IOMode_80.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_80.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_80.Location = new System.Drawing.Point(699, 935);
+            this.lbl_IOMode_80.Name = "lbl_IOMode_80";
+            this.lbl_IOMode_80.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_80.TabIndex = 1247;
+            this.lbl_IOMode_80.Text = "자동";
+            this.lbl_IOMode_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_76
+            // 
+            this.lbl_IOMode_76.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_76.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_76.Location = new System.Drawing.Point(699, 843);
+            this.lbl_IOMode_76.Name = "lbl_IOMode_76";
+            this.lbl_IOMode_76.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_76.TabIndex = 1243;
+            this.lbl_IOMode_76.Text = "자동";
+            this.lbl_IOMode_76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_77
+            // 
+            this.lbl_IOMode_77.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_77.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_77.Location = new System.Drawing.Point(699, 866);
+            this.lbl_IOMode_77.Name = "lbl_IOMode_77";
+            this.lbl_IOMode_77.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_77.TabIndex = 1244;
+            this.lbl_IOMode_77.Text = "자동";
+            this.lbl_IOMode_77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_78
+            // 
+            this.lbl_IOMode_78.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_78.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_78.Location = new System.Drawing.Point(699, 889);
+            this.lbl_IOMode_78.Name = "lbl_IOMode_78";
+            this.lbl_IOMode_78.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_78.TabIndex = 1245;
+            this.lbl_IOMode_78.Text = "자동";
+            this.lbl_IOMode_78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_79
+            // 
+            this.lbl_IOMode_79.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_79.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_79.Location = new System.Drawing.Point(699, 912);
+            this.lbl_IOMode_79.Name = "lbl_IOMode_79";
+            this.lbl_IOMode_79.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_79.TabIndex = 1246;
+            this.lbl_IOMode_79.Text = "자동";
+            this.lbl_IOMode_79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_65
+            // 
+            this.lbl_IOMode_65.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_65.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_65.Location = new System.Drawing.Point(699, 590);
+            this.lbl_IOMode_65.Name = "lbl_IOMode_65";
+            this.lbl_IOMode_65.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_65.TabIndex = 1232;
+            this.lbl_IOMode_65.Text = "자동";
+            this.lbl_IOMode_65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_66
+            // 
+            this.lbl_IOMode_66.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_66.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_66.Location = new System.Drawing.Point(699, 613);
+            this.lbl_IOMode_66.Name = "lbl_IOMode_66";
+            this.lbl_IOMode_66.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_66.TabIndex = 1233;
+            this.lbl_IOMode_66.Text = "자동";
+            this.lbl_IOMode_66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_67
+            // 
+            this.lbl_IOMode_67.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_67.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_67.Location = new System.Drawing.Point(699, 636);
+            this.lbl_IOMode_67.Name = "lbl_IOMode_67";
+            this.lbl_IOMode_67.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_67.TabIndex = 1234;
+            this.lbl_IOMode_67.Text = "자동";
+            this.lbl_IOMode_67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_68
+            // 
+            this.lbl_IOMode_68.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_68.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_68.Location = new System.Drawing.Point(699, 659);
+            this.lbl_IOMode_68.Name = "lbl_IOMode_68";
+            this.lbl_IOMode_68.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_68.TabIndex = 1235;
+            this.lbl_IOMode_68.Text = "자동";
+            this.lbl_IOMode_68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_69
+            // 
+            this.lbl_IOMode_69.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_69.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_69.Location = new System.Drawing.Point(699, 682);
+            this.lbl_IOMode_69.Name = "lbl_IOMode_69";
+            this.lbl_IOMode_69.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_69.TabIndex = 1236;
+            this.lbl_IOMode_69.Text = "자동";
+            this.lbl_IOMode_69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_70
+            // 
+            this.lbl_IOMode_70.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_70.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_70.Location = new System.Drawing.Point(699, 705);
+            this.lbl_IOMode_70.Name = "lbl_IOMode_70";
+            this.lbl_IOMode_70.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_70.TabIndex = 1237;
+            this.lbl_IOMode_70.Text = "자동";
+            this.lbl_IOMode_70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_71
+            // 
+            this.lbl_IOMode_71.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_71.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_71.Location = new System.Drawing.Point(699, 728);
+            this.lbl_IOMode_71.Name = "lbl_IOMode_71";
+            this.lbl_IOMode_71.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_71.TabIndex = 1238;
+            this.lbl_IOMode_71.Text = "자동";
+            this.lbl_IOMode_71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_72
+            // 
+            this.lbl_IOMode_72.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_72.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_72.Location = new System.Drawing.Point(699, 751);
+            this.lbl_IOMode_72.Name = "lbl_IOMode_72";
+            this.lbl_IOMode_72.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_72.TabIndex = 1239;
+            this.lbl_IOMode_72.Text = "자동";
+            this.lbl_IOMode_72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_73
+            // 
+            this.lbl_IOMode_73.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_73.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_73.Location = new System.Drawing.Point(699, 774);
+            this.lbl_IOMode_73.Name = "lbl_IOMode_73";
+            this.lbl_IOMode_73.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_73.TabIndex = 1240;
+            this.lbl_IOMode_73.Text = "자동";
+            this.lbl_IOMode_73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_74
+            // 
+            this.lbl_IOMode_74.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_74.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_74.Location = new System.Drawing.Point(699, 797);
+            this.lbl_IOMode_74.Name = "lbl_IOMode_74";
+            this.lbl_IOMode_74.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_74.TabIndex = 1241;
+            this.lbl_IOMode_74.Text = "자동";
+            this.lbl_IOMode_74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOMode_75
+            // 
+            this.lbl_IOMode_75.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOMode_75.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOMode_75.Location = new System.Drawing.Point(699, 820);
+            this.lbl_IOMode_75.Name = "lbl_IOMode_75";
+            this.lbl_IOMode_75.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOMode_75.TabIndex = 1242;
+            this.lbl_IOMode_75.Text = "자동";
+            this.lbl_IOMode_75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(488, 935);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(48, 21);
+            this.label22.TabIndex = 1229;
+            this.label22.Text = "No 80";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_80
+            // 
+            this.lbl_IO_Title_80.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_80.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_80.Location = new System.Drawing.Point(536, 935);
+            this.lbl_IO_Title_80.Name = "lbl_IO_Title_80";
+            this.lbl_IO_Title_80.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_80.TabIndex = 1230;
+            this.lbl_IO_Title_80.Text = "예비";
+            this.lbl_IO_Title_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_80
+            // 
+            this.lbl_IOSt_80.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_80.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_80.Location = new System.Drawing.Point(750, 935);
+            this.lbl_IOSt_80.Name = "lbl_IOSt_80";
+            this.lbl_IOSt_80.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_80.TabIndex = 1231;
+            this.lbl_IOSt_80.Text = "OFF";
+            this.lbl_IOSt_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(488, 843);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(48, 21);
+            this.label34.TabIndex = 1217;
+            this.label34.Text = "No 76";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(488, 866);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(48, 21);
+            this.label36.TabIndex = 1218;
+            this.label36.Text = "No 77";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(488, 889);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(48, 21);
+            this.label38.TabIndex = 1219;
+            this.label38.Text = "No 78";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label40
+            // 
+            this.label40.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label40.ForeColor = System.Drawing.Color.White;
+            this.label40.Location = new System.Drawing.Point(488, 912);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(48, 21);
+            this.label40.TabIndex = 1220;
+            this.label40.Text = "No 79";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_76
+            // 
+            this.lbl_IO_Title_76.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_76.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_76.Location = new System.Drawing.Point(536, 843);
+            this.lbl_IO_Title_76.Name = "lbl_IO_Title_76";
+            this.lbl_IO_Title_76.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_76.TabIndex = 1221;
+            this.lbl_IO_Title_76.Text = "예비";
+            this.lbl_IO_Title_76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_77
+            // 
+            this.lbl_IO_Title_77.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_77.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_77.Location = new System.Drawing.Point(536, 866);
+            this.lbl_IO_Title_77.Name = "lbl_IO_Title_77";
+            this.lbl_IO_Title_77.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_77.TabIndex = 1222;
+            this.lbl_IO_Title_77.Text = "예비";
+            this.lbl_IO_Title_77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_78
+            // 
+            this.lbl_IO_Title_78.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_78.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_78.Location = new System.Drawing.Point(536, 889);
+            this.lbl_IO_Title_78.Name = "lbl_IO_Title_78";
+            this.lbl_IO_Title_78.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_78.TabIndex = 1223;
+            this.lbl_IO_Title_78.Text = "예비";
+            this.lbl_IO_Title_78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_79
+            // 
+            this.lbl_IO_Title_79.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_79.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_79.Location = new System.Drawing.Point(536, 912);
+            this.lbl_IO_Title_79.Name = "lbl_IO_Title_79";
+            this.lbl_IO_Title_79.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_79.TabIndex = 1224;
+            this.lbl_IO_Title_79.Text = "예비";
+            this.lbl_IO_Title_79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_76
+            // 
+            this.lbl_IOSt_76.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_76.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_76.Location = new System.Drawing.Point(750, 843);
+            this.lbl_IOSt_76.Name = "lbl_IOSt_76";
+            this.lbl_IOSt_76.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_76.TabIndex = 1225;
+            this.lbl_IOSt_76.Text = "OFF";
+            this.lbl_IOSt_76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_77
+            // 
+            this.lbl_IOSt_77.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_77.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_77.Location = new System.Drawing.Point(750, 866);
+            this.lbl_IOSt_77.Name = "lbl_IOSt_77";
+            this.lbl_IOSt_77.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_77.TabIndex = 1226;
+            this.lbl_IOSt_77.Text = "OFF";
+            this.lbl_IOSt_77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_78
+            // 
+            this.lbl_IOSt_78.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_78.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_78.Location = new System.Drawing.Point(750, 889);
+            this.lbl_IOSt_78.Name = "lbl_IOSt_78";
+            this.lbl_IOSt_78.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_78.TabIndex = 1227;
+            this.lbl_IOSt_78.Text = "OFF";
+            this.lbl_IOSt_78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_79
+            // 
+            this.lbl_IOSt_79.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_79.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_79.Location = new System.Drawing.Point(750, 912);
+            this.lbl_IOSt_79.Name = "lbl_IOSt_79";
+            this.lbl_IOSt_79.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_79.TabIndex = 1228;
+            this.lbl_IOSt_79.Text = "OFF";
+            this.lbl_IOSt_79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label50
+            // 
+            this.label50.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(488, 590);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(48, 21);
+            this.label50.TabIndex = 1184;
+            this.label50.Text = "No 65";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label51.ForeColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(488, 613);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(48, 21);
+            this.label51.TabIndex = 1185;
+            this.label51.Text = "No 66";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label52
+            // 
+            this.label52.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label52.ForeColor = System.Drawing.Color.White;
+            this.label52.Location = new System.Drawing.Point(488, 636);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(48, 21);
+            this.label52.TabIndex = 1186;
+            this.label52.Text = "No 67";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label53
+            // 
+            this.label53.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label53.ForeColor = System.Drawing.Color.White;
+            this.label53.Location = new System.Drawing.Point(488, 659);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(48, 21);
+            this.label53.TabIndex = 1187;
+            this.label53.Text = "No 68";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label54
+            // 
+            this.label54.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label54.ForeColor = System.Drawing.Color.White;
+            this.label54.Location = new System.Drawing.Point(488, 682);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(48, 21);
+            this.label54.TabIndex = 1188;
+            this.label54.Text = "No 69";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label55
+            // 
+            this.label55.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label55.ForeColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(488, 705);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(48, 21);
+            this.label55.TabIndex = 1189;
+            this.label55.Text = "No 70";
+            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label56
+            // 
+            this.label56.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label56.ForeColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(488, 728);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(48, 21);
+            this.label56.TabIndex = 1190;
+            this.label56.Text = "No 71";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label57
+            // 
+            this.label57.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label57.ForeColor = System.Drawing.Color.White;
+            this.label57.Location = new System.Drawing.Point(488, 751);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(48, 21);
+            this.label57.TabIndex = 1191;
+            this.label57.Text = "No 72";
+            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label58
+            // 
+            this.label58.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label58.ForeColor = System.Drawing.Color.White;
+            this.label58.Location = new System.Drawing.Point(488, 774);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(48, 21);
+            this.label58.TabIndex = 1192;
+            this.label58.Text = "No 73";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label59
+            // 
+            this.label59.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label59.ForeColor = System.Drawing.Color.White;
+            this.label59.Location = new System.Drawing.Point(488, 797);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(48, 21);
+            this.label59.TabIndex = 1193;
+            this.label59.Text = "No 74";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label60
+            // 
+            this.label60.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label60.ForeColor = System.Drawing.Color.White;
+            this.label60.Location = new System.Drawing.Point(488, 820);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(48, 21);
+            this.label60.TabIndex = 1194;
+            this.label60.Text = "No 75";
+            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_65
+            // 
+            this.lbl_IO_Title_65.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_65.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_65.Location = new System.Drawing.Point(536, 590);
+            this.lbl_IO_Title_65.Name = "lbl_IO_Title_65";
+            this.lbl_IO_Title_65.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_65.TabIndex = 1195;
+            this.lbl_IO_Title_65.Text = "예비";
+            this.lbl_IO_Title_65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_66
+            // 
+            this.lbl_IO_Title_66.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_66.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_66.Location = new System.Drawing.Point(536, 613);
+            this.lbl_IO_Title_66.Name = "lbl_IO_Title_66";
+            this.lbl_IO_Title_66.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_66.TabIndex = 1196;
+            this.lbl_IO_Title_66.Text = "예비";
+            this.lbl_IO_Title_66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_67
+            // 
+            this.lbl_IO_Title_67.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_67.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_67.Location = new System.Drawing.Point(536, 636);
+            this.lbl_IO_Title_67.Name = "lbl_IO_Title_67";
+            this.lbl_IO_Title_67.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_67.TabIndex = 1197;
+            this.lbl_IO_Title_67.Text = "예비";
+            this.lbl_IO_Title_67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_68
+            // 
+            this.lbl_IO_Title_68.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_68.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_68.Location = new System.Drawing.Point(536, 659);
+            this.lbl_IO_Title_68.Name = "lbl_IO_Title_68";
+            this.lbl_IO_Title_68.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_68.TabIndex = 1198;
+            this.lbl_IO_Title_68.Text = "예비";
+            this.lbl_IO_Title_68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_69
+            // 
+            this.lbl_IO_Title_69.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_69.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_69.Location = new System.Drawing.Point(536, 682);
+            this.lbl_IO_Title_69.Name = "lbl_IO_Title_69";
+            this.lbl_IO_Title_69.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_69.TabIndex = 1199;
+            this.lbl_IO_Title_69.Text = "예비";
+            this.lbl_IO_Title_69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_70
+            // 
+            this.lbl_IO_Title_70.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_70.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_70.Location = new System.Drawing.Point(536, 705);
+            this.lbl_IO_Title_70.Name = "lbl_IO_Title_70";
+            this.lbl_IO_Title_70.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_70.TabIndex = 1200;
+            this.lbl_IO_Title_70.Text = "예비";
+            this.lbl_IO_Title_70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_71
+            // 
+            this.lbl_IO_Title_71.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_71.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_71.Location = new System.Drawing.Point(536, 728);
+            this.lbl_IO_Title_71.Name = "lbl_IO_Title_71";
+            this.lbl_IO_Title_71.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_71.TabIndex = 1201;
+            this.lbl_IO_Title_71.Text = "예비";
+            this.lbl_IO_Title_71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_72
+            // 
+            this.lbl_IO_Title_72.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_72.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_72.Location = new System.Drawing.Point(536, 751);
+            this.lbl_IO_Title_72.Name = "lbl_IO_Title_72";
+            this.lbl_IO_Title_72.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_72.TabIndex = 1202;
+            this.lbl_IO_Title_72.Text = "예비";
+            this.lbl_IO_Title_72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_73
+            // 
+            this.lbl_IO_Title_73.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_73.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_73.Location = new System.Drawing.Point(536, 774);
+            this.lbl_IO_Title_73.Name = "lbl_IO_Title_73";
+            this.lbl_IO_Title_73.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_73.TabIndex = 1203;
+            this.lbl_IO_Title_73.Text = "예비";
+            this.lbl_IO_Title_73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_74
+            // 
+            this.lbl_IO_Title_74.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_74.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_74.Location = new System.Drawing.Point(536, 797);
+            this.lbl_IO_Title_74.Name = "lbl_IO_Title_74";
+            this.lbl_IO_Title_74.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_74.TabIndex = 1204;
+            this.lbl_IO_Title_74.Text = "예비";
+            this.lbl_IO_Title_74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IO_Title_75
+            // 
+            this.lbl_IO_Title_75.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_IO_Title_75.ForeColor = System.Drawing.Color.White;
+            this.lbl_IO_Title_75.Location = new System.Drawing.Point(536, 820);
+            this.lbl_IO_Title_75.Name = "lbl_IO_Title_75";
+            this.lbl_IO_Title_75.Size = new System.Drawing.Size(160, 21);
+            this.lbl_IO_Title_75.TabIndex = 1205;
+            this.lbl_IO_Title_75.Text = "예비";
+            this.lbl_IO_Title_75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_65
+            // 
+            this.lbl_IOSt_65.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_65.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_65.Location = new System.Drawing.Point(750, 590);
+            this.lbl_IOSt_65.Name = "lbl_IOSt_65";
+            this.lbl_IOSt_65.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_65.TabIndex = 1206;
+            this.lbl_IOSt_65.Text = "OFF";
+            this.lbl_IOSt_65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_66
+            // 
+            this.lbl_IOSt_66.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_66.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_66.Location = new System.Drawing.Point(750, 613);
+            this.lbl_IOSt_66.Name = "lbl_IOSt_66";
+            this.lbl_IOSt_66.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_66.TabIndex = 1207;
+            this.lbl_IOSt_66.Text = "OFF";
+            this.lbl_IOSt_66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_67
+            // 
+            this.lbl_IOSt_67.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_67.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_67.Location = new System.Drawing.Point(750, 636);
+            this.lbl_IOSt_67.Name = "lbl_IOSt_67";
+            this.lbl_IOSt_67.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_67.TabIndex = 1208;
+            this.lbl_IOSt_67.Text = "OFF";
+            this.lbl_IOSt_67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_68
+            // 
+            this.lbl_IOSt_68.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_68.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_68.Location = new System.Drawing.Point(750, 659);
+            this.lbl_IOSt_68.Name = "lbl_IOSt_68";
+            this.lbl_IOSt_68.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_68.TabIndex = 1209;
+            this.lbl_IOSt_68.Text = "OFF";
+            this.lbl_IOSt_68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_69
+            // 
+            this.lbl_IOSt_69.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_69.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_69.Location = new System.Drawing.Point(750, 682);
+            this.lbl_IOSt_69.Name = "lbl_IOSt_69";
+            this.lbl_IOSt_69.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_69.TabIndex = 1210;
+            this.lbl_IOSt_69.Text = "OFF";
+            this.lbl_IOSt_69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_70
+            // 
+            this.lbl_IOSt_70.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_70.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_70.Location = new System.Drawing.Point(750, 705);
+            this.lbl_IOSt_70.Name = "lbl_IOSt_70";
+            this.lbl_IOSt_70.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_70.TabIndex = 1211;
+            this.lbl_IOSt_70.Text = "OFF";
+            this.lbl_IOSt_70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_71
+            // 
+            this.lbl_IOSt_71.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_71.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_71.Location = new System.Drawing.Point(750, 728);
+            this.lbl_IOSt_71.Name = "lbl_IOSt_71";
+            this.lbl_IOSt_71.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_71.TabIndex = 1212;
+            this.lbl_IOSt_71.Text = "OFF";
+            this.lbl_IOSt_71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_72
+            // 
+            this.lbl_IOSt_72.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_72.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_72.Location = new System.Drawing.Point(750, 751);
+            this.lbl_IOSt_72.Name = "lbl_IOSt_72";
+            this.lbl_IOSt_72.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_72.TabIndex = 1213;
+            this.lbl_IOSt_72.Text = "OFF";
+            this.lbl_IOSt_72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_73
+            // 
+            this.lbl_IOSt_73.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_73.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_73.Location = new System.Drawing.Point(750, 774);
+            this.lbl_IOSt_73.Name = "lbl_IOSt_73";
+            this.lbl_IOSt_73.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_73.TabIndex = 1214;
+            this.lbl_IOSt_73.Text = "OFF";
+            this.lbl_IOSt_73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_74
+            // 
+            this.lbl_IOSt_74.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_74.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_74.Location = new System.Drawing.Point(750, 797);
+            this.lbl_IOSt_74.Name = "lbl_IOSt_74";
+            this.lbl_IOSt_74.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_74.TabIndex = 1215;
+            this.lbl_IOSt_74.Text = "OFF";
+            this.lbl_IOSt_74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_IOSt_75
+            // 
+            this.lbl_IOSt_75.BackColor = System.Drawing.Color.Silver;
+            this.lbl_IOSt_75.ForeColor = System.Drawing.Color.Black;
+            this.lbl_IOSt_75.Location = new System.Drawing.Point(750, 820);
+            this.lbl_IOSt_75.Name = "lbl_IOSt_75";
+            this.lbl_IOSt_75.Size = new System.Drawing.Size(48, 21);
+            this.lbl_IOSt_75.TabIndex = 1216;
+            this.lbl_IOSt_75.Text = "OFF";
+            this.lbl_IOSt_75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -5367,1094 +6454,6 @@ namespace VEXI
             this.label288.TabIndex = 833;
             this.label288.Text = "No 2";
             this.label288.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Btn_DOCtrl_80
-            // 
-            this.Btn_DOCtrl_80.Location = new System.Drawing.Point(876, 935);
-            this.Btn_DOCtrl_80.Name = "Btn_DOCtrl_80";
-            this.Btn_DOCtrl_80.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_80.TabIndex = 1279;
-            this.Btn_DOCtrl_80.TabStop = false;
-            this.Btn_DOCtrl_80.Tag = "80";
-            this.Btn_DOCtrl_80.Text = "출력 변경";
-            this.Btn_DOCtrl_80.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_80.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_80
-            // 
-            this.Btn_ModeCtrl_80.Location = new System.Drawing.Point(801, 935);
-            this.Btn_ModeCtrl_80.Name = "Btn_ModeCtrl_80";
-            this.Btn_ModeCtrl_80.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_80.TabIndex = 1278;
-            this.Btn_ModeCtrl_80.TabStop = false;
-            this.Btn_ModeCtrl_80.Tag = "80";
-            this.Btn_ModeCtrl_80.Text = "모드 변경";
-            this.Btn_ModeCtrl_80.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_80.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_79
-            // 
-            this.Btn_DOCtrl_79.Location = new System.Drawing.Point(876, 912);
-            this.Btn_DOCtrl_79.Name = "Btn_DOCtrl_79";
-            this.Btn_DOCtrl_79.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_79.TabIndex = 1277;
-            this.Btn_DOCtrl_79.TabStop = false;
-            this.Btn_DOCtrl_79.Tag = "79";
-            this.Btn_DOCtrl_79.Text = "출력 변경";
-            this.Btn_DOCtrl_79.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_79.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_79
-            // 
-            this.Btn_ModeCtrl_79.Location = new System.Drawing.Point(801, 912);
-            this.Btn_ModeCtrl_79.Name = "Btn_ModeCtrl_79";
-            this.Btn_ModeCtrl_79.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_79.TabIndex = 1276;
-            this.Btn_ModeCtrl_79.TabStop = false;
-            this.Btn_ModeCtrl_79.Tag = "79";
-            this.Btn_ModeCtrl_79.Text = "모드 변경";
-            this.Btn_ModeCtrl_79.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_79.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_78
-            // 
-            this.Btn_DOCtrl_78.Location = new System.Drawing.Point(876, 889);
-            this.Btn_DOCtrl_78.Name = "Btn_DOCtrl_78";
-            this.Btn_DOCtrl_78.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_78.TabIndex = 1275;
-            this.Btn_DOCtrl_78.TabStop = false;
-            this.Btn_DOCtrl_78.Tag = "78";
-            this.Btn_DOCtrl_78.Text = "출력 변경";
-            this.Btn_DOCtrl_78.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_78.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_78
-            // 
-            this.Btn_ModeCtrl_78.Location = new System.Drawing.Point(801, 889);
-            this.Btn_ModeCtrl_78.Name = "Btn_ModeCtrl_78";
-            this.Btn_ModeCtrl_78.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_78.TabIndex = 1274;
-            this.Btn_ModeCtrl_78.TabStop = false;
-            this.Btn_ModeCtrl_78.Tag = "78";
-            this.Btn_ModeCtrl_78.Text = "모드 변경";
-            this.Btn_ModeCtrl_78.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_78.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_77
-            // 
-            this.Btn_DOCtrl_77.Location = new System.Drawing.Point(876, 866);
-            this.Btn_DOCtrl_77.Name = "Btn_DOCtrl_77";
-            this.Btn_DOCtrl_77.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_77.TabIndex = 1273;
-            this.Btn_DOCtrl_77.TabStop = false;
-            this.Btn_DOCtrl_77.Tag = "77";
-            this.Btn_DOCtrl_77.Text = "출력 변경";
-            this.Btn_DOCtrl_77.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_77.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_77
-            // 
-            this.Btn_ModeCtrl_77.Location = new System.Drawing.Point(801, 866);
-            this.Btn_ModeCtrl_77.Name = "Btn_ModeCtrl_77";
-            this.Btn_ModeCtrl_77.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_77.TabIndex = 1272;
-            this.Btn_ModeCtrl_77.TabStop = false;
-            this.Btn_ModeCtrl_77.Tag = "77";
-            this.Btn_ModeCtrl_77.Text = "모드 변경";
-            this.Btn_ModeCtrl_77.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_77.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_76
-            // 
-            this.Btn_DOCtrl_76.Location = new System.Drawing.Point(876, 843);
-            this.Btn_DOCtrl_76.Name = "Btn_DOCtrl_76";
-            this.Btn_DOCtrl_76.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_76.TabIndex = 1271;
-            this.Btn_DOCtrl_76.TabStop = false;
-            this.Btn_DOCtrl_76.Tag = "76";
-            this.Btn_DOCtrl_76.Text = "출력 변경";
-            this.Btn_DOCtrl_76.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_76.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_76
-            // 
-            this.Btn_ModeCtrl_76.Location = new System.Drawing.Point(801, 843);
-            this.Btn_ModeCtrl_76.Name = "Btn_ModeCtrl_76";
-            this.Btn_ModeCtrl_76.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_76.TabIndex = 1270;
-            this.Btn_ModeCtrl_76.TabStop = false;
-            this.Btn_ModeCtrl_76.Tag = "76";
-            this.Btn_ModeCtrl_76.Text = "모드 변경";
-            this.Btn_ModeCtrl_76.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_76.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_75
-            // 
-            this.Btn_DOCtrl_75.Location = new System.Drawing.Point(876, 820);
-            this.Btn_DOCtrl_75.Name = "Btn_DOCtrl_75";
-            this.Btn_DOCtrl_75.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_75.TabIndex = 1269;
-            this.Btn_DOCtrl_75.TabStop = false;
-            this.Btn_DOCtrl_75.Tag = "75";
-            this.Btn_DOCtrl_75.Text = "출력 변경";
-            this.Btn_DOCtrl_75.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_75.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_75
-            // 
-            this.Btn_ModeCtrl_75.Location = new System.Drawing.Point(801, 820);
-            this.Btn_ModeCtrl_75.Name = "Btn_ModeCtrl_75";
-            this.Btn_ModeCtrl_75.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_75.TabIndex = 1268;
-            this.Btn_ModeCtrl_75.TabStop = false;
-            this.Btn_ModeCtrl_75.Tag = "75";
-            this.Btn_ModeCtrl_75.Text = "모드 변경";
-            this.Btn_ModeCtrl_75.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_75.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_74
-            // 
-            this.Btn_DOCtrl_74.Location = new System.Drawing.Point(876, 797);
-            this.Btn_DOCtrl_74.Name = "Btn_DOCtrl_74";
-            this.Btn_DOCtrl_74.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_74.TabIndex = 1267;
-            this.Btn_DOCtrl_74.TabStop = false;
-            this.Btn_DOCtrl_74.Tag = "74";
-            this.Btn_DOCtrl_74.Text = "출력 변경";
-            this.Btn_DOCtrl_74.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_74.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_74
-            // 
-            this.Btn_ModeCtrl_74.Location = new System.Drawing.Point(801, 797);
-            this.Btn_ModeCtrl_74.Name = "Btn_ModeCtrl_74";
-            this.Btn_ModeCtrl_74.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_74.TabIndex = 1266;
-            this.Btn_ModeCtrl_74.TabStop = false;
-            this.Btn_ModeCtrl_74.Tag = "74";
-            this.Btn_ModeCtrl_74.Text = "모드 변경";
-            this.Btn_ModeCtrl_74.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_74.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_73
-            // 
-            this.Btn_DOCtrl_73.Location = new System.Drawing.Point(876, 774);
-            this.Btn_DOCtrl_73.Name = "Btn_DOCtrl_73";
-            this.Btn_DOCtrl_73.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_73.TabIndex = 1265;
-            this.Btn_DOCtrl_73.TabStop = false;
-            this.Btn_DOCtrl_73.Tag = "73";
-            this.Btn_DOCtrl_73.Text = "출력 변경";
-            this.Btn_DOCtrl_73.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_73.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_73
-            // 
-            this.Btn_ModeCtrl_73.Location = new System.Drawing.Point(801, 774);
-            this.Btn_ModeCtrl_73.Name = "Btn_ModeCtrl_73";
-            this.Btn_ModeCtrl_73.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_73.TabIndex = 1264;
-            this.Btn_ModeCtrl_73.TabStop = false;
-            this.Btn_ModeCtrl_73.Tag = "73";
-            this.Btn_ModeCtrl_73.Text = "모드 변경";
-            this.Btn_ModeCtrl_73.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_73.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_72
-            // 
-            this.Btn_DOCtrl_72.Location = new System.Drawing.Point(876, 751);
-            this.Btn_DOCtrl_72.Name = "Btn_DOCtrl_72";
-            this.Btn_DOCtrl_72.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_72.TabIndex = 1263;
-            this.Btn_DOCtrl_72.TabStop = false;
-            this.Btn_DOCtrl_72.Tag = "72";
-            this.Btn_DOCtrl_72.Text = "출력 변경";
-            this.Btn_DOCtrl_72.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_72.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_72
-            // 
-            this.Btn_ModeCtrl_72.Location = new System.Drawing.Point(801, 751);
-            this.Btn_ModeCtrl_72.Name = "Btn_ModeCtrl_72";
-            this.Btn_ModeCtrl_72.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_72.TabIndex = 1262;
-            this.Btn_ModeCtrl_72.TabStop = false;
-            this.Btn_ModeCtrl_72.Tag = "72";
-            this.Btn_ModeCtrl_72.Text = "모드 변경";
-            this.Btn_ModeCtrl_72.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_72.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_71
-            // 
-            this.Btn_DOCtrl_71.Location = new System.Drawing.Point(876, 728);
-            this.Btn_DOCtrl_71.Name = "Btn_DOCtrl_71";
-            this.Btn_DOCtrl_71.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_71.TabIndex = 1261;
-            this.Btn_DOCtrl_71.TabStop = false;
-            this.Btn_DOCtrl_71.Tag = "71";
-            this.Btn_DOCtrl_71.Text = "출력 변경";
-            this.Btn_DOCtrl_71.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_71.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_71
-            // 
-            this.Btn_ModeCtrl_71.Location = new System.Drawing.Point(801, 728);
-            this.Btn_ModeCtrl_71.Name = "Btn_ModeCtrl_71";
-            this.Btn_ModeCtrl_71.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_71.TabIndex = 1260;
-            this.Btn_ModeCtrl_71.TabStop = false;
-            this.Btn_ModeCtrl_71.Tag = "71";
-            this.Btn_ModeCtrl_71.Text = "모드 변경";
-            this.Btn_ModeCtrl_71.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_71.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_70
-            // 
-            this.Btn_DOCtrl_70.Location = new System.Drawing.Point(876, 705);
-            this.Btn_DOCtrl_70.Name = "Btn_DOCtrl_70";
-            this.Btn_DOCtrl_70.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_70.TabIndex = 1259;
-            this.Btn_DOCtrl_70.TabStop = false;
-            this.Btn_DOCtrl_70.Tag = "70";
-            this.Btn_DOCtrl_70.Text = "출력 변경";
-            this.Btn_DOCtrl_70.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_70.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_70
-            // 
-            this.Btn_ModeCtrl_70.Location = new System.Drawing.Point(801, 705);
-            this.Btn_ModeCtrl_70.Name = "Btn_ModeCtrl_70";
-            this.Btn_ModeCtrl_70.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_70.TabIndex = 1258;
-            this.Btn_ModeCtrl_70.TabStop = false;
-            this.Btn_ModeCtrl_70.Tag = "70";
-            this.Btn_ModeCtrl_70.Text = "모드 변경";
-            this.Btn_ModeCtrl_70.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_70.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_69
-            // 
-            this.Btn_DOCtrl_69.Location = new System.Drawing.Point(876, 682);
-            this.Btn_DOCtrl_69.Name = "Btn_DOCtrl_69";
-            this.Btn_DOCtrl_69.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_69.TabIndex = 1257;
-            this.Btn_DOCtrl_69.TabStop = false;
-            this.Btn_DOCtrl_69.Tag = "69";
-            this.Btn_DOCtrl_69.Text = "출력 변경";
-            this.Btn_DOCtrl_69.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_69.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_69
-            // 
-            this.Btn_ModeCtrl_69.Location = new System.Drawing.Point(801, 682);
-            this.Btn_ModeCtrl_69.Name = "Btn_ModeCtrl_69";
-            this.Btn_ModeCtrl_69.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_69.TabIndex = 1256;
-            this.Btn_ModeCtrl_69.TabStop = false;
-            this.Btn_ModeCtrl_69.Tag = "69";
-            this.Btn_ModeCtrl_69.Text = "모드 변경";
-            this.Btn_ModeCtrl_69.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_69.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_68
-            // 
-            this.Btn_DOCtrl_68.Location = new System.Drawing.Point(876, 659);
-            this.Btn_DOCtrl_68.Name = "Btn_DOCtrl_68";
-            this.Btn_DOCtrl_68.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_68.TabIndex = 1255;
-            this.Btn_DOCtrl_68.TabStop = false;
-            this.Btn_DOCtrl_68.Tag = "68";
-            this.Btn_DOCtrl_68.Text = "출력 변경";
-            this.Btn_DOCtrl_68.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_68.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_68
-            // 
-            this.Btn_ModeCtrl_68.Location = new System.Drawing.Point(801, 659);
-            this.Btn_ModeCtrl_68.Name = "Btn_ModeCtrl_68";
-            this.Btn_ModeCtrl_68.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_68.TabIndex = 1254;
-            this.Btn_ModeCtrl_68.TabStop = false;
-            this.Btn_ModeCtrl_68.Tag = "68";
-            this.Btn_ModeCtrl_68.Text = "모드 변경";
-            this.Btn_ModeCtrl_68.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_68.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_67
-            // 
-            this.Btn_DOCtrl_67.Location = new System.Drawing.Point(876, 636);
-            this.Btn_DOCtrl_67.Name = "Btn_DOCtrl_67";
-            this.Btn_DOCtrl_67.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_67.TabIndex = 1253;
-            this.Btn_DOCtrl_67.TabStop = false;
-            this.Btn_DOCtrl_67.Tag = "67";
-            this.Btn_DOCtrl_67.Text = "출력 변경";
-            this.Btn_DOCtrl_67.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_67.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_67
-            // 
-            this.Btn_ModeCtrl_67.Location = new System.Drawing.Point(801, 636);
-            this.Btn_ModeCtrl_67.Name = "Btn_ModeCtrl_67";
-            this.Btn_ModeCtrl_67.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_67.TabIndex = 1252;
-            this.Btn_ModeCtrl_67.TabStop = false;
-            this.Btn_ModeCtrl_67.Tag = "67";
-            this.Btn_ModeCtrl_67.Text = "모드 변경";
-            this.Btn_ModeCtrl_67.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_67.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_66
-            // 
-            this.Btn_DOCtrl_66.Location = new System.Drawing.Point(876, 613);
-            this.Btn_DOCtrl_66.Name = "Btn_DOCtrl_66";
-            this.Btn_DOCtrl_66.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_66.TabIndex = 1251;
-            this.Btn_DOCtrl_66.TabStop = false;
-            this.Btn_DOCtrl_66.Tag = "66";
-            this.Btn_DOCtrl_66.Text = "출력 변경";
-            this.Btn_DOCtrl_66.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_66.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_66
-            // 
-            this.Btn_ModeCtrl_66.Location = new System.Drawing.Point(801, 613);
-            this.Btn_ModeCtrl_66.Name = "Btn_ModeCtrl_66";
-            this.Btn_ModeCtrl_66.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_66.TabIndex = 1250;
-            this.Btn_ModeCtrl_66.TabStop = false;
-            this.Btn_ModeCtrl_66.Tag = "66";
-            this.Btn_ModeCtrl_66.Text = "모드 변경";
-            this.Btn_ModeCtrl_66.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_66.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // Btn_DOCtrl_65
-            // 
-            this.Btn_DOCtrl_65.Location = new System.Drawing.Point(876, 590);
-            this.Btn_DOCtrl_65.Name = "Btn_DOCtrl_65";
-            this.Btn_DOCtrl_65.Size = new System.Drawing.Size(75, 21);
-            this.Btn_DOCtrl_65.TabIndex = 1249;
-            this.Btn_DOCtrl_65.TabStop = false;
-            this.Btn_DOCtrl_65.Tag = "65";
-            this.Btn_DOCtrl_65.Text = "출력 변경";
-            this.Btn_DOCtrl_65.UseVisualStyleBackColor = true;
-            this.Btn_DOCtrl_65.Click += new System.EventHandler(this.Btn_DOCtrl_1_Click);
-            // 
-            // Btn_ModeCtrl_65
-            // 
-            this.Btn_ModeCtrl_65.Location = new System.Drawing.Point(801, 590);
-            this.Btn_ModeCtrl_65.Name = "Btn_ModeCtrl_65";
-            this.Btn_ModeCtrl_65.Size = new System.Drawing.Size(75, 21);
-            this.Btn_ModeCtrl_65.TabIndex = 1248;
-            this.Btn_ModeCtrl_65.TabStop = false;
-            this.Btn_ModeCtrl_65.Tag = "65";
-            this.Btn_ModeCtrl_65.Text = "모드 변경";
-            this.Btn_ModeCtrl_65.UseVisualStyleBackColor = true;
-            this.Btn_ModeCtrl_65.Click += new System.EventHandler(this.Btn_ModeCtrl_1_Click);
-            // 
-            // lbl_IOMode_80
-            // 
-            this.lbl_IOMode_80.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_80.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_80.Location = new System.Drawing.Point(699, 935);
-            this.lbl_IOMode_80.Name = "lbl_IOMode_80";
-            this.lbl_IOMode_80.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_80.TabIndex = 1247;
-            this.lbl_IOMode_80.Text = "자동";
-            this.lbl_IOMode_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_76
-            // 
-            this.lbl_IOMode_76.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_76.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_76.Location = new System.Drawing.Point(699, 843);
-            this.lbl_IOMode_76.Name = "lbl_IOMode_76";
-            this.lbl_IOMode_76.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_76.TabIndex = 1243;
-            this.lbl_IOMode_76.Text = "자동";
-            this.lbl_IOMode_76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_77
-            // 
-            this.lbl_IOMode_77.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_77.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_77.Location = new System.Drawing.Point(699, 866);
-            this.lbl_IOMode_77.Name = "lbl_IOMode_77";
-            this.lbl_IOMode_77.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_77.TabIndex = 1244;
-            this.lbl_IOMode_77.Text = "자동";
-            this.lbl_IOMode_77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_78
-            // 
-            this.lbl_IOMode_78.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_78.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_78.Location = new System.Drawing.Point(699, 889);
-            this.lbl_IOMode_78.Name = "lbl_IOMode_78";
-            this.lbl_IOMode_78.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_78.TabIndex = 1245;
-            this.lbl_IOMode_78.Text = "자동";
-            this.lbl_IOMode_78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_79
-            // 
-            this.lbl_IOMode_79.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_79.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_79.Location = new System.Drawing.Point(699, 912);
-            this.lbl_IOMode_79.Name = "lbl_IOMode_79";
-            this.lbl_IOMode_79.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_79.TabIndex = 1246;
-            this.lbl_IOMode_79.Text = "자동";
-            this.lbl_IOMode_79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_65
-            // 
-            this.lbl_IOMode_65.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_65.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_65.Location = new System.Drawing.Point(699, 590);
-            this.lbl_IOMode_65.Name = "lbl_IOMode_65";
-            this.lbl_IOMode_65.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_65.TabIndex = 1232;
-            this.lbl_IOMode_65.Text = "자동";
-            this.lbl_IOMode_65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_66
-            // 
-            this.lbl_IOMode_66.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_66.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_66.Location = new System.Drawing.Point(699, 613);
-            this.lbl_IOMode_66.Name = "lbl_IOMode_66";
-            this.lbl_IOMode_66.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_66.TabIndex = 1233;
-            this.lbl_IOMode_66.Text = "자동";
-            this.lbl_IOMode_66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_67
-            // 
-            this.lbl_IOMode_67.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_67.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_67.Location = new System.Drawing.Point(699, 636);
-            this.lbl_IOMode_67.Name = "lbl_IOMode_67";
-            this.lbl_IOMode_67.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_67.TabIndex = 1234;
-            this.lbl_IOMode_67.Text = "자동";
-            this.lbl_IOMode_67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_68
-            // 
-            this.lbl_IOMode_68.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_68.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_68.Location = new System.Drawing.Point(699, 659);
-            this.lbl_IOMode_68.Name = "lbl_IOMode_68";
-            this.lbl_IOMode_68.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_68.TabIndex = 1235;
-            this.lbl_IOMode_68.Text = "자동";
-            this.lbl_IOMode_68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_69
-            // 
-            this.lbl_IOMode_69.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_69.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_69.Location = new System.Drawing.Point(699, 682);
-            this.lbl_IOMode_69.Name = "lbl_IOMode_69";
-            this.lbl_IOMode_69.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_69.TabIndex = 1236;
-            this.lbl_IOMode_69.Text = "자동";
-            this.lbl_IOMode_69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_70
-            // 
-            this.lbl_IOMode_70.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_70.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_70.Location = new System.Drawing.Point(699, 705);
-            this.lbl_IOMode_70.Name = "lbl_IOMode_70";
-            this.lbl_IOMode_70.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_70.TabIndex = 1237;
-            this.lbl_IOMode_70.Text = "자동";
-            this.lbl_IOMode_70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_71
-            // 
-            this.lbl_IOMode_71.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_71.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_71.Location = new System.Drawing.Point(699, 728);
-            this.lbl_IOMode_71.Name = "lbl_IOMode_71";
-            this.lbl_IOMode_71.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_71.TabIndex = 1238;
-            this.lbl_IOMode_71.Text = "자동";
-            this.lbl_IOMode_71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_72
-            // 
-            this.lbl_IOMode_72.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_72.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_72.Location = new System.Drawing.Point(699, 751);
-            this.lbl_IOMode_72.Name = "lbl_IOMode_72";
-            this.lbl_IOMode_72.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_72.TabIndex = 1239;
-            this.lbl_IOMode_72.Text = "자동";
-            this.lbl_IOMode_72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_73
-            // 
-            this.lbl_IOMode_73.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_73.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_73.Location = new System.Drawing.Point(699, 774);
-            this.lbl_IOMode_73.Name = "lbl_IOMode_73";
-            this.lbl_IOMode_73.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_73.TabIndex = 1240;
-            this.lbl_IOMode_73.Text = "자동";
-            this.lbl_IOMode_73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_74
-            // 
-            this.lbl_IOMode_74.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_74.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_74.Location = new System.Drawing.Point(699, 797);
-            this.lbl_IOMode_74.Name = "lbl_IOMode_74";
-            this.lbl_IOMode_74.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_74.TabIndex = 1241;
-            this.lbl_IOMode_74.Text = "자동";
-            this.lbl_IOMode_74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOMode_75
-            // 
-            this.lbl_IOMode_75.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOMode_75.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOMode_75.Location = new System.Drawing.Point(699, 820);
-            this.lbl_IOMode_75.Name = "lbl_IOMode_75";
-            this.lbl_IOMode_75.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOMode_75.TabIndex = 1242;
-            this.lbl_IOMode_75.Text = "자동";
-            this.lbl_IOMode_75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(488, 935);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(48, 21);
-            this.label22.TabIndex = 1229;
-            this.label22.Text = "No 80";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_80
-            // 
-            this.lbl_IO_Title_80.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_80.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_80.Location = new System.Drawing.Point(536, 935);
-            this.lbl_IO_Title_80.Name = "lbl_IO_Title_80";
-            this.lbl_IO_Title_80.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_80.TabIndex = 1230;
-            this.lbl_IO_Title_80.Text = "예비";
-            this.lbl_IO_Title_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_80
-            // 
-            this.lbl_IOSt_80.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_80.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_80.Location = new System.Drawing.Point(750, 935);
-            this.lbl_IOSt_80.Name = "lbl_IOSt_80";
-            this.lbl_IOSt_80.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_80.TabIndex = 1231;
-            this.lbl_IOSt_80.Text = "OFF";
-            this.lbl_IOSt_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label34
-            // 
-            this.label34.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(488, 843);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(48, 21);
-            this.label34.TabIndex = 1217;
-            this.label34.Text = "No 76";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label36
-            // 
-            this.label36.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(488, 866);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(48, 21);
-            this.label36.TabIndex = 1218;
-            this.label36.Text = "No 77";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label38
-            // 
-            this.label38.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label38.ForeColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(488, 889);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(48, 21);
-            this.label38.TabIndex = 1219;
-            this.label38.Text = "No 78";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label40
-            // 
-            this.label40.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label40.ForeColor = System.Drawing.Color.White;
-            this.label40.Location = new System.Drawing.Point(488, 912);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(48, 21);
-            this.label40.TabIndex = 1220;
-            this.label40.Text = "No 79";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_76
-            // 
-            this.lbl_IO_Title_76.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_76.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_76.Location = new System.Drawing.Point(536, 843);
-            this.lbl_IO_Title_76.Name = "lbl_IO_Title_76";
-            this.lbl_IO_Title_76.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_76.TabIndex = 1221;
-            this.lbl_IO_Title_76.Text = "예비";
-            this.lbl_IO_Title_76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_77
-            // 
-            this.lbl_IO_Title_77.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_77.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_77.Location = new System.Drawing.Point(536, 866);
-            this.lbl_IO_Title_77.Name = "lbl_IO_Title_77";
-            this.lbl_IO_Title_77.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_77.TabIndex = 1222;
-            this.lbl_IO_Title_77.Text = "예비";
-            this.lbl_IO_Title_77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_78
-            // 
-            this.lbl_IO_Title_78.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_78.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_78.Location = new System.Drawing.Point(536, 889);
-            this.lbl_IO_Title_78.Name = "lbl_IO_Title_78";
-            this.lbl_IO_Title_78.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_78.TabIndex = 1223;
-            this.lbl_IO_Title_78.Text = "예비";
-            this.lbl_IO_Title_78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_79
-            // 
-            this.lbl_IO_Title_79.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_79.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_79.Location = new System.Drawing.Point(536, 912);
-            this.lbl_IO_Title_79.Name = "lbl_IO_Title_79";
-            this.lbl_IO_Title_79.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_79.TabIndex = 1224;
-            this.lbl_IO_Title_79.Text = "예비";
-            this.lbl_IO_Title_79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_76
-            // 
-            this.lbl_IOSt_76.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_76.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_76.Location = new System.Drawing.Point(750, 843);
-            this.lbl_IOSt_76.Name = "lbl_IOSt_76";
-            this.lbl_IOSt_76.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_76.TabIndex = 1225;
-            this.lbl_IOSt_76.Text = "OFF";
-            this.lbl_IOSt_76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_77
-            // 
-            this.lbl_IOSt_77.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_77.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_77.Location = new System.Drawing.Point(750, 866);
-            this.lbl_IOSt_77.Name = "lbl_IOSt_77";
-            this.lbl_IOSt_77.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_77.TabIndex = 1226;
-            this.lbl_IOSt_77.Text = "OFF";
-            this.lbl_IOSt_77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_78
-            // 
-            this.lbl_IOSt_78.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_78.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_78.Location = new System.Drawing.Point(750, 889);
-            this.lbl_IOSt_78.Name = "lbl_IOSt_78";
-            this.lbl_IOSt_78.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_78.TabIndex = 1227;
-            this.lbl_IOSt_78.Text = "OFF";
-            this.lbl_IOSt_78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_79
-            // 
-            this.lbl_IOSt_79.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_79.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_79.Location = new System.Drawing.Point(750, 912);
-            this.lbl_IOSt_79.Name = "lbl_IOSt_79";
-            this.lbl_IOSt_79.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_79.TabIndex = 1228;
-            this.lbl_IOSt_79.Text = "OFF";
-            this.lbl_IOSt_79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label50
-            // 
-            this.label50.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(488, 590);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(48, 21);
-            this.label50.TabIndex = 1184;
-            this.label50.Text = "No 65";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label51
-            // 
-            this.label51.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label51.ForeColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(488, 613);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(48, 21);
-            this.label51.TabIndex = 1185;
-            this.label51.Text = "No 66";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label52
-            // 
-            this.label52.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label52.ForeColor = System.Drawing.Color.White;
-            this.label52.Location = new System.Drawing.Point(488, 636);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(48, 21);
-            this.label52.TabIndex = 1186;
-            this.label52.Text = "No 67";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label53
-            // 
-            this.label53.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label53.ForeColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(488, 659);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(48, 21);
-            this.label53.TabIndex = 1187;
-            this.label53.Text = "No 68";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label54
-            // 
-            this.label54.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label54.ForeColor = System.Drawing.Color.White;
-            this.label54.Location = new System.Drawing.Point(488, 682);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(48, 21);
-            this.label54.TabIndex = 1188;
-            this.label54.Text = "No 69";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label55
-            // 
-            this.label55.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label55.ForeColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(488, 705);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(48, 21);
-            this.label55.TabIndex = 1189;
-            this.label55.Text = "No 70";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label56
-            // 
-            this.label56.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label56.ForeColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(488, 728);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(48, 21);
-            this.label56.TabIndex = 1190;
-            this.label56.Text = "No 71";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label57
-            // 
-            this.label57.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label57.ForeColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(488, 751);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(48, 21);
-            this.label57.TabIndex = 1191;
-            this.label57.Text = "No 72";
-            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label58
-            // 
-            this.label58.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label58.ForeColor = System.Drawing.Color.White;
-            this.label58.Location = new System.Drawing.Point(488, 774);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(48, 21);
-            this.label58.TabIndex = 1192;
-            this.label58.Text = "No 73";
-            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label59
-            // 
-            this.label59.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label59.ForeColor = System.Drawing.Color.White;
-            this.label59.Location = new System.Drawing.Point(488, 797);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(48, 21);
-            this.label59.TabIndex = 1193;
-            this.label59.Text = "No 74";
-            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label60
-            // 
-            this.label60.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label60.ForeColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(488, 820);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(48, 21);
-            this.label60.TabIndex = 1194;
-            this.label60.Text = "No 75";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_65
-            // 
-            this.lbl_IO_Title_65.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_65.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_65.Location = new System.Drawing.Point(536, 590);
-            this.lbl_IO_Title_65.Name = "lbl_IO_Title_65";
-            this.lbl_IO_Title_65.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_65.TabIndex = 1195;
-            this.lbl_IO_Title_65.Text = "예비";
-            this.lbl_IO_Title_65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_66
-            // 
-            this.lbl_IO_Title_66.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_66.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_66.Location = new System.Drawing.Point(536, 613);
-            this.lbl_IO_Title_66.Name = "lbl_IO_Title_66";
-            this.lbl_IO_Title_66.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_66.TabIndex = 1196;
-            this.lbl_IO_Title_66.Text = "예비";
-            this.lbl_IO_Title_66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_67
-            // 
-            this.lbl_IO_Title_67.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_67.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_67.Location = new System.Drawing.Point(536, 636);
-            this.lbl_IO_Title_67.Name = "lbl_IO_Title_67";
-            this.lbl_IO_Title_67.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_67.TabIndex = 1197;
-            this.lbl_IO_Title_67.Text = "예비";
-            this.lbl_IO_Title_67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_68
-            // 
-            this.lbl_IO_Title_68.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_68.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_68.Location = new System.Drawing.Point(536, 659);
-            this.lbl_IO_Title_68.Name = "lbl_IO_Title_68";
-            this.lbl_IO_Title_68.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_68.TabIndex = 1198;
-            this.lbl_IO_Title_68.Text = "예비";
-            this.lbl_IO_Title_68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_69
-            // 
-            this.lbl_IO_Title_69.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_69.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_69.Location = new System.Drawing.Point(536, 682);
-            this.lbl_IO_Title_69.Name = "lbl_IO_Title_69";
-            this.lbl_IO_Title_69.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_69.TabIndex = 1199;
-            this.lbl_IO_Title_69.Text = "예비";
-            this.lbl_IO_Title_69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_70
-            // 
-            this.lbl_IO_Title_70.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_70.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_70.Location = new System.Drawing.Point(536, 705);
-            this.lbl_IO_Title_70.Name = "lbl_IO_Title_70";
-            this.lbl_IO_Title_70.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_70.TabIndex = 1200;
-            this.lbl_IO_Title_70.Text = "예비";
-            this.lbl_IO_Title_70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_71
-            // 
-            this.lbl_IO_Title_71.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_71.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_71.Location = new System.Drawing.Point(536, 728);
-            this.lbl_IO_Title_71.Name = "lbl_IO_Title_71";
-            this.lbl_IO_Title_71.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_71.TabIndex = 1201;
-            this.lbl_IO_Title_71.Text = "예비";
-            this.lbl_IO_Title_71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_72
-            // 
-            this.lbl_IO_Title_72.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_72.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_72.Location = new System.Drawing.Point(536, 751);
-            this.lbl_IO_Title_72.Name = "lbl_IO_Title_72";
-            this.lbl_IO_Title_72.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_72.TabIndex = 1202;
-            this.lbl_IO_Title_72.Text = "예비";
-            this.lbl_IO_Title_72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_73
-            // 
-            this.lbl_IO_Title_73.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_73.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_73.Location = new System.Drawing.Point(536, 774);
-            this.lbl_IO_Title_73.Name = "lbl_IO_Title_73";
-            this.lbl_IO_Title_73.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_73.TabIndex = 1203;
-            this.lbl_IO_Title_73.Text = "예비";
-            this.lbl_IO_Title_73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_74
-            // 
-            this.lbl_IO_Title_74.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_74.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_74.Location = new System.Drawing.Point(536, 797);
-            this.lbl_IO_Title_74.Name = "lbl_IO_Title_74";
-            this.lbl_IO_Title_74.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_74.TabIndex = 1204;
-            this.lbl_IO_Title_74.Text = "예비";
-            this.lbl_IO_Title_74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IO_Title_75
-            // 
-            this.lbl_IO_Title_75.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_IO_Title_75.ForeColor = System.Drawing.Color.White;
-            this.lbl_IO_Title_75.Location = new System.Drawing.Point(536, 820);
-            this.lbl_IO_Title_75.Name = "lbl_IO_Title_75";
-            this.lbl_IO_Title_75.Size = new System.Drawing.Size(160, 21);
-            this.lbl_IO_Title_75.TabIndex = 1205;
-            this.lbl_IO_Title_75.Text = "예비";
-            this.lbl_IO_Title_75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_65
-            // 
-            this.lbl_IOSt_65.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_65.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_65.Location = new System.Drawing.Point(750, 590);
-            this.lbl_IOSt_65.Name = "lbl_IOSt_65";
-            this.lbl_IOSt_65.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_65.TabIndex = 1206;
-            this.lbl_IOSt_65.Text = "OFF";
-            this.lbl_IOSt_65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_66
-            // 
-            this.lbl_IOSt_66.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_66.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_66.Location = new System.Drawing.Point(750, 613);
-            this.lbl_IOSt_66.Name = "lbl_IOSt_66";
-            this.lbl_IOSt_66.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_66.TabIndex = 1207;
-            this.lbl_IOSt_66.Text = "OFF";
-            this.lbl_IOSt_66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_67
-            // 
-            this.lbl_IOSt_67.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_67.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_67.Location = new System.Drawing.Point(750, 636);
-            this.lbl_IOSt_67.Name = "lbl_IOSt_67";
-            this.lbl_IOSt_67.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_67.TabIndex = 1208;
-            this.lbl_IOSt_67.Text = "OFF";
-            this.lbl_IOSt_67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_68
-            // 
-            this.lbl_IOSt_68.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_68.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_68.Location = new System.Drawing.Point(750, 659);
-            this.lbl_IOSt_68.Name = "lbl_IOSt_68";
-            this.lbl_IOSt_68.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_68.TabIndex = 1209;
-            this.lbl_IOSt_68.Text = "OFF";
-            this.lbl_IOSt_68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_69
-            // 
-            this.lbl_IOSt_69.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_69.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_69.Location = new System.Drawing.Point(750, 682);
-            this.lbl_IOSt_69.Name = "lbl_IOSt_69";
-            this.lbl_IOSt_69.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_69.TabIndex = 1210;
-            this.lbl_IOSt_69.Text = "OFF";
-            this.lbl_IOSt_69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_70
-            // 
-            this.lbl_IOSt_70.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_70.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_70.Location = new System.Drawing.Point(750, 705);
-            this.lbl_IOSt_70.Name = "lbl_IOSt_70";
-            this.lbl_IOSt_70.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_70.TabIndex = 1211;
-            this.lbl_IOSt_70.Text = "OFF";
-            this.lbl_IOSt_70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_71
-            // 
-            this.lbl_IOSt_71.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_71.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_71.Location = new System.Drawing.Point(750, 728);
-            this.lbl_IOSt_71.Name = "lbl_IOSt_71";
-            this.lbl_IOSt_71.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_71.TabIndex = 1212;
-            this.lbl_IOSt_71.Text = "OFF";
-            this.lbl_IOSt_71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_72
-            // 
-            this.lbl_IOSt_72.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_72.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_72.Location = new System.Drawing.Point(750, 751);
-            this.lbl_IOSt_72.Name = "lbl_IOSt_72";
-            this.lbl_IOSt_72.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_72.TabIndex = 1213;
-            this.lbl_IOSt_72.Text = "OFF";
-            this.lbl_IOSt_72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_73
-            // 
-            this.lbl_IOSt_73.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_73.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_73.Location = new System.Drawing.Point(750, 774);
-            this.lbl_IOSt_73.Name = "lbl_IOSt_73";
-            this.lbl_IOSt_73.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_73.TabIndex = 1214;
-            this.lbl_IOSt_73.Text = "OFF";
-            this.lbl_IOSt_73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_74
-            // 
-            this.lbl_IOSt_74.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_74.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_74.Location = new System.Drawing.Point(750, 797);
-            this.lbl_IOSt_74.Name = "lbl_IOSt_74";
-            this.lbl_IOSt_74.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_74.TabIndex = 1215;
-            this.lbl_IOSt_74.Text = "OFF";
-            this.lbl_IOSt_74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_IOSt_75
-            // 
-            this.lbl_IOSt_75.BackColor = System.Drawing.Color.Silver;
-            this.lbl_IOSt_75.ForeColor = System.Drawing.Color.Black;
-            this.lbl_IOSt_75.Location = new System.Drawing.Point(750, 820);
-            this.lbl_IOSt_75.Name = "lbl_IOSt_75";
-            this.lbl_IOSt_75.Size = new System.Drawing.Size(48, 21);
-            this.lbl_IOSt_75.TabIndex = 1216;
-            this.lbl_IOSt_75.Text = "OFF";
-            this.lbl_IOSt_75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_DO_TestCtrl
             // 

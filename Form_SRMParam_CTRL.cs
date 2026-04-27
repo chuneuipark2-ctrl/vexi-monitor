@@ -289,9 +289,9 @@ namespace VEXI
             //상태구조체의 값을 제어구조체에 담은 후에 전체 항목 플래그를 세우고 현재 화면에 해당하는 항목들에 대해서는 상태구조체 값이 아닌 화면값으로 값을 갱신해주는 방법도 있다.)
             srm_CtrlParam_CTRL.CtrlFlag[0] = 0x00;
             srm_CtrlParam_CTRL.CtrlFlag[1] = 0xFF;
-            srm_CtrlParam_CTRL.CtrlFlag[2] = 0x1F;
+            srm_CtrlParam_CTRL.CtrlFlag[2] = 0x3F;
             srm_CtrlParam_CTRL.CtrlFlag[3] = 0x7F;
-            srm_CtrlParam_CTRL.CtrlFlag[4] = 0x3F;
+            srm_CtrlParam_CTRL.CtrlFlag[4] = 0x1F;
 
             //제어값
             if (cb_SafetyPlug_ProcessType.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.SafetyPlug_ProcessType = (byte) cb_SafetyPlug_ProcessType.SelectedIndex ;
@@ -302,9 +302,12 @@ namespace VEXI
             if (cb_DriveLift_Sequence.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.DriveLift_Sequence = (byte)cb_DriveLift_Sequence.SelectedIndex         ;
             if (cb_NoItemToHome.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.NoItemToHome = (byte)cb_NoItemToHome.SelectedIndex               ;
             if (cb_AlarmUse_ital_forking.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.AlarmUse_ital_forking = (byte)cb_AlarmUse_ital_forking.SelectedIndex      ;
+
+            //if (cb_AlarmUse_StartOff.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.AlarmUse_StartOff = (byte)cb_AlarmUse_StartOff.SelectedIndex;
+
+            if (cb_interlockAlarm_Auto.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.interlockAlarm_Auto = (byte)cb_interlockAlarm_Auto.SelectedIndex;
+            if (cb_interlockAlarm_Manual.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.interlockAlarm_Manual = (byte)cb_interlockAlarm_Manual.SelectedIndex ;
             
-            if (cb_AlarmUse_interlock_forking.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.AlarmUse_interlock_forking = (byte)cb_AlarmUse_interlock_forking.SelectedIndex ;
-            if (cb_Use_InterlockConfirm_StationForking.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.Use_InterlockConfirm_StationForking = (byte)cb_Use_InterlockConfirm_StationForking.SelectedIndex ;
             if (cb_Forking_lift_BrakeOn_UseFlag.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.Forking_lift_BrakeOn_UseFlag = (byte)cb_Forking_lift_BrakeOn_UseFlag.SelectedIndex;
             srm_CtrlParam_CTRL.ParamItemsRec.Forking_ReturnRef_OperCount = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Forking_ReturnRef_OperCount.Text, 0);
             srm_CtrlParam_CTRL.ParamItemsRec.RetryInPositon_DriveCount = (byte)Global_Class.UTIL_StrToIntDef(ed_RetryInPositon_DriveCount.Text, 0);
@@ -349,10 +352,7 @@ namespace VEXI
             srm_CtrlParam_CTRL.ParamItemsRec.Buzzer_AutoModeOn_Time = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Buzzer_AutoModeOn_Time.Text, 0) * 100);
             srm_CtrlParam_CTRL.ParamItemsRec.Buzzer_AutoModeOff_Time = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Buzzer_AutoModeOff_Time.Text, 0) * 100);
             srm_CtrlParam_CTRL.ParamItemsRec.Buzzer_AutoMode_RepeatCount = (byte)Global_Class.UTIL_StrToIntDef(ed_Buzzer_AutoMode_RepeatCount.Text, 0);
-            srm_CtrlParam_CTRL.ParamItemsRec.UpBreak_DoCunt = (byte)Global_Class.UTIL_StrToIntDef(ed_UpBreak_DoCunt.Text, 0);
-            srm_CtrlParam_CTRL.ParamItemsRec.UpBreak_On_Time = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_UpBreak_On_Time.Text, 0) * 100);
-            srm_CtrlParam_CTRL.ParamItemsRec.UpBreak_Off_Time = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_UpBreak_Off_Time.Text, 0) * 100);
-            if (cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.AlarmUse_PosSensor_AutoDrive = (byte)cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex;
+            //if (cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex >= 0) srm_CtrlParam_CTRL.ParamItemsRec.AlarmUse_PosSensor_AutoDrive = (byte)cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex;
 
             byte TmpCount = 0;
             fixed (VEXI_DEFS.TSRMLevelDelayTimeRec* Ptr_1 = &srm_CtrlParam_CTRL.ParamItemsRec.LevelDelay_1_St)
@@ -395,11 +395,14 @@ namespace VEXI
             cb_DriveLift_Sequence.SelectedIndex = -1;
             cb_NoItemToHome.SelectedIndex = -1;
             cb_AlarmUse_ital_forking.SelectedIndex = -1;
-            
-            cb_AlarmUse_interlock_forking.SelectedIndex = -1;
-            cb_Use_InterlockConfirm_StationForking.SelectedIndex = -1;
+
+            //cb_AlarmUse_StartOff.SelectedIndex = -1;
+
+            cb_interlockAlarm_Manual.SelectedIndex = -1;
+            cb_interlockAlarm_Auto.SelectedIndex = -1;
             cb_Forking_lift_BrakeOn_UseFlag.SelectedIndex = -1;
             ed_Forking_ReturnRef_OperCount.Text = "0";
+            
 
 
             ed_RetryInPositon_DriveCount.Text = "0";
@@ -454,11 +457,7 @@ namespace VEXI
             ed_Buzzer_AutoModeOff_Time.Text = "0.00";
             ed_Buzzer_AutoMode_RepeatCount.Text = "0";
 
-            ed_UpBreak_DoCunt.Text = "0";
-            ed_UpBreak_On_Time.Text = "0.00";
-            ed_UpBreak_Off_Time.Text = "0.00";
-
-            cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex = -1;
+            //cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex = -1;
 
             for (byte i = 0; i < 10; i++)
             {
@@ -487,9 +486,11 @@ namespace VEXI
             cb_DriveLift_Sequence.SelectedIndex = Math.Min(srm_CtrlParam_RES.DriveLift_Sequence, cb_DriveLift_Sequence.Items.Count - 1);
             cb_NoItemToHome.SelectedIndex = Math.Min(srm_CtrlParam_RES.NoItemToHome, cb_NoItemToHome.Items.Count - 1);
             cb_AlarmUse_ital_forking.SelectedIndex = Math.Min(srm_CtrlParam_RES.AlarmUse_ital_forking, cb_AlarmUse_ital_forking.Items.Count - 1);
-            
-            cb_AlarmUse_interlock_forking.SelectedIndex = Math.Min(srm_CtrlParam_RES.AlarmUse_interlock_forking, cb_AlarmUse_interlock_forking.Items.Count - 1);
-            cb_Use_InterlockConfirm_StationForking.SelectedIndex = Math.Min(srm_CtrlParam_RES.Use_InterlockConfirm_StationForking, cb_Use_InterlockConfirm_StationForking.Items.Count - 1);
+
+            //cb_AlarmUse_StartOff.SelectedIndex = Math.Min(srm_CtrlParam_RES.AlarmUse_StartOff, cb_AlarmUse_StartOff.Items.Count - 1);
+
+            cb_interlockAlarm_Auto.SelectedIndex = Math.Min(srm_CtrlParam_RES.interlockAlarm_Auto, cb_interlockAlarm_Auto.Items.Count - 1);
+            cb_interlockAlarm_Manual.SelectedIndex = Math.Min(srm_CtrlParam_RES.interlockAlarm_Manual, cb_interlockAlarm_Manual.Items.Count - 1);
             cb_Forking_lift_BrakeOn_UseFlag.SelectedIndex = Math.Min(srm_CtrlParam_RES.Forking_lift_BrakeOn_UseFlag, cb_Forking_lift_BrakeOn_UseFlag.Items.Count - 1);
             ed_Forking_ReturnRef_OperCount.Text = string.Format("{0}", srm_CtrlParam_RES.Forking_ReturnRef_OperCount);
             ed_RetryInPositon_DriveCount.Text = string.Format("{0}", srm_CtrlParam_RES.RetryInPositon_DriveCount);
@@ -534,10 +535,7 @@ namespace VEXI
             ed_Buzzer_AutoModeOn_Time.Text = string.Format("{0:0.00}", (double)srm_CtrlParam_RES.Buzzer_AutoModeOn_Time / 100);
             ed_Buzzer_AutoModeOff_Time.Text = string.Format("{0:0.00}", (double)srm_CtrlParam_RES.Buzzer_AutoModeOff_Time / 100);
             ed_Buzzer_AutoMode_RepeatCount.Text = string.Format("{0}", srm_CtrlParam_RES.Buzzer_AutoMode_RepeatCount);
-            ed_UpBreak_DoCunt.Text = string.Format("{0}", srm_CtrlParam_RES.UpBreak_DoCunt);
-            ed_UpBreak_On_Time.Text = string.Format("{0:0.00}", (double)srm_CtrlParam_RES.UpBreak_On_Time / 100);
-            ed_UpBreak_Off_Time.Text = string.Format("{0:0.00}", (double)srm_CtrlParam_RES.UpBreak_Off_Time / 100);
-            cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex = Math.Min(srm_CtrlParam_RES.AlarmUse_PosSensor_AutoDrive, cb_AlarmUse_PosSensor_AutoDrive.Items.Count - 1);
+            //cb_AlarmUse_PosSensor_AutoDrive.SelectedIndex = Math.Min(srm_CtrlParam_RES.AlarmUse_PosSensor_AutoDrive, cb_AlarmUse_PosSensor_AutoDrive.Items.Count - 1);
 
             fixed (VEXI_DEFS.TSRMLevelDelayTimeRec* Ptr_1 = &srm_CtrlParam_RES.LevelDelay_1_St)
             {

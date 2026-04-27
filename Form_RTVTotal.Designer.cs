@@ -512,7 +512,7 @@ namespace VEXI
             // lblSaveResult4
             // 
             this.lblSaveResult4.AutoSize = true;
-            this.lblSaveResult4.Location = new System.Drawing.Point(290, 197);
+            this.lblSaveResult4.Location = new System.Drawing.Point(290, 175);
             this.lblSaveResult4.Name = "lblSaveResult4";
             this.lblSaveResult4.Size = new System.Drawing.Size(23, 12);
             this.lblSaveResult4.TabIndex = 1337;
@@ -521,7 +521,7 @@ namespace VEXI
             // lblSaveResult5
             // 
             this.lblSaveResult5.AutoSize = true;
-            this.lblSaveResult5.Location = new System.Drawing.Point(290, 219);
+            this.lblSaveResult5.Location = new System.Drawing.Point(290, 197);
             this.lblSaveResult5.Name = "lblSaveResult5";
             this.lblSaveResult5.Size = new System.Drawing.Size(23, 12);
             this.lblSaveResult5.TabIndex = 1336;
@@ -539,7 +539,7 @@ namespace VEXI
             // lblSaveResult7
             // 
             this.lblSaveResult7.AutoSize = true;
-            this.lblSaveResult7.Location = new System.Drawing.Point(290, 264);
+            this.lblSaveResult7.Location = new System.Drawing.Point(290, 241);
             this.lblSaveResult7.Name = "lblSaveResult7";
             this.lblSaveResult7.Size = new System.Drawing.Size(23, 12);
             this.lblSaveResult7.TabIndex = 1331;
@@ -557,7 +557,7 @@ namespace VEXI
             // lblUploadResult7
             // 
             this.lblUploadResult7.AutoSize = true;
-            this.lblUploadResult7.Location = new System.Drawing.Point(196, 264);
+            this.lblUploadResult7.Location = new System.Drawing.Point(196, 241);
             this.lblUploadResult7.Name = "lblUploadResult7";
             this.lblUploadResult7.Size = new System.Drawing.Size(23, 12);
             this.lblUploadResult7.TabIndex = 1327;
@@ -566,7 +566,7 @@ namespace VEXI
             // lblUploadResult4
             // 
             this.lblUploadResult4.AutoSize = true;
-            this.lblUploadResult4.Location = new System.Drawing.Point(196, 197);
+            this.lblUploadResult4.Location = new System.Drawing.Point(196, 175);
             this.lblUploadResult4.Name = "lblUploadResult4";
             this.lblUploadResult4.Size = new System.Drawing.Size(23, 12);
             this.lblUploadResult4.TabIndex = 1325;
@@ -575,7 +575,7 @@ namespace VEXI
             // lblUploadResult5
             // 
             this.lblUploadResult5.AutoSize = true;
-            this.lblUploadResult5.Location = new System.Drawing.Point(196, 219);
+            this.lblUploadResult5.Location = new System.Drawing.Point(196, 197);
             this.lblUploadResult5.Name = "lblUploadResult5";
             this.lblUploadResult5.Size = new System.Drawing.Size(23, 12);
             this.lblUploadResult5.TabIndex = 1324;
@@ -641,7 +641,7 @@ namespace VEXI
             // cbLoad5
             // 
             this.cbLoad5.AutoSize = true;
-            this.cbLoad5.Location = new System.Drawing.Point(23, 219);
+            this.cbLoad5.Location = new System.Drawing.Point(23, 197);
             this.cbLoad5.Name = "cbLoad5";
             this.cbLoad5.Size = new System.Drawing.Size(124, 16);
             this.cbLoad5.TabIndex = 1312;
@@ -651,7 +651,7 @@ namespace VEXI
             // cbLoad4
             // 
             this.cbLoad4.AutoSize = true;
-            this.cbLoad4.Location = new System.Drawing.Point(23, 197);
+            this.cbLoad4.Location = new System.Drawing.Point(23, 175);
             this.cbLoad4.Name = "cbLoad4";
             this.cbLoad4.Size = new System.Drawing.Size(124, 16);
             this.cbLoad4.TabIndex = 1313;
@@ -661,7 +661,7 @@ namespace VEXI
             // cbLoad7
             // 
             this.cbLoad7.AutoSize = true;
-            this.cbLoad7.Location = new System.Drawing.Point(23, 264);
+            this.cbLoad7.Location = new System.Drawing.Point(23, 241);
             this.cbLoad7.Name = "cbLoad7";
             this.cbLoad7.Size = new System.Drawing.Size(100, 16);
             this.cbLoad7.TabIndex = 1315;

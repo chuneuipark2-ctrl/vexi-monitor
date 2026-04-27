@@ -82,6 +82,11 @@ namespace VEXI
             this.lbl_EMSCageType = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.rb_EMSCageType_1 = new System.Windows.Forms.RadioButton();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.rb_ModeSwitchUse_1 = new System.Windows.Forms.RadioButton();
+            this.lbl_ModeSwitchUse = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rb_ModeSwitchUse_0 = new System.Windows.Forms.RadioButton();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -90,6 +95,7 @@ namespace VEXI
             this.panel12.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -214,7 +220,6 @@ namespace VEXI
             // rb_MovePositionSensor_1
             // 
             this.rb_MovePositionSensor_1.AutoSize = true;
-            this.rb_MovePositionSensor_1.Enabled = false;
             this.rb_MovePositionSensor_1.ForeColor = System.Drawing.Color.Black;
             this.rb_MovePositionSensor_1.Location = new System.Drawing.Point(8, 56);
             this.rb_MovePositionSensor_1.Name = "rb_MovePositionSensor_1";
@@ -586,7 +591,6 @@ namespace VEXI
             // rb_EMSLiftType_0
             // 
             this.rb_EMSLiftType_0.AutoSize = true;
-            this.rb_EMSLiftType_0.Enabled = false;
             this.rb_EMSLiftType_0.ForeColor = System.Drawing.Color.Black;
             this.rb_EMSLiftType_0.Location = new System.Drawing.Point(8, 56);
             this.rb_EMSLiftType_0.Name = "rb_EMSLiftType_0";
@@ -690,12 +694,74 @@ namespace VEXI
             this.rb_EMSCageType_1.Text = "Basket";
             this.rb_EMSCageType_1.UseVisualStyleBackColor = true;
             // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.rb_ModeSwitchUse_1);
+            this.panel13.Controls.Add(this.lbl_ModeSwitchUse);
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Controls.Add(this.rb_ModeSwitchUse_0);
+            this.panel13.Location = new System.Drawing.Point(311, 238);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(4);
+            this.panel13.Size = new System.Drawing.Size(203, 105);
+            this.panel13.TabIndex = 1212;
+            // 
+            // rb_ModeSwitchUse_1
+            // 
+            this.rb_ModeSwitchUse_1.AutoSize = true;
+            this.rb_ModeSwitchUse_1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rb_ModeSwitchUse_1.Location = new System.Drawing.Point(99, 56);
+            this.rb_ModeSwitchUse_1.Name = "rb_ModeSwitchUse_1";
+            this.rb_ModeSwitchUse_1.Size = new System.Drawing.Size(47, 16);
+            this.rb_ModeSwitchUse_1.TabIndex = 3;
+            this.rb_ModeSwitchUse_1.TabStop = true;
+            this.rb_ModeSwitchUse_1.Text = "사용";
+            this.rb_ModeSwitchUse_1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_ModeSwitchUse
+            // 
+            this.lbl_ModeSwitchUse.BackColor = System.Drawing.Color.White;
+            this.lbl_ModeSwitchUse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_ModeSwitchUse.Location = new System.Drawing.Point(4, 24);
+            this.lbl_ModeSwitchUse.Name = "lbl_ModeSwitchUse";
+            this.lbl_ModeSwitchUse.Size = new System.Drawing.Size(193, 20);
+            this.lbl_ModeSwitchUse.TabIndex = 187;
+            this.lbl_ModeSwitchUse.Text = "-";
+            this.lbl_ModeSwitchUse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(4, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(193, 20);
+            this.label13.TabIndex = 188;
+            this.label13.Text = "모드 스위치 사용";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rb_ModeSwitchUse_0
+            // 
+            this.rb_ModeSwitchUse_0.AutoSize = true;
+            this.rb_ModeSwitchUse_0.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rb_ModeSwitchUse_0.Location = new System.Drawing.Point(21, 56);
+            this.rb_ModeSwitchUse_0.Name = "rb_ModeSwitchUse_0";
+            this.rb_ModeSwitchUse_0.Size = new System.Drawing.Size(59, 16);
+            this.rb_ModeSwitchUse_0.TabIndex = 2;
+            this.rb_ModeSwitchUse_0.TabStop = true;
+            this.rb_ModeSwitchUse_0.Text = "미사용";
+            this.rb_ModeSwitchUse_0.UseVisualStyleBackColor = true;
+            // 
             // Form_EMSConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 359);
+            this.ClientSize = new System.Drawing.Size(759, 356);
             this.ControlBox = false;
+            this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel12);
@@ -733,6 +799,8 @@ namespace VEXI
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -792,5 +860,10 @@ namespace VEXI
         private System.Windows.Forms.Label lbl_EMSCageType;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton rb_EMSCageType_1;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.RadioButton rb_ModeSwitchUse_1;
+        private System.Windows.Forms.Label lbl_ModeSwitchUse;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton rb_ModeSwitchUse_0;
     }
 }

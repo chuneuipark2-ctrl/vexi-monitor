@@ -103,6 +103,42 @@
     <Compile Include="Form_EMSParam_CTRL.Designer.cs">
       <DependentUpon>Form_EMSParam_CTRL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_EMSRack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EMSRack.Designer.cs">
+      <DependentUpon>Form_EMSRack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EMSSt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EMSSt.Designer.cs">
+      <DependentUpon>Form_EMSSt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EMSTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EMSTotal.Designer.cs">
+      <DependentUpon>Form_EMSTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EMS_CTL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EMS_CTL.Designer.cs">
+      <DependentUpon>Form_EMS_CTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MovexWCSMemoryMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MovexWCSMemoryMap.Designer.cs">
+      <DependentUpon>Form_MovexWCSMemoryMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RackInitial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RackInitial.Designer.cs">
+      <DependentUpon>Form_RackInitial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_RTVConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,11 +157,11 @@
     <Compile Include="Form_RTVFeedParam_Speed.Designer.cs">
       <DependentUpon>Form_RTVFeedParam_Speed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_RTVInvertorSt.cs">
+    <Compile Include="Form_EMSRTVInvertorSt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_RTVInvertorSt.Designer.cs">
-      <DependentUpon>Form_RTVInvertorSt.cs</DependentUpon>
+    <Compile Include="Form_EMSRTVInvertorSt.Designer.cs">
+      <DependentUpon>Form_EMSRTVInvertorSt.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_RTVParam_CTRL.cs">
       <SubType>Form</SubType>
@@ -241,12 +277,6 @@
     <Compile Include="Form_DevLog.Designer.cs">
       <DependentUpon>Form_DevLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_FunctionTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_FunctionTest.Designer.cs">
-      <DependentUpon>Form_FunctionTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_FWDownload.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +344,7 @@
       <DependentUpon>frameLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="ListViewNumberColumnSorter.cs" />
+    <Compile Include="LvScrollSyncclass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="uCommClass.cs" />
@@ -340,6 +371,27 @@
     <EmbeddedResource Include="Form_EMSParam_CTRL.resx">
       <DependentUpon>Form_EMSParam_CTRL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_EMSRack.resx">
+      <DependentUpon>Form_EMSRack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EMSSt.resx">
+      <DependentUpon>Form_EMSSt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EMSTotal.resx">
+      <DependentUpon>Form_EMSTotal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EMS_CTL.resx">
+      <DependentUpon>Form_EMS_CTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MovexWCSMemoryMap.resx">
+      <DependentUpon>Form_MovexWCSMemoryMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RackInitial.resx">
+      <DependentUpon>Form_RackInitial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_RTVConfig.resx">
       <DependentUpon>Form_RTVConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,8 +401,8 @@
     <EmbeddedResource Include="Form_RTVFeedParam_Speed.resx">
       <DependentUpon>Form_RTVFeedParam_Speed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_RTVInvertorSt.resx">
-      <DependentUpon>Form_RTVInvertorSt.cs</DependentUpon>
+    <EmbeddedResource Include="Form_EMSRTVInvertorSt.resx">
+      <DependentUpon>Form_EMSRTVInvertorSt.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_RTVParam_CTRL.resx">
@@ -414,9 +466,6 @@
     <EmbeddedResource Include="Form_DevLog.resx">
       <DependentUpon>Form_DevLog.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_FunctionTest.resx">
-      <DependentUpon>Form_FunctionTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_FWDownload.resx">
       <DependentUpon>Form_FWDownload.cs</DependentUpon>

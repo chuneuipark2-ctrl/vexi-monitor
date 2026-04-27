@@ -197,6 +197,7 @@ namespace VEXI
                     case 2: lbl_InvertorType.Text = "SIEMENS"; rb_InvertorType_2.Checked = true; break;
                     case 3: lbl_InvertorType.Text = "SEW Ver2"; rb_InvertorType_3.Checked = true; break;
                     case 4: lbl_InvertorType.Text = "SEW Ver2 (Anti-Sway)"; rb_InvertorType_4.Checked = true; break;
+                    case 5: lbl_InvertorType.Text = "SEW Ver2 (SEW Ver2(Sync-Travel)"; rb_InvertorType_5.Checked = true; break;
                     default: lbl_InvertorType.Text = ""; rb_InvertorType_1.Checked = true; break;
                 }
 
@@ -289,6 +290,13 @@ namespace VEXI
                                                         DevSt->DSPInstallInfoRec.DSP2_IP[3]);
                     ed_DSP2_IP.Text = lbl_DSP2_IP.Text;
                 }
+
+                switch (DevSt->ModeSwitchUse)
+                {
+                    case 0: lbl_ModeSwitchUse.Text = "미사용"; rb_ModeSwitchUse_0.Checked = true; break;
+                    case 1: lbl_ModeSwitchUse.Text = "사용"; rb_ModeSwitchUse_1.Checked = true; break;
+                    default: lbl_ModeSwitchUse.Text = "미사용"; rb_ModeSwitchUse_0.Checked = true; break;
+                }
             }
             btn_Set.Enabled = ((form_Main.COMMDataManager.DevRec.srm_REC_SRMSt.DevMode & 0x08) != 0);
         }
@@ -297,7 +305,7 @@ namespace VEXI
         {
             IPAddress ReturnIP;
 
-            srm_REC_DEVConfigCtrl.CtrlFlag[0] = 0x03;
+            srm_REC_DEVConfigCtrl.CtrlFlag[0] = 0x07;
             srm_REC_DEVConfigCtrl.CtrlFlag[1] = 0x00;
             srm_REC_DEVConfigCtrl.CtrlFlag[2] = 0x00;
 
@@ -313,7 +321,8 @@ namespace VEXI
             else if (rb_ForkDriveType_3.Checked) srm_REC_DEVConfigCtrl.Data.ForkDriveType = 3;
             else if (rb_ForkDriveType_2.Checked) srm_REC_DEVConfigCtrl.Data.ForkDriveType = 2;
             else srm_REC_DEVConfigCtrl.Data.ForkDriveType = 1;
-            if (rb_InvertorType_4.Checked) srm_REC_DEVConfigCtrl.Data.InvertorType = 4;
+            if (rb_InvertorType_5.Checked) srm_REC_DEVConfigCtrl.Data.InvertorType = 5;
+            else if (rb_InvertorType_4.Checked) srm_REC_DEVConfigCtrl.Data.InvertorType = 4;
             else if (rb_InvertorType_3.Checked) srm_REC_DEVConfigCtrl.Data.InvertorType = 3;
             else if (rb_InvertorType_2.Checked) srm_REC_DEVConfigCtrl.Data.InvertorType = 2;
             else srm_REC_DEVConfigCtrl.Data.InvertorType = 1;
@@ -367,6 +376,9 @@ namespace VEXI
                     }
                 }
             }
+
+            if (rb_ModeSwitchUse_1.Checked) srm_REC_DEVConfigCtrl.Data.ModeSwitchUse = 1;
+            else srm_REC_DEVConfigCtrl.Data.ModeSwitchUse = 0;
 
             if (!IsFileSave)
             {

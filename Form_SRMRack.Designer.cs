@@ -43,6 +43,7 @@ namespace VEXI
             this.ed_Level_Position_R = new System.Windows.Forms.TextBox();
             this.ed_Level_Position_L = new System.Windows.Forms.TextBox();
             this.ed_Bay_Position_R = new System.Windows.Forms.TextBox();
+            this.btn_CellPosition_FileWrite = new System.Windows.Forms.Button();
             this.ed_Bay_Position_L = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_Bay_Count = new System.Windows.Forms.Label();
@@ -73,9 +74,7 @@ namespace VEXI
             this.ed_Level_L_Ref = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
-            this.btn_CellPosition_Init = new System.Windows.Forms.Button();
             this.btn_CellPosition_FileRead = new System.Windows.Forms.Button();
-            this.btn_CellPosition_FileWrite = new System.Windows.Forms.Button();
             this.btn_CellPosition_Set = new System.Windows.Forms.Button();
             this.btn_CellPosition_Load = new System.Windows.Forms.Button();
             this.label49 = new System.Windows.Forms.Label();
@@ -92,7 +91,6 @@ namespace VEXI
             this.btn_LoadTotalFile3 = new System.Windows.Forms.Button();
             this.btn_SaveTotalFile3 = new System.Windows.Forms.Button();
             this.lblOffsetProgress = new System.Windows.Forms.Label();
-            this.btn_RackOffset_Init = new System.Windows.Forms.Button();
             this.label55 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.ed_Rack_Offset_7 = new System.Windows.Forms.TextBox();
@@ -134,6 +132,57 @@ namespace VEXI
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_Station = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ed_Station46_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station47_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station48_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station49_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station50_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station35_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station36_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station37_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station38_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station39_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station40_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station41_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station42_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station43_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station44_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station45_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station34_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station33_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station20_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station21_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station22_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station23_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station24_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station25_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station26_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station27_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station28_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station29_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station30_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station31_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station32_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station17_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station18_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station19_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.ed_Station1_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station2_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station3_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station4_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station5_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station6_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station7_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station8_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station9_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station10_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station11_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station12_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station13_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station14_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station15_OutInterlockIndex = new System.Windows.Forms.TextBox();
+            this.ed_Station16_OutInterlockIndex = new System.Windows.Forms.TextBox();
             this.panel155 = new System.Windows.Forms.Panel();
             this.cb_Station50_UseIsExistItem = new System.Windows.Forms.CheckBox();
             this.panel156 = new System.Windows.Forms.Panel();
@@ -1407,6 +1456,17 @@ namespace VEXI
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.tab_RackPost = new System.Windows.Forms.TabPage();
+            this.LvDI_cb_Item3 = new System.Windows.Forms.ComboBox();
+            this.LvDI_cb_Item2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.myListView1 = new InheritedListView.MyListView();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NoAnswerTimer = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -1575,6 +1635,7 @@ namespace VEXI
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel21.SuspendLayout();
+            this.tab_RackPost.SuspendLayout();
             this.panel107.SuspendLayout();
             this.panel108.SuspendLayout();
             this.SuspendLayout();
@@ -1584,12 +1645,13 @@ namespace VEXI
             this.tabControl1.Controls.Add(this.tab_RackPosition);
             this.tabControl1.Controls.Add(this.tab_RackOffset);
             this.tabControl1.Controls.Add(this.tab_Station);
+            this.tabControl1.Controls.Add(this.tab_RackPost);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(180, 20);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1269, 634);
+            this.tabControl1.Size = new System.Drawing.Size(1334, 643);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -1600,7 +1662,7 @@ namespace VEXI
             this.tab_RackPosition.Location = new System.Drawing.Point(4, 24);
             this.tab_RackPosition.Name = "tab_RackPosition";
             this.tab_RackPosition.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_RackPosition.Size = new System.Drawing.Size(1261, 606);
+            this.tab_RackPosition.Size = new System.Drawing.Size(1326, 615);
             this.tab_RackPosition.TabIndex = 1;
             this.tab_RackPosition.Text = "랙 설정";
             this.tab_RackPosition.UseVisualStyleBackColor = true;
@@ -1616,14 +1678,13 @@ namespace VEXI
             this.panel20.Controls.Add(this.ed_Level_Position_R);
             this.panel20.Controls.Add(this.ed_Level_Position_L);
             this.panel20.Controls.Add(this.ed_Bay_Position_R);
+            this.panel20.Controls.Add(this.btn_CellPosition_FileWrite);
             this.panel20.Controls.Add(this.ed_Bay_Position_L);
             this.panel20.Controls.Add(this.groupBox2);
             this.panel20.Controls.Add(this.btn_LoadTotalFile2);
             this.panel20.Controls.Add(this.btn_SaveTotalFile2);
             this.panel20.Controls.Add(this.groupBox9);
-            this.panel20.Controls.Add(this.btn_CellPosition_Init);
             this.panel20.Controls.Add(this.btn_CellPosition_FileRead);
-            this.panel20.Controls.Add(this.btn_CellPosition_FileWrite);
             this.panel20.Controls.Add(this.btn_CellPosition_Set);
             this.panel20.Controls.Add(this.btn_CellPosition_Load);
             this.panel20.Controls.Add(this.label49);
@@ -1632,7 +1693,7 @@ namespace VEXI
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1255, 600);
+            this.panel20.Size = new System.Drawing.Size(1320, 609);
             this.panel20.TabIndex = 429;
             // 
             // button5
@@ -1750,6 +1811,16 @@ namespace VEXI
             this.ed_Bay_Position_R.VisibleChanged += new System.EventHandler(this.ed_Bay_Position_L_VisibleChanged);
             this.ed_Bay_Position_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ed_Bay_Position_L_KeyPress);
             // 
+            // btn_CellPosition_FileWrite
+            // 
+            this.btn_CellPosition_FileWrite.Location = new System.Drawing.Point(255, 126);
+            this.btn_CellPosition_FileWrite.Name = "btn_CellPosition_FileWrite";
+            this.btn_CellPosition_FileWrite.Size = new System.Drawing.Size(154, 35);
+            this.btn_CellPosition_FileWrite.TabIndex = 432;
+            this.btn_CellPosition_FileWrite.Text = "CSV 파일로 저장";
+            this.btn_CellPosition_FileWrite.UseVisualStyleBackColor = true;
+            this.btn_CellPosition_FileWrite.Click += new System.EventHandler(this.btn_CellPosition_FileWrite_Click);
+            // 
             // ed_Bay_Position_L
             // 
             this.ed_Bay_Position_L.BackColor = System.Drawing.Color.White;
@@ -1774,7 +1845,7 @@ namespace VEXI
             this.groupBox2.Controls.Add(this.edPositionLevelCount);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Location = new System.Drawing.Point(22, 137);
+            this.groupBox2.Location = new System.Drawing.Point(22, 165);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(393, 112);
             this.groupBox2.TabIndex = 1223;
@@ -1906,7 +1977,7 @@ namespace VEXI
             this.groupBox9.Controls.Add(this.ed_Level_L_Ref);
             this.groupBox9.Controls.Add(this.label51);
             this.groupBox9.Controls.Add(this.label52);
-            this.groupBox9.Location = new System.Drawing.Point(22, 263);
+            this.groupBox9.Location = new System.Drawing.Point(22, 291);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(393, 202);
             this.groupBox9.TabIndex = 436;
@@ -2089,22 +2160,9 @@ namespace VEXI
             this.label52.Text = "Level 1";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_CellPosition_Init
-            // 
-            this.btn_CellPosition_Init.Enabled = false;
-            this.btn_CellPosition_Init.Location = new System.Drawing.Point(30, 486);
-            this.btn_CellPosition_Init.Name = "btn_CellPosition_Init";
-            this.btn_CellPosition_Init.Size = new System.Drawing.Size(189, 45);
-            this.btn_CellPosition_Init.TabIndex = 434;
-            this.btn_CellPosition_Init.TabStop = false;
-            this.btn_CellPosition_Init.Tag = "2";
-            this.btn_CellPosition_Init.Text = "랙설정 초기화 명령 전송";
-            this.btn_CellPosition_Init.UseVisualStyleBackColor = true;
-            this.btn_CellPosition_Init.Click += new System.EventHandler(this.btn_RackConfig_Init_Click);
-            // 
             // btn_CellPosition_FileRead
             // 
-            this.btn_CellPosition_FileRead.Location = new System.Drawing.Point(291, 471);
+            this.btn_CellPosition_FileRead.Location = new System.Drawing.Point(291, 499);
             this.btn_CellPosition_FileRead.Name = "btn_CellPosition_FileRead";
             this.btn_CellPosition_FileRead.Size = new System.Drawing.Size(42, 35);
             this.btn_CellPosition_FileRead.TabIndex = 433;
@@ -2112,17 +2170,6 @@ namespace VEXI
             this.btn_CellPosition_FileRead.UseVisualStyleBackColor = true;
             this.btn_CellPosition_FileRead.Visible = false;
             this.btn_CellPosition_FileRead.Click += new System.EventHandler(this.btn_CellPosition_FileRead_Click);
-            // 
-            // btn_CellPosition_FileWrite
-            // 
-            this.btn_CellPosition_FileWrite.Location = new System.Drawing.Point(291, 521);
-            this.btn_CellPosition_FileWrite.Name = "btn_CellPosition_FileWrite";
-            this.btn_CellPosition_FileWrite.Size = new System.Drawing.Size(42, 35);
-            this.btn_CellPosition_FileWrite.TabIndex = 432;
-            this.btn_CellPosition_FileWrite.Text = "파일로 저장";
-            this.btn_CellPosition_FileWrite.UseVisualStyleBackColor = true;
-            this.btn_CellPosition_FileWrite.Visible = false;
-            this.btn_CellPosition_FileWrite.Click += new System.EventHandler(this.btn_CellPosition_FileWrite_Click);
             // 
             // btn_CellPosition_Set
             // 
@@ -2155,7 +2202,7 @@ namespace VEXI
             this.label49.ForeColor = System.Drawing.Color.White;
             this.label49.Location = new System.Drawing.Point(0, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(1255, 30);
+            this.label49.Size = new System.Drawing.Size(1320, 30);
             this.label49.TabIndex = 426;
             this.label49.Text = "랙 설정";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2242,7 +2289,7 @@ namespace VEXI
             this.tab_RackOffset.Location = new System.Drawing.Point(4, 24);
             this.tab_RackOffset.Name = "tab_RackOffset";
             this.tab_RackOffset.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_RackOffset.Size = new System.Drawing.Size(1261, 606);
+            this.tab_RackOffset.Size = new System.Drawing.Size(1326, 615);
             this.tab_RackOffset.TabIndex = 4;
             this.tab_RackOffset.Text = "셀 오프셋 설정";
             this.tab_RackOffset.UseVisualStyleBackColor = true;
@@ -2254,7 +2301,6 @@ namespace VEXI
             this.panel19.Controls.Add(this.btn_LoadTotalFile3);
             this.panel19.Controls.Add(this.btn_SaveTotalFile3);
             this.panel19.Controls.Add(this.lblOffsetProgress);
-            this.panel19.Controls.Add(this.btn_RackOffset_Init);
             this.panel19.Controls.Add(this.label55);
             this.panel19.Controls.Add(this.progressBar1);
             this.panel19.Controls.Add(this.ed_Rack_Offset_7);
@@ -2273,7 +2319,7 @@ namespace VEXI
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(3, 3);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1255, 600);
+            this.panel19.Size = new System.Drawing.Size(1320, 609);
             this.panel19.TabIndex = 428;
             // 
             // btn_LoadTotalFile3
@@ -2308,19 +2354,6 @@ namespace VEXI
             this.lblOffsetProgress.Size = new System.Drawing.Size(23, 12);
             this.lblOffsetProgress.TabIndex = 447;
             this.lblOffsetProgress.Text = "0/0";
-            // 
-            // btn_RackOffset_Init
-            // 
-            this.btn_RackOffset_Init.Enabled = false;
-            this.btn_RackOffset_Init.Location = new System.Drawing.Point(32, 384);
-            this.btn_RackOffset_Init.Name = "btn_RackOffset_Init";
-            this.btn_RackOffset_Init.Size = new System.Drawing.Size(214, 35);
-            this.btn_RackOffset_Init.TabIndex = 433;
-            this.btn_RackOffset_Init.TabStop = false;
-            this.btn_RackOffset_Init.Tag = "1";
-            this.btn_RackOffset_Init.Text = "셀 오프셋 초기화 명령 전송";
-            this.btn_RackOffset_Init.UseVisualStyleBackColor = true;
-            this.btn_RackOffset_Init.Click += new System.EventHandler(this.btn_RackConfig_Init_Click);
             // 
             // label55
             // 
@@ -2659,7 +2692,7 @@ namespace VEXI
             this.label50.ForeColor = System.Drawing.Color.White;
             this.label50.Location = new System.Drawing.Point(0, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(1253, 30);
+            this.label50.Size = new System.Drawing.Size(1318, 30);
             this.label50.TabIndex = 427;
             this.label50.Text = "셀 오프셋 설정";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2743,7 +2776,7 @@ namespace VEXI
             this.tab_Station.Location = new System.Drawing.Point(4, 24);
             this.tab_Station.Name = "tab_Station";
             this.tab_Station.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Station.Size = new System.Drawing.Size(1261, 606);
+            this.tab_Station.Size = new System.Drawing.Size(1326, 615);
             this.tab_Station.TabIndex = 2;
             this.tab_Station.Text = "스테이션 설정";
             this.tab_Station.UseVisualStyleBackColor = true;
@@ -2752,6 +2785,57 @@ namespace VEXI
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.ed_Station46_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station47_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station48_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station49_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station50_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station35_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station36_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station37_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station38_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station39_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station40_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station41_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station42_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station43_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station44_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station45_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station34_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station33_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station20_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station21_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station22_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station23_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station24_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station25_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station26_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station27_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station28_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station29_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station30_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station31_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station32_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station17_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station18_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station19_OutInterlockIndex);
+            this.panel2.Controls.Add(this.label31);
+            this.panel2.Controls.Add(this.ed_Station1_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station2_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station3_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station4_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station5_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station6_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station7_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station8_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station9_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station10_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station11_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station12_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station13_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station14_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station15_OutInterlockIndex);
+            this.panel2.Controls.Add(this.ed_Station16_OutInterlockIndex);
             this.panel2.Controls.Add(this.panel155);
             this.panel2.Controls.Add(this.panel156);
             this.panel2.Controls.Add(this.panel139);
@@ -3325,8 +3409,520 @@ namespace VEXI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1255, 600);
+            this.panel2.Size = new System.Drawing.Size(1320, 609);
             this.panel2.TabIndex = 18;
+            // 
+            // ed_Station46_OutInterlockIndex
+            // 
+            this.ed_Station46_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1212);
+            this.ed_Station46_OutInterlockIndex.Name = "ed_Station46_OutInterlockIndex";
+            this.ed_Station46_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station46_OutInterlockIndex.TabIndex = 1843;
+            this.ed_Station46_OutInterlockIndex.Tag = "1";
+            this.ed_Station46_OutInterlockIndex.Text = "0";
+            this.ed_Station46_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station47_OutInterlockIndex
+            // 
+            this.ed_Station47_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1234);
+            this.ed_Station47_OutInterlockIndex.Name = "ed_Station47_OutInterlockIndex";
+            this.ed_Station47_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station47_OutInterlockIndex.TabIndex = 1844;
+            this.ed_Station47_OutInterlockIndex.Tag = "1";
+            this.ed_Station47_OutInterlockIndex.Text = "0";
+            this.ed_Station47_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station48_OutInterlockIndex
+            // 
+            this.ed_Station48_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1256);
+            this.ed_Station48_OutInterlockIndex.Name = "ed_Station48_OutInterlockIndex";
+            this.ed_Station48_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station48_OutInterlockIndex.TabIndex = 1845;
+            this.ed_Station48_OutInterlockIndex.Tag = "1";
+            this.ed_Station48_OutInterlockIndex.Text = "0";
+            this.ed_Station48_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station49_OutInterlockIndex
+            // 
+            this.ed_Station49_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1278);
+            this.ed_Station49_OutInterlockIndex.Name = "ed_Station49_OutInterlockIndex";
+            this.ed_Station49_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station49_OutInterlockIndex.TabIndex = 1846;
+            this.ed_Station49_OutInterlockIndex.Tag = "1";
+            this.ed_Station49_OutInterlockIndex.Text = "0";
+            this.ed_Station49_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station50_OutInterlockIndex
+            // 
+            this.ed_Station50_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1300);
+            this.ed_Station50_OutInterlockIndex.Name = "ed_Station50_OutInterlockIndex";
+            this.ed_Station50_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station50_OutInterlockIndex.TabIndex = 1847;
+            this.ed_Station50_OutInterlockIndex.Tag = "1";
+            this.ed_Station50_OutInterlockIndex.Text = "0";
+            this.ed_Station50_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station35_OutInterlockIndex
+            // 
+            this.ed_Station35_OutInterlockIndex.Location = new System.Drawing.Point(1244, 970);
+            this.ed_Station35_OutInterlockIndex.Name = "ed_Station35_OutInterlockIndex";
+            this.ed_Station35_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station35_OutInterlockIndex.TabIndex = 1832;
+            this.ed_Station35_OutInterlockIndex.Tag = "1";
+            this.ed_Station35_OutInterlockIndex.Text = "0";
+            this.ed_Station35_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station36_OutInterlockIndex
+            // 
+            this.ed_Station36_OutInterlockIndex.Location = new System.Drawing.Point(1244, 992);
+            this.ed_Station36_OutInterlockIndex.Name = "ed_Station36_OutInterlockIndex";
+            this.ed_Station36_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station36_OutInterlockIndex.TabIndex = 1833;
+            this.ed_Station36_OutInterlockIndex.Tag = "1";
+            this.ed_Station36_OutInterlockIndex.Text = "0";
+            this.ed_Station36_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station37_OutInterlockIndex
+            // 
+            this.ed_Station37_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1014);
+            this.ed_Station37_OutInterlockIndex.Name = "ed_Station37_OutInterlockIndex";
+            this.ed_Station37_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station37_OutInterlockIndex.TabIndex = 1834;
+            this.ed_Station37_OutInterlockIndex.Tag = "1";
+            this.ed_Station37_OutInterlockIndex.Text = "0";
+            this.ed_Station37_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station38_OutInterlockIndex
+            // 
+            this.ed_Station38_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1036);
+            this.ed_Station38_OutInterlockIndex.Name = "ed_Station38_OutInterlockIndex";
+            this.ed_Station38_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station38_OutInterlockIndex.TabIndex = 1835;
+            this.ed_Station38_OutInterlockIndex.Tag = "1";
+            this.ed_Station38_OutInterlockIndex.Text = "0";
+            this.ed_Station38_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station39_OutInterlockIndex
+            // 
+            this.ed_Station39_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1058);
+            this.ed_Station39_OutInterlockIndex.Name = "ed_Station39_OutInterlockIndex";
+            this.ed_Station39_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station39_OutInterlockIndex.TabIndex = 1836;
+            this.ed_Station39_OutInterlockIndex.Tag = "1";
+            this.ed_Station39_OutInterlockIndex.Text = "0";
+            this.ed_Station39_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station40_OutInterlockIndex
+            // 
+            this.ed_Station40_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1080);
+            this.ed_Station40_OutInterlockIndex.Name = "ed_Station40_OutInterlockIndex";
+            this.ed_Station40_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station40_OutInterlockIndex.TabIndex = 1837;
+            this.ed_Station40_OutInterlockIndex.Tag = "1";
+            this.ed_Station40_OutInterlockIndex.Text = "0";
+            this.ed_Station40_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station41_OutInterlockIndex
+            // 
+            this.ed_Station41_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1102);
+            this.ed_Station41_OutInterlockIndex.Name = "ed_Station41_OutInterlockIndex";
+            this.ed_Station41_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station41_OutInterlockIndex.TabIndex = 1838;
+            this.ed_Station41_OutInterlockIndex.Tag = "1";
+            this.ed_Station41_OutInterlockIndex.Text = "0";
+            this.ed_Station41_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station42_OutInterlockIndex
+            // 
+            this.ed_Station42_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1124);
+            this.ed_Station42_OutInterlockIndex.Name = "ed_Station42_OutInterlockIndex";
+            this.ed_Station42_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station42_OutInterlockIndex.TabIndex = 1839;
+            this.ed_Station42_OutInterlockIndex.Tag = "1";
+            this.ed_Station42_OutInterlockIndex.Text = "0";
+            this.ed_Station42_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station43_OutInterlockIndex
+            // 
+            this.ed_Station43_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1146);
+            this.ed_Station43_OutInterlockIndex.Name = "ed_Station43_OutInterlockIndex";
+            this.ed_Station43_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station43_OutInterlockIndex.TabIndex = 1840;
+            this.ed_Station43_OutInterlockIndex.Tag = "1";
+            this.ed_Station43_OutInterlockIndex.Text = "0";
+            this.ed_Station43_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station44_OutInterlockIndex
+            // 
+            this.ed_Station44_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1168);
+            this.ed_Station44_OutInterlockIndex.Name = "ed_Station44_OutInterlockIndex";
+            this.ed_Station44_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station44_OutInterlockIndex.TabIndex = 1841;
+            this.ed_Station44_OutInterlockIndex.Tag = "1";
+            this.ed_Station44_OutInterlockIndex.Text = "0";
+            this.ed_Station44_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station45_OutInterlockIndex
+            // 
+            this.ed_Station45_OutInterlockIndex.Location = new System.Drawing.Point(1244, 1190);
+            this.ed_Station45_OutInterlockIndex.Name = "ed_Station45_OutInterlockIndex";
+            this.ed_Station45_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station45_OutInterlockIndex.TabIndex = 1842;
+            this.ed_Station45_OutInterlockIndex.Tag = "1";
+            this.ed_Station45_OutInterlockIndex.Text = "0";
+            this.ed_Station45_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station34_OutInterlockIndex
+            // 
+            this.ed_Station34_OutInterlockIndex.Location = new System.Drawing.Point(1244, 948);
+            this.ed_Station34_OutInterlockIndex.Name = "ed_Station34_OutInterlockIndex";
+            this.ed_Station34_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station34_OutInterlockIndex.TabIndex = 1831;
+            this.ed_Station34_OutInterlockIndex.Tag = "1";
+            this.ed_Station34_OutInterlockIndex.Text = "0";
+            this.ed_Station34_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station33_OutInterlockIndex
+            // 
+            this.ed_Station33_OutInterlockIndex.Location = new System.Drawing.Point(1244, 926);
+            this.ed_Station33_OutInterlockIndex.Name = "ed_Station33_OutInterlockIndex";
+            this.ed_Station33_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station33_OutInterlockIndex.TabIndex = 1830;
+            this.ed_Station33_OutInterlockIndex.Tag = "1";
+            this.ed_Station33_OutInterlockIndex.Text = "0";
+            this.ed_Station33_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station20_OutInterlockIndex
+            // 
+            this.ed_Station20_OutInterlockIndex.Location = new System.Drawing.Point(1244, 640);
+            this.ed_Station20_OutInterlockIndex.Name = "ed_Station20_OutInterlockIndex";
+            this.ed_Station20_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station20_OutInterlockIndex.TabIndex = 1817;
+            this.ed_Station20_OutInterlockIndex.Tag = "1";
+            this.ed_Station20_OutInterlockIndex.Text = "0";
+            this.ed_Station20_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station21_OutInterlockIndex
+            // 
+            this.ed_Station21_OutInterlockIndex.Location = new System.Drawing.Point(1244, 662);
+            this.ed_Station21_OutInterlockIndex.Name = "ed_Station21_OutInterlockIndex";
+            this.ed_Station21_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station21_OutInterlockIndex.TabIndex = 1818;
+            this.ed_Station21_OutInterlockIndex.Tag = "1";
+            this.ed_Station21_OutInterlockIndex.Text = "0";
+            this.ed_Station21_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station22_OutInterlockIndex
+            // 
+            this.ed_Station22_OutInterlockIndex.Location = new System.Drawing.Point(1244, 684);
+            this.ed_Station22_OutInterlockIndex.Name = "ed_Station22_OutInterlockIndex";
+            this.ed_Station22_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station22_OutInterlockIndex.TabIndex = 1819;
+            this.ed_Station22_OutInterlockIndex.Tag = "1";
+            this.ed_Station22_OutInterlockIndex.Text = "0";
+            this.ed_Station22_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station23_OutInterlockIndex
+            // 
+            this.ed_Station23_OutInterlockIndex.Location = new System.Drawing.Point(1244, 706);
+            this.ed_Station23_OutInterlockIndex.Name = "ed_Station23_OutInterlockIndex";
+            this.ed_Station23_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station23_OutInterlockIndex.TabIndex = 1820;
+            this.ed_Station23_OutInterlockIndex.Tag = "1";
+            this.ed_Station23_OutInterlockIndex.Text = "0";
+            this.ed_Station23_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station24_OutInterlockIndex
+            // 
+            this.ed_Station24_OutInterlockIndex.Location = new System.Drawing.Point(1244, 728);
+            this.ed_Station24_OutInterlockIndex.Name = "ed_Station24_OutInterlockIndex";
+            this.ed_Station24_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station24_OutInterlockIndex.TabIndex = 1821;
+            this.ed_Station24_OutInterlockIndex.Tag = "1";
+            this.ed_Station24_OutInterlockIndex.Text = "0";
+            this.ed_Station24_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station25_OutInterlockIndex
+            // 
+            this.ed_Station25_OutInterlockIndex.Location = new System.Drawing.Point(1244, 750);
+            this.ed_Station25_OutInterlockIndex.Name = "ed_Station25_OutInterlockIndex";
+            this.ed_Station25_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station25_OutInterlockIndex.TabIndex = 1822;
+            this.ed_Station25_OutInterlockIndex.Tag = "1";
+            this.ed_Station25_OutInterlockIndex.Text = "0";
+            this.ed_Station25_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station26_OutInterlockIndex
+            // 
+            this.ed_Station26_OutInterlockIndex.Location = new System.Drawing.Point(1244, 772);
+            this.ed_Station26_OutInterlockIndex.Name = "ed_Station26_OutInterlockIndex";
+            this.ed_Station26_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station26_OutInterlockIndex.TabIndex = 1823;
+            this.ed_Station26_OutInterlockIndex.Tag = "1";
+            this.ed_Station26_OutInterlockIndex.Text = "0";
+            this.ed_Station26_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station27_OutInterlockIndex
+            // 
+            this.ed_Station27_OutInterlockIndex.Location = new System.Drawing.Point(1244, 794);
+            this.ed_Station27_OutInterlockIndex.Name = "ed_Station27_OutInterlockIndex";
+            this.ed_Station27_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station27_OutInterlockIndex.TabIndex = 1824;
+            this.ed_Station27_OutInterlockIndex.Tag = "1";
+            this.ed_Station27_OutInterlockIndex.Text = "0";
+            this.ed_Station27_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station28_OutInterlockIndex
+            // 
+            this.ed_Station28_OutInterlockIndex.Location = new System.Drawing.Point(1244, 816);
+            this.ed_Station28_OutInterlockIndex.Name = "ed_Station28_OutInterlockIndex";
+            this.ed_Station28_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station28_OutInterlockIndex.TabIndex = 1825;
+            this.ed_Station28_OutInterlockIndex.Tag = "1";
+            this.ed_Station28_OutInterlockIndex.Text = "0";
+            this.ed_Station28_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station29_OutInterlockIndex
+            // 
+            this.ed_Station29_OutInterlockIndex.Location = new System.Drawing.Point(1244, 838);
+            this.ed_Station29_OutInterlockIndex.Name = "ed_Station29_OutInterlockIndex";
+            this.ed_Station29_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station29_OutInterlockIndex.TabIndex = 1826;
+            this.ed_Station29_OutInterlockIndex.Tag = "1";
+            this.ed_Station29_OutInterlockIndex.Text = "0";
+            this.ed_Station29_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station30_OutInterlockIndex
+            // 
+            this.ed_Station30_OutInterlockIndex.Location = new System.Drawing.Point(1244, 860);
+            this.ed_Station30_OutInterlockIndex.Name = "ed_Station30_OutInterlockIndex";
+            this.ed_Station30_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station30_OutInterlockIndex.TabIndex = 1827;
+            this.ed_Station30_OutInterlockIndex.Tag = "1";
+            this.ed_Station30_OutInterlockIndex.Text = "0";
+            this.ed_Station30_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station31_OutInterlockIndex
+            // 
+            this.ed_Station31_OutInterlockIndex.Location = new System.Drawing.Point(1244, 882);
+            this.ed_Station31_OutInterlockIndex.Name = "ed_Station31_OutInterlockIndex";
+            this.ed_Station31_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station31_OutInterlockIndex.TabIndex = 1828;
+            this.ed_Station31_OutInterlockIndex.Tag = "1";
+            this.ed_Station31_OutInterlockIndex.Text = "0";
+            this.ed_Station31_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station32_OutInterlockIndex
+            // 
+            this.ed_Station32_OutInterlockIndex.Location = new System.Drawing.Point(1244, 904);
+            this.ed_Station32_OutInterlockIndex.Name = "ed_Station32_OutInterlockIndex";
+            this.ed_Station32_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station32_OutInterlockIndex.TabIndex = 1829;
+            this.ed_Station32_OutInterlockIndex.Tag = "1";
+            this.ed_Station32_OutInterlockIndex.Text = "0";
+            this.ed_Station32_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station17_OutInterlockIndex
+            // 
+            this.ed_Station17_OutInterlockIndex.Location = new System.Drawing.Point(1244, 574);
+            this.ed_Station17_OutInterlockIndex.Name = "ed_Station17_OutInterlockIndex";
+            this.ed_Station17_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station17_OutInterlockIndex.TabIndex = 1814;
+            this.ed_Station17_OutInterlockIndex.Tag = "1";
+            this.ed_Station17_OutInterlockIndex.Text = "0";
+            this.ed_Station17_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station18_OutInterlockIndex
+            // 
+            this.ed_Station18_OutInterlockIndex.Location = new System.Drawing.Point(1244, 596);
+            this.ed_Station18_OutInterlockIndex.Name = "ed_Station18_OutInterlockIndex";
+            this.ed_Station18_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station18_OutInterlockIndex.TabIndex = 1815;
+            this.ed_Station18_OutInterlockIndex.Tag = "1";
+            this.ed_Station18_OutInterlockIndex.Text = "0";
+            this.ed_Station18_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station19_OutInterlockIndex
+            // 
+            this.ed_Station19_OutInterlockIndex.Location = new System.Drawing.Point(1244, 618);
+            this.ed_Station19_OutInterlockIndex.Name = "ed_Station19_OutInterlockIndex";
+            this.ed_Station19_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station19_OutInterlockIndex.TabIndex = 1816;
+            this.ed_Station19_OutInterlockIndex.Tag = "1";
+            this.ed_Station19_OutInterlockIndex.Text = "0";
+            this.ed_Station19_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label31.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(1244, 160);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(52, 59);
+            this.label31.TabIndex = 1813;
+            this.label31.Text = "출고\r\n인터록\r\n번호";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_Station1_OutInterlockIndex
+            // 
+            this.ed_Station1_OutInterlockIndex.Location = new System.Drawing.Point(1244, 222);
+            this.ed_Station1_OutInterlockIndex.Name = "ed_Station1_OutInterlockIndex";
+            this.ed_Station1_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station1_OutInterlockIndex.TabIndex = 1797;
+            this.ed_Station1_OutInterlockIndex.Tag = "1";
+            this.ed_Station1_OutInterlockIndex.Text = "0";
+            this.ed_Station1_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station2_OutInterlockIndex
+            // 
+            this.ed_Station2_OutInterlockIndex.Location = new System.Drawing.Point(1244, 244);
+            this.ed_Station2_OutInterlockIndex.Name = "ed_Station2_OutInterlockIndex";
+            this.ed_Station2_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station2_OutInterlockIndex.TabIndex = 1798;
+            this.ed_Station2_OutInterlockIndex.Tag = "1";
+            this.ed_Station2_OutInterlockIndex.Text = "0";
+            this.ed_Station2_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station3_OutInterlockIndex
+            // 
+            this.ed_Station3_OutInterlockIndex.Location = new System.Drawing.Point(1244, 266);
+            this.ed_Station3_OutInterlockIndex.Name = "ed_Station3_OutInterlockIndex";
+            this.ed_Station3_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station3_OutInterlockIndex.TabIndex = 1799;
+            this.ed_Station3_OutInterlockIndex.Tag = "1";
+            this.ed_Station3_OutInterlockIndex.Text = "0";
+            this.ed_Station3_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station4_OutInterlockIndex
+            // 
+            this.ed_Station4_OutInterlockIndex.Location = new System.Drawing.Point(1244, 288);
+            this.ed_Station4_OutInterlockIndex.Name = "ed_Station4_OutInterlockIndex";
+            this.ed_Station4_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station4_OutInterlockIndex.TabIndex = 1800;
+            this.ed_Station4_OutInterlockIndex.Tag = "1";
+            this.ed_Station4_OutInterlockIndex.Text = "0";
+            this.ed_Station4_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station5_OutInterlockIndex
+            // 
+            this.ed_Station5_OutInterlockIndex.Location = new System.Drawing.Point(1244, 310);
+            this.ed_Station5_OutInterlockIndex.Name = "ed_Station5_OutInterlockIndex";
+            this.ed_Station5_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station5_OutInterlockIndex.TabIndex = 1801;
+            this.ed_Station5_OutInterlockIndex.Tag = "1";
+            this.ed_Station5_OutInterlockIndex.Text = "0";
+            this.ed_Station5_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station6_OutInterlockIndex
+            // 
+            this.ed_Station6_OutInterlockIndex.Location = new System.Drawing.Point(1244, 332);
+            this.ed_Station6_OutInterlockIndex.Name = "ed_Station6_OutInterlockIndex";
+            this.ed_Station6_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station6_OutInterlockIndex.TabIndex = 1802;
+            this.ed_Station6_OutInterlockIndex.Tag = "1";
+            this.ed_Station6_OutInterlockIndex.Text = "0";
+            this.ed_Station6_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station7_OutInterlockIndex
+            // 
+            this.ed_Station7_OutInterlockIndex.Location = new System.Drawing.Point(1244, 354);
+            this.ed_Station7_OutInterlockIndex.Name = "ed_Station7_OutInterlockIndex";
+            this.ed_Station7_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station7_OutInterlockIndex.TabIndex = 1803;
+            this.ed_Station7_OutInterlockIndex.Tag = "1";
+            this.ed_Station7_OutInterlockIndex.Text = "0";
+            this.ed_Station7_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station8_OutInterlockIndex
+            // 
+            this.ed_Station8_OutInterlockIndex.Location = new System.Drawing.Point(1244, 376);
+            this.ed_Station8_OutInterlockIndex.Name = "ed_Station8_OutInterlockIndex";
+            this.ed_Station8_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station8_OutInterlockIndex.TabIndex = 1804;
+            this.ed_Station8_OutInterlockIndex.Tag = "1";
+            this.ed_Station8_OutInterlockIndex.Text = "0";
+            this.ed_Station8_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station9_OutInterlockIndex
+            // 
+            this.ed_Station9_OutInterlockIndex.Location = new System.Drawing.Point(1244, 398);
+            this.ed_Station9_OutInterlockIndex.Name = "ed_Station9_OutInterlockIndex";
+            this.ed_Station9_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station9_OutInterlockIndex.TabIndex = 1805;
+            this.ed_Station9_OutInterlockIndex.Tag = "1";
+            this.ed_Station9_OutInterlockIndex.Text = "0";
+            this.ed_Station9_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station10_OutInterlockIndex
+            // 
+            this.ed_Station10_OutInterlockIndex.Location = new System.Drawing.Point(1244, 420);
+            this.ed_Station10_OutInterlockIndex.Name = "ed_Station10_OutInterlockIndex";
+            this.ed_Station10_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station10_OutInterlockIndex.TabIndex = 1806;
+            this.ed_Station10_OutInterlockIndex.Tag = "1";
+            this.ed_Station10_OutInterlockIndex.Text = "0";
+            this.ed_Station10_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station11_OutInterlockIndex
+            // 
+            this.ed_Station11_OutInterlockIndex.Location = new System.Drawing.Point(1244, 442);
+            this.ed_Station11_OutInterlockIndex.Name = "ed_Station11_OutInterlockIndex";
+            this.ed_Station11_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station11_OutInterlockIndex.TabIndex = 1807;
+            this.ed_Station11_OutInterlockIndex.Tag = "1";
+            this.ed_Station11_OutInterlockIndex.Text = "0";
+            this.ed_Station11_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station12_OutInterlockIndex
+            // 
+            this.ed_Station12_OutInterlockIndex.Location = new System.Drawing.Point(1244, 464);
+            this.ed_Station12_OutInterlockIndex.Name = "ed_Station12_OutInterlockIndex";
+            this.ed_Station12_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station12_OutInterlockIndex.TabIndex = 1808;
+            this.ed_Station12_OutInterlockIndex.Tag = "1";
+            this.ed_Station12_OutInterlockIndex.Text = "0";
+            this.ed_Station12_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station13_OutInterlockIndex
+            // 
+            this.ed_Station13_OutInterlockIndex.Location = new System.Drawing.Point(1244, 486);
+            this.ed_Station13_OutInterlockIndex.Name = "ed_Station13_OutInterlockIndex";
+            this.ed_Station13_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station13_OutInterlockIndex.TabIndex = 1809;
+            this.ed_Station13_OutInterlockIndex.Tag = "1";
+            this.ed_Station13_OutInterlockIndex.Text = "0";
+            this.ed_Station13_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station14_OutInterlockIndex
+            // 
+            this.ed_Station14_OutInterlockIndex.Location = new System.Drawing.Point(1244, 508);
+            this.ed_Station14_OutInterlockIndex.Name = "ed_Station14_OutInterlockIndex";
+            this.ed_Station14_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station14_OutInterlockIndex.TabIndex = 1810;
+            this.ed_Station14_OutInterlockIndex.Tag = "1";
+            this.ed_Station14_OutInterlockIndex.Text = "0";
+            this.ed_Station14_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station15_OutInterlockIndex
+            // 
+            this.ed_Station15_OutInterlockIndex.Location = new System.Drawing.Point(1244, 530);
+            this.ed_Station15_OutInterlockIndex.Name = "ed_Station15_OutInterlockIndex";
+            this.ed_Station15_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station15_OutInterlockIndex.TabIndex = 1811;
+            this.ed_Station15_OutInterlockIndex.Tag = "1";
+            this.ed_Station15_OutInterlockIndex.Text = "0";
+            this.ed_Station15_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ed_Station16_OutInterlockIndex
+            // 
+            this.ed_Station16_OutInterlockIndex.Location = new System.Drawing.Point(1244, 552);
+            this.ed_Station16_OutInterlockIndex.Name = "ed_Station16_OutInterlockIndex";
+            this.ed_Station16_OutInterlockIndex.Size = new System.Drawing.Size(52, 21);
+            this.ed_Station16_OutInterlockIndex.TabIndex = 1812;
+            this.ed_Station16_OutInterlockIndex.Tag = "1";
+            this.ed_Station16_OutInterlockIndex.Text = "0";
+            this.ed_Station16_OutInterlockIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel155
             // 
@@ -3341,9 +3937,9 @@ namespace VEXI
             this.cb_Station50_UseIsExistItem.AutoSize = true;
             this.cb_Station50_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station50_UseIsExistItem.Name = "cb_Station50_UseIsExistItem";
-            this.cb_Station50_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station50_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station50_UseIsExistItem.TabIndex = 293;
-            this.cb_Station50_UseIsExistItem.Text = "사용";
+            this.cb_Station50_UseIsExistItem.Text = "미사용";
             this.cb_Station50_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel156
@@ -3359,9 +3955,9 @@ namespace VEXI
             this.cb_Station49_UseIsExistItem.AutoSize = true;
             this.cb_Station49_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station49_UseIsExistItem.Name = "cb_Station49_UseIsExistItem";
-            this.cb_Station49_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station49_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station49_UseIsExistItem.TabIndex = 293;
-            this.cb_Station49_UseIsExistItem.Text = "사용";
+            this.cb_Station49_UseIsExistItem.Text = "미사용";
             this.cb_Station49_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel139
@@ -3377,9 +3973,9 @@ namespace VEXI
             this.cb_Station48_UseIsExistItem.AutoSize = true;
             this.cb_Station48_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station48_UseIsExistItem.Name = "cb_Station48_UseIsExistItem";
-            this.cb_Station48_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station48_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station48_UseIsExistItem.TabIndex = 293;
-            this.cb_Station48_UseIsExistItem.Text = "사용";
+            this.cb_Station48_UseIsExistItem.Text = "미사용";
             this.cb_Station48_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel140
@@ -3395,9 +3991,9 @@ namespace VEXI
             this.cb_Station47_UseIsExistItem.AutoSize = true;
             this.cb_Station47_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station47_UseIsExistItem.Name = "cb_Station47_UseIsExistItem";
-            this.cb_Station47_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station47_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station47_UseIsExistItem.TabIndex = 293;
-            this.cb_Station47_UseIsExistItem.Text = "사용";
+            this.cb_Station47_UseIsExistItem.Text = "미사용";
             this.cb_Station47_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel141
@@ -3413,9 +4009,9 @@ namespace VEXI
             this.cb_Station46_UseIsExistItem.AutoSize = true;
             this.cb_Station46_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station46_UseIsExistItem.Name = "cb_Station46_UseIsExistItem";
-            this.cb_Station46_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station46_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station46_UseIsExistItem.TabIndex = 293;
-            this.cb_Station46_UseIsExistItem.Text = "사용";
+            this.cb_Station46_UseIsExistItem.Text = "미사용";
             this.cb_Station46_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel142
@@ -3431,9 +4027,9 @@ namespace VEXI
             this.cb_Station45_UseIsExistItem.AutoSize = true;
             this.cb_Station45_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station45_UseIsExistItem.Name = "cb_Station45_UseIsExistItem";
-            this.cb_Station45_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station45_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station45_UseIsExistItem.TabIndex = 293;
-            this.cb_Station45_UseIsExistItem.Text = "사용";
+            this.cb_Station45_UseIsExistItem.Text = "미사용";
             this.cb_Station45_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel143
@@ -3449,9 +4045,9 @@ namespace VEXI
             this.cb_Station44_UseIsExistItem.AutoSize = true;
             this.cb_Station44_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station44_UseIsExistItem.Name = "cb_Station44_UseIsExistItem";
-            this.cb_Station44_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station44_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station44_UseIsExistItem.TabIndex = 293;
-            this.cb_Station44_UseIsExistItem.Text = "사용";
+            this.cb_Station44_UseIsExistItem.Text = "미사용";
             this.cb_Station44_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel144
@@ -3467,9 +4063,9 @@ namespace VEXI
             this.cb_Station43_UseIsExistItem.AutoSize = true;
             this.cb_Station43_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station43_UseIsExistItem.Name = "cb_Station43_UseIsExistItem";
-            this.cb_Station43_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station43_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station43_UseIsExistItem.TabIndex = 293;
-            this.cb_Station43_UseIsExistItem.Text = "사용";
+            this.cb_Station43_UseIsExistItem.Text = "미사용";
             this.cb_Station43_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel145
@@ -3485,9 +4081,9 @@ namespace VEXI
             this.cb_Station42_UseIsExistItem.AutoSize = true;
             this.cb_Station42_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station42_UseIsExistItem.Name = "cb_Station42_UseIsExistItem";
-            this.cb_Station42_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station42_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station42_UseIsExistItem.TabIndex = 293;
-            this.cb_Station42_UseIsExistItem.Text = "사용";
+            this.cb_Station42_UseIsExistItem.Text = "미사용";
             this.cb_Station42_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel146
@@ -3503,9 +4099,9 @@ namespace VEXI
             this.cb_Station41_UseIsExistItem.AutoSize = true;
             this.cb_Station41_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station41_UseIsExistItem.Name = "cb_Station41_UseIsExistItem";
-            this.cb_Station41_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station41_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station41_UseIsExistItem.TabIndex = 293;
-            this.cb_Station41_UseIsExistItem.Text = "사용";
+            this.cb_Station41_UseIsExistItem.Text = "미사용";
             this.cb_Station41_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel147
@@ -3521,9 +4117,9 @@ namespace VEXI
             this.cb_Station40_UseIsExistItem.AutoSize = true;
             this.cb_Station40_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station40_UseIsExistItem.Name = "cb_Station40_UseIsExistItem";
-            this.cb_Station40_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station40_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station40_UseIsExistItem.TabIndex = 293;
-            this.cb_Station40_UseIsExistItem.Text = "사용";
+            this.cb_Station40_UseIsExistItem.Text = "미사용";
             this.cb_Station40_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel148
@@ -3539,9 +4135,9 @@ namespace VEXI
             this.cb_Station39_UseIsExistItem.AutoSize = true;
             this.cb_Station39_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station39_UseIsExistItem.Name = "cb_Station39_UseIsExistItem";
-            this.cb_Station39_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station39_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station39_UseIsExistItem.TabIndex = 293;
-            this.cb_Station39_UseIsExistItem.Text = "사용";
+            this.cb_Station39_UseIsExistItem.Text = "미사용";
             this.cb_Station39_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel149
@@ -3557,9 +4153,9 @@ namespace VEXI
             this.cb_Station38_UseIsExistItem.AutoSize = true;
             this.cb_Station38_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station38_UseIsExistItem.Name = "cb_Station38_UseIsExistItem";
-            this.cb_Station38_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station38_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station38_UseIsExistItem.TabIndex = 293;
-            this.cb_Station38_UseIsExistItem.Text = "사용";
+            this.cb_Station38_UseIsExistItem.Text = "미사용";
             this.cb_Station38_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel150
@@ -3575,9 +4171,9 @@ namespace VEXI
             this.cb_Station37_UseIsExistItem.AutoSize = true;
             this.cb_Station37_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station37_UseIsExistItem.Name = "cb_Station37_UseIsExistItem";
-            this.cb_Station37_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station37_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station37_UseIsExistItem.TabIndex = 293;
-            this.cb_Station37_UseIsExistItem.Text = "사용";
+            this.cb_Station37_UseIsExistItem.Text = "미사용";
             this.cb_Station37_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel151
@@ -3593,9 +4189,9 @@ namespace VEXI
             this.cb_Station36_UseIsExistItem.AutoSize = true;
             this.cb_Station36_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station36_UseIsExistItem.Name = "cb_Station36_UseIsExistItem";
-            this.cb_Station36_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station36_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station36_UseIsExistItem.TabIndex = 293;
-            this.cb_Station36_UseIsExistItem.Text = "사용";
+            this.cb_Station36_UseIsExistItem.Text = "미사용";
             this.cb_Station36_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel152
@@ -3611,9 +4207,9 @@ namespace VEXI
             this.cb_Station35_UseIsExistItem.AutoSize = true;
             this.cb_Station35_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station35_UseIsExistItem.Name = "cb_Station35_UseIsExistItem";
-            this.cb_Station35_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station35_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station35_UseIsExistItem.TabIndex = 293;
-            this.cb_Station35_UseIsExistItem.Text = "사용";
+            this.cb_Station35_UseIsExistItem.Text = "미사용";
             this.cb_Station35_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel153
@@ -3629,9 +4225,9 @@ namespace VEXI
             this.cb_Station34_UseIsExistItem.AutoSize = true;
             this.cb_Station34_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station34_UseIsExistItem.Name = "cb_Station34_UseIsExistItem";
-            this.cb_Station34_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station34_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station34_UseIsExistItem.TabIndex = 293;
-            this.cb_Station34_UseIsExistItem.Text = "사용";
+            this.cb_Station34_UseIsExistItem.Text = "미사용";
             this.cb_Station34_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel154
@@ -3647,9 +4243,9 @@ namespace VEXI
             this.cb_Station33_UseIsExistItem.AutoSize = true;
             this.cb_Station33_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station33_UseIsExistItem.Name = "cb_Station33_UseIsExistItem";
-            this.cb_Station33_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station33_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station33_UseIsExistItem.TabIndex = 293;
-            this.cb_Station33_UseIsExistItem.Text = "사용";
+            this.cb_Station33_UseIsExistItem.Text = "미사용";
             this.cb_Station33_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel123
@@ -3665,9 +4261,9 @@ namespace VEXI
             this.cb_Station32_UseIsExistItem.AutoSize = true;
             this.cb_Station32_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station32_UseIsExistItem.Name = "cb_Station32_UseIsExistItem";
-            this.cb_Station32_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station32_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station32_UseIsExistItem.TabIndex = 293;
-            this.cb_Station32_UseIsExistItem.Text = "사용";
+            this.cb_Station32_UseIsExistItem.Text = "미사용";
             this.cb_Station32_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel124
@@ -3683,9 +4279,9 @@ namespace VEXI
             this.cb_Station31_UseIsExistItem.AutoSize = true;
             this.cb_Station31_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station31_UseIsExistItem.Name = "cb_Station31_UseIsExistItem";
-            this.cb_Station31_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station31_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station31_UseIsExistItem.TabIndex = 293;
-            this.cb_Station31_UseIsExistItem.Text = "사용";
+            this.cb_Station31_UseIsExistItem.Text = "미사용";
             this.cb_Station31_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel125
@@ -3701,9 +4297,9 @@ namespace VEXI
             this.cb_Station30_UseIsExistItem.AutoSize = true;
             this.cb_Station30_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station30_UseIsExistItem.Name = "cb_Station30_UseIsExistItem";
-            this.cb_Station30_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station30_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station30_UseIsExistItem.TabIndex = 293;
-            this.cb_Station30_UseIsExistItem.Text = "사용";
+            this.cb_Station30_UseIsExistItem.Text = "미사용";
             this.cb_Station30_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel126
@@ -3719,9 +4315,9 @@ namespace VEXI
             this.cb_Station29_UseIsExistItem.AutoSize = true;
             this.cb_Station29_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station29_UseIsExistItem.Name = "cb_Station29_UseIsExistItem";
-            this.cb_Station29_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station29_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station29_UseIsExistItem.TabIndex = 293;
-            this.cb_Station29_UseIsExistItem.Text = "사용";
+            this.cb_Station29_UseIsExistItem.Text = "미사용";
             this.cb_Station29_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel127
@@ -3737,9 +4333,9 @@ namespace VEXI
             this.cb_Station28_UseIsExistItem.AutoSize = true;
             this.cb_Station28_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station28_UseIsExistItem.Name = "cb_Station28_UseIsExistItem";
-            this.cb_Station28_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station28_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station28_UseIsExistItem.TabIndex = 293;
-            this.cb_Station28_UseIsExistItem.Text = "사용";
+            this.cb_Station28_UseIsExistItem.Text = "미사용";
             this.cb_Station28_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel128
@@ -3755,9 +4351,9 @@ namespace VEXI
             this.cb_Station27_UseIsExistItem.AutoSize = true;
             this.cb_Station27_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station27_UseIsExistItem.Name = "cb_Station27_UseIsExistItem";
-            this.cb_Station27_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station27_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station27_UseIsExistItem.TabIndex = 293;
-            this.cb_Station27_UseIsExistItem.Text = "사용";
+            this.cb_Station27_UseIsExistItem.Text = "미사용";
             this.cb_Station27_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel129
@@ -3773,9 +4369,9 @@ namespace VEXI
             this.cb_Station26_UseIsExistItem.AutoSize = true;
             this.cb_Station26_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station26_UseIsExistItem.Name = "cb_Station26_UseIsExistItem";
-            this.cb_Station26_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station26_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station26_UseIsExistItem.TabIndex = 293;
-            this.cb_Station26_UseIsExistItem.Text = "사용";
+            this.cb_Station26_UseIsExistItem.Text = "미사용";
             this.cb_Station26_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel130
@@ -3791,9 +4387,9 @@ namespace VEXI
             this.cb_Station25_UseIsExistItem.AutoSize = true;
             this.cb_Station25_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station25_UseIsExistItem.Name = "cb_Station25_UseIsExistItem";
-            this.cb_Station25_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station25_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station25_UseIsExistItem.TabIndex = 293;
-            this.cb_Station25_UseIsExistItem.Text = "사용";
+            this.cb_Station25_UseIsExistItem.Text = "미사용";
             this.cb_Station25_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel131
@@ -3809,9 +4405,9 @@ namespace VEXI
             this.cb_Station24_UseIsExistItem.AutoSize = true;
             this.cb_Station24_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station24_UseIsExistItem.Name = "cb_Station24_UseIsExistItem";
-            this.cb_Station24_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station24_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station24_UseIsExistItem.TabIndex = 293;
-            this.cb_Station24_UseIsExistItem.Text = "사용";
+            this.cb_Station24_UseIsExistItem.Text = "미사용";
             this.cb_Station24_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel132
@@ -3827,9 +4423,9 @@ namespace VEXI
             this.cb_Station23_UseIsExistItem.AutoSize = true;
             this.cb_Station23_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station23_UseIsExistItem.Name = "cb_Station23_UseIsExistItem";
-            this.cb_Station23_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station23_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station23_UseIsExistItem.TabIndex = 293;
-            this.cb_Station23_UseIsExistItem.Text = "사용";
+            this.cb_Station23_UseIsExistItem.Text = "미사용";
             this.cb_Station23_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel133
@@ -3845,9 +4441,9 @@ namespace VEXI
             this.cb_Station22_UseIsExistItem.AutoSize = true;
             this.cb_Station22_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station22_UseIsExistItem.Name = "cb_Station22_UseIsExistItem";
-            this.cb_Station22_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station22_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station22_UseIsExistItem.TabIndex = 293;
-            this.cb_Station22_UseIsExistItem.Text = "사용";
+            this.cb_Station22_UseIsExistItem.Text = "미사용";
             this.cb_Station22_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel134
@@ -3863,9 +4459,9 @@ namespace VEXI
             this.cb_Station21_UseIsExistItem.AutoSize = true;
             this.cb_Station21_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station21_UseIsExistItem.Name = "cb_Station21_UseIsExistItem";
-            this.cb_Station21_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station21_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station21_UseIsExistItem.TabIndex = 293;
-            this.cb_Station21_UseIsExistItem.Text = "사용";
+            this.cb_Station21_UseIsExistItem.Text = "미사용";
             this.cb_Station21_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel135
@@ -3881,9 +4477,9 @@ namespace VEXI
             this.cb_Station20_UseIsExistItem.AutoSize = true;
             this.cb_Station20_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station20_UseIsExistItem.Name = "cb_Station20_UseIsExistItem";
-            this.cb_Station20_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station20_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station20_UseIsExistItem.TabIndex = 293;
-            this.cb_Station20_UseIsExistItem.Text = "사용";
+            this.cb_Station20_UseIsExistItem.Text = "미사용";
             this.cb_Station20_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel136
@@ -3899,9 +4495,9 @@ namespace VEXI
             this.cb_Station19_UseIsExistItem.AutoSize = true;
             this.cb_Station19_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station19_UseIsExistItem.Name = "cb_Station19_UseIsExistItem";
-            this.cb_Station19_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station19_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station19_UseIsExistItem.TabIndex = 293;
-            this.cb_Station19_UseIsExistItem.Text = "사용";
+            this.cb_Station19_UseIsExistItem.Text = "미사용";
             this.cb_Station19_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel137
@@ -3917,9 +4513,9 @@ namespace VEXI
             this.cb_Station18_UseIsExistItem.AutoSize = true;
             this.cb_Station18_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station18_UseIsExistItem.Name = "cb_Station18_UseIsExistItem";
-            this.cb_Station18_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station18_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station18_UseIsExistItem.TabIndex = 293;
-            this.cb_Station18_UseIsExistItem.Text = "사용";
+            this.cb_Station18_UseIsExistItem.Text = "미사용";
             this.cb_Station18_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel138
@@ -3935,9 +4531,9 @@ namespace VEXI
             this.cb_Station17_UseIsExistItem.AutoSize = true;
             this.cb_Station17_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station17_UseIsExistItem.Name = "cb_Station17_UseIsExistItem";
-            this.cb_Station17_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station17_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station17_UseIsExistItem.TabIndex = 293;
-            this.cb_Station17_UseIsExistItem.Text = "사용";
+            this.cb_Station17_UseIsExistItem.Text = "미사용";
             this.cb_Station17_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel115
@@ -3953,9 +4549,9 @@ namespace VEXI
             this.cb_Station16_UseIsExistItem.AutoSize = true;
             this.cb_Station16_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station16_UseIsExistItem.Name = "cb_Station16_UseIsExistItem";
-            this.cb_Station16_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station16_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station16_UseIsExistItem.TabIndex = 293;
-            this.cb_Station16_UseIsExistItem.Text = "사용";
+            this.cb_Station16_UseIsExistItem.Text = "미사용";
             this.cb_Station16_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel116
@@ -3971,9 +4567,9 @@ namespace VEXI
             this.cb_Station15_UseIsExistItem.AutoSize = true;
             this.cb_Station15_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station15_UseIsExistItem.Name = "cb_Station15_UseIsExistItem";
-            this.cb_Station15_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station15_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station15_UseIsExistItem.TabIndex = 293;
-            this.cb_Station15_UseIsExistItem.Text = "사용";
+            this.cb_Station15_UseIsExistItem.Text = "미사용";
             this.cb_Station15_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel117
@@ -3989,9 +4585,9 @@ namespace VEXI
             this.cb_Station14_UseIsExistItem.AutoSize = true;
             this.cb_Station14_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station14_UseIsExistItem.Name = "cb_Station14_UseIsExistItem";
-            this.cb_Station14_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station14_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station14_UseIsExistItem.TabIndex = 293;
-            this.cb_Station14_UseIsExistItem.Text = "사용";
+            this.cb_Station14_UseIsExistItem.Text = "미사용";
             this.cb_Station14_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel118
@@ -4007,9 +4603,9 @@ namespace VEXI
             this.cb_Station13_UseIsExistItem.AutoSize = true;
             this.cb_Station13_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station13_UseIsExistItem.Name = "cb_Station13_UseIsExistItem";
-            this.cb_Station13_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station13_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station13_UseIsExistItem.TabIndex = 293;
-            this.cb_Station13_UseIsExistItem.Text = "사용";
+            this.cb_Station13_UseIsExistItem.Text = "미사용";
             this.cb_Station13_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel119
@@ -4025,9 +4621,9 @@ namespace VEXI
             this.cb_Station12_UseIsExistItem.AutoSize = true;
             this.cb_Station12_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station12_UseIsExistItem.Name = "cb_Station12_UseIsExistItem";
-            this.cb_Station12_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station12_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station12_UseIsExistItem.TabIndex = 293;
-            this.cb_Station12_UseIsExistItem.Text = "사용";
+            this.cb_Station12_UseIsExistItem.Text = "미사용";
             this.cb_Station12_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel120
@@ -4043,9 +4639,9 @@ namespace VEXI
             this.cb_Station11_UseIsExistItem.AutoSize = true;
             this.cb_Station11_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station11_UseIsExistItem.Name = "cb_Station11_UseIsExistItem";
-            this.cb_Station11_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station11_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station11_UseIsExistItem.TabIndex = 293;
-            this.cb_Station11_UseIsExistItem.Text = "사용";
+            this.cb_Station11_UseIsExistItem.Text = "미사용";
             this.cb_Station11_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel121
@@ -4061,9 +4657,9 @@ namespace VEXI
             this.cb_Station10_UseIsExistItem.AutoSize = true;
             this.cb_Station10_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station10_UseIsExistItem.Name = "cb_Station10_UseIsExistItem";
-            this.cb_Station10_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station10_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station10_UseIsExistItem.TabIndex = 293;
-            this.cb_Station10_UseIsExistItem.Text = "사용";
+            this.cb_Station10_UseIsExistItem.Text = "미사용";
             this.cb_Station10_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel122
@@ -4079,9 +4675,9 @@ namespace VEXI
             this.cb_Station9_UseIsExistItem.AutoSize = true;
             this.cb_Station9_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station9_UseIsExistItem.Name = "cb_Station9_UseIsExistItem";
-            this.cb_Station9_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station9_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station9_UseIsExistItem.TabIndex = 293;
-            this.cb_Station9_UseIsExistItem.Text = "사용";
+            this.cb_Station9_UseIsExistItem.Text = "미사용";
             this.cb_Station9_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel111
@@ -4097,9 +4693,9 @@ namespace VEXI
             this.cb_Station8_UseIsExistItem.AutoSize = true;
             this.cb_Station8_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station8_UseIsExistItem.Name = "cb_Station8_UseIsExistItem";
-            this.cb_Station8_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station8_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station8_UseIsExistItem.TabIndex = 293;
-            this.cb_Station8_UseIsExistItem.Text = "사용";
+            this.cb_Station8_UseIsExistItem.Text = "미사용";
             this.cb_Station8_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel112
@@ -4115,9 +4711,9 @@ namespace VEXI
             this.cb_Station7_UseIsExistItem.AutoSize = true;
             this.cb_Station7_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station7_UseIsExistItem.Name = "cb_Station7_UseIsExistItem";
-            this.cb_Station7_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station7_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station7_UseIsExistItem.TabIndex = 293;
-            this.cb_Station7_UseIsExistItem.Text = "사용";
+            this.cb_Station7_UseIsExistItem.Text = "미사용";
             this.cb_Station7_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel113
@@ -4133,9 +4729,9 @@ namespace VEXI
             this.cb_Station6_UseIsExistItem.AutoSize = true;
             this.cb_Station6_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station6_UseIsExistItem.Name = "cb_Station6_UseIsExistItem";
-            this.cb_Station6_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station6_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station6_UseIsExistItem.TabIndex = 293;
-            this.cb_Station6_UseIsExistItem.Text = "사용";
+            this.cb_Station6_UseIsExistItem.Text = "미사용";
             this.cb_Station6_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel114
@@ -4151,9 +4747,9 @@ namespace VEXI
             this.cb_Station5_UseIsExistItem.AutoSize = true;
             this.cb_Station5_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station5_UseIsExistItem.Name = "cb_Station5_UseIsExistItem";
-            this.cb_Station5_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station5_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station5_UseIsExistItem.TabIndex = 293;
-            this.cb_Station5_UseIsExistItem.Text = "사용";
+            this.cb_Station5_UseIsExistItem.Text = "미사용";
             this.cb_Station5_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel109
@@ -4169,9 +4765,9 @@ namespace VEXI
             this.cb_Station4_UseIsExistItem.AutoSize = true;
             this.cb_Station4_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station4_UseIsExistItem.Name = "cb_Station4_UseIsExistItem";
-            this.cb_Station4_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station4_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station4_UseIsExistItem.TabIndex = 293;
-            this.cb_Station4_UseIsExistItem.Text = "사용";
+            this.cb_Station4_UseIsExistItem.Text = "미사용";
             this.cb_Station4_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel110
@@ -4187,9 +4783,9 @@ namespace VEXI
             this.cb_Station3_UseIsExistItem.AutoSize = true;
             this.cb_Station3_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station3_UseIsExistItem.Name = "cb_Station3_UseIsExistItem";
-            this.cb_Station3_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station3_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station3_UseIsExistItem.TabIndex = 293;
-            this.cb_Station3_UseIsExistItem.Text = "사용";
+            this.cb_Station3_UseIsExistItem.Text = "미사용";
             this.cb_Station3_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // panel53
@@ -4205,9 +4801,9 @@ namespace VEXI
             this.cb_Station2_UseIsExistItem.AutoSize = true;
             this.cb_Station2_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station2_UseIsExistItem.Name = "cb_Station2_UseIsExistItem";
-            this.cb_Station2_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station2_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station2_UseIsExistItem.TabIndex = 293;
-            this.cb_Station2_UseIsExistItem.Text = "사용";
+            this.cb_Station2_UseIsExistItem.Text = "미사용";
             this.cb_Station2_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // label27
@@ -4235,9 +4831,9 @@ namespace VEXI
             this.cb_Station1_UseIsExistItem.AutoSize = true;
             this.cb_Station1_UseIsExistItem.Location = new System.Drawing.Point(5, 3);
             this.cb_Station1_UseIsExistItem.Name = "cb_Station1_UseIsExistItem";
-            this.cb_Station1_UseIsExistItem.Size = new System.Drawing.Size(48, 16);
+            this.cb_Station1_UseIsExistItem.Size = new System.Drawing.Size(60, 16);
             this.cb_Station1_UseIsExistItem.TabIndex = 293;
-            this.cb_Station1_UseIsExistItem.Text = "사용";
+            this.cb_Station1_UseIsExistItem.Text = "미사용";
             this.cb_Station1_UseIsExistItem.UseVisualStyleBackColor = true;
             // 
             // ed_Station50_DelayTime
@@ -12739,7 +13335,7 @@ namespace VEXI
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(52, 59);
             this.label74.TabIndex = 730;
-            this.label74.Text = "인터록\r\n번호";
+            this.label74.Text = "입고\r\n인터록\r\n번호";
             this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ed_Station1_InterlockIndex
@@ -12965,7 +13561,7 @@ namespace VEXI
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(1241, 30);
+            this.label9.Size = new System.Drawing.Size(1301, 30);
             this.label9.TabIndex = 662;
             this.label9.Text = "스테이션 설정";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -16695,6 +17291,158 @@ namespace VEXI
             this.label37.Text = "No";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tab_RackPost
+            // 
+            this.tab_RackPost.Controls.Add(this.LvDI_cb_Item3);
+            this.tab_RackPost.Controls.Add(this.LvDI_cb_Item2);
+            this.tab_RackPost.Controls.Add(this.button1);
+            this.tab_RackPost.Controls.Add(this.button2);
+            this.tab_RackPost.Controls.Add(this.button4);
+            this.tab_RackPost.Controls.Add(this.button6);
+            this.tab_RackPost.Controls.Add(this.myListView1);
+            this.tab_RackPost.Location = new System.Drawing.Point(4, 24);
+            this.tab_RackPost.Name = "tab_RackPost";
+            this.tab_RackPost.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_RackPost.Size = new System.Drawing.Size(1326, 615);
+            this.tab_RackPost.TabIndex = 5;
+            this.tab_RackPost.Text = "랙포스트 감지 설정";
+            this.tab_RackPost.UseVisualStyleBackColor = true;
+            // 
+            // LvDI_cb_Item3
+            // 
+            this.LvDI_cb_Item3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LvDI_cb_Item3.FormattingEnabled = true;
+            this.LvDI_cb_Item3.Items.AddRange(new object[] {
+            "A",
+            "B"});
+            this.LvDI_cb_Item3.Location = new System.Drawing.Point(660, 84);
+            this.LvDI_cb_Item3.Name = "LvDI_cb_Item3";
+            this.LvDI_cb_Item3.Size = new System.Drawing.Size(142, 20);
+            this.LvDI_cb_Item3.TabIndex = 1229;
+            this.LvDI_cb_Item3.Tag = "0";
+            this.LvDI_cb_Item3.Visible = false;
+            // 
+            // LvDI_cb_Item2
+            // 
+            this.LvDI_cb_Item2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LvDI_cb_Item2.FormattingEnabled = true;
+            this.LvDI_cb_Item2.Items.AddRange(new object[] {
+            "없음",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32"});
+            this.LvDI_cb_Item2.Location = new System.Drawing.Point(512, 84);
+            this.LvDI_cb_Item2.Name = "LvDI_cb_Item2";
+            this.LvDI_cb_Item2.Size = new System.Drawing.Size(142, 20);
+            this.LvDI_cb_Item2.TabIndex = 1228;
+            this.LvDI_cb_Item2.Tag = "0";
+            this.LvDI_cb_Item2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(277, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 35);
+            this.button1.TabIndex = 1227;
+            this.button1.TabStop = false;
+            this.button1.Text = "통합 파일에서 불러오기";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(277, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 35);
+            this.button2.TabIndex = 1226;
+            this.button2.TabStop = false;
+            this.button2.Text = "통합 파일에 저장";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(44, 76);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(217, 35);
+            this.button4.TabIndex = 1225;
+            this.button4.TabStop = false;
+            this.button4.Text = "랙 포스트 감지 설정 변경 (장치 적용)";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(44, 34);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(217, 35);
+            this.button6.TabIndex = 1224;
+            this.button6.TabStop = false;
+            this.button6.Text = "장치로부터 랙 포스트 감지 설정 읽기";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // myListView1
+            // 
+            this.myListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17});
+            this.myListView1.FullRowSelect = true;
+            this.myListView1.GridLines = true;
+            this.myListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.myListView1.HideSelection = false;
+            this.myListView1.Location = new System.Drawing.Point(455, 34);
+            this.myListView1.Name = "myListView1";
+            this.myListView1.Size = new System.Drawing.Size(388, 548);
+            this.myListView1.TabIndex = 1223;
+            this.myListView1.UseCompatibleStateImageBehavior = false;
+            this.myListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Bay";
+            this.columnHeader15.Width = 50;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "좌측";
+            this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader16.Width = 150;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "우측";
+            this.columnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader17.Width = 150;
+            // 
             // NoAnswerTimer
             // 
             this.NoAnswerTimer.Interval = 500;
@@ -16717,7 +17465,7 @@ namespace VEXI
             this.panel107.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel107.Location = new System.Drawing.Point(0, 0);
             this.panel107.Name = "panel107";
-            this.panel107.Size = new System.Drawing.Size(1269, 42);
+            this.panel107.Size = new System.Drawing.Size(1334, 42);
             this.panel107.TabIndex = 621;
             // 
             // panel108
@@ -16726,14 +17474,14 @@ namespace VEXI
             this.panel108.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel108.Location = new System.Drawing.Point(0, 42);
             this.panel108.Name = "panel108";
-            this.panel108.Size = new System.Drawing.Size(1269, 634);
+            this.panel108.Size = new System.Drawing.Size(1334, 643);
             this.panel108.TabIndex = 622;
             // 
             // Form_SRMRack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 676);
+            this.ClientSize = new System.Drawing.Size(1334, 685);
             this.ControlBox = false;
             this.Controls.Add(this.panel108);
             this.Controls.Add(this.panel107);
@@ -17064,6 +17812,7 @@ namespace VEXI
             this.panel3.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
+            this.tab_RackPost.ResumeLayout(false);
             this.panel107.ResumeLayout(false);
             this.panel107.PerformLayout();
             this.panel108.ResumeLayout(false);
@@ -17098,8 +17847,6 @@ namespace VEXI
         private System.Windows.Forms.Button btn_CellOffset_FileWrite;
         private System.Windows.Forms.Button btn_CellOffset_Set;
         private System.Windows.Forms.Button btn_CellOffset_Load;
-        private System.Windows.Forms.Button btn_CellPosition_Init;
-        private System.Windows.Forms.Button btn_RackOffset_Init;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Button btn_CellPosition_FileRead;
         private System.Windows.Forms.Button btn_CellPosition_FileWrite;
@@ -18456,5 +19203,67 @@ namespace VEXI
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox cb_Station1_UseIsExistItem;
+        private System.Windows.Forms.TextBox ed_Station46_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station47_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station48_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station49_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station50_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station35_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station36_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station37_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station38_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station39_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station40_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station41_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station42_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station43_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station44_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station45_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station34_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station33_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station20_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station21_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station22_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station23_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station24_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station25_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station26_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station27_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station28_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station29_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station30_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station31_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station32_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station17_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station18_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station19_OutInterlockIndex;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox ed_Station1_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station2_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station3_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station4_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station5_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station6_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station7_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station8_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station9_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station10_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station11_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station12_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station13_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station14_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station15_OutInterlockIndex;
+        private System.Windows.Forms.TextBox ed_Station16_OutInterlockIndex;
+        private System.Windows.Forms.TabPage tab_RackPost;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
+        private InheritedListView.MyListView myListView1;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ComboBox LvDI_cb_Item3;
+        private System.Windows.Forms.ComboBox LvDI_cb_Item2;
     }
 }

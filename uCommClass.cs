@@ -527,6 +527,7 @@ namespace VEXI
         public bool IsPolingDelayStop; //일시적으로 폴링 멈춤
         public bool IsTestPolling; //Test 화면 볼때는 Test 상태도 자동 갱신하기 위해
         public bool IsInvertorPolling; //Invertor 화면 볼때는 Invertor 상태도 자동 갱신하기 위해
+        public bool IsWcsMapPolling; //WcsMap 화면 볼때는 WcsMap 상태도 자동 갱신하기 위해
         public byte PollingFlag;
         public byte PollingStFlag;
 
@@ -600,7 +601,7 @@ namespace VEXI
         //public event TOnCommDataReceived OnCommDataReceived;
         public event TOnPacketReceived OnPacketReceived;
         public event TOnPacketSended OnPacketSended;
-        public event TCheckManualCtrl OnCheckManualCtrl;
+        public event TCheckManualCtrl OnCheckJogCtrl;
 
         public TCOMMDataManager(string TmpSaveDir)
         {
@@ -687,12 +688,31 @@ namespace VEXI
         public byte SelectDestDevType
         {
             get { return UserSelect_DevType; }
-            set { UserSelect_DevType = value; Real_DevType = value; }
+            set
+            {
+                if (value != UserSelect_DevType)
+                {
+
+                    DevRec.Flag_In_DevStatus = false;
+                    DevRec.Flag_In_8110 = false;
+                    DevRec.Flag_In_8112 = false;
+                }
+                UserSelect_DevType = value;
+                Real_DevType = value;
+            }
         }
         public byte SelectDestDevID
         {
             get { return UserSelect_DevID; }
-            set { UserSelect_DevID = value; Real_DevID = value; }
+            set {
+                if (value != UserSelect_DevID)
+                {
+                    DevRec.Flag_In_DevStatus = false;
+                    DevRec.Flag_In_8110 = false;
+                    DevRec.Flag_In_8112 = false;
+                }
+                UserSelect_DevID = value;
+                Real_DevID = value; }
         }
 
         public byte RX_DestDevType
@@ -765,6 +785,15 @@ namespace VEXI
             get { return PollingRec.IsInvertorPolling; }
             set { PollingRec.IsInvertorPolling = value; }
         }
+
+        public bool ISWcsMapPolling
+        {
+
+            get { return PollingRec.IsWcsMapPolling; }
+            set { PollingRec.IsWcsMapPolling = value; }
+        }
+
+        
 
         public string SerialPort
         {
@@ -1202,9 +1231,9 @@ namespace VEXI
                 if (ts.TotalMilliseconds >= 200)
                 {
                     PollingRec.TxRepeatCtrlCheckTime = DateTime.Now;
-                    if (OnCheckManualCtrl != null)
+                    if (OnCheckJogCtrl != null)
                     {
-                        OnCheckManualCtrl();
+                        OnCheckJogCtrl();
                     }
                 }
 
@@ -1378,6 +1407,26 @@ namespace VEXI
                                 ++PollingRec.PollingFlag;
                                 if (PollingRec.PollingFlag > 11) PollingRec.PollingFlag = 0;
                             }
+                            else if (ISWcsMapPolling)
+                            {
+
+                                if (PollingRec.PollingFlag % 2 == 0)
+                                {
+                                    if (TxStatusPolling(true))
+                                    {
+                                        PollingRec.TxLastTime = DateTime.Now;
+                                    }
+                                }
+                                else
+                                {
+                                    if (TxTWCSMapReq())
+                                    {
+                                        PollingRec.TxLastTime = DateTime.Now;
+                                    }
+                                }
+                                ++PollingRec.PollingFlag;
+                                if (PollingRec.PollingFlag > 11) PollingRec.PollingFlag = 0;
+                            }
                             else
                             {
                                 if (TxStatusPolling(false))
@@ -1443,15 +1492,15 @@ namespace VEXI
                     case ConstClass.TYPE_EMS:
                         if (IsRealUse)
                         {
-                            TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_30, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_REC_StatusReq)) + 1));
+                            TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_30, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_REC_StatusReq)) + 1));
                         }
                         else
                         {
-                            TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_30, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_REC_StatusReq)) + 1));
+                            TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_30, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_REC_StatusReq)) + 1));
                         }
-                        DevRec.srm_REC_DevStReq.IsIgnore = 0x00;
-                        DevRec.srm_REC_DevStReq.SystemUTCTime = Global_Class.UTIL_GetUnixTimeStampFromLocalTime(DateTime.Now);
-                        TxPacket.SetBody(DevRec.srm_REC_DevStReq);
+                        DevRec.ems_REC_DevStReq.IsIgnore = 0x00;
+                        DevRec.ems_REC_DevStReq.SystemUTCTime = Global_Class.UTIL_GetUnixTimeStampFromLocalTime(DateTime.Now);
+                        TxPacket.SetBody(DevRec.ems_REC_DevStReq);
                         break;
                     default:
                         if (IsRealUse)
@@ -1513,6 +1562,33 @@ namespace VEXI
             return result;
         }
 
+        bool TxTWCSMapReq()
+        {
+            bool result = false;
+            TXSEQ++;
+            if (IsRealUse)
+            {
+                TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_01, ConstClass.CMD2_3D, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_WCSMapReq)) + 1));
+            }
+            else
+            {
+                TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_01, ConstClass.CMD2_3D, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_WCSMapReq)) + 1));
+            }
+            TxPacket.DoCalc_CRC();
+
+            switch (CommMode)
+            {
+                case ConstClass.COMM_SERIAL:
+                    result = Serial_Send(TxPacket.GetTotalBytes());
+                    break;
+                case ConstClass.COMM_UDP:
+                    result = UDP_Send(TxPacket.GetTotalBytes());
+                    break;
+            }
+
+            return result;
+        }
+
         bool TxInvertorStatusReq()
         {
             bool result = false;
@@ -1526,10 +1602,8 @@ namespace VEXI
                         TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_REC_InvertorReq)) + 1));
                         break;
                     case ConstClass.TYPE_RTV:
-                        TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TRTV_REC_InvertorReq)) + 1));
-                        break;
                     case ConstClass.TYPE_EMS:
-                        TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_REC_InvertorReq)) + 1));
+                        TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, Real_DevType, Real_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TEMSRTV_REC_InvertorReq)) + 1));
                         break;
                 }
 
@@ -1541,10 +1615,8 @@ namespace VEXI
                         TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_REC_InvertorReq)) + 1));
                         break;
                     case ConstClass.TYPE_RTV:
-                        TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TRTV_REC_InvertorReq)) + 1));
-                        break;
                     case ConstClass.TYPE_EMS:
-                        TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_REC_InvertorReq)) + 1));
+                        TxPacket.SetHeader(ConstClass.TYPE_02, 0x00, UserSelect_DevType, UserSelect_DevID, TXSEQ, ConstClass.CMD1_00, ConstClass.CMD2_32, (ushort)(Marshal.SizeOf(typeof(VEXI_DEFS.TEMSRTV_REC_InvertorReq)) + 1));
                         break;
                 }
             }
@@ -1699,7 +1771,7 @@ namespace VEXI
         {
             //장치 기본 상태는 장치타입과 무관
             int test = Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_BasicStRes));
-            if (test > datas.Length) return false;
+            if (test < datas.Length) return false;
 
             DevRec.Flag_In_8110 = true;
             DevRec.dev_REC_BasicSt = (VEXI_DEFS.TDEV_REC_BasicStRes)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TDEV_REC_BasicStRes));
@@ -1716,6 +1788,14 @@ namespace VEXI
             DevRec.Flag_In_8112 = true;
             //DevRec.dev_REC_TestSt = (VEXI_DEFS.TDEV_REC_TestStRes)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TDEV_REC_TestStRes));
             DevRec.dev_REC_TestSt = (VEXI_DEFS.TDEV_REC_TestStRes)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TDEV_REC_TestStRes));
+            return true;
+        }
+
+        public bool Set_dev_REC_WCSData(byte devtype, byte devid, byte[] datas)
+        {
+            //WCS Data는 장치타입과 무관
+            int test = Marshal.SizeOf(typeof(VEXI_DEFS.TMOVEX_WCS_DataRec));
+            if (test != datas.Length) return false;
             return true;
         }
 
@@ -1919,8 +1999,32 @@ namespace VEXI
                             }
                         }
                         break;
+
+                    case ConstClass.TYPE_EMS:
+                        VEXI_DEFS.TEMS_StatusRes TmpEMSSt;
+                        TmpEMSSt = (VEXI_DEFS.TEMS_StatusRes)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TEMS_StatusRes));
+                        PCtime = Global_Class.UTIL_GetLocalTimeFromUnixTimeStamp(TmpEMSSt.SystemUTCTime);
+
+                        for (int i = 0; i < 10; i++)
+                        {
+
+                            if (TmpEMSSt.IO_Digital_IN[i] != DevRec.ems_REC_EMSSt.IO_Digital_IN[i])
+                            {
+                                isSave = true;
+                                break;
+                            }
+                        }
+                        for (int i = 0; i < 10; i++)
+                        {
+                            if (TmpEMSSt.IO_Digital_OUT[i] != DevRec.ems_REC_EMSSt.IO_Digital_OUT[i])
+                            {
+                                isSave = true;
+                                break;
+                            }
+                        }
+                        break;
                 }
-                
+
 
                 if (isSave)
                 {
@@ -2013,6 +2117,20 @@ namespace VEXI
 
                                     
                                     break;
+                                case ConstClass.TYPE_EMS:
+                                    if (ts.TotalMilliseconds > 1000)
+                                    {
+                                        DataText.Append("통신이상,통신이상");
+                                        DevStSaveBuffer.Add(DataText.ToString());
+                                    }
+                                    else
+                                    {
+                                        DataText.Append(String.Format("{0}", DevRec.ems_REC_EMSSt.Drive_DisPosition.Now_Speed));
+                                        DevStSaveBuffer.Add(DataText.ToString());
+                                    }
+
+
+                                    break;
                             }
                         }
 
@@ -2066,6 +2184,17 @@ namespace VEXI
                                         DevStSaveBuffer.Add(DataText.ToString());
                                     }
                                     break;
+                                case ConstClass.TYPE_EMS:
+                                    fixed (byte* Ptr = &DevRec.ems_REC_EMSSt.Reserved_1)
+                                    {
+                                        int TmpLen = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StatusRes));
+                                        for (int i = 0; i < TmpLen; i++)
+                                        {
+                                            DataText.Append(string.Format("{0:X2} ", *(Ptr + i)));
+                                        }
+                                        DevStSaveBuffer.Add(DataText.ToString());
+                                    }
+                                    break;
                             }
                         }
 
@@ -2077,12 +2206,18 @@ namespace VEXI
 
         public bool Set_DEV_REC_DevSt(byte devtype, byte devid, byte[] datas)
         {
+            // 수신된 데이터와 선언된 구조체간의 크기를 비교 (Vexi 프로토콜과 MCU 프로토콜이 동일한지 확인하는 최소한의 체크)
+            // 같은지를 비교하기도 하고 선언된 구조체보다 작은지를 확인하기도 한다
+            // 작은지를 확인하는 건 프로토콜 수정으로 구조체 크기가 커졌는데
+            // 해당 사항이 반영 안된 MCU 와의 연동 때문이다. (이런 이유로 프로토콜 수정시 항목 추가가 필요하다면 중간에 Field를 넣지 말고 - Reserved 활용은 괜찮음 - 맨끝에 추가하여야 한다)
+
             int test;
             switch (devtype)
             {
                 case ConstClass.TYPE_SRM:
                     test = Marshal.SizeOf(typeof(VEXI_DEFS.TSRM_StatusRes));
-                    if (test != datas.Length) return false;
+                    //if (test != datas.Length) return false;
+                    if (test < datas.Length) return false;
 
                     DevRec.Time_In_DevStatus = DateTime.Now;
                     DevRec.Flag_In_DevStatus = true;
@@ -2096,7 +2231,8 @@ namespace VEXI
                     return true;
                 case ConstClass.TYPE_RTV:
                     test = Marshal.SizeOf(typeof(VEXI_DEFS.TRTV_StatusRes));
-                    if (test != datas.Length) return false;
+                    //if (test != datas.Length) return false;
+                    if (test < datas.Length) return false;
 
                     DevRec.Time_In_DevStatus = DateTime.Now;
                     DevRec.Flag_In_DevStatus = true;
@@ -2108,7 +2244,19 @@ namespace VEXI
                     DevRec.rtv_REC_RTVSt = (VEXI_DEFS.TRTV_StatusRes)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TRTV_StatusRes));
                     return true;
                 case ConstClass.TYPE_EMS:
-                    return false;
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StatusRes));
+                    //if (test != datas.Length) return false;
+                    if (test < datas.Length) return false;
+
+                    DevRec.Time_In_DevStatus = DateTime.Now;
+                    DevRec.Flag_In_DevStatus = true;
+                    if (LoggingMode == 2)
+                    {
+                        Process_DEVSt_LoggingDataCheck(devtype, datas);
+                    }
+
+                    DevRec.ems_REC_EMSSt = (VEXI_DEFS.TEMS_StatusRes)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TEMS_StatusRes));
+                    return true;
                 default:
                     return false;
             }
@@ -2128,7 +2276,9 @@ namespace VEXI
                     if (test != datas.Length) return false;
                     return true;
                 case ConstClass.TYPE_EMS:
-                    return false; 
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_OpInfoRes));
+                    if (test != datas.Length) return false;
+                    return true;
                 default:
                     return false;
             }
@@ -2233,13 +2383,17 @@ namespace VEXI
                     TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_SRM_02))));
                     break;
                 case 10:
-                    TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV))));
+                    TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_10))));
                     break;
                 case 11:
-                    TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_IO))));
+                    TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_RTV_11))));
                     break;
-                //case 0:
-                //case 10:
+                case 20:
+                    TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_EMS_20))));
+                    break;
+                case 21:
+                    TotalDataLen_exp = (UInt16)(Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_REC_LogHeader)) + dev_REC_LogHeader.LogCount * (Marshal.SizeOf(typeof(VEXI_DEFS.TLOGItemHeader)) + Marshal.SizeOf(typeof(VEXI_DEFS.TLOGType_EMS_21))));
+                    break;
                 case 30:
                 case 31:
                 case 32:
@@ -2275,6 +2429,42 @@ namespace VEXI
                     return false;
                 case ConstClass.TYPE_EMS:
                     return false;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Check_RTV_JobCtrlRes(byte devtype, byte devid, byte[] datas)
+        {
+            int test;
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TRTV_REC_JobCTRLRES));
+                    if (test != datas.Length) return false;
+                    return true;
+                case ConstClass.TYPE_EMS:
+                    return false;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Check_EMS_JobCtrlRes(byte devtype, byte devid, byte[] datas)
+        {
+            int test;
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_REC_JobCTRLRES));
+                    if (test != datas.Length) return false;
+                    return true;
                 default:
                     return false;
             }
@@ -2418,6 +2608,48 @@ namespace VEXI
             }
         }
 
+        public bool Check_EMS_REC_Position(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                //가변길이 데이터
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    //Header 길이만큼도 안 왔으면
+
+                    if (datas.Length < Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_PositionParam_Header))) return false;
+                    VEXI_DEFS.TEMS_PositionParam_Header Header = (VEXI_DEFS.TEMS_PositionParam_Header)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TEMS_PositionParam_Header));
+
+                    ushort count = (ushort)(Header.PositionCount);
+                    int CalcLen = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_PositionParam_Header)) + (count * Marshal.SizeOf(typeof(int)));
+                    if (CalcLen > datas.Length) return false;
+
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Check_EMS_REC_PositionCtrl(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    if (Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_PositionSetCTRLRes)) != datas.Length) return false;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+
         public bool Check_SRM_REC_RackOffset(byte devtype, byte devid, byte[] datas)
         {
             switch (devtype)
@@ -2459,7 +2691,7 @@ namespace VEXI
             }
         }
 
-        public bool Check_RTV_REC_InvertorInfo(byte devtype, byte devid, byte[] datas)
+        public bool Check_EMSRTV_REC_InvertorInfo(byte devtype, byte devid, byte[] datas)
         {
             int test;
             switch (devtype)
@@ -2467,11 +2699,13 @@ namespace VEXI
                 case ConstClass.TYPE_SRM:
                     return false;
                 case ConstClass.TYPE_RTV:
-                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TRTV_REC_InvertorRes));
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMSRTV_REC_InvertorRes));
                     if (test != datas.Length) return false;
                     return true;
                 case ConstClass.TYPE_EMS:
-                    return false;
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMSRTV_REC_InvertorRes));
+                    if (test != datas.Length) return false;
+                    return true;
                 default:
                     return false;
             }
@@ -2521,6 +2755,49 @@ namespace VEXI
             }
         }
 
+
+        public bool Check_EMS_REC_AreaSpeed(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                //가변길이 데이터
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    //Header 길이만큼도 안 왔으면
+                    if (datas.Length < Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_SpeedAreaParamHeaderRec))) return false;
+                    VEXI_DEFS.TEMS_SpeedAreaParamHeaderRec Header = (VEXI_DEFS.TEMS_SpeedAreaParamHeaderRec)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TEMS_SpeedAreaParamHeaderRec));
+
+
+                    ushort count = (ushort)(Header.AreaCount);
+                    int CalcLen = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_SpeedAreaParamHeaderRec)) + (count * Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_SpeedAreaGroupConfigRec)));
+                    if (CalcLen > datas.Length) return false;
+
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Check_EMS_REC_AreaSpeedCtrl(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    if (Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_SpeedAreaGroupCTRLRes)) != datas.Length) return false;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+
         public bool Check_RTV_REC_StationCtrl(byte devtype, byte devid, byte[] datas)
         {
             switch (devtype)
@@ -2538,6 +2815,23 @@ namespace VEXI
                     return false;
             }
         }
+
+        public bool Check_EMS_REC_StationCtrl(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    if (Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StationParamCTRLRes)) != datas.Length) return false;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public bool Check_SRM_REC_StationParam(byte devtype, byte devid, byte[] datas)
         {
             switch (devtype)
@@ -2574,6 +2868,27 @@ namespace VEXI
                     return true;
                 case ConstClass.TYPE_EMS:
                     return false;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Check_EMS_REC_StationParam(byte devtype, byte devid, byte[] datas)
+        {
+            switch (devtype)
+            {
+                case ConstClass.TYPE_SRM:
+                    return false;
+                case ConstClass.TYPE_RTV:
+                    return false;
+                case ConstClass.TYPE_EMS:
+                    if (datas.Length < Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StationParamHeaderRec))) return false;
+                    VEXI_DEFS.TEMS_StationParamHeaderRec Header = (VEXI_DEFS.TEMS_StationParamHeaderRec)Global_Class.UTIL_BytesToStructure(datas, typeof(VEXI_DEFS.TEMS_StationParamHeaderRec));
+
+                    ushort count = (ushort)(Header.stationCount);
+                    int CalcLen = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StationParamHeaderRec)) + (count * Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_StationConfigRec)));
+                    if (CalcLen > datas.Length) return false;
+                    return true;
                 default:
                     return false;
             }
@@ -2682,6 +2997,7 @@ namespace VEXI
 
         public bool Check_EMS_LiftParamRes(byte devtype, byte devid, byte[] datas)
         {
+            int test;
             switch (devtype)
             {
                 case ConstClass.TYPE_SRM:
@@ -2689,7 +3005,9 @@ namespace VEXI
                 case ConstClass.TYPE_RTV:
                     return false;
                 case ConstClass.TYPE_EMS:
-                    if (Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_LiftParamRes)) != datas.Length) return false;
+                    test = Marshal.SizeOf(typeof(VEXI_DEFS.TEMS_LiftParamRes));
+                    //if (test != datas.Length) return false;
+                    if (test > datas.Length) return false;
                     return true;
                 default:
                     return false;

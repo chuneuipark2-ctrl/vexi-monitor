@@ -45,6 +45,9 @@ namespace VEXI
             this.label4 = new System.Windows.Forms.Label();
             this.rb_MoveDriveType_1 = new System.Windows.Forms.RadioButton();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.rb_InvertorType_5 = new System.Windows.Forms.RadioButton();
+            this.rb_InvertorType_4 = new System.Windows.Forms.RadioButton();
+            this.rb_InvertorType_3 = new System.Windows.Forms.RadioButton();
             this.rb_InvertorType_2 = new System.Windows.Forms.RadioButton();
             this.lbl_InvertorType = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -118,8 +121,11 @@ namespace VEXI
             this.lbl_ForkEncoderType = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.rb_ForkEncoderType_0 = new System.Windows.Forms.RadioButton();
-            this.rb_InvertorType_4 = new System.Windows.Forms.RadioButton();
-            this.rb_InvertorType_3 = new System.Windows.Forms.RadioButton();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.rb_ModeSwitchUse_1 = new System.Windows.Forms.RadioButton();
+            this.lbl_ModeSwitchUse = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rb_ModeSwitchUse_0 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -133,6 +139,7 @@ namespace VEXI
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // label63
@@ -202,10 +209,10 @@ namespace VEXI
             this.panel2.Controls.Add(this.lbl_MoveDriveCount);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.rb_MoveDriveCount_1);
-            this.panel2.Location = new System.Drawing.Point(239, 295);
+            this.panel2.Location = new System.Drawing.Point(239, 313);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(4);
-            this.panel2.Size = new System.Drawing.Size(201, 80);
+            this.panel2.Size = new System.Drawing.Size(201, 79);
             this.panel2.TabIndex = 193;
             // 
             // rb_MoveDriveCount_2
@@ -263,10 +270,10 @@ namespace VEXI
             this.panel3.Controls.Add(this.lbl_MoveDriveType);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.rb_MoveDriveType_1);
-            this.panel3.Location = new System.Drawing.Point(239, 387);
+            this.panel3.Location = new System.Drawing.Point(239, 405);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(4);
-            this.panel3.Size = new System.Drawing.Size(201, 78);
+            this.panel3.Size = new System.Drawing.Size(201, 77);
             this.panel3.TabIndex = 194;
             // 
             // rb_MoveDriveType_2
@@ -319,6 +326,7 @@ namespace VEXI
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.rb_InvertorType_5);
             this.panel5.Controls.Add(this.rb_InvertorType_4);
             this.panel5.Controls.Add(this.rb_InvertorType_3);
             this.panel5.Controls.Add(this.rb_InvertorType_2);
@@ -328,8 +336,41 @@ namespace VEXI
             this.panel5.Location = new System.Drawing.Point(239, 135);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(4);
-            this.panel5.Size = new System.Drawing.Size(201, 149);
+            this.panel5.Size = new System.Drawing.Size(201, 168);
             this.panel5.TabIndex = 196;
+            // 
+            // rb_InvertorType_5
+            // 
+            this.rb_InvertorType_5.AutoSize = true;
+            this.rb_InvertorType_5.Location = new System.Drawing.Point(7, 140);
+            this.rb_InvertorType_5.Name = "rb_InvertorType_5";
+            this.rb_InvertorType_5.Size = new System.Drawing.Size(158, 16);
+            this.rb_InvertorType_5.TabIndex = 191;
+            this.rb_InvertorType_5.TabStop = true;
+            this.rb_InvertorType_5.Text = "SEW Ver2(Sync-Travel)";
+            this.rb_InvertorType_5.UseVisualStyleBackColor = true;
+            // 
+            // rb_InvertorType_4
+            // 
+            this.rb_InvertorType_4.AutoSize = true;
+            this.rb_InvertorType_4.Location = new System.Drawing.Point(7, 119);
+            this.rb_InvertorType_4.Name = "rb_InvertorType_4";
+            this.rb_InvertorType_4.Size = new System.Drawing.Size(151, 16);
+            this.rb_InvertorType_4.TabIndex = 190;
+            this.rb_InvertorType_4.TabStop = true;
+            this.rb_InvertorType_4.Text = "SEW Ver2 (Anti-Sway)";
+            this.rb_InvertorType_4.UseVisualStyleBackColor = true;
+            // 
+            // rb_InvertorType_3
+            // 
+            this.rb_InvertorType_3.AutoSize = true;
+            this.rb_InvertorType_3.Location = new System.Drawing.Point(7, 98);
+            this.rb_InvertorType_3.Name = "rb_InvertorType_3";
+            this.rb_InvertorType_3.Size = new System.Drawing.Size(78, 16);
+            this.rb_InvertorType_3.TabIndex = 189;
+            this.rb_InvertorType_3.TabStop = true;
+            this.rb_InvertorType_3.Text = "SEW Ver2";
+            this.rb_InvertorType_3.UseVisualStyleBackColor = true;
             // 
             // rb_InvertorType_2
             // 
@@ -1162,34 +1203,74 @@ namespace VEXI
             this.rb_ForkEncoderType_0.Text = "Absolute";
             this.rb_ForkEncoderType_0.UseVisualStyleBackColor = true;
             // 
-            // rb_InvertorType_4
+            // panel13
             // 
-            this.rb_InvertorType_4.AutoSize = true;
-            this.rb_InvertorType_4.Location = new System.Drawing.Point(7, 119);
-            this.rb_InvertorType_4.Name = "rb_InvertorType_4";
-            this.rb_InvertorType_4.Size = new System.Drawing.Size(151, 16);
-            this.rb_InvertorType_4.TabIndex = 190;
-            this.rb_InvertorType_4.TabStop = true;
-            this.rb_InvertorType_4.Text = "SEW Ver2 (Anti-Sway)";
-            this.rb_InvertorType_4.UseVisualStyleBackColor = true;
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.rb_ModeSwitchUse_1);
+            this.panel13.Controls.Add(this.lbl_ModeSwitchUse);
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Controls.Add(this.rb_ModeSwitchUse_0);
+            this.panel13.Location = new System.Drawing.Point(713, 51);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(4);
+            this.panel13.Size = new System.Drawing.Size(217, 77);
+            this.panel13.TabIndex = 1210;
             // 
-            // rb_InvertorType_3
+            // rb_ModeSwitchUse_1
             // 
-            this.rb_InvertorType_3.AutoSize = true;
-            this.rb_InvertorType_3.Location = new System.Drawing.Point(7, 98);
-            this.rb_InvertorType_3.Name = "rb_InvertorType_3";
-            this.rb_InvertorType_3.Size = new System.Drawing.Size(78, 16);
-            this.rb_InvertorType_3.TabIndex = 189;
-            this.rb_InvertorType_3.TabStop = true;
-            this.rb_InvertorType_3.Text = "SEW Ver2";
-            this.rb_InvertorType_3.UseVisualStyleBackColor = true;
+            this.rb_ModeSwitchUse_1.AutoSize = true;
+            this.rb_ModeSwitchUse_1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rb_ModeSwitchUse_1.Location = new System.Drawing.Point(99, 56);
+            this.rb_ModeSwitchUse_1.Name = "rb_ModeSwitchUse_1";
+            this.rb_ModeSwitchUse_1.Size = new System.Drawing.Size(47, 16);
+            this.rb_ModeSwitchUse_1.TabIndex = 3;
+            this.rb_ModeSwitchUse_1.TabStop = true;
+            this.rb_ModeSwitchUse_1.Text = "사용";
+            this.rb_ModeSwitchUse_1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_ModeSwitchUse
+            // 
+            this.lbl_ModeSwitchUse.BackColor = System.Drawing.Color.White;
+            this.lbl_ModeSwitchUse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_ModeSwitchUse.Location = new System.Drawing.Point(4, 24);
+            this.lbl_ModeSwitchUse.Name = "lbl_ModeSwitchUse";
+            this.lbl_ModeSwitchUse.Size = new System.Drawing.Size(207, 20);
+            this.lbl_ModeSwitchUse.TabIndex = 187;
+            this.lbl_ModeSwitchUse.Text = "-";
+            this.lbl_ModeSwitchUse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(4, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(207, 20);
+            this.label13.TabIndex = 188;
+            this.label13.Text = "모드 스위치 사용";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rb_ModeSwitchUse_0
+            // 
+            this.rb_ModeSwitchUse_0.AutoSize = true;
+            this.rb_ModeSwitchUse_0.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rb_ModeSwitchUse_0.Location = new System.Drawing.Point(21, 56);
+            this.rb_ModeSwitchUse_0.Name = "rb_ModeSwitchUse_0";
+            this.rb_ModeSwitchUse_0.Size = new System.Drawing.Size(59, 16);
+            this.rb_ModeSwitchUse_0.TabIndex = 2;
+            this.rb_ModeSwitchUse_0.TabStop = true;
+            this.rb_ModeSwitchUse_0.Text = "미사용";
+            this.rb_ModeSwitchUse_0.UseVisualStyleBackColor = true;
             // 
             // Form_SRMConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 536);
+            this.ClientSize = new System.Drawing.Size(943, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.label177);
@@ -1242,6 +1323,8 @@ namespace VEXI
             this.panel12.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1340,5 +1423,11 @@ namespace VEXI
         private System.Windows.Forms.RadioButton rb_ForkEncoderType_0;
         private System.Windows.Forms.RadioButton rb_InvertorType_4;
         private System.Windows.Forms.RadioButton rb_InvertorType_3;
+        private System.Windows.Forms.RadioButton rb_InvertorType_5;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.RadioButton rb_ModeSwitchUse_1;
+        private System.Windows.Forms.Label lbl_ModeSwitchUse;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton rb_ModeSwitchUse_0;
     }
 }

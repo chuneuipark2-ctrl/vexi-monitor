@@ -231,15 +231,28 @@ namespace VEXI
             ed_Lift_Emergency_Decel.Text = "0";
             ed_Lift_Emergency_DecJerk.Text = "0";
 
+            ed_Lift_RefCheckSpeed_Speed.Text = "0.0";
+            ed_Lift_RefCheckSpeed_Accel.Text = "0";
+            ed_Lift_RefCheckSpeed_Decel.Text = "0";
+            ed_Lift_RefCheckSpeed_AccJerk.Text = "0";
+            ed_Lift_RefCheckSpeed_DecJerk.Text = "0";
 
-            ed_MAX_RPM.Text = "0";
-            ed_CALC_MPM.Text = "0";
-            ed_CALC_RPM.Text = "0";
-            cb_MotorDirection.SelectedIndex = -1;
+            ed_Lift_StartCripSpeed_Speed.Text = "0.0";
+            ed_Lift_StartCripSpeed_Accel.Text = "0";
+            ed_Lift_StartCripSpeed_Decel.Text = "0";
+            ed_Lift_StartCripSpeed_AccJerk.Text = "0";
+            ed_Lift_StartCripSpeed_DecJerk.Text = "0";
+
+            ed_Lift_EndCripSpeed_Speed.Text = "0.0";
+            ed_Lift_EndCripSpeed_Accel.Text = "0";
+            ed_Lift_EndCripSpeed_Decel.Text = "0";
+            ed_Lift_EndCripSpeed_AccJerk.Text = "0";
+            ed_Lift_EndCripSpeed_DecJerk.Text = "0";
+
+            
             ed_ManualOp_TokeAlarm.Text = "0.0";
             ed_StartPos.Text = "0";
             ed_EndPos.Text = "0";
-            ed_breakOpenContinueTime.Text = "0.00";
 
             ed_Invertor_Reference.Text = "0";
             ed_Invertor_PositionGain.Text = "0.000";
@@ -250,6 +263,20 @@ namespace VEXI
             ed_CurrenctPostion_His.Text = "0";
             ed_CurrenctPostion_RetryCount.Text = "0";
             ed_CurrenctPostion_RetryRange.Text = "0";
+            ed_CurrenctDownPostion_Offset.Text = "0";
+
+            ed_Loading_DownStartCrip.Text = "0";
+            ed_Loading_DownEndCrip.Text = "0";
+            ed_Loading_UpStartCrip.Text = "0";
+            ed_Loading_UpEndCrip.Text = "0";
+            ed_UnLoading_DownStartCrip.Text = "0";
+            ed_UnLoading_DownEndCrip.Text = "0";
+            ed_UnLoading_UpStartCrip.Text = "0";
+            ed_UnLoading_UpEndCrip.Text = "0";
+
+            edLift_HomeAOffset.Text = "0";
+            edLift_HomeBOffset.Text = "0";
+
         }
 
         public void Display_EMS_Param(byte[] data)
@@ -301,15 +328,28 @@ namespace VEXI
             ed_Lift_Emergency_Decel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_Emergency.Decel);
             ed_Lift_Emergency_DecJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_Emergency.D_jerk);
 
+            ed_Lift_RefCheckSpeed_Speed.Text = string.Format("{0:0.0}", (double)ems_LiftParam_RES.Speed_RefCheck.Speed / 10);
+            ed_Lift_RefCheckSpeed_Accel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_RefCheck.Accel);
+            ed_Lift_RefCheckSpeed_Decel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_RefCheck.Decel);
+            ed_Lift_RefCheckSpeed_AccJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_RefCheck.A_jerk);
+            ed_Lift_RefCheckSpeed_DecJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_RefCheck.D_jerk);
 
-            ed_MAX_RPM.Text = string.Format("{0}", ems_LiftParam_RES.MAX_RPM);
-            ed_CALC_MPM.Text = string.Format("{0}", ems_LiftParam_RES.CALC_MPM);
-            ed_CALC_RPM.Text = string.Format("{0}", ems_LiftParam_RES.CALC_RPM);
-            cb_MotorDirection.SelectedIndex = Math.Min(ems_LiftParam_RES.MotorDirection, cb_MotorDirection.Items.Count - 1);
+            ed_Lift_StartCripSpeed_Speed.Text = string.Format("{0:0.0}", (double)ems_LiftParam_RES.Speed_StartCrip.Speed / 10);
+            ed_Lift_StartCripSpeed_Accel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_StartCrip.Accel);
+            ed_Lift_StartCripSpeed_Decel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_StartCrip.Decel);
+            ed_Lift_StartCripSpeed_AccJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_StartCrip.A_jerk);
+            ed_Lift_StartCripSpeed_DecJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_StartCrip.D_jerk);
+
+            ed_Lift_EndCripSpeed_Speed.Text = string.Format("{0:0.0}", (double)ems_LiftParam_RES.Speed_EndCrip.Speed / 10);
+            ed_Lift_EndCripSpeed_Accel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_EndCrip.Accel);
+            ed_Lift_EndCripSpeed_Decel.Text = string.Format("{0}", ems_LiftParam_RES.Speed_EndCrip.Decel);
+            ed_Lift_EndCripSpeed_AccJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_EndCrip.A_jerk);
+            ed_Lift_EndCripSpeed_DecJerk.Text = string.Format("{0}", ems_LiftParam_RES.Speed_EndCrip.D_jerk);
+
+
             ed_ManualOp_TokeAlarm.Text = string.Format("{0:0.0}", (double)ems_LiftParam_RES.ManualOp_TokeAlarm / 10);
             ed_StartPos.Text = string.Format("{0}", ems_LiftParam_RES.ManualOp_Startmm);
             ed_EndPos.Text = string.Format("{0}", ems_LiftParam_RES.ManualOp_Endmm);
-            ed_breakOpenContinueTime.Text = string.Format("{0:0.00}", (double)ems_LiftParam_RES.breakOpenContinueTime / 100);
 
             ed_Invertor_Reference.Text = string.Format("{0}", ems_LiftParam_RES.Invertor_Reference);
             ed_Invertor_PositionGain.Text = string.Format("{0:0.000}", (double)ems_LiftParam_RES.Invertor_PositionGain / 1000);
@@ -320,9 +360,28 @@ namespace VEXI
             ed_CurrenctPostion_His.Text = string.Format("{0}", ems_LiftParam_RES.CurrenctPostion_His);
             ed_CurrenctPostion_RetryCount.Text = string.Format("{0}", ems_LiftParam_RES.CurrenctPostion_RetryCount);
             ed_CurrenctPostion_RetryRange.Text = string.Format("{0}", ems_LiftParam_RES.CurrenctPostion_RetryRange);
+            ed_CurrenctDownPostion_Offset.Text = string.Format("{0}", ems_LiftParam_RES.CurrenctDownPostion_Offset);
 
 
-            btn_Param_Set.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
+            ed_Loading_DownStartCrip.Text = string.Format("{0}", ems_LiftParam_RES.Loading_DownStartCrip);
+            ed_Loading_DownEndCrip.Text = string.Format("{0}", ems_LiftParam_RES.Loading_DownEndCrip);
+            ed_Loading_UpStartCrip.Text = string.Format("{0}", ems_LiftParam_RES.Loading_UpStartCrip);
+            ed_Loading_UpEndCrip.Text = string.Format("{0}", ems_LiftParam_RES.Loading_UpEndCrip);
+            ed_UnLoading_DownStartCrip.Text = string.Format("{0}", ems_LiftParam_RES.UnLoading_DownStartCrip);
+            ed_UnLoading_DownEndCrip.Text = string.Format("{0}", ems_LiftParam_RES.UnLoading_DownEndCrip);
+            ed_UnLoading_UpStartCrip.Text = string.Format("{0}", ems_LiftParam_RES.UnLoading_UpStartCrip);
+            ed_UnLoading_UpEndCrip.Text = string.Format("{0}", ems_LiftParam_RES.UnLoading_UpEndCrip);
+
+
+
+            edLift_HomeAOffset.Text = string.Format("{0}", ems_LiftParam_RES.Lift_HomeAOffset);
+            edLift_HomeBOffset.Text = string.Format("{0}", ems_LiftParam_RES.Lift_HomeBOffset);
+            cbLift_RefOffset.SelectedIndex = Math.Min(ems_LiftParam_RES.Lift_RefSEnsor, cbLift_RefOffset.Items.Count - 1);
+            cbLift_HomeOffset_AllCtrlCan.SelectedIndex = Math.Min(ems_LiftParam_RES.Lift_HomeOffset_AllCtrlCan, cbLift_HomeOffset_AllCtrlCan.Items.Count - 1);
+            
+
+
+            btn_Param_Set.Enabled = ((form_Main.COMMDataManager.DevRec.ems_REC_EMSSt.DevMode & 0x08) != 0);
         }
 
         private unsafe void Do_Ctrl(bool isFileSave)
@@ -336,39 +395,41 @@ namespace VEXI
             ems_LiftParam_Ctrl.CtrlFlag[0] = 0x00;
             ems_LiftParam_Ctrl.CtrlFlag[1] = 0x7F;
             ems_LiftParam_Ctrl.CtrlFlag[2] = 0x1F;
-            ems_LiftParam_Ctrl.CtrlFlag[3] = 0x07;
+            ems_LiftParam_Ctrl.CtrlFlag[3] = 0x1F;
 
-            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_High.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoHighSpeed_Speed.Text, 10);
+            
+
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_High.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_AutoHighSpeed_Speed.Text, 10) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_High.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoHighSpeed_Accel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_High.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoHighSpeed_Decel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_High.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoHighSpeed_AccJerk.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_High.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoHighSpeed_DecJerk.Text, 1);
 
-            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Middle.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoMiddleSpeed_Speed.Text, 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Middle.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_AutoMiddleSpeed_Speed.Text, 10) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Middle.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoMiddleSpeed_Accel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Middle.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoMiddleSpeed_Decel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Middle.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoMiddleSpeed_Accjerk.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Middle.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoMiddleSpeed_Decjerk.Text, 1);
 
-            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Low.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoLowSpeed_Speed.Text, 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Low.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_AutoLowSpeed_Speed.Text, 10) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Low.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoLowSpeed_Accel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Low.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoLowSpeed_Decel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Low.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoLowSpeed_Accjerk.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Auto_Low.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_AutoLowSpeed_Decjerk.Text, 1);
 
-            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Middle.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualMiddleSpeed_Speed.Text, 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Middle.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_ManualMiddleSpeed_Speed.Text, 10) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Middle.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualMiddleSpeed_Accel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Middle.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualMiddleSpeed_Decel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Middle.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualMiddleSpeed_AccJerk.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Middle.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualMiddleSpeed_DecJerk.Text, 1);
 
-            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Low.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualLowSpeed_Speed.Text, 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Low.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_ManualLowSpeed_Speed.Text, 10) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Low.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualLowSpeed_Accel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Low.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualLowSpeed_Decel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Low.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualLowSpeed_AccJerk.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Manual_Low.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualLowSpeed_DecJerk.Text, 1);
 
-            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Force.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ForceMode_Speed.Text, 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_Force.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_ForceMode_Speed.Text, 10) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Force.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ForceMode_Accel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Force.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ForceMode_Decel.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Force.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ForceMode_AccJerk.Text, 1);
@@ -378,14 +439,27 @@ namespace VEXI
             ems_LiftParam_Ctrl.ParamItemsRec.Speed_Emergency.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_Emergency_DecJerk.Text, 1);
 
 
-            ems_LiftParam_Ctrl.ParamItemsRec.MAX_RPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_MAX_RPM.Text, 0);
-            ems_LiftParam_Ctrl.ParamItemsRec.CALC_MPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_CALC_MPM.Text, 0);
-            ems_LiftParam_Ctrl.ParamItemsRec.CALC_RPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_CALC_RPM.Text, 0);
-            if (cb_MotorDirection.SelectedIndex >= 0) ems_LiftParam_Ctrl.ParamItemsRec.MotorDirection = (byte)cb_MotorDirection.SelectedIndex;
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_RefCheck.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_RefCheckSpeed_Speed.Text, 10) * 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_RefCheck.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_RefCheckSpeed_Accel.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_RefCheck.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_RefCheckSpeed_Decel.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_RefCheck.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_RefCheckSpeed_AccJerk.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_RefCheck.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_RefCheckSpeed_DecJerk.Text, 1);
+
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_StartCrip.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_StartCripSpeed_Speed.Text, 10) * 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_StartCrip.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_StartCripSpeed_Accel.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_StartCrip.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_StartCripSpeed_Decel.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_StartCrip.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_StartCripSpeed_AccJerk.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_StartCrip.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_StartCripSpeed_DecJerk.Text, 1);
+
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_EndCrip.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_EndCripSpeed_Speed.Text, 10) * 10);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_EndCrip.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_EndCripSpeed_Accel.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_EndCrip.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_EndCripSpeed_Decel.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_EndCrip.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_EndCripSpeed_AccJerk.Text, 1);
+            ems_LiftParam_Ctrl.ParamItemsRec.Speed_EndCrip.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_EndCripSpeed_DecJerk.Text, 1);
+
             ems_LiftParam_Ctrl.ParamItemsRec.ManualOp_TokeAlarm = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_ManualOp_TokeAlarm.Text, 0) * 10);
             ems_LiftParam_Ctrl.ParamItemsRec.ManualOp_Startmm = (UInt16)Global_Class.UTIL_StrToIntDef(ed_StartPos.Text, 0);
             ems_LiftParam_Ctrl.ParamItemsRec.ManualOp_Endmm = (UInt16)Global_Class.UTIL_StrToIntDef(ed_EndPos.Text, 0);
-            ems_LiftParam_Ctrl.ParamItemsRec.breakOpenContinueTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_breakOpenContinueTime.Text, 0) * 100);
 
             ems_LiftParam_Ctrl.ParamItemsRec.Invertor_Reference = (Int32)Global_Class.UTIL_StrToIntDef(ed_Invertor_Reference.Text, 1);
             ems_LiftParam_Ctrl.ParamItemsRec.Invertor_PositionGain = (UInt32)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Invertor_PositionGain.Text, 0) * 1000);
@@ -395,7 +469,24 @@ namespace VEXI
             ems_LiftParam_Ctrl.ParamItemsRec.CurrenctPostion_Offset     = (byte)Global_Class.UTIL_StrToIntDef(ed_CurrenctPostion_Offset.Text, 0);
             ems_LiftParam_Ctrl.ParamItemsRec.CurrenctPostion_His        = (byte)Global_Class.UTIL_StrToIntDef(ed_CurrenctPostion_His.Text, 0);
             ems_LiftParam_Ctrl.ParamItemsRec.CurrenctPostion_RetryCount = (byte)Global_Class.UTIL_StrToIntDef(ed_CurrenctPostion_RetryCount.Text, 0);
-            ems_LiftParam_Ctrl.ParamItemsRec.CurrenctPostion_RetryRange = (byte)Global_Class.UTIL_StrToIntDef(ed_CurrenctPostion_RetryRange.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.CurrenctPostion_RetryRange = (UInt16)Global_Class.UTIL_StrToIntDef(ed_CurrenctPostion_RetryRange.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.CurrenctDownPostion_Offset = (UInt16)Global_Class.UTIL_StrToIntDef(ed_CurrenctDownPostion_Offset.Text, 0);
+
+
+            ems_LiftParam_Ctrl.ParamItemsRec.Loading_DownStartCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Loading_DownStartCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.Loading_DownEndCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Loading_DownEndCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.Loading_UpStartCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Loading_UpStartCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.Loading_UpEndCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Loading_UpEndCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.UnLoading_DownStartCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_UnLoading_DownStartCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.UnLoading_DownEndCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_UnLoading_DownEndCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.UnLoading_UpStartCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_UnLoading_UpStartCrip.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.UnLoading_UpEndCrip = (UInt16)Global_Class.UTIL_StrToIntDef(ed_UnLoading_UpEndCrip.Text, 0);
+
+            ems_LiftParam_Ctrl.ParamItemsRec.Lift_HomeAOffset = (byte)Global_Class.UTIL_StrToIntDef(edLift_HomeAOffset.Text, 0);
+            ems_LiftParam_Ctrl.ParamItemsRec.Lift_HomeBOffset = (byte)Global_Class.UTIL_StrToIntDef(edLift_HomeBOffset.Text, 0);
+            if (cbLift_RefOffset.SelectedIndex >= 0) ems_LiftParam_Ctrl.ParamItemsRec.Lift_RefSEnsor = (byte)cbLift_RefOffset.SelectedIndex;
+            if (cbLift_HomeOffset_AllCtrlCan.SelectedIndex >= 0) ems_LiftParam_Ctrl.ParamItemsRec.Lift_HomeOffset_AllCtrlCan = (byte)cbLift_HomeOffset_AllCtrlCan.SelectedIndex;
+
 
             if (!isFileSave)
             {
@@ -443,6 +534,36 @@ namespace VEXI
         }
 
         private void groupBox17_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ed_Loading_EndCrip_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label173_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
         {
 
         }

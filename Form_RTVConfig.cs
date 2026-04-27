@@ -90,11 +90,20 @@ namespace VEXI
                 }
 
 
-                switch (DevSt->LampType)
+                switch (DevSt->Front_LampType)
                 {
-                    case 0: lbl_LampType.Text = "LED BAR"; rb_LampType_0.Checked = true; break;
-                    case 1: lbl_LampType.Text = "Tower LAMP"; rb_LampType_1.Checked = true; break;
-                    default: lbl_LampType.Text = "LED BAR"; rb_LampType_0.Checked = true; break;
+                    case 0: lbl_FrontLampType.Text = "LED BAR"; rb_FrontLampType_0.Checked = true; break;
+                    case 1: lbl_FrontLampType.Text = "Tower LAMP"; rb_FrontLampType_1.Checked = true; break;
+                    case 2: lbl_FrontLampType.Text = "LED BAR + Tower Lamp"; rb_FrontLampType_2.Checked = true; break;
+                    default: lbl_FrontLampType.Text = "LED BAR"; rb_FrontLampType_0.Checked = true; break;
+                }
+
+                switch (DevSt->Rear_LampType)
+                {
+                    case 0: lbl_RearLampType.Text = "LED BAR"; rb_RearLampType_0.Checked = true; break;
+                    case 1: lbl_RearLampType.Text = "Tower LAMP"; rb_RearLampType_1.Checked = true; break;
+                    case 2: lbl_RearLampType.Text = "LED BAR + Tower Lamp"; rb_RearLampType_2.Checked = true; break;
+                    default: lbl_RearLampType.Text = "LED BAR"; rb_RearLampType_0.Checked = true; break;
                 }
 
                 if ((DevSt->DSPInstallInfoRec.Install_Type < 1) || 
@@ -142,6 +151,13 @@ namespace VEXI
                                                         DevSt->DSPInstallInfoRec.DSP2_IP[3]);
                     ed_DSP2_IP.Text = lbl_DSP2_IP.Text;
                 }
+
+                switch (DevSt->ModeSwitchUse)
+                {
+                    case 0: lbl_ModeSwitchUse.Text = "미사용"; rb_ModeSwitchUse_0.Checked = true; break;
+                    case 1: lbl_ModeSwitchUse.Text = "사용"; rb_ModeSwitchUse_1.Checked = true; break;
+                    default: lbl_ModeSwitchUse.Text = "미사용"; rb_ModeSwitchUse_0.Checked = true; break;
+                }
             }
             
             btn_Set.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
@@ -183,7 +199,7 @@ namespace VEXI
                 rtv_REC_DEVConfigCtrl.Data.InvertorType.FeedType = 1;
                 rtv_REC_DEVConfigCtrl.Data.InvertorType.InvertorCount = 2;
             }
-            else if (rb_InvertorType_112.Checked)
+            else if (rb_InvertorType_113.Checked)
             {
                 rtv_REC_DEVConfigCtrl.Data.InvertorType.WheelCount = 1;
                 rtv_REC_DEVConfigCtrl.Data.InvertorType.FeedType = 1;
@@ -268,8 +284,13 @@ namespace VEXI
                 rtv_REC_DEVConfigCtrl.Data.InvertorType.InvertorCount = 2;
             }
 
-            if (rb_LampType_1.Checked) rtv_REC_DEVConfigCtrl.Data.LampType = 1;
-            else rtv_REC_DEVConfigCtrl.Data.LampType = 0;
+            if (rb_FrontLampType_1.Checked) rtv_REC_DEVConfigCtrl.Data.Front_LampType = 1;
+            else if (rb_FrontLampType_2.Checked) rtv_REC_DEVConfigCtrl.Data.Front_LampType = 2;
+            else rtv_REC_DEVConfigCtrl.Data.Front_LampType = 0;
+
+            if (rb_RearLampType_1.Checked) rtv_REC_DEVConfigCtrl.Data.Rear_LampType = 1;
+            else if (rb_RearLampType_2.Checked) rtv_REC_DEVConfigCtrl.Data.Rear_LampType = 2;
+            else rtv_REC_DEVConfigCtrl.Data.Rear_LampType = 0;
 
             rtv_REC_DEVConfigCtrl.Data.DSPInstallInfoRec.Install_Type = 0;
             rtv_REC_DEVConfigCtrl.Data.DSPInstallInfoRec.Install_Count = 0;
@@ -301,6 +322,8 @@ namespace VEXI
                     }
                 }
             }
+            if (rb_ModeSwitchUse_1.Checked) rtv_REC_DEVConfigCtrl.Data.ModeSwitchUse = 1;
+            else rtv_REC_DEVConfigCtrl.Data.ModeSwitchUse = 0;
 
             if (!IsFileSave)
             {

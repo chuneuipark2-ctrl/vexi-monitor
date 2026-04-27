@@ -130,6 +130,14 @@ namespace VEXI
                                                         DevSt->DSPInstallInfoRec.DSP2_IP[3]);
                     ed_DSP2_IP.Text = lbl_DSP2_IP.Text;
                 }
+
+
+                switch (DevSt->ModeSwitchUse)
+                {
+                    case 0: lbl_ModeSwitchUse.Text = "미사용"; rb_ModeSwitchUse_0.Checked = true; break;
+                    case 1: lbl_ModeSwitchUse.Text = "사용"; rb_ModeSwitchUse_1.Checked = true; break;
+                    default: lbl_ModeSwitchUse.Text = "미사용"; rb_ModeSwitchUse_0.Checked = true; break;
+                }
             }
             
             btn_Set.Enabled = ((form_Main.COMMDataManager.DevRec.ems_REC_EMSSt.DevMode & 0x08) != 0);
@@ -139,7 +147,7 @@ namespace VEXI
         {
             IPAddress ReturnIP;
 
-            ems_REC_DEVConfigCtrl.CtrlFlag[0] = 0x03;
+            ems_REC_DEVConfigCtrl.CtrlFlag[0] = 0x07;
             ems_REC_DEVConfigCtrl.CtrlFlag[1] = 0x00;
             ems_REC_DEVConfigCtrl.CtrlFlag[2] = 0x00;
 
@@ -192,6 +200,8 @@ namespace VEXI
                 }
             }
 
+            if (rb_ModeSwitchUse_1.Checked) ems_REC_DEVConfigCtrl.Data.ModeSwitchUse = 1;
+            else ems_REC_DEVConfigCtrl.Data.ModeSwitchUse = 0;
             if (!IsFileSave)
             {
                 form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_01, ConstClass.CMD2_26, ems_REC_DEVConfigCtrl);

@@ -34,6 +34,8 @@ namespace VEXI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_JisangSt_4 = new System.Windows.Forms.Label();
+            this.lbl_JisangSt_3 = new System.Windows.Forms.Label();
             this.lbl_Jisang_InterLockOut = new System.Windows.Forms.Label();
             this.lbl_Jisang_InterLockIn = new System.Windows.Forms.Label();
             this.lbl_JisangMode = new System.Windows.Forms.Label();
@@ -69,57 +71,20 @@ namespace VEXI
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.lbl_Dev_InvErr_DriveCode = new System.Windows.Forms.Label();
+            this.lbl_Dev_InvErr_LiftCode = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.lbl_Dev_InvErr_Fork1Code = new System.Windows.Forms.Label();
+            this.lbl_Dev_InvErr_Fork2Code = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbl_Dev_ActionCode = new System.Windows.Forms.Label();
             this.lbl_Dev_Error = new System.Windows.Forms.Label();
             this.tc_JobStatus = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label358 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_MoveJob_Step = new System.Windows.Forms.Label();
-            this.label360 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_MoveJob_St = new System.Windows.Forms.Label();
-            this.label364 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_MoveJob_To = new System.Windows.Forms.Label();
-            this.label366 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_MoveJob = new System.Windows.Forms.Label();
-            this.label368 = new System.Windows.Forms.Label();
-            this.label369 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_jobStep = new System.Windows.Forms.Label();
-            this.label371 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_jobSt = new System.Windows.Forms.Label();
-            this.label373 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_To = new System.Windows.Forms.Label();
-            this.label375 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_From = new System.Windows.Forms.Label();
-            this.label377 = new System.Windows.Forms.Label();
-            this.lbl_Fork2_TaskIndex = new System.Windows.Forms.Label();
-            this.lbl_Fork2_Cmd = new System.Windows.Forms.Label();
-            this.lbl_Fork2_Job = new System.Windows.Forms.Label();
-            this.label381 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label351 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_MoveJob_Step = new System.Windows.Forms.Label();
-            this.label353 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_MoveJob_St = new System.Windows.Forms.Label();
-            this.label355 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_MoveJob_To = new System.Windows.Forms.Label();
-            this.label357 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_MoveJob = new System.Windows.Forms.Label();
-            this.label363 = new System.Windows.Forms.Label();
-            this.label350 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_jobStep = new System.Windows.Forms.Label();
-            this.label349 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_jobSt = new System.Windows.Forms.Label();
-            this.label346 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_To = new System.Windows.Forms.Label();
-            this.label345 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_From = new System.Windows.Forms.Label();
-            this.label342 = new System.Windows.Forms.Label();
-            this.lbl_Fork1_TaskIndex = new System.Windows.Forms.Label();
-            this.lbl_Fork1_Cmd = new System.Windows.Forms.Label();
-            this.lbl_Fork1_Job = new System.Windows.Forms.Label();
-            this.label338 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lv_TaskJob = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -131,6 +96,10 @@ namespace VEXI
             this.lbl_TaskJobSt = new System.Windows.Forms.Label();
             this.lbl_TaskJobNumber = new System.Windows.Forms.Label();
             this.label383 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lv_SI = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_O_Title_20 = new System.Windows.Forms.Label();
             this.lbl_OSt_20 = new System.Windows.Forms.Label();
             this.lbl_O_Title_16 = new System.Windows.Forms.Label();
@@ -304,11 +273,12 @@ namespace VEXI
             this.label287 = new System.Windows.Forms.Label();
             this.label288 = new System.Windows.Forms.Label();
             this.gb_IOgroup = new System.Windows.Forms.GroupBox();
+            this.rb_DIO_DigitalIn_4 = new System.Windows.Forms.RadioButton();
             this.rb_DIO_DigitalIn_3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.rb_DIO_DigitalIn_2 = new System.Windows.Forms.RadioButton();
             this.rb_DIO_DigitalIn_1 = new System.Windows.Forms.RadioButton();
-            this.rb_DIO_DigitalOut = new System.Windows.Forms.RadioButton();
+            this.rb_DIO_DigitalOut_1 = new System.Windows.Forms.RadioButton();
             this.lbl_UpDown_DestSpeed = new System.Windows.Forms.Label();
             this.lbl_Drive_DestSpeed = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -462,7 +432,17 @@ namespace VEXI
             this.label175 = new System.Windows.Forms.Label();
             this.label176 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.lbl_Fork1St2_7 = new System.Windows.Forms.Label();
+            this.lbl_Fork2St2_7 = new System.Windows.Forms.Label();
+            this.lbl_Fork1St2_6 = new System.Windows.Forms.Label();
+            this.lbl_Fork2St2_6 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_Existitem = new System.Windows.Forms.Label();
+            this.lbl_Fork2_Existitem = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rb_DIO_DigitalOut_2 = new System.Windows.Forms.RadioButton();
             this.label135 = new System.Windows.Forms.Label();
             this.label136 = new System.Windows.Forms.Label();
             this.label137 = new System.Windows.Forms.Label();
@@ -555,18 +535,64 @@ namespace VEXI
             this.label67 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label358 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_MoveJob_Step = new System.Windows.Forms.Label();
+            this.label360 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_MoveJob_St = new System.Windows.Forms.Label();
+            this.label364 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_MoveJob_To = new System.Windows.Forms.Label();
+            this.label366 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_MoveJob = new System.Windows.Forms.Label();
+            this.label368 = new System.Windows.Forms.Label();
+            this.label369 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_jobStep = new System.Windows.Forms.Label();
+            this.label371 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_jobSt = new System.Windows.Forms.Label();
+            this.label373 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_To = new System.Windows.Forms.Label();
+            this.label375 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_From = new System.Windows.Forms.Label();
+            this.label377 = new System.Windows.Forms.Label();
+            this.lbl_Fork2_Cmd = new System.Windows.Forms.Label();
+            this.lbl_Fork2_Job = new System.Windows.Forms.Label();
+            this.label381 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label351 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_MoveJob_Step = new System.Windows.Forms.Label();
+            this.label353 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_MoveJob_St = new System.Windows.Forms.Label();
+            this.label355 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_MoveJob_To = new System.Windows.Forms.Label();
+            this.label357 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_MoveJob = new System.Windows.Forms.Label();
+            this.label363 = new System.Windows.Forms.Label();
+            this.label350 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_jobStep = new System.Windows.Forms.Label();
+            this.label349 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_jobSt = new System.Windows.Forms.Label();
+            this.label346 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_To = new System.Windows.Forms.Label();
+            this.label345 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_From = new System.Windows.Forms.Label();
+            this.label342 = new System.Windows.Forms.Label();
+            this.lbl_Fork1_Cmd = new System.Windows.Forms.Label();
+            this.lbl_Fork1_Job = new System.Windows.Forms.Label();
+            this.label338 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tc_JobStatus.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.gb_IOgroup.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -615,6 +641,8 @@ namespace VEXI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_JisangSt_4);
+            this.groupBox1.Controls.Add(this.lbl_JisangSt_3);
             this.groupBox1.Controls.Add(this.lbl_Jisang_InterLockOut);
             this.groupBox1.Controls.Add(this.lbl_Jisang_InterLockIn);
             this.groupBox1.Controls.Add(this.lbl_JisangMode);
@@ -633,6 +661,26 @@ namespace VEXI
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "지상반 정보";
+            // 
+            // lbl_JisangSt_4
+            // 
+            this.lbl_JisangSt_4.BackColor = System.Drawing.Color.Silver;
+            this.lbl_JisangSt_4.Location = new System.Drawing.Point(367, 61);
+            this.lbl_JisangSt_4.Name = "lbl_JisangSt_4";
+            this.lbl_JisangSt_4.Size = new System.Drawing.Size(84, 34);
+            this.lbl_JisangSt_4.TabIndex = 16;
+            this.lbl_JisangSt_4.Text = "Host Com";
+            this.lbl_JisangSt_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_JisangSt_3
+            // 
+            this.lbl_JisangSt_3.BackColor = System.Drawing.Color.Silver;
+            this.lbl_JisangSt_3.Location = new System.Drawing.Point(367, 23);
+            this.lbl_JisangSt_3.Name = "lbl_JisangSt_3";
+            this.lbl_JisangSt_3.Size = new System.Drawing.Size(84, 34);
+            this.lbl_JisangSt_3.TabIndex = 15;
+            this.lbl_JisangSt_3.Text = "Heart Bit";
+            this.lbl_JisangSt_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Jisang_InterLockOut
             // 
@@ -1016,6 +1064,7 @@ namespace VEXI
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.groupBox13);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.tc_JobStatus);
@@ -1025,6 +1074,107 @@ namespace VEXI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 1055);
             this.panel1.TabIndex = 53;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.label70);
+            this.groupBox13.Controls.Add(this.label73);
+            this.groupBox13.Controls.Add(this.lbl_Dev_InvErr_DriveCode);
+            this.groupBox13.Controls.Add(this.lbl_Dev_InvErr_LiftCode);
+            this.groupBox13.Controls.Add(this.label77);
+            this.groupBox13.Controls.Add(this.label74);
+            this.groupBox13.Controls.Add(this.lbl_Dev_InvErr_Fork1Code);
+            this.groupBox13.Controls.Add(this.lbl_Dev_InvErr_Fork2Code);
+            this.groupBox13.Location = new System.Drawing.Point(9, 910);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(486, 100);
+            this.groupBox13.TabIndex = 58;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "인버터 장애코드";
+            // 
+            // label70
+            // 
+            this.label70.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label70.ForeColor = System.Drawing.Color.White;
+            this.label70.Location = new System.Drawing.Point(16, 19);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(164, 16);
+            this.label70.TabIndex = 892;
+            this.label70.Text = "인버터 주행 장애코드";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label73
+            // 
+            this.label73.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label73.ForeColor = System.Drawing.Color.White;
+            this.label73.Location = new System.Drawing.Point(16, 37);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(164, 16);
+            this.label73.TabIndex = 893;
+            this.label73.Text = "인버터 승강 장애코드";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Dev_InvErr_DriveCode
+            // 
+            this.lbl_Dev_InvErr_DriveCode.BackColor = System.Drawing.Color.White;
+            this.lbl_Dev_InvErr_DriveCode.Location = new System.Drawing.Point(186, 19);
+            this.lbl_Dev_InvErr_DriveCode.Name = "lbl_Dev_InvErr_DriveCode";
+            this.lbl_Dev_InvErr_DriveCode.Size = new System.Drawing.Size(126, 16);
+            this.lbl_Dev_InvErr_DriveCode.TabIndex = 894;
+            this.lbl_Dev_InvErr_DriveCode.Text = "X";
+            this.lbl_Dev_InvErr_DriveCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Dev_InvErr_LiftCode
+            // 
+            this.lbl_Dev_InvErr_LiftCode.BackColor = System.Drawing.Color.White;
+            this.lbl_Dev_InvErr_LiftCode.Location = new System.Drawing.Point(186, 37);
+            this.lbl_Dev_InvErr_LiftCode.Name = "lbl_Dev_InvErr_LiftCode";
+            this.lbl_Dev_InvErr_LiftCode.Size = new System.Drawing.Size(126, 16);
+            this.lbl_Dev_InvErr_LiftCode.TabIndex = 895;
+            this.lbl_Dev_InvErr_LiftCode.Text = "X";
+            this.lbl_Dev_InvErr_LiftCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label77
+            // 
+            this.label77.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label77.ForeColor = System.Drawing.Color.White;
+            this.label77.Location = new System.Drawing.Point(16, 73);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(164, 16);
+            this.label77.TabIndex = 897;
+            this.label77.Text = "인버터 Fork2 장애코드";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label74
+            // 
+            this.label74.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label74.ForeColor = System.Drawing.Color.White;
+            this.label74.Location = new System.Drawing.Point(16, 55);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(164, 16);
+            this.label74.TabIndex = 896;
+            this.label74.Text = "인버터 Fork1 장애코드";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Dev_InvErr_Fork1Code
+            // 
+            this.lbl_Dev_InvErr_Fork1Code.BackColor = System.Drawing.Color.White;
+            this.lbl_Dev_InvErr_Fork1Code.Location = new System.Drawing.Point(186, 55);
+            this.lbl_Dev_InvErr_Fork1Code.Name = "lbl_Dev_InvErr_Fork1Code";
+            this.lbl_Dev_InvErr_Fork1Code.Size = new System.Drawing.Size(126, 16);
+            this.lbl_Dev_InvErr_Fork1Code.TabIndex = 898;
+            this.lbl_Dev_InvErr_Fork1Code.Text = "X";
+            this.lbl_Dev_InvErr_Fork1Code.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Dev_InvErr_Fork2Code
+            // 
+            this.lbl_Dev_InvErr_Fork2Code.BackColor = System.Drawing.Color.White;
+            this.lbl_Dev_InvErr_Fork2Code.Location = new System.Drawing.Point(186, 73);
+            this.lbl_Dev_InvErr_Fork2Code.Name = "lbl_Dev_InvErr_Fork2Code";
+            this.lbl_Dev_InvErr_Fork2Code.Size = new System.Drawing.Size(126, 16);
+            this.lbl_Dev_InvErr_Fork2Code.TabIndex = 899;
+            this.lbl_Dev_InvErr_Fork2Code.Text = "X";
+            this.lbl_Dev_InvErr_Fork2Code.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox4
             // 
@@ -1063,563 +1213,24 @@ namespace VEXI
             // 
             this.tc_JobStatus.Controls.Add(this.tabPage3);
             this.tc_JobStatus.Controls.Add(this.tabPage4);
+            this.tc_JobStatus.Controls.Add(this.tabPage1);
             this.tc_JobStatus.Location = new System.Drawing.Point(9, 412);
             this.tc_JobStatus.Name = "tc_JobStatus";
             this.tc_JobStatus.SelectedIndex = 0;
-            this.tc_JobStatus.Size = new System.Drawing.Size(486, 492);
+            this.tc_JobStatus.Size = new System.Drawing.Size(486, 481);
             this.tc_JobStatus.TabIndex = 56;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.groupBox11);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(478, 466);
+            this.tabPage3.Size = new System.Drawing.Size(478, 455);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "작업 상태";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label358);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_MoveJob_Step);
-            this.groupBox6.Controls.Add(this.label360);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_MoveJob_St);
-            this.groupBox6.Controls.Add(this.label364);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_MoveJob_To);
-            this.groupBox6.Controls.Add(this.label366);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_MoveJob);
-            this.groupBox6.Controls.Add(this.label368);
-            this.groupBox6.Controls.Add(this.label369);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_jobStep);
-            this.groupBox6.Controls.Add(this.label371);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_jobSt);
-            this.groupBox6.Controls.Add(this.label373);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_To);
-            this.groupBox6.Controls.Add(this.label375);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_From);
-            this.groupBox6.Controls.Add(this.label377);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_TaskIndex);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_Cmd);
-            this.groupBox6.Controls.Add(this.lbl_Fork2_Job);
-            this.groupBox6.Controls.Add(this.label381);
-            this.groupBox6.Location = new System.Drawing.Point(19, 263);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(402, 189);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Fork 2";
-            // 
-            // label358
-            // 
-            this.label358.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label358.ForeColor = System.Drawing.Color.White;
-            this.label358.Location = new System.Drawing.Point(23, 112);
-            this.label358.Name = "label358";
-            this.label358.Size = new System.Drawing.Size(358, 16);
-            this.label358.TabIndex = 133;
-            this.label358.Text = "이동 작업";
-            this.label358.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_MoveJob_Step
-            // 
-            this.lbl_Fork2_MoveJob_Step.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_MoveJob_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_MoveJob_Step.Location = new System.Drawing.Point(88, 163);
-            this.lbl_Fork2_MoveJob_Step.Name = "lbl_Fork2_MoveJob_Step";
-            this.lbl_Fork2_MoveJob_Step.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork2_MoveJob_Step.TabIndex = 132;
-            this.lbl_Fork2_MoveJob_Step.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_MoveJob_Step.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label360
-            // 
-            this.label360.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label360.ForeColor = System.Drawing.Color.White;
-            this.label360.Location = new System.Drawing.Point(23, 163);
-            this.label360.Name = "label360";
-            this.label360.Size = new System.Drawing.Size(63, 16);
-            this.label360.TabIndex = 131;
-            this.label360.Text = "처리단계";
-            this.label360.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_MoveJob_St
-            // 
-            this.lbl_Fork2_MoveJob_St.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_MoveJob_St.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_MoveJob_St.Location = new System.Drawing.Point(88, 146);
-            this.lbl_Fork2_MoveJob_St.Name = "lbl_Fork2_MoveJob_St";
-            this.lbl_Fork2_MoveJob_St.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork2_MoveJob_St.TabIndex = 130;
-            this.lbl_Fork2_MoveJob_St.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_MoveJob_St.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label364
-            // 
-            this.label364.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label364.ForeColor = System.Drawing.Color.White;
-            this.label364.Location = new System.Drawing.Point(23, 146);
-            this.label364.Name = "label364";
-            this.label364.Size = new System.Drawing.Size(63, 16);
-            this.label364.TabIndex = 129;
-            this.label364.Text = "처리상태";
-            this.label364.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_MoveJob_To
-            // 
-            this.lbl_Fork2_MoveJob_To.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_MoveJob_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_MoveJob_To.Location = new System.Drawing.Point(268, 129);
-            this.lbl_Fork2_MoveJob_To.Name = "lbl_Fork2_MoveJob_To";
-            this.lbl_Fork2_MoveJob_To.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork2_MoveJob_To.TabIndex = 128;
-            this.lbl_Fork2_MoveJob_To.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_MoveJob_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label366
-            // 
-            this.label366.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label366.ForeColor = System.Drawing.Color.White;
-            this.label366.Location = new System.Drawing.Point(203, 129);
-            this.label366.Name = "label366";
-            this.label366.Size = new System.Drawing.Size(63, 16);
-            this.label366.TabIndex = 127;
-            this.label366.Text = "TO";
-            this.label366.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_MoveJob
-            // 
-            this.lbl_Fork2_MoveJob.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_MoveJob.Location = new System.Drawing.Point(88, 129);
-            this.lbl_Fork2_MoveJob.Name = "lbl_Fork2_MoveJob";
-            this.lbl_Fork2_MoveJob.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork2_MoveJob.TabIndex = 122;
-            this.lbl_Fork2_MoveJob.Text = "XXXXXXXX";
-            this.lbl_Fork2_MoveJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label368
-            // 
-            this.label368.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label368.ForeColor = System.Drawing.Color.White;
-            this.label368.Location = new System.Drawing.Point(23, 129);
-            this.label368.Name = "label368";
-            this.label368.Size = new System.Drawing.Size(63, 16);
-            this.label368.TabIndex = 121;
-            this.label368.Text = "작업";
-            this.label368.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label369
-            // 
-            this.label369.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label369.ForeColor = System.Drawing.Color.White;
-            this.label369.Location = new System.Drawing.Point(23, 20);
-            this.label369.Name = "label369";
-            this.label369.Size = new System.Drawing.Size(358, 16);
-            this.label369.TabIndex = 120;
-            this.label369.Text = "반송 및 Task 작업";
-            this.label369.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_jobStep
-            // 
-            this.lbl_Fork2_jobStep.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_jobStep.Location = new System.Drawing.Point(88, 88);
-            this.lbl_Fork2_jobStep.Name = "lbl_Fork2_jobStep";
-            this.lbl_Fork2_jobStep.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork2_jobStep.TabIndex = 119;
-            this.lbl_Fork2_jobStep.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label371
-            // 
-            this.label371.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label371.ForeColor = System.Drawing.Color.White;
-            this.label371.Location = new System.Drawing.Point(23, 88);
-            this.label371.Name = "label371";
-            this.label371.Size = new System.Drawing.Size(63, 16);
-            this.label371.TabIndex = 118;
-            this.label371.Text = "처리단계";
-            this.label371.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_jobSt
-            // 
-            this.lbl_Fork2_jobSt.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_jobSt.Location = new System.Drawing.Point(88, 71);
-            this.lbl_Fork2_jobSt.Name = "lbl_Fork2_jobSt";
-            this.lbl_Fork2_jobSt.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork2_jobSt.TabIndex = 117;
-            this.lbl_Fork2_jobSt.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label373
-            // 
-            this.label373.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label373.ForeColor = System.Drawing.Color.White;
-            this.label373.Location = new System.Drawing.Point(23, 71);
-            this.label373.Name = "label373";
-            this.label373.Size = new System.Drawing.Size(63, 16);
-            this.label373.TabIndex = 116;
-            this.label373.Text = "처리상태";
-            this.label373.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_To
-            // 
-            this.lbl_Fork2_To.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_To.Location = new System.Drawing.Point(268, 54);
-            this.lbl_Fork2_To.Name = "lbl_Fork2_To";
-            this.lbl_Fork2_To.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork2_To.TabIndex = 115;
-            this.lbl_Fork2_To.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label375
-            // 
-            this.label375.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label375.ForeColor = System.Drawing.Color.White;
-            this.label375.Location = new System.Drawing.Point(203, 54);
-            this.label375.Name = "label375";
-            this.label375.Size = new System.Drawing.Size(63, 16);
-            this.label375.TabIndex = 114;
-            this.label375.Text = "TO";
-            this.label375.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_From
-            // 
-            this.lbl_Fork2_From.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_From.Location = new System.Drawing.Point(88, 54);
-            this.lbl_Fork2_From.Name = "lbl_Fork2_From";
-            this.lbl_Fork2_From.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork2_From.TabIndex = 113;
-            this.lbl_Fork2_From.Text = "S11-R2-L12-B12";
-            this.lbl_Fork2_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label377
-            // 
-            this.label377.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label377.ForeColor = System.Drawing.Color.White;
-            this.label377.Location = new System.Drawing.Point(23, 54);
-            this.label377.Name = "label377";
-            this.label377.Size = new System.Drawing.Size(63, 16);
-            this.label377.TabIndex = 112;
-            this.label377.Text = "FROM";
-            this.label377.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_TaskIndex
-            // 
-            this.lbl_Fork2_TaskIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_TaskIndex.Location = new System.Drawing.Point(182, 37);
-            this.lbl_Fork2_TaskIndex.Name = "lbl_Fork2_TaskIndex";
-            this.lbl_Fork2_TaskIndex.Size = new System.Drawing.Size(31, 16);
-            this.lbl_Fork2_TaskIndex.TabIndex = 111;
-            this.lbl_Fork2_TaskIndex.Text = "- 1";
-            this.lbl_Fork2_TaskIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_Cmd
-            // 
-            this.lbl_Fork2_Cmd.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork2_Cmd.Location = new System.Drawing.Point(213, 37);
-            this.lbl_Fork2_Cmd.Name = "lbl_Fork2_Cmd";
-            this.lbl_Fork2_Cmd.Size = new System.Drawing.Size(168, 16);
-            this.lbl_Fork2_Cmd.TabIndex = 110;
-            this.lbl_Fork2_Cmd.Text = "스테이션 목적지 변경";
-            this.lbl_Fork2_Cmd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork2_Job
-            // 
-            this.lbl_Fork2_Job.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_Job.Location = new System.Drawing.Point(88, 37);
-            this.lbl_Fork2_Job.Name = "lbl_Fork2_Job";
-            this.lbl_Fork2_Job.Size = new System.Drawing.Size(94, 16);
-            this.lbl_Fork2_Job.TabIndex = 109;
-            this.lbl_Fork2_Job.Text = "XXXXXXXX";
-            this.lbl_Fork2_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label381
-            // 
-            this.label381.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label381.ForeColor = System.Drawing.Color.White;
-            this.label381.Location = new System.Drawing.Point(23, 37);
-            this.label381.Name = "label381";
-            this.label381.Size = new System.Drawing.Size(63, 16);
-            this.label381.TabIndex = 97;
-            this.label381.Text = "작업";
-            this.label381.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label351);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_MoveJob_Step);
-            this.groupBox2.Controls.Add(this.label353);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_MoveJob_St);
-            this.groupBox2.Controls.Add(this.label355);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_MoveJob_To);
-            this.groupBox2.Controls.Add(this.label357);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_MoveJob);
-            this.groupBox2.Controls.Add(this.label363);
-            this.groupBox2.Controls.Add(this.label350);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_jobStep);
-            this.groupBox2.Controls.Add(this.label349);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_jobSt);
-            this.groupBox2.Controls.Add(this.label346);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_To);
-            this.groupBox2.Controls.Add(this.label345);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_From);
-            this.groupBox2.Controls.Add(this.label342);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_TaskIndex);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_Cmd);
-            this.groupBox2.Controls.Add(this.lbl_Fork1_Job);
-            this.groupBox2.Controls.Add(this.label338);
-            this.groupBox2.Location = new System.Drawing.Point(19, 18);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(402, 189);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Fork 1";
-            // 
-            // label351
-            // 
-            this.label351.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label351.ForeColor = System.Drawing.Color.White;
-            this.label351.Location = new System.Drawing.Point(23, 112);
-            this.label351.Name = "label351";
-            this.label351.Size = new System.Drawing.Size(358, 16);
-            this.label351.TabIndex = 133;
-            this.label351.Text = "이동 작업";
-            this.label351.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_MoveJob_Step
-            // 
-            this.lbl_Fork1_MoveJob_Step.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_MoveJob_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_MoveJob_Step.Location = new System.Drawing.Point(88, 163);
-            this.lbl_Fork1_MoveJob_Step.Name = "lbl_Fork1_MoveJob_Step";
-            this.lbl_Fork1_MoveJob_Step.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork1_MoveJob_Step.TabIndex = 132;
-            this.lbl_Fork1_MoveJob_Step.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_MoveJob_Step.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label353
-            // 
-            this.label353.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label353.ForeColor = System.Drawing.Color.White;
-            this.label353.Location = new System.Drawing.Point(23, 163);
-            this.label353.Name = "label353";
-            this.label353.Size = new System.Drawing.Size(63, 16);
-            this.label353.TabIndex = 131;
-            this.label353.Text = "처리단계";
-            this.label353.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_MoveJob_St
-            // 
-            this.lbl_Fork1_MoveJob_St.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_MoveJob_St.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_MoveJob_St.Location = new System.Drawing.Point(88, 146);
-            this.lbl_Fork1_MoveJob_St.Name = "lbl_Fork1_MoveJob_St";
-            this.lbl_Fork1_MoveJob_St.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork1_MoveJob_St.TabIndex = 130;
-            this.lbl_Fork1_MoveJob_St.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_MoveJob_St.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label355
-            // 
-            this.label355.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label355.ForeColor = System.Drawing.Color.White;
-            this.label355.Location = new System.Drawing.Point(23, 146);
-            this.label355.Name = "label355";
-            this.label355.Size = new System.Drawing.Size(63, 16);
-            this.label355.TabIndex = 129;
-            this.label355.Text = "처리상태";
-            this.label355.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_MoveJob_To
-            // 
-            this.lbl_Fork1_MoveJob_To.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_MoveJob_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_MoveJob_To.Location = new System.Drawing.Point(268, 129);
-            this.lbl_Fork1_MoveJob_To.Name = "lbl_Fork1_MoveJob_To";
-            this.lbl_Fork1_MoveJob_To.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork1_MoveJob_To.TabIndex = 128;
-            this.lbl_Fork1_MoveJob_To.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_MoveJob_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label357
-            // 
-            this.label357.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label357.ForeColor = System.Drawing.Color.White;
-            this.label357.Location = new System.Drawing.Point(203, 129);
-            this.label357.Name = "label357";
-            this.label357.Size = new System.Drawing.Size(63, 16);
-            this.label357.TabIndex = 127;
-            this.label357.Text = "TO";
-            this.label357.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_MoveJob
-            // 
-            this.lbl_Fork1_MoveJob.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_MoveJob.Location = new System.Drawing.Point(88, 129);
-            this.lbl_Fork1_MoveJob.Name = "lbl_Fork1_MoveJob";
-            this.lbl_Fork1_MoveJob.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork1_MoveJob.TabIndex = 122;
-            this.lbl_Fork1_MoveJob.Text = "XXXXXXXX";
-            this.lbl_Fork1_MoveJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label363
-            // 
-            this.label363.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label363.ForeColor = System.Drawing.Color.White;
-            this.label363.Location = new System.Drawing.Point(23, 129);
-            this.label363.Name = "label363";
-            this.label363.Size = new System.Drawing.Size(63, 16);
-            this.label363.TabIndex = 121;
-            this.label363.Text = "작업";
-            this.label363.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label350
-            // 
-            this.label350.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label350.ForeColor = System.Drawing.Color.White;
-            this.label350.Location = new System.Drawing.Point(23, 20);
-            this.label350.Name = "label350";
-            this.label350.Size = new System.Drawing.Size(358, 16);
-            this.label350.TabIndex = 120;
-            this.label350.Text = "반송 및 Task 작업";
-            this.label350.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_jobStep
-            // 
-            this.lbl_Fork1_jobStep.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_jobStep.Location = new System.Drawing.Point(88, 88);
-            this.lbl_Fork1_jobStep.Name = "lbl_Fork1_jobStep";
-            this.lbl_Fork1_jobStep.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork1_jobStep.TabIndex = 119;
-            this.lbl_Fork1_jobStep.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label349
-            // 
-            this.label349.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label349.ForeColor = System.Drawing.Color.White;
-            this.label349.Location = new System.Drawing.Point(23, 88);
-            this.label349.Name = "label349";
-            this.label349.Size = new System.Drawing.Size(63, 16);
-            this.label349.TabIndex = 118;
-            this.label349.Text = "처리단계";
-            this.label349.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_jobSt
-            // 
-            this.lbl_Fork1_jobSt.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_jobSt.Location = new System.Drawing.Point(88, 71);
-            this.lbl_Fork1_jobSt.Name = "lbl_Fork1_jobSt";
-            this.lbl_Fork1_jobSt.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Fork1_jobSt.TabIndex = 117;
-            this.lbl_Fork1_jobSt.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label346
-            // 
-            this.label346.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label346.ForeColor = System.Drawing.Color.White;
-            this.label346.Location = new System.Drawing.Point(23, 71);
-            this.label346.Name = "label346";
-            this.label346.Size = new System.Drawing.Size(63, 16);
-            this.label346.TabIndex = 116;
-            this.label346.Text = "처리상태";
-            this.label346.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_To
-            // 
-            this.lbl_Fork1_To.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_To.Location = new System.Drawing.Point(268, 54);
-            this.lbl_Fork1_To.Name = "lbl_Fork1_To";
-            this.lbl_Fork1_To.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork1_To.TabIndex = 115;
-            this.lbl_Fork1_To.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label345
-            // 
-            this.label345.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label345.ForeColor = System.Drawing.Color.White;
-            this.label345.Location = new System.Drawing.Point(203, 54);
-            this.label345.Name = "label345";
-            this.label345.Size = new System.Drawing.Size(63, 16);
-            this.label345.TabIndex = 114;
-            this.label345.Text = "TO";
-            this.label345.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_From
-            // 
-            this.lbl_Fork1_From.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_From.Location = new System.Drawing.Point(88, 54);
-            this.lbl_Fork1_From.Name = "lbl_Fork1_From";
-            this.lbl_Fork1_From.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Fork1_From.TabIndex = 113;
-            this.lbl_Fork1_From.Text = "S11-R2-L12-B12";
-            this.lbl_Fork1_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label342
-            // 
-            this.label342.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label342.ForeColor = System.Drawing.Color.White;
-            this.label342.Location = new System.Drawing.Point(23, 54);
-            this.label342.Name = "label342";
-            this.label342.Size = new System.Drawing.Size(63, 16);
-            this.label342.TabIndex = 112;
-            this.label342.Text = "FROM";
-            this.label342.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_TaskIndex
-            // 
-            this.lbl_Fork1_TaskIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_TaskIndex.Location = new System.Drawing.Point(182, 37);
-            this.lbl_Fork1_TaskIndex.Name = "lbl_Fork1_TaskIndex";
-            this.lbl_Fork1_TaskIndex.Size = new System.Drawing.Size(31, 16);
-            this.lbl_Fork1_TaskIndex.TabIndex = 111;
-            this.lbl_Fork1_TaskIndex.Text = "- 1";
-            this.lbl_Fork1_TaskIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_Cmd
-            // 
-            this.lbl_Fork1_Cmd.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Fork1_Cmd.Location = new System.Drawing.Point(213, 37);
-            this.lbl_Fork1_Cmd.Name = "lbl_Fork1_Cmd";
-            this.lbl_Fork1_Cmd.Size = new System.Drawing.Size(168, 16);
-            this.lbl_Fork1_Cmd.TabIndex = 110;
-            this.lbl_Fork1_Cmd.Text = "스테이션 목적지 변경";
-            this.lbl_Fork1_Cmd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Fork1_Job
-            // 
-            this.lbl_Fork1_Job.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_Job.Location = new System.Drawing.Point(88, 37);
-            this.lbl_Fork1_Job.Name = "lbl_Fork1_Job";
-            this.lbl_Fork1_Job.Size = new System.Drawing.Size(94, 16);
-            this.lbl_Fork1_Job.TabIndex = 109;
-            this.lbl_Fork1_Job.Text = "XXXXXXXX";
-            this.lbl_Fork1_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label338
-            // 
-            this.label338.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label338.ForeColor = System.Drawing.Color.White;
-            this.label338.Location = new System.Drawing.Point(23, 37);
-            this.label338.Name = "label338";
-            this.label338.Size = new System.Drawing.Size(63, 16);
-            this.label338.TabIndex = 97;
-            this.label338.Text = "작업";
-            this.label338.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage4
             // 
@@ -1631,7 +1242,7 @@ namespace VEXI
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(478, 466);
+            this.tabPage4.Size = new System.Drawing.Size(478, 455);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Task Command List";
             // 
@@ -1719,6 +1330,44 @@ namespace VEXI
             this.label383.TabIndex = 110;
             this.label383.Text = "작업";
             this.label383.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.lv_SI);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(478, 455);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "예지보전";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lv_SI
+            // 
+            this.lv_SI.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader8});
+            this.lv_SI.FullRowSelect = true;
+            this.lv_SI.GridLines = true;
+            this.lv_SI.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lv_SI.HideSelection = false;
+            this.lv_SI.Location = new System.Drawing.Point(15, 12);
+            this.lv_SI.Name = "lv_SI";
+            this.lv_SI.Size = new System.Drawing.Size(446, 430);
+            this.lv_SI.TabIndex = 114;
+            this.lv_SI.UseCompatibleStateImageBehavior = false;
+            this.lv_SI.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "항목";
+            this.columnHeader4.Width = 280;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "값 (Hex)";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 140;
             // 
             // lbl_O_Title_20
             // 
@@ -3614,6 +3263,7 @@ namespace VEXI
             // 
             // gb_IOgroup
             // 
+            this.gb_IOgroup.Controls.Add(this.rb_DIO_DigitalIn_4);
             this.gb_IOgroup.Controls.Add(this.rb_DIO_DigitalIn_3);
             this.gb_IOgroup.Controls.Add(this.button1);
             this.gb_IOgroup.Controls.Add(this.rb_DIO_DigitalIn_2);
@@ -3625,10 +3275,22 @@ namespace VEXI
             this.gb_IOgroup.TabStop = false;
             this.gb_IOgroup.Text = "Input";
             // 
+            // rb_DIO_DigitalIn_4
+            // 
+            this.rb_DIO_DigitalIn_4.AutoSize = true;
+            this.rb_DIO_DigitalIn_4.Location = new System.Drawing.Point(291, 20);
+            this.rb_DIO_DigitalIn_4.Name = "rb_DIO_DigitalIn_4";
+            this.rb_DIO_DigitalIn_4.Size = new System.Drawing.Size(81, 16);
+            this.rb_DIO_DigitalIn_4.TabIndex = 24;
+            this.rb_DIO_DigitalIn_4.Tag = "2";
+            this.rb_DIO_DigitalIn_4.Text = "Digital In 4";
+            this.rb_DIO_DigitalIn_4.UseVisualStyleBackColor = true;
+            this.rb_DIO_DigitalIn_4.Click += new System.EventHandler(this.rb_DIO_DigitalIn_1_Click);
+            // 
             // rb_DIO_DigitalIn_3
             // 
             this.rb_DIO_DigitalIn_3.AutoSize = true;
-            this.rb_DIO_DigitalIn_3.Location = new System.Drawing.Point(259, 20);
+            this.rb_DIO_DigitalIn_3.Location = new System.Drawing.Point(194, 20);
             this.rb_DIO_DigitalIn_3.Name = "rb_DIO_DigitalIn_3";
             this.rb_DIO_DigitalIn_3.Size = new System.Drawing.Size(81, 16);
             this.rb_DIO_DigitalIn_3.TabIndex = 23;
@@ -3651,7 +3313,7 @@ namespace VEXI
             // rb_DIO_DigitalIn_2
             // 
             this.rb_DIO_DigitalIn_2.AutoSize = true;
-            this.rb_DIO_DigitalIn_2.Location = new System.Drawing.Point(140, 20);
+            this.rb_DIO_DigitalIn_2.Location = new System.Drawing.Point(98, 20);
             this.rb_DIO_DigitalIn_2.Name = "rb_DIO_DigitalIn_2";
             this.rb_DIO_DigitalIn_2.Size = new System.Drawing.Size(81, 16);
             this.rb_DIO_DigitalIn_2.TabIndex = 21;
@@ -3675,24 +3337,24 @@ namespace VEXI
             this.rb_DIO_DigitalIn_1.CheckedChanged += new System.EventHandler(this.rb_DIO_DigitalIn_1_CheckedChanged);
             this.rb_DIO_DigitalIn_1.Click += new System.EventHandler(this.rb_DIO_DigitalIn_1_Click);
             // 
-            // rb_DIO_DigitalOut
+            // rb_DIO_DigitalOut_1
             // 
-            this.rb_DIO_DigitalOut.AutoSize = true;
-            this.rb_DIO_DigitalOut.Checked = true;
-            this.rb_DIO_DigitalOut.Location = new System.Drawing.Point(6, 20);
-            this.rb_DIO_DigitalOut.Name = "rb_DIO_DigitalOut";
-            this.rb_DIO_DigitalOut.Size = new System.Drawing.Size(80, 16);
-            this.rb_DIO_DigitalOut.TabIndex = 9;
-            this.rb_DIO_DigitalOut.TabStop = true;
-            this.rb_DIO_DigitalOut.Tag = "3";
-            this.rb_DIO_DigitalOut.Text = "Digital Out";
-            this.rb_DIO_DigitalOut.UseVisualStyleBackColor = true;
-            this.rb_DIO_DigitalOut.Click += new System.EventHandler(this.rb_DIO_DigitalIn_1_Click);
+            this.rb_DIO_DigitalOut_1.AutoSize = true;
+            this.rb_DIO_DigitalOut_1.Checked = true;
+            this.rb_DIO_DigitalOut_1.Location = new System.Drawing.Point(6, 20);
+            this.rb_DIO_DigitalOut_1.Name = "rb_DIO_DigitalOut_1";
+            this.rb_DIO_DigitalOut_1.Size = new System.Drawing.Size(90, 16);
+            this.rb_DIO_DigitalOut_1.TabIndex = 9;
+            this.rb_DIO_DigitalOut_1.TabStop = true;
+            this.rb_DIO_DigitalOut_1.Tag = "3";
+            this.rb_DIO_DigitalOut_1.Text = "Digital Out 1";
+            this.rb_DIO_DigitalOut_1.UseVisualStyleBackColor = true;
+            this.rb_DIO_DigitalOut_1.Click += new System.EventHandler(this.rb_DIO_DigitalIn_1_Click);
             // 
             // lbl_UpDown_DestSpeed
             // 
             this.lbl_UpDown_DestSpeed.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_DestSpeed.Location = new System.Drawing.Point(273, 548);
+            this.lbl_UpDown_DestSpeed.Location = new System.Drawing.Point(273, 540);
             this.lbl_UpDown_DestSpeed.Name = "lbl_UpDown_DestSpeed";
             this.lbl_UpDown_DestSpeed.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDown_DestSpeed.TabIndex = 174;
@@ -3702,7 +3364,7 @@ namespace VEXI
             // lbl_Drive_DestSpeed
             // 
             this.lbl_Drive_DestSpeed.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_DestSpeed.Location = new System.Drawing.Point(143, 548);
+            this.lbl_Drive_DestSpeed.Location = new System.Drawing.Point(143, 540);
             this.lbl_Drive_DestSpeed.Name = "lbl_Drive_DestSpeed";
             this.lbl_Drive_DestSpeed.Size = new System.Drawing.Size(126, 16);
             this.lbl_Drive_DestSpeed.TabIndex = 173;
@@ -3713,7 +3375,7 @@ namespace VEXI
             // 
             this.label62.BackColor = System.Drawing.SystemColors.Highlight;
             this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Location = new System.Drawing.Point(19, 548);
+            this.label62.Location = new System.Drawing.Point(19, 540);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(119, 16);
             this.label62.TabIndex = 172;
@@ -3723,7 +3385,7 @@ namespace VEXI
             // lbl_UpDownSt2_1
             // 
             this.lbl_UpDownSt2_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt2_1.Location = new System.Drawing.Point(274, 422);
+            this.lbl_UpDownSt2_1.Location = new System.Drawing.Point(274, 414);
             this.lbl_UpDownSt2_1.Name = "lbl_UpDownSt2_1";
             this.lbl_UpDownSt2_1.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt2_1.TabIndex = 171;
@@ -3733,7 +3395,7 @@ namespace VEXI
             // lbl_DriveSt2_1
             // 
             this.lbl_DriveSt2_1.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt2_1.Location = new System.Drawing.Point(144, 422);
+            this.lbl_DriveSt2_1.Location = new System.Drawing.Point(144, 414);
             this.lbl_DriveSt2_1.Name = "lbl_DriveSt2_1";
             this.lbl_DriveSt2_1.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt2_1.TabIndex = 170;
@@ -3744,7 +3406,7 @@ namespace VEXI
             // 
             this.label56.BackColor = System.Drawing.SystemColors.Highlight;
             this.label56.ForeColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(20, 422);
+            this.label56.Location = new System.Drawing.Point(20, 414);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(119, 16);
             this.label56.TabIndex = 169;
@@ -3838,7 +3500,7 @@ namespace VEXI
             // lbl_UpDown_Fork2_CurrentPos_R_2
             // 
             this.lbl_UpDown_Fork2_CurrentPos_R_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork2_CurrentPos_R_2.Location = new System.Drawing.Point(336, 294);
+            this.lbl_UpDown_Fork2_CurrentPos_R_2.Location = new System.Drawing.Point(336, 286);
             this.lbl_UpDown_Fork2_CurrentPos_R_2.Name = "lbl_UpDown_Fork2_CurrentPos_R_2";
             this.lbl_UpDown_Fork2_CurrentPos_R_2.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork2_CurrentPos_R_2.TabIndex = 160;
@@ -3848,7 +3510,7 @@ namespace VEXI
             // lbl_UpDown_Fork2_CurrentPos_R_1
             // 
             this.lbl_UpDown_Fork2_CurrentPos_R_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork2_CurrentPos_R_1.Location = new System.Drawing.Point(336, 257);
+            this.lbl_UpDown_Fork2_CurrentPos_R_1.Location = new System.Drawing.Point(336, 249);
             this.lbl_UpDown_Fork2_CurrentPos_R_1.Name = "lbl_UpDown_Fork2_CurrentPos_R_1";
             this.lbl_UpDown_Fork2_CurrentPos_R_1.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork2_CurrentPos_R_1.TabIndex = 159;
@@ -3858,7 +3520,7 @@ namespace VEXI
             // lbl_Drive_CurrentPos_R_Fork2
             // 
             this.lbl_Drive_CurrentPos_R_Fork2.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_CurrentPos_R_Fork2.Location = new System.Drawing.Point(207, 257);
+            this.lbl_Drive_CurrentPos_R_Fork2.Location = new System.Drawing.Point(207, 249);
             this.lbl_Drive_CurrentPos_R_Fork2.Name = "lbl_Drive_CurrentPos_R_Fork2";
             this.lbl_Drive_CurrentPos_R_Fork2.Size = new System.Drawing.Size(62, 73);
             this.lbl_Drive_CurrentPos_R_Fork2.TabIndex = 158;
@@ -3869,7 +3531,7 @@ namespace VEXI
             // 
             this.label34.BackColor = System.Drawing.SystemColors.Highlight;
             this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(19, 257);
+            this.label34.Location = new System.Drawing.Point(19, 249);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(119, 73);
             this.label34.TabIndex = 157;
@@ -3879,7 +3541,7 @@ namespace VEXI
             // lbl_UpDown_Fork1_CurrentPos_R_2
             // 
             this.lbl_UpDown_Fork1_CurrentPos_R_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork1_CurrentPos_R_2.Location = new System.Drawing.Point(336, 220);
+            this.lbl_UpDown_Fork1_CurrentPos_R_2.Location = new System.Drawing.Point(336, 212);
             this.lbl_UpDown_Fork1_CurrentPos_R_2.Name = "lbl_UpDown_Fork1_CurrentPos_R_2";
             this.lbl_UpDown_Fork1_CurrentPos_R_2.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork1_CurrentPos_R_2.TabIndex = 156;
@@ -3889,7 +3551,7 @@ namespace VEXI
             // lbl_UpDown_Fork1_CurrentPos_R_1
             // 
             this.lbl_UpDown_Fork1_CurrentPos_R_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork1_CurrentPos_R_1.Location = new System.Drawing.Point(336, 183);
+            this.lbl_UpDown_Fork1_CurrentPos_R_1.Location = new System.Drawing.Point(336, 175);
             this.lbl_UpDown_Fork1_CurrentPos_R_1.Name = "lbl_UpDown_Fork1_CurrentPos_R_1";
             this.lbl_UpDown_Fork1_CurrentPos_R_1.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork1_CurrentPos_R_1.TabIndex = 155;
@@ -3899,7 +3561,7 @@ namespace VEXI
             // lbl_Drive_CurrentPos_R_Fork1
             // 
             this.lbl_Drive_CurrentPos_R_Fork1.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_CurrentPos_R_Fork1.Location = new System.Drawing.Point(207, 183);
+            this.lbl_Drive_CurrentPos_R_Fork1.Location = new System.Drawing.Point(207, 175);
             this.lbl_Drive_CurrentPos_R_Fork1.Name = "lbl_Drive_CurrentPos_R_Fork1";
             this.lbl_Drive_CurrentPos_R_Fork1.Size = new System.Drawing.Size(62, 73);
             this.lbl_Drive_CurrentPos_R_Fork1.TabIndex = 154;
@@ -3910,7 +3572,7 @@ namespace VEXI
             // 
             this.label31.BackColor = System.Drawing.SystemColors.Highlight;
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(19, 183);
+            this.label31.Location = new System.Drawing.Point(19, 175);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(119, 73);
             this.label31.TabIndex = 153;
@@ -3920,7 +3582,7 @@ namespace VEXI
             // lbl_Dev_Maintance
             // 
             this.lbl_Dev_Maintance.BackColor = System.Drawing.Color.White;
-            this.lbl_Dev_Maintance.Location = new System.Drawing.Point(542, 51);
+            this.lbl_Dev_Maintance.Location = new System.Drawing.Point(534, 35);
             this.lbl_Dev_Maintance.Name = "lbl_Dev_Maintance";
             this.lbl_Dev_Maintance.Size = new System.Drawing.Size(126, 16);
             this.lbl_Dev_Maintance.TabIndex = 152;
@@ -3930,7 +3592,7 @@ namespace VEXI
             // lbl_Dev_Home
             // 
             this.lbl_Dev_Home.BackColor = System.Drawing.Color.White;
-            this.lbl_Dev_Home.Location = new System.Drawing.Point(542, 33);
+            this.lbl_Dev_Home.Location = new System.Drawing.Point(534, 17);
             this.lbl_Dev_Home.Name = "lbl_Dev_Home";
             this.lbl_Dev_Home.Size = new System.Drawing.Size(126, 16);
             this.lbl_Dev_Home.TabIndex = 151;
@@ -3941,7 +3603,7 @@ namespace VEXI
             // 
             this.label36.BackColor = System.Drawing.SystemColors.Highlight;
             this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(429, 51);
+            this.label36.Location = new System.Drawing.Point(421, 35);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(110, 16);
             this.label36.TabIndex = 150;
@@ -3952,7 +3614,7 @@ namespace VEXI
             // 
             this.label50.BackColor = System.Drawing.SystemColors.Highlight;
             this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(429, 33);
+            this.label50.Location = new System.Drawing.Point(421, 17);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(110, 16);
             this.label50.TabIndex = 149;
@@ -3962,7 +3624,7 @@ namespace VEXI
             // lbl_UpDown_Fork2_CurrentPos_L_2
             // 
             this.lbl_UpDown_Fork2_CurrentPos_L_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork2_CurrentPos_L_2.Location = new System.Drawing.Point(273, 294);
+            this.lbl_UpDown_Fork2_CurrentPos_L_2.Location = new System.Drawing.Point(273, 286);
             this.lbl_UpDown_Fork2_CurrentPos_L_2.Name = "lbl_UpDown_Fork2_CurrentPos_L_2";
             this.lbl_UpDown_Fork2_CurrentPos_L_2.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork2_CurrentPos_L_2.TabIndex = 148;
@@ -3972,7 +3634,7 @@ namespace VEXI
             // lbl_UpDown_Fork2_CurrentPos_L_1
             // 
             this.lbl_UpDown_Fork2_CurrentPos_L_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork2_CurrentPos_L_1.Location = new System.Drawing.Point(273, 257);
+            this.lbl_UpDown_Fork2_CurrentPos_L_1.Location = new System.Drawing.Point(273, 249);
             this.lbl_UpDown_Fork2_CurrentPos_L_1.Name = "lbl_UpDown_Fork2_CurrentPos_L_1";
             this.lbl_UpDown_Fork2_CurrentPos_L_1.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork2_CurrentPos_L_1.TabIndex = 147;
@@ -3982,7 +3644,7 @@ namespace VEXI
             // lbl_UpDown_Fork1_CurrentPos_L_2
             // 
             this.lbl_UpDown_Fork1_CurrentPos_L_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork1_CurrentPos_L_2.Location = new System.Drawing.Point(273, 220);
+            this.lbl_UpDown_Fork1_CurrentPos_L_2.Location = new System.Drawing.Point(273, 212);
             this.lbl_UpDown_Fork1_CurrentPos_L_2.Name = "lbl_UpDown_Fork1_CurrentPos_L_2";
             this.lbl_UpDown_Fork1_CurrentPos_L_2.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork1_CurrentPos_L_2.TabIndex = 146;
@@ -3992,7 +3654,7 @@ namespace VEXI
             // lbl_UpDown_Fork1_CurrentPos_L_1
             // 
             this.lbl_UpDown_Fork1_CurrentPos_L_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Fork1_CurrentPos_L_1.Location = new System.Drawing.Point(273, 183);
+            this.lbl_UpDown_Fork1_CurrentPos_L_1.Location = new System.Drawing.Point(273, 175);
             this.lbl_UpDown_Fork1_CurrentPos_L_1.Name = "lbl_UpDown_Fork1_CurrentPos_L_1";
             this.lbl_UpDown_Fork1_CurrentPos_L_1.Size = new System.Drawing.Size(62, 36);
             this.lbl_UpDown_Fork1_CurrentPos_L_1.TabIndex = 145;
@@ -4002,7 +3664,7 @@ namespace VEXI
             // lbl_Drive_CurrentPos_L_Fork2
             // 
             this.lbl_Drive_CurrentPos_L_Fork2.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_CurrentPos_L_Fork2.Location = new System.Drawing.Point(144, 257);
+            this.lbl_Drive_CurrentPos_L_Fork2.Location = new System.Drawing.Point(144, 249);
             this.lbl_Drive_CurrentPos_L_Fork2.Name = "lbl_Drive_CurrentPos_L_Fork2";
             this.lbl_Drive_CurrentPos_L_Fork2.Size = new System.Drawing.Size(62, 73);
             this.lbl_Drive_CurrentPos_L_Fork2.TabIndex = 144;
@@ -4012,7 +3674,7 @@ namespace VEXI
             // lbl_Drive_CurrentPos_L_Fork1
             // 
             this.lbl_Drive_CurrentPos_L_Fork1.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_CurrentPos_L_Fork1.Location = new System.Drawing.Point(144, 183);
+            this.lbl_Drive_CurrentPos_L_Fork1.Location = new System.Drawing.Point(144, 175);
             this.lbl_Drive_CurrentPos_L_Fork1.Name = "lbl_Drive_CurrentPos_L_Fork1";
             this.lbl_Drive_CurrentPos_L_Fork1.Size = new System.Drawing.Size(62, 73);
             this.lbl_Drive_CurrentPos_L_Fork1.TabIndex = 143;
@@ -4025,7 +3687,7 @@ namespace VEXI
             this.label145.ForeColor = System.Drawing.Color.White;
             this.label145.Location = new System.Drawing.Point(273, 82);
             this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(126, 29);
+            this.label145.Size = new System.Drawing.Size(126, 18);
             this.label145.TabIndex = 142;
             this.label145.Text = "승강";
             this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4036,7 +3698,7 @@ namespace VEXI
             this.label146.ForeColor = System.Drawing.Color.White;
             this.label146.Location = new System.Drawing.Point(143, 82);
             this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(126, 29);
+            this.label146.Size = new System.Drawing.Size(126, 18);
             this.label146.TabIndex = 141;
             this.label146.Text = "주행";
             this.label146.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4044,7 +3706,7 @@ namespace VEXI
             // lbl_UpDown_Destination
             // 
             this.lbl_UpDown_Destination.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Destination.Location = new System.Drawing.Point(273, 530);
+            this.lbl_UpDown_Destination.Location = new System.Drawing.Point(273, 522);
             this.lbl_UpDown_Destination.Name = "lbl_UpDown_Destination";
             this.lbl_UpDown_Destination.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDown_Destination.TabIndex = 140;
@@ -4054,7 +3716,7 @@ namespace VEXI
             // lbl_UpDown_Speed
             // 
             this.lbl_UpDown_Speed.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Speed.Location = new System.Drawing.Point(273, 512);
+            this.lbl_UpDown_Speed.Location = new System.Drawing.Point(273, 504);
             this.lbl_UpDown_Speed.Name = "lbl_UpDown_Speed";
             this.lbl_UpDown_Speed.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDown_Speed.TabIndex = 139;
@@ -4064,7 +3726,7 @@ namespace VEXI
             // lbl_UpDown_Position
             // 
             this.lbl_UpDown_Position.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Position.Location = new System.Drawing.Point(273, 494);
+            this.lbl_UpDown_Position.Location = new System.Drawing.Point(273, 486);
             this.lbl_UpDown_Position.Name = "lbl_UpDown_Position";
             this.lbl_UpDown_Position.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDown_Position.TabIndex = 138;
@@ -4074,7 +3736,7 @@ namespace VEXI
             // lbl_UpDownSt1_5
             // 
             this.lbl_UpDownSt1_5.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt1_5.Location = new System.Drawing.Point(273, 476);
+            this.lbl_UpDownSt1_5.Location = new System.Drawing.Point(273, 468);
             this.lbl_UpDownSt1_5.Name = "lbl_UpDownSt1_5";
             this.lbl_UpDownSt1_5.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt1_5.TabIndex = 137;
@@ -4084,7 +3746,7 @@ namespace VEXI
             // lbl_UpDownSt2_3
             // 
             this.lbl_UpDownSt2_3.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt2_3.Location = new System.Drawing.Point(273, 458);
+            this.lbl_UpDownSt2_3.Location = new System.Drawing.Point(273, 450);
             this.lbl_UpDownSt2_3.Name = "lbl_UpDownSt2_3";
             this.lbl_UpDownSt2_3.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt2_3.TabIndex = 136;
@@ -4094,7 +3756,7 @@ namespace VEXI
             // lbl_UpDownSt2_4
             // 
             this.lbl_UpDownSt2_4.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt2_4.Location = new System.Drawing.Point(273, 440);
+            this.lbl_UpDownSt2_4.Location = new System.Drawing.Point(273, 432);
             this.lbl_UpDownSt2_4.Name = "lbl_UpDownSt2_4";
             this.lbl_UpDownSt2_4.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt2_4.TabIndex = 135;
@@ -4104,7 +3766,7 @@ namespace VEXI
             // lbl_UpDownSt2_0
             // 
             this.lbl_UpDownSt2_0.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt2_0.Location = new System.Drawing.Point(273, 404);
+            this.lbl_UpDownSt2_0.Location = new System.Drawing.Point(273, 396);
             this.lbl_UpDownSt2_0.Name = "lbl_UpDownSt2_0";
             this.lbl_UpDownSt2_0.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt2_0.TabIndex = 134;
@@ -4114,7 +3776,7 @@ namespace VEXI
             // lbl_UpDownSt1_0
             // 
             this.lbl_UpDownSt1_0.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt1_0.Location = new System.Drawing.Point(273, 386);
+            this.lbl_UpDownSt1_0.Location = new System.Drawing.Point(273, 378);
             this.lbl_UpDownSt1_0.Name = "lbl_UpDownSt1_0";
             this.lbl_UpDownSt1_0.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt1_0.TabIndex = 133;
@@ -4124,7 +3786,7 @@ namespace VEXI
             // lbl_UpDownSt1_1
             // 
             this.lbl_UpDownSt1_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt1_1.Location = new System.Drawing.Point(273, 368);
+            this.lbl_UpDownSt1_1.Location = new System.Drawing.Point(273, 360);
             this.lbl_UpDownSt1_1.Name = "lbl_UpDownSt1_1";
             this.lbl_UpDownSt1_1.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt1_1.TabIndex = 132;
@@ -4134,7 +3796,7 @@ namespace VEXI
             // lbl_UpDownSt1_2
             // 
             this.lbl_UpDownSt1_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt1_2.Location = new System.Drawing.Point(273, 350);
+            this.lbl_UpDownSt1_2.Location = new System.Drawing.Point(273, 342);
             this.lbl_UpDownSt1_2.Name = "lbl_UpDownSt1_2";
             this.lbl_UpDownSt1_2.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt1_2.TabIndex = 131;
@@ -4144,7 +3806,7 @@ namespace VEXI
             // lbl_UpDownSt1_3
             // 
             this.lbl_UpDownSt1_3.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt1_3.Location = new System.Drawing.Point(273, 332);
+            this.lbl_UpDownSt1_3.Location = new System.Drawing.Point(273, 324);
             this.lbl_UpDownSt1_3.Name = "lbl_UpDownSt1_3";
             this.lbl_UpDownSt1_3.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt1_3.TabIndex = 130;
@@ -4154,7 +3816,7 @@ namespace VEXI
             // lbl_UpDownSt1_4
             // 
             this.lbl_UpDownSt1_4.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt1_4.Location = new System.Drawing.Point(273, 166);
+            this.lbl_UpDownSt1_4.Location = new System.Drawing.Point(273, 158);
             this.lbl_UpDownSt1_4.Name = "lbl_UpDownSt1_4";
             this.lbl_UpDownSt1_4.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt1_4.TabIndex = 129;
@@ -4164,7 +3826,7 @@ namespace VEXI
             // lbl_UpDownSt2_2
             // 
             this.lbl_UpDownSt2_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDownSt2_2.Location = new System.Drawing.Point(273, 148);
+            this.lbl_UpDownSt2_2.Location = new System.Drawing.Point(273, 140);
             this.lbl_UpDownSt2_2.Name = "lbl_UpDownSt2_2";
             this.lbl_UpDownSt2_2.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDownSt2_2.TabIndex = 128;
@@ -4174,7 +3836,7 @@ namespace VEXI
             // lbl_UpDown_Decel_2
             // 
             this.lbl_UpDown_Decel_2.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Decel_2.Location = new System.Drawing.Point(273, 130);
+            this.lbl_UpDown_Decel_2.Location = new System.Drawing.Point(273, 122);
             this.lbl_UpDown_Decel_2.Name = "lbl_UpDown_Decel_2";
             this.lbl_UpDown_Decel_2.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDown_Decel_2.TabIndex = 127;
@@ -4184,7 +3846,7 @@ namespace VEXI
             // lbl_UpDown_Decel_1
             // 
             this.lbl_UpDown_Decel_1.BackColor = System.Drawing.Color.White;
-            this.lbl_UpDown_Decel_1.Location = new System.Drawing.Point(273, 112);
+            this.lbl_UpDown_Decel_1.Location = new System.Drawing.Point(273, 104);
             this.lbl_UpDown_Decel_1.Name = "lbl_UpDown_Decel_1";
             this.lbl_UpDown_Decel_1.Size = new System.Drawing.Size(126, 16);
             this.lbl_UpDown_Decel_1.TabIndex = 126;
@@ -4194,7 +3856,7 @@ namespace VEXI
             // lbl_Drive_Destination
             // 
             this.lbl_Drive_Destination.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_Destination.Location = new System.Drawing.Point(143, 530);
+            this.lbl_Drive_Destination.Location = new System.Drawing.Point(143, 522);
             this.lbl_Drive_Destination.Name = "lbl_Drive_Destination";
             this.lbl_Drive_Destination.Size = new System.Drawing.Size(126, 16);
             this.lbl_Drive_Destination.TabIndex = 125;
@@ -4204,7 +3866,7 @@ namespace VEXI
             // lbl_Drive_Speed
             // 
             this.lbl_Drive_Speed.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_Speed.Location = new System.Drawing.Point(143, 512);
+            this.lbl_Drive_Speed.Location = new System.Drawing.Point(143, 504);
             this.lbl_Drive_Speed.Name = "lbl_Drive_Speed";
             this.lbl_Drive_Speed.Size = new System.Drawing.Size(126, 16);
             this.lbl_Drive_Speed.TabIndex = 124;
@@ -4214,7 +3876,7 @@ namespace VEXI
             // lbl_Drive_Position
             // 
             this.lbl_Drive_Position.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_Position.Location = new System.Drawing.Point(143, 494);
+            this.lbl_Drive_Position.Location = new System.Drawing.Point(143, 486);
             this.lbl_Drive_Position.Name = "lbl_Drive_Position";
             this.lbl_Drive_Position.Size = new System.Drawing.Size(126, 16);
             this.lbl_Drive_Position.TabIndex = 123;
@@ -4225,7 +3887,7 @@ namespace VEXI
             // 
             this.label53.BackColor = System.Drawing.SystemColors.Highlight;
             this.label53.ForeColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(19, 530);
+            this.label53.Location = new System.Drawing.Point(19, 522);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(119, 16);
             this.label53.TabIndex = 122;
@@ -4236,7 +3898,7 @@ namespace VEXI
             // 
             this.label131.BackColor = System.Drawing.SystemColors.Highlight;
             this.label131.ForeColor = System.Drawing.Color.White;
-            this.label131.Location = new System.Drawing.Point(19, 512);
+            this.label131.Location = new System.Drawing.Point(19, 504);
             this.label131.Name = "label131";
             this.label131.Size = new System.Drawing.Size(119, 16);
             this.label131.TabIndex = 121;
@@ -4247,7 +3909,7 @@ namespace VEXI
             // 
             this.label132.BackColor = System.Drawing.SystemColors.Highlight;
             this.label132.ForeColor = System.Drawing.Color.White;
-            this.label132.Location = new System.Drawing.Point(19, 494);
+            this.label132.Location = new System.Drawing.Point(19, 486);
             this.label132.Name = "label132";
             this.label132.Size = new System.Drawing.Size(119, 16);
             this.label132.TabIndex = 120;
@@ -4257,7 +3919,7 @@ namespace VEXI
             // lbl_DriveSt1_5
             // 
             this.lbl_DriveSt1_5.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt1_5.Location = new System.Drawing.Point(143, 476);
+            this.lbl_DriveSt1_5.Location = new System.Drawing.Point(143, 468);
             this.lbl_DriveSt1_5.Name = "lbl_DriveSt1_5";
             this.lbl_DriveSt1_5.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt1_5.TabIndex = 119;
@@ -4267,7 +3929,7 @@ namespace VEXI
             // lbl_DriveSt2_3
             // 
             this.lbl_DriveSt2_3.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt2_3.Location = new System.Drawing.Point(143, 458);
+            this.lbl_DriveSt2_3.Location = new System.Drawing.Point(143, 450);
             this.lbl_DriveSt2_3.Name = "lbl_DriveSt2_3";
             this.lbl_DriveSt2_3.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt2_3.TabIndex = 118;
@@ -4277,7 +3939,7 @@ namespace VEXI
             // lbl_DriveSt2_4
             // 
             this.lbl_DriveSt2_4.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt2_4.Location = new System.Drawing.Point(143, 440);
+            this.lbl_DriveSt2_4.Location = new System.Drawing.Point(143, 432);
             this.lbl_DriveSt2_4.Name = "lbl_DriveSt2_4";
             this.lbl_DriveSt2_4.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt2_4.TabIndex = 117;
@@ -4287,7 +3949,7 @@ namespace VEXI
             // lbl_DriveSt2_0
             // 
             this.lbl_DriveSt2_0.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt2_0.Location = new System.Drawing.Point(143, 404);
+            this.lbl_DriveSt2_0.Location = new System.Drawing.Point(143, 396);
             this.lbl_DriveSt2_0.Name = "lbl_DriveSt2_0";
             this.lbl_DriveSt2_0.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt2_0.TabIndex = 116;
@@ -4297,7 +3959,7 @@ namespace VEXI
             // lbl_DriveSt1_0
             // 
             this.lbl_DriveSt1_0.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt1_0.Location = new System.Drawing.Point(143, 386);
+            this.lbl_DriveSt1_0.Location = new System.Drawing.Point(143, 378);
             this.lbl_DriveSt1_0.Name = "lbl_DriveSt1_0";
             this.lbl_DriveSt1_0.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt1_0.TabIndex = 115;
@@ -4307,7 +3969,7 @@ namespace VEXI
             // lbl_DriveSt1_1
             // 
             this.lbl_DriveSt1_1.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt1_1.Location = new System.Drawing.Point(143, 368);
+            this.lbl_DriveSt1_1.Location = new System.Drawing.Point(143, 360);
             this.lbl_DriveSt1_1.Name = "lbl_DriveSt1_1";
             this.lbl_DriveSt1_1.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt1_1.TabIndex = 114;
@@ -4317,7 +3979,7 @@ namespace VEXI
             // lbl_DriveSt1_2
             // 
             this.lbl_DriveSt1_2.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt1_2.Location = new System.Drawing.Point(143, 350);
+            this.lbl_DriveSt1_2.Location = new System.Drawing.Point(143, 342);
             this.lbl_DriveSt1_2.Name = "lbl_DriveSt1_2";
             this.lbl_DriveSt1_2.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt1_2.TabIndex = 113;
@@ -4327,7 +3989,7 @@ namespace VEXI
             // lbl_DriveSt1_3
             // 
             this.lbl_DriveSt1_3.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt1_3.Location = new System.Drawing.Point(143, 332);
+            this.lbl_DriveSt1_3.Location = new System.Drawing.Point(143, 324);
             this.lbl_DriveSt1_3.Name = "lbl_DriveSt1_3";
             this.lbl_DriveSt1_3.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt1_3.TabIndex = 112;
@@ -4337,7 +3999,7 @@ namespace VEXI
             // lbl_DriveSt1_4
             // 
             this.lbl_DriveSt1_4.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt1_4.Location = new System.Drawing.Point(143, 166);
+            this.lbl_DriveSt1_4.Location = new System.Drawing.Point(143, 158);
             this.lbl_DriveSt1_4.Name = "lbl_DriveSt1_4";
             this.lbl_DriveSt1_4.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt1_4.TabIndex = 111;
@@ -4347,7 +4009,7 @@ namespace VEXI
             // lbl_DriveSt2_2
             // 
             this.lbl_DriveSt2_2.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveSt2_2.Location = new System.Drawing.Point(143, 148);
+            this.lbl_DriveSt2_2.Location = new System.Drawing.Point(143, 140);
             this.lbl_DriveSt2_2.Name = "lbl_DriveSt2_2";
             this.lbl_DriveSt2_2.Size = new System.Drawing.Size(126, 16);
             this.lbl_DriveSt2_2.TabIndex = 110;
@@ -4357,7 +4019,7 @@ namespace VEXI
             // lbl_Drive_Decel_2
             // 
             this.lbl_Drive_Decel_2.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_Decel_2.Location = new System.Drawing.Point(143, 130);
+            this.lbl_Drive_Decel_2.Location = new System.Drawing.Point(143, 122);
             this.lbl_Drive_Decel_2.Name = "lbl_Drive_Decel_2";
             this.lbl_Drive_Decel_2.Size = new System.Drawing.Size(126, 16);
             this.lbl_Drive_Decel_2.TabIndex = 109;
@@ -4367,7 +4029,7 @@ namespace VEXI
             // lbl_Drive_Decel_1
             // 
             this.lbl_Drive_Decel_1.BackColor = System.Drawing.Color.White;
-            this.lbl_Drive_Decel_1.Location = new System.Drawing.Point(143, 112);
+            this.lbl_Drive_Decel_1.Location = new System.Drawing.Point(143, 104);
             this.lbl_Drive_Decel_1.Name = "lbl_Drive_Decel_1";
             this.lbl_Drive_Decel_1.Size = new System.Drawing.Size(126, 16);
             this.lbl_Drive_Decel_1.TabIndex = 108;
@@ -4378,7 +4040,7 @@ namespace VEXI
             // 
             this.label42.BackColor = System.Drawing.SystemColors.Highlight;
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(19, 476);
+            this.label42.Location = new System.Drawing.Point(19, 468);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(119, 16);
             this.label42.TabIndex = 107;
@@ -4389,7 +4051,7 @@ namespace VEXI
             // 
             this.label44.BackColor = System.Drawing.SystemColors.Highlight;
             this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(19, 458);
+            this.label44.Location = new System.Drawing.Point(19, 450);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(119, 16);
             this.label44.TabIndex = 106;
@@ -4400,7 +4062,7 @@ namespace VEXI
             // 
             this.label45.BackColor = System.Drawing.SystemColors.Highlight;
             this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(19, 440);
+            this.label45.Location = new System.Drawing.Point(19, 432);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(119, 16);
             this.label45.TabIndex = 105;
@@ -4411,7 +4073,7 @@ namespace VEXI
             // 
             this.label46.BackColor = System.Drawing.SystemColors.Highlight;
             this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(19, 404);
+            this.label46.Location = new System.Drawing.Point(19, 396);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(119, 16);
             this.label46.TabIndex = 104;
@@ -4422,7 +4084,7 @@ namespace VEXI
             // 
             this.label48.BackColor = System.Drawing.SystemColors.Highlight;
             this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(19, 386);
+            this.label48.Location = new System.Drawing.Point(19, 378);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(119, 16);
             this.label48.TabIndex = 103;
@@ -4433,7 +4095,7 @@ namespace VEXI
             // 
             this.label49.BackColor = System.Drawing.SystemColors.Highlight;
             this.label49.ForeColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(19, 368);
+            this.label49.Location = new System.Drawing.Point(19, 360);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(119, 16);
             this.label49.TabIndex = 102;
@@ -4444,7 +4106,7 @@ namespace VEXI
             // 
             this.label117.BackColor = System.Drawing.SystemColors.Highlight;
             this.label117.ForeColor = System.Drawing.Color.White;
-            this.label117.Location = new System.Drawing.Point(19, 350);
+            this.label117.Location = new System.Drawing.Point(19, 342);
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(119, 16);
             this.label117.TabIndex = 101;
@@ -4455,7 +4117,7 @@ namespace VEXI
             // 
             this.label118.BackColor = System.Drawing.SystemColors.Highlight;
             this.label118.ForeColor = System.Drawing.Color.White;
-            this.label118.Location = new System.Drawing.Point(19, 332);
+            this.label118.Location = new System.Drawing.Point(19, 324);
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(119, 16);
             this.label118.TabIndex = 100;
@@ -4466,7 +4128,7 @@ namespace VEXI
             // 
             this.label47.BackColor = System.Drawing.SystemColors.Highlight;
             this.label47.ForeColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(19, 166);
+            this.label47.Location = new System.Drawing.Point(19, 158);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(119, 16);
             this.label47.TabIndex = 99;
@@ -4477,7 +4139,7 @@ namespace VEXI
             // 
             this.label113.BackColor = System.Drawing.SystemColors.Highlight;
             this.label113.ForeColor = System.Drawing.Color.White;
-            this.label113.Location = new System.Drawing.Point(19, 148);
+            this.label113.Location = new System.Drawing.Point(19, 140);
             this.label113.Name = "label113";
             this.label113.Size = new System.Drawing.Size(119, 16);
             this.label113.TabIndex = 98;
@@ -4488,7 +4150,7 @@ namespace VEXI
             // 
             this.label43.BackColor = System.Drawing.SystemColors.Highlight;
             this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(19, 130);
+            this.label43.Location = new System.Drawing.Point(19, 122);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(119, 16);
             this.label43.TabIndex = 97;
@@ -4499,7 +4161,7 @@ namespace VEXI
             // 
             this.label22.BackColor = System.Drawing.SystemColors.Highlight;
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(19, 112);
+            this.label22.Location = new System.Drawing.Point(19, 104);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(119, 16);
             this.label22.TabIndex = 96;
@@ -4509,7 +4171,7 @@ namespace VEXI
             // lbl_Fork2St1_7
             // 
             this.lbl_Fork2St1_7.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_7.Location = new System.Drawing.Point(673, 240);
+            this.lbl_Fork2St1_7.Location = new System.Drawing.Point(665, 209);
             this.lbl_Fork2St1_7.Name = "lbl_Fork2St1_7";
             this.lbl_Fork2St1_7.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_7.TabIndex = 191;
@@ -4519,7 +4181,7 @@ namespace VEXI
             // lbl_Fork2St1_6
             // 
             this.lbl_Fork2St1_6.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_6.Location = new System.Drawing.Point(673, 222);
+            this.lbl_Fork2St1_6.Location = new System.Drawing.Point(665, 191);
             this.lbl_Fork2St1_6.Name = "lbl_Fork2St1_6";
             this.lbl_Fork2St1_6.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_6.TabIndex = 190;
@@ -4529,7 +4191,7 @@ namespace VEXI
             // lbl_Fork1St1_7
             // 
             this.lbl_Fork1St1_7.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_7.Location = new System.Drawing.Point(544, 240);
+            this.lbl_Fork1St1_7.Location = new System.Drawing.Point(536, 209);
             this.lbl_Fork1St1_7.Name = "lbl_Fork1St1_7";
             this.lbl_Fork1St1_7.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_7.TabIndex = 189;
@@ -4539,7 +4201,7 @@ namespace VEXI
             // lbl_Fork1St1_6
             // 
             this.lbl_Fork1St1_6.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_6.Location = new System.Drawing.Point(544, 222);
+            this.lbl_Fork1St1_6.Location = new System.Drawing.Point(536, 191);
             this.lbl_Fork1St1_6.Name = "lbl_Fork1St1_6";
             this.lbl_Fork1St1_6.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_6.TabIndex = 188;
@@ -4550,7 +4212,7 @@ namespace VEXI
             // 
             this.label65.BackColor = System.Drawing.SystemColors.Highlight;
             this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(430, 240);
+            this.label65.Location = new System.Drawing.Point(422, 209);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(110, 16);
             this.label65.TabIndex = 187;
@@ -4561,7 +4223,7 @@ namespace VEXI
             // 
             this.label66.BackColor = System.Drawing.SystemColors.Highlight;
             this.label66.ForeColor = System.Drawing.Color.White;
-            this.label66.Location = new System.Drawing.Point(430, 222);
+            this.label66.Location = new System.Drawing.Point(422, 191);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(110, 16);
             this.label66.TabIndex = 186;
@@ -4571,7 +4233,7 @@ namespace VEXI
             // lbl_Fork2_DestSpeed
             // 
             this.lbl_Fork2_DestSpeed.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_DestSpeed.Location = new System.Drawing.Point(673, 492);
+            this.lbl_Fork2_DestSpeed.Location = new System.Drawing.Point(665, 515);
             this.lbl_Fork2_DestSpeed.Name = "lbl_Fork2_DestSpeed";
             this.lbl_Fork2_DestSpeed.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2_DestSpeed.TabIndex = 185;
@@ -4581,7 +4243,7 @@ namespace VEXI
             // lbl_Fork1_DestSpeed
             // 
             this.lbl_Fork1_DestSpeed.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_DestSpeed.Location = new System.Drawing.Point(544, 492);
+            this.lbl_Fork1_DestSpeed.Location = new System.Drawing.Point(536, 515);
             this.lbl_Fork1_DestSpeed.Name = "lbl_Fork1_DestSpeed";
             this.lbl_Fork1_DestSpeed.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1_DestSpeed.TabIndex = 184;
@@ -4592,7 +4254,7 @@ namespace VEXI
             // 
             this.label63.BackColor = System.Drawing.SystemColors.Highlight;
             this.label63.ForeColor = System.Drawing.Color.White;
-            this.label63.Location = new System.Drawing.Point(430, 492);
+            this.label63.Location = new System.Drawing.Point(422, 515);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(110, 16);
             this.label63.TabIndex = 183;
@@ -4602,7 +4264,7 @@ namespace VEXI
             // lbl_Fork2St2_1
             // 
             this.lbl_Fork2St2_1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St2_1.Location = new System.Drawing.Point(673, 384);
+            this.lbl_Fork2St2_1.Location = new System.Drawing.Point(665, 371);
             this.lbl_Fork2St2_1.Name = "lbl_Fork2St2_1";
             this.lbl_Fork2St2_1.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St2_1.TabIndex = 182;
@@ -4612,7 +4274,7 @@ namespace VEXI
             // lbl_Fork1St2_1
             // 
             this.lbl_Fork1St2_1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St2_1.Location = new System.Drawing.Point(544, 384);
+            this.lbl_Fork1St2_1.Location = new System.Drawing.Point(536, 371);
             this.lbl_Fork1St2_1.Name = "lbl_Fork1St2_1";
             this.lbl_Fork1St2_1.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St2_1.TabIndex = 181;
@@ -4623,7 +4285,7 @@ namespace VEXI
             // 
             this.label59.BackColor = System.Drawing.SystemColors.Highlight;
             this.label59.ForeColor = System.Drawing.Color.White;
-            this.label59.Location = new System.Drawing.Point(430, 384);
+            this.label59.Location = new System.Drawing.Point(422, 371);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(110, 16);
             this.label59.TabIndex = 180;
@@ -4633,7 +4295,7 @@ namespace VEXI
             // lbl_Fork2_HaveItemType
             // 
             this.lbl_Fork2_HaveItemType.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_HaveItemType.Location = new System.Drawing.Point(673, 348);
+            this.lbl_Fork2_HaveItemType.Location = new System.Drawing.Point(665, 317);
             this.lbl_Fork2_HaveItemType.Name = "lbl_Fork2_HaveItemType";
             this.lbl_Fork2_HaveItemType.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2_HaveItemType.TabIndex = 179;
@@ -4643,7 +4305,7 @@ namespace VEXI
             // lbl_Fork1_HaveItemType
             // 
             this.lbl_Fork1_HaveItemType.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_HaveItemType.Location = new System.Drawing.Point(544, 348);
+            this.lbl_Fork1_HaveItemType.Location = new System.Drawing.Point(536, 317);
             this.lbl_Fork1_HaveItemType.Name = "lbl_Fork1_HaveItemType";
             this.lbl_Fork1_HaveItemType.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1_HaveItemType.TabIndex = 178;
@@ -4654,7 +4316,7 @@ namespace VEXI
             // 
             this.label40.BackColor = System.Drawing.SystemColors.Highlight;
             this.label40.ForeColor = System.Drawing.Color.White;
-            this.label40.Location = new System.Drawing.Point(430, 348);
+            this.label40.Location = new System.Drawing.Point(422, 317);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(110, 16);
             this.label40.TabIndex = 177;
@@ -4664,7 +4326,7 @@ namespace VEXI
             // lbl_Fork2St1_5
             // 
             this.lbl_Fork2St1_5.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_5.Location = new System.Drawing.Point(673, 330);
+            this.lbl_Fork2St1_5.Location = new System.Drawing.Point(665, 299);
             this.lbl_Fork2St1_5.Name = "lbl_Fork2St1_5";
             this.lbl_Fork2St1_5.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_5.TabIndex = 176;
@@ -4674,7 +4336,7 @@ namespace VEXI
             // lbl_Fork1St1_5
             // 
             this.lbl_Fork1St1_5.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_5.Location = new System.Drawing.Point(544, 330);
+            this.lbl_Fork1St1_5.Location = new System.Drawing.Point(536, 299);
             this.lbl_Fork1St1_5.Name = "lbl_Fork1St1_5";
             this.lbl_Fork1St1_5.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_5.TabIndex = 175;
@@ -4685,17 +4347,17 @@ namespace VEXI
             // 
             this.label38.BackColor = System.Drawing.SystemColors.Highlight;
             this.label38.ForeColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(430, 330);
+            this.label38.Location = new System.Drawing.Point(422, 299);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(110, 16);
             this.label38.TabIndex = 174;
-            this.label38.Text = "적재화물 감지";
+            this.label38.Text = "적재 화물 상태";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Fork2_CurrentPos_Center
             // 
             this.lbl_Fork2_CurrentPos_Center.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_Center.Location = new System.Drawing.Point(716, 168);
+            this.lbl_Fork2_CurrentPos_Center.Location = new System.Drawing.Point(708, 137);
             this.lbl_Fork2_CurrentPos_Center.Name = "lbl_Fork2_CurrentPos_Center";
             this.lbl_Fork2_CurrentPos_Center.Size = new System.Drawing.Size(39, 52);
             this.lbl_Fork2_CurrentPos_Center.TabIndex = 173;
@@ -4705,7 +4367,7 @@ namespace VEXI
             // lbl_Fork2_CurrentPos_R3
             // 
             this.lbl_Fork2_CurrentPos_R3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_R3.Location = new System.Drawing.Point(758, 204);
+            this.lbl_Fork2_CurrentPos_R3.Location = new System.Drawing.Point(750, 173);
             this.lbl_Fork2_CurrentPos_R3.Name = "lbl_Fork2_CurrentPos_R3";
             this.lbl_Fork2_CurrentPos_R3.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork2_CurrentPos_R3.TabIndex = 172;
@@ -4715,7 +4377,7 @@ namespace VEXI
             // lbl_Fork2_CurrentPos_R2
             // 
             this.lbl_Fork2_CurrentPos_R2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_R2.Location = new System.Drawing.Point(758, 186);
+            this.lbl_Fork2_CurrentPos_R2.Location = new System.Drawing.Point(750, 155);
             this.lbl_Fork2_CurrentPos_R2.Name = "lbl_Fork2_CurrentPos_R2";
             this.lbl_Fork2_CurrentPos_R2.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork2_CurrentPos_R2.TabIndex = 171;
@@ -4725,7 +4387,7 @@ namespace VEXI
             // lbl_Fork2_CurrentPos_R1
             // 
             this.lbl_Fork2_CurrentPos_R1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_R1.Location = new System.Drawing.Point(758, 168);
+            this.lbl_Fork2_CurrentPos_R1.Location = new System.Drawing.Point(750, 137);
             this.lbl_Fork2_CurrentPos_R1.Name = "lbl_Fork2_CurrentPos_R1";
             this.lbl_Fork2_CurrentPos_R1.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork2_CurrentPos_R1.TabIndex = 170;
@@ -4735,7 +4397,7 @@ namespace VEXI
             // lbl_Fork2_CurrentPos_L3
             // 
             this.lbl_Fork2_CurrentPos_L3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_L3.Location = new System.Drawing.Point(673, 204);
+            this.lbl_Fork2_CurrentPos_L3.Location = new System.Drawing.Point(665, 173);
             this.lbl_Fork2_CurrentPos_L3.Name = "lbl_Fork2_CurrentPos_L3";
             this.lbl_Fork2_CurrentPos_L3.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork2_CurrentPos_L3.TabIndex = 169;
@@ -4745,7 +4407,7 @@ namespace VEXI
             // lbl_Fork2_CurrentPos_L2
             // 
             this.lbl_Fork2_CurrentPos_L2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_L2.Location = new System.Drawing.Point(673, 186);
+            this.lbl_Fork2_CurrentPos_L2.Location = new System.Drawing.Point(665, 155);
             this.lbl_Fork2_CurrentPos_L2.Name = "lbl_Fork2_CurrentPos_L2";
             this.lbl_Fork2_CurrentPos_L2.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork2_CurrentPos_L2.TabIndex = 168;
@@ -4755,7 +4417,7 @@ namespace VEXI
             // lbl_Fork2_CurrentPos_L1
             // 
             this.lbl_Fork2_CurrentPos_L1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_CurrentPos_L1.Location = new System.Drawing.Point(673, 168);
+            this.lbl_Fork2_CurrentPos_L1.Location = new System.Drawing.Point(665, 137);
             this.lbl_Fork2_CurrentPos_L1.Name = "lbl_Fork2_CurrentPos_L1";
             this.lbl_Fork2_CurrentPos_L1.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork2_CurrentPos_L1.TabIndex = 167;
@@ -4765,7 +4427,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_Center
             // 
             this.lbl_Fork1_CurrentPos_Center.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_Center.Location = new System.Drawing.Point(587, 168);
+            this.lbl_Fork1_CurrentPos_Center.Location = new System.Drawing.Point(579, 137);
             this.lbl_Fork1_CurrentPos_Center.Name = "lbl_Fork1_CurrentPos_Center";
             this.lbl_Fork1_CurrentPos_Center.Size = new System.Drawing.Size(39, 52);
             this.lbl_Fork1_CurrentPos_Center.TabIndex = 166;
@@ -4775,7 +4437,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_R3
             // 
             this.lbl_Fork1_CurrentPos_R3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_R3.Location = new System.Drawing.Point(629, 204);
+            this.lbl_Fork1_CurrentPos_R3.Location = new System.Drawing.Point(621, 173);
             this.lbl_Fork1_CurrentPos_R3.Name = "lbl_Fork1_CurrentPos_R3";
             this.lbl_Fork1_CurrentPos_R3.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork1_CurrentPos_R3.TabIndex = 165;
@@ -4785,7 +4447,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_R2
             // 
             this.lbl_Fork1_CurrentPos_R2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_R2.Location = new System.Drawing.Point(629, 186);
+            this.lbl_Fork1_CurrentPos_R2.Location = new System.Drawing.Point(621, 155);
             this.lbl_Fork1_CurrentPos_R2.Name = "lbl_Fork1_CurrentPos_R2";
             this.lbl_Fork1_CurrentPos_R2.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork1_CurrentPos_R2.TabIndex = 164;
@@ -4795,7 +4457,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_R1
             // 
             this.lbl_Fork1_CurrentPos_R1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_R1.Location = new System.Drawing.Point(629, 168);
+            this.lbl_Fork1_CurrentPos_R1.Location = new System.Drawing.Point(621, 137);
             this.lbl_Fork1_CurrentPos_R1.Name = "lbl_Fork1_CurrentPos_R1";
             this.lbl_Fork1_CurrentPos_R1.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork1_CurrentPos_R1.TabIndex = 163;
@@ -4805,7 +4467,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_L3
             // 
             this.lbl_Fork1_CurrentPos_L3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_L3.Location = new System.Drawing.Point(544, 204);
+            this.lbl_Fork1_CurrentPos_L3.Location = new System.Drawing.Point(536, 173);
             this.lbl_Fork1_CurrentPos_L3.Name = "lbl_Fork1_CurrentPos_L3";
             this.lbl_Fork1_CurrentPos_L3.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork1_CurrentPos_L3.TabIndex = 162;
@@ -4815,7 +4477,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_L2
             // 
             this.lbl_Fork1_CurrentPos_L2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_L2.Location = new System.Drawing.Point(544, 186);
+            this.lbl_Fork1_CurrentPos_L2.Location = new System.Drawing.Point(536, 155);
             this.lbl_Fork1_CurrentPos_L2.Name = "lbl_Fork1_CurrentPos_L2";
             this.lbl_Fork1_CurrentPos_L2.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork1_CurrentPos_L2.TabIndex = 161;
@@ -4825,7 +4487,7 @@ namespace VEXI
             // lbl_Fork1_CurrentPos_L1
             // 
             this.lbl_Fork1_CurrentPos_L1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_CurrentPos_L1.Location = new System.Drawing.Point(544, 168);
+            this.lbl_Fork1_CurrentPos_L1.Location = new System.Drawing.Point(536, 137);
             this.lbl_Fork1_CurrentPos_L1.Name = "lbl_Fork1_CurrentPos_L1";
             this.lbl_Fork1_CurrentPos_L1.Size = new System.Drawing.Size(40, 16);
             this.lbl_Fork1_CurrentPos_L1.TabIndex = 160;
@@ -4835,7 +4497,7 @@ namespace VEXI
             // lbl_Fork2_ForkPos
             // 
             this.lbl_Fork2_ForkPos.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_ForkPos.Location = new System.Drawing.Point(673, 115);
+            this.lbl_Fork2_ForkPos.Location = new System.Drawing.Point(665, 84);
             this.lbl_Fork2_ForkPos.Name = "lbl_Fork2_ForkPos";
             this.lbl_Fork2_ForkPos.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2_ForkPos.TabIndex = 159;
@@ -4845,7 +4507,7 @@ namespace VEXI
             // lbl_Fork1_ForkPos
             // 
             this.lbl_Fork1_ForkPos.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_ForkPos.Location = new System.Drawing.Point(544, 115);
+            this.lbl_Fork1_ForkPos.Location = new System.Drawing.Point(536, 84);
             this.lbl_Fork1_ForkPos.Name = "lbl_Fork1_ForkPos";
             this.lbl_Fork1_ForkPos.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1_ForkPos.TabIndex = 158;
@@ -4856,7 +4518,7 @@ namespace VEXI
             // 
             this.label181.BackColor = System.Drawing.SystemColors.Highlight;
             this.label181.ForeColor = System.Drawing.Color.White;
-            this.label181.Location = new System.Drawing.Point(430, 115);
+            this.label181.Location = new System.Drawing.Point(422, 84);
             this.label181.Name = "label181";
             this.label181.Size = new System.Drawing.Size(110, 16);
             this.label181.TabIndex = 157;
@@ -4867,9 +4529,9 @@ namespace VEXI
             // 
             this.label57.BackColor = System.Drawing.SystemColors.Highlight;
             this.label57.ForeColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(673, 82);
+            this.label57.Location = new System.Drawing.Point(665, 62);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(125, 29);
+            this.label57.Size = new System.Drawing.Size(125, 18);
             this.label57.TabIndex = 156;
             this.label57.Text = "Fork2";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4878,9 +4540,9 @@ namespace VEXI
             // 
             this.label58.BackColor = System.Drawing.SystemColors.Highlight;
             this.label58.ForeColor = System.Drawing.Color.White;
-            this.label58.Location = new System.Drawing.Point(544, 82);
+            this.label58.Location = new System.Drawing.Point(536, 62);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(125, 29);
+            this.label58.Size = new System.Drawing.Size(125, 18);
             this.label58.TabIndex = 155;
             this.label58.Text = "Fork1";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4888,7 +4550,7 @@ namespace VEXI
             // lbl_Fork2_Destination
             // 
             this.lbl_Fork2_Destination.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_Destination.Location = new System.Drawing.Point(673, 474);
+            this.lbl_Fork2_Destination.Location = new System.Drawing.Point(665, 497);
             this.lbl_Fork2_Destination.Name = "lbl_Fork2_Destination";
             this.lbl_Fork2_Destination.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2_Destination.TabIndex = 154;
@@ -4898,7 +4560,7 @@ namespace VEXI
             // lbl_Fork2_Speed
             // 
             this.lbl_Fork2_Speed.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_Speed.Location = new System.Drawing.Point(673, 456);
+            this.lbl_Fork2_Speed.Location = new System.Drawing.Point(665, 479);
             this.lbl_Fork2_Speed.Name = "lbl_Fork2_Speed";
             this.lbl_Fork2_Speed.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2_Speed.TabIndex = 153;
@@ -4908,7 +4570,7 @@ namespace VEXI
             // lbl_Fork2_Position
             // 
             this.lbl_Fork2_Position.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2_Position.Location = new System.Drawing.Point(673, 438);
+            this.lbl_Fork2_Position.Location = new System.Drawing.Point(665, 461);
             this.lbl_Fork2_Position.Name = "lbl_Fork2_Position";
             this.lbl_Fork2_Position.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2_Position.TabIndex = 152;
@@ -4918,7 +4580,7 @@ namespace VEXI
             // lbl_Fork2St2_3
             // 
             this.lbl_Fork2St2_3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St2_3.Location = new System.Drawing.Point(673, 420);
+            this.lbl_Fork2St2_3.Location = new System.Drawing.Point(665, 407);
             this.lbl_Fork2St2_3.Name = "lbl_Fork2St2_3";
             this.lbl_Fork2St2_3.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St2_3.TabIndex = 151;
@@ -4928,7 +4590,7 @@ namespace VEXI
             // lbl_Fork2St2_4
             // 
             this.lbl_Fork2St2_4.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St2_4.Location = new System.Drawing.Point(673, 402);
+            this.lbl_Fork2St2_4.Location = new System.Drawing.Point(665, 389);
             this.lbl_Fork2St2_4.Name = "lbl_Fork2St2_4";
             this.lbl_Fork2St2_4.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St2_4.TabIndex = 150;
@@ -4938,7 +4600,7 @@ namespace VEXI
             // lbl_Fork2St2_0
             // 
             this.lbl_Fork2St2_0.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St2_0.Location = new System.Drawing.Point(673, 366);
+            this.lbl_Fork2St2_0.Location = new System.Drawing.Point(665, 353);
             this.lbl_Fork2St2_0.Name = "lbl_Fork2St2_0";
             this.lbl_Fork2St2_0.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St2_0.TabIndex = 149;
@@ -4948,7 +4610,7 @@ namespace VEXI
             // lbl_Fork2St1_0
             // 
             this.lbl_Fork2St1_0.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_0.Location = new System.Drawing.Point(673, 312);
+            this.lbl_Fork2St1_0.Location = new System.Drawing.Point(665, 281);
             this.lbl_Fork2St1_0.Name = "lbl_Fork2St1_0";
             this.lbl_Fork2St1_0.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_0.TabIndex = 148;
@@ -4958,7 +4620,7 @@ namespace VEXI
             // lbl_Fork2St1_1
             // 
             this.lbl_Fork2St1_1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_1.Location = new System.Drawing.Point(673, 294);
+            this.lbl_Fork2St1_1.Location = new System.Drawing.Point(665, 263);
             this.lbl_Fork2St1_1.Name = "lbl_Fork2St1_1";
             this.lbl_Fork2St1_1.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_1.TabIndex = 147;
@@ -4968,7 +4630,7 @@ namespace VEXI
             // lbl_Fork2St1_2
             // 
             this.lbl_Fork2St1_2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_2.Location = new System.Drawing.Point(673, 276);
+            this.lbl_Fork2St1_2.Location = new System.Drawing.Point(665, 245);
             this.lbl_Fork2St1_2.Name = "lbl_Fork2St1_2";
             this.lbl_Fork2St1_2.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_2.TabIndex = 146;
@@ -4978,7 +4640,7 @@ namespace VEXI
             // lbl_Fork2St1_3
             // 
             this.lbl_Fork2St1_3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_3.Location = new System.Drawing.Point(673, 258);
+            this.lbl_Fork2St1_3.Location = new System.Drawing.Point(665, 227);
             this.lbl_Fork2St1_3.Name = "lbl_Fork2St1_3";
             this.lbl_Fork2St1_3.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_3.TabIndex = 145;
@@ -4988,7 +4650,7 @@ namespace VEXI
             // lbl_Fork2St1_4
             // 
             this.lbl_Fork2St1_4.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St1_4.Location = new System.Drawing.Point(673, 151);
+            this.lbl_Fork2St1_4.Location = new System.Drawing.Point(665, 120);
             this.lbl_Fork2St1_4.Name = "lbl_Fork2St1_4";
             this.lbl_Fork2St1_4.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St1_4.TabIndex = 144;
@@ -4998,7 +4660,7 @@ namespace VEXI
             // lbl_Fork2St2_2
             // 
             this.lbl_Fork2St2_2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork2St2_2.Location = new System.Drawing.Point(673, 133);
+            this.lbl_Fork2St2_2.Location = new System.Drawing.Point(665, 102);
             this.lbl_Fork2St2_2.Name = "lbl_Fork2St2_2";
             this.lbl_Fork2St2_2.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork2St2_2.TabIndex = 143;
@@ -5008,7 +4670,7 @@ namespace VEXI
             // lbl_Fork1_Destination
             // 
             this.lbl_Fork1_Destination.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_Destination.Location = new System.Drawing.Point(544, 474);
+            this.lbl_Fork1_Destination.Location = new System.Drawing.Point(536, 497);
             this.lbl_Fork1_Destination.Name = "lbl_Fork1_Destination";
             this.lbl_Fork1_Destination.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1_Destination.TabIndex = 140;
@@ -5018,7 +4680,7 @@ namespace VEXI
             // lbl_Fork1_Speed
             // 
             this.lbl_Fork1_Speed.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_Speed.Location = new System.Drawing.Point(544, 456);
+            this.lbl_Fork1_Speed.Location = new System.Drawing.Point(536, 479);
             this.lbl_Fork1_Speed.Name = "lbl_Fork1_Speed";
             this.lbl_Fork1_Speed.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1_Speed.TabIndex = 139;
@@ -5028,7 +4690,7 @@ namespace VEXI
             // lbl_Fork1_Position
             // 
             this.lbl_Fork1_Position.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1_Position.Location = new System.Drawing.Point(544, 438);
+            this.lbl_Fork1_Position.Location = new System.Drawing.Point(536, 461);
             this.lbl_Fork1_Position.Name = "lbl_Fork1_Position";
             this.lbl_Fork1_Position.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1_Position.TabIndex = 138;
@@ -5039,7 +4701,7 @@ namespace VEXI
             // 
             this.label152.BackColor = System.Drawing.SystemColors.Highlight;
             this.label152.ForeColor = System.Drawing.Color.White;
-            this.label152.Location = new System.Drawing.Point(430, 474);
+            this.label152.Location = new System.Drawing.Point(422, 497);
             this.label152.Name = "label152";
             this.label152.Size = new System.Drawing.Size(110, 16);
             this.label152.TabIndex = 137;
@@ -5050,7 +4712,7 @@ namespace VEXI
             // 
             this.label153.BackColor = System.Drawing.SystemColors.Highlight;
             this.label153.ForeColor = System.Drawing.Color.White;
-            this.label153.Location = new System.Drawing.Point(430, 456);
+            this.label153.Location = new System.Drawing.Point(422, 479);
             this.label153.Name = "label153";
             this.label153.Size = new System.Drawing.Size(110, 16);
             this.label153.TabIndex = 136;
@@ -5061,7 +4723,7 @@ namespace VEXI
             // 
             this.label154.BackColor = System.Drawing.SystemColors.Highlight;
             this.label154.ForeColor = System.Drawing.Color.White;
-            this.label154.Location = new System.Drawing.Point(430, 438);
+            this.label154.Location = new System.Drawing.Point(422, 461);
             this.label154.Name = "label154";
             this.label154.Size = new System.Drawing.Size(110, 16);
             this.label154.TabIndex = 135;
@@ -5071,7 +4733,7 @@ namespace VEXI
             // lbl_Fork1St2_3
             // 
             this.lbl_Fork1St2_3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St2_3.Location = new System.Drawing.Point(544, 420);
+            this.lbl_Fork1St2_3.Location = new System.Drawing.Point(536, 407);
             this.lbl_Fork1St2_3.Name = "lbl_Fork1St2_3";
             this.lbl_Fork1St2_3.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St2_3.TabIndex = 134;
@@ -5081,7 +4743,7 @@ namespace VEXI
             // lbl_Fork1St2_4
             // 
             this.lbl_Fork1St2_4.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St2_4.Location = new System.Drawing.Point(544, 402);
+            this.lbl_Fork1St2_4.Location = new System.Drawing.Point(536, 389);
             this.lbl_Fork1St2_4.Name = "lbl_Fork1St2_4";
             this.lbl_Fork1St2_4.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St2_4.TabIndex = 133;
@@ -5091,7 +4753,7 @@ namespace VEXI
             // lbl_Fork1St2_0
             // 
             this.lbl_Fork1St2_0.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St2_0.Location = new System.Drawing.Point(544, 366);
+            this.lbl_Fork1St2_0.Location = new System.Drawing.Point(536, 353);
             this.lbl_Fork1St2_0.Name = "lbl_Fork1St2_0";
             this.lbl_Fork1St2_0.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St2_0.TabIndex = 132;
@@ -5101,7 +4763,7 @@ namespace VEXI
             // lbl_Fork1St1_0
             // 
             this.lbl_Fork1St1_0.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_0.Location = new System.Drawing.Point(544, 312);
+            this.lbl_Fork1St1_0.Location = new System.Drawing.Point(536, 281);
             this.lbl_Fork1St1_0.Name = "lbl_Fork1St1_0";
             this.lbl_Fork1St1_0.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_0.TabIndex = 131;
@@ -5111,7 +4773,7 @@ namespace VEXI
             // lbl_Fork1St1_1
             // 
             this.lbl_Fork1St1_1.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_1.Location = new System.Drawing.Point(544, 294);
+            this.lbl_Fork1St1_1.Location = new System.Drawing.Point(536, 263);
             this.lbl_Fork1St1_1.Name = "lbl_Fork1St1_1";
             this.lbl_Fork1St1_1.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_1.TabIndex = 130;
@@ -5121,7 +4783,7 @@ namespace VEXI
             // lbl_Fork1St1_2
             // 
             this.lbl_Fork1St1_2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_2.Location = new System.Drawing.Point(544, 276);
+            this.lbl_Fork1St1_2.Location = new System.Drawing.Point(536, 245);
             this.lbl_Fork1St1_2.Name = "lbl_Fork1St1_2";
             this.lbl_Fork1St1_2.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_2.TabIndex = 129;
@@ -5131,7 +4793,7 @@ namespace VEXI
             // lbl_Fork1St1_3
             // 
             this.lbl_Fork1St1_3.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_3.Location = new System.Drawing.Point(544, 258);
+            this.lbl_Fork1St1_3.Location = new System.Drawing.Point(536, 227);
             this.lbl_Fork1St1_3.Name = "lbl_Fork1St1_3";
             this.lbl_Fork1St1_3.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_3.TabIndex = 128;
@@ -5141,7 +4803,7 @@ namespace VEXI
             // lbl_Fork1St1_4
             // 
             this.lbl_Fork1St1_4.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St1_4.Location = new System.Drawing.Point(544, 151);
+            this.lbl_Fork1St1_4.Location = new System.Drawing.Point(536, 120);
             this.lbl_Fork1St1_4.Name = "lbl_Fork1St1_4";
             this.lbl_Fork1St1_4.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St1_4.TabIndex = 127;
@@ -5151,7 +4813,7 @@ namespace VEXI
             // lbl_Fork1St2_2
             // 
             this.lbl_Fork1St2_2.BackColor = System.Drawing.Color.White;
-            this.lbl_Fork1St2_2.Location = new System.Drawing.Point(544, 133);
+            this.lbl_Fork1St2_2.Location = new System.Drawing.Point(536, 102);
             this.lbl_Fork1St2_2.Name = "lbl_Fork1St2_2";
             this.lbl_Fork1St2_2.Size = new System.Drawing.Size(125, 16);
             this.lbl_Fork1St2_2.TabIndex = 126;
@@ -5162,7 +4824,7 @@ namespace VEXI
             // 
             this.label168.BackColor = System.Drawing.SystemColors.Highlight;
             this.label168.ForeColor = System.Drawing.Color.White;
-            this.label168.Location = new System.Drawing.Point(430, 420);
+            this.label168.Location = new System.Drawing.Point(422, 407);
             this.label168.Name = "label168";
             this.label168.Size = new System.Drawing.Size(110, 16);
             this.label168.TabIndex = 123;
@@ -5173,7 +4835,7 @@ namespace VEXI
             // 
             this.label169.BackColor = System.Drawing.SystemColors.Highlight;
             this.label169.ForeColor = System.Drawing.Color.White;
-            this.label169.Location = new System.Drawing.Point(430, 402);
+            this.label169.Location = new System.Drawing.Point(422, 389);
             this.label169.Name = "label169";
             this.label169.Size = new System.Drawing.Size(110, 16);
             this.label169.TabIndex = 122;
@@ -5184,7 +4846,7 @@ namespace VEXI
             // 
             this.label170.BackColor = System.Drawing.SystemColors.Highlight;
             this.label170.ForeColor = System.Drawing.Color.White;
-            this.label170.Location = new System.Drawing.Point(430, 366);
+            this.label170.Location = new System.Drawing.Point(422, 353);
             this.label170.Name = "label170";
             this.label170.Size = new System.Drawing.Size(110, 16);
             this.label170.TabIndex = 121;
@@ -5195,7 +4857,7 @@ namespace VEXI
             // 
             this.label171.BackColor = System.Drawing.SystemColors.Highlight;
             this.label171.ForeColor = System.Drawing.Color.White;
-            this.label171.Location = new System.Drawing.Point(430, 312);
+            this.label171.Location = new System.Drawing.Point(422, 281);
             this.label171.Name = "label171";
             this.label171.Size = new System.Drawing.Size(110, 16);
             this.label171.TabIndex = 120;
@@ -5206,7 +4868,7 @@ namespace VEXI
             // 
             this.label172.BackColor = System.Drawing.SystemColors.Highlight;
             this.label172.ForeColor = System.Drawing.Color.White;
-            this.label172.Location = new System.Drawing.Point(430, 294);
+            this.label172.Location = new System.Drawing.Point(422, 263);
             this.label172.Name = "label172";
             this.label172.Size = new System.Drawing.Size(110, 16);
             this.label172.TabIndex = 119;
@@ -5217,7 +4879,7 @@ namespace VEXI
             // 
             this.label173.BackColor = System.Drawing.SystemColors.Highlight;
             this.label173.ForeColor = System.Drawing.Color.White;
-            this.label173.Location = new System.Drawing.Point(430, 276);
+            this.label173.Location = new System.Drawing.Point(422, 245);
             this.label173.Name = "label173";
             this.label173.Size = new System.Drawing.Size(110, 16);
             this.label173.TabIndex = 118;
@@ -5228,7 +4890,7 @@ namespace VEXI
             // 
             this.label174.BackColor = System.Drawing.SystemColors.Highlight;
             this.label174.ForeColor = System.Drawing.Color.White;
-            this.label174.Location = new System.Drawing.Point(430, 258);
+            this.label174.Location = new System.Drawing.Point(422, 227);
             this.label174.Name = "label174";
             this.label174.Size = new System.Drawing.Size(110, 16);
             this.label174.TabIndex = 117;
@@ -5239,7 +4901,7 @@ namespace VEXI
             // 
             this.label175.BackColor = System.Drawing.SystemColors.Highlight;
             this.label175.ForeColor = System.Drawing.Color.White;
-            this.label175.Location = new System.Drawing.Point(430, 151);
+            this.label175.Location = new System.Drawing.Point(422, 120);
             this.label175.Name = "label175";
             this.label175.Size = new System.Drawing.Size(110, 69);
             this.label175.TabIndex = 116;
@@ -5250,7 +4912,7 @@ namespace VEXI
             // 
             this.label176.BackColor = System.Drawing.SystemColors.Highlight;
             this.label176.ForeColor = System.Drawing.Color.White;
-            this.label176.Location = new System.Drawing.Point(430, 133);
+            this.label176.Location = new System.Drawing.Point(422, 102);
             this.label176.Name = "label176";
             this.label176.Size = new System.Drawing.Size(110, 16);
             this.label176.TabIndex = 115;
@@ -5260,6 +4922,15 @@ namespace VEXI
             // panel6
             // 
             this.panel6.AutoScroll = true;
+            this.panel6.Controls.Add(this.label72);
+            this.panel6.Controls.Add(this.label75);
+            this.panel6.Controls.Add(this.lbl_Fork1St2_7);
+            this.panel6.Controls.Add(this.lbl_Fork2St2_7);
+            this.panel6.Controls.Add(this.lbl_Fork1St2_6);
+            this.panel6.Controls.Add(this.lbl_Fork2St2_6);
+            this.panel6.Controls.Add(this.label71);
+            this.panel6.Controls.Add(this.lbl_Fork1_Existitem);
+            this.panel6.Controls.Add(this.lbl_Fork2_Existitem);
             this.panel6.Controls.Add(this.groupBox5);
             this.panel6.Controls.Add(this.label135);
             this.panel6.Controls.Add(this.label136);
@@ -5685,15 +5356,121 @@ namespace VEXI
             this.panel6.TabIndex = 59;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
+            // label72
+            // 
+            this.label72.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label72.ForeColor = System.Drawing.Color.White;
+            this.label72.Location = new System.Drawing.Point(422, 425);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(110, 16);
+            this.label72.TabIndex = 903;
+            this.label72.Text = "통신 제어";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label75
+            // 
+            this.label75.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label75.ForeColor = System.Drawing.Color.White;
+            this.label75.Location = new System.Drawing.Point(422, 443);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(110, 16);
+            this.label75.TabIndex = 904;
+            this.label75.Text = "I/O 제어";
+            this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1St2_7
+            // 
+            this.lbl_Fork1St2_7.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1St2_7.Location = new System.Drawing.Point(536, 425);
+            this.lbl_Fork1St2_7.Name = "lbl_Fork1St2_7";
+            this.lbl_Fork1St2_7.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Fork1St2_7.TabIndex = 905;
+            this.lbl_Fork1St2_7.Text = "X";
+            this.lbl_Fork1St2_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2St2_7
+            // 
+            this.lbl_Fork2St2_7.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2St2_7.Location = new System.Drawing.Point(665, 425);
+            this.lbl_Fork2St2_7.Name = "lbl_Fork2St2_7";
+            this.lbl_Fork2St2_7.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Fork2St2_7.TabIndex = 907;
+            this.lbl_Fork2St2_7.Text = "X";
+            this.lbl_Fork2St2_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1St2_6
+            // 
+            this.lbl_Fork1St2_6.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1St2_6.Location = new System.Drawing.Point(536, 443);
+            this.lbl_Fork1St2_6.Name = "lbl_Fork1St2_6";
+            this.lbl_Fork1St2_6.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Fork1St2_6.TabIndex = 906;
+            this.lbl_Fork1St2_6.Text = "X";
+            this.lbl_Fork1St2_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2St2_6
+            // 
+            this.lbl_Fork2St2_6.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2St2_6.Location = new System.Drawing.Point(665, 443);
+            this.lbl_Fork2St2_6.Name = "lbl_Fork2St2_6";
+            this.lbl_Fork2St2_6.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Fork2St2_6.TabIndex = 908;
+            this.lbl_Fork2St2_6.Text = "X";
+            this.lbl_Fork2St2_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label71
+            // 
+            this.label71.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label71.ForeColor = System.Drawing.Color.White;
+            this.label71.Location = new System.Drawing.Point(422, 335);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(110, 16);
+            this.label71.TabIndex = 900;
+            this.label71.Text = "화물 감지";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_Existitem
+            // 
+            this.lbl_Fork1_Existitem.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_Existitem.Location = new System.Drawing.Point(536, 335);
+            this.lbl_Fork1_Existitem.Name = "lbl_Fork1_Existitem";
+            this.lbl_Fork1_Existitem.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Fork1_Existitem.TabIndex = 901;
+            this.lbl_Fork1_Existitem.Text = "미감지";
+            this.lbl_Fork1_Existitem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_Existitem
+            // 
+            this.lbl_Fork2_Existitem.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_Existitem.Location = new System.Drawing.Point(665, 335);
+            this.lbl_Fork2_Existitem.Name = "lbl_Fork2_Existitem";
+            this.lbl_Fork2_Existitem.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Fork2_Existitem.TabIndex = 902;
+            this.lbl_Fork2_Existitem.Text = "미감지";
+            this.lbl_Fork2_Existitem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.rb_DIO_DigitalOut);
+            this.groupBox5.Controls.Add(this.rb_DIO_DigitalOut_2);
+            this.groupBox5.Controls.Add(this.rb_DIO_DigitalOut_1);
             this.groupBox5.Location = new System.Drawing.Point(406, 584);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(377, 48);
             this.groupBox5.TabIndex = 891;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Output";
+            // 
+            // rb_DIO_DigitalOut_2
+            // 
+            this.rb_DIO_DigitalOut_2.AutoSize = true;
+            this.rb_DIO_DigitalOut_2.Location = new System.Drawing.Point(147, 20);
+            this.rb_DIO_DigitalOut_2.Name = "rb_DIO_DigitalOut_2";
+            this.rb_DIO_DigitalOut_2.Size = new System.Drawing.Size(90, 16);
+            this.rb_DIO_DigitalOut_2.TabIndex = 10;
+            this.rb_DIO_DigitalOut_2.Tag = "3";
+            this.rb_DIO_DigitalOut_2.Text = "Digital Out 2";
+            this.rb_DIO_DigitalOut_2.UseVisualStyleBackColor = true;
+            this.rb_DIO_DigitalOut_2.Click += new System.EventHandler(this.rb_DIO_DigitalIn_1_Click);
             // 
             // label135
             // 
@@ -6707,6 +6484,524 @@ namespace VEXI
             this.label69.Text = "No 7";
             this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label358);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_MoveJob_Step);
+            this.groupBox10.Controls.Add(this.label360);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_MoveJob_St);
+            this.groupBox10.Controls.Add(this.label364);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_MoveJob_To);
+            this.groupBox10.Controls.Add(this.label366);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_MoveJob);
+            this.groupBox10.Controls.Add(this.label368);
+            this.groupBox10.Controls.Add(this.label369);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_jobStep);
+            this.groupBox10.Controls.Add(this.label371);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_jobSt);
+            this.groupBox10.Controls.Add(this.label373);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_To);
+            this.groupBox10.Controls.Add(this.label375);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_From);
+            this.groupBox10.Controls.Add(this.label377);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_Cmd);
+            this.groupBox10.Controls.Add(this.lbl_Fork2_Job);
+            this.groupBox10.Controls.Add(this.label381);
+            this.groupBox10.Location = new System.Drawing.Point(33, 239);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(411, 189);
+            this.groupBox10.TabIndex = 5;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Fork 2";
+            // 
+            // label358
+            // 
+            this.label358.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label358.ForeColor = System.Drawing.Color.White;
+            this.label358.Location = new System.Drawing.Point(12, 112);
+            this.label358.Name = "label358";
+            this.label358.Size = new System.Drawing.Size(391, 16);
+            this.label358.TabIndex = 133;
+            this.label358.Text = "이동 작업";
+            this.label358.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_MoveJob_Step
+            // 
+            this.lbl_Fork2_MoveJob_Step.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_MoveJob_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_MoveJob_Step.Location = new System.Drawing.Point(77, 163);
+            this.lbl_Fork2_MoveJob_Step.Name = "lbl_Fork2_MoveJob_Step";
+            this.lbl_Fork2_MoveJob_Step.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork2_MoveJob_Step.TabIndex = 132;
+            this.lbl_Fork2_MoveJob_Step.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_MoveJob_Step.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label360
+            // 
+            this.label360.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label360.ForeColor = System.Drawing.Color.White;
+            this.label360.Location = new System.Drawing.Point(12, 163);
+            this.label360.Name = "label360";
+            this.label360.Size = new System.Drawing.Size(63, 16);
+            this.label360.TabIndex = 131;
+            this.label360.Text = "처리단계";
+            this.label360.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_MoveJob_St
+            // 
+            this.lbl_Fork2_MoveJob_St.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_MoveJob_St.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_MoveJob_St.Location = new System.Drawing.Point(77, 146);
+            this.lbl_Fork2_MoveJob_St.Name = "lbl_Fork2_MoveJob_St";
+            this.lbl_Fork2_MoveJob_St.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork2_MoveJob_St.TabIndex = 130;
+            this.lbl_Fork2_MoveJob_St.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_MoveJob_St.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label364
+            // 
+            this.label364.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label364.ForeColor = System.Drawing.Color.White;
+            this.label364.Location = new System.Drawing.Point(12, 146);
+            this.label364.Name = "label364";
+            this.label364.Size = new System.Drawing.Size(63, 16);
+            this.label364.TabIndex = 129;
+            this.label364.Text = "처리상태";
+            this.label364.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_MoveJob_To
+            // 
+            this.lbl_Fork2_MoveJob_To.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_MoveJob_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_MoveJob_To.Location = new System.Drawing.Point(273, 129);
+            this.lbl_Fork2_MoveJob_To.Name = "lbl_Fork2_MoveJob_To";
+            this.lbl_Fork2_MoveJob_To.Size = new System.Drawing.Size(129, 16);
+            this.lbl_Fork2_MoveJob_To.TabIndex = 128;
+            this.lbl_Fork2_MoveJob_To.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_MoveJob_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label366
+            // 
+            this.label366.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label366.ForeColor = System.Drawing.Color.White;
+            this.label366.Location = new System.Drawing.Point(208, 129);
+            this.label366.Name = "label366";
+            this.label366.Size = new System.Drawing.Size(63, 16);
+            this.label366.TabIndex = 127;
+            this.label366.Text = "TO";
+            this.label366.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_MoveJob
+            // 
+            this.lbl_Fork2_MoveJob.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_MoveJob.Location = new System.Drawing.Point(77, 129);
+            this.lbl_Fork2_MoveJob.Name = "lbl_Fork2_MoveJob";
+            this.lbl_Fork2_MoveJob.Size = new System.Drawing.Size(129, 16);
+            this.lbl_Fork2_MoveJob.TabIndex = 122;
+            this.lbl_Fork2_MoveJob.Text = "XXXXXXXX";
+            this.lbl_Fork2_MoveJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label368
+            // 
+            this.label368.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label368.ForeColor = System.Drawing.Color.White;
+            this.label368.Location = new System.Drawing.Point(12, 129);
+            this.label368.Name = "label368";
+            this.label368.Size = new System.Drawing.Size(63, 16);
+            this.label368.TabIndex = 121;
+            this.label368.Text = "작업";
+            this.label368.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label369
+            // 
+            this.label369.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label369.ForeColor = System.Drawing.Color.White;
+            this.label369.Location = new System.Drawing.Point(12, 20);
+            this.label369.Name = "label369";
+            this.label369.Size = new System.Drawing.Size(391, 16);
+            this.label369.TabIndex = 120;
+            this.label369.Text = "반송 및 Task 작업";
+            this.label369.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_jobStep
+            // 
+            this.lbl_Fork2_jobStep.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_jobStep.Location = new System.Drawing.Point(77, 88);
+            this.lbl_Fork2_jobStep.Name = "lbl_Fork2_jobStep";
+            this.lbl_Fork2_jobStep.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork2_jobStep.TabIndex = 119;
+            this.lbl_Fork2_jobStep.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label371
+            // 
+            this.label371.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label371.ForeColor = System.Drawing.Color.White;
+            this.label371.Location = new System.Drawing.Point(12, 88);
+            this.label371.Name = "label371";
+            this.label371.Size = new System.Drawing.Size(63, 16);
+            this.label371.TabIndex = 118;
+            this.label371.Text = "처리단계";
+            this.label371.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_jobSt
+            // 
+            this.lbl_Fork2_jobSt.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_jobSt.Location = new System.Drawing.Point(77, 71);
+            this.lbl_Fork2_jobSt.Name = "lbl_Fork2_jobSt";
+            this.lbl_Fork2_jobSt.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork2_jobSt.TabIndex = 117;
+            this.lbl_Fork2_jobSt.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label373
+            // 
+            this.label373.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label373.ForeColor = System.Drawing.Color.White;
+            this.label373.Location = new System.Drawing.Point(12, 71);
+            this.label373.Name = "label373";
+            this.label373.Size = new System.Drawing.Size(63, 16);
+            this.label373.TabIndex = 116;
+            this.label373.Text = "처리상태";
+            this.label373.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_To
+            // 
+            this.lbl_Fork2_To.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_To.Location = new System.Drawing.Point(273, 54);
+            this.lbl_Fork2_To.Name = "lbl_Fork2_To";
+            this.lbl_Fork2_To.Size = new System.Drawing.Size(129, 16);
+            this.lbl_Fork2_To.TabIndex = 115;
+            this.lbl_Fork2_To.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label375
+            // 
+            this.label375.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label375.ForeColor = System.Drawing.Color.White;
+            this.label375.Location = new System.Drawing.Point(208, 54);
+            this.label375.Name = "label375";
+            this.label375.Size = new System.Drawing.Size(63, 16);
+            this.label375.TabIndex = 114;
+            this.label375.Text = "TO";
+            this.label375.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_From
+            // 
+            this.lbl_Fork2_From.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_From.Location = new System.Drawing.Point(77, 54);
+            this.lbl_Fork2_From.Name = "lbl_Fork2_From";
+            this.lbl_Fork2_From.Size = new System.Drawing.Size(131, 16);
+            this.lbl_Fork2_From.TabIndex = 113;
+            this.lbl_Fork2_From.Text = "S11-R2-L12-B12";
+            this.lbl_Fork2_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label377
+            // 
+            this.label377.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label377.ForeColor = System.Drawing.Color.White;
+            this.label377.Location = new System.Drawing.Point(12, 54);
+            this.label377.Name = "label377";
+            this.label377.Size = new System.Drawing.Size(63, 16);
+            this.label377.TabIndex = 112;
+            this.label377.Text = "FROM";
+            this.label377.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_Cmd
+            // 
+            this.lbl_Fork2_Cmd.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork2_Cmd.Location = new System.Drawing.Point(234, 37);
+            this.lbl_Fork2_Cmd.Name = "lbl_Fork2_Cmd";
+            this.lbl_Fork2_Cmd.Size = new System.Drawing.Size(168, 16);
+            this.lbl_Fork2_Cmd.TabIndex = 110;
+            this.lbl_Fork2_Cmd.Text = "스테이션 목적지 변경";
+            this.lbl_Fork2_Cmd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork2_Job
+            // 
+            this.lbl_Fork2_Job.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork2_Job.Location = new System.Drawing.Point(77, 37);
+            this.lbl_Fork2_Job.Name = "lbl_Fork2_Job";
+            this.lbl_Fork2_Job.Size = new System.Drawing.Size(155, 16);
+            this.lbl_Fork2_Job.TabIndex = 109;
+            this.lbl_Fork2_Job.Text = "XXXX / X";
+            this.lbl_Fork2_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label381
+            // 
+            this.label381.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label381.ForeColor = System.Drawing.Color.White;
+            this.label381.Location = new System.Drawing.Point(12, 37);
+            this.label381.Name = "label381";
+            this.label381.Size = new System.Drawing.Size(63, 16);
+            this.label381.TabIndex = 97;
+            this.label381.Text = "작업/화물";
+            this.label381.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label351);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_MoveJob_Step);
+            this.groupBox11.Controls.Add(this.label353);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_MoveJob_St);
+            this.groupBox11.Controls.Add(this.label355);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_MoveJob_To);
+            this.groupBox11.Controls.Add(this.label357);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_MoveJob);
+            this.groupBox11.Controls.Add(this.label363);
+            this.groupBox11.Controls.Add(this.label350);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_jobStep);
+            this.groupBox11.Controls.Add(this.label349);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_jobSt);
+            this.groupBox11.Controls.Add(this.label346);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_To);
+            this.groupBox11.Controls.Add(this.label345);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_From);
+            this.groupBox11.Controls.Add(this.label342);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_Cmd);
+            this.groupBox11.Controls.Add(this.lbl_Fork1_Job);
+            this.groupBox11.Controls.Add(this.label338);
+            this.groupBox11.Location = new System.Drawing.Point(34, 27);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(411, 189);
+            this.groupBox11.TabIndex = 4;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Fork 1";
+            // 
+            // label351
+            // 
+            this.label351.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label351.ForeColor = System.Drawing.Color.White;
+            this.label351.Location = new System.Drawing.Point(12, 112);
+            this.label351.Name = "label351";
+            this.label351.Size = new System.Drawing.Size(391, 16);
+            this.label351.TabIndex = 133;
+            this.label351.Text = "이동 작업";
+            this.label351.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_MoveJob_Step
+            // 
+            this.lbl_Fork1_MoveJob_Step.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_MoveJob_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_MoveJob_Step.Location = new System.Drawing.Point(77, 163);
+            this.lbl_Fork1_MoveJob_Step.Name = "lbl_Fork1_MoveJob_Step";
+            this.lbl_Fork1_MoveJob_Step.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork1_MoveJob_Step.TabIndex = 132;
+            this.lbl_Fork1_MoveJob_Step.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_MoveJob_Step.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label353
+            // 
+            this.label353.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label353.ForeColor = System.Drawing.Color.White;
+            this.label353.Location = new System.Drawing.Point(12, 163);
+            this.label353.Name = "label353";
+            this.label353.Size = new System.Drawing.Size(63, 16);
+            this.label353.TabIndex = 131;
+            this.label353.Text = "처리단계";
+            this.label353.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_MoveJob_St
+            // 
+            this.lbl_Fork1_MoveJob_St.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_MoveJob_St.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_MoveJob_St.Location = new System.Drawing.Point(77, 146);
+            this.lbl_Fork1_MoveJob_St.Name = "lbl_Fork1_MoveJob_St";
+            this.lbl_Fork1_MoveJob_St.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork1_MoveJob_St.TabIndex = 130;
+            this.lbl_Fork1_MoveJob_St.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_MoveJob_St.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label355
+            // 
+            this.label355.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label355.ForeColor = System.Drawing.Color.White;
+            this.label355.Location = new System.Drawing.Point(12, 146);
+            this.label355.Name = "label355";
+            this.label355.Size = new System.Drawing.Size(63, 16);
+            this.label355.TabIndex = 129;
+            this.label355.Text = "처리상태";
+            this.label355.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_MoveJob_To
+            // 
+            this.lbl_Fork1_MoveJob_To.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_MoveJob_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_MoveJob_To.Location = new System.Drawing.Point(273, 129);
+            this.lbl_Fork1_MoveJob_To.Name = "lbl_Fork1_MoveJob_To";
+            this.lbl_Fork1_MoveJob_To.Size = new System.Drawing.Size(129, 16);
+            this.lbl_Fork1_MoveJob_To.TabIndex = 128;
+            this.lbl_Fork1_MoveJob_To.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_MoveJob_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label357
+            // 
+            this.label357.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label357.ForeColor = System.Drawing.Color.White;
+            this.label357.Location = new System.Drawing.Point(208, 129);
+            this.label357.Name = "label357";
+            this.label357.Size = new System.Drawing.Size(63, 16);
+            this.label357.TabIndex = 127;
+            this.label357.Text = "TO";
+            this.label357.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_MoveJob
+            // 
+            this.lbl_Fork1_MoveJob.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_MoveJob.Location = new System.Drawing.Point(77, 129);
+            this.lbl_Fork1_MoveJob.Name = "lbl_Fork1_MoveJob";
+            this.lbl_Fork1_MoveJob.Size = new System.Drawing.Size(129, 16);
+            this.lbl_Fork1_MoveJob.TabIndex = 122;
+            this.lbl_Fork1_MoveJob.Text = "XXXXXXXX";
+            this.lbl_Fork1_MoveJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label363
+            // 
+            this.label363.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label363.ForeColor = System.Drawing.Color.White;
+            this.label363.Location = new System.Drawing.Point(12, 129);
+            this.label363.Name = "label363";
+            this.label363.Size = new System.Drawing.Size(63, 16);
+            this.label363.TabIndex = 121;
+            this.label363.Text = "작업";
+            this.label363.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label350
+            // 
+            this.label350.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label350.ForeColor = System.Drawing.Color.White;
+            this.label350.Location = new System.Drawing.Point(12, 20);
+            this.label350.Name = "label350";
+            this.label350.Size = new System.Drawing.Size(391, 16);
+            this.label350.TabIndex = 120;
+            this.label350.Text = "반송 및 Task 작업";
+            this.label350.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_jobStep
+            // 
+            this.lbl_Fork1_jobStep.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_jobStep.Location = new System.Drawing.Point(77, 88);
+            this.lbl_Fork1_jobStep.Name = "lbl_Fork1_jobStep";
+            this.lbl_Fork1_jobStep.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork1_jobStep.TabIndex = 119;
+            this.lbl_Fork1_jobStep.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label349
+            // 
+            this.label349.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label349.ForeColor = System.Drawing.Color.White;
+            this.label349.Location = new System.Drawing.Point(12, 88);
+            this.label349.Name = "label349";
+            this.label349.Size = new System.Drawing.Size(63, 16);
+            this.label349.TabIndex = 118;
+            this.label349.Text = "처리단계";
+            this.label349.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_jobSt
+            // 
+            this.lbl_Fork1_jobSt.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_jobSt.Location = new System.Drawing.Point(77, 71);
+            this.lbl_Fork1_jobSt.Name = "lbl_Fork1_jobSt";
+            this.lbl_Fork1_jobSt.Size = new System.Drawing.Size(324, 16);
+            this.lbl_Fork1_jobSt.TabIndex = 117;
+            this.lbl_Fork1_jobSt.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label346
+            // 
+            this.label346.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label346.ForeColor = System.Drawing.Color.White;
+            this.label346.Location = new System.Drawing.Point(12, 71);
+            this.label346.Name = "label346";
+            this.label346.Size = new System.Drawing.Size(63, 16);
+            this.label346.TabIndex = 116;
+            this.label346.Text = "처리상태";
+            this.label346.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_To
+            // 
+            this.lbl_Fork1_To.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_To.Location = new System.Drawing.Point(273, 54);
+            this.lbl_Fork1_To.Name = "lbl_Fork1_To";
+            this.lbl_Fork1_To.Size = new System.Drawing.Size(129, 16);
+            this.lbl_Fork1_To.TabIndex = 115;
+            this.lbl_Fork1_To.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label345
+            // 
+            this.label345.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label345.ForeColor = System.Drawing.Color.White;
+            this.label345.Location = new System.Drawing.Point(208, 54);
+            this.label345.Name = "label345";
+            this.label345.Size = new System.Drawing.Size(63, 16);
+            this.label345.TabIndex = 114;
+            this.label345.Text = "TO";
+            this.label345.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_From
+            // 
+            this.lbl_Fork1_From.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_From.Location = new System.Drawing.Point(77, 54);
+            this.lbl_Fork1_From.Name = "lbl_Fork1_From";
+            this.lbl_Fork1_From.Size = new System.Drawing.Size(131, 16);
+            this.lbl_Fork1_From.TabIndex = 113;
+            this.lbl_Fork1_From.Text = "S11-R2-L12-B12";
+            this.lbl_Fork1_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label342
+            // 
+            this.label342.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label342.ForeColor = System.Drawing.Color.White;
+            this.label342.Location = new System.Drawing.Point(12, 54);
+            this.label342.Name = "label342";
+            this.label342.Size = new System.Drawing.Size(63, 16);
+            this.label342.TabIndex = 112;
+            this.label342.Text = "FROM";
+            this.label342.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_Cmd
+            // 
+            this.lbl_Fork1_Cmd.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Fork1_Cmd.Location = new System.Drawing.Point(234, 37);
+            this.lbl_Fork1_Cmd.Name = "lbl_Fork1_Cmd";
+            this.lbl_Fork1_Cmd.Size = new System.Drawing.Size(168, 16);
+            this.lbl_Fork1_Cmd.TabIndex = 110;
+            this.lbl_Fork1_Cmd.Text = "스테이션 목적지 변경";
+            this.lbl_Fork1_Cmd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Fork1_Job
+            // 
+            this.lbl_Fork1_Job.BackColor = System.Drawing.Color.White;
+            this.lbl_Fork1_Job.Location = new System.Drawing.Point(77, 37);
+            this.lbl_Fork1_Job.Name = "lbl_Fork1_Job";
+            this.lbl_Fork1_Job.Size = new System.Drawing.Size(155, 16);
+            this.lbl_Fork1_Job.TabIndex = 109;
+            this.lbl_Fork1_Job.Text = "XXXX / X";
+            this.lbl_Fork1_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label338
+            // 
+            this.label338.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label338.ForeColor = System.Drawing.Color.White;
+            this.label338.Location = new System.Drawing.Point(12, 37);
+            this.label338.Name = "label338";
+            this.label338.Size = new System.Drawing.Size(63, 16);
+            this.label338.TabIndex = 97;
+            this.label338.Text = "작업/화물";
+            this.label338.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form_SRMSt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -6726,17 +7021,19 @@ namespace VEXI
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.tc_JobStatus.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.gb_IOgroup.ResumeLayout(false);
             this.gb_IOgroup.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -6884,52 +7181,6 @@ namespace VEXI
         private System.Windows.Forms.Label label174;
         private System.Windows.Forms.Label label175;
         private System.Windows.Forms.Label label176;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label358;
-        private System.Windows.Forms.Label lbl_Fork2_MoveJob_Step;
-        private System.Windows.Forms.Label label360;
-        private System.Windows.Forms.Label lbl_Fork2_MoveJob_St;
-        private System.Windows.Forms.Label label364;
-        private System.Windows.Forms.Label lbl_Fork2_MoveJob_To;
-        private System.Windows.Forms.Label label366;
-        private System.Windows.Forms.Label lbl_Fork2_MoveJob;
-        private System.Windows.Forms.Label label368;
-        private System.Windows.Forms.Label label369;
-        private System.Windows.Forms.Label lbl_Fork2_jobStep;
-        private System.Windows.Forms.Label label371;
-        private System.Windows.Forms.Label lbl_Fork2_jobSt;
-        private System.Windows.Forms.Label label373;
-        private System.Windows.Forms.Label lbl_Fork2_To;
-        private System.Windows.Forms.Label label375;
-        private System.Windows.Forms.Label lbl_Fork2_From;
-        private System.Windows.Forms.Label label377;
-        private System.Windows.Forms.Label lbl_Fork2_TaskIndex;
-        private System.Windows.Forms.Label lbl_Fork2_Cmd;
-        private System.Windows.Forms.Label lbl_Fork2_Job;
-        private System.Windows.Forms.Label label381;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label351;
-        private System.Windows.Forms.Label lbl_Fork1_MoveJob_Step;
-        private System.Windows.Forms.Label label353;
-        private System.Windows.Forms.Label lbl_Fork1_MoveJob_St;
-        private System.Windows.Forms.Label label355;
-        private System.Windows.Forms.Label lbl_Fork1_MoveJob_To;
-        private System.Windows.Forms.Label label357;
-        private System.Windows.Forms.Label lbl_Fork1_MoveJob;
-        private System.Windows.Forms.Label label363;
-        private System.Windows.Forms.Label label350;
-        private System.Windows.Forms.Label lbl_Fork1_jobStep;
-        private System.Windows.Forms.Label label349;
-        private System.Windows.Forms.Label lbl_Fork1_jobSt;
-        private System.Windows.Forms.Label label346;
-        private System.Windows.Forms.Label lbl_Fork1_To;
-        private System.Windows.Forms.Label label345;
-        private System.Windows.Forms.Label lbl_Fork1_From;
-        private System.Windows.Forms.Label label342;
-        private System.Windows.Forms.Label lbl_Fork1_TaskIndex;
-        private System.Windows.Forms.Label lbl_Fork1_Cmd;
-        private System.Windows.Forms.Label lbl_Fork1_Job;
-        private System.Windows.Forms.Label label338;
         private System.Windows.Forms.Label lbl_TaskJobNumber;
         private System.Windows.Forms.Label label383;
         private System.Windows.Forms.Label lbl_UpDown_Fork1_CurrentPos_L_2;
@@ -6948,7 +7199,7 @@ namespace VEXI
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.GroupBox gb_IOgroup;
         private System.Windows.Forms.RadioButton rb_DIO_DigitalIn_2;
-        private System.Windows.Forms.RadioButton rb_DIO_DigitalOut;
+        private System.Windows.Forms.RadioButton rb_DIO_DigitalOut_1;
         private System.Windows.Forms.RadioButton rb_DIO_DigitalIn_1;
         private System.Windows.Forms.Label lbl_O_Title_20;
         private System.Windows.Forms.Label lbl_OSt_20;
@@ -7268,5 +7519,75 @@ namespace VEXI
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label lbl_JisangSt_3;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ListView lv_SI;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label lbl_Dev_InvErr_Fork2Code;
+        private System.Windows.Forms.Label lbl_Dev_InvErr_Fork1Code;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label lbl_Dev_InvErr_LiftCode;
+        private System.Windows.Forms.Label lbl_Dev_InvErr_DriveCode;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label lbl_Fork1_Existitem;
+        private System.Windows.Forms.Label lbl_Fork2_Existitem;
+        private System.Windows.Forms.Label lbl_JisangSt_4;
+        private System.Windows.Forms.RadioButton rb_DIO_DigitalOut_2;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label lbl_Fork1St2_7;
+        private System.Windows.Forms.Label lbl_Fork2St2_7;
+        private System.Windows.Forms.Label lbl_Fork1St2_6;
+        private System.Windows.Forms.Label lbl_Fork2St2_6;
+        private System.Windows.Forms.RadioButton rb_DIO_DigitalIn_4;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Label label358;
+        private System.Windows.Forms.Label lbl_Fork2_MoveJob_Step;
+        private System.Windows.Forms.Label label360;
+        private System.Windows.Forms.Label lbl_Fork2_MoveJob_St;
+        private System.Windows.Forms.Label label364;
+        private System.Windows.Forms.Label lbl_Fork2_MoveJob_To;
+        private System.Windows.Forms.Label label366;
+        private System.Windows.Forms.Label lbl_Fork2_MoveJob;
+        private System.Windows.Forms.Label label368;
+        private System.Windows.Forms.Label label369;
+        private System.Windows.Forms.Label lbl_Fork2_jobStep;
+        private System.Windows.Forms.Label label371;
+        private System.Windows.Forms.Label lbl_Fork2_jobSt;
+        private System.Windows.Forms.Label label373;
+        private System.Windows.Forms.Label lbl_Fork2_To;
+        private System.Windows.Forms.Label label375;
+        private System.Windows.Forms.Label lbl_Fork2_From;
+        private System.Windows.Forms.Label label377;
+        private System.Windows.Forms.Label lbl_Fork2_Cmd;
+        private System.Windows.Forms.Label lbl_Fork2_Job;
+        private System.Windows.Forms.Label label381;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label label351;
+        private System.Windows.Forms.Label lbl_Fork1_MoveJob_Step;
+        private System.Windows.Forms.Label label353;
+        private System.Windows.Forms.Label lbl_Fork1_MoveJob_St;
+        private System.Windows.Forms.Label label355;
+        private System.Windows.Forms.Label lbl_Fork1_MoveJob_To;
+        private System.Windows.Forms.Label label357;
+        private System.Windows.Forms.Label lbl_Fork1_MoveJob;
+        private System.Windows.Forms.Label label363;
+        private System.Windows.Forms.Label label350;
+        private System.Windows.Forms.Label lbl_Fork1_jobStep;
+        private System.Windows.Forms.Label label349;
+        private System.Windows.Forms.Label lbl_Fork1_jobSt;
+        private System.Windows.Forms.Label label346;
+        private System.Windows.Forms.Label lbl_Fork1_To;
+        private System.Windows.Forms.Label label345;
+        private System.Windows.Forms.Label lbl_Fork1_From;
+        private System.Windows.Forms.Label label342;
+        private System.Windows.Forms.Label lbl_Fork1_Cmd;
+        private System.Windows.Forms.Label lbl_Fork1_Job;
+        private System.Windows.Forms.Label label338;
     }
 }

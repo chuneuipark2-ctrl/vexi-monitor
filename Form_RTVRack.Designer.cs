@@ -67,7 +67,6 @@ namespace VEXI
             this.btn_DelPosition = new System.Windows.Forms.Button();
             this.btn_LoadTotalFile2 = new System.Windows.Forms.Button();
             this.btn_SaveTotalFile2 = new System.Windows.Forms.Button();
-            this.btn_Position_Init = new System.Windows.Forms.Button();
             this.cb_Position = new System.Windows.Forms.ComboBox();
             this.btn_Position_Set = new System.Windows.Forms.Button();
             this.btn_Position_Load = new System.Windows.Forms.Button();
@@ -78,6 +77,9 @@ namespace VEXI
             this.tab_SpeedArea = new System.Windows.Forms.TabPage();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cb_RearArea_Region1 = new System.Windows.Forms.ComboBox();
+            this.cb_RearArea_Region3 = new System.Windows.Forms.ComboBox();
+            this.cb_RearArea_Region2 = new System.Windows.Forms.ComboBox();
             this.ed_Area_StopDistance = new System.Windows.Forms.TextBox();
             this.ed_Area_StartDistance = new System.Windows.Forms.TextBox();
             this.ed_Area_Start = new System.Windows.Forms.TextBox();
@@ -88,10 +90,10 @@ namespace VEXI
             this.cbFrontDeSpeedSenserUse = new System.Windows.Forms.ComboBox();
             this.cb_Area_Sensor = new System.Windows.Forms.ComboBox();
             this.cbDeSpeedSenserUse = new System.Windows.Forms.ComboBox();
-            this.cb_Area_Region1 = new System.Windows.Forms.ComboBox();
+            this.cb_FrontArea_Region1 = new System.Windows.Forms.ComboBox();
             this.cbStopSenserUse = new System.Windows.Forms.ComboBox();
-            this.cb_Area_Region3 = new System.Windows.Forms.ComboBox();
-            this.cb_Area_Region2 = new System.Windows.Forms.ComboBox();
+            this.cb_FrontArea_Region3 = new System.Windows.Forms.ComboBox();
+            this.cb_FrontArea_Region2 = new System.Windows.Forms.ComboBox();
             this.lv_SpeedArea = new InheritedListView.MyListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -106,6 +108,9 @@ namespace VEXI
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -116,6 +121,14 @@ namespace VEXI
             this.lbl_AreaSpeed_Start = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_RTV_LidarSensor = new System.Windows.Forms.ComboBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.ed_ErrRef_LowSpeedMin = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.ed_ErrRef_LowSpeedValue = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.cb_RTV_DriveDecelSensor = new System.Windows.Forms.ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.cb_RTV_DriveStopSensor = new System.Windows.Forms.ComboBox();
@@ -155,7 +168,6 @@ namespace VEXI
             this.label21 = new System.Windows.Forms.Label();
             this.btn_LoadTotalFile3 = new System.Windows.Forms.Button();
             this.btn_SaveTotalFile3 = new System.Windows.Forms.Button();
-            this.btn_RackConfig_Init = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Area_Clear = new System.Windows.Forms.Button();
@@ -212,12 +224,6 @@ namespace VEXI
             this.lbl_Drive_Position = new System.Windows.Forms.Label();
             this.label132 = new System.Windows.Forms.Label();
             this.panel108 = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
-            this.ed_ErrRef_LowSpeedMin = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.ed_ErrRef_LowSpeedValue = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tab_Position.SuspendLayout();
             this.panel20.SuspendLayout();
@@ -289,7 +295,6 @@ namespace VEXI
             this.panel20.Controls.Add(this.groupBox1);
             this.panel20.Controls.Add(this.btn_LoadTotalFile2);
             this.panel20.Controls.Add(this.btn_SaveTotalFile2);
-            this.panel20.Controls.Add(this.btn_Position_Init);
             this.panel20.Controls.Add(this.cb_Position);
             this.panel20.Controls.Add(this.btn_Position_Set);
             this.panel20.Controls.Add(this.btn_Position_Load);
@@ -750,18 +755,6 @@ namespace VEXI
             this.btn_SaveTotalFile2.UseVisualStyleBackColor = true;
             this.btn_SaveTotalFile2.Click += new System.EventHandler(this.btn_SaveTotalFile2_Click);
             // 
-            // btn_Position_Init
-            // 
-            this.btn_Position_Init.Location = new System.Drawing.Point(425, 42);
-            this.btn_Position_Init.Name = "btn_Position_Init";
-            this.btn_Position_Init.Size = new System.Drawing.Size(189, 45);
-            this.btn_Position_Init.TabIndex = 434;
-            this.btn_Position_Init.TabStop = false;
-            this.btn_Position_Init.Tag = "2";
-            this.btn_Position_Init.Text = "포지션 설정 초기화 명령 전송";
-            this.btn_Position_Init.UseVisualStyleBackColor = true;
-            this.btn_Position_Init.Click += new System.EventHandler(this.btn_PositionConfig_Init_Click);
-            // 
             // cb_Position
             // 
             this.cb_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
@@ -871,6 +864,9 @@ namespace VEXI
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cb_RearArea_Region1);
+            this.panel3.Controls.Add(this.cb_RearArea_Region3);
+            this.panel3.Controls.Add(this.cb_RearArea_Region2);
             this.panel3.Controls.Add(this.ed_Area_StopDistance);
             this.panel3.Controls.Add(this.ed_Area_StartDistance);
             this.panel3.Controls.Add(this.ed_Area_Start);
@@ -881,16 +877,58 @@ namespace VEXI
             this.panel3.Controls.Add(this.cbFrontDeSpeedSenserUse);
             this.panel3.Controls.Add(this.cb_Area_Sensor);
             this.panel3.Controls.Add(this.cbDeSpeedSenserUse);
-            this.panel3.Controls.Add(this.cb_Area_Region1);
+            this.panel3.Controls.Add(this.cb_FrontArea_Region1);
             this.panel3.Controls.Add(this.cbStopSenserUse);
-            this.panel3.Controls.Add(this.cb_Area_Region3);
-            this.panel3.Controls.Add(this.cb_Area_Region2);
+            this.panel3.Controls.Add(this.cb_FrontArea_Region3);
+            this.panel3.Controls.Add(this.cb_FrontArea_Region2);
             this.panel3.Controls.Add(this.lv_SpeedArea);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 452);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1104, 354);
             this.panel3.TabIndex = 1257;
+            // 
+            // cb_RearArea_Region1
+            // 
+            this.cb_RearArea_Region1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_RearArea_Region1.FormattingEnabled = true;
+            this.cb_RearArea_Region1.Items.AddRange(new object[] {
+            "미적용",
+            "적용"});
+            this.cb_RearArea_Region1.Location = new System.Drawing.Point(700, 170);
+            this.cb_RearArea_Region1.Name = "cb_RearArea_Region1";
+            this.cb_RearArea_Region1.Size = new System.Drawing.Size(85, 20);
+            this.cb_RearArea_Region1.TabIndex = 1239;
+            this.cb_RearArea_Region1.Visible = false;
+            this.cb_RearArea_Region1.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
+            // 
+            // cb_RearArea_Region3
+            // 
+            this.cb_RearArea_Region3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_RearArea_Region3.FormattingEnabled = true;
+            this.cb_RearArea_Region3.Items.AddRange(new object[] {
+            "미적용",
+            "적용"});
+            this.cb_RearArea_Region3.Location = new System.Drawing.Point(831, 170);
+            this.cb_RearArea_Region3.Name = "cb_RearArea_Region3";
+            this.cb_RearArea_Region3.Size = new System.Drawing.Size(85, 20);
+            this.cb_RearArea_Region3.TabIndex = 1241;
+            this.cb_RearArea_Region3.Visible = false;
+            this.cb_RearArea_Region3.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
+            // 
+            // cb_RearArea_Region2
+            // 
+            this.cb_RearArea_Region2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_RearArea_Region2.FormattingEnabled = true;
+            this.cb_RearArea_Region2.Items.AddRange(new object[] {
+            "미적용",
+            "적용"});
+            this.cb_RearArea_Region2.Location = new System.Drawing.Point(762, 170);
+            this.cb_RearArea_Region2.Name = "cb_RearArea_Region2";
+            this.cb_RearArea_Region2.Size = new System.Drawing.Size(85, 20);
+            this.cb_RearArea_Region2.TabIndex = 1240;
+            this.cb_RearArea_Region2.Visible = false;
+            this.cb_RearArea_Region2.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
             // 
             // ed_Area_StopDistance
             // 
@@ -978,8 +1016,8 @@ namespace VEXI
             this.cbGroupType.FormattingEnabled = true;
             this.cbGroupType.Items.AddRange(new object[] {
             "직선",
-            "직선 HOME",
-            "직선 END",
+            "직선 전진감속",
+            "직선 후진감속",
             "곡선"});
             this.cbGroupType.Location = new System.Drawing.Point(67, 107);
             this.cbGroupType.Name = "cbGroupType";
@@ -1060,19 +1098,19 @@ namespace VEXI
             this.cbDeSpeedSenserUse.Visible = false;
             this.cbDeSpeedSenserUse.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
             // 
-            // cb_Area_Region1
+            // cb_FrontArea_Region1
             // 
-            this.cb_Area_Region1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Area_Region1.FormattingEnabled = true;
-            this.cb_Area_Region1.Items.AddRange(new object[] {
+            this.cb_FrontArea_Region1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FrontArea_Region1.FormattingEnabled = true;
+            this.cb_FrontArea_Region1.Items.AddRange(new object[] {
             "미적용",
             "적용"});
-            this.cb_Area_Region1.Location = new System.Drawing.Point(700, 109);
-            this.cb_Area_Region1.Name = "cb_Area_Region1";
-            this.cb_Area_Region1.Size = new System.Drawing.Size(85, 20);
-            this.cb_Area_Region1.TabIndex = 1228;
-            this.cb_Area_Region1.Visible = false;
-            this.cb_Area_Region1.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
+            this.cb_FrontArea_Region1.Location = new System.Drawing.Point(700, 109);
+            this.cb_FrontArea_Region1.Name = "cb_FrontArea_Region1";
+            this.cb_FrontArea_Region1.Size = new System.Drawing.Size(85, 20);
+            this.cb_FrontArea_Region1.TabIndex = 1228;
+            this.cb_FrontArea_Region1.Visible = false;
+            this.cb_FrontArea_Region1.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
             // 
             // cbStopSenserUse
             // 
@@ -1088,33 +1126,33 @@ namespace VEXI
             this.cbStopSenserUse.Visible = false;
             this.cbStopSenserUse.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
             // 
-            // cb_Area_Region3
+            // cb_FrontArea_Region3
             // 
-            this.cb_Area_Region3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Area_Region3.FormattingEnabled = true;
-            this.cb_Area_Region3.Items.AddRange(new object[] {
+            this.cb_FrontArea_Region3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FrontArea_Region3.FormattingEnabled = true;
+            this.cb_FrontArea_Region3.Items.AddRange(new object[] {
             "미적용",
             "적용"});
-            this.cb_Area_Region3.Location = new System.Drawing.Point(831, 109);
-            this.cb_Area_Region3.Name = "cb_Area_Region3";
-            this.cb_Area_Region3.Size = new System.Drawing.Size(85, 20);
-            this.cb_Area_Region3.TabIndex = 1230;
-            this.cb_Area_Region3.Visible = false;
-            this.cb_Area_Region3.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
+            this.cb_FrontArea_Region3.Location = new System.Drawing.Point(831, 109);
+            this.cb_FrontArea_Region3.Name = "cb_FrontArea_Region3";
+            this.cb_FrontArea_Region3.Size = new System.Drawing.Size(85, 20);
+            this.cb_FrontArea_Region3.TabIndex = 1230;
+            this.cb_FrontArea_Region3.Visible = false;
+            this.cb_FrontArea_Region3.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
             // 
-            // cb_Area_Region2
+            // cb_FrontArea_Region2
             // 
-            this.cb_Area_Region2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Area_Region2.FormattingEnabled = true;
-            this.cb_Area_Region2.Items.AddRange(new object[] {
+            this.cb_FrontArea_Region2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FrontArea_Region2.FormattingEnabled = true;
+            this.cb_FrontArea_Region2.Items.AddRange(new object[] {
             "미적용",
             "적용"});
-            this.cb_Area_Region2.Location = new System.Drawing.Point(762, 109);
-            this.cb_Area_Region2.Name = "cb_Area_Region2";
-            this.cb_Area_Region2.Size = new System.Drawing.Size(85, 20);
-            this.cb_Area_Region2.TabIndex = 1229;
-            this.cb_Area_Region2.Visible = false;
-            this.cb_Area_Region2.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
+            this.cb_FrontArea_Region2.Location = new System.Drawing.Point(762, 109);
+            this.cb_FrontArea_Region2.Name = "cb_FrontArea_Region2";
+            this.cb_FrontArea_Region2.Size = new System.Drawing.Size(85, 20);
+            this.cb_FrontArea_Region2.TabIndex = 1229;
+            this.cb_FrontArea_Region2.Visible = false;
+            this.cb_FrontArea_Region2.VisibleChanged += new System.EventHandler(this.cbGroupType_VisibleChanged);
             // 
             // lv_SpeedArea
             // 
@@ -1132,6 +1170,9 @@ namespace VEXI
             this.columnHeader7,
             this.columnHeader12,
             this.columnHeader13,
+            this.columnHeader28,
+            this.columnHeader29,
+            this.columnHeader30,
             this.columnHeader25,
             this.columnHeader24,
             this.columnHeader23,
@@ -1214,21 +1255,36 @@ namespace VEXI
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Region 1";
+            this.columnHeader7.Text = "전방 Region 1";
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 75;
+            this.columnHeader7.Width = 90;
             // 
             // columnHeader12
             // 
-            this.columnHeader12.Text = "Region 2";
+            this.columnHeader12.Text = "전방 Region 2";
             this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 75;
+            this.columnHeader12.Width = 90;
             // 
             // columnHeader13
             // 
-            this.columnHeader13.Text = "Region 3";
+            this.columnHeader13.Text = "전방 Region 3";
             this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader13.Width = 75;
+            this.columnHeader13.Width = 90;
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "후방 Region 1";
+            this.columnHeader28.Width = 90;
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "후방 Region 2";
+            this.columnHeader29.Width = 90;
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "후방 Region 3";
+            this.columnHeader30.Width = 90;
             // 
             // columnHeader25
             // 
@@ -1260,7 +1316,6 @@ namespace VEXI
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btn_LoadTotalFile3);
             this.panel1.Controls.Add(this.btn_SaveTotalFile3);
-            this.panel1.Controls.Add(this.btn_RackConfig_Init);
             this.panel1.Controls.Add(this.groupBox8);
             this.panel1.Controls.Add(this.btn_SpeedArea_FileWrite);
             this.panel1.Controls.Add(this.btn_SpeedArea_FileRead);
@@ -1325,6 +1380,8 @@ namespace VEXI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cb_RTV_LidarSensor);
+            this.groupBox2.Controls.Add(this.label56);
             this.groupBox2.Controls.Add(this.label48);
             this.groupBox2.Controls.Add(this.ed_ErrRef_LowSpeedMin);
             this.groupBox2.Controls.Add(this.label52);
@@ -1374,6 +1431,118 @@ namespace VEXI
             this.groupBox2.TabIndex = 1226;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "충돌방지 / 감속이상 설정";
+            // 
+            // cb_RTV_LidarSensor
+            // 
+            this.cb_RTV_LidarSensor.BackColor = System.Drawing.Color.Blue;
+            this.cb_RTV_LidarSensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_RTV_LidarSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_RTV_LidarSensor.ForeColor = System.Drawing.Color.White;
+            this.cb_RTV_LidarSensor.FormattingEnabled = true;
+            this.cb_RTV_LidarSensor.Items.AddRange(new object[] {
+            "없음",
+            "전방 설치",
+            "후방 설치",
+            "전방, 후방 설치"});
+            this.cb_RTV_LidarSensor.Location = new System.Drawing.Point(876, 68);
+            this.cb_RTV_LidarSensor.Name = "cb_RTV_LidarSensor";
+            this.cb_RTV_LidarSensor.Size = new System.Drawing.Size(180, 20);
+            this.cb_RTV_LidarSensor.TabIndex = 1056;
+            // 
+            // label56
+            // 
+            this.label56.BackColor = System.Drawing.Color.Black;
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label56.ForeColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(740, 68);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(135, 21);
+            this.label56.TabIndex = 1057;
+            this.label56.Text = "라이더 설치 위치";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.BackColor = System.Drawing.Color.Black;
+            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label48.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(605, 189);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(55, 21);
+            this.label48.TabIndex = 1055;
+            this.label48.Text = "m/min";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_ErrRef_LowSpeedMin
+            // 
+            this.ed_ErrRef_LowSpeedMin.BackColor = System.Drawing.Color.Blue;
+            this.ed_ErrRef_LowSpeedMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_ErrRef_LowSpeedMin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_ErrRef_LowSpeedMin.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_ErrRef_LowSpeedMin.ForeColor = System.Drawing.Color.White;
+            this.ed_ErrRef_LowSpeedMin.Location = new System.Drawing.Point(662, 189);
+            this.ed_ErrRef_LowSpeedMin.Name = "ed_ErrRef_LowSpeedMin";
+            this.ed_ErrRef_LowSpeedMin.Size = new System.Drawing.Size(64, 21);
+            this.ed_ErrRef_LowSpeedMin.TabIndex = 1053;
+            this.ed_ErrRef_LowSpeedMin.Tag = "00";
+            this.ed_ErrRef_LowSpeedMin.Text = "0";
+            this.ed_ErrRef_LowSpeedMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label52
+            // 
+            this.label52.BackColor = System.Drawing.Color.Black;
+            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label52.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label52.ForeColor = System.Drawing.Color.White;
+            this.label52.Location = new System.Drawing.Point(293, 189);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(310, 21);
+            this.label52.TabIndex = 1054;
+            this.label52.Text = "감속 이상 속도 최소값 (~400, 미적용시 0)";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label54
+            // 
+            this.label54.BackColor = System.Drawing.Color.Black;
+            this.label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label54.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label54.ForeColor = System.Drawing.Color.White;
+            this.label54.Location = new System.Drawing.Point(605, 165);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(55, 21);
+            this.label54.TabIndex = 1052;
+            this.label54.Text = "%";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ed_ErrRef_LowSpeedValue
+            // 
+            this.ed_ErrRef_LowSpeedValue.BackColor = System.Drawing.Color.Blue;
+            this.ed_ErrRef_LowSpeedValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ed_ErrRef_LowSpeedValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ed_ErrRef_LowSpeedValue.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ed_ErrRef_LowSpeedValue.ForeColor = System.Drawing.Color.White;
+            this.ed_ErrRef_LowSpeedValue.Location = new System.Drawing.Point(662, 165);
+            this.ed_ErrRef_LowSpeedValue.Name = "ed_ErrRef_LowSpeedValue";
+            this.ed_ErrRef_LowSpeedValue.Size = new System.Drawing.Size(64, 21);
+            this.ed_ErrRef_LowSpeedValue.TabIndex = 1050;
+            this.ed_ErrRef_LowSpeedValue.Tag = "10";
+            this.ed_ErrRef_LowSpeedValue.Text = "0";
+            this.ed_ErrRef_LowSpeedValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label55
+            // 
+            this.label55.BackColor = System.Drawing.Color.Black;
+            this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label55.ForeColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(293, 165);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(310, 21);
+            this.label55.TabIndex = 1051;
+            this.label55.Text = "감속 이상 속도 기준 (100 ~ 250)";
+            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cb_RTV_DriveDecelSensor
             // 
@@ -1596,7 +1765,7 @@ namespace VEXI
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(310, 21);
             this.label42.TabIndex = 1035;
-            this.label42.Text = "라이다 감지 정지 대기 타임아웃 (0~60)";
+            this.label42.Text = "라이다 감지 정지 대기 타임아웃 (0~600)";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -1637,7 +1806,7 @@ namespace VEXI
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(310, 21);
             this.label32.TabIndex = 1032;
-            this.label32.Text = "전방대차 위치 수신 타임아웃 (알람)(5~60)";
+            this.label32.Text = "전방대차 위치 수신 타임아웃 (알람) (5~250)";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
@@ -1678,7 +1847,7 @@ namespace VEXI
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(310, 21);
             this.label37.TabIndex = 1029;
-            this.label37.Text = "전방대차 위치 수신 타임아웃 (주행정지)(0.5~20)";
+            this.label37.Text = "전방대차 위치 수신 타임아웃 (주행정지) (0.5~20)";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
@@ -1908,18 +2077,6 @@ namespace VEXI
             this.btn_SaveTotalFile3.Text = "통합 파일에 저장";
             this.btn_SaveTotalFile3.UseVisualStyleBackColor = true;
             this.btn_SaveTotalFile3.Click += new System.EventHandler(this.btn_SaveTotalFile3_Click);
-            // 
-            // btn_RackConfig_Init
-            // 
-            this.btn_RackConfig_Init.Location = new System.Drawing.Point(779, 65);
-            this.btn_RackConfig_Init.Name = "btn_RackConfig_Init";
-            this.btn_RackConfig_Init.Size = new System.Drawing.Size(214, 35);
-            this.btn_RackConfig_Init.TabIndex = 433;
-            this.btn_RackConfig_Init.TabStop = false;
-            this.btn_RackConfig_Init.Tag = "1";
-            this.btn_RackConfig_Init.Text = "구간설정 초기화 명령 전송";
-            this.btn_RackConfig_Init.UseVisualStyleBackColor = true;
-            this.btn_RackConfig_Init.Click += new System.EventHandler(this.btn_PositionConfig_Init_Click);
             // 
             // groupBox8
             // 
@@ -2558,88 +2715,6 @@ namespace VEXI
             this.panel108.Size = new System.Drawing.Size(1120, 842);
             this.panel108.TabIndex = 622;
             // 
-            // label48
-            // 
-            this.label48.BackColor = System.Drawing.Color.Black;
-            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label48.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(605, 189);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(55, 21);
-            this.label48.TabIndex = 1055;
-            this.label48.Text = "m/min";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_ErrRef_LowSpeedMin
-            // 
-            this.ed_ErrRef_LowSpeedMin.BackColor = System.Drawing.Color.Blue;
-            this.ed_ErrRef_LowSpeedMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_ErrRef_LowSpeedMin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_ErrRef_LowSpeedMin.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_ErrRef_LowSpeedMin.ForeColor = System.Drawing.Color.White;
-            this.ed_ErrRef_LowSpeedMin.Location = new System.Drawing.Point(662, 189);
-            this.ed_ErrRef_LowSpeedMin.Name = "ed_ErrRef_LowSpeedMin";
-            this.ed_ErrRef_LowSpeedMin.Size = new System.Drawing.Size(64, 21);
-            this.ed_ErrRef_LowSpeedMin.TabIndex = 1053;
-            this.ed_ErrRef_LowSpeedMin.Tag = "00";
-            this.ed_ErrRef_LowSpeedMin.Text = "0";
-            this.ed_ErrRef_LowSpeedMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label52
-            // 
-            this.label52.BackColor = System.Drawing.Color.Black;
-            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label52.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label52.ForeColor = System.Drawing.Color.White;
-            this.label52.Location = new System.Drawing.Point(293, 189);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(310, 21);
-            this.label52.TabIndex = 1054;
-            this.label52.Text = "감속 이상 속도 최소값 (~400, 미적용시 0)";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label54
-            // 
-            this.label54.BackColor = System.Drawing.Color.Black;
-            this.label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label54.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label54.ForeColor = System.Drawing.Color.White;
-            this.label54.Location = new System.Drawing.Point(605, 165);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(55, 21);
-            this.label54.TabIndex = 1052;
-            this.label54.Text = "%";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ed_ErrRef_LowSpeedValue
-            // 
-            this.ed_ErrRef_LowSpeedValue.BackColor = System.Drawing.Color.Blue;
-            this.ed_ErrRef_LowSpeedValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ed_ErrRef_LowSpeedValue.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ed_ErrRef_LowSpeedValue.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ed_ErrRef_LowSpeedValue.ForeColor = System.Drawing.Color.White;
-            this.ed_ErrRef_LowSpeedValue.Location = new System.Drawing.Point(662, 165);
-            this.ed_ErrRef_LowSpeedValue.Name = "ed_ErrRef_LowSpeedValue";
-            this.ed_ErrRef_LowSpeedValue.Size = new System.Drawing.Size(64, 21);
-            this.ed_ErrRef_LowSpeedValue.TabIndex = 1050;
-            this.ed_ErrRef_LowSpeedValue.Tag = "10";
-            this.ed_ErrRef_LowSpeedValue.Text = "0";
-            this.ed_ErrRef_LowSpeedValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label55
-            // 
-            this.label55.BackColor = System.Drawing.Color.Black;
-            this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label55.ForeColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(293, 165);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(310, 21);
-            this.label55.TabIndex = 1051;
-            this.label55.Text = "감속 이상 속도 기준 (100 ~ 250)";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form_RTVRack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -2702,7 +2777,6 @@ namespace VEXI
         private System.Windows.Forms.Button btn_SpeedArea_FileWrite;
         private System.Windows.Forms.Button btn_SpeedArea_Set;
         private System.Windows.Forms.Button btn_SpeedArea_Load;
-        private System.Windows.Forms.Button btn_RackConfig_Init;
         private System.Windows.Forms.Button btn_Area_Clear;
         private System.Windows.Forms.Button btn_Area_DEL;
         private System.Windows.Forms.Button btn_Area_ADD;
@@ -2741,9 +2815,9 @@ namespace VEXI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox ed_RTV_Width;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cb_Area_Region3;
-        private System.Windows.Forms.ComboBox cb_Area_Region2;
-        private System.Windows.Forms.ComboBox cb_Area_Region1;
+        private System.Windows.Forms.ComboBox cb_FrontArea_Region3;
+        private System.Windows.Forms.ComboBox cb_FrontArea_Region2;
+        private System.Windows.Forms.ComboBox cb_FrontArea_Region1;
         private System.Windows.Forms.ComboBox cb_Area_Sensor;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -2818,7 +2892,6 @@ namespace VEXI
         private System.Windows.Forms.Button btn_DelPosition;
         private System.Windows.Forms.Button btn_LoadTotalFile2;
         private System.Windows.Forms.Button btn_SaveTotalFile2;
-        private System.Windows.Forms.Button btn_Position_Init;
         private System.Windows.Forms.ComboBox cb_Position;
         private System.Windows.Forms.Button btn_Position_Set;
         private System.Windows.Forms.Button btn_Position_Load;
@@ -2874,5 +2947,13 @@ namespace VEXI
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TextBox ed_ErrRef_LowSpeedValue;
         private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.ComboBox cb_RTV_LidarSensor;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.ColumnHeader columnHeader28;
+        private System.Windows.Forms.ColumnHeader columnHeader29;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
+        private System.Windows.Forms.ComboBox cb_RearArea_Region1;
+        private System.Windows.Forms.ComboBox cb_RearArea_Region3;
+        private System.Windows.Forms.ComboBox cb_RearArea_Region2;
     }
 }

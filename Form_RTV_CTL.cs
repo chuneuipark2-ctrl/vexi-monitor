@@ -19,7 +19,8 @@ namespace VEXI
 
         private static VEXI_DEFS.TRTV_REC_TaskJobCTRL rtv_REC_TaskJob_CTRL;
         private static VEXI_DEFS.RTV_REC_JobCTRL rtv_REC_Job_CTRL;
-        
+        private static VEXI_DEFS.TRTV_REC_JobCTRLRES rtv_REC_Job_CTRLRes;
+
 
         public Form_RTV_CTL()
         {
@@ -33,19 +34,6 @@ namespace VEXI
 
 
         #region 컴포넌트 이벤트
-        private void Form_SRM_CTL_Load(object sender, EventArgs e)
-        {
-            if (this.IsMdiChild)
-            {
-                form_Main = (Form_Main)this.MdiParent;
-            }
-            else
-            {
-                form_Main = (Form_Main)this.Owner;
-            }
-
-            Display_DevSt();
-        }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -76,36 +64,39 @@ namespace VEXI
         private void btn_UP_LowSpeed_MouseUp(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = Convert.ToByte(bt.Tag.ToString());
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0;
-            form_Main.Do_ManualCtrl();
+            form_Main.Do_JogCtrl();
         }
 
         private void btn_UP_LowSpeed_MouseDown(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = Convert.ToByte(bt.Tag.ToString());
-            form_Main.Do_ManualCtrl();
+            form_Main.Do_JogCtrl();
         }
 
         private void btn_SetRef_Drive_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "원점을 설정하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_44, Convert.ToByte(bt.Tag.ToString()));
             }
         }
 
         private void btn_Dev_StartOn_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "장치의 시작모드 상태를 변경하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_50, Convert.ToByte(bt.Tag.ToString()));
             }
         }
@@ -128,29 +119,37 @@ namespace VEXI
 
         private void btn_DevMode_AutoOn_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "장치의 운영모드를 변경하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 form_Main.Do_Ctrl_DevMode(ConstClass.CMD2_58, Convert.ToByte(bt.Tag.ToString()));
             }
         }
 
         private void btn_Move_Station1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes1.Visible = false;
+                lbl_JobCtrlRes2.Visible = false;
                 Do_Semi_MoveCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
         private void btn_Input_Feed1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "적재 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
+                lbl_JobCtrlRes1.Visible = false;
+                lbl_JobCtrlRes2.Visible = false;
 
                 Do_Semi_LoadCMD_Ctrl(bt.Tag.ToString());
             }
@@ -158,9 +157,13 @@ namespace VEXI
 
         private void btn_Output_Feed1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "이재 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
+                lbl_JobCtrlRes1.Visible = false;
+                lbl_JobCtrlRes2.Visible = false;
 
                 Do_Semi_UnLoadCMD_Ctrl(bt.Tag.ToString());
             }
@@ -168,9 +171,13 @@ namespace VEXI
 
         private void btn_SToS_Feed1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "스테이션간 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
+                lbl_JobCtrlRes1.Visible = false;
+                lbl_JobCtrlRes2.Visible = false;
 
                 Do_Semi_StoSCMD_Ctrl(bt.Tag.ToString());
             }
@@ -178,9 +185,13 @@ namespace VEXI
 
         private void btn_ChangeS_Feed1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "목적지 스테이션 변경 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
+                lbl_JobCtrlRes1.Visible = false;
+                lbl_JobCtrlRes2.Visible = false;
 
                 Do_Semi_ChangeSCMD_Ctrl(bt.Tag.ToString());
             }
@@ -189,6 +200,9 @@ namespace VEXI
 
         private void btn_TaskSet_Click(object sender, EventArgs e)
         {
+            lbl_JobCtrlRes1.Visible = false;
+            lbl_JobCtrlRes2.Visible = false;
+
             Hide_AllEdit();
             if (lv_TaskJob_Ctrl.Items.Count == 20)
             {
@@ -371,6 +385,33 @@ namespace VEXI
             }
         }
 
+        public void Display_JobCtrlRes(byte[] Data)
+        {
+            rtv_REC_Job_CTRLRes = (VEXI_DEFS.TRTV_REC_JobCTRLRES)Global_Class.UTIL_BytesToStructure(Data, typeof(VEXI_DEFS.TRTV_REC_JobCTRLRES));
+
+            lbl_JobCtrlRes1.Visible = (rtv_REC_Job_CTRLRes.ResultRes != 0) && (rtv_REC_Job_CTRLRes.Work1_ResultRes != 0);
+            lbl_JobCtrlRes2.Visible = (rtv_REC_Job_CTRLRes.ResultRes != 0) && (rtv_REC_Job_CTRLRes.Work2_ResultRes != 0);
+
+            switch (rtv_REC_Job_CTRLRes.Work1_ResultRes)
+            {
+                case 0 : lbl_JobCtrlRes1.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work1_ResultRes)) + " 피딩 1 : 이상없음"; break;
+                case 31: lbl_JobCtrlRes1.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work1_ResultRes)) + " 피딩 1 : 작업코드 이상"; break;
+                case 33: lbl_JobCtrlRes1.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work1_ResultRes)) + " 피딩 1 : 작업수행중"; break;
+                case 34: lbl_JobCtrlRes1.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work1_ResultRes)) + " 피딩 1 : 장애 상태"; break;
+                case 35: lbl_JobCtrlRes1.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work1_ResultRes)) + " 피딩 1 : 시작 OFF"; break;
+                default: lbl_JobCtrlRes1.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work1_ResultRes)) + " 피딩 1 : Unknown Nack"; break;
+            }
+
+            switch (rtv_REC_Job_CTRLRes.Work2_ResultRes)
+            {
+                case 0: lbl_JobCtrlRes2.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work2_ResultRes)) + " 피딩 2 : 이상없음"; break;
+                case 31: lbl_JobCtrlRes2.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work2_ResultRes)) + " 피딩 2 : 작업코드 이상"; break;
+                case 33: lbl_JobCtrlRes2.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work2_ResultRes)) + " 피딩 2 : 작업수행중"; break;
+                case 34: lbl_JobCtrlRes2.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work2_ResultRes)) + " 피딩 2 : 장애 상태"; break;
+                case 35: lbl_JobCtrlRes2.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work2_ResultRes)) + " 피딩 2 : 시작 OFF"; break;
+                default: lbl_JobCtrlRes2.Text = string.Format("{0}", (rtv_REC_Job_CTRLRes.Work2_ResultRes)) + " 피딩 2 : Unknown Nack"; break;
+            }
+        }
 
         private void Display_Ctrl_Init()
         {
@@ -395,7 +436,7 @@ namespace VEXI
                 Display_Ctrl_Init();
             }
 
-            fixed (VEXI_DEFS.TSRM_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.srm_REC_SRMSt)
+            fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt)
             {
                 //Flag_In_XXXX 는 해당 데이터가 수신된 적이 있는지에 대한 변수임
                 //if (form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) //호출하는데서 체크하는 걸로 수정함
@@ -449,7 +490,7 @@ namespace VEXI
                     item.SubItems.Add("");
                 }
             }
-            fixed (VEXI_DEFS.TSRM_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.srm_REC_SRMSt)
+            fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt)
             {
                 //Flag_In_XXXX 는 해당 데이터가 수신된 적이 있는지에 대한 변수임
                 //if (form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) //호출하는데서 체크하는 걸로 수정함
@@ -527,8 +568,8 @@ namespace VEXI
                         else
                         {
                             if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Move") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_MOVE;
-                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Loading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_Loading;
-                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Unloading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_UnLoading;
+                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Loading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_TaskLoading;
+                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Unloading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_TaskUnLoading;
 
                             if (lv_TaskJob_Ctrl.Items[i].SubItems[2].Text == "Feeding1") (TaskJobPtr + i)->Feed = 1;
                             else if (lv_TaskJob_Ctrl.Items[i].SubItems[2].Text == "Feeding2") (TaskJobPtr + i)->Feed = 2;
@@ -841,8 +882,15 @@ namespace VEXI
 
                     if (Global_Class.BitStatus(DevSt->DevSt_1, 3))
                     {
-                        lbl_Dev_Error.Text = String.Format("{0}-{1}-{2}", DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode) +
-                                             "  " + Global_Class.UTIL_RTVAlarmName(DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode);
+                        if (DevSt->AlarmCodeType == 1)
+                        {
+                            lbl_Dev_Error.Text = String.Format("{0}-{1}-{2}", DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode) +
+                                             "  " + Global_Class.UTIL_RTVAlarmName_MemoryMap(DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode);
+                        } else
+                        {
+                            lbl_Dev_Error.Text = String.Format("{0}-{1}-{2}", DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode) +
+                                             "  " + Global_Class.UTIL_RTVAlarmName_14Bytes(DevSt->ErrorCode.MainCode, DevSt->ErrorCode.SubCode, DevSt->ErrorCode.PosCode);
+                        }
                         lbl_Dev_Error.BackColor = Color.Red;
                         lbl_Dev_Error.ForeColor = Color.White;
                     }
@@ -877,6 +925,32 @@ namespace VEXI
                         lbl_DevEmergencySwitch.BackColor = Color.Silver;
                         lbl_DevEmergencySwitch.ForeColor = Color.Black;
                     }
+
+                    if (Global_Class.BitStatus(DevSt->DevSt_2, 6))
+                    {
+                        lbl_DevmodeSwitch.Text = "수동";
+                        lbl_DevmodeSwitch.BackColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        lbl_DevmodeSwitch.Text = "자동";
+                        lbl_DevmodeSwitch.BackColor = Color.Lime;
+                    }
+
+                    if (Global_Class.BitStatus(DevSt->Drive_DisPosition.St_2, 2))
+                    {
+                        lbl_DriveSt2_2.Text = "확인완료";
+                        lbl_DriveSt2_2.BackColor = Color.Lime;
+                        lbl_DriveSt2_2.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        lbl_DriveSt2_2.Text = "미확인";
+                        lbl_DriveSt2_2.BackColor = Color.Red;
+                        lbl_DriveSt2_2.ForeColor = Color.White;
+                    }
+
+                    lbl_Drive_Position.Text = String.Format("{0}", DevSt->Drive_DisPosition.Now_Position);
 
                 }
             }
@@ -982,11 +1056,11 @@ namespace VEXI
 
                     if (DevSt->FF1_Job.taskIndex == 0)
                     {
-                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
+                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetRTVJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
                     }
                     else
                     {
-                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
+                        lbl_Feed1_jobStep.Text = Global_Class.UTIL_GetRTVTaskStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
                     }
 
                     //반송 or Task : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
@@ -1031,11 +1105,11 @@ namespace VEXI
 
                     if (DevSt->FF2_Job.taskIndex == 0)
                     {
-                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
+                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetRTVJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
                     }
                     else
                     {
-                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
+                        lbl_Feed2_jobStep.Text = Global_Class.UTIL_GetRTVTaskStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
                     }
 
                 }
@@ -1079,6 +1153,13 @@ namespace VEXI
             lbl_DevEmergencySwitch.Text = "";
             lbl_DevEmergencySwitch.BackColor = Color.White;
 
+            lbl_DevmodeSwitch.Text = "";
+            lbl_DevmodeSwitch.BackColor = Color.White;
+
+            lbl_DriveSt2_2.Text = "";
+            lbl_DriveSt2_2.BackColor = Color.White;
+            lbl_Drive_Position.Text = "";
+
             //Display_Feed_St 내 갱신 컴포넌트들
             lbl_Drive_CurrentPos_Feed1.Text = "";
             lbl_Drive_CurrentPos_Feed1.BackColor = Color.White;
@@ -1117,6 +1198,8 @@ namespace VEXI
         private void btn_DelWork_Feed1_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
+
             switch (bt.Tag.ToString())
             {
                 case "1":
@@ -1154,8 +1237,23 @@ namespace VEXI
                 (form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0xFF))
             {
                 form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0;
-                form_Main.Do_ManualCtrl();
+                form_Main.Do_JogCtrl();
             }
+        }
+
+        private void Form_RTV_CTL_Load(object sender, EventArgs e)
+        {
+            if (this.IsMdiChild)
+            {
+                form_Main = (Form_Main)this.MdiParent;
+            }
+            else
+            {
+                form_Main = (Form_Main)this.Owner;
+            }
+
+            this.Text = "장비 운전 조작(" + tabControl1.SelectedTab.Text + ")";
+            Display_DevSt();
         }
     }
 }

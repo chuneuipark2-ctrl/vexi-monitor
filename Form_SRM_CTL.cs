@@ -22,6 +22,7 @@ namespace VEXI
         private static VEXI_DEFS.TSRM_REC_JobCTRLRES srm_REC_Job_CTRLRes;
         private static VEXI_DEFS.TDEV_CtrlRes_2Byte dev_Response_2byte;
         private static VEXI_DEFS.TDEV_REC_SensorScanCtrl dev_REC_0x0161;
+        private static VEXI_DEFS.TDEV_ManualCtrl srm_REC_ManualCtrl;
 
 
         public Form_SRM_CTL()
@@ -52,17 +53,13 @@ namespace VEXI
 
             cbItem_ItemType.SelectedIndex = 0;
 
-            if (rb_ForkRef_1.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 1;
-            else if (rb_ForkRef_2.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 2;
-            else if (rb_ForkRef_3.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 3;
-            else form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 1;
-
             if (rb_LowSpeed_Fork1_L.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 1;
             else if (rb_LowSpeed_Fork1_R.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 2;
             else if (rb_LowSpeed_Fork2_L.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 3;
             else if (rb_LowSpeed_Fork2_R.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 4;
             else form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 1;
 
+            this.Text = "장비 운전 조작(" + tabControl1.SelectedTab.Text + ")";
             Display_DevSt();
         }
 
@@ -95,20 +92,16 @@ namespace VEXI
         private void btn_UP_LowSpeed_MouseUp(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = Convert.ToByte(bt.Tag.ToString());
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0;
             
-            form_Main.Do_ManualCtrl();
+            form_Main.Do_JogCtrl();
         }
 
         private void rb_LowSpeed_Fork1_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_ForkRef_1.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 1;
-            else if (rb_ForkRef_2.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 2;
-            else if (rb_ForkRef_3.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 3;
-            else form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.ForkRef = 1;
-
             if (rb_LowSpeed_Fork1_L.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 1;
             else if (rb_LowSpeed_Fork1_R.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 2;
             else if (rb_LowSpeed_Fork2_L.Checked) form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = 3;
@@ -120,27 +113,28 @@ namespace VEXI
         private void btn_UP_LowSpeed_MouseDown(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
 
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = Convert.ToByte(bt.Tag.ToString());
-            form_Main.Do_ManualCtrl();
+            form_Main.Do_JogCtrl();
         }
 
         private void btn_SetRef_Drive_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "원점을 설정하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_44, Convert.ToByte(bt.Tag.ToString()));
             }
         }
 
         private void btn_Dev_StartOn_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "장치의 시작모드 상태를 변경하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_50, Convert.ToByte(bt.Tag.ToString()));
             }
         }
@@ -155,6 +149,9 @@ namespace VEXI
 
         private void btn_Dev_Home_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "홈위치로 이동 시키시겠습니까?"))
             {
                 form_Main.Do_Ctrl_Cmd_withNoData(ConstClass.CMD2_51);
@@ -163,40 +160,60 @@ namespace VEXI
 
         private void btn_DevMode_AutoOn_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "장치의 운영모드를 변경하시겠습니까?"))
             {
-                Button bt = sender as Button;
-
                 form_Main.Do_Ctrl_DevMode(ConstClass.CMD2_58, Convert.ToByte(bt.Tag.ToString()));
             }
         }
 
         private void btn_Move_Station1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_MoveCMD_Ctrl(bt.Tag.ToString());
+            }
+        }
+
+
+        private void btn_Sticky_Fork1_Click(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
+            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Sticky 명령을 전송하시겠습니까? (안전에 주의하세요)"))
+            {
+                lbl_JobCtrlRes.Visible = false;
+                Do_Semi_StickyCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
         private void btn_Input_Fork1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "입고 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_InputCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
         private void btn_Output_Fork1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "출고 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_OutputCMD_Ctrl(bt.Tag.ToString());
             }
         }
@@ -204,40 +221,48 @@ namespace VEXI
 
         private void btn_RToR_Fork1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "랙간 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_RtoRCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
         private void btn_SToS_Fork1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "스테이션간 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_StoSCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
         private void btn_ChangeR_Fork1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "목적지 랙 변경 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_ChangeRCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
         private void btn_ChangeS_Fork1_Click(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "목적지 스테이션 변경 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                Button bt = sender as Button;
-
+                lbl_JobCtrlRes.Visible = false;
                 Do_Semi_ChangeSCMD_Ctrl(bt.Tag.ToString());
             }
         }
@@ -245,6 +270,8 @@ namespace VEXI
 
         private void btn_TaskSet_Click(object sender, EventArgs e)
         {
+            lbl_JobCtrlRes.Visible = false;
+
             Hide_AllEdit();
             if (lv_TaskJob_Ctrl.Items.Count == 20)
             {
@@ -392,6 +419,8 @@ namespace VEXI
         private void btn_DelWork_Fork1_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
+
             switch (bt.Tag.ToString())
             {
                 case "1":
@@ -444,6 +473,8 @@ namespace VEXI
         private unsafe void button2_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
+            if (bt == null) return;
+
 
             fixed (VEXI_DEFS.TDEV_REC_SensorScanCtrl* DevCtrl = &dev_REC_0x0161)
             {
@@ -473,7 +504,7 @@ namespace VEXI
                 (form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0xFF))
             {
                 form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0;
-                form_Main.Do_ManualCtrl();
+                form_Main.Do_JogCtrl();
             }
         }
 
@@ -541,10 +572,10 @@ namespace VEXI
                         else
                         {
                             if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Move") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_MOVE;
-                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Loading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_Loading;
-                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Unloading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_UnLoading;
+                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Loading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_TaskLoading;
+                            else if (lv_TaskJob_Ctrl.Items[i].SubItems[1].Text == "Unloading") (TaskJobPtr + i)->Cmd = ConstClass.SEMI_TaskUnLoading;
 
-//                            (TaskJobPtr + i)->LoadFactor = (byte)Global_Class.UTIL_StrToIntDef(lv_TaskJob_Ctrl.Items[i].SubItems[2].Text, 100);
+                            //                            (TaskJobPtr + i)->LoadFactor = (byte)Global_Class.UTIL_StrToIntDef(lv_TaskJob_Ctrl.Items[i].SubItems[2].Text, 100);
 
                             if (lv_TaskJob_Ctrl.Items[i].SubItems[2].Text == "Fork1") (TaskJobPtr + i)->Fork = 1;
                             else if (lv_TaskJob_Ctrl.Items[i].SubItems[2].Text == "Fork2") (TaskJobPtr + i)->Fork = 2;
@@ -870,6 +901,46 @@ namespace VEXI
             form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, srm_REC_Job_CTRL);
         }
 
+        
+        private unsafe void Do_Semi_StickyCMD_Ctrl(string CtrlType)
+        {
+            fixed (VEXI_DEFS.SRM_REC_JobCTRL* DevCtrl = &srm_REC_Job_CTRL)
+            {
+                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.SRM_REC_JobCTRL)));
+                DevCtrl->OptionFlag = 0x00;
+                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
+                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
+
+                switch (CtrlType)
+                {
+                    case "F1":
+                        DevCtrl->CMD = ConstClass.SEMI_Sticky;
+
+                        DevCtrl->Work1_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
+                        DevCtrl->Work1_From.Row = (byte)numed_Fork1_Sticky_R.Value;
+                        DevCtrl->Work1_From.BayID = (UInt16)numed_Fork1_Sticky_B.Value;
+                        DevCtrl->Work1_From.LevelID = (byte)numed_Fork1_Sticky_L.Value;
+                        DevCtrl->Work1_To.Row = (byte)numed_Fork1_Sticky_R.Value;
+                        DevCtrl->Work1_To.BayID = (UInt16)numed_Fork1_Sticky_B.Value;
+                        DevCtrl->Work1_To.LevelID = (byte)numed_Fork1_Sticky_L.Value;
+                        break;
+
+                    case "F2":
+                        DevCtrl->CMD = ConstClass.SEMI_Sticky;
+
+                        DevCtrl->Work2_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
+                        DevCtrl->Work2_From.Row = (byte)numed_Fork2_Sticky_R.Value;
+                        DevCtrl->Work2_From.BayID = (UInt16)numed_Fork2_Sticky_B.Value;
+                        DevCtrl->Work2_From.LevelID = (byte)numed_Fork2_Sticky_L.Value;
+                        DevCtrl->Work2_To.Row = (byte)numed_Fork2_Sticky_R.Value;
+                        DevCtrl->Work2_To.BayID = (UInt16)numed_Fork2_Sticky_B.Value;
+                        DevCtrl->Work2_To.LevelID = (byte)numed_Fork2_Sticky_L.Value;
+                        break;
+                }
+            }
+            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, srm_REC_Job_CTRL);
+        }
+
         private unsafe void Do_Semi_MoveCMD_Ctrl(string CtrlType)
 
         {
@@ -984,7 +1055,9 @@ namespace VEXI
                 case 15: lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " 작업 번호 '0' 으로 수신"; break;
                 case 16: lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " 랙, 스테이션 목적지 변경 작업번호 이상"; break;
                 case 17: lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " 동일한 작업번호 완료 상태인데, 랙, 스테이션 목적지 변경 명령 수신"; break;
-                default : lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " Unknown Nack"; break;
+                case 18: lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " 기상반 스위치 수동 상태"; break;
+                case 19: lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " 랙, 스테이션 목적지 명령 오류"; break;
+                default: lbl_JobCtrlRes.Text = string.Format("{0}", (srm_REC_Job_CTRLRes.Work1_ResultRes)) + " Unknown Nack"; break;
             }
         }
         
@@ -1087,6 +1160,8 @@ namespace VEXI
             lbl_Fork1St1_6.BackColor = Color.White;
             lbl_Fork1St1_7.Text = "";
             lbl_Fork1St1_7.BackColor = Color.White;
+            lbl_Fork1_Existitem.Text = "";
+            lbl_Fork1_Existitem.BackColor = Color.White;
             lbl_Fork2St1_0.Text = "";
             lbl_Fork2St1_4.Text = "";
             lbl_Fork2St1_4.BackColor = Color.White;
@@ -1101,6 +1176,9 @@ namespace VEXI
             lbl_Fork2St1_6.BackColor = Color.White;
             lbl_Fork2St1_7.Text = "";
             lbl_Fork2St1_7.BackColor = Color.White;
+            lbl_Fork2_Existitem.Text = "";
+            lbl_Fork2_Existitem.BackColor = Color.White;
+
 
             //Display_D_UD_Fork_St 내 갱신 컴포넌트들
             lbl_DriveSt2_2.Text = "";
@@ -1116,6 +1194,10 @@ namespace VEXI
             lbl_Fork2St2_2.BackColor = Color.White;
             lbl_Fork2_Position.Text = "";
 
+            lbl_Fork1St2_6.Text = "";
+            lbl_Fork1St2_6.BackColor = Color.White;
+            lbl_Fork2St2_6.Text = "";
+            lbl_Fork2St2_6.BackColor = Color.White;
 
             //Display_Sub_TaskList
             lbl_TaskJobNumber.Text = "";
@@ -1124,7 +1206,6 @@ namespace VEXI
 
             //Display_Sub_ForkJob
             lbl_Fork1_Job.Text = "";
-            lbl_Fork1_TaskIndex.Text = "";
             lbl_Fork1_Cmd.Text = "";
             lbl_Fork1_From.Text = "";
             lbl_Fork1_To.Text = "";
@@ -1135,7 +1216,6 @@ namespace VEXI
             lbl_Fork1_MoveJob_St.Text = "";
             lbl_Fork1_MoveJob_Step.Text = "";
             lbl_Fork2_Job.Text = "";
-            lbl_Fork2_TaskIndex.Text = "";
             lbl_Fork2_Cmd.Text = "";
             lbl_Fork2_From.Text = "";
             lbl_Fork2_To.Text = "";
@@ -1203,12 +1283,28 @@ namespace VEXI
                     {
                         lbl_Fork1St1_6.Text = "ON";
                         lbl_Fork1St1_6.BackColor = Color.Lime;
-                                         }
+                    }
                     else
                     {
                         lbl_Fork1St1_6.Text = "OFF";
                         lbl_Fork1St1_6.BackColor = Color.Silver;
-                                         }
+                    }
+
+
+                    if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.ItemExist, 0))
+                    {
+                        lbl_Fork1_Existitem.Text = "감지";
+                        lbl_Fork1_Existitem.BackColor = Color.Yellow;
+
+                    }
+                    else
+                    {
+                        lbl_Fork1_Existitem.Text = "미감지";
+                        lbl_Fork1_Existitem.BackColor = Color.Silver;
+
+                    }
+
+
 
                     if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_1, 0))
                     {
@@ -1264,6 +1360,19 @@ namespace VEXI
                     {
                         lbl_Fork2St1_6.Text = "OFF";
                         lbl_Fork2St1_6.BackColor = Color.Silver;
+                    }
+
+                    if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.ItemExist, 0))
+                    {
+                        lbl_Fork2_Existitem.Text = "감지";
+                        lbl_Fork2_Existitem.BackColor = Color.Yellow;
+
+                    }
+                    else
+                    {
+                        lbl_Fork2_Existitem.Text = "미감지";
+                        lbl_Fork2_Existitem.BackColor = Color.Silver;
+
                     }
 
                 }
@@ -1388,6 +1497,18 @@ namespace VEXI
                         lbl_Fork1St2_2.ForeColor = Color.White;
                     }
                     lbl_Fork1_Position.Text = String.Format("{0}", DevSt->Fork1_DisPosition.Now_Position);
+
+                    if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.St_2, 6))
+                    {
+                        lbl_Fork1St2_6.Text = "활성화";
+                        lbl_Fork1St2_6.BackColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        lbl_Fork1St2_6.Text = "비활성화";
+                        lbl_Fork1St2_6.BackColor = Color.Silver;
+                    }
+
                     if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_2, 2))
                     {
                         lbl_Fork2St2_2.Text = "확인완료";
@@ -1401,6 +1522,17 @@ namespace VEXI
                         lbl_Fork2St2_2.ForeColor = Color.White;
                     }
                     lbl_Fork2_Position.Text = String.Format("{0}", DevSt->Fork2_DisPosition.Now_Position);
+
+                    if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_2, 6))
+                    {
+                        lbl_Fork2St2_6.Text = "활성화";
+                        lbl_Fork2St2_6.BackColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        lbl_Fork2St2_6.Text = "비활성화";
+                        lbl_Fork2St2_6.BackColor = Color.Silver;
+                    }
                 }
             }
         }
@@ -1546,34 +1678,19 @@ namespace VEXI
                     //반송 or Task : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                     if (DevSt->FF1_Job.Item_Do_Status == 4)
                     {
-                        lbl_Fork1_Job.Text = string.Format("{0} (완료)", DevSt->FF1_Job.Item_JobNumber);
+                        lbl_Fork1_Job.Text = string.Format("{0} / {1} (완료)", DevSt->FF1_Job.Item_JobNumber, DevSt->FF1_Job.ItemType);
                     }
                     else
                     {
-                        lbl_Fork1_Job.Text = string.Format("{0}", DevSt->FF1_Job.Item_JobNumber);
-                    }
-                    if (DevSt->FF1_Job.taskIndex == 0)
-                    {
-                        lbl_Fork1_TaskIndex.Text = "";
-                    }
-                    else
-                    {
-                        lbl_Fork1_TaskIndex.Text = string.Format("{0}", DevSt->FF1_Job.taskIndex);
+                        lbl_Fork1_Job.Text = string.Format("{0} / {1}", DevSt->FF1_Job.Item_JobNumber, DevSt->FF1_Job.ItemType);
                     }
 
                     lbl_Fork1_Cmd.Text = Global_Class.UTIL_GetJobTextAsValue(DevSt->FF1_Job.Item_CMD_Code);
 
-                    if (DevSt->FF1_Job.taskIndex == 0)
-                    {
-                        lbl_Fork1_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF1_Job.Item_From.Station
+                    lbl_Fork1_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF1_Job.Item_From.Station
                                                           , DevSt->FF1_Job.Item_From.Row
                                                           , DevSt->FF1_Job.Item_From.BayID
                                                           , DevSt->FF1_Job.Item_From.LevelID);
-                    }
-                    else
-                    {
-                        lbl_Fork1_From.Text = "";
-                    }
                     lbl_Fork1_To.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF1_Job.Item_To.Station
                                                       , DevSt->FF1_Job.Item_To.Row
                                                       , DevSt->FF1_Job.Item_To.BayID
@@ -1587,14 +1704,7 @@ namespace VEXI
                         default: lbl_Fork1_jobSt.Text = string.Format("{0:X2}", DevSt->FF1_Job.Item_Do_Status); break;
                     }
 
-                    if (DevSt->FF1_Job.taskIndex == 0)
-                    {
-                        lbl_Fork1_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
-                    }
-                    else
-                    {
-                        lbl_Fork1_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
-                    }
+                    lbl_Fork1_jobStep.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
                     //이동 : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                     if (DevSt->FF1_Job.Move_Do_Status == 4)
                     {
@@ -1618,40 +1728,25 @@ namespace VEXI
                         default: lbl_Fork1_MoveJob_St.Text = string.Format("{0:X2}", DevSt->FF1_Job.Move_Do_Status); break;
                     }
 
-                    lbl_Fork1_MoveJob_Step.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF1_Job.Move_Do_Step);
+                    lbl_Fork1_MoveJob_Step.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF1_Job.Move_Do_Step);
 
 
                     //반송 or Task : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                     if (DevSt->FF2_Job.Item_Do_Status == 4)
                     {
-                        lbl_Fork2_Job.Text = string.Format("{0} (완료)", DevSt->FF2_Job.Item_JobNumber);
+                        lbl_Fork2_Job.Text = string.Format("{0} / {1} (완료)", DevSt->FF2_Job.Item_JobNumber, DevSt->FF2_Job.ItemType);
                     }
                     else
                     {
-                        lbl_Fork2_Job.Text = string.Format("{0}", DevSt->FF2_Job.Item_JobNumber);
-                    }
-                    if (DevSt->FF2_Job.taskIndex == 0)
-                    {
-                        lbl_Fork2_TaskIndex.Text = "";
-                    }
-                    else
-                    {
-                        lbl_Fork2_TaskIndex.Text = string.Format("{0}", DevSt->FF2_Job.taskIndex);
+                        lbl_Fork2_Job.Text = string.Format("{0} / {1}", DevSt->FF2_Job.Item_JobNumber, DevSt->FF2_Job.ItemType);
                     }
 
                     lbl_Fork2_Cmd.Text = Global_Class.UTIL_GetJobTextAsValue(DevSt->FF2_Job.Item_CMD_Code);
 
-                    if (DevSt->FF2_Job.taskIndex == 0)
-                    {
-                        lbl_Fork2_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF2_Job.Item_From.Station
+                    lbl_Fork2_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF2_Job.Item_From.Station
                                                           , DevSt->FF2_Job.Item_From.Row
                                                           , DevSt->FF2_Job.Item_From.BayID
                                                           , DevSt->FF2_Job.Item_From.LevelID);
-                    }
-                    else
-                    {
-                        lbl_Fork2_From.Text = "";
-                    }
                     lbl_Fork2_To.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF2_Job.Item_To.Station
                                                       , DevSt->FF2_Job.Item_To.Row
                                                       , DevSt->FF2_Job.Item_To.BayID
@@ -1665,14 +1760,8 @@ namespace VEXI
                         default: lbl_Fork2_jobSt.Text = string.Format("{0:X2}", DevSt->FF2_Job.Item_Do_Status); break;
                     }
 
-                    if (DevSt->FF2_Job.taskIndex == 0)
-                    {
-                        lbl_Fork2_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
-                    }
-                    else
-                    {
-                        lbl_Fork2_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
-                    }
+                    lbl_Fork2_jobStep.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
+
                     //이동 : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                     if (DevSt->FF2_Job.Move_Do_Status == 4)
                     {
@@ -1695,7 +1784,7 @@ namespace VEXI
                         default: lbl_Fork2_MoveJob_St.Text = string.Format("{0:X2}", DevSt->FF2_Job.Move_Do_Status); break;
                     }
 
-                    lbl_Fork2_MoveJob_Step.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF2_Job.Move_Do_Step);
+                    lbl_Fork2_MoveJob_Step.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF2_Job.Move_Do_Step);
                 }
             }
 
@@ -1841,9 +1930,62 @@ namespace VEXI
         }
 
 
+        private unsafe void Do_Fork1IOCtrl_Ctrl(byte CtrlValue)
+        {
 
+            fixed (VEXI_DEFS.TDEV_ManualCtrl* DevCtrl = &srm_REC_ManualCtrl)
+            {
+                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_ManualCtrl)));
+
+                DevCtrl->CtrlFlag[0] = 0x20;
+
+                DevCtrl->Fork1_IOCtrl = CtrlValue;
+
+            }
+            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, srm_REC_ManualCtrl);
+        }
+
+        private unsafe void Do_Fork2IOCtrl_Ctrl(byte CtrlValue)
+        {
+
+            fixed (VEXI_DEFS.TDEV_ManualCtrl* DevCtrl = &srm_REC_ManualCtrl)
+            {
+                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_ManualCtrl)));
+
+                DevCtrl->CtrlFlag[0] = 0x40;
+
+                DevCtrl->Fork2_IOCtrl = CtrlValue;
+
+            }
+            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, srm_REC_ManualCtrl);
+        }
         #endregion
 
+        private void tab_Manual_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btn_Fork1St2_6_OFF_Click(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
+            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "포크1 I/O 제어 활성화 여부를 변경하시겠습니까?"))
+            {
+                Do_Fork1IOCtrl_Ctrl(Convert.ToByte(bt.Tag.ToString()));
+            }
+        }
+
+        private void btn_Fork2St2_6_OFF_Click(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            if (bt == null) return;
+
+            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "포크1 I/O 제어 활성화 여부를 변경하시겠습니까?"))
+            {
+                Do_Fork2IOCtrl_Ctrl(Convert.ToByte(bt.Tag.ToString()));
+            }
+        }
     }
 }

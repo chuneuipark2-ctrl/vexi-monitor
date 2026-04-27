@@ -32,7 +32,7 @@ namespace VEXI
 
             btn_Param_Set.Enabled = false;
 
-            toolTip1.SetToolTip(ed_Lift_Home_Position, "설정값 0 일 경우, 랙 또는 스테이션 최소값 적용");
+            
             toolTip1.SetToolTip(ed_Lift_Maintance_Position, "설정값 0 일 경우, 홈위치값 적용.");
             toolTip1.SetToolTip(ed_Lift_ManualOp_TokeAlarm, "설정 범위 : 0.0 ~ 200.0%");
 
@@ -263,7 +263,7 @@ namespace VEXI
 
             srm_LiftParam_Ctrl.CtrlFlag[0] = 0x00;
             srm_LiftParam_Ctrl.CtrlFlag[1] = 0xFF;
-            srm_LiftParam_Ctrl.CtrlFlag[2] = 0x1F;
+            srm_LiftParam_Ctrl.CtrlFlag[2] = 0x3F;
             srm_LiftParam_Ctrl.CtrlFlag[3] = 0xF7;
             srm_LiftParam_Ctrl.CtrlFlag[4] = 0xFF;
 
@@ -321,7 +321,11 @@ namespace VEXI
             srm_LiftParam_Ctrl.ParamItemsRec.Speed_ManualForkOut.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualForkOut_Accel.Text, 1);
             srm_LiftParam_Ctrl.ParamItemsRec.Speed_ManualForkOut.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualForkOut_Decel.Text, 1);
             srm_LiftParam_Ctrl.ParamItemsRec.Speed_ManualForkOut.jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_ManualForkOut_Jerk.Text, 1);
-                                   
+
+            srm_LiftParam_Ctrl.ParamItemsRec.Speed_Sticky.Speed = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_Sticky_Speed.Text, 10);
+            srm_LiftParam_Ctrl.ParamItemsRec.Speed_Sticky.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_Sticky_Accel.Text, 1);
+            srm_LiftParam_Ctrl.ParamItemsRec.Speed_Sticky.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_Sticky_Decel.Text, 1);
+            srm_LiftParam_Ctrl.ParamItemsRec.Speed_Sticky.jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Lift_Sticky_Jerk.Text, 1);
 
             srm_LiftParam_Ctrl.ParamItemsRec.CurrentPos_Offset = (byte)Global_Class.UTIL_StrToIntDef(ed_Lift_CurrentPos_Offset.Text, 0);
             srm_LiftParam_Ctrl.ParamItemsRec.CurrentPos_histerisis = (byte)Global_Class.UTIL_StrToIntDef(ed_Lift_CurrentPos_histerisis.Text, 0);
@@ -332,9 +336,6 @@ namespace VEXI
 
             srm_LiftParam_Ctrl.ParamItemsRec.breakOpenContinueTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Lift_breakOpenContinueTime.Text, 0) * 100);
 
-
-            if (cb_Lift_Home_SpeedType.SelectedIndex >= 0) srm_LiftParam_Ctrl.ParamItemsRec.Home_SpeedType = (byte)cb_Lift_Home_SpeedType.SelectedIndex;
-            srm_LiftParam_Ctrl.ParamItemsRec.Home_Position = Global_Class.UTIL_StrToIntDef(ed_Lift_Home_Position.Text, 0);
 
             if (cb_Lift_Maintance_SpeedType.SelectedIndex >= 0) srm_LiftParam_Ctrl.ParamItemsRec.Maintance_SpeedType = (byte)cb_Lift_Maintance_SpeedType.SelectedIndex;
             srm_LiftParam_Ctrl.ParamItemsRec.Maintance_Position = Global_Class.UTIL_StrToIntDef(ed_Lift_Maintance_Position.Text, 0);
@@ -447,6 +448,10 @@ namespace VEXI
             ed_Lift_ManualForkOut_Decel.Text = "0";
             ed_Lift_ManualForkOut_Jerk.Text  = "0";
 
+            ed_Lift_Sticky_Speed.Text = "0";
+            ed_Lift_Sticky_Accel.Text = "0";
+            ed_Lift_Sticky_Decel.Text = "0";
+            ed_Lift_Sticky_Jerk.Text = "0";
 
             ed_Lift_CurrentPos_Offset.Text = "0";
             ed_Lift_CurrentPos_histerisis.Text = "0";
@@ -456,11 +461,6 @@ namespace VEXI
             ed_Lift_ManualOp_Endmm.Text = "0";
 
             ed_Lift_breakOpenContinueTime.Text = "0.00";
-
-            
-
-            cb_Lift_Home_SpeedType.SelectedIndex = -1;
-             ed_Lift_Home_Position.Text = "0";
 
             cb_Lift_Maintance_SpeedType.SelectedIndex = -1;
             ed_Lift_Maintance_Position.Text = "0";
@@ -573,6 +573,10 @@ namespace VEXI
             ed_Lift_ManualForkOut_Decel.Text = string.Format("{0}", srm__LiftParam_RES.Speed_ManualForkOut.Decel);
             ed_Lift_ManualForkOut_Jerk.Text = string.Format("{0}", srm__LiftParam_RES.Speed_ManualForkOut.jerk);
 
+            ed_Lift_Sticky_Speed.Text = string.Format("{0}", srm__LiftParam_RES.Speed_Sticky.Speed);
+            ed_Lift_Sticky_Accel.Text = string.Format("{0}", srm__LiftParam_RES.Speed_Sticky.Accel);
+            ed_Lift_Sticky_Decel.Text = string.Format("{0}", srm__LiftParam_RES.Speed_Sticky.Decel);
+            ed_Lift_Sticky_Jerk.Text  = string.Format("{0}", srm__LiftParam_RES.Speed_Sticky.jerk);
 
             ed_Lift_CurrentPos_Offset.Text = string.Format("{0}", srm__LiftParam_RES.CurrentPos_Offset);
             ed_Lift_CurrentPos_histerisis.Text = string.Format("{0}", srm__LiftParam_RES.CurrentPos_histerisis);
@@ -582,11 +586,6 @@ namespace VEXI
             ed_Lift_ManualOp_Endmm.Text = string.Format("{0}", srm__LiftParam_RES.ManualOp_Endmm);
 
             ed_Lift_breakOpenContinueTime.Text = string.Format("{0:0.00}", (double)srm__LiftParam_RES.breakOpenContinueTime / 100);
-
-
-            cb_Lift_Home_SpeedType.SelectedIndex = Math.Min(srm__LiftParam_RES.Home_SpeedType, cb_Lift_Home_SpeedType.Items.Count - 1);
-
-            ed_Lift_Home_Position.Text = string.Format("{0}", srm__LiftParam_RES.Home_Position);
 
             cb_Lift_Maintance_SpeedType.SelectedIndex = Math.Min(srm__LiftParam_RES.Maintance_SpeedType, cb_Lift_Maintance_SpeedType.Items.Count - 1);
             ed_Lift_Maintance_Position.Text = string.Format("{0}", srm__LiftParam_RES.Maintance_Position);

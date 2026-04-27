@@ -847,12 +847,7 @@ namespace VEXI
             "100",
             "150",
             "200",
-            "250",
-            "300",
-            "350",
-            "400",
-            "450",
-            "500"});
+            "250"});
             this.LvDI_cb_Item4.Location = new System.Drawing.Point(369, 48);
             this.LvDI_cb_Item4.Name = "LvDI_cb_Item4";
             this.LvDI_cb_Item4.Size = new System.Drawing.Size(58, 20);

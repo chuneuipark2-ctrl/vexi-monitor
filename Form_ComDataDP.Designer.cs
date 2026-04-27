@@ -38,20 +38,20 @@ namespace VEXI
             this.btnSaveToFile = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbComDataLoggingOption = new System.Windows.Forms.GroupBox();
+            this.cbLogging_DIOChange = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbLoggingInterval = new System.Windows.Forms.ComboBox();
-            this.cbLogging_DIOChange = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.rbSpeedLogging_Start = new System.Windows.Forms.RadioButton();
             this.rbLogging_Stop = new System.Windows.Forms.RadioButton();
             this.rbComDataLogging_Start = new System.Windows.Forms.RadioButton();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.rbSpeedLogging_Start = new System.Windows.Forms.RadioButton();
-            this.gbComDataLoggingOption = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.gbComDataLoggingOption.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,6 +150,29 @@ namespace VEXI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "장치 데이터 로깅 기능";
             // 
+            // gbComDataLoggingOption
+            // 
+            this.gbComDataLoggingOption.Controls.Add(this.cbLogging_DIOChange);
+            this.gbComDataLoggingOption.Controls.Add(this.label1);
+            this.gbComDataLoggingOption.Controls.Add(this.cbLoggingInterval);
+            this.gbComDataLoggingOption.Location = new System.Drawing.Point(14, 72);
+            this.gbComDataLoggingOption.Name = "gbComDataLoggingOption";
+            this.gbComDataLoggingOption.Size = new System.Drawing.Size(492, 57);
+            this.gbComDataLoggingOption.TabIndex = 2;
+            this.gbComDataLoggingOption.TabStop = false;
+            this.gbComDataLoggingOption.Text = "통신데이터 로깅 옵션";
+            // 
+            // cbLogging_DIOChange
+            // 
+            this.cbLogging_DIOChange.AutoSize = true;
+            this.cbLogging_DIOChange.Location = new System.Drawing.Point(196, 31);
+            this.cbLogging_DIOChange.Name = "cbLogging_DIOChange";
+            this.cbLogging_DIOChange.Size = new System.Drawing.Size(140, 16);
+            this.cbLogging_DIOChange.TabIndex = 1;
+            this.cbLogging_DIOChange.Text = "DIO 상태 변경시 저장";
+            this.cbLogging_DIOChange.UseVisualStyleBackColor = true;
+            this.cbLogging_DIOChange.Click += new System.EventHandler(this.cbLogging_DIOChange_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -174,17 +197,6 @@ namespace VEXI
             this.cbLoggingInterval.TabIndex = 2;
             this.cbLoggingInterval.SelectedIndexChanged += new System.EventHandler(this.cbLoggingInterval_SelectedIndexChanged);
             // 
-            // cbLogging_DIOChange
-            // 
-            this.cbLogging_DIOChange.AutoSize = true;
-            this.cbLogging_DIOChange.Location = new System.Drawing.Point(196, 31);
-            this.cbLogging_DIOChange.Name = "cbLogging_DIOChange";
-            this.cbLogging_DIOChange.Size = new System.Drawing.Size(140, 16);
-            this.cbLogging_DIOChange.TabIndex = 1;
-            this.cbLogging_DIOChange.Text = "DIO 상태 변경시 저장";
-            this.cbLogging_DIOChange.UseVisualStyleBackColor = true;
-            this.cbLogging_DIOChange.Click += new System.EventHandler(this.cbLogging_DIOChange_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.rbSpeedLogging_Start);
@@ -194,6 +206,16 @@ namespace VEXI
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(492, 36);
             this.panel4.TabIndex = 0;
+            // 
+            // rbSpeedLogging_Start
+            // 
+            this.rbSpeedLogging_Start.AutoSize = true;
+            this.rbSpeedLogging_Start.Location = new System.Drawing.Point(186, 10);
+            this.rbSpeedLogging_Start.Name = "rbSpeedLogging_Start";
+            this.rbSpeedLogging_Start.Size = new System.Drawing.Size(139, 16);
+            this.rbSpeedLogging_Start.TabIndex = 2;
+            this.rbSpeedLogging_Start.Text = "속도데이터 로깅 시작";
+            this.rbSpeedLogging_Start.UseVisualStyleBackColor = true;
             // 
             // rbLogging_Stop
             // 
@@ -230,28 +252,6 @@ namespace VEXI
             this.listBox1.Size = new System.Drawing.Size(718, 408);
             this.listBox1.TabIndex = 331;
             // 
-            // rbSpeedLogging_Start
-            // 
-            this.rbSpeedLogging_Start.AutoSize = true;
-            this.rbSpeedLogging_Start.Location = new System.Drawing.Point(186, 10);
-            this.rbSpeedLogging_Start.Name = "rbSpeedLogging_Start";
-            this.rbSpeedLogging_Start.Size = new System.Drawing.Size(139, 16);
-            this.rbSpeedLogging_Start.TabIndex = 2;
-            this.rbSpeedLogging_Start.Text = "속도데이터 로깅 시작";
-            this.rbSpeedLogging_Start.UseVisualStyleBackColor = true;
-            // 
-            // gbComDataLoggingOption
-            // 
-            this.gbComDataLoggingOption.Controls.Add(this.cbLogging_DIOChange);
-            this.gbComDataLoggingOption.Controls.Add(this.label1);
-            this.gbComDataLoggingOption.Controls.Add(this.cbLoggingInterval);
-            this.gbComDataLoggingOption.Location = new System.Drawing.Point(14, 72);
-            this.gbComDataLoggingOption.Name = "gbComDataLoggingOption";
-            this.gbComDataLoggingOption.Size = new System.Drawing.Size(492, 57);
-            this.gbComDataLoggingOption.TabIndex = 2;
-            this.gbComDataLoggingOption.TabStop = false;
-            this.gbComDataLoggingOption.Text = "통신데이터 로깅 옵션";
-            // 
             // Form_ComDataDP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -271,10 +271,10 @@ namespace VEXI
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.gbComDataLoggingOption.ResumeLayout(false);
             this.gbComDataLoggingOption.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

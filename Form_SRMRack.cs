@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Drawing;
@@ -68,6 +69,7 @@ namespace VEXI
         private static TextBox[] ed_Station_UpOffset;
         private static TextBox[] ed_Station_DownOffset;
         private static TextBox[] ed_Station_InterlockIndex;
+        private static TextBox[] ed_Station_OutInterlockIndex;
 
 
         private static TextBox[] Rack_Offset_TextBox;
@@ -209,6 +211,11 @@ namespace VEXI
                                                         ed_Station31_InterlockIndex, ed_Station32_InterlockIndex, ed_Station33_InterlockIndex, ed_Station34_InterlockIndex, ed_Station35_InterlockIndex, ed_Station36_InterlockIndex, ed_Station37_InterlockIndex, ed_Station38_InterlockIndex, ed_Station39_InterlockIndex, ed_Station40_InterlockIndex,
                                                         ed_Station41_InterlockIndex, ed_Station42_InterlockIndex, ed_Station43_InterlockIndex, ed_Station44_InterlockIndex, ed_Station45_InterlockIndex, ed_Station46_InterlockIndex, ed_Station47_InterlockIndex, ed_Station48_InterlockIndex, ed_Station49_InterlockIndex, ed_Station50_InterlockIndex};
 
+            ed_Station_OutInterlockIndex = new TextBox[] { ed_Station1_OutInterlockIndex, ed_Station2_OutInterlockIndex, ed_Station3_OutInterlockIndex, ed_Station4_OutInterlockIndex, ed_Station5_OutInterlockIndex, ed_Station6_OutInterlockIndex, ed_Station7_OutInterlockIndex, ed_Station8_OutInterlockIndex, ed_Station9_OutInterlockIndex, ed_Station10_OutInterlockIndex,
+                                                        ed_Station11_OutInterlockIndex, ed_Station12_OutInterlockIndex, ed_Station13_OutInterlockIndex, ed_Station14_OutInterlockIndex, ed_Station15_OutInterlockIndex, ed_Station16_OutInterlockIndex, ed_Station17_OutInterlockIndex, ed_Station18_OutInterlockIndex, ed_Station19_OutInterlockIndex, ed_Station20_OutInterlockIndex,
+                                                        ed_Station21_OutInterlockIndex, ed_Station22_OutInterlockIndex, ed_Station23_OutInterlockIndex, ed_Station24_OutInterlockIndex, ed_Station25_OutInterlockIndex, ed_Station26_OutInterlockIndex, ed_Station27_OutInterlockIndex, ed_Station28_OutInterlockIndex, ed_Station29_OutInterlockIndex, ed_Station30_OutInterlockIndex,
+                                                        ed_Station31_OutInterlockIndex, ed_Station32_OutInterlockIndex, ed_Station33_OutInterlockIndex, ed_Station34_OutInterlockIndex, ed_Station35_OutInterlockIndex, ed_Station36_OutInterlockIndex, ed_Station37_OutInterlockIndex, ed_Station38_OutInterlockIndex, ed_Station39_OutInterlockIndex, ed_Station40_OutInterlockIndex,
+                                                        ed_Station41_OutInterlockIndex, ed_Station42_OutInterlockIndex, ed_Station43_OutInterlockIndex, ed_Station44_OutInterlockIndex, ed_Station45_OutInterlockIndex, ed_Station46_OutInterlockIndex, ed_Station47_OutInterlockIndex, ed_Station48_OutInterlockIndex, ed_Station49_OutInterlockIndex, ed_Station50_OutInterlockIndex};
 
             IsIn_RackPosition = false;
             IsIn_RackOffset = false;
@@ -512,27 +519,7 @@ namespace VEXI
 
         private void btn_RackConfig_Init_Click(object sender, EventArgs e)
         {
-            Button bt = sender as Button;
-            byte[] Data = { 0, 0 };
-
-            frameLogin frmLogging = new frameLogin(); frmLogging.ShowDialog();
-
-            if (frmLogging.DialogResult == DialogResult.OK)
-            {
-                if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, bt.Text + " 을 수행하시겠습니까?"))
-                {
-                    Data[0] = 0x01;
-                    switch (bt.Tag.ToString())
-                    {
-                        case "1":
-                            Data[1] = 0x20; break;
-                        case "2":
-                            Data[1] = 0xC0; break;
-                    }
-                    form_Main.Do_Ctrl_Cmd_withbytes(ConstClass.CMD1_00, ConstClass.CMD2_A0, Data);
-
-                }
-            }
+            
         }
 
 
@@ -669,11 +656,7 @@ namespace VEXI
         private void btn_CellPosition_FileWrite_Click(object sender, EventArgs e)
         {
             Hide_AllEdit();
-            //셀 포지션은 구조체 자체로 저장할 수 없다
-            //구조체 안에 전체 상태(제어)가 들어가는 것이 아니기 때문이다.
-            //그래서 셀 포지션의 파일 저장은 화면상의 값을 파일로 옮기고
-            //불러오기 역시 파일을 읽어 화면상에 값을 옮기는 방식으로 해야한다.
-            //파일은 바이너리가 아닌 INI 파일 형태로 하는 것으로 하겠다 (구조 잡아서 바이너리 형태로 해도 무관하나 이런 경우에는 INI 파일이 좀 더 쉽다)
+            //엑셀에서 훑어보기 위해
             SaveToFile_Position();
         }
 
@@ -699,6 +682,9 @@ namespace VEXI
             if (saveFileDialog1.FileName == "")
             {
                 saveFileDialog1.InitialDirectory = Application.StartupPath;
+            } else
+            {
+                saveFileDialog1.InitialDirectory = Path.GetDirectoryName(saveFileDialog1.FileName);
             }
 
             if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -1682,7 +1668,11 @@ namespace VEXI
 
 
                             (ptr2 + i)->interLockNo = (byte)Global_Class.UTIL_StrToIntDef(ed_Station_InterlockIndex[i].Text, 0);
+                            (ptr2 + i)->OutinterLockNo = (byte)Global_Class.UTIL_StrToIntDef(ed_Station_OutInterlockIndex[i].Text, 0);
                             if (cb_UseIsExistItem[i].Checked)
+                            {
+                                (ptr2 + i)->UseIsExistItem = 0;
+                            } else
                             {
                                 (ptr2 + i)->UseIsExistItem = 1;
                             }
@@ -1741,6 +1731,7 @@ namespace VEXI
                 ed_Station_UpOffset[i].Text = "";
                 ed_Station_DownOffset[i].Text = "";
                 ed_Station_InterlockIndex[i].Text = "";
+                ed_Station_OutInterlockIndex[i].Text = "";
             }
         }
 
@@ -1785,8 +1776,9 @@ namespace VEXI
                             ed_Station_UpOffset[i].Text = String.Format("{0}", (Ptr_1 + i)->LevelUp_Offset);
                             ed_Station_DownOffset[i].Text = String.Format("{0}", (Ptr_1 + i)->LevelDn_Offset);
                             ed_Station_InterlockIndex[i].Text = String.Format("{0}", (Ptr_1 + i)->interLockNo);
+                            ed_Station_OutInterlockIndex[i].Text = String.Format("{0}", (Ptr_1 + i)->OutinterLockNo);
 
-                            cb_UseIsExistItem[i].Checked = ((Ptr_1 + i)->UseIsExistItem == 1);
+                            cb_UseIsExistItem[i].Checked = ((Ptr_1 + i)->UseIsExistItem == 0);
                         }
                         else
                         {
@@ -1814,6 +1806,7 @@ namespace VEXI
                             ed_Station_UpOffset[i].Text = "0";
                             ed_Station_DownOffset[i].Text = "0";
                             ed_Station_InterlockIndex[i].Text = "0";
+                            ed_Station_OutInterlockIndex[i].Text = "0";
                         }
                     }
                 }
@@ -2444,16 +2437,9 @@ namespace VEXI
                 btn_CellPosition_Set.Enabled = false;
                 btn_CellOffset_Set.Enabled = false;
                 btn_StationConfig_Set.Enabled = false;
-
-                btn_CellPosition_Init.Enabled = false;
-                btn_RackOffset_Init.Enabled = false;
             }
             else
             {
-
-                btn_CellPosition_Init.Enabled = true;
-                btn_RackOffset_Init.Enabled = true;
-
                 btn_CellPosition_Set.Enabled = ((IsIn_RackPosition) || ((lv_Bay_Position.Items.Count > 0) && (lv_Level_Position.Items.Count > 0)));
                 btn_CellOffset_Set.Enabled = IsIn_RackOffset;
                 btn_StationConfig_Set.Enabled = IsIn_Stationinfo;
@@ -2831,28 +2817,35 @@ namespace VEXI
             {
                 saveFileDialog1.InitialDirectory = Application.StartupPath;
             }
+            else
+            {
+                saveFileDialog1.InitialDirectory = Path.GetDirectoryName(saveFileDialog1.FileName);
+            }
             if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
 
-                IniControl.WriteIni(saveFileDialog1.FileName, "RACK CONFIG", "BAY_COUNT", lv_Bay_Position.Items.Count);
-                IniControl.WriteIni(saveFileDialog1.FileName, "RACK CONFIG", "LEVEL_COUNT", lv_Level_Position.Items.Count);
+                var tmpList = new List<string>();
+
+                if (lv_Level_Position.Items.Count > 0)
+                {
+                    tmpList.Add("Level, Left, Right");
+                    for (int i = 0; i < lv_Level_Position.Items.Count; i++)
+                    {
+                        tmpList.Add((i + 1).ToString() + "," + lv_Level_Position.Items[i].SubItems[1].Text.ToString() + "," + lv_Level_Position.Items[i].SubItems[2].Text.ToString());
+                    }
+                }
 
                 if (lv_Bay_Position.Items.Count > 0)
                 {
+                    tmpList.Add("Bay, Left, Right");
                     for (int i = 0; i < lv_Bay_Position.Items.Count; i++)
                     {
-                        IniControl.WriteIni(saveFileDialog1.FileName, "BAY POSITION", (i + 1).ToString(), lv_Bay_Position.Items[i].SubItems[1].Text.ToString() + "," + lv_Bay_Position.Items[i].SubItems[2].Text.ToString());
-                        //IniControl.WriteIni(saveFileDialog1.FileName, "BAY R POSITION", (i + 1).ToString(), lv_Bay_Position.Items[i].SubItems[2].Text.ToString());
+                        tmpList.Add((i + 1).ToString() + "," + lv_Bay_Position.Items[i].SubItems[1].Text.ToString() + "," + lv_Bay_Position.Items[i].SubItems[2].Text.ToString());
                     }
                 }
-                if (lv_Level_Position.Items.Count > 0)
-                {
-                    for (int i = 0; i < lv_Level_Position.Items.Count; i++)
-                    {
-                        IniControl.WriteIni(saveFileDialog1.FileName, "LEVEL POSITION", (i + 1).ToString(), lv_Level_Position.Items[i].SubItems[1].Text.ToString() + "," + lv_Level_Position.Items[i].SubItems[2].Text.ToString());
-                        //IniControl.WriteIni(saveFileDialog1.FileName, "LEVEL R POSITION", (i + 1).ToString(), lv_Level_Position.Items[i].SubItems[2].Text.ToString());
-                    }
-                }
+
+
+                File.WriteAllLines(saveFileDialog1.FileName, tmpList);
             }
         }
 
@@ -3127,16 +3120,18 @@ namespace VEXI
         private void btnBayLPosition_Click(object sender, EventArgs e)
         {
             UInt32 TmpValue;
+            Button bt = sender as Button;
+            if (bt == null) return;
 
             if (lbPositionValues.Items.Count >= lv_Bay_Position.Items.Count)
             {
                 for (int i=0; i< lv_Bay_Position.Items.Count; i++)
                 {
                     TmpValue = Global_Class.UTIL_StrToUInt32Def(lbPositionValues.Items[i].ToString(), 0);
-                    if ((sender as Button).Tag.ToString() == "1")
+                    if (bt.Tag.ToString() == "1")
                     {
                         lv_Bay_Position.Items[i].SubItems[1].Text = TmpValue.ToString();
-                    } else if ((sender as Button).Tag.ToString() == "2")
+                    } else if (bt.Tag.ToString() == "2")
                     {
                         lv_Bay_Position.Items[i].SubItems[2].Text = TmpValue.ToString();
                     }
@@ -3171,17 +3166,19 @@ namespace VEXI
         private void btnLevelLPosition_Click(object sender, EventArgs e)
         {
             UInt32 TmpValue;
+            Button bt = sender as Button;
+            if (bt == null) return;
 
             if (lbPositionValues.Items.Count >= lv_Level_Position.Items.Count)
             {
                 for (int i = 0; i < lv_Level_Position.Items.Count; i++)
                 {
                     TmpValue = Global_Class.UTIL_StrToUInt32Def(lbPositionValues.Items[i].ToString(), 0);
-                    if ((sender as Button).Tag.ToString() == "1")
+                    if (bt.Tag.ToString() == "1")
                     {
                         lv_Level_Position.Items[i].SubItems[1].Text = TmpValue.ToString();
                     }
-                    else if ((sender as Button).Tag.ToString() == "2")
+                    else if (bt.Tag.ToString() == "2")
                     {
                         lv_Level_Position.Items[i].SubItems[2].Text = TmpValue.ToString();
                     }

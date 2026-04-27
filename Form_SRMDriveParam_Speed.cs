@@ -33,7 +33,7 @@ namespace VEXI
 
             btn_Param_Set.Enabled = false;
 
-            toolTip1.SetToolTip(ed_Drive_Home_Position, "설정값 0 일 경우, 랙 또는 스테이션 최소값 적용");
+            
             toolTip1.SetToolTip(ed_Drive_Maintance_Position, "설정값 0 일 경우, 홈위치값 적용.");
             toolTip1.SetToolTip(ed_Drive_ManualOp_TokeAlarm, "설정 범위 : 0.0 ~ 200.0%");
         }
@@ -368,7 +368,15 @@ namespace VEXI
             srm_DriveParam_CTRL.ParamItemsRec.breakOpenContinueTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Drive_breakOpenContinueTime.Text, 0) * 100);
 
             if (cb_Drive_Home_SpeedType.SelectedIndex >= 0) srm_DriveParam_CTRL.ParamItemsRec.Home_SpeedType = (byte)cb_Drive_Home_SpeedType.SelectedIndex;
-            srm_DriveParam_CTRL.ParamItemsRec.Home_Position = Global_Class.UTIL_StrToUInt32Def(ed_Drive_Home_Position.Text, 0);
+            if (cb_Drive_Home_Type.SelectedIndex == 1)
+            {
+                srm_DriveParam_CTRL.ParamItemsRec.Home_Position_Bay = (byte)Global_Class.UTIL_StrToIntDef(ed_Drive_Home_Index.Text, 0);
+            }
+            else
+            {
+                srm_DriveParam_CTRL.ParamItemsRec.Home_Position_Station = (byte)Global_Class.UTIL_StrToIntDef(ed_Drive_Home_Index.Text, 0);
+            }
+
 
             if (cb_Drive_Maintance_SpeedType.SelectedIndex >= 0) srm_DriveParam_CTRL.ParamItemsRec.Maintance_SpeedType = (byte)cb_Drive_Maintance_SpeedType.SelectedIndex;
             srm_DriveParam_CTRL.ParamItemsRec.Maintance_Position = Global_Class.UTIL_StrToUInt32Def(ed_Drive_Maintance_Position.Text, 0);
@@ -472,8 +480,9 @@ namespace VEXI
             ed_Drive_breakOpenContinueTime.Text = "0.00";
 
             cb_Drive_Home_SpeedType.SelectedIndex = -1;
-            ed_Drive_Home_Position.Text = "0";
-
+            cb_Drive_Home_Type.SelectedIndex = -1;
+            ed_Drive_Home_Index.Text = "0";
+            
             cb_Drive_Maintance_SpeedType.SelectedIndex = -1;
             ed_Drive_Maintance_Position.Text = "0";
 
@@ -577,7 +586,16 @@ namespace VEXI
 
             cb_Drive_Home_SpeedType.SelectedIndex = Math.Min(srm_DriveParam_RES.Home_SpeedType, cb_Drive_Home_SpeedType.Items.Count - 1);
 
-            ed_Drive_Home_Position.Text = string.Format("{0}", srm_DriveParam_RES.Home_Position);
+            if (srm_DriveParam_RES.Home_Position_Station == 0)
+            {
+                cb_Drive_Home_Type.SelectedIndex = 1;
+                ed_Drive_Home_Index.Text = string.Format("{0}", srm_DriveParam_RES.Home_Position_Bay);
+            } else
+            {
+                cb_Drive_Home_Type.SelectedIndex = 0;
+                ed_Drive_Home_Index.Text = string.Format("{0}", srm_DriveParam_RES.Home_Position_Station);
+            }
+
 
             cb_Drive_Maintance_SpeedType.SelectedIndex = Math.Min(srm_DriveParam_RES.Maintance_SpeedType, cb_Drive_Maintance_SpeedType.Items.Count - 1);
             ed_Drive_Maintance_Position.Text = string.Format("{0}", srm_DriveParam_RES.Maintance_Position);
@@ -620,8 +638,7 @@ namespace VEXI
 
         }
 
+
         #endregion
-
-
     }
 }

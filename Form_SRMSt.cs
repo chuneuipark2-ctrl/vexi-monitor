@@ -220,11 +220,65 @@ namespace VEXI
             {
                 form_Main = (Form_Main)this.Owner;
             }
+            Make_SiView();
             Display_DevSt();
         }
         #endregion
 
         #region 기능함수
+        private void Make_SiView()
+        {
+            lv_SI.Items.Clear();
+
+            ListViewItem item;
+
+            item = lv_SI.Items.Add("Travel Setting Speed(m / min)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Setting Speed(m / min)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Setting Speed(m / min)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Setting Speed(m / min)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Travel Setting Acceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Setting Acceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Setting Acceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Setting Acceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Travel Setting Deceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Setting Deceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Setting Deceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Setting Deceleration(mm / sec ^ 2)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Travel Setting Jeck(mm / sec ^ 3)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Setting Jeck(mm / sec ^ 3)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Setting Jeck(mm / sec ^ 3)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Setting Jeck(mm / sec ^ 3)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Travel, Lift Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Travel, Lift Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Fork Extend Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Fork Extend Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Forking Lift Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Forking Lift Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Fork Fold Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Load Fork Fold Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Travel, Lift Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Travel, Lift Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Fork Extend Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Fork Extend Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Forking Lift Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Forking Lift Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Fork Fold Moving Before Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Unload Fork Fold Moving After Delay(ms)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Travel Moter Torque(%)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Moter Torque(%)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Moter Torque(%)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Moter Torque(%)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("PLC Operation Time(Sec)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Travel Operation Time(Sec)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Operation Time(Sec)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Operation Time(Sec)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Operation Time(Sec)"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Travel Brake Open Count"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Lift Brake Open Count"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork1 Brake Open Count"); item.SubItems.Add("");
+            item = lv_SI.Items.Add("Fork2 Brake Open Count"); item.SubItems.Add("");
+
+        }
 
         private unsafe void Display_Sub_ForkJob()
         {
@@ -238,34 +292,19 @@ namespace VEXI
                         //반송 or Task : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                         if (DevSt->FF1_Job.Item_Do_Status == 4)
                         {
-                            lbl_Fork1_Job.Text = string.Format("{0} (완료)", DevSt->FF1_Job.Item_JobNumber);
+                            lbl_Fork1_Job.Text = string.Format("{0} / {1} (완료)", DevSt->FF1_Job.Item_JobNumber, DevSt->FF1_Job.ItemType);
                         }
                         else
                         {
-                            lbl_Fork1_Job.Text = string.Format("{0}", DevSt->FF1_Job.Item_JobNumber);
-                        }
-                        if (DevSt->FF1_Job.taskIndex == 0)
-                        {
-                            lbl_Fork1_TaskIndex.Text = "";
-                        }
-                        else
-                        {
-                            lbl_Fork1_TaskIndex.Text = string.Format("{0}", DevSt->FF1_Job.taskIndex);
+                            lbl_Fork1_Job.Text = string.Format("{0} / {1}", DevSt->FF1_Job.Item_JobNumber, DevSt->FF1_Job.ItemType);
                         }
 
                         lbl_Fork1_Cmd.Text = Global_Class.UTIL_GetJobTextAsValue(DevSt->FF1_Job.Item_CMD_Code);
 
-                        if (DevSt->FF1_Job.taskIndex == 0)
-                        {
                             lbl_Fork1_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF1_Job.Item_From.Station
                                                               , DevSt->FF1_Job.Item_From.Row
                                                               , DevSt->FF1_Job.Item_From.BayID
                                                               , DevSt->FF1_Job.Item_From.LevelID);
-                        }
-                        else
-                        {
-                            lbl_Fork1_From.Text = "";
-                        }
                         lbl_Fork1_To.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF1_Job.Item_To.Station
                                                           , DevSt->FF1_Job.Item_To.Row
                                                           , DevSt->FF1_Job.Item_To.BayID
@@ -279,14 +318,8 @@ namespace VEXI
                             default: lbl_Fork1_jobSt.Text = string.Format("0x{0:X2}", DevSt->FF1_Job.Item_Do_Status); break;
                         }
 
-                        if (DevSt->FF1_Job.taskIndex == 0)
-                        {
-                            lbl_Fork1_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
-                        }
-                        else
-                        {
-                            lbl_Fork1_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
-                        }
+                        lbl_Fork1_jobStep.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF1_Job.Item_Do_Step);
+
                         //이동 : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                         if (DevSt->FF1_Job.Move_Do_Status == 4)
                         {
@@ -309,39 +342,24 @@ namespace VEXI
                             default: lbl_Fork1_MoveJob_St.Text = string.Format("0x{0:X2}", DevSt->FF1_Job.Move_Do_Status); break;
                         }
 
-                        lbl_Fork1_MoveJob_Step.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF1_Job.Move_Do_Step);
+                        lbl_Fork1_MoveJob_Step.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF1_Job.Move_Do_Step);
 
                         //반송 or Task : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                         if (DevSt->FF2_Job.Item_Do_Status == 4)
                         {
-                            lbl_Fork2_Job.Text = string.Format("{0} (완료)", DevSt->FF2_Job.Item_JobNumber);
+                            lbl_Fork2_Job.Text = string.Format("{0} / {1} (완료)", DevSt->FF2_Job.Item_JobNumber, DevSt->FF2_Job.ItemType);
                         }
                         else
                         {
-                            lbl_Fork2_Job.Text = string.Format("{0}", DevSt->FF2_Job.Item_JobNumber);
-                        }
-                        if (DevSt->FF2_Job.taskIndex == 0)
-                        {
-                            lbl_Fork2_TaskIndex.Text = "";
-                        }
-                        else
-                        {
-                            lbl_Fork2_TaskIndex.Text = string.Format("{0}", DevSt->FF2_Job.taskIndex);
+                            lbl_Fork2_Job.Text = string.Format("{0} / {1}", DevSt->FF2_Job.Item_JobNumber, DevSt->FF2_Job.ItemType);
                         }
 
                         lbl_Fork2_Cmd.Text = Global_Class.UTIL_GetJobTextAsValue(DevSt->FF2_Job.Item_CMD_Code);
 
-                        if (DevSt->FF2_Job.taskIndex == 0)
-                        {
-                            lbl_Fork2_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF2_Job.Item_From.Station
+                        lbl_Fork2_From.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF2_Job.Item_From.Station
                                                               , DevSt->FF2_Job.Item_From.Row
                                                               , DevSt->FF2_Job.Item_From.BayID
                                                               , DevSt->FF2_Job.Item_From.LevelID);
-                        }
-                        else
-                        {
-                            lbl_Fork2_From.Text = "";
-                        }
                         lbl_Fork2_To.Text = string.Format("S{0}-R{1}-B{2}-L{3}", DevSt->FF2_Job.Item_To.Station
                                                           , DevSt->FF2_Job.Item_To.Row
                                                           , DevSt->FF2_Job.Item_To.BayID
@@ -355,14 +373,7 @@ namespace VEXI
                             default: lbl_Fork2_jobSt.Text = string.Format("{0:X2}", DevSt->FF2_Job.Item_Do_Status); break;
                         }
 
-                        if (DevSt->FF2_Job.taskIndex == 0)
-                        {
-                            lbl_Fork2_jobStep.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
-                        }
-                        else
-                        {
-                            lbl_Fork2_jobStep.Text = Global_Class.UTIL_GetTaskStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
-                        }
+                        lbl_Fork2_jobStep.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF2_Job.Item_Do_Step);
                         //이동 : 수행하고 있는(실패상태 포함) 혹은 마지막 수행완료된 작업
                         if (DevSt->FF2_Job.Move_Do_Status == 4)
                         {
@@ -385,7 +396,66 @@ namespace VEXI
                             default: lbl_Fork2_MoveJob_St.Text = string.Format("{0:X2}", DevSt->FF2_Job.Move_Do_Status); break;
                         }
 
-                        lbl_Fork2_MoveJob_Step.Text = Global_Class.UTIL_GetJobStepTextAsValue(DevSt->FF2_Job.Move_Do_Step);
+                        lbl_Fork2_MoveJob_Step.Text = Global_Class.UTIL_GetSRMJobStepTextAsValue(DevSt->FF2_Job.Move_Do_Step);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private unsafe void Display_InvErr()
+        {
+            try
+            {
+                fixed (VEXI_DEFS.TSRM_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.srm_REC_SRMSt)
+                {
+                    //Flag_In_XXXX 는 해당 데이터가 수신된 적이 있는지에 대한 변수임
+                    //if (form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) //호출하는데서 체크하는 걸로 수정함
+                    {
+                        
+                        lbl_Dev_InvErr_DriveCode.Text = string.Format("{0}-{1}", DevSt->InvArr_M_Drive, DevSt->InvArr_S_Drive);
+                        lbl_Dev_InvErr_LiftCode.Text = string.Format("{0}-{1}", DevSt->InvArr_M_Lift, DevSt->InvArr_S_Lift);
+                        lbl_Dev_InvErr_Fork1Code.Text = string.Format("{0}-{1}", DevSt->InvArr_M_Fork1, DevSt->InvArr_S_Fork1);
+                        lbl_Dev_InvErr_Fork2Code.Text = string.Format("{0}-{1}", DevSt->InvArr_M_Fork2, DevSt->InvArr_S_Fork2);
+
+                        if (DevSt->InvArr_M_Drive > 0)
+                        {
+                            lbl_Dev_InvErr_DriveCode.ForeColor = Color.Red;
+                        } else
+                        {
+                            lbl_Dev_InvErr_DriveCode.ForeColor = Color.Black;
+                        }
+
+                        if (DevSt->InvArr_M_Lift > 0)
+                        {
+                            lbl_Dev_InvErr_LiftCode.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            lbl_Dev_InvErr_LiftCode.ForeColor = Color.Black;
+                        }
+
+                        if (DevSt->InvArr_M_Fork1 > 0)
+                        {
+                            lbl_Dev_InvErr_Fork1Code.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            lbl_Dev_InvErr_Fork1Code.ForeColor = Color.Black;
+                        }
+
+                        if (DevSt->InvArr_M_Fork2 > 0)
+                        {
+                            lbl_Dev_InvErr_Fork2Code.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            lbl_Dev_InvErr_Fork2Code.ForeColor = Color.Black;
+                        }
+
                     }
                 }
             }
@@ -470,6 +540,61 @@ namespace VEXI
 
             }
         }
+
+        private unsafe void Display_SI()
+        {
+            fixed (VEXI_DEFS.TSRM_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.srm_REC_SRMSt)
+            {
+                lv_SI.Items[0].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_1);
+                lv_SI.Items[1].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_2);
+                lv_SI.Items[2].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_3);
+                lv_SI.Items[3].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_4);
+                lv_SI.Items[4].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_5);
+                lv_SI.Items[5].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_6);
+                lv_SI.Items[6].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_7);
+                lv_SI.Items[7].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_8);
+                lv_SI.Items[8].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_9);
+                lv_SI.Items[9].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_10);
+                lv_SI.Items[10].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_11);
+                lv_SI.Items[11].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_12);
+                lv_SI.Items[12].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_13);
+                lv_SI.Items[13].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_14);
+                lv_SI.Items[14].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_15);
+                lv_SI.Items[15].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_16);
+
+                lv_SI.Items[16].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_17);
+                lv_SI.Items[17].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_18);
+                lv_SI.Items[18].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_19);
+                lv_SI.Items[19].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_20);
+                lv_SI.Items[20].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_21);
+                lv_SI.Items[21].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_22);
+                lv_SI.Items[22].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_23);
+                lv_SI.Items[23].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_24);
+                lv_SI.Items[24].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_25);
+                lv_SI.Items[25].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_26);
+                lv_SI.Items[26].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_27);
+                lv_SI.Items[27].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_28);
+                lv_SI.Items[28].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_29);
+                lv_SI.Items[29].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_30);
+                lv_SI.Items[30].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_31);
+                lv_SI.Items[31].SubItems[1].Text = String.Format("0x{0:X4}", DevSt->SI_32);
+
+                lv_SI.Items[32].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_33);
+                lv_SI.Items[33].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_34);
+                lv_SI.Items[34].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_35);
+                lv_SI.Items[35].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_36);
+                lv_SI.Items[36].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_37);
+                lv_SI.Items[37].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_38);
+                lv_SI.Items[38].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_39);
+                lv_SI.Items[39].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_40);
+                lv_SI.Items[40].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_41);
+                lv_SI.Items[41].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_42);
+                lv_SI.Items[42].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_43);
+                lv_SI.Items[43].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_44);
+                lv_SI.Items[44].SubItems[1].Text = String.Format("0x{0:X8}", DevSt->SI_45);
+            }
+        }
+
         private unsafe void Display_Sub_DIO()
         {
             byte SelectDIindex = 0;
@@ -488,15 +613,17 @@ namespace VEXI
                         if (rb_DIO_DigitalIn_1.Checked) SelectDIindex = 1;
                         if (rb_DIO_DigitalIn_2.Checked) SelectDIindex = 2;
                         if (rb_DIO_DigitalIn_3.Checked) SelectDIindex = 3;
-                        SelectDOindex = 4;
-
+                        if (rb_DIO_DigitalIn_4.Checked) SelectDIindex = 4;
+                        if (rb_DIO_DigitalOut_1.Checked) SelectDOindex = 4;
+                        if (rb_DIO_DigitalOut_2.Checked) SelectDOindex = 5;
+                        
                         switch (SelectDIindex)
                         {
                             case 1:
                                 for (Loop = 1; Loop <= 44; Loop++)
                                 {
 
-                                    if (Loop > ConstClass.SRM_DI_Names.GetLength(0))
+                                    if (Loop > ConstClass.SRM_DI_Names_1.GetLength(0))
                                     {
                                         lbl_DI_Title[Loop - 1].BackColor = Color.Gray;
                                         lbl_DI_Title[Loop - 1].Text = "";
@@ -507,14 +634,14 @@ namespace VEXI
                                     else
                                     {
                                         lbl_DI_Title[Loop - 1].BackColor = System.Drawing.SystemColors.Highlight;
-                                        lbl_DI_Title[Loop - 1].Text = ConstClass.SRM_DI_Names[Loop - 1, 0];
+                                        lbl_DI_Title[Loop - 1].Text = ConstClass.SRM_DI_Names_1[Loop - 1, 0];
                                     }
                                 }
                                 break;
                             case 2:
                                 for (Loop = 45; Loop <= 88; Loop++)
                                 {
-                                    if (Loop > ConstClass.SRM_DI_Names.GetLength(0))
+                                    if (Loop > ConstClass.SRM_DI_Names_1.GetLength(0))
                                     {
                                         lbl_DI_Title[Loop - 45].BackColor = Color.Gray;
                                         lbl_DI_Title[Loop - 45].Text = "";
@@ -525,7 +652,7 @@ namespace VEXI
                                     else
                                     {
                                         lbl_DI_Title[Loop - 45].BackColor = System.Drawing.SystemColors.Highlight;
-                                        lbl_DI_Title[Loop - 45].Text = ConstClass.SRM_DI_Names[Loop - 1, 0];
+                                        lbl_DI_Title[Loop - 45].Text = ConstClass.SRM_DI_Names_1[Loop - 1, 0];
                                     }
                                 }
 
@@ -533,12 +660,12 @@ namespace VEXI
                             case 3:
                                 for (Loop = 89; Loop <= 132; Loop++)
                                 {
-                                    if (Loop > ConstClass.SRM_DI_Names.GetLength(0))
+                                    if (Loop > ConstClass.SRM_DI_Names_1.GetLength(0))
                                     {
-                                        if (Loop <= (ConstClass.SRM_DI_Names.GetLength(0) + ConstClass.SRM_DI_Names2.GetLength(0)))
+                                        if (Loop <= (ConstClass.SRM_DI_Names_1.GetLength(0) + ConstClass.SRM_DI_Names_2.GetLength(0)))
                                         {
                                             lbl_DI_Title[Loop - 89].BackColor = System.Drawing.SystemColors.Highlight;
-                                            lbl_DI_Title[Loop - 89].Text = ConstClass.SRM_DI_Names2[Loop - ConstClass.SRM_DI_Names.GetLength(0) - 1, 0];
+                                            lbl_DI_Title[Loop - 89].Text = ConstClass.SRM_DI_Names_2[Loop - ConstClass.SRM_DI_Names_1.GetLength(0) - 1, 0];
 
                                         }
                                         else
@@ -554,7 +681,36 @@ namespace VEXI
                                     else
                                     {
                                         lbl_DI_Title[Loop - 89].BackColor = System.Drawing.SystemColors.Highlight;
-                                        lbl_DI_Title[Loop - 89].Text = ConstClass.SRM_DI_Names[Loop - 1, 0];
+                                        lbl_DI_Title[Loop - 89].Text = ConstClass.SRM_DI_Names_1[Loop - 1, 0];
+                                    }
+                                }
+
+                                break;
+                            case 4:
+                                for (Loop = 133; Loop <= 176; Loop++)
+                                {
+                                    if (Loop > ConstClass.SRM_DI_Names_1.GetLength(0))
+                                    {
+                                        if (Loop <= (ConstClass.SRM_DI_Names_1.GetLength(0) + ConstClass.SRM_DI_Names_2.GetLength(0)))
+                                        {
+                                            lbl_DI_Title[Loop - 133].BackColor = System.Drawing.SystemColors.Highlight;
+                                            lbl_DI_Title[Loop - 133].Text = ConstClass.SRM_DI_Names_2[Loop - ConstClass.SRM_DI_Names_1.GetLength(0) - 1, 0];
+
+                                        }
+                                        else
+                                        {
+                                            lbl_DI_Title[Loop - 133].BackColor = Color.Gray;
+                                            lbl_DI_Title[Loop - 133].Text = "";
+
+                                            lbl_DI_ST[Loop - 133].BackColor = Color.Gray;
+                                            lbl_DI_ST[Loop - 133].Text = "";
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        lbl_DI_Title[Loop - 133].BackColor = System.Drawing.SystemColors.Highlight;
+                                        lbl_DI_Title[Loop - 133].Text = ConstClass.SRM_DI_Names_1[Loop - 1, 0];
                                     }
                                 }
 
@@ -565,21 +721,57 @@ namespace VEXI
                             case 4:
                                 for (Loop = 1; Loop <= 44; Loop++)
                                 {
-                                    if (Loop > ConstClass.SRM_DO_Names.GetLength(0))
+                                    if (Loop > ConstClass.SRM_DO_Names_1.GetLength(0))
                                     {
-                                        lbl_DO_Title[Loop - 1].BackColor = Color.Gray;
-                                        lbl_DO_Title[Loop - 1].Text = "";
+                                        if (Loop <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
+                                        {
+                                            lbl_DO_Title[Loop - 1].BackColor = Color.DarkOliveGreen;
+                                            lbl_DO_Title[Loop - 1].Text = ConstClass.SRM_DO_Names_2[Loop - ConstClass.SRM_DO_Names_1.GetLength(0) - 1, 0];
+                                        }
+                                        else
+                                        {
+                                            lbl_DO_Title[Loop - 1].BackColor = Color.Gray;
+                                            lbl_DO_Title[Loop - 1].Text = "";
 
-                                        lbl_DO_ST[Loop - 1].BackColor = Color.Gray;
-                                        lbl_DO_ST[Loop - 1].Text = "";
+                                            lbl_DO_ST[Loop - 1].BackColor = Color.Gray;
+                                            lbl_DO_ST[Loop - 1].Text = "";
+                                        }
                                     }
                                     else
                                     {
                                         lbl_DO_Title[Loop - 1].BackColor = Color.DarkOliveGreen;
-                                        lbl_DO_Title[Loop - 1].Text = ConstClass.SRM_DO_Names[Loop - 1, 0];
+                                        lbl_DO_Title[Loop - 1].Text = ConstClass.SRM_DO_Names_1[Loop - 1, 0];
                                     }
                                 }
                                 break;
+
+                            case 5:
+                                for (Loop = 45; Loop <= 88; Loop++)
+                                {
+                                    if (Loop > ConstClass.SRM_DO_Names_1.GetLength(0))
+                                    {
+                                        if (Loop <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
+                                        {
+                                            lbl_DO_Title[Loop - 45].BackColor = Color.DarkOliveGreen;
+                                            lbl_DO_Title[Loop - 45].Text = ConstClass.SRM_DO_Names_2[Loop - ConstClass.SRM_DO_Names_1.GetLength(0) - 1, 0];
+                                        }
+                                        else
+                                        {
+                                            lbl_DO_Title[Loop - 45].BackColor = Color.Gray;
+                                            lbl_DO_Title[Loop - 45].Text = "";
+
+                                            lbl_DO_ST[Loop - 45].BackColor = Color.Gray;
+                                            lbl_DO_ST[Loop - 45].Text = "";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        lbl_DO_Title[Loop - 45].BackColor = Color.DarkOliveGreen;
+                                        lbl_DO_Title[Loop - 45].Text = ConstClass.SRM_DO_Names_1[Loop - 1, 0];
+                                    }
+                                }
+                                break;
+
 
                         }
 
@@ -592,7 +784,7 @@ namespace VEXI
                                     ByteIndex = (byte)((Loop - 1) / 8);
                                     BitIndex = (byte)((Loop - 1) % 8);
 
-                                    if (Loop <= ConstClass.SRM_DI_Names.GetLength(0))
+                                    if (Loop <= ConstClass.SRM_DI_Names_1.GetLength(0))
                                     {
                                         if (Global_Class.BitStatus(DevSt->IO_Digital_IN[ByteIndex], BitIndex))
                                         {
@@ -616,7 +808,7 @@ namespace VEXI
                                     ByteIndex = (byte)((Loop - 1) / 8);
                                     BitIndex = (byte)((Loop - 1) % 8);
 
-                                    if (Loop <= ConstClass.SRM_DI_Names.GetLength(0))
+                                    if (Loop <= ConstClass.SRM_DI_Names_1.GetLength(0))
                                     {
                                         if (Global_Class.BitStatus(DevSt->IO_Digital_IN[ByteIndex], BitIndex))
                                         {
@@ -639,7 +831,7 @@ namespace VEXI
                                     ByteIndex = (byte)((Loop - 1) / 8);
                                     BitIndex = (byte)((Loop - 1) % 8);
 
-                                    if (Loop <= (ConstClass.SRM_DI_Names.GetLength(0) + ConstClass.SRM_DI_Names2.GetLength(0)))
+                                    if (Loop <= (ConstClass.SRM_DI_Names_1.GetLength(0) + ConstClass.SRM_DI_Names_2.GetLength(0)))
                                     {
                                         if (Global_Class.BitStatus(DevSt->IO_Digital_IN[ByteIndex], BitIndex))
                                         {
@@ -656,6 +848,29 @@ namespace VEXI
                                     }
                                 }
                                 break;
+                            case 4:
+                                for (Loop = 133; Loop <= 176; Loop++)
+                                {
+                                    ByteIndex = (byte)((Loop - 1) / 8);
+                                    BitIndex = (byte)((Loop - 1) % 8);
+
+                                    if (Loop <= (ConstClass.SRM_DI_Names_1.GetLength(0) + ConstClass.SRM_DI_Names_2.GetLength(0)))
+                                    {
+                                        if (Global_Class.BitStatus(DevSt->IO_Digital_IN[ByteIndex], BitIndex))
+                                        {
+                                            lbl_DI_ST[Loop - 133].BackColor = Color.Yellow;
+                                            lbl_DI_ST[Loop - 133].Text = "ON";
+                                        }
+                                        else
+                                        {
+                                            lbl_DI_ST[Loop - 133].BackColor = Color.Silver;
+                                            lbl_DI_ST[Loop - 133].Text = "OFF";
+                                        }
+
+                                        lbl_DI_Title[Loop - 133].ForeColor = Color.White;
+                                    }
+                                }
+                                break;
                         }
                         switch (SelectDOindex)
                         {
@@ -665,7 +880,7 @@ namespace VEXI
                                     ByteIndex = (byte)((Loop - 1) / 8);
                                     BitIndex = (byte)((Loop - 1) % 8);
 
-                                    if (Loop <= ConstClass.SRM_DO_Names.GetLength(0))
+                                    if (Loop <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
                                     {
                                         if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
                                         {
@@ -678,20 +893,75 @@ namespace VEXI
                                             lbl_DO_ST[Loop - 1].Text = "OFF";
                                         }
 
-                                        if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode[ByteIndex], BitIndex))
+                                        if (ByteIndex <= 4)
                                         {
-                                            lbl_DO_Title[Loop - 1].ForeColor = Color.Red;
-                                        }
-                                        else
+                                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_1[ByteIndex], BitIndex))
+                                            {
+                                                lbl_DO_Title[Loop - 1].ForeColor = Color.Red;
+                                            }
+                                            else
+                                            {
+                                                lbl_DO_Title[Loop - 1].ForeColor = Color.White;
+                                            }
+                                        } else
                                         {
-                                            lbl_DO_Title[Loop - 1].ForeColor = Color.White;
+                                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_2[ByteIndex-5], BitIndex))
+                                            {
+                                                lbl_DO_Title[Loop - 1].ForeColor = Color.Red;
+                                            }
+                                            else
+                                            {
+                                                lbl_DO_Title[Loop - 1].ForeColor = Color.White;
+                                            }
                                         }
                                     }
-
-
                                 }
                                 break;
 
+                            case 5:
+                                for (Loop = 45; Loop <= 88; Loop++)
+                                {
+                                    ByteIndex = (byte)((Loop - 1) / 8);
+                                    BitIndex = (byte)((Loop - 1) % 8);
+
+                                    if (Loop <= (ConstClass.SRM_DO_Names_1.GetLength(0) + ConstClass.SRM_DO_Names_2.GetLength(0)))
+                                    {
+                                        if (Global_Class.BitStatus(DevSt->IO_Digital_OUT[ByteIndex], BitIndex))
+                                        {
+                                            lbl_DO_ST[Loop - 45].BackColor = Color.Yellow;
+                                            lbl_DO_ST[Loop - 45].Text = "ON";
+                                        }
+                                        else
+                                        {
+                                            lbl_DO_ST[Loop - 45].BackColor = Color.Silver;
+                                            lbl_DO_ST[Loop - 45].Text = "OFF";
+                                        }
+
+                                        if (ByteIndex <= 4)
+                                        {
+                                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_1[ByteIndex], BitIndex))
+                                            {
+                                                lbl_DO_Title[Loop - 45].ForeColor = Color.Red;
+                                            }
+                                            else
+                                            {
+                                                lbl_DO_Title[Loop - 45].ForeColor = Color.White;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (Global_Class.BitStatus(DevSt->IO_Digital_OUTMode_2[ByteIndex - 5], BitIndex))
+                                            {
+                                                lbl_DO_Title[Loop - 45].ForeColor = Color.Red;
+                                            }
+                                            else
+                                            {
+                                                lbl_DO_Title[Loop - 45].ForeColor = Color.White;
+                                            }
+                                        }
+                                    }
+                                }
+                                break;
                         }
                     }
                 }
@@ -711,6 +981,8 @@ namespace VEXI
             lbl_JisangMode.Text = "";
             lbl_JisangSt_0.Text = "";
             lbl_JisangSt_0.BackColor = Color.White;
+            lbl_JisangSt_3.BackColor = Color.White;
+            lbl_JisangSt_4.BackColor = Color.White;
             lbl_JisangSt_2.Text = "";
             lbl_JisangSt_2.BackColor = Color.White;
             lbl_JisangSt_1.Text = "";
@@ -853,10 +1125,17 @@ namespace VEXI
             lbl_Fork1St2_3.BackColor = Color.White;
             lbl_Fork1St2_4.Text = "";
             lbl_Fork1St2_4.BackColor = Color.White;
+            lbl_Fork1St2_6.Text = "";
+            lbl_Fork1St2_6.BackColor = Color.White;
+            lbl_Fork1St2_7.Text = "";
+            lbl_Fork1St2_7.BackColor = Color.White;
             lbl_Fork1_Position.Text = "";
             lbl_Fork1_Speed.Text = "";
             lbl_Fork1_Destination.Text = "";
             lbl_Fork1_DestSpeed.Text = "";
+            lbl_Fork1_HaveItemType.Text = "";
+            lbl_Fork1_Existitem.Text = "";
+            lbl_Fork1_Existitem.BackColor = Color.White;
 
             lbl_Fork2St1_0.Text = "";
             lbl_Fork2St1_1.Text = "";
@@ -880,10 +1159,17 @@ namespace VEXI
             lbl_Fork2St2_3.BackColor = Color.White;
             lbl_Fork2St2_4.Text = "";
             lbl_Fork2St2_4.BackColor = Color.White;
+            lbl_Fork2St2_6.Text = "";
+            lbl_Fork2St2_6.BackColor = Color.White;
+            lbl_Fork2St2_7.Text = "";
+            lbl_Fork2St2_7.BackColor = Color.White;
             lbl_Fork2_Position.Text = "";
             lbl_Fork2_Speed.Text = "";
             lbl_Fork2_Destination.Text = "";
             lbl_Fork2_DestSpeed.Text = "";
+            lbl_Fork2_HaveItemType.Text = "";
+            lbl_Fork2_Existitem.Text = "";
+            lbl_Fork2_Existitem.BackColor = Color.White;
 
             //Display_Sub_TaskList
             lbl_TaskJobNumber.Text = "";
@@ -892,7 +1178,7 @@ namespace VEXI
 
             //Display_Sub_ForkJob
             lbl_Fork1_Job.Text = "";
-            lbl_Fork1_TaskIndex.Text = "";
+            
             lbl_Fork1_Cmd.Text = "";
             lbl_Fork1_From.Text = "";
             lbl_Fork1_To.Text = "";
@@ -903,7 +1189,7 @@ namespace VEXI
             lbl_Fork1_MoveJob_St.Text = "";
             lbl_Fork1_MoveJob_Step.Text = "";
             lbl_Fork2_Job.Text = "";
-            lbl_Fork2_TaskIndex.Text = "";
+            
             lbl_Fork2_Cmd.Text = "";
             lbl_Fork2_From.Text = "";
             lbl_Fork2_To.Text = "";
@@ -930,6 +1216,23 @@ namespace VEXI
                 lbl_DO_ST[i - 1].BackColor = Color.Gray;
                 lbl_DO_ST[i - 1].Text = "";
             }
+
+            for (byte i = 0; i < lv_SI.Items.Count; i++)
+            {
+                lv_SI.Items[i].SubItems[1].Text = "";
+            }
+
+
+            //Display_InvErr
+            lbl_Dev_InvErr_DriveCode.Text = "";
+            lbl_Dev_InvErr_DriveCode.BackColor = Color.White;
+            lbl_Dev_InvErr_LiftCode.Text = "";
+            lbl_Dev_InvErr_LiftCode.BackColor = Color.White;
+            lbl_Dev_InvErr_Fork1Code.Text = "";
+            lbl_Dev_InvErr_Fork1Code.BackColor = Color.White;
+            lbl_Dev_InvErr_Fork2Code.Text = "";
+            lbl_Dev_InvErr_Fork2Code.BackColor = Color.White;
+
         }
 
         private unsafe void Display_SRM_BasicSt()
@@ -990,6 +1293,23 @@ namespace VEXI
                             lbl_JisangSt_2.Text = "OFF";
                             lbl_JisangSt_2.BackColor = Color.Silver;
                         }
+                        if (Global_Class.BitStatus(DevSt->ControllerSt, 3))
+                        {
+                            lbl_JisangSt_3.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            lbl_JisangSt_3.BackColor = Color.Silver;
+                        }
+                        if (Global_Class.BitStatus(DevSt->ControllerSt, 4))
+                        {
+                            lbl_JisangSt_4.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            lbl_JisangSt_4.BackColor = Color.Silver;
+                        }
+
 
                         lbl_Jisang_InterLockIn.Text = string.Format("0x{0:X2} 0x{1:X2} 0x{2:X2} 0x{3:X2} x{4:X2} 0x{5:X2} 0x{6:X2} 0x{7:X2} "
                                                                                                           , DevSt->CV_Interlock[0]
@@ -1125,7 +1445,7 @@ namespace VEXI
                             lbl_DevModeSwitch.ForeColor = Color.Black;
                         }
 
-                        lbl_Dev_ActionCode.Text = string.Format("0x{0:X2}", DevSt->ActionCode);
+                        lbl_Dev_ActionCode.Text = Global_Class.UTIL_SRMActionStText(DevSt->ActionCode);
                     }
                 }
             } catch
@@ -1597,12 +1917,12 @@ namespace VEXI
 
                         if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.St_1, 5))
                         {
-                            lbl_Fork1St1_5.Text = "감지";
+                            lbl_Fork1St1_5.Text = "있음";
                             lbl_Fork1St1_5.BackColor = Color.Yellow;
                         }
                         else
                         {
-                            lbl_Fork1St1_5.Text = "미감지";
+                            lbl_Fork1St1_5.Text = "없음";
                             lbl_Fork1St1_5.BackColor = Color.Silver;
                         }
 
@@ -1656,6 +1976,30 @@ namespace VEXI
                         {
                             lbl_Fork1St1_0.Text = "정지";
                         }
+
+                        if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.St_2, 7))
+                        {
+                            lbl_Fork1St2_7.Text = "동작";
+                            lbl_Fork1St2_7.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            lbl_Fork1St2_7.Text = "--";
+                            lbl_Fork1St2_7.BackColor = Color.Silver;
+                        }
+
+                        if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.St_2, 6))
+                        {
+                            lbl_Fork1St2_6.Text = "동작";
+                            lbl_Fork1St2_6.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            lbl_Fork1St2_6.Text = "--";
+                            lbl_Fork1St2_6.BackColor = Color.Silver;
+                        }
+
+
 
                         if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.St_2, 4))
                         {
@@ -1730,6 +2074,19 @@ namespace VEXI
 
                         lbl_Fork1_HaveItemType.Text = String.Format("{0}", DevSt->Fork1_DisPosition.HaveItemType);
 
+                        if (Global_Class.BitStatus(DevSt->Fork1_DisPosition.ItemExist, 0))
+                        {
+                            lbl_Fork1_Existitem.Text = "감지";
+                            lbl_Fork1_Existitem.BackColor = Color.Yellow;
+
+                        }
+                        else
+                        {
+                            lbl_Fork1_Existitem.Text = "미감지";
+                            lbl_Fork1_Existitem.BackColor = Color.Silver;
+
+                        }
+
                         lbl_Fork1_Position.Text = String.Format("{0}", DevSt->Fork1_DisPosition.Now_Position);
                         lbl_Fork1_Speed.Text = String.Format("{0}", DevSt->Fork1_DisPosition.Now_Speed);
                         lbl_Fork1_Destination.Text = String.Format("{0}", DevSt->Fork1_DisPosition.Dest_Position);
@@ -1764,12 +2121,12 @@ namespace VEXI
 
                         if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_1, 5))
                         {
-                            lbl_Fork2St1_5.Text = "감지";
+                            lbl_Fork2St1_5.Text = "있음";
                             lbl_Fork2St1_5.BackColor = Color.Yellow;
                         }
                         else
                         {
-                            lbl_Fork2St1_5.Text = "미감지";
+                            lbl_Fork2St1_5.Text = "없음";
                             lbl_Fork2St1_5.BackColor = Color.Silver;
                         }
 
@@ -1828,7 +2185,27 @@ namespace VEXI
                             lbl_Fork2St1_0.Text = "정지";
                         }
 
+                        if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_2, 7))
+                        {
+                            lbl_Fork2St2_7.Text = "동작";
+                            lbl_Fork2St2_7.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            lbl_Fork2St2_7.Text = "--";
+                            lbl_Fork2St2_7.BackColor = Color.Silver;
+                        }
 
+                        if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_2, 6))
+                        {
+                            lbl_Fork2St2_6.Text = "동작";
+                            lbl_Fork2St2_6.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            lbl_Fork2St2_6.Text = "--";
+                            lbl_Fork2St2_6.BackColor = Color.Silver;
+                        }
 
                         if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.St_2, 4))
                         {
@@ -1903,6 +2280,19 @@ namespace VEXI
 
                         lbl_Fork2_HaveItemType.Text = String.Format("{0}", DevSt->Fork2_DisPosition.HaveItemType);
 
+                        if (Global_Class.BitStatus(DevSt->Fork2_DisPosition.ItemExist, 0))
+                        {
+                            lbl_Fork2_Existitem.Text = "감지";
+                            lbl_Fork2_Existitem.BackColor = Color.Yellow;
+
+                        }
+                        else
+                        {
+                            lbl_Fork2_Existitem.Text = "미감지";
+                            lbl_Fork2_Existitem.BackColor = Color.Silver;
+
+                        }
+
                         lbl_Fork2_Position.Text = String.Format("{0}", DevSt->Fork2_DisPosition.Now_Position);
                         lbl_Fork2_Speed.Text = String.Format("{0}", DevSt->Fork2_DisPosition.Now_Speed);
                         lbl_Fork2_Destination.Text = String.Format("{0}", DevSt->Fork2_DisPosition.Dest_Position);
@@ -1926,6 +2316,8 @@ namespace VEXI
                 Display_Sub_ForkJob();
                 Display_Sub_TaskList();
                 Display_Sub_DIO();
+                Display_InvErr();
+                Display_SI();
             } else
             {
                 Display_Init();
@@ -1984,6 +2376,11 @@ namespace VEXI
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label338_Click(object sender, EventArgs e)
         {
 
         }

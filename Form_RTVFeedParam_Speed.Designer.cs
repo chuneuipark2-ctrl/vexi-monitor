@@ -152,6 +152,9 @@ namespace VEXI
             this.ed_Feed_ManualOp_TokeAlarm = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cb_Feed2_MotorDirection = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.label143 = new System.Windows.Forms.Label();
             this.ed_Feed_CALC_RPM = new System.Windows.Forms.TextBox();
             this.label144 = new System.Windows.Forms.Label();
@@ -161,7 +164,7 @@ namespace VEXI
             this.label147 = new System.Windows.Forms.Label();
             this.ed_Feed_MAX_RPM = new System.Windows.Forms.TextBox();
             this.label148 = new System.Windows.Forms.Label();
-            this.cb_Feed_MotorDirection = new System.Windows.Forms.ComboBox();
+            this.cb_Feed1_MotorDirection = new System.Windows.Forms.ComboBox();
             this.label149 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label91 = new System.Windows.Forms.Label();
@@ -1747,6 +1750,7 @@ namespace VEXI
             this.btn_Feed_TestSpeed.Tag = "1";
             this.btn_Feed_TestSpeed.Text = "시운전 속도 초기화";
             this.btn_Feed_TestSpeed.UseVisualStyleBackColor = true;
+            this.btn_Feed_TestSpeed.Visible = false;
             this.btn_Feed_TestSpeed.Click += new System.EventHandler(this.btn_Fork_TestSpeed_Click);
             // 
             // btn_Feed_OpSpeed
@@ -1759,6 +1763,7 @@ namespace VEXI
             this.btn_Feed_OpSpeed.Tag = "2";
             this.btn_Feed_OpSpeed.Text = "운영 속도 초기화";
             this.btn_Feed_OpSpeed.UseVisualStyleBackColor = true;
+            this.btn_Feed_OpSpeed.Visible = false;
             this.btn_Feed_OpSpeed.Click += new System.EventHandler(this.btn_Drive_OpSpeed_Click);
             // 
             // label177
@@ -1888,6 +1893,9 @@ namespace VEXI
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.label34);
+            this.groupBox12.Controls.Add(this.cb_Feed2_MotorDirection);
+            this.groupBox12.Controls.Add(this.label32);
             this.groupBox12.Controls.Add(this.label143);
             this.groupBox12.Controls.Add(this.ed_Feed_CALC_RPM);
             this.groupBox12.Controls.Add(this.label144);
@@ -1897,14 +1905,55 @@ namespace VEXI
             this.groupBox12.Controls.Add(this.label147);
             this.groupBox12.Controls.Add(this.ed_Feed_MAX_RPM);
             this.groupBox12.Controls.Add(this.label148);
-            this.groupBox12.Controls.Add(this.cb_Feed_MotorDirection);
+            this.groupBox12.Controls.Add(this.cb_Feed1_MotorDirection);
             this.groupBox12.Controls.Add(this.label149);
             this.groupBox12.Location = new System.Drawing.Point(31, 294);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(292, 124);
+            this.groupBox12.Size = new System.Drawing.Size(292, 147);
             this.groupBox12.TabIndex = 3;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "구동 설정";
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.Black;
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(121, 42);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(53, 21);
+            this.label34.TabIndex = 1001;
+            this.label34.Text = "피딩2";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cb_Feed2_MotorDirection
+            // 
+            this.cb_Feed2_MotorDirection.BackColor = System.Drawing.Color.Blue;
+            this.cb_Feed2_MotorDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Feed2_MotorDirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Feed2_MotorDirection.ForeColor = System.Drawing.Color.White;
+            this.cb_Feed2_MotorDirection.FormattingEnabled = true;
+            this.cb_Feed2_MotorDirection.Items.AddRange(new object[] {
+            "CW",
+            "CCW"});
+            this.cb_Feed2_MotorDirection.Location = new System.Drawing.Point(176, 42);
+            this.cb_Feed2_MotorDirection.Name = "cb_Feed2_MotorDirection";
+            this.cb_Feed2_MotorDirection.Size = new System.Drawing.Size(85, 20);
+            this.cb_Feed2_MotorDirection.TabIndex = 1000;
+            // 
+            // label32
+            // 
+            this.label32.BackColor = System.Drawing.Color.Black;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label32.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(121, 20);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(53, 21);
+            this.label32.TabIndex = 999;
+            this.label32.Text = "피딩1";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label143
             // 
@@ -1912,7 +1961,7 @@ namespace VEXI
             this.label143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label143.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label143.ForeColor = System.Drawing.Color.White;
-            this.label143.Location = new System.Drawing.Point(121, 86);
+            this.label143.Location = new System.Drawing.Point(121, 109);
             this.label143.Name = "label143";
             this.label143.Size = new System.Drawing.Size(53, 21);
             this.label143.TabIndex = 998;
@@ -1926,7 +1975,7 @@ namespace VEXI
             this.ed_Feed_CALC_RPM.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Feed_CALC_RPM.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Feed_CALC_RPM.ForeColor = System.Drawing.Color.White;
-            this.ed_Feed_CALC_RPM.Location = new System.Drawing.Point(176, 86);
+            this.ed_Feed_CALC_RPM.Location = new System.Drawing.Point(176, 109);
             this.ed_Feed_CALC_RPM.Name = "ed_Feed_CALC_RPM";
             this.ed_Feed_CALC_RPM.Size = new System.Drawing.Size(85, 21);
             this.ed_Feed_CALC_RPM.TabIndex = 3;
@@ -1940,7 +1989,7 @@ namespace VEXI
             this.label144.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label144.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label144.ForeColor = System.Drawing.Color.White;
-            this.label144.Location = new System.Drawing.Point(13, 86);
+            this.label144.Location = new System.Drawing.Point(13, 109);
             this.label144.Name = "label144";
             this.label144.Size = new System.Drawing.Size(107, 21);
             this.label144.TabIndex = 997;
@@ -1953,7 +2002,7 @@ namespace VEXI
             this.label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label145.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label145.ForeColor = System.Drawing.Color.White;
-            this.label145.Location = new System.Drawing.Point(121, 64);
+            this.label145.Location = new System.Drawing.Point(121, 87);
             this.label145.Name = "label145";
             this.label145.Size = new System.Drawing.Size(53, 21);
             this.label145.TabIndex = 995;
@@ -1967,7 +2016,7 @@ namespace VEXI
             this.ed_Feed_CALC_MPM.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Feed_CALC_MPM.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Feed_CALC_MPM.ForeColor = System.Drawing.Color.White;
-            this.ed_Feed_CALC_MPM.Location = new System.Drawing.Point(176, 64);
+            this.ed_Feed_CALC_MPM.Location = new System.Drawing.Point(176, 87);
             this.ed_Feed_CALC_MPM.Name = "ed_Feed_CALC_MPM";
             this.ed_Feed_CALC_MPM.Size = new System.Drawing.Size(85, 21);
             this.ed_Feed_CALC_MPM.TabIndex = 2;
@@ -1981,7 +2030,7 @@ namespace VEXI
             this.label146.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label146.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label146.ForeColor = System.Drawing.Color.White;
-            this.label146.Location = new System.Drawing.Point(13, 64);
+            this.label146.Location = new System.Drawing.Point(13, 87);
             this.label146.Name = "label146";
             this.label146.Size = new System.Drawing.Size(107, 21);
             this.label146.TabIndex = 994;
@@ -1994,7 +2043,7 @@ namespace VEXI
             this.label147.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label147.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label147.ForeColor = System.Drawing.Color.White;
-            this.label147.Location = new System.Drawing.Point(121, 42);
+            this.label147.Location = new System.Drawing.Point(121, 65);
             this.label147.Name = "label147";
             this.label147.Size = new System.Drawing.Size(53, 21);
             this.label147.TabIndex = 992;
@@ -2008,7 +2057,7 @@ namespace VEXI
             this.ed_Feed_MAX_RPM.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ed_Feed_MAX_RPM.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ed_Feed_MAX_RPM.ForeColor = System.Drawing.Color.White;
-            this.ed_Feed_MAX_RPM.Location = new System.Drawing.Point(176, 42);
+            this.ed_Feed_MAX_RPM.Location = new System.Drawing.Point(176, 65);
             this.ed_Feed_MAX_RPM.Name = "ed_Feed_MAX_RPM";
             this.ed_Feed_MAX_RPM.Size = new System.Drawing.Size(85, 21);
             this.ed_Feed_MAX_RPM.TabIndex = 1;
@@ -2022,27 +2071,27 @@ namespace VEXI
             this.label148.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label148.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label148.ForeColor = System.Drawing.Color.White;
-            this.label148.Location = new System.Drawing.Point(13, 42);
+            this.label148.Location = new System.Drawing.Point(13, 65);
             this.label148.Name = "label148";
             this.label148.Size = new System.Drawing.Size(107, 21);
             this.label148.TabIndex = 991;
             this.label148.Text = "최대 RPM";
             this.label148.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cb_Feed_MotorDirection
+            // cb_Feed1_MotorDirection
             // 
-            this.cb_Feed_MotorDirection.BackColor = System.Drawing.Color.Blue;
-            this.cb_Feed_MotorDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Feed_MotorDirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Feed_MotorDirection.ForeColor = System.Drawing.Color.White;
-            this.cb_Feed_MotorDirection.FormattingEnabled = true;
-            this.cb_Feed_MotorDirection.Items.AddRange(new object[] {
+            this.cb_Feed1_MotorDirection.BackColor = System.Drawing.Color.Blue;
+            this.cb_Feed1_MotorDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Feed1_MotorDirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Feed1_MotorDirection.ForeColor = System.Drawing.Color.White;
+            this.cb_Feed1_MotorDirection.FormattingEnabled = true;
+            this.cb_Feed1_MotorDirection.Items.AddRange(new object[] {
             "CW",
             "CCW"});
-            this.cb_Feed_MotorDirection.Location = new System.Drawing.Point(121, 20);
-            this.cb_Feed_MotorDirection.Name = "cb_Feed_MotorDirection";
-            this.cb_Feed_MotorDirection.Size = new System.Drawing.Size(140, 20);
-            this.cb_Feed_MotorDirection.TabIndex = 0;
+            this.cb_Feed1_MotorDirection.Location = new System.Drawing.Point(176, 20);
+            this.cb_Feed1_MotorDirection.Name = "cb_Feed1_MotorDirection";
+            this.cb_Feed1_MotorDirection.Size = new System.Drawing.Size(85, 20);
+            this.cb_Feed1_MotorDirection.TabIndex = 0;
             // 
             // label149
             // 
@@ -2052,9 +2101,9 @@ namespace VEXI
             this.label149.ForeColor = System.Drawing.Color.White;
             this.label149.Location = new System.Drawing.Point(13, 20);
             this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(107, 21);
+            this.label149.Size = new System.Drawing.Size(107, 43);
             this.label149.TabIndex = 988;
-            this.label149.Text = "전진 제어방향";
+            this.label149.Text = "좌측 제어방향";
             this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox4
@@ -2262,7 +2311,7 @@ namespace VEXI
         private System.Windows.Forms.Label label147;
         private System.Windows.Forms.TextBox ed_Feed_MAX_RPM;
         private System.Windows.Forms.Label label148;
-        private System.Windows.Forms.ComboBox cb_Feed_MotorDirection;
+        private System.Windows.Forms.ComboBox cb_Feed1_MotorDirection;
         private System.Windows.Forms.Label label149;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label91;
@@ -2289,5 +2338,8 @@ namespace VEXI
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox ed_Feed_AutoHighSpeed_DJerk;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox cb_Feed2_MotorDirection;
+        private System.Windows.Forms.Label label32;
     }
 }

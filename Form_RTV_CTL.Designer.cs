@@ -32,6 +32,18 @@ namespace VEXI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RTV_CTL));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Manual = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btn_SetRef_Drive = new System.Windows.Forms.Button();
+            this.label146 = new System.Windows.Forms.Label();
+            this.lbl_Drive_Position = new System.Windows.Forms.Label();
+            this.label132 = new System.Windows.Forms.Label();
+            this.lbl_DriveSt2_2 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,6 +66,8 @@ namespace VEXI
             this.btn_Forward_MiddleSpeed = new System.Windows.Forms.Button();
             this.btn_Forward_LowSpeed = new System.Windows.Forms.Button();
             this.tab_Item = new System.Windows.Forms.TabPage();
+            this.lbl_JobCtrlRes2 = new System.Windows.Forms.Label();
+            this.lbl_JobCtrlRes1 = new System.Windows.Forms.Label();
             this.TabControl5 = new System.Windows.Forms.TabControl();
             this.tab_Move = new System.Windows.Forms.TabPage();
             this.numed_F2_Position = new System.Windows.Forms.NumericUpDown();
@@ -210,6 +224,8 @@ namespace VEXI
             this.label177 = new System.Windows.Forms.Label();
             this.label178 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_DevmodeSwitch = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.lbl_Dev_Error = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -229,6 +245,7 @@ namespace VEXI
             this.label92 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tab_Manual.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -281,6 +298,14 @@ namespace VEXI
             // 
             // tab_Manual
             // 
+            this.tab_Manual.Controls.Add(this.label24);
+            this.tab_Manual.Controls.Add(this.groupBox2);
+            this.tab_Manual.Controls.Add(this.btn_SetRef_Drive);
+            this.tab_Manual.Controls.Add(this.label146);
+            this.tab_Manual.Controls.Add(this.lbl_Drive_Position);
+            this.tab_Manual.Controls.Add(this.label132);
+            this.tab_Manual.Controls.Add(this.lbl_DriveSt2_2);
+            this.tab_Manual.Controls.Add(this.label113);
             this.tab_Manual.Controls.Add(this.label94);
             this.tab_Manual.Controls.Add(this.groupBox9);
             this.tab_Manual.Controls.Add(this.label93);
@@ -292,15 +317,157 @@ namespace VEXI
             this.tab_Manual.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Manual.Size = new System.Drawing.Size(953, 436);
             this.tab_Manual.TabIndex = 0;
-            this.tab_Manual.Text = "수동 운전명령";
+            this.tab_Manual.Text = "A. 수동 운전명령";
             this.tab_Manual.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label24.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(344, 277);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(595, 35);
+            this.label24.TabIndex = 170;
+            this.label24.Text = "Feeding 1 / Feeding 2 (동시)";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Location = new System.Drawing.Point(344, 307);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(595, 74);
+            this.groupBox2.TabIndex = 171;
+            this.groupBox2.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(456, 20);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(116, 39);
+            this.button5.TabIndex = 28;
+            this.button5.Tag = "75";
+            this.button5.Text = "고속 우 (H-R)";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
+            this.button5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(318, 20);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(116, 39);
+            this.button6.TabIndex = 27;
+            this.button6.TabStop = false;
+            this.button6.Tag = "74";
+            this.button6.Text = "고속 좌 (H-L)";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
+            this.button6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(159, 20);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(116, 39);
+            this.button7.TabIndex = 26;
+            this.button7.TabStop = false;
+            this.button7.Tag = "73";
+            this.button7.Text = "저속 우 (L-R)";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
+            this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(21, 20);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(116, 39);
+            this.button8.TabIndex = 25;
+            this.button8.TabStop = false;
+            this.button8.Tag = "72";
+            this.button8.Text = "저속 좌 (L-L)";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
+            this.button8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
+            // 
+            // btn_SetRef_Drive
+            // 
+            this.btn_SetRef_Drive.Location = new System.Drawing.Point(249, 22);
+            this.btn_SetRef_Drive.Name = "btn_SetRef_Drive";
+            this.btn_SetRef_Drive.Size = new System.Drawing.Size(75, 51);
+            this.btn_SetRef_Drive.TabIndex = 169;
+            this.btn_SetRef_Drive.TabStop = false;
+            this.btn_SetRef_Drive.Tag = "0";
+            this.btn_SetRef_Drive.Text = "주행(Drive)\r\n원점설정";
+            this.btn_SetRef_Drive.UseVisualStyleBackColor = true;
+            this.btn_SetRef_Drive.Click += new System.EventHandler(this.btn_SetRef_Drive_Click);
+            // 
+            // label146
+            // 
+            this.label146.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label146.ForeColor = System.Drawing.Color.White;
+            this.label146.Location = new System.Drawing.Point(135, 22);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(108, 16);
+            this.label146.TabIndex = 168;
+            this.label146.Text = "주행";
+            this.label146.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Drive_Position
+            // 
+            this.lbl_Drive_Position.BackColor = System.Drawing.Color.White;
+            this.lbl_Drive_Position.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Drive_Position.Location = new System.Drawing.Point(135, 57);
+            this.lbl_Drive_Position.Name = "lbl_Drive_Position";
+            this.lbl_Drive_Position.Size = new System.Drawing.Size(108, 16);
+            this.lbl_Drive_Position.TabIndex = 167;
+            this.lbl_Drive_Position.Text = "0";
+            this.lbl_Drive_Position.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label132
+            // 
+            this.label132.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label132.ForeColor = System.Drawing.Color.White;
+            this.label132.Location = new System.Drawing.Point(22, 57);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(110, 16);
+            this.label132.TabIndex = 166;
+            this.label132.Text = "현재위치값 (mm)";
+            this.label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_DriveSt2_2
+            // 
+            this.lbl_DriveSt2_2.BackColor = System.Drawing.Color.White;
+            this.lbl_DriveSt2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_DriveSt2_2.Location = new System.Drawing.Point(135, 40);
+            this.lbl_DriveSt2_2.Name = "lbl_DriveSt2_2";
+            this.lbl_DriveSt2_2.Size = new System.Drawing.Size(108, 16);
+            this.lbl_DriveSt2_2.TabIndex = 165;
+            this.lbl_DriveSt2_2.Text = "미확인";
+            this.lbl_DriveSt2_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label113
+            // 
+            this.label113.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label113.ForeColor = System.Drawing.Color.White;
+            this.label113.Location = new System.Drawing.Point(22, 40);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(110, 16);
+            this.label113.TabIndex = 164;
+            this.label113.Text = "원점확인";
+            this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label94
             // 
             this.label94.BackColor = System.Drawing.SystemColors.Highlight;
             this.label94.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label94.ForeColor = System.Drawing.Color.White;
-            this.label94.Location = new System.Drawing.Point(646, 72);
+            this.label94.Location = new System.Drawing.Point(646, 63);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(293, 35);
             this.label94.TabIndex = 46;
@@ -314,34 +481,34 @@ namespace VEXI
             this.groupBox9.Controls.Add(this.label21);
             this.groupBox9.Controls.Add(this.btn_Feed2_Right);
             this.groupBox9.Controls.Add(this.btn_Feed2_Left);
-            this.groupBox9.Location = new System.Drawing.Point(646, 102);
+            this.groupBox9.Location = new System.Drawing.Point(646, 93);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(293, 221);
+            this.groupBox9.Size = new System.Drawing.Size(293, 169);
             this.groupBox9.TabIndex = 47;
             this.groupBox9.TabStop = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(158, 137);
+            this.button3.Location = new System.Drawing.Point(157, 106);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 39);
             this.button3.TabIndex = 32;
             this.button3.TabStop = false;
             this.button3.Tag = "45";
-            this.button3.Text = "고속 우";
+            this.button3.Text = "고속 우 (H-R)";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(20, 137);
+            this.button4.Location = new System.Drawing.Point(19, 106);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 39);
             this.button4.TabIndex = 31;
             this.button4.TabStop = false;
             this.button4.Tag = "44";
-            this.button4.Text = "고속 좌";
+            this.button4.Text = "고속 좌 (H-L)";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.button4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -351,7 +518,7 @@ namespace VEXI
             this.label21.BackColor = System.Drawing.SystemColors.Highlight;
             this.label21.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(16, 115);
+            this.label21.Location = new System.Drawing.Point(15, 84);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(260, 2);
             this.label21.TabIndex = 30;
@@ -359,26 +526,26 @@ namespace VEXI
             // 
             // btn_Feed2_Right
             // 
-            this.btn_Feed2_Right.Location = new System.Drawing.Point(158, 51);
+            this.btn_Feed2_Right.Location = new System.Drawing.Point(157, 20);
             this.btn_Feed2_Right.Name = "btn_Feed2_Right";
             this.btn_Feed2_Right.Size = new System.Drawing.Size(116, 39);
             this.btn_Feed2_Right.TabIndex = 26;
             this.btn_Feed2_Right.TabStop = false;
             this.btn_Feed2_Right.Tag = "43";
-            this.btn_Feed2_Right.Text = "저속 우";
+            this.btn_Feed2_Right.Text = "저속 우 (L-R)";
             this.btn_Feed2_Right.UseVisualStyleBackColor = true;
             this.btn_Feed2_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Feed2_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Feed2_Left
             // 
-            this.btn_Feed2_Left.Location = new System.Drawing.Point(20, 51);
+            this.btn_Feed2_Left.Location = new System.Drawing.Point(19, 20);
             this.btn_Feed2_Left.Name = "btn_Feed2_Left";
             this.btn_Feed2_Left.Size = new System.Drawing.Size(116, 39);
             this.btn_Feed2_Left.TabIndex = 25;
             this.btn_Feed2_Left.TabStop = false;
             this.btn_Feed2_Left.Tag = "42";
-            this.btn_Feed2_Left.Text = "저속 좌";
+            this.btn_Feed2_Left.Text = "저속 좌 (L-L)";
             this.btn_Feed2_Left.UseVisualStyleBackColor = true;
             this.btn_Feed2_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Feed2_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -388,7 +555,7 @@ namespace VEXI
             this.label93.BackColor = System.Drawing.SystemColors.Highlight;
             this.label93.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label93.ForeColor = System.Drawing.Color.White;
-            this.label93.Location = new System.Drawing.Point(344, 72);
+            this.label93.Location = new System.Drawing.Point(344, 63);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(293, 35);
             this.label93.TabIndex = 44;
@@ -402,9 +569,9 @@ namespace VEXI
             this.groupBox8.Controls.Add(this.button2);
             this.groupBox8.Controls.Add(this.btn_Feed1_Right);
             this.groupBox8.Controls.Add(this.btn_Feed1_Left);
-            this.groupBox8.Location = new System.Drawing.Point(344, 102);
+            this.groupBox8.Location = new System.Drawing.Point(344, 93);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(293, 221);
+            this.groupBox8.Size = new System.Drawing.Size(293, 169);
             this.groupBox8.TabIndex = 45;
             this.groupBox8.TabStop = false;
             // 
@@ -413,7 +580,7 @@ namespace VEXI
             this.label20.BackColor = System.Drawing.SystemColors.Highlight;
             this.label20.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(17, 111);
+            this.label20.Location = new System.Drawing.Point(18, 80);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(260, 2);
             this.label20.TabIndex = 29;
@@ -421,52 +588,52 @@ namespace VEXI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(158, 137);
+            this.button1.Location = new System.Drawing.Point(159, 106);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 39);
             this.button1.TabIndex = 28;
             this.button1.TabStop = false;
             this.button1.Tag = "35";
-            this.button1.Text = "고속 우";
+            this.button1.Text = "고속 우 (H-R)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(20, 137);
+            this.button2.Location = new System.Drawing.Point(21, 106);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 39);
             this.button2.TabIndex = 27;
             this.button2.TabStop = false;
             this.button2.Tag = "34";
-            this.button2.Text = "고속 좌";
+            this.button2.Text = "고속 좌 (H-L)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Feed1_Right
             // 
-            this.btn_Feed1_Right.Location = new System.Drawing.Point(158, 51);
+            this.btn_Feed1_Right.Location = new System.Drawing.Point(159, 20);
             this.btn_Feed1_Right.Name = "btn_Feed1_Right";
             this.btn_Feed1_Right.Size = new System.Drawing.Size(116, 39);
             this.btn_Feed1_Right.TabIndex = 26;
             this.btn_Feed1_Right.TabStop = false;
             this.btn_Feed1_Right.Tag = "33";
-            this.btn_Feed1_Right.Text = "저속 우";
+            this.btn_Feed1_Right.Text = "저속 우 (L-R)";
             this.btn_Feed1_Right.UseVisualStyleBackColor = true;
             this.btn_Feed1_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Feed1_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // btn_Feed1_Left
             // 
-            this.btn_Feed1_Left.Location = new System.Drawing.Point(20, 51);
+            this.btn_Feed1_Left.Location = new System.Drawing.Point(21, 20);
             this.btn_Feed1_Left.Name = "btn_Feed1_Left";
             this.btn_Feed1_Left.Size = new System.Drawing.Size(116, 39);
             this.btn_Feed1_Left.TabIndex = 25;
             this.btn_Feed1_Left.TabStop = false;
             this.btn_Feed1_Left.Tag = "32";
-            this.btn_Feed1_Left.Text = "저속 좌";
+            this.btn_Feed1_Left.Text = "저속 좌 (L-L)";
             this.btn_Feed1_Left.UseVisualStyleBackColor = true;
             this.btn_Feed1_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Feed1_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -476,7 +643,7 @@ namespace VEXI
             this.label1.BackColor = System.Drawing.SystemColors.Highlight;
             this.label1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 72);
+            this.label1.Location = new System.Drawing.Point(16, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 35);
             this.label1.TabIndex = 23;
@@ -490,7 +657,7 @@ namespace VEXI
             this.groupBox1.Controls.Add(this.btn_Backward_LowSpeed);
             this.groupBox1.Controls.Add(this.btn_Forward_MiddleSpeed);
             this.groupBox1.Controls.Add(this.btn_Forward_LowSpeed);
-            this.groupBox1.Location = new System.Drawing.Point(18, 102);
+            this.groupBox1.Location = new System.Drawing.Point(16, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(318, 221);
             this.groupBox1.TabIndex = 37;
@@ -515,7 +682,7 @@ namespace VEXI
             this.btn_Backward_MiddleSpeed.TabIndex = 4;
             this.btn_Backward_MiddleSpeed.TabStop = false;
             this.btn_Backward_MiddleSpeed.Tag = "14";
-            this.btn_Backward_MiddleSpeed.Text = "중속 후진";
+            this.btn_Backward_MiddleSpeed.Text = "중속 후진 (M-Back)";
             this.btn_Backward_MiddleSpeed.UseVisualStyleBackColor = true;
             this.btn_Backward_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Backward_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -528,7 +695,7 @@ namespace VEXI
             this.btn_Backward_LowSpeed.TabIndex = 4;
             this.btn_Backward_LowSpeed.TabStop = false;
             this.btn_Backward_LowSpeed.Tag = "12";
-            this.btn_Backward_LowSpeed.Text = "저속 후진";
+            this.btn_Backward_LowSpeed.Text = "저속 후진 (L-Back)";
             this.btn_Backward_LowSpeed.UseVisualStyleBackColor = true;
             this.btn_Backward_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Backward_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -541,7 +708,7 @@ namespace VEXI
             this.btn_Forward_MiddleSpeed.TabIndex = 5;
             this.btn_Forward_MiddleSpeed.TabStop = false;
             this.btn_Forward_MiddleSpeed.Tag = "13";
-            this.btn_Forward_MiddleSpeed.Text = "중속 전진";
+            this.btn_Forward_MiddleSpeed.Text = "중속 전진 (M-FWD)";
             this.btn_Forward_MiddleSpeed.UseVisualStyleBackColor = true;
             this.btn_Forward_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Forward_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
@@ -554,21 +721,43 @@ namespace VEXI
             this.btn_Forward_LowSpeed.TabIndex = 5;
             this.btn_Forward_LowSpeed.TabStop = false;
             this.btn_Forward_LowSpeed.Tag = "11";
-            this.btn_Forward_LowSpeed.Text = "저속 전진";
+            this.btn_Forward_LowSpeed.Text = "저속 전진 (L-FWD)";
             this.btn_Forward_LowSpeed.UseVisualStyleBackColor = true;
             this.btn_Forward_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Forward_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
             // tab_Item
             // 
+            this.tab_Item.Controls.Add(this.lbl_JobCtrlRes2);
+            this.tab_Item.Controls.Add(this.lbl_JobCtrlRes1);
             this.tab_Item.Controls.Add(this.TabControl5);
             this.tab_Item.Location = new System.Drawing.Point(4, 28);
             this.tab_Item.Name = "tab_Item";
             this.tab_Item.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Item.Size = new System.Drawing.Size(953, 436);
             this.tab_Item.TabIndex = 1;
-            this.tab_Item.Text = "반송 운전명령";
+            this.tab_Item.Text = "B. 반송 운전명령";
             this.tab_Item.UseVisualStyleBackColor = true;
+            // 
+            // lbl_JobCtrlRes2
+            // 
+            this.lbl_JobCtrlRes2.AutoSize = true;
+            this.lbl_JobCtrlRes2.Location = new System.Drawing.Point(8, 22);
+            this.lbl_JobCtrlRes2.Name = "lbl_JobCtrlRes2";
+            this.lbl_JobCtrlRes2.Size = new System.Drawing.Size(50, 12);
+            this.lbl_JobCtrlRes2.TabIndex = 7;
+            this.lbl_JobCtrlRes2.Text = "label109";
+            this.lbl_JobCtrlRes2.Visible = false;
+            // 
+            // lbl_JobCtrlRes1
+            // 
+            this.lbl_JobCtrlRes1.AutoSize = true;
+            this.lbl_JobCtrlRes1.Location = new System.Drawing.Point(8, 8);
+            this.lbl_JobCtrlRes1.Name = "lbl_JobCtrlRes1";
+            this.lbl_JobCtrlRes1.Size = new System.Drawing.Size(50, 12);
+            this.lbl_JobCtrlRes1.TabIndex = 6;
+            this.lbl_JobCtrlRes1.Text = "label109";
+            this.lbl_JobCtrlRes1.Visible = false;
             // 
             // TabControl5
             // 
@@ -619,7 +808,7 @@ namespace VEXI
             this.numed_F2_Position.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_F2_Position.Location = new System.Drawing.Point(255, 299);
             this.numed_F2_Position.Maximum = new decimal(new int[] {
-            255,
+            200,
             0,
             0,
             0});
@@ -643,7 +832,7 @@ namespace VEXI
             this.numed_F2_Station.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_F2_Station.Location = new System.Drawing.Point(255, 234);
             this.numed_F2_Station.Maximum = new decimal(new int[] {
-            255,
+            200,
             0,
             0,
             0});
@@ -733,7 +922,7 @@ namespace VEXI
             this.numed_F1_Position.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_F1_Position.Location = new System.Drawing.Point(255, 167);
             this.numed_F1_Position.Maximum = new decimal(new int[] {
-            255,
+            200,
             0,
             0,
             0});
@@ -757,7 +946,7 @@ namespace VEXI
             this.numed_F1_Station.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_F1_Station.Location = new System.Drawing.Point(255, 102);
             this.numed_F1_Station.Maximum = new decimal(new int[] {
-            255,
+            200,
             0,
             0,
             0});
@@ -902,6 +1091,11 @@ namespace VEXI
             // 
             this.numed_Feed2_Load.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed2_Load.Location = new System.Drawing.Point(150, 177);
+            this.numed_Feed2_Load.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed2_Load.Minimum = new decimal(new int[] {
             1,
             0,
@@ -921,6 +1115,11 @@ namespace VEXI
             // 
             this.numed_Feed1_Load.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed1_Load.Location = new System.Drawing.Point(152, 91);
+            this.numed_Feed1_Load.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed1_Load.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1072,6 +1271,11 @@ namespace VEXI
             // 
             this.numed_Feed2_Unload.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed2_Unload.Location = new System.Drawing.Point(150, 177);
+            this.numed_Feed2_Unload.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed2_Unload.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1091,6 +1295,11 @@ namespace VEXI
             // 
             this.numed_Feed1_Unload.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed1_Unload.Location = new System.Drawing.Point(152, 91);
+            this.numed_Feed1_Unload.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed1_Unload.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1214,6 +1423,11 @@ namespace VEXI
             // 
             this.numed_Feed2_StoS_From.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed2_StoS_From.Location = new System.Drawing.Point(138, 177);
+            this.numed_Feed2_StoS_From.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed2_StoS_From.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1233,6 +1447,11 @@ namespace VEXI
             // 
             this.numed_Feed1_StoS_From.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed1_StoS_From.Location = new System.Drawing.Point(140, 91);
+            this.numed_Feed1_StoS_From.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed1_StoS_From.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1306,6 +1525,11 @@ namespace VEXI
             // 
             this.numed_Feed2_StoS_To.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed2_StoS_To.Location = new System.Drawing.Point(336, 177);
+            this.numed_Feed2_StoS_To.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed2_StoS_To.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1325,6 +1549,11 @@ namespace VEXI
             // 
             this.numed_Feed1_StoS_To.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed1_StoS_To.Location = new System.Drawing.Point(338, 91);
+            this.numed_Feed1_StoS_To.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed1_StoS_To.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1478,6 +1707,11 @@ namespace VEXI
             // 
             this.numed_Feed2_Change.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed2_Change.Location = new System.Drawing.Point(201, 177);
+            this.numed_Feed2_Change.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed2_Change.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1497,6 +1731,11 @@ namespace VEXI
             // 
             this.numed_Feed1_Change.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.numed_Feed1_Change.Location = new System.Drawing.Point(203, 91);
+            this.numed_Feed1_Change.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numed_Feed1_Change.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1573,7 +1812,7 @@ namespace VEXI
             this.tab_Task.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Task.Size = new System.Drawing.Size(953, 436);
             this.tab_Task.TabIndex = 2;
-            this.tab_Task.Text = "Task 운전명령";
+            this.tab_Task.Text = "C. Task 운전명령";
             this.tab_Task.UseVisualStyleBackColor = true;
             // 
             // btn_TaskInit
@@ -1906,7 +2145,7 @@ namespace VEXI
             this.tab_delete.Padding = new System.Windows.Forms.Padding(3);
             this.tab_delete.Size = new System.Drawing.Size(953, 436);
             this.tab_delete.TabIndex = 3;
-            this.tab_delete.Text = "운전 명령 삭제";
+            this.tab_delete.Text = "D. 운전 명령 삭제";
             this.tab_delete.UseVisualStyleBackColor = true;
             // 
             // lbl_TaskJobSt
@@ -2435,17 +2674,17 @@ namespace VEXI
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(515, 145);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "제어";
+            this.tabPage1.Text = "AA. 제어";
             // 
             // btn_DevMode_AutoOn
             // 
             this.btn_DevMode_AutoOn.Location = new System.Drawing.Point(241, 6);
             this.btn_DevMode_AutoOn.Name = "btn_DevMode_AutoOn";
-            this.btn_DevMode_AutoOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_AutoOn.Size = new System.Drawing.Size(111, 29);
             this.btn_DevMode_AutoOn.TabIndex = 40;
             this.btn_DevMode_AutoOn.TabStop = false;
             this.btn_DevMode_AutoOn.Tag = "2";
-            this.btn_DevMode_AutoOn.Text = "자동모드 설정";
+            this.btn_DevMode_AutoOn.Text = "Auto 모드 설정";
             this.btn_DevMode_AutoOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_AutoOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -2457,7 +2696,7 @@ namespace VEXI
             this.btn_Dev_Maintance.TabIndex = 47;
             this.btn_Dev_Maintance.TabStop = false;
             this.btn_Dev_Maintance.Tag = "0";
-            this.btn_Dev_Maintance.Text = "보수위치\r\n이동";
+            this.btn_Dev_Maintance.Text = "To Maintenance";
             this.btn_Dev_Maintance.UseVisualStyleBackColor = true;
             this.btn_Dev_Maintance.Click += new System.EventHandler(this.btn_Dev_Maintance_Click);
             // 
@@ -2465,11 +2704,11 @@ namespace VEXI
             // 
             this.btn_DevMode_SetupOn.Location = new System.Drawing.Point(241, 75);
             this.btn_DevMode_SetupOn.Name = "btn_DevMode_SetupOn";
-            this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(111, 29);
             this.btn_DevMode_SetupOn.TabIndex = 46;
             this.btn_DevMode_SetupOn.TabStop = false;
             this.btn_DevMode_SetupOn.Tag = "1";
-            this.btn_DevMode_SetupOn.Text = "셋업모드 설정";
+            this.btn_DevMode_SetupOn.Text = "Setup 모드 설정";
             this.btn_DevMode_SetupOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_SetupOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -2477,11 +2716,11 @@ namespace VEXI
             // 
             this.btn_DevMode_ManualOn.Location = new System.Drawing.Point(241, 40);
             this.btn_DevMode_ManualOn.Name = "btn_DevMode_ManualOn";
-            this.btn_DevMode_ManualOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_ManualOn.Size = new System.Drawing.Size(111, 29);
             this.btn_DevMode_ManualOn.TabIndex = 42;
             this.btn_DevMode_ManualOn.TabStop = false;
             this.btn_DevMode_ManualOn.Tag = "0";
-            this.btn_DevMode_ManualOn.Text = "수동모드 설정";
+            this.btn_DevMode_ManualOn.Text = "Manual 모드 설정";
             this.btn_DevMode_ManualOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_ManualOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -2493,7 +2732,7 @@ namespace VEXI
             this.btn_Dev_Home.TabIndex = 41;
             this.btn_Dev_Home.TabStop = false;
             this.btn_Dev_Home.Tag = "0";
-            this.btn_Dev_Home.Text = "홈\r\n이동";
+            this.btn_Dev_Home.Text = "To Home";
             this.btn_Dev_Home.UseVisualStyleBackColor = true;
             this.btn_Dev_Home.Click += new System.EventHandler(this.btn_Dev_Home_Click);
             // 
@@ -2501,23 +2740,23 @@ namespace VEXI
             // 
             this.btn_DevMode_ForceOn.Location = new System.Drawing.Point(241, 110);
             this.btn_DevMode_ForceOn.Name = "btn_DevMode_ForceOn";
-            this.btn_DevMode_ForceOn.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_ForceOn.Size = new System.Drawing.Size(111, 29);
             this.btn_DevMode_ForceOn.TabIndex = 44;
             this.btn_DevMode_ForceOn.TabStop = false;
             this.btn_DevMode_ForceOn.Tag = "11";
-            this.btn_DevMode_ForceOn.Text = "강제모드 설정";
+            this.btn_DevMode_ForceOn.Text = "Force 모드 ON";
             this.btn_DevMode_ForceOn.UseVisualStyleBackColor = true;
             this.btn_DevMode_ForceOn.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
             // btn_DevMode_ForceOff
             // 
-            this.btn_DevMode_ForceOff.Location = new System.Drawing.Point(349, 110);
+            this.btn_DevMode_ForceOff.Location = new System.Drawing.Point(359, 110);
             this.btn_DevMode_ForceOff.Name = "btn_DevMode_ForceOff";
-            this.btn_DevMode_ForceOff.Size = new System.Drawing.Size(103, 29);
+            this.btn_DevMode_ForceOff.Size = new System.Drawing.Size(111, 29);
             this.btn_DevMode_ForceOff.TabIndex = 45;
             this.btn_DevMode_ForceOff.TabStop = false;
             this.btn_DevMode_ForceOff.Tag = "10";
-            this.btn_DevMode_ForceOff.Text = "강제모드 해제";
+            this.btn_DevMode_ForceOff.Text = "Force 모드 OFF";
             this.btn_DevMode_ForceOff.UseVisualStyleBackColor = true;
             this.btn_DevMode_ForceOff.Click += new System.EventHandler(this.btn_DevMode_AutoOn_Click);
             // 
@@ -2529,7 +2768,7 @@ namespace VEXI
             this.btn_Dev_AlarmReset.TabIndex = 40;
             this.btn_Dev_AlarmReset.TabStop = false;
             this.btn_Dev_AlarmReset.Tag = "0";
-            this.btn_Dev_AlarmReset.Text = "이상리셋";
+            this.btn_Dev_AlarmReset.Text = "Alarm Reset";
             this.btn_Dev_AlarmReset.UseVisualStyleBackColor = true;
             this.btn_Dev_AlarmReset.Click += new System.EventHandler(this.btn_Dev_AlarmReset_Click);
             // 
@@ -2552,7 +2791,7 @@ namespace VEXI
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(515, 145);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "주행 위치";
+            this.tabPage2.Text = "BB. 주행 위치";
             // 
             // lbl_Drive_CurrentPos_Feed2
             // 
@@ -2671,6 +2910,8 @@ namespace VEXI
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lbl_DevmodeSwitch);
+            this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label96);
             this.groupBox3.Controls.Add(this.lbl_Dev_Error);
             this.groupBox3.Controls.Add(this.label13);
@@ -2694,6 +2935,27 @@ namespace VEXI
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "장치 상태";
+            // 
+            // lbl_DevmodeSwitch
+            // 
+            this.lbl_DevmodeSwitch.BackColor = System.Drawing.Color.Silver;
+            this.lbl_DevmodeSwitch.Location = new System.Drawing.Point(296, 89);
+            this.lbl_DevmodeSwitch.Name = "lbl_DevmodeSwitch";
+            this.lbl_DevmodeSwitch.Size = new System.Drawing.Size(80, 16);
+            this.lbl_DevmodeSwitch.TabIndex = 38;
+            this.lbl_DevmodeSwitch.Text = "OFF";
+            this.lbl_DevmodeSwitch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(194, 89);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 16);
+            this.label26.TabIndex = 37;
+            this.label26.Text = "장비모드 스위치";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label96
             // 
@@ -2733,7 +2995,7 @@ namespace VEXI
             this.lblVersion.BackColor = System.Drawing.Color.White;
             this.lblVersion.Location = new System.Drawing.Point(92, 16);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(180, 16);
+            this.lblVersion.Size = new System.Drawing.Size(97, 16);
             this.lblVersion.TabIndex = 32;
             this.lblVersion.Text = "-";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2741,7 +3003,7 @@ namespace VEXI
             // lbl_Dev_Emergency
             // 
             this.lbl_Dev_Emergency.BackColor = System.Drawing.Color.Lime;
-            this.lbl_Dev_Emergency.Location = new System.Drawing.Point(296, 71);
+            this.lbl_Dev_Emergency.Location = new System.Drawing.Point(296, 53);
             this.lbl_Dev_Emergency.Name = "lbl_Dev_Emergency";
             this.lbl_Dev_Emergency.Size = new System.Drawing.Size(80, 16);
             this.lbl_Dev_Emergency.TabIndex = 31;
@@ -2751,7 +3013,7 @@ namespace VEXI
             // lbl_Dev_InvertorConn
             // 
             this.lbl_Dev_InvertorConn.BackColor = System.Drawing.Color.Silver;
-            this.lbl_Dev_InvertorConn.Location = new System.Drawing.Point(296, 53);
+            this.lbl_Dev_InvertorConn.Location = new System.Drawing.Point(296, 35);
             this.lbl_Dev_InvertorConn.Name = "lbl_Dev_InvertorConn";
             this.lbl_Dev_InvertorConn.Size = new System.Drawing.Size(80, 16);
             this.lbl_Dev_InvertorConn.TabIndex = 29;
@@ -2761,7 +3023,7 @@ namespace VEXI
             // lbl_Dev_Start
             // 
             this.lbl_Dev_Start.BackColor = System.Drawing.Color.Silver;
-            this.lbl_Dev_Start.Location = new System.Drawing.Point(296, 35);
+            this.lbl_Dev_Start.Location = new System.Drawing.Point(296, 17);
             this.lbl_Dev_Start.Name = "lbl_Dev_Start";
             this.lbl_Dev_Start.Size = new System.Drawing.Size(80, 16);
             this.lbl_Dev_Start.TabIndex = 28;
@@ -2771,7 +3033,7 @@ namespace VEXI
             // lbl_DevEmergencySwitch
             // 
             this.lbl_DevEmergencySwitch.BackColor = System.Drawing.Color.Silver;
-            this.lbl_DevEmergencySwitch.Location = new System.Drawing.Point(296, 89);
+            this.lbl_DevEmergencySwitch.Location = new System.Drawing.Point(296, 71);
             this.lbl_DevEmergencySwitch.Name = "lbl_DevEmergencySwitch";
             this.lbl_DevEmergencySwitch.Size = new System.Drawing.Size(80, 16);
             this.lbl_DevEmergencySwitch.TabIndex = 26;
@@ -2793,7 +3055,7 @@ namespace VEXI
             // 
             this.label18.BackColor = System.Drawing.SystemColors.Highlight;
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(194, 89);
+            this.label18.Location = new System.Drawing.Point(194, 71);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 16);
             this.label18.TabIndex = 22;
@@ -2844,7 +3106,7 @@ namespace VEXI
             // 
             this.label16.BackColor = System.Drawing.SystemColors.Highlight;
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(194, 35);
+            this.label16.Location = new System.Drawing.Point(194, 17);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 16);
             this.label16.TabIndex = 11;
@@ -2855,7 +3117,7 @@ namespace VEXI
             // 
             this.label15.BackColor = System.Drawing.SystemColors.Highlight;
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(194, 53);
+            this.label15.Location = new System.Drawing.Point(194, 35);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 16);
             this.label15.TabIndex = 14;
@@ -2866,7 +3128,7 @@ namespace VEXI
             // 
             this.label92.BackColor = System.Drawing.SystemColors.Highlight;
             this.label92.ForeColor = System.Drawing.Color.White;
-            this.label92.Location = new System.Drawing.Point(194, 71);
+            this.label92.Location = new System.Drawing.Point(194, 53);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(100, 16);
             this.label92.TabIndex = 13;
@@ -2887,15 +3149,17 @@ namespace VEXI
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "장비 운전 조작(수동 운전명령)";
+            this.Text = "장비 운전 조작";
             this.Deactivate += new System.EventHandler(this.Form_RTV_CTL_Deactivate);
-            this.Load += new System.EventHandler(this.Form_SRM_CTL_Load);
+            this.Load += new System.EventHandler(this.Form_RTV_CTL_Load);
             this.tabControl1.ResumeLayout(false);
             this.tab_Manual.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tab_Item.ResumeLayout(false);
+            this.tab_Item.PerformLayout();
             this.TabControl5.ResumeLayout(false);
             this.tab_Move.ResumeLayout(false);
             this.tab_Move.PerformLayout();
@@ -3133,5 +3397,21 @@ namespace VEXI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_SetRef_Drive;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.Label lbl_Drive_Position;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.Label lbl_DriveSt2_2;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Label lbl_DevmodeSwitch;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lbl_JobCtrlRes1;
+        private System.Windows.Forms.Label lbl_JobCtrlRes2;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

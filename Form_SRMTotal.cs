@@ -17,6 +17,7 @@ namespace VEXI
         private DateTime ProcessStepTime;
         private byte RetryCount;
         private byte DEVMode_Prev;
+        private bool IsSRM_New = true;
 
         public static VEXI_DEFS.TDEV_CtrlRes_2Byte CTRLRES_2byte;
 
@@ -276,6 +277,11 @@ namespace VEXI
             form_Main.SRM_ToTalFile.FileName = openFileDialog1.FileName;
             if (form_Main.SRM_ToTalFile.Read_IO_CFG(ref srm_REC_SRM_IOConfigCtrl))
             {
+                if (!IsSRM_New)
+                {
+                    Process_SRMCtrl_OLDIO();
+                }
+
                 form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_01, ConstClass.CMD2_24, srm_REC_SRM_IOConfigCtrl);
                 Want_Data = true;
             }
@@ -2360,9 +2366,107 @@ namespace VEXI
             Want_Data = true;
         }
 
+        public unsafe void Process_SRMSt_OLDIO()
+        {
+            if (!IsSRM_New)
+            {
+                fixed (VEXI_DEFS.REC_DIConfig* DICOnfigPtr = &srm_REC_SRM_IOConfig_RES.DIConfig_123)
+                {
+                    //123 -> 0
+                    //129 ~ 149 -> 6 ~ 26
+                    for (int i = 6; i <= 26; i++)
+                    {
+                        (DICOnfigPtr + i)->EthercatID = 255;
+                        (DICOnfigPtr + i)->Pin = 0;
+                        (DICOnfigPtr + i)->Type = 0;
+                        (DICOnfigPtr + i)->Chattering = 0;
+                        (DICOnfigPtr + i)->Dual = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &srm_REC_SRM_IOConfig_RES.DOConfig_1)
+                {
+                    //1 -> 0
+                    //38 ~ 43 -> 37 ~ 42
+                    for (int i = 37; i <= 42; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &srm_REC_SRM_IOConfig_RES.DOConfig_44)
+                {
+                    //44 -> 0
+                    //44 ~ 69 -> 0 ~ 25
+                    for (int i = 0; i <= 25; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+            }
+        }
+
+        public unsafe void Process_SRMCtrl_OLDIO()
+        {
+            if (!IsSRM_New)
+            {
+                fixed (VEXI_DEFS.REC_DIConfig* DICOnfigPtr = &srm_REC_SRM_IOConfigCtrl.DIConfig_123)
+                {
+                    //123 -> 0
+                    //129 ~ 149 -> 6 ~ 26
+                    for (int i = 6; i <= 26; i++)
+                    {
+                        (DICOnfigPtr + i)->EthercatID = 255;
+                        (DICOnfigPtr + i)->Pin = 0;
+                        (DICOnfigPtr + i)->Type = 0;
+                        (DICOnfigPtr + i)->Chattering = 0;
+                        (DICOnfigPtr + i)->Dual = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &srm_REC_SRM_IOConfigCtrl.DOConfig_1)
+                {
+                    //1 -> 0
+                    //38 ~ 43 -> 37 ~ 42
+                    for (int i = 37; i <= 42; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+
+                fixed (VEXI_DEFS.REC_DOConfig* DOCOnfigPtr = &srm_REC_SRM_IOConfigCtrl.DOConfig_44)
+                {
+                    //44 -> 0
+                    //44 ~ 69 -> 0 ~ 25
+                    for (int i = 0; i <= 25; i++)
+                    {
+                        (DOCOnfigPtr + i)->EthercatID = 255;
+                        (DOCOnfigPtr + i)->Pin = 0;
+                        (DOCOnfigPtr + i)->Type = 0;
+                    }
+                };
+            }
+        }
+
+
         public unsafe void Process_IO_CFG_Load(byte[] Data)
         {
             srm_REC_SRM_IOConfig_RES = (VEXI_DEFS.SRM_IOConfig)Global_Class.UTIL_BytesToStructure(Data, Data.Length, typeof(VEXI_DEFS.SRM_IOConfig));
+            if (Data.Length <= 844)
+            {
+                IsSRM_New = false;
+                Process_SRMSt_OLDIO();
+            } else
+            {
+                IsSRM_New = true;
+            }
+
 
             form_Main.SRM_ToTalFile.FileName = saveFileDialog1.FileName;
             if (form_Main.SRM_ToTalFile.Write_IO_CFG(srm_REC_SRM_IOConfig_RES))

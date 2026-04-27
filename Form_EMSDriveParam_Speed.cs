@@ -222,12 +222,7 @@ namespace VEXI
             ed_Drive_ForceMode_DJerk.Text = "0";
 
             ed_Drive_Creep_Speed.Text = "0.0";
-
-            ed_Drive_RefMode_Speed.Text = "0.0";
-            ed_Drive_RefMode_Accel.Text = "0";
-            ed_Drive_RefMode_Decel.Text = "0";
-            ed_Drive_RefMode_AJerk.Text = "0";
-            ed_Drive_RefMode_DJerk.Text = "0";
+            ed_Drive_RefCreep_Speed.Text = "0.0";
 
             ed_Drive_Emergency_Decel.Text = "0";
             ed_Drive_Emergency_DJerk.Text = "0";
@@ -238,12 +233,14 @@ namespace VEXI
             ed_Drive_Collision_Decel.Text = "0";
             ed_Drive_Collision_DJerk.Text = "0";
 
-            ed_Drive_MAX_RPM.Text = "0";
-            ed_Drive_CALC_MPM.Text = "0";
-            ed_Drive_CALC_RPM.Text = "0";
+            ed_Drive_RetryRef_Speed.Text = "0.0";
+            ed_Drive_RetryRef_Accel.Text = "0";
+            ed_Drive_RetryRef_Decel.Text = "0";
+            ed_Drive_RetryRef_AJerk.Text = "0";
+            ed_Drive_RetryRef_DJerk.Text = "0";
+
             cb_Drive_MotorDirection.SelectedIndex = -1;
             ed_Drive_ManualOp_TokeAlarm.Text = "0.0";
-            ed_Drive_breakOpenContinueTime.Text = "0.00";
 
             cb_Invetor_Param_Use.SelectedIndex = -1;
             ed_Invertor_Reference.Text = "0";
@@ -258,6 +255,8 @@ namespace VEXI
             ed_CurrentDecel_OffsetTime.Text = "0.0";
             ed_CurrentDecel_OffsetMaxDistance.Text = "0";
             ed_CurrentLowSpeedDistance.Text = "0";
+            ed_RetryCripRange.Text = "0";
+
         }
 
         public void Display_EMS_Param(byte[] data)
@@ -307,12 +306,7 @@ namespace VEXI
             ed_Drive_ForceMode_DJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_Force.D_jerk);
 
             ed_Drive_Creep_Speed.Text = string.Format("{0:0.0}", (double)ems_DriveParam_RES.Speed_Creep.Speed / 10);
-
-            ed_Drive_RefMode_Speed.Text = string.Format("{0:0.0}", (double)ems_DriveParam_RES.Speed_RefSet.Speed / 10);
-            ed_Drive_RefMode_Accel.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RefSet.Accel);
-            ed_Drive_RefMode_Decel.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RefSet.Decel);
-            ed_Drive_RefMode_AJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RefSet.A_jerk);
-            ed_Drive_RefMode_DJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RefSet.D_jerk);
+            ed_Drive_RefCreep_Speed.Text = string.Format("{0:0.0}", (double)ems_DriveParam_RES.Speed_RefSet.Speed / 10);
 
             ed_Drive_Emergency_Decel.Text = string.Format("{0}", ems_DriveParam_RES.Speed_Emergency.Decel);
             ed_Drive_Emergency_DJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_Emergency.D_jerk);
@@ -323,13 +317,14 @@ namespace VEXI
             ed_Drive_Collision_Decel.Text = string.Format("{0}", ems_DriveParam_RES.Speed_Collision.Decel);
             ed_Drive_Collision_DJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_Collision.D_jerk);
 
-            ed_Drive_MAX_RPM.Text = string.Format("{0}", ems_DriveParam_RES.MAX_RPM);
-            ed_Drive_CALC_MPM.Text = string.Format("{0}", ems_DriveParam_RES.CALC_MPM);
-            ed_Drive_CALC_RPM.Text = string.Format("{0}", ems_DriveParam_RES.CALC_RPM);
+            ed_Drive_RetryRef_Speed.Text = string.Format("{0:0.0}", (double)ems_DriveParam_RES.Speed_RetryRef.Speed / 10);
+            ed_Drive_RetryRef_Accel.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RetryRef.Accel);
+            ed_Drive_RetryRef_Decel.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RetryRef.Decel);
+            ed_Drive_RetryRef_AJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RetryRef.A_jerk);
+            ed_Drive_RetryRef_DJerk.Text = string.Format("{0}", ems_DriveParam_RES.Speed_RetryRef.D_jerk);
+
             cb_Drive_MotorDirection.SelectedIndex = Math.Min(ems_DriveParam_RES.MotorDirection, cb_Drive_MotorDirection.Items.Count - 1);
             ed_Drive_ManualOp_TokeAlarm.Text = string.Format("{0:0.0}", (double)ems_DriveParam_RES.ManualOp_TokeAlarm / 10);
-            ed_Drive_breakOpenContinueTime.Text = string.Format("{0:0.00}", (double)ems_DriveParam_RES.breakOpenContinueTime / 100);
-
             
             ed_Invertor_Reference.Text = string.Format("{0}", ems_DriveParam_RES.Invertor_Reference);
             ed_Invertor_PositionGain.Text = string.Format("{0:0.000}", (double)ems_DriveParam_RES.Invertor_PositionGain / 1000);
@@ -344,7 +339,7 @@ namespace VEXI
             ed_CurrentDecel_OffsetTime.Text = string.Format("{0:0.0}", (double)ems_DriveParam_RES.CurrentDecel_OffsetTime / 10);
             ed_CurrentDecel_OffsetMaxDistance.Text = string.Format("{0}", ems_DriveParam_RES.CurrentDecel_OffsetMaxDistance);
             ed_CurrentLowSpeedDistance.Text = string.Format("{0}", ems_DriveParam_RES.CurrentLowSpeedDistance);
-
+            ed_RetryCripRange.Text = string.Format("{0}", ems_DriveParam_RES.RetryCripRange);
 
             btn_Param_Set.Enabled = ((form_Main.COMMDataManager.DevRec.ems_REC_EMSSt.DevMode & 0x08) != 0);
             //btn_Param_Set.Enabled = true;
@@ -363,7 +358,7 @@ namespace VEXI
             //제어플래그
             //전체 항목 제어 이기 때문에 전체 설정 플래그 1개만 세워도 되고 모든 제어 Flag를 세워도 된다. 
             ems_DriveParam_CTRL.CtrlFlag[0] = 0x00;
-            ems_DriveParam_CTRL.CtrlFlag[1] = 0xFF;
+            ems_DriveParam_CTRL.CtrlFlag[1] = 0x7F;
             ems_DriveParam_CTRL.CtrlFlag[2] = 0x0F;
             ems_DriveParam_CTRL.CtrlFlag[3] = 0x07;
 
@@ -410,12 +405,11 @@ namespace VEXI
             ems_DriveParam_CTRL.ParamItemsRec.Speed_Creep.A_jerk = 0;
             ems_DriveParam_CTRL.ParamItemsRec.Speed_Creep.D_jerk = 0;
 
-
-            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Drive_RefMode_Speed.Text, 10) * 10);
-            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RefMode_Accel.Text, 1);
-            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RefMode_Decel.Text, 1);
-            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RefMode_AJerk.Text, 1);
-            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RefMode_DJerk.Text, 1);
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Drive_RefCreep_Speed.Text, 10) * 10);
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.Accel = 0;
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.Decel = 0;
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.A_jerk = 0;
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RefSet.D_jerk = 0;
 
             ems_DriveParam_CTRL.ParamItemsRec.Speed_Emergency.Speed = 0;
             ems_DriveParam_CTRL.ParamItemsRec.Speed_Emergency.Accel = 0;
@@ -441,14 +435,16 @@ namespace VEXI
             ems_DriveParam_CTRL.ParamItemsRec.Speed_Collision.D_jerk = 0;
             ems_DriveParam_CTRL.ParamItemsRec.Speed_Collision.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_Collision_DJerk.Text, 1);
 
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RetryRef.Speed = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Drive_RetryRef_Speed.Text, 10) * 10);
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RetryRef.Accel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RetryRef_Accel.Text, 1);
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RetryRef.Decel = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RetryRef_Decel.Text, 1);
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RetryRef.A_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RetryRef_AJerk.Text, 1);
+            ems_DriveParam_CTRL.ParamItemsRec.Speed_RetryRef.D_jerk = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_RetryRef_DJerk.Text, 1);
 
-            ems_DriveParam_CTRL.ParamItemsRec.MAX_RPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_MAX_RPM.Text, 0);
-            ems_DriveParam_CTRL.ParamItemsRec.CALC_MPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_CALC_MPM.Text, 0);
-            ems_DriveParam_CTRL.ParamItemsRec.CALC_RPM = (UInt16)Global_Class.UTIL_StrToIntDef(ed_Drive_CALC_RPM.Text, 0);
+
             if (cb_Drive_MotorDirection.SelectedIndex >= 0) ems_DriveParam_CTRL.ParamItemsRec.MotorDirection = (byte)cb_Drive_MotorDirection.SelectedIndex;
 
             ems_DriveParam_CTRL.ParamItemsRec.ManualOp_TokeAlarm = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Drive_ManualOp_TokeAlarm.Text, 0) * 10);
-            ems_DriveParam_CTRL.ParamItemsRec.breakOpenContinueTime = (UInt16)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Drive_breakOpenContinueTime.Text, 0) * 100);
 
             ems_DriveParam_CTRL.ParamItemsRec.Invertor_Reference = (Int32)Global_Class.UTIL_StrToIntDef(ed_Invertor_Reference.Text, 1);
             ems_DriveParam_CTRL.ParamItemsRec.Invertor_PositionGain = (UInt32)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_Invertor_PositionGain.Text, 0) * 1000);
@@ -463,6 +459,7 @@ namespace VEXI
             ems_DriveParam_CTRL.ParamItemsRec.CurrentDecel_OffsetTime = (byte)Math.Round(Global_Class.UTIL_StrToFloatDef(ed_CurrentDecel_OffsetTime.Text, 0) * 10);
             ems_DriveParam_CTRL.ParamItemsRec.CurrentDecel_OffsetMaxDistance = (UInt16)Global_Class.UTIL_StrToIntDef(ed_CurrentDecel_OffsetMaxDistance.Text, 0);
             ems_DriveParam_CTRL.ParamItemsRec.CurrentLowSpeedDistance = (UInt16)Global_Class.UTIL_StrToIntDef(ed_CurrentLowSpeedDistance.Text, 0);
+            ems_DriveParam_CTRL.ParamItemsRec.RetryCripRange = (byte)Global_Class.UTIL_StrToIntDef(ed_RetryCripRange.Text, 0);
 
 
             if (!isFileSave)
@@ -506,6 +503,5 @@ namespace VEXI
 
             }
         }
-
     }
 }

@@ -31,7 +31,7 @@ namespace VEXI
         {
             this.components = new System.ComponentModel.Container();
             this.panel92 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnQuickCtrl = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ErrRest = new System.Windows.Forms.Button();
@@ -52,17 +52,10 @@ namespace VEXI
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.edAdmin = new System.Windows.Forms.TextBox();
             this.pnCommSetting = new System.Windows.Forms.Panel();
             this.pnUDPConnectType = new System.Windows.Forms.Panel();
-            this.rb_WCConnect = new System.Windows.Forms.RadioButton();
             this.rb_5Connect = new System.Windows.Forms.RadioButton();
             this.rb_2Connect = new System.Windows.Forms.RadioButton();
-            this.rbCommSerial = new System.Windows.Forms.RadioButton();
-            this.rbCommUDP = new System.Windows.Forms.RadioButton();
-            this.Port_Combox = new System.Windows.Forms.ComboBox();
-            this.edDevIP = new System.Windows.Forms.TextBox();
-            this.btn_RefreshComPort = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbDevType = new System.Windows.Forms.ComboBox();
             this.cbDevID = new System.Windows.Forms.ComboBox();
@@ -72,46 +65,18 @@ namespace VEXI
             this.lblCommStatus = new System.Windows.Forms.Label();
             this.btnCommOpen = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.WatchDog = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItem_Devmonitoring_User = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem_basicSt = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_DevSt = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_DevLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_InvertorInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_OpInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.movexWCSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_DevSet_Admin = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_DetailSetLoad = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_DevBaseConfig = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_DEV_IO_Config = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.menu_CtrlParameter = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_DriveParameter = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_LiftParameter = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_ForParameter = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.menu_RackBase = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_NoRackSet = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_SpecialRackSet = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_RackInitial = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_TotalSetLoad = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_InvertorParameter = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_Download = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Debug = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Developer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_DebugLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_EventLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_RunTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem_Graph = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_ViewCommData = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_AllWIndowsClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.DPTimer = new System.Windows.Forms.Timer(this.components);
             this.Loggingtimer = new System.Windows.Forms.Timer(this.components);
             this.panel92.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnQuickCtrl.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,26 +90,29 @@ namespace VEXI
             this.panel92.AutoScroll = true;
             this.panel92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel92.Controls.Add(this.label1);
+            this.panel92.Controls.Add(this.pictureBox1);
             this.panel92.Controls.Add(this.pnQuickCtrl);
             this.panel92.Controls.Add(this.panel3);
             this.panel92.Controls.Add(this.panel2);
-            this.panel92.Controls.Add(this.label4);
             this.panel92.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel92.Location = new System.Drawing.Point(0, 24);
             this.panel92.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel92.Name = "panel92";
-            this.panel92.Size = new System.Drawing.Size(192, 796);
+            this.panel92.Size = new System.Drawing.Size(288, 1331);
             this.panel92.TabIndex = 17;
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(2, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(9, 10);
-            this.label1.TabIndex = 329;
-            this.label1.Text = "  ";
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::VEXI.Properties.Resources.현대무벡스CI_영문Color;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(248, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // pnQuickCtrl
             // 
@@ -153,7 +121,7 @@ namespace VEXI
             this.pnQuickCtrl.Controls.Add(this.btn_DevMode_SetupOn);
             this.pnQuickCtrl.Controls.Add(this.btn_StopEmergency);
             this.pnQuickCtrl.Controls.Add(this.btn_Stop);
-            this.pnQuickCtrl.Location = new System.Drawing.Point(17, 585);
+            this.pnQuickCtrl.Location = new System.Drawing.Point(5, 653);
             this.pnQuickCtrl.Name = "pnQuickCtrl";
             this.pnQuickCtrl.Size = new System.Drawing.Size(152, 194);
             this.pnQuickCtrl.TabIndex = 328;
@@ -246,17 +214,17 @@ namespace VEXI
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(8, 49);
+            this.panel3.Location = new System.Drawing.Point(8, 52);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 177);
+            this.panel3.Size = new System.Drawing.Size(176, 227);
             this.panel3.TabIndex = 324;
             // 
             // lbl_ResponseDevFW
             // 
             this.lbl_ResponseDevFW.BackColor = System.Drawing.Color.Yellow;
             this.lbl_ResponseDevFW.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ResponseDevFW.Location = new System.Drawing.Point(73, 63);
+            this.lbl_ResponseDevFW.Location = new System.Drawing.Point(73, 102);
             this.lbl_ResponseDevFW.Name = "lbl_ResponseDevFW";
             this.lbl_ResponseDevFW.Size = new System.Drawing.Size(94, 17);
             this.lbl_ResponseDevFW.TabIndex = 348;
@@ -267,7 +235,7 @@ namespace VEXI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 63);
+            this.label8.Location = new System.Drawing.Point(8, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 19);
             this.label8.TabIndex = 347;
@@ -280,7 +248,7 @@ namespace VEXI
             this.lbl_DevErrorCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_DevErrorCode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_DevErrorCode.ForeColor = System.Drawing.Color.White;
-            this.lbl_DevErrorCode.Location = new System.Drawing.Point(7, 150);
+            this.lbl_DevErrorCode.Location = new System.Drawing.Point(7, 197);
             this.lbl_DevErrorCode.Name = "lbl_DevErrorCode";
             this.lbl_DevErrorCode.Size = new System.Drawing.Size(161, 22);
             this.lbl_DevErrorCode.TabIndex = 346;
@@ -295,7 +263,7 @@ namespace VEXI
             this.lbl_DevError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_DevError.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_DevError.ForeColor = System.Drawing.Color.Black;
-            this.lbl_DevError.Location = new System.Drawing.Point(7, 131);
+            this.lbl_DevError.Location = new System.Drawing.Point(7, 178);
             this.lbl_DevError.Name = "lbl_DevError";
             this.lbl_DevError.Size = new System.Drawing.Size(161, 19);
             this.lbl_DevError.TabIndex = 345;
@@ -309,7 +277,7 @@ namespace VEXI
             this.lbl_SetUpMode.BackColor = System.Drawing.Color.Yellow;
             this.lbl_SetUpMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SetUpMode.ForeColor = System.Drawing.Color.Black;
-            this.lbl_SetUpMode.Location = new System.Drawing.Point(90, 105);
+            this.lbl_SetUpMode.Location = new System.Drawing.Point(90, 152);
             this.lbl_SetUpMode.Name = "lbl_SetUpMode";
             this.lbl_SetUpMode.Size = new System.Drawing.Size(77, 24);
             this.lbl_SetUpMode.TabIndex = 344;
@@ -322,7 +290,7 @@ namespace VEXI
             this.lbl_DevForceMode.BackColor = System.Drawing.Color.Red;
             this.lbl_DevForceMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DevForceMode.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_DevForceMode.Location = new System.Drawing.Point(8, 105);
+            this.lbl_DevForceMode.Location = new System.Drawing.Point(8, 152);
             this.lbl_DevForceMode.Name = "lbl_DevForceMode";
             this.lbl_DevForceMode.Size = new System.Drawing.Size(77, 24);
             this.lbl_DevForceMode.TabIndex = 343;
@@ -335,7 +303,7 @@ namespace VEXI
             this.lbl_ReceviceGood.BackColor = System.Drawing.Color.Gray;
             this.lbl_ReceviceGood.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_ReceviceGood.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_ReceviceGood.Location = new System.Drawing.Point(8, 83);
+            this.lbl_ReceviceGood.Location = new System.Drawing.Point(8, 130);
             this.lbl_ReceviceGood.Name = "lbl_ReceviceGood";
             this.lbl_ReceviceGood.Size = new System.Drawing.Size(160, 19);
             this.lbl_ReceviceGood.TabIndex = 342;
@@ -347,7 +315,7 @@ namespace VEXI
             // 
             this.lbl_ResponseDevID.BackColor = System.Drawing.Color.Yellow;
             this.lbl_ResponseDevID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ResponseDevID.Location = new System.Drawing.Point(73, 44);
+            this.lbl_ResponseDevID.Location = new System.Drawing.Point(73, 83);
             this.lbl_ResponseDevID.Name = "lbl_ResponseDevID";
             this.lbl_ResponseDevID.Size = new System.Drawing.Size(94, 17);
             this.lbl_ResponseDevID.TabIndex = 341;
@@ -358,7 +326,7 @@ namespace VEXI
             // 
             this.lbl_ResponseDevType.BackColor = System.Drawing.Color.Yellow;
             this.lbl_ResponseDevType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ResponseDevType.Location = new System.Drawing.Point(73, 25);
+            this.lbl_ResponseDevType.Location = new System.Drawing.Point(73, 64);
             this.lbl_ResponseDevType.Name = "lbl_ResponseDevType";
             this.lbl_ResponseDevType.Size = new System.Drawing.Size(94, 17);
             this.lbl_ResponseDevType.TabIndex = 340;
@@ -370,7 +338,7 @@ namespace VEXI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 44);
+            this.label10.Location = new System.Drawing.Point(8, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 19);
             this.label10.TabIndex = 339;
@@ -381,7 +349,7 @@ namespace VEXI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 25);
+            this.label7.Location = new System.Drawing.Point(8, 64);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 19);
             this.label7.TabIndex = 336;
@@ -396,7 +364,7 @@ namespace VEXI
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(174, 21);
+            this.label9.Size = new System.Drawing.Size(174, 32);
             this.label9.TabIndex = 7;
             this.label9.Tag = "";
             this.label9.Text = "연결 장치 정보";
@@ -407,7 +375,6 @@ namespace VEXI
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.edAdmin);
             this.panel2.Controls.Add(this.pnCommSetting);
             this.panel2.Controls.Add(this.btnCommClose);
             this.panel2.Controls.Add(this.lbl_SelectDev);
@@ -415,62 +382,33 @@ namespace VEXI
             this.panel2.Controls.Add(this.btnCommOpen);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(8, 231);
+            this.panel2.Location = new System.Drawing.Point(8, 287);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(175, 348);
+            this.panel2.Size = new System.Drawing.Size(175, 368);
             this.panel2.TabIndex = 322;
-            // 
-            // edAdmin
-            // 
-            this.edAdmin.Location = new System.Drawing.Point(136, 24);
-            this.edAdmin.Name = "edAdmin";
-            this.edAdmin.Size = new System.Drawing.Size(31, 21);
-            this.edAdmin.TabIndex = 330;
-            this.edAdmin.Visible = false;
-            this.edAdmin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edAdmin_KeyPress);
-            this.edAdmin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.edAdmin_KeyUp);
             // 
             // pnCommSetting
             // 
             this.pnCommSetting.BackColor = System.Drawing.Color.White;
             this.pnCommSetting.Controls.Add(this.pnUDPConnectType);
-            this.pnCommSetting.Controls.Add(this.rbCommSerial);
-            this.pnCommSetting.Controls.Add(this.rbCommUDP);
-            this.pnCommSetting.Controls.Add(this.Port_Combox);
-            this.pnCommSetting.Controls.Add(this.edDevIP);
-            this.pnCommSetting.Controls.Add(this.btn_RefreshComPort);
             this.pnCommSetting.Controls.Add(this.label3);
             this.pnCommSetting.Controls.Add(this.cbDevType);
             this.pnCommSetting.Controls.Add(this.cbDevID);
             this.pnCommSetting.Controls.Add(this.label2);
-            this.pnCommSetting.Location = new System.Drawing.Point(1, 77);
+            this.pnCommSetting.Location = new System.Drawing.Point(1, 137);
             this.pnCommSetting.Name = "pnCommSetting";
-            this.pnCommSetting.Size = new System.Drawing.Size(169, 223);
+            this.pnCommSetting.Size = new System.Drawing.Size(169, 115);
             this.pnCommSetting.TabIndex = 33;
             // 
             // pnUDPConnectType
             // 
-            this.pnUDPConnectType.Controls.Add(this.rb_WCConnect);
             this.pnUDPConnectType.Controls.Add(this.rb_5Connect);
             this.pnUDPConnectType.Controls.Add(this.rb_2Connect);
-            this.pnUDPConnectType.Location = new System.Drawing.Point(5, 103);
+            this.pnUDPConnectType.Location = new System.Drawing.Point(6, 3);
             this.pnUDPConnectType.Name = "pnUDPConnectType";
             this.pnUDPConnectType.Size = new System.Drawing.Size(159, 54);
             this.pnUDPConnectType.TabIndex = 347;
-            // 
-            // rb_WCConnect
-            // 
-            this.rb_WCConnect.AutoSize = true;
-            this.rb_WCConnect.Checked = true;
-            this.rb_WCConnect.Location = new System.Drawing.Point(3, 4);
-            this.rb_WCConnect.Name = "rb_WCConnect";
-            this.rb_WCConnect.Size = new System.Drawing.Size(63, 19);
-            this.rb_WCConnect.TabIndex = 3;
-            this.rb_WCConnect.TabStop = true;
-            this.rb_WCConnect.Text = "지정 IP";
-            this.rb_WCConnect.UseVisualStyleBackColor = true;
-            this.rb_WCConnect.CheckedChanged += new System.EventHandler(this.rb_LanConnect_CheckedChanged);
             // 
             // rb_5Connect
             // 
@@ -494,62 +432,10 @@ namespace VEXI
             this.rb_2Connect.UseVisualStyleBackColor = true;
             this.rb_2Connect.CheckedChanged += new System.EventHandler(this.rb_2Connect_CheckedChanged);
             // 
-            // rbCommSerial
-            // 
-            this.rbCommSerial.AutoSize = true;
-            this.rbCommSerial.Checked = true;
-            this.rbCommSerial.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCommSerial.Location = new System.Drawing.Point(7, 8);
-            this.rbCommSerial.Name = "rbCommSerial";
-            this.rbCommSerial.Size = new System.Drawing.Size(58, 19);
-            this.rbCommSerial.TabIndex = 326;
-            this.rbCommSerial.TabStop = true;
-            this.rbCommSerial.Tag = "1";
-            this.rbCommSerial.Text = "Serial";
-            this.rbCommSerial.UseVisualStyleBackColor = true;
-            // 
-            // rbCommUDP
-            // 
-            this.rbCommUDP.AutoSize = true;
-            this.rbCommUDP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCommUDP.Location = new System.Drawing.Point(7, 57);
-            this.rbCommUDP.Name = "rbCommUDP";
-            this.rbCommUDP.Size = new System.Drawing.Size(49, 19);
-            this.rbCommUDP.TabIndex = 327;
-            this.rbCommUDP.Tag = "2";
-            this.rbCommUDP.Text = "UDP";
-            this.rbCommUDP.UseVisualStyleBackColor = true;
-            // 
-            // Port_Combox
-            // 
-            this.Port_Combox.FormattingEnabled = true;
-            this.Port_Combox.Location = new System.Drawing.Point(18, 29);
-            this.Port_Combox.Name = "Port_Combox";
-            this.Port_Combox.Size = new System.Drawing.Size(93, 23);
-            this.Port_Combox.TabIndex = 328;
-            // 
-            // edDevIP
-            // 
-            this.edDevIP.Location = new System.Drawing.Point(19, 76);
-            this.edDevIP.Name = "edDevIP";
-            this.edDevIP.Size = new System.Drawing.Size(122, 21);
-            this.edDevIP.TabIndex = 329;
-            this.edDevIP.Text = "0.0.0.0";
-            // 
-            // btn_RefreshComPort
-            // 
-            this.btn_RefreshComPort.Image = global::VEXI.Properties.Resources.돋보기;
-            this.btn_RefreshComPort.Location = new System.Drawing.Point(113, 29);
-            this.btn_RefreshComPort.Name = "btn_RefreshComPort";
-            this.btn_RefreshComPort.Size = new System.Drawing.Size(28, 23);
-            this.btn_RefreshComPort.TabIndex = 334;
-            this.btn_RefreshComPort.UseVisualStyleBackColor = true;
-            this.btn_RefreshComPort.Click += new System.EventHandler(this.btn_RefreshComPort_Click);
-            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 169);
+            this.label3.Location = new System.Drawing.Point(89, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 338;
@@ -565,7 +451,7 @@ namespace VEXI
             "RTV",
             "EMS",
             "0xFF"});
-            this.cbDevType.Location = new System.Drawing.Point(10, 185);
+            this.cbDevType.Location = new System.Drawing.Point(11, 76);
             this.cbDevType.Name = "cbDevType";
             this.cbDevType.Size = new System.Drawing.Size(70, 23);
             this.cbDevType.TabIndex = 335;
@@ -657,7 +543,7 @@ namespace VEXI
             "79",
             "80",
             "ANY"});
-            this.cbDevID.Location = new System.Drawing.Point(85, 185);
+            this.cbDevID.Location = new System.Drawing.Point(86, 76);
             this.cbDevID.Name = "cbDevID";
             this.cbDevID.Size = new System.Drawing.Size(61, 23);
             this.cbDevID.TabIndex = 337;
@@ -666,7 +552,7 @@ namespace VEXI
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 169);
+            this.label2.Location = new System.Drawing.Point(17, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 336;
@@ -686,7 +572,7 @@ namespace VEXI
             // lbl_SelectDev
             // 
             this.lbl_SelectDev.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SelectDev.Location = new System.Drawing.Point(4, 49);
+            this.lbl_SelectDev.Location = new System.Drawing.Point(4, 118);
             this.lbl_SelectDev.Name = "lbl_SelectDev";
             this.lbl_SelectDev.Size = new System.Drawing.Size(164, 16);
             this.lbl_SelectDev.TabIndex = 343;
@@ -697,7 +583,7 @@ namespace VEXI
             // 
             this.lblCommStatus.BackColor = System.Drawing.Color.Gray;
             this.lblCommStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommStatus.Location = new System.Drawing.Point(4, 24);
+            this.lblCommStatus.Location = new System.Drawing.Point(4, 93);
             this.lblCommStatus.Name = "lblCommStatus";
             this.lblCommStatus.Size = new System.Drawing.Size(165, 21);
             this.lblCommStatus.TabIndex = 335;
@@ -722,7 +608,7 @@ namespace VEXI
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 21);
+            this.label5.Size = new System.Drawing.Size(173, 34);
             this.label5.TabIndex = 7;
             this.label5.Tag = "";
             this.label5.Text = "통신설정";
@@ -731,18 +617,6 @@ namespace VEXI
             this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             this.label5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label5_MouseUp);
             // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(190, 51);
-            this.label4.TabIndex = 320;
-            this.label4.Text = "VEXI\r\nVer.20260427_15";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // WatchDog
             // 
             this.WatchDog.Interval = 1000;
@@ -750,17 +624,16 @@ namespace VEXI
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItem_Devmonitoring_User,
             this.ToolStripMenuItem,
-            this.MenuItem_DevSet_Admin,
-            this.menu_Debug,
-            this.menu_ViewCommData,
             this.menu_AllWIndowsClose,
             this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(2691, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -769,253 +642,36 @@ namespace VEXI
             // 
             this.MenuItem_Devmonitoring_User.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItem_basicSt,
-            this.menu_DevSt,
-            this.MenuItem_DevLog,
-            this.MenuItem_InvertorInfo,
-            this.MenuItem_OpInfo,
-            this.movexWCSToolStripMenuItem});
+            this.menu_DevSt});
             this.MenuItem_Devmonitoring_User.Name = "MenuItem_Devmonitoring_User";
-            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(110, 20);
+            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(110, 22);
             this.MenuItem_Devmonitoring_User.Text = "A. 장치 모니터링";
             // 
             // MenuItem_basicSt
             // 
             this.MenuItem_basicSt.Name = "MenuItem_basicSt";
-            this.MenuItem_basicSt.Size = new System.Drawing.Size(192, 22);
+            this.MenuItem_basicSt.Size = new System.Drawing.Size(164, 22);
             this.MenuItem_basicSt.Text = "1. 장치 기본정보";
             this.MenuItem_basicSt.Click += new System.EventHandler(this.MenuItem_basicSt_Click);
             // 
             // menu_DevSt
             // 
             this.menu_DevSt.Name = "menu_DevSt";
-            this.menu_DevSt.Size = new System.Drawing.Size(192, 22);
+            this.menu_DevSt.Size = new System.Drawing.Size(164, 22);
             this.menu_DevSt.Text = "2. 장치 상태";
             this.menu_DevSt.Click += new System.EventHandler(this.menu_DevSt_Click);
-            // 
-            // MenuItem_DevLog
-            // 
-            this.MenuItem_DevLog.Name = "MenuItem_DevLog";
-            this.MenuItem_DevLog.Size = new System.Drawing.Size(192, 22);
-            this.MenuItem_DevLog.Text = "3. 장치 알람로그";
-            this.MenuItem_DevLog.Click += new System.EventHandler(this.MenuItem_DevLog_Click);
-            // 
-            // MenuItem_InvertorInfo
-            // 
-            this.MenuItem_InvertorInfo.Name = "MenuItem_InvertorInfo";
-            this.MenuItem_InvertorInfo.Size = new System.Drawing.Size(192, 22);
-            this.MenuItem_InvertorInfo.Text = "4. 장치 인버터 데이터";
-            this.MenuItem_InvertorInfo.Click += new System.EventHandler(this.MenuItem_InvertorInfo_Click);
-            // 
-            // MenuItem_OpInfo
-            // 
-            this.MenuItem_OpInfo.Name = "MenuItem_OpInfo";
-            this.MenuItem_OpInfo.Size = new System.Drawing.Size(192, 22);
-            this.MenuItem_OpInfo.Text = "5. 장치 운행정보";
-            this.MenuItem_OpInfo.Click += new System.EventHandler(this.MenuItem_OpInfo_Click);
-            // 
-            // movexWCSToolStripMenuItem
-            // 
-            this.movexWCSToolStripMenuItem.Name = "movexWCSToolStripMenuItem";
-            this.movexWCSToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.movexWCSToolStripMenuItem.Text = "6. Movex WCS";
-            this.movexWCSToolStripMenuItem.Click += new System.EventHandler(this.movexWCSToolStripMenuItem_Click);
             // 
             // ToolStripMenuItem
             // 
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.ToolStripMenuItem.Text = "B. 장비 운전조작";
             this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
-            // 
-            // MenuItem_DevSet_Admin
-            // 
-            this.MenuItem_DevSet_Admin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_DetailSetLoad,
-            this.menu_TotalSetLoad,
-            this.menu_InvertorParameter,
-            this.Menu_Download});
-            this.MenuItem_DevSet_Admin.Name = "MenuItem_DevSet_Admin";
-            this.MenuItem_DevSet_Admin.Size = new System.Drawing.Size(86, 20);
-            this.MenuItem_DevSet_Admin.Text = "C. 장치 설정";
-            // 
-            // menu_DetailSetLoad
-            // 
-            this.menu_DetailSetLoad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_DevBaseConfig,
-            this.menu_DEV_IO_Config,
-            this.toolStripSeparator1,
-            this.menu_CtrlParameter,
-            this.menu_DriveParameter,
-            this.menu_LiftParameter,
-            this.menu_ForParameter,
-            this.toolStripSeparator2,
-            this.menu_RackBase,
-            this.menu_NoRackSet,
-            this.menu_SpecialRackSet,
-            this.menu_RackInitial});
-            this.menu_DetailSetLoad.Name = "menu_DetailSetLoad";
-            this.menu_DetailSetLoad.Size = new System.Drawing.Size(216, 22);
-            this.menu_DetailSetLoad.Text = "1. 상세 설정";
-            // 
-            // menu_DevBaseConfig
-            // 
-            this.menu_DevBaseConfig.Name = "menu_DevBaseConfig";
-            this.menu_DevBaseConfig.Size = new System.Drawing.Size(231, 22);
-            this.menu_DevBaseConfig.Text = "1-1. 장치 구조 설정";
-            this.menu_DevBaseConfig.Click += new System.EventHandler(this.menu_DevConfig_Click);
-            // 
-            // menu_DEV_IO_Config
-            // 
-            this.menu_DEV_IO_Config.Name = "menu_DEV_IO_Config";
-            this.menu_DEV_IO_Config.Size = new System.Drawing.Size(231, 22);
-            this.menu_DEV_IO_Config.Text = "1-2. MCU 입/출력 설정";
-            this.menu_DEV_IO_Config.Click += new System.EventHandler(this.menu_MCU_IO_Config_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(228, 6);
-            // 
-            // menu_CtrlParameter
-            // 
-            this.menu_CtrlParameter.Name = "menu_CtrlParameter";
-            this.menu_CtrlParameter.Size = new System.Drawing.Size(231, 22);
-            this.menu_CtrlParameter.Text = "1-3. 제어 설정";
-            this.menu_CtrlParameter.Click += new System.EventHandler(this.menu_CtrlParameter_Click);
-            // 
-            // menu_DriveParameter
-            // 
-            this.menu_DriveParameter.Name = "menu_DriveParameter";
-            this.menu_DriveParameter.Size = new System.Drawing.Size(231, 22);
-            this.menu_DriveParameter.Text = "1-4. 주행드라이브 설정";
-            this.menu_DriveParameter.Click += new System.EventHandler(this.menu_DriveParameter_Click);
-            // 
-            // menu_LiftParameter
-            // 
-            this.menu_LiftParameter.Name = "menu_LiftParameter";
-            this.menu_LiftParameter.Size = new System.Drawing.Size(231, 22);
-            this.menu_LiftParameter.Text = "1-5. 승강드라이브 설정";
-            this.menu_LiftParameter.Click += new System.EventHandler(this.menu_LiftParameter_Click);
-            // 
-            // menu_ForParameter
-            // 
-            this.menu_ForParameter.Name = "menu_ForParameter";
-            this.menu_ForParameter.Size = new System.Drawing.Size(231, 22);
-            this.menu_ForParameter.Text = "1.6. 포크드라이브 설정";
-            this.menu_ForParameter.Click += new System.EventHandler(this.menu_ForParameter_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(228, 6);
-            // 
-            // menu_RackBase
-            // 
-            this.menu_RackBase.Name = "menu_RackBase";
-            this.menu_RackBase.Size = new System.Drawing.Size(231, 22);
-            this.menu_RackBase.Text = "1-7. 위치 설정";
-            this.menu_RackBase.Click += new System.EventHandler(this.menu_RackBase_Click);
-            // 
-            // menu_NoRackSet
-            // 
-            this.menu_NoRackSet.Name = "menu_NoRackSet";
-            this.menu_NoRackSet.Size = new System.Drawing.Size(231, 22);
-            this.menu_NoRackSet.Text = "1-8. 금지랙 설정";
-            this.menu_NoRackSet.Click += new System.EventHandler(this.menu_NoRackSet_Click);
-            // 
-            // menu_SpecialRackSet
-            // 
-            this.menu_SpecialRackSet.Name = "menu_SpecialRackSet";
-            this.menu_SpecialRackSet.Size = new System.Drawing.Size(231, 22);
-            this.menu_SpecialRackSet.Text = "1-9. 스페셜랙 설정";
-            this.menu_SpecialRackSet.Click += new System.EventHandler(this.menu_SpecialRackSet_Click);
-            // 
-            // menu_RackInitial
-            // 
-            this.menu_RackInitial.Name = "menu_RackInitial";
-            this.menu_RackInitial.Size = new System.Drawing.Size(231, 22);
-            this.menu_RackInitial.Text = "1-10. 위치 및 랙 설정 초기화";
-            this.menu_RackInitial.Click += new System.EventHandler(this.menu_RackInitial_Click);
-            // 
-            // menu_TotalSetLoad
-            // 
-            this.menu_TotalSetLoad.Name = "menu_TotalSetLoad";
-            this.menu_TotalSetLoad.Size = new System.Drawing.Size(216, 22);
-            this.menu_TotalSetLoad.Text = "2. 일괄 설정";
-            this.menu_TotalSetLoad.Click += new System.EventHandler(this.menu_TotalSetLoad_Click);
-            // 
-            // menu_InvertorParameter
-            // 
-            this.menu_InvertorParameter.Name = "menu_InvertorParameter";
-            this.menu_InvertorParameter.Size = new System.Drawing.Size(216, 22);
-            this.menu_InvertorParameter.Text = "3. 인버터 파라미터";
-            this.menu_InvertorParameter.Click += new System.EventHandler(this.menu_InvertorParameter_Click);
-            // 
-            // Menu_Download
-            // 
-            this.Menu_Download.Name = "Menu_Download";
-            this.Menu_Download.Size = new System.Drawing.Size(216, 22);
-            this.Menu_Download.Text = "4. 장치 프로그램 업데이트";
-            this.Menu_Download.Click += new System.EventHandler(this.Menu_Download_Click);
-            // 
-            // menu_Debug
-            // 
-            this.menu_Debug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_Developer,
-            this.menu_DebugLog,
-            this.menu_EventLog,
-            this.MenuItem_RunTime,
-            this.MenuItem_Graph});
-            this.menu_Debug.Name = "menu_Debug";
-            this.menu_Debug.Size = new System.Drawing.Size(71, 20);
-            this.menu_Debug.Text = "D. Debug";
-            // 
-            // menu_Developer
-            // 
-            this.menu_Developer.Name = "menu_Developer";
-            this.menu_Developer.Size = new System.Drawing.Size(180, 22);
-            this.menu_Developer.Text = "1. Developer";
-            this.menu_Developer.Click += new System.EventHandler(this.menu_Developer_Click);
-            // 
-            // menu_DebugLog
-            // 
-            this.menu_DebugLog.Name = "menu_DebugLog";
-            this.menu_DebugLog.Size = new System.Drawing.Size(180, 22);
-            this.menu_DebugLog.Text = "2. 개발자 로그";
-            this.menu_DebugLog.Click += new System.EventHandler(this.menu_DebugLog_Click);
-            // 
-            // menu_EventLog
-            // 
-            this.menu_EventLog.Name = "menu_EventLog";
-            this.menu_EventLog.Size = new System.Drawing.Size(180, 22);
-            this.menu_EventLog.Text = "3. 이벤트 로그";
-            this.menu_EventLog.Click += new System.EventHandler(this.menu_EventLog_Click);
-            // 
-            // MenuItem_RunTime
-            // 
-            this.MenuItem_RunTime.Name = "MenuItem_RunTime";
-            this.MenuItem_RunTime.Size = new System.Drawing.Size(180, 22);
-            this.MenuItem_RunTime.Text = "4. 단위시간";
-            this.MenuItem_RunTime.Click += new System.EventHandler(this.MenuItem_RunTime_Click);
-            // 
-            // MenuItem_Graph
-            // 
-            this.MenuItem_Graph.Name = "MenuItem_Graph";
-            this.MenuItem_Graph.Size = new System.Drawing.Size(180, 22);
-            this.MenuItem_Graph.Text = "5. 장치 그래프";
-            this.MenuItem_Graph.Click += new System.EventHandler(this.MenuItem_Graph_Click);
-            // 
-            // menu_ViewCommData
-            // 
-            this.menu_ViewCommData.Name = "menu_ViewCommData";
-            this.menu_ViewCommData.Size = new System.Drawing.Size(96, 20);
-            this.menu_ViewCommData.Text = "E. 통신 데이터";
-            this.menu_ViewCommData.Click += new System.EventHandler(this.menu_ViewCommData_Click);
             // 
             // menu_AllWIndowsClose
             // 
             this.menu_AllWIndowsClose.Name = "menu_AllWIndowsClose";
-            this.menu_AllWIndowsClose.Size = new System.Drawing.Size(59, 20);
+            this.menu_AllWIndowsClose.Size = new System.Drawing.Size(59, 22);
             this.menu_AllWIndowsClose.Text = "창 닫기";
             this.menu_AllWIndowsClose.Visible = false;
             this.menu_AllWIndowsClose.Click += new System.EventHandler(this.menu_AllWIndowsClose_Click);
@@ -1023,7 +679,7 @@ namespace VEXI
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(84, 20);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(84, 22);
             this.toolStripMenuItem2.Text = "F. 출력 시험";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -1041,25 +697,24 @@ namespace VEXI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 820);
+            this.ClientSize = new System.Drawing.Size(2691, 1355);
             this.Controls.Add(this.panel92);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1022, 625);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vexi";
+            this.Text = "RTV IO TEST";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel92.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnQuickCtrl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.pnCommSetting.ResumeLayout(false);
-            this.pnCommSetting.PerformLayout();
             this.pnUDPConnectType.ResumeLayout(false);
             this.pnUDPConnectType.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1071,17 +726,11 @@ namespace VEXI
 
         #endregion
         private System.Windows.Forms.Panel panel92;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer WatchDog;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rbCommSerial;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton rbCommUDP;
         private System.Windows.Forms.Button btnCommOpen;
-        private System.Windows.Forms.TextBox edDevIP;
-        private System.Windows.Forms.ComboBox Port_Combox;
-        private System.Windows.Forms.Button btn_RefreshComPort;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbDevID;
         private System.Windows.Forms.Label label2;
@@ -1096,8 +745,6 @@ namespace VEXI
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItem_Devmonitoring_User;
         private System.Windows.Forms.ToolStripMenuItem MenuItem_basicSt;
-        private System.Windows.Forms.ToolStripMenuItem MenuItem_DevLog;
-        private System.Windows.Forms.ToolStripMenuItem menu_Debug;
         private System.Windows.Forms.Label lblCommStatus;
         private System.Windows.Forms.Label lbl_SelectDev;
         private System.Windows.Forms.Timer DPTimer;
@@ -1105,34 +752,14 @@ namespace VEXI
         private System.Windows.Forms.Button btn_StopEmergency;
         private System.Windows.Forms.Button btn_Stop;
         private System.Windows.Forms.Label lbl_DevForceMode;
-        private System.Windows.Forms.ToolStripMenuItem MenuItem_DevSet_Admin;
-        private System.Windows.Forms.ToolStripMenuItem menu_InvertorParameter;
-        private System.Windows.Forms.ToolStripMenuItem Menu_Download;
-        private System.Windows.Forms.ToolStripMenuItem MenuItem_InvertorInfo;
-        private System.Windows.Forms.ToolStripMenuItem MenuItem_OpInfo;
         private System.Windows.Forms.Label lbl_SetUpMode;
         private System.Windows.Forms.Button btnCommClose;
         private System.Windows.Forms.Panel pnCommSetting;
         private System.Windows.Forms.ToolStripMenuItem menu_AllWIndowsClose;
-        private System.Windows.Forms.ToolStripMenuItem menu_TotalSetLoad;
-        private System.Windows.Forms.ToolStripMenuItem menu_DetailSetLoad;
-        private System.Windows.Forms.ToolStripMenuItem menu_DevBaseConfig;
-        private System.Windows.Forms.ToolStripMenuItem menu_DEV_IO_Config;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem menu_CtrlParameter;
-        private System.Windows.Forms.ToolStripMenuItem menu_DriveParameter;
-        private System.Windows.Forms.ToolStripMenuItem menu_LiftParameter;
-        private System.Windows.Forms.ToolStripMenuItem menu_ForParameter;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem menu_RackBase;
-        private System.Windows.Forms.ToolStripMenuItem menu_NoRackSet;
-        private System.Windows.Forms.ToolStripMenuItem menu_SpecialRackSet;
-        private System.Windows.Forms.ToolStripMenuItem menu_ViewCommData;
         private System.Windows.Forms.Panel pnQuickCtrl;
         private System.Windows.Forms.Button btn_DevMode_SetupOn;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.Timer Loggingtimer;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_DevError;
         private System.Windows.Forms.Panel pnUDPConnectType;
         private System.Windows.Forms.RadioButton rb_5Connect;
@@ -1140,17 +767,9 @@ namespace VEXI
         private System.Windows.Forms.Button btn_ErrRest;
         private System.Windows.Forms.Label lbl_DevErrorCode;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripMenuItem MenuItem_Graph;
-        private System.Windows.Forms.RadioButton rb_WCConnect;
-        private System.Windows.Forms.ToolStripMenuItem menu_EventLog;
-        private System.Windows.Forms.ToolStripMenuItem menu_Developer;
-        private System.Windows.Forms.ToolStripMenuItem menu_DebugLog;
-        private System.Windows.Forms.ToolStripMenuItem MenuItem_RunTime;
-        private System.Windows.Forms.TextBox edAdmin;
-        private System.Windows.Forms.ToolStripMenuItem menu_RackInitial;
-        private System.Windows.Forms.ToolStripMenuItem movexWCSToolStripMenuItem;
         private System.Windows.Forms.Label lbl_ResponseDevFW;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

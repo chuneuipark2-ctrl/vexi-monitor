@@ -12,14 +12,64 @@ namespace VEXI
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)// 오버라이드를 하는이유 부모껏도 실행하고 내가 특수하게 정의한 함수도 실행하기 위해서
+                                                       // bool disposing 
+                                                       // true : 사용자가 명시적으로 창을 닫거나 Close()를 호출했을 때입니다. (관리되는 자원 정리)
+                                                       // false: 시스템이 알아서 메모리를 정리할 때(가비지 컬렉터)입니다.
         {
-            if (disposing && (components != null))
+            if (disposing && (components != null)) // disposing  true : 사용자가 직접 정리하라고 시킨 상황인지 확인합니다.
+                                                   // components != null: 화면 위에 올려둔 버튼, 타이머, 통신 컨트롤 같은 '컴포넌트'들이 메모리에 실제로 존재하는지 확인합니다. (없는데 지우려 하면 에러가 나니까요.)
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
+        /*
+         
+이 코드는 C# WinForm 개발에서 아주 중요한 '자원 정리(Dispose) 패턴'입니다. 폼(화면)이나 컨트롤이 닫힐 때, 메모리에서 깔끔하게 사라지도록 도와주는 일종의 '뒷정리 담당자'라고 보시면 됩니다.
+
+핵심적인 부분 위주로 쪼개서 설명해 드릴게요.
+
+1. Dispose 메서드의 역할
+프로그램이 실행되면서 사용한 메모리나 하드웨어 자원(통신 포트, 이미지 등)을 "이제 다 썼으니 반납하겠다"라고 선언하는 함수입니다.
+
+2. 코드 한 줄씩 뜯어보기
+① protected override void Dispose(bool disposing)
+protected: 이 클래스와 이를 상속받은 자식들만 쓸 수 있게 보호하겠다는 뜻입니다.
+
+override: 부모(Form 클래스)가 이미 가지고 있는 Dispose 기능을 내 상황에 맞게 재정의해서 쓰겠다는 뜻입니다.
+
+bool disposing:
+
+true: 사용자가 명시적으로 창을 닫거나 Close()를 호출했을 때입니다. (관리되는 자원 정리)
+
+false: 시스템이 알아서 메모리를 정리할 때(가비지 컬렉터)입니다.
+
+② if (disposing && (components != null))
+disposing: 사용자가 직접 정리하라고 시킨 상황인지 확인합니다.
+
+components != null: 화면 위에 올려둔 버튼, 타이머, 통신 컨트롤 같은 '컴포넌트'들이 메모리에 실제로 존재하는지 확인합니다. (없는데 지우려 하면 에러가 나니까요.)
+
+③ components.Dispose();
+화면에 붙어있던 모든 부품(컴포넌트)들에게 "너희도 이제 퇴근해!"라고 명령하며 자원을 해제합니다.
+
+④ base.Dispose(disposing);
+base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 건 다 챙겼으니, 나머지는 부모님이 알아서 정리해 주세요"라고 넘기는 마지막 단계입니다.
+
+3. 왜 이게 필요한가요? (물류 제어 관점)
+물류 설비 제어 프로그램을 짤 때 특히 중요합니다.
+
+만약 EtherCAT 통신이나 로그 기록용 파일을 열어두었는데, 이 Dispose가 제대로 안 되면 창을 닫아도 배경에서 프로그램이 통신 포트를 계속 꽉 잡고 있게 됩니다.
+
+그러면 프로그램을 다시 켰을 때 "이미 사용 중인 포트입니다"라는 에러가 나거나, 메모리 부족으로 장비가 멈출 수 있습니다.
+
+💡 요약하자면
+이 코드는 "이 화면이 꺼질 때, 연결된 모든 장비와 부품들을 안전하게 끄고 메모리를 비워라"라는 표준 매뉴얼입니다. 보통 Visual Studio가 자동으로 생성해주는 코드이니, 구조체(struct)처럼 직접 다 짤 필요는 없지만 "뒷정리용 코드구나"라는 것만 알고 계시면 됩니다!
+
+추가 팁: 아까 Git 에러 때문에 .vs 폴더 지우는 건 성공하셨나요? 만약 폴더 삭제 후에 프로젝트를 다시 열면 이 Dispose 코드들이 있는 Designer.cs 파일들도 다시 정상적으로 인식될 겁니다. 건투를 빕니다!
+          
+         */
+
 
         #region Windows Form Designer generated code
 
@@ -296,6 +346,9 @@ namespace VEXI
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lbl_DriveRearAreaInfo_RegionSt_0 = new System.Windows.Forms.Label();
+            this.lbl_DriveRearAreaInfo_RegionSt_1 = new System.Windows.Forms.Label();
+            this.lbl_DriveRearAreaInfo_RegionSt_2 = new System.Windows.Forms.Label();
             this.lbl_DriveSt2_2 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.btnBarCodeErrCountInit = new System.Windows.Forms.Button();
@@ -443,130 +496,6 @@ namespace VEXI
             this.lbl_WCS14_StatusRx_Count = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.tc_JobStatus = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label51 = new System.Windows.Forms.Label();
-            this.lv_TaskJob = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbl_TaskJobSt = new System.Windows.Forms.Label();
-            this.lbl_TaskJobNumber = new System.Windows.Forms.Label();
-            this.label383 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label369 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_jobStep = new System.Windows.Forms.Label();
-            this.label371 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_jobSt = new System.Windows.Forms.Label();
-            this.label373 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_To = new System.Windows.Forms.Label();
-            this.label375 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_From = new System.Windows.Forms.Label();
-            this.label377 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_TaskIndex = new System.Windows.Forms.Label();
-            this.lbl_Feed2_Cmd = new System.Windows.Forms.Label();
-            this.lbl_Feed2_Job = new System.Windows.Forms.Label();
-            this.label381 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label350 = new System.Windows.Forms.Label();
-            this.lbl_Feed1_jobStep = new System.Windows.Forms.Label();
-            this.label349 = new System.Windows.Forms.Label();
-            this.lbl_Feed1_jobSt = new System.Windows.Forms.Label();
-            this.label346 = new System.Windows.Forms.Label();
-            this.lbl_Feed1_To = new System.Windows.Forms.Label();
-            this.label345 = new System.Windows.Forms.Label();
-            this.lbl_Feed1_From = new System.Windows.Forms.Label();
-            this.label342 = new System.Windows.Forms.Label();
-            this.lbl_Feed1_TaskIndex = new System.Windows.Forms.Label();
-            this.lbl_Feed1_Cmd = new System.Windows.Forms.Label();
-            this.lbl_Feed1_Job = new System.Windows.Forms.Label();
-            this.label338 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.lbl_Feed2_Station = new System.Windows.Forms.Label();
-            this.lbl_Feed1_Station = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_Station_Direction = new System.Windows.Forms.Label();
-            this.lbl_Feed1_Station_Direction = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_Station_InputCan = new System.Windows.Forms.Label();
-            this.lbl_Feed1_Station_InputCan = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.lbl_Feed2_Station_OutputCan = new System.Windows.Forms.Label();
-            this.lbl_Feed1_Station_OutputCan = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_AreaType_5 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_AreaType_2 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_AreaType_3 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_AreaType_4 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_SensorIndex = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_AreaType = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_AreaNo = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.lbl_DriveFrontAreaInfo_Region_0 = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_NextArea = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_PrevArea = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_MaxSpeed = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_EndMM = new System.Windows.Forms.Label();
-            this.lbl_DriveAreaInfo_StartMM = new System.Windows.Forms.Label();
-            this.lbl_DriveFrontAreaInfo_Region_1 = new System.Windows.Forms.Label();
-            this.lbl_DriveFrontAreaInfo_Region_2 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.lbl_Rear_Collision_AreaType = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.lbl_Rear_Collision_MyAreaType = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.lbl_Front_Collision_MyAreaType = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.lbl_Front_Collision_AreaType = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.lbl_Rear_Collision_RTVID = new System.Windows.Forms.Label();
-            this.lbl_Rear_Collision_StopDistance = new System.Windows.Forms.Label();
-            this.lbl_Rear_Collision_StartDistance = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
-            this.lbl_Rear_Collision_RxTime = new System.Windows.Forms.Label();
-            this.lbl_Rear_Collision_GapDistance = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.lbl_Front_Collision_RTVID = new System.Windows.Forms.Label();
-            this.lbl_Front_Collision_StopDistance = new System.Windows.Forms.Label();
-            this.lbl_Front_Collision_StartDistance = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.lbl_Front_Collision_RxTime = new System.Windows.Forms.Label();
-            this.c = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.lbl_DriveRearAreaInfo_RegionSt_0 = new System.Windows.Forms.Label();
-            this.lbl_DriveRearAreaInfo_RegionSt_1 = new System.Windows.Forms.Label();
-            this.lbl_DriveRearAreaInfo_RegionSt_2 = new System.Windows.Forms.Label();
-            this.lbl_DriveRearAreaInfo_Region_0 = new System.Windows.Forms.Label();
-            this.lbl_DriveRearAreaInfo_Region_1 = new System.Windows.Forms.Label();
-            this.lbl_DriveRearAreaInfo_Region_2 = new System.Windows.Forms.Label();
-            this.lbl_Coll_Start = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.lbl_Coll_Stop = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -585,12 +514,6 @@ namespace VEXI
             this.groupBox5.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.tc_JobStatus.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -1298,7 +1221,6 @@ namespace VEXI
             this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Controls.Add(this.tc_JobStatus);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 156);
             this.panel2.Name = "panel2";
@@ -1312,7 +1234,7 @@ namespace VEXI
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(865, 0);
+            this.panel3.Location = new System.Drawing.Point(418, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(703, 739);
             this.panel3.TabIndex = 58;
@@ -3130,6 +3052,7 @@ namespace VEXI
             this.lbl_IO_Title_14.TabIndex = 669;
             this.lbl_IO_Title_14.Text = "예비";
             this.lbl_IO_Title_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_IO_Title_14.Click += new System.EventHandler(this.lbl_IO_Title_14_Click);
             // 
             // lbl_IO_Title_13
             // 
@@ -3418,6 +3341,7 @@ namespace VEXI
             this.lbl_IO_Title_1.TabIndex = 656;
             this.lbl_IO_Title_1.Text = "DEVICE_FLT";
             this.lbl_IO_Title_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_IO_Title_1.Click += new System.EventHandler(this.lbl_IO_Title_1_Click);
             // 
             // label274
             // 
@@ -3850,7 +3774,7 @@ namespace VEXI
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tabControl1.Location = new System.Drawing.Point(447, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(418, 739);
@@ -3954,10 +3878,40 @@ namespace VEXI
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(410, 713);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "주행 / 피딩";
+            // 
+            // lbl_DriveRearAreaInfo_RegionSt_0
+            // 
+            this.lbl_DriveRearAreaInfo_RegionSt_0.BackColor = System.Drawing.Color.White;
+            this.lbl_DriveRearAreaInfo_RegionSt_0.Location = new System.Drawing.Point(254, 265);
+            this.lbl_DriveRearAreaInfo_RegionSt_0.Name = "lbl_DriveRearAreaInfo_RegionSt_0";
+            this.lbl_DriveRearAreaInfo_RegionSt_0.Size = new System.Drawing.Size(94, 16);
+            this.lbl_DriveRearAreaInfo_RegionSt_0.TabIndex = 780;
+            this.lbl_DriveRearAreaInfo_RegionSt_0.Text = "후방 Region 1";
+            this.lbl_DriveRearAreaInfo_RegionSt_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_DriveRearAreaInfo_RegionSt_1
+            // 
+            this.lbl_DriveRearAreaInfo_RegionSt_1.BackColor = System.Drawing.Color.White;
+            this.lbl_DriveRearAreaInfo_RegionSt_1.Location = new System.Drawing.Point(254, 283);
+            this.lbl_DriveRearAreaInfo_RegionSt_1.Name = "lbl_DriveRearAreaInfo_RegionSt_1";
+            this.lbl_DriveRearAreaInfo_RegionSt_1.Size = new System.Drawing.Size(94, 16);
+            this.lbl_DriveRearAreaInfo_RegionSt_1.TabIndex = 779;
+            this.lbl_DriveRearAreaInfo_RegionSt_1.Text = "후방 Region 2";
+            this.lbl_DriveRearAreaInfo_RegionSt_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_DriveRearAreaInfo_RegionSt_2
+            // 
+            this.lbl_DriveRearAreaInfo_RegionSt_2.BackColor = System.Drawing.Color.White;
+            this.lbl_DriveRearAreaInfo_RegionSt_2.Location = new System.Drawing.Point(254, 301);
+            this.lbl_DriveRearAreaInfo_RegionSt_2.Name = "lbl_DriveRearAreaInfo_RegionSt_2";
+            this.lbl_DriveRearAreaInfo_RegionSt_2.Size = new System.Drawing.Size(94, 16);
+            this.lbl_DriveRearAreaInfo_RegionSt_2.TabIndex = 778;
+            this.lbl_DriveRearAreaInfo_RegionSt_2.Text = "후방 Region 3";
+            this.lbl_DriveRearAreaInfo_RegionSt_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_DriveSt2_2
             // 
@@ -4904,7 +4858,7 @@ namespace VEXI
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(410, 713);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "리모컨";
@@ -5081,7 +5035,7 @@ namespace VEXI
             this.tabPage5.Controls.Add(this.groupBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage5.Size = new System.Drawing.Size(410, 713);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "WCS / 지상반";
@@ -5556,1389 +5510,6 @@ namespace VEXI
             this.label20.Text = "상태 수신 카운트";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tc_JobStatus
-            // 
-            this.tc_JobStatus.Controls.Add(this.tabPage3);
-            this.tc_JobStatus.Controls.Add(this.tabPage4);
-            this.tc_JobStatus.Controls.Add(this.tabPage6);
-            this.tc_JobStatus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tc_JobStatus.Location = new System.Drawing.Point(0, 0);
-            this.tc_JobStatus.Name = "tc_JobStatus";
-            this.tc_JobStatus.SelectedIndex = 0;
-            this.tc_JobStatus.Size = new System.Drawing.Size(447, 739);
-            this.tc_JobStatus.TabIndex = 56;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.label51);
-            this.tabPage3.Controls.Add(this.lv_TaskJob);
-            this.tabPage3.Controls.Add(this.lbl_TaskJobSt);
-            this.tabPage3.Controls.Add(this.lbl_TaskJobNumber);
-            this.tabPage3.Controls.Add(this.label383);
-            this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(439, 713);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "작업 상태";
-            // 
-            // label51
-            // 
-            this.label51.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label51.ForeColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(16, 264);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(409, 22);
-            this.label51.TabIndex = 225;
-            this.label51.Text = "Task 작업 리스트";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lv_TaskJob
-            // 
-            this.lv_TaskJob.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lv_TaskJob.FullRowSelect = true;
-            this.lv_TaskJob.GridLines = true;
-            this.lv_TaskJob.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lv_TaskJob.HideSelection = false;
-            this.lv_TaskJob.Location = new System.Drawing.Point(15, 307);
-            this.lv_TaskJob.Name = "lv_TaskJob";
-            this.lv_TaskJob.Size = new System.Drawing.Size(410, 387);
-            this.lv_TaskJob.TabIndex = 117;
-            this.lv_TaskJob.UseCompatibleStateImageBehavior = false;
-            this.lv_TaskJob.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "No";
-            this.columnHeader1.Width = 28;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "작업";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "수행";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Feeding";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 80;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "목적지";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 100;
-            // 
-            // lbl_TaskJobSt
-            // 
-            this.lbl_TaskJobSt.BackColor = System.Drawing.Color.White;
-            this.lbl_TaskJobSt.Location = new System.Drawing.Point(175, 288);
-            this.lbl_TaskJobSt.Name = "lbl_TaskJobSt";
-            this.lbl_TaskJobSt.Size = new System.Drawing.Size(94, 16);
-            this.lbl_TaskJobSt.TabIndex = 116;
-            this.lbl_TaskJobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_TaskJobNumber
-            // 
-            this.lbl_TaskJobNumber.BackColor = System.Drawing.Color.White;
-            this.lbl_TaskJobNumber.Location = new System.Drawing.Point(81, 288);
-            this.lbl_TaskJobNumber.Name = "lbl_TaskJobNumber";
-            this.lbl_TaskJobNumber.Size = new System.Drawing.Size(94, 16);
-            this.lbl_TaskJobNumber.TabIndex = 115;
-            this.lbl_TaskJobNumber.Text = "XXXXXXXX";
-            this.lbl_TaskJobNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label383
-            // 
-            this.label383.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label383.ForeColor = System.Drawing.Color.White;
-            this.label383.Location = new System.Drawing.Point(16, 288);
-            this.label383.Name = "label383";
-            this.label383.Size = new System.Drawing.Size(63, 16);
-            this.label383.TabIndex = 114;
-            this.label383.Text = "작업";
-            this.label383.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label369);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_jobStep);
-            this.groupBox6.Controls.Add(this.label371);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_jobSt);
-            this.groupBox6.Controls.Add(this.label373);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_To);
-            this.groupBox6.Controls.Add(this.label375);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_From);
-            this.groupBox6.Controls.Add(this.label377);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_TaskIndex);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_Cmd);
-            this.groupBox6.Controls.Add(this.lbl_Feed2_Job);
-            this.groupBox6.Controls.Add(this.label381);
-            this.groupBox6.Location = new System.Drawing.Point(20, 138);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(402, 111);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Feeding 2";
-            // 
-            // label369
-            // 
-            this.label369.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label369.ForeColor = System.Drawing.Color.White;
-            this.label369.Location = new System.Drawing.Point(23, 20);
-            this.label369.Name = "label369";
-            this.label369.Size = new System.Drawing.Size(358, 16);
-            this.label369.TabIndex = 120;
-            this.label369.Text = "반송 및 Task 작업";
-            this.label369.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_jobStep
-            // 
-            this.lbl_Feed2_jobStep.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed2_jobStep.Location = new System.Drawing.Point(88, 89);
-            this.lbl_Feed2_jobStep.Name = "lbl_Feed2_jobStep";
-            this.lbl_Feed2_jobStep.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Feed2_jobStep.TabIndex = 119;
-            this.lbl_Feed2_jobStep.Text = "S11-R2-L12-B12";
-            this.lbl_Feed2_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label371
-            // 
-            this.label371.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label371.ForeColor = System.Drawing.Color.White;
-            this.label371.Location = new System.Drawing.Point(23, 89);
-            this.label371.Name = "label371";
-            this.label371.Size = new System.Drawing.Size(63, 16);
-            this.label371.TabIndex = 118;
-            this.label371.Text = "처리단계";
-            this.label371.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_jobSt
-            // 
-            this.lbl_Feed2_jobSt.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed2_jobSt.Location = new System.Drawing.Point(88, 71);
-            this.lbl_Feed2_jobSt.Name = "lbl_Feed2_jobSt";
-            this.lbl_Feed2_jobSt.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Feed2_jobSt.TabIndex = 117;
-            this.lbl_Feed2_jobSt.Text = "S11-R2-L12-B12";
-            this.lbl_Feed2_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label373
-            // 
-            this.label373.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label373.ForeColor = System.Drawing.Color.White;
-            this.label373.Location = new System.Drawing.Point(23, 71);
-            this.label373.Name = "label373";
-            this.label373.Size = new System.Drawing.Size(63, 16);
-            this.label373.TabIndex = 116;
-            this.label373.Text = "처리상태";
-            this.label373.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_To
-            // 
-            this.lbl_Feed2_To.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed2_To.Location = new System.Drawing.Point(268, 54);
-            this.lbl_Feed2_To.Name = "lbl_Feed2_To";
-            this.lbl_Feed2_To.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Feed2_To.TabIndex = 115;
-            this.lbl_Feed2_To.Text = "S11-R2-L12-B12";
-            this.lbl_Feed2_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label375
-            // 
-            this.label375.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label375.ForeColor = System.Drawing.Color.White;
-            this.label375.Location = new System.Drawing.Point(203, 54);
-            this.label375.Name = "label375";
-            this.label375.Size = new System.Drawing.Size(63, 16);
-            this.label375.TabIndex = 114;
-            this.label375.Text = "TO";
-            this.label375.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_From
-            // 
-            this.lbl_Feed2_From.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed2_From.Location = new System.Drawing.Point(88, 54);
-            this.lbl_Feed2_From.Name = "lbl_Feed2_From";
-            this.lbl_Feed2_From.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Feed2_From.TabIndex = 113;
-            this.lbl_Feed2_From.Text = "S11-R2-L12-B12";
-            this.lbl_Feed2_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label377
-            // 
-            this.label377.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label377.ForeColor = System.Drawing.Color.White;
-            this.label377.Location = new System.Drawing.Point(23, 54);
-            this.label377.Name = "label377";
-            this.label377.Size = new System.Drawing.Size(63, 16);
-            this.label377.TabIndex = 112;
-            this.label377.Text = "FROM";
-            this.label377.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_TaskIndex
-            // 
-            this.lbl_Feed2_TaskIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_TaskIndex.Location = new System.Drawing.Point(182, 37);
-            this.lbl_Feed2_TaskIndex.Name = "lbl_Feed2_TaskIndex";
-            this.lbl_Feed2_TaskIndex.Size = new System.Drawing.Size(31, 16);
-            this.lbl_Feed2_TaskIndex.TabIndex = 111;
-            this.lbl_Feed2_TaskIndex.Text = "- 1";
-            this.lbl_Feed2_TaskIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_Cmd
-            // 
-            this.lbl_Feed2_Cmd.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed2_Cmd.Location = new System.Drawing.Point(213, 37);
-            this.lbl_Feed2_Cmd.Name = "lbl_Feed2_Cmd";
-            this.lbl_Feed2_Cmd.Size = new System.Drawing.Size(168, 16);
-            this.lbl_Feed2_Cmd.TabIndex = 110;
-            this.lbl_Feed2_Cmd.Text = "스테이션 목적지 변경";
-            this.lbl_Feed2_Cmd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_Job
-            // 
-            this.lbl_Feed2_Job.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_Job.Location = new System.Drawing.Point(88, 37);
-            this.lbl_Feed2_Job.Name = "lbl_Feed2_Job";
-            this.lbl_Feed2_Job.Size = new System.Drawing.Size(94, 16);
-            this.lbl_Feed2_Job.TabIndex = 109;
-            this.lbl_Feed2_Job.Text = "XXXXXXXX";
-            this.lbl_Feed2_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label381
-            // 
-            this.label381.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label381.ForeColor = System.Drawing.Color.White;
-            this.label381.Location = new System.Drawing.Point(23, 37);
-            this.label381.Name = "label381";
-            this.label381.Size = new System.Drawing.Size(63, 16);
-            this.label381.TabIndex = 97;
-            this.label381.Text = "작업";
-            this.label381.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label350);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_jobStep);
-            this.groupBox2.Controls.Add(this.label349);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_jobSt);
-            this.groupBox2.Controls.Add(this.label346);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_To);
-            this.groupBox2.Controls.Add(this.label345);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_From);
-            this.groupBox2.Controls.Add(this.label342);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_TaskIndex);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_Cmd);
-            this.groupBox2.Controls.Add(this.lbl_Feed1_Job);
-            this.groupBox2.Controls.Add(this.label338);
-            this.groupBox2.Location = new System.Drawing.Point(20, 18);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(402, 114);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Feeding 1";
-            // 
-            // label350
-            // 
-            this.label350.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label350.ForeColor = System.Drawing.Color.White;
-            this.label350.Location = new System.Drawing.Point(23, 20);
-            this.label350.Name = "label350";
-            this.label350.Size = new System.Drawing.Size(358, 16);
-            this.label350.TabIndex = 120;
-            this.label350.Text = "반송 및 Task 작업";
-            this.label350.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_jobStep
-            // 
-            this.lbl_Feed1_jobStep.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_jobStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed1_jobStep.Location = new System.Drawing.Point(88, 89);
-            this.lbl_Feed1_jobStep.Name = "lbl_Feed1_jobStep";
-            this.lbl_Feed1_jobStep.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Feed1_jobStep.TabIndex = 119;
-            this.lbl_Feed1_jobStep.Text = "S11-R2-L12-B12";
-            this.lbl_Feed1_jobStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label349
-            // 
-            this.label349.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label349.ForeColor = System.Drawing.Color.White;
-            this.label349.Location = new System.Drawing.Point(23, 89);
-            this.label349.Name = "label349";
-            this.label349.Size = new System.Drawing.Size(63, 16);
-            this.label349.TabIndex = 118;
-            this.label349.Text = "처리단계";
-            this.label349.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_jobSt
-            // 
-            this.lbl_Feed1_jobSt.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_jobSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed1_jobSt.Location = new System.Drawing.Point(88, 71);
-            this.lbl_Feed1_jobSt.Name = "lbl_Feed1_jobSt";
-            this.lbl_Feed1_jobSt.Size = new System.Drawing.Size(293, 16);
-            this.lbl_Feed1_jobSt.TabIndex = 117;
-            this.lbl_Feed1_jobSt.Text = "S11-R2-L12-B12";
-            this.lbl_Feed1_jobSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label346
-            // 
-            this.label346.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label346.ForeColor = System.Drawing.Color.White;
-            this.label346.Location = new System.Drawing.Point(23, 71);
-            this.label346.Name = "label346";
-            this.label346.Size = new System.Drawing.Size(63, 16);
-            this.label346.TabIndex = 116;
-            this.label346.Text = "처리상태";
-            this.label346.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_To
-            // 
-            this.lbl_Feed1_To.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed1_To.Location = new System.Drawing.Point(268, 54);
-            this.lbl_Feed1_To.Name = "lbl_Feed1_To";
-            this.lbl_Feed1_To.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Feed1_To.TabIndex = 115;
-            this.lbl_Feed1_To.Text = "S11-R2-L12-B12";
-            this.lbl_Feed1_To.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label345
-            // 
-            this.label345.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label345.ForeColor = System.Drawing.Color.White;
-            this.label345.Location = new System.Drawing.Point(203, 54);
-            this.label345.Name = "label345";
-            this.label345.Size = new System.Drawing.Size(63, 16);
-            this.label345.TabIndex = 114;
-            this.label345.Text = "TO";
-            this.label345.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_From
-            // 
-            this.lbl_Feed1_From.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed1_From.Location = new System.Drawing.Point(88, 54);
-            this.lbl_Feed1_From.Name = "lbl_Feed1_From";
-            this.lbl_Feed1_From.Size = new System.Drawing.Size(113, 16);
-            this.lbl_Feed1_From.TabIndex = 113;
-            this.lbl_Feed1_From.Text = "S11-R2-L12-B12";
-            this.lbl_Feed1_From.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label342
-            // 
-            this.label342.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label342.ForeColor = System.Drawing.Color.White;
-            this.label342.Location = new System.Drawing.Point(23, 54);
-            this.label342.Name = "label342";
-            this.label342.Size = new System.Drawing.Size(63, 16);
-            this.label342.TabIndex = 112;
-            this.label342.Text = "FROM";
-            this.label342.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_TaskIndex
-            // 
-            this.lbl_Feed1_TaskIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_TaskIndex.Location = new System.Drawing.Point(182, 37);
-            this.lbl_Feed1_TaskIndex.Name = "lbl_Feed1_TaskIndex";
-            this.lbl_Feed1_TaskIndex.Size = new System.Drawing.Size(31, 16);
-            this.lbl_Feed1_TaskIndex.TabIndex = 111;
-            this.lbl_Feed1_TaskIndex.Text = "- 1";
-            this.lbl_Feed1_TaskIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_Cmd
-            // 
-            this.lbl_Feed1_Cmd.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_Cmd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Feed1_Cmd.Location = new System.Drawing.Point(213, 37);
-            this.lbl_Feed1_Cmd.Name = "lbl_Feed1_Cmd";
-            this.lbl_Feed1_Cmd.Size = new System.Drawing.Size(168, 16);
-            this.lbl_Feed1_Cmd.TabIndex = 110;
-            this.lbl_Feed1_Cmd.Text = "스테이션 목적지 변경";
-            this.lbl_Feed1_Cmd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_Job
-            // 
-            this.lbl_Feed1_Job.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_Job.Location = new System.Drawing.Point(88, 37);
-            this.lbl_Feed1_Job.Name = "lbl_Feed1_Job";
-            this.lbl_Feed1_Job.Size = new System.Drawing.Size(94, 16);
-            this.lbl_Feed1_Job.TabIndex = 109;
-            this.lbl_Feed1_Job.Text = "XXXXXXXX";
-            this.lbl_Feed1_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label338
-            // 
-            this.label338.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label338.ForeColor = System.Drawing.Color.White;
-            this.label338.Location = new System.Drawing.Point(23, 37);
-            this.label338.Name = "label338";
-            this.label338.Size = new System.Drawing.Size(63, 16);
-            this.label338.TabIndex = 97;
-            this.label338.Text = "작업";
-            this.label338.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.lbl_Coll_Start);
-            this.tabPage4.Controls.Add(this.label65);
-            this.tabPage4.Controls.Add(this.lbl_Coll_Stop);
-            this.tabPage4.Controls.Add(this.label101);
-            this.tabPage4.Controls.Add(this.lbl_DriveRearAreaInfo_Region_0);
-            this.tabPage4.Controls.Add(this.lbl_DriveRearAreaInfo_Region_1);
-            this.tabPage4.Controls.Add(this.lbl_DriveRearAreaInfo_Region_2);
-            this.tabPage4.Controls.Add(this.lbl_Feed2_Station);
-            this.tabPage4.Controls.Add(this.lbl_Feed1_Station);
-            this.tabPage4.Controls.Add(this.label92);
-            this.tabPage4.Controls.Add(this.lbl_Feed2_Station_Direction);
-            this.tabPage4.Controls.Add(this.lbl_Feed1_Station_Direction);
-            this.tabPage4.Controls.Add(this.label80);
-            this.tabPage4.Controls.Add(this.label81);
-            this.tabPage4.Controls.Add(this.lbl_Feed2_Station_InputCan);
-            this.tabPage4.Controls.Add(this.lbl_Feed1_Station_InputCan);
-            this.tabPage4.Controls.Add(this.label84);
-            this.tabPage4.Controls.Add(this.label85);
-            this.tabPage4.Controls.Add(this.label86);
-            this.tabPage4.Controls.Add(this.lbl_Feed2_Station_OutputCan);
-            this.tabPage4.Controls.Add(this.lbl_Feed1_Station_OutputCan);
-            this.tabPage4.Controls.Add(this.label89);
-            this.tabPage4.Controls.Add(this.label37);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_AreaType_5);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_AreaType_2);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_AreaType_3);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_AreaType_4);
-            this.tabPage4.Controls.Add(this.label60);
-            this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_SensorIndex);
-            this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_AreaType);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_AreaNo);
-            this.tabPage4.Controls.Add(this.label28);
-            this.tabPage4.Controls.Add(this.label35);
-            this.tabPage4.Controls.Add(this.lbl_DriveFrontAreaInfo_Region_0);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_NextArea);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_PrevArea);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_MaxSpeed);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_EndMM);
-            this.tabPage4.Controls.Add(this.lbl_DriveAreaInfo_StartMM);
-            this.tabPage4.Controls.Add(this.lbl_DriveFrontAreaInfo_Region_1);
-            this.tabPage4.Controls.Add(this.lbl_DriveFrontAreaInfo_Region_2);
-            this.tabPage4.Controls.Add(this.label68);
-            this.tabPage4.Controls.Add(this.label69);
-            this.tabPage4.Controls.Add(this.label72);
-            this.tabPage4.Controls.Add(this.label73);
-            this.tabPage4.Controls.Add(this.label78);
-            this.tabPage4.Controls.Add(this.label79);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(439, 713);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "구간 & 스테이션 설정정보";
-            // 
-            // lbl_Feed2_Station
-            // 
-            this.lbl_Feed2_Station.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_Station.Location = new System.Drawing.Point(282, 429);
-            this.lbl_Feed2_Station.Name = "lbl_Feed2_Station";
-            this.lbl_Feed2_Station.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed2_Station.TabIndex = 268;
-            this.lbl_Feed2_Station.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_Station
-            // 
-            this.lbl_Feed1_Station.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_Station.Location = new System.Drawing.Point(153, 429);
-            this.lbl_Feed1_Station.Name = "lbl_Feed1_Station";
-            this.lbl_Feed1_Station.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed1_Station.TabIndex = 267;
-            this.lbl_Feed1_Station.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label92
-            // 
-            this.label92.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label92.ForeColor = System.Drawing.Color.White;
-            this.label92.Location = new System.Drawing.Point(39, 429);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(110, 16);
-            this.label92.TabIndex = 266;
-            this.label92.Text = "Station No";
-            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_Station_Direction
-            // 
-            this.lbl_Feed2_Station_Direction.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_Station_Direction.Location = new System.Drawing.Point(282, 447);
-            this.lbl_Feed2_Station_Direction.Name = "lbl_Feed2_Station_Direction";
-            this.lbl_Feed2_Station_Direction.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed2_Station_Direction.TabIndex = 265;
-            this.lbl_Feed2_Station_Direction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_Station_Direction
-            // 
-            this.lbl_Feed1_Station_Direction.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_Station_Direction.Location = new System.Drawing.Point(153, 447);
-            this.lbl_Feed1_Station_Direction.Name = "lbl_Feed1_Station_Direction";
-            this.lbl_Feed1_Station_Direction.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed1_Station_Direction.TabIndex = 264;
-            this.lbl_Feed1_Station_Direction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label80
-            // 
-            this.label80.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label80.ForeColor = System.Drawing.Color.White;
-            this.label80.Location = new System.Drawing.Point(39, 447);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(110, 16);
-            this.label80.TabIndex = 263;
-            this.label80.Text = "방향";
-            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label81
-            // 
-            this.label81.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label81.ForeColor = System.Drawing.Color.White;
-            this.label81.Location = new System.Drawing.Point(39, 409);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(110, 18);
-            this.label81.TabIndex = 262;
-            this.label81.Text = "Feeding";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_Station_InputCan
-            // 
-            this.lbl_Feed2_Station_InputCan.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_Station_InputCan.Location = new System.Drawing.Point(282, 465);
-            this.lbl_Feed2_Station_InputCan.Name = "lbl_Feed2_Station_InputCan";
-            this.lbl_Feed2_Station_InputCan.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed2_Station_InputCan.TabIndex = 261;
-            this.lbl_Feed2_Station_InputCan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_Station_InputCan
-            // 
-            this.lbl_Feed1_Station_InputCan.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_Station_InputCan.Location = new System.Drawing.Point(153, 465);
-            this.lbl_Feed1_Station_InputCan.Name = "lbl_Feed1_Station_InputCan";
-            this.lbl_Feed1_Station_InputCan.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed1_Station_InputCan.TabIndex = 260;
-            this.lbl_Feed1_Station_InputCan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label84
-            // 
-            this.label84.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label84.ForeColor = System.Drawing.Color.White;
-            this.label84.Location = new System.Drawing.Point(39, 465);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(110, 16);
-            this.label84.TabIndex = 259;
-            this.label84.Text = "입고 가능";
-            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label85
-            // 
-            this.label85.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(282, 409);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(125, 18);
-            this.label85.TabIndex = 258;
-            this.label85.Text = "Feeding 2";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label86
-            // 
-            this.label86.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label86.ForeColor = System.Drawing.Color.White;
-            this.label86.Location = new System.Drawing.Point(153, 409);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(125, 18);
-            this.label86.TabIndex = 257;
-            this.label86.Text = "Feeding 1";
-            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed2_Station_OutputCan
-            // 
-            this.lbl_Feed2_Station_OutputCan.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed2_Station_OutputCan.Location = new System.Drawing.Point(282, 483);
-            this.lbl_Feed2_Station_OutputCan.Name = "lbl_Feed2_Station_OutputCan";
-            this.lbl_Feed2_Station_OutputCan.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed2_Station_OutputCan.TabIndex = 256;
-            this.lbl_Feed2_Station_OutputCan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Feed1_Station_OutputCan
-            // 
-            this.lbl_Feed1_Station_OutputCan.BackColor = System.Drawing.Color.White;
-            this.lbl_Feed1_Station_OutputCan.Location = new System.Drawing.Point(153, 483);
-            this.lbl_Feed1_Station_OutputCan.Name = "lbl_Feed1_Station_OutputCan";
-            this.lbl_Feed1_Station_OutputCan.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Feed1_Station_OutputCan.TabIndex = 255;
-            this.lbl_Feed1_Station_OutputCan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label89
-            // 
-            this.label89.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(39, 483);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(110, 16);
-            this.label89.TabIndex = 254;
-            this.label89.Text = "출고 가능";
-            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label37
-            // 
-            this.label37.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(39, 385);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(368, 22);
-            this.label37.TabIndex = 253;
-            this.label37.Text = "현재 주행 위치 Station 설정 정보";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_AreaType_5
-            // 
-            this.lbl_DriveAreaInfo_AreaType_5.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_AreaType_5.Location = new System.Drawing.Point(214, 336);
-            this.lbl_DriveAreaInfo_AreaType_5.Name = "lbl_DriveAreaInfo_AreaType_5";
-            this.lbl_DriveAreaInfo_AreaType_5.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_AreaType_5.TabIndex = 252;
-            this.lbl_DriveAreaInfo_AreaType_5.Text = "후진 감속 센서";
-            this.lbl_DriveAreaInfo_AreaType_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_AreaType_2
-            // 
-            this.lbl_DriveAreaInfo_AreaType_2.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_AreaType_2.Location = new System.Drawing.Point(214, 282);
-            this.lbl_DriveAreaInfo_AreaType_2.Name = "lbl_DriveAreaInfo_AreaType_2";
-            this.lbl_DriveAreaInfo_AreaType_2.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_AreaType_2.TabIndex = 251;
-            this.lbl_DriveAreaInfo_AreaType_2.Text = "정지 거리 센서";
-            this.lbl_DriveAreaInfo_AreaType_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_AreaType_3
-            // 
-            this.lbl_DriveAreaInfo_AreaType_3.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_AreaType_3.Location = new System.Drawing.Point(214, 300);
-            this.lbl_DriveAreaInfo_AreaType_3.Name = "lbl_DriveAreaInfo_AreaType_3";
-            this.lbl_DriveAreaInfo_AreaType_3.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_AreaType_3.TabIndex = 250;
-            this.lbl_DriveAreaInfo_AreaType_3.Text = "감속 거리 센서";
-            this.lbl_DriveAreaInfo_AreaType_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_AreaType_4
-            // 
-            this.lbl_DriveAreaInfo_AreaType_4.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_AreaType_4.Location = new System.Drawing.Point(214, 318);
-            this.lbl_DriveAreaInfo_AreaType_4.Name = "lbl_DriveAreaInfo_AreaType_4";
-            this.lbl_DriveAreaInfo_AreaType_4.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_AreaType_4.TabIndex = 249;
-            this.lbl_DriveAreaInfo_AreaType_4.Text = "전진 감속 센서";
-            this.lbl_DriveAreaInfo_AreaType_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label60
-            // 
-            this.label60.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label60.ForeColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(39, 282);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(173, 70);
-            this.label60.TabIndex = 248;
-            this.label60.Text = "센서 사용유무";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 22);
-            this.label1.TabIndex = 247;
-            this.label1.Text = "현재 주행 구간 설정정보";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_SensorIndex
-            // 
-            this.lbl_DriveAreaInfo_SensorIndex.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_SensorIndex.Location = new System.Drawing.Point(214, 210);
-            this.lbl_DriveAreaInfo_SensorIndex.Name = "lbl_DriveAreaInfo_SensorIndex";
-            this.lbl_DriveAreaInfo_SensorIndex.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_SensorIndex.TabIndex = 246;
-            this.lbl_DriveAreaInfo_SensorIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(39, 210);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(173, 16);
-            this.label21.TabIndex = 245;
-            this.label21.Text = "에어리어";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_AreaType
-            // 
-            this.lbl_DriveAreaInfo_AreaType.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_AreaType.Location = new System.Drawing.Point(214, 66);
-            this.lbl_DriveAreaInfo_AreaType.Name = "lbl_DriveAreaInfo_AreaType";
-            this.lbl_DriveAreaInfo_AreaType.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_AreaType.TabIndex = 244;
-            this.lbl_DriveAreaInfo_AreaType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_AreaNo
-            // 
-            this.lbl_DriveAreaInfo_AreaNo.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_AreaNo.Location = new System.Drawing.Point(214, 48);
-            this.lbl_DriveAreaInfo_AreaNo.Name = "lbl_DriveAreaInfo_AreaNo";
-            this.lbl_DriveAreaInfo_AreaNo.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_AreaNo.TabIndex = 243;
-            this.lbl_DriveAreaInfo_AreaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(39, 66);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(173, 16);
-            this.label28.TabIndex = 242;
-            this.label28.Text = "구간 타입";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label35
-            // 
-            this.label35.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(39, 48);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(173, 16);
-            this.label35.TabIndex = 241;
-            this.label35.Text = "구간 번호";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveFrontAreaInfo_Region_0
-            // 
-            this.lbl_DriveFrontAreaInfo_Region_0.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveFrontAreaInfo_Region_0.Location = new System.Drawing.Point(214, 228);
-            this.lbl_DriveFrontAreaInfo_Region_0.Name = "lbl_DriveFrontAreaInfo_Region_0";
-            this.lbl_DriveFrontAreaInfo_Region_0.Size = new System.Drawing.Size(91, 16);
-            this.lbl_DriveFrontAreaInfo_Region_0.TabIndex = 240;
-            this.lbl_DriveFrontAreaInfo_Region_0.Text = "전방 Region 1";
-            this.lbl_DriveFrontAreaInfo_Region_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_NextArea
-            // 
-            this.lbl_DriveAreaInfo_NextArea.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_NextArea.Location = new System.Drawing.Point(214, 192);
-            this.lbl_DriveAreaInfo_NextArea.Name = "lbl_DriveAreaInfo_NextArea";
-            this.lbl_DriveAreaInfo_NextArea.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_NextArea.TabIndex = 239;
-            this.lbl_DriveAreaInfo_NextArea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_PrevArea
-            // 
-            this.lbl_DriveAreaInfo_PrevArea.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_PrevArea.Location = new System.Drawing.Point(214, 174);
-            this.lbl_DriveAreaInfo_PrevArea.Name = "lbl_DriveAreaInfo_PrevArea";
-            this.lbl_DriveAreaInfo_PrevArea.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_PrevArea.TabIndex = 238;
-            this.lbl_DriveAreaInfo_PrevArea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_MaxSpeed
-            // 
-            this.lbl_DriveAreaInfo_MaxSpeed.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_MaxSpeed.Location = new System.Drawing.Point(214, 120);
-            this.lbl_DriveAreaInfo_MaxSpeed.Name = "lbl_DriveAreaInfo_MaxSpeed";
-            this.lbl_DriveAreaInfo_MaxSpeed.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_MaxSpeed.TabIndex = 237;
-            this.lbl_DriveAreaInfo_MaxSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_EndMM
-            // 
-            this.lbl_DriveAreaInfo_EndMM.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_EndMM.Location = new System.Drawing.Point(214, 102);
-            this.lbl_DriveAreaInfo_EndMM.Name = "lbl_DriveAreaInfo_EndMM";
-            this.lbl_DriveAreaInfo_EndMM.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_EndMM.TabIndex = 236;
-            this.lbl_DriveAreaInfo_EndMM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveAreaInfo_StartMM
-            // 
-            this.lbl_DriveAreaInfo_StartMM.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveAreaInfo_StartMM.Location = new System.Drawing.Point(214, 84);
-            this.lbl_DriveAreaInfo_StartMM.Name = "lbl_DriveAreaInfo_StartMM";
-            this.lbl_DriveAreaInfo_StartMM.Size = new System.Drawing.Size(125, 16);
-            this.lbl_DriveAreaInfo_StartMM.TabIndex = 235;
-            this.lbl_DriveAreaInfo_StartMM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveFrontAreaInfo_Region_1
-            // 
-            this.lbl_DriveFrontAreaInfo_Region_1.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveFrontAreaInfo_Region_1.Location = new System.Drawing.Point(214, 246);
-            this.lbl_DriveFrontAreaInfo_Region_1.Name = "lbl_DriveFrontAreaInfo_Region_1";
-            this.lbl_DriveFrontAreaInfo_Region_1.Size = new System.Drawing.Size(91, 16);
-            this.lbl_DriveFrontAreaInfo_Region_1.TabIndex = 234;
-            this.lbl_DriveFrontAreaInfo_Region_1.Text = "전방 Region 2";
-            this.lbl_DriveFrontAreaInfo_Region_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveFrontAreaInfo_Region_2
-            // 
-            this.lbl_DriveFrontAreaInfo_Region_2.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveFrontAreaInfo_Region_2.Location = new System.Drawing.Point(214, 264);
-            this.lbl_DriveFrontAreaInfo_Region_2.Name = "lbl_DriveFrontAreaInfo_Region_2";
-            this.lbl_DriveFrontAreaInfo_Region_2.Size = new System.Drawing.Size(91, 16);
-            this.lbl_DriveFrontAreaInfo_Region_2.TabIndex = 233;
-            this.lbl_DriveFrontAreaInfo_Region_2.Text = "전방 Region 3";
-            this.lbl_DriveFrontAreaInfo_Region_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label68
-            // 
-            this.label68.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label68.ForeColor = System.Drawing.Color.White;
-            this.label68.Location = new System.Drawing.Point(39, 228);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(173, 52);
-            this.label68.TabIndex = 232;
-            this.label68.Text = "감지영역 선택";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label69
-            // 
-            this.label69.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label69.ForeColor = System.Drawing.Color.White;
-            this.label69.Location = new System.Drawing.Point(39, 192);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(173, 16);
-            this.label69.TabIndex = 231;
-            this.label69.Text = "다음구간";
-            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label72
-            // 
-            this.label72.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label72.ForeColor = System.Drawing.Color.White;
-            this.label72.Location = new System.Drawing.Point(39, 174);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(173, 16);
-            this.label72.TabIndex = 230;
-            this.label72.Text = "이전구간";
-            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label73
-            // 
-            this.label73.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label73.ForeColor = System.Drawing.Color.White;
-            this.label73.Location = new System.Drawing.Point(39, 120);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(173, 16);
-            this.label73.TabIndex = 229;
-            this.label73.Text = "주행속도(m/min)";
-            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label78
-            // 
-            this.label78.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label78.ForeColor = System.Drawing.Color.White;
-            this.label78.Location = new System.Drawing.Point(39, 102);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(173, 16);
-            this.label78.TabIndex = 228;
-            this.label78.Text = "종료위치(mm)";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label79
-            // 
-            this.label79.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label79.ForeColor = System.Drawing.Color.White;
-            this.label79.Location = new System.Drawing.Point(39, 84);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(173, 16);
-            this.label79.TabIndex = 227;
-            this.label79.Text = "시작위치(mm)";
-            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_AreaType);
-            this.tabPage6.Controls.Add(this.label102);
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_MyAreaType);
-            this.tabPage6.Controls.Add(this.label119);
-            this.tabPage6.Controls.Add(this.lbl_Front_Collision_MyAreaType);
-            this.tabPage6.Controls.Add(this.label107);
-            this.tabPage6.Controls.Add(this.lbl_Front_Collision_AreaType);
-            this.tabPage6.Controls.Add(this.label91);
-            this.tabPage6.Controls.Add(this.label104);
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_RTVID);
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_StopDistance);
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_StartDistance);
-            this.tabPage6.Controls.Add(this.label110);
-            this.tabPage6.Controls.Add(this.label111);
-            this.tabPage6.Controls.Add(this.label112);
-            this.tabPage6.Controls.Add(this.label115);
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_RxTime);
-            this.tabPage6.Controls.Add(this.lbl_Rear_Collision_GapDistance);
-            this.tabPage6.Controls.Add(this.label121);
-            this.tabPage6.Controls.Add(this.label100);
-            this.tabPage6.Controls.Add(this.lbl_Front_Collision_RTVID);
-            this.tabPage6.Controls.Add(this.lbl_Front_Collision_StopDistance);
-            this.tabPage6.Controls.Add(this.lbl_Front_Collision_StartDistance);
-            this.tabPage6.Controls.Add(this.label87);
-            this.tabPage6.Controls.Add(this.label88);
-            this.tabPage6.Controls.Add(this.label90);
-            this.tabPage6.Controls.Add(this.label93);
-            this.tabPage6.Controls.Add(this.lbl_Front_Collision_RxTime);
-            this.tabPage6.Controls.Add(this.c);
-            this.tabPage6.Controls.Add(this.label83);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(439, 713);
-            this.tabPage6.TabIndex = 2;
-            this.tabPage6.Text = "충돌방지정보";
-            // 
-            // lbl_Rear_Collision_AreaType
-            // 
-            this.lbl_Rear_Collision_AreaType.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_AreaType.Location = new System.Drawing.Point(264, 310);
-            this.lbl_Rear_Collision_AreaType.Name = "lbl_Rear_Collision_AreaType";
-            this.lbl_Rear_Collision_AreaType.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_AreaType.TabIndex = 287;
-            this.lbl_Rear_Collision_AreaType.Text = "직선";
-            this.lbl_Rear_Collision_AreaType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label102
-            // 
-            this.label102.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label102.ForeColor = System.Drawing.Color.White;
-            this.label102.Location = new System.Drawing.Point(126, 310);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(135, 16);
-            this.label102.TabIndex = 286;
-            this.label102.Text = "내 주행구간";
-            this.label102.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Rear_Collision_MyAreaType
-            // 
-            this.lbl_Rear_Collision_MyAreaType.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_MyAreaType.Location = new System.Drawing.Point(264, 328);
-            this.lbl_Rear_Collision_MyAreaType.Name = "lbl_Rear_Collision_MyAreaType";
-            this.lbl_Rear_Collision_MyAreaType.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_MyAreaType.TabIndex = 285;
-            this.lbl_Rear_Collision_MyAreaType.Text = "직선";
-            this.lbl_Rear_Collision_MyAreaType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label119
-            // 
-            this.label119.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label119.ForeColor = System.Drawing.Color.White;
-            this.label119.Location = new System.Drawing.Point(126, 328);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(135, 16);
-            this.label119.TabIndex = 284;
-            this.label119.Text = "후방대차 주행구간";
-            this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Front_Collision_MyAreaType
-            // 
-            this.lbl_Front_Collision_MyAreaType.BackColor = System.Drawing.Color.White;
-            this.lbl_Front_Collision_MyAreaType.Location = new System.Drawing.Point(264, 157);
-            this.lbl_Front_Collision_MyAreaType.Name = "lbl_Front_Collision_MyAreaType";
-            this.lbl_Front_Collision_MyAreaType.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Front_Collision_MyAreaType.TabIndex = 283;
-            this.lbl_Front_Collision_MyAreaType.Text = "직선";
-            this.lbl_Front_Collision_MyAreaType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label107
-            // 
-            this.label107.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label107.ForeColor = System.Drawing.Color.White;
-            this.label107.Location = new System.Drawing.Point(126, 157);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(135, 16);
-            this.label107.TabIndex = 282;
-            this.label107.Text = "내 주행구간";
-            this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Front_Collision_AreaType
-            // 
-            this.lbl_Front_Collision_AreaType.BackColor = System.Drawing.Color.White;
-            this.lbl_Front_Collision_AreaType.Location = new System.Drawing.Point(264, 139);
-            this.lbl_Front_Collision_AreaType.Name = "lbl_Front_Collision_AreaType";
-            this.lbl_Front_Collision_AreaType.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Front_Collision_AreaType.TabIndex = 279;
-            this.lbl_Front_Collision_AreaType.Text = "곡선";
-            this.lbl_Front_Collision_AreaType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label91
-            // 
-            this.label91.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label91.ForeColor = System.Drawing.Color.White;
-            this.label91.Location = new System.Drawing.Point(126, 139);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(135, 16);
-            this.label91.TabIndex = 278;
-            this.label91.Text = "전방대차 주행구간";
-            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label104
-            // 
-            this.label104.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label104.ForeColor = System.Drawing.Color.White;
-            this.label104.Location = new System.Drawing.Point(126, 220);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(135, 16);
-            this.label104.TabIndex = 273;
-            this.label104.Text = "후방RTV 호기번호";
-            this.label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Rear_Collision_RTVID
-            // 
-            this.lbl_Rear_Collision_RTVID.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_RTVID.Location = new System.Drawing.Point(264, 220);
-            this.lbl_Rear_Collision_RTVID.Name = "lbl_Rear_Collision_RTVID";
-            this.lbl_Rear_Collision_RTVID.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_RTVID.TabIndex = 272;
-            this.lbl_Rear_Collision_RTVID.Text = "RTV 4";
-            this.lbl_Rear_Collision_RTVID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Rear_Collision_StopDistance
-            // 
-            this.lbl_Rear_Collision_StopDistance.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_StopDistance.Location = new System.Drawing.Point(264, 274);
-            this.lbl_Rear_Collision_StopDistance.Name = "lbl_Rear_Collision_StopDistance";
-            this.lbl_Rear_Collision_StopDistance.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_StopDistance.TabIndex = 270;
-            this.lbl_Rear_Collision_StopDistance.Text = "2000";
-            this.lbl_Rear_Collision_StopDistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Rear_Collision_StartDistance
-            // 
-            this.lbl_Rear_Collision_StartDistance.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_StartDistance.Location = new System.Drawing.Point(264, 292);
-            this.lbl_Rear_Collision_StartDistance.Name = "lbl_Rear_Collision_StartDistance";
-            this.lbl_Rear_Collision_StartDistance.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_StartDistance.TabIndex = 269;
-            this.lbl_Rear_Collision_StartDistance.Text = "2400";
-            this.lbl_Rear_Collision_StartDistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label110
-            // 
-            this.label110.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label110.ForeColor = System.Drawing.Color.White;
-            this.label110.Location = new System.Drawing.Point(126, 292);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(135, 16);
-            this.label110.TabIndex = 268;
-            this.label110.Text = "주행시작거리 (mm)";
-            this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label111
-            // 
-            this.label111.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label111.ForeColor = System.Drawing.Color.White;
-            this.label111.Location = new System.Drawing.Point(126, 274);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(135, 16);
-            this.label111.TabIndex = 267;
-            this.label111.Text = "주행정지거리 (mm)";
-            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label112
-            // 
-            this.label112.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label112.ForeColor = System.Drawing.Color.White;
-            this.label112.Location = new System.Drawing.Point(126, 256);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(135, 16);
-            this.label112.TabIndex = 266;
-            this.label112.Text = "대차거리 (mm)";
-            this.label112.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label115
-            // 
-            this.label115.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label115.ForeColor = System.Drawing.Color.White;
-            this.label115.Location = new System.Drawing.Point(126, 238);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(135, 16);
-            this.label115.TabIndex = 264;
-            this.label115.Text = "Rx Time (ms)";
-            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Rear_Collision_RxTime
-            // 
-            this.lbl_Rear_Collision_RxTime.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_RxTime.Location = new System.Drawing.Point(264, 238);
-            this.lbl_Rear_Collision_RxTime.Name = "lbl_Rear_Collision_RxTime";
-            this.lbl_Rear_Collision_RxTime.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_RxTime.TabIndex = 263;
-            this.lbl_Rear_Collision_RxTime.Text = "247";
-            this.lbl_Rear_Collision_RxTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Rear_Collision_GapDistance
-            // 
-            this.lbl_Rear_Collision_GapDistance.BackColor = System.Drawing.Color.White;
-            this.lbl_Rear_Collision_GapDistance.Location = new System.Drawing.Point(264, 256);
-            this.lbl_Rear_Collision_GapDistance.Name = "lbl_Rear_Collision_GapDistance";
-            this.lbl_Rear_Collision_GapDistance.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Rear_Collision_GapDistance.TabIndex = 261;
-            this.lbl_Rear_Collision_GapDistance.Text = "7205";
-            this.lbl_Rear_Collision_GapDistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label121
-            // 
-            this.label121.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label121.ForeColor = System.Drawing.Color.White;
-            this.label121.Location = new System.Drawing.Point(46, 220);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(78, 124);
-            this.label121.TabIndex = 260;
-            this.label121.Text = "후방 대차";
-            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label100
-            // 
-            this.label100.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label100.ForeColor = System.Drawing.Color.White;
-            this.label100.Location = new System.Drawing.Point(126, 49);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(135, 16);
-            this.label100.TabIndex = 258;
-            this.label100.Text = "전방RTV 호기번호";
-            this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Front_Collision_RTVID
-            // 
-            this.lbl_Front_Collision_RTVID.BackColor = System.Drawing.Color.White;
-            this.lbl_Front_Collision_RTVID.Location = new System.Drawing.Point(264, 49);
-            this.lbl_Front_Collision_RTVID.Name = "lbl_Front_Collision_RTVID";
-            this.lbl_Front_Collision_RTVID.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Front_Collision_RTVID.TabIndex = 257;
-            this.lbl_Front_Collision_RTVID.Text = "RTV 2";
-            this.lbl_Front_Collision_RTVID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_Front_Collision_RTVID.Click += new System.EventHandler(this.lbl_Front_Collision_RTVID_Click);
-            // 
-            // lbl_Front_Collision_StopDistance
-            // 
-            this.lbl_Front_Collision_StopDistance.BackColor = System.Drawing.Color.White;
-            this.lbl_Front_Collision_StopDistance.Location = new System.Drawing.Point(264, 103);
-            this.lbl_Front_Collision_StopDistance.Name = "lbl_Front_Collision_StopDistance";
-            this.lbl_Front_Collision_StopDistance.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Front_Collision_StopDistance.TabIndex = 255;
-            this.lbl_Front_Collision_StopDistance.Text = "1500";
-            this.lbl_Front_Collision_StopDistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Front_Collision_StartDistance
-            // 
-            this.lbl_Front_Collision_StartDistance.BackColor = System.Drawing.Color.White;
-            this.lbl_Front_Collision_StartDistance.Location = new System.Drawing.Point(264, 121);
-            this.lbl_Front_Collision_StartDistance.Name = "lbl_Front_Collision_StartDistance";
-            this.lbl_Front_Collision_StartDistance.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Front_Collision_StartDistance.TabIndex = 254;
-            this.lbl_Front_Collision_StartDistance.Text = "1800";
-            this.lbl_Front_Collision_StartDistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label87
-            // 
-            this.label87.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label87.ForeColor = System.Drawing.Color.White;
-            this.label87.Location = new System.Drawing.Point(126, 121);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(135, 16);
-            this.label87.TabIndex = 253;
-            this.label87.Text = "주행시작거리 (mm)";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label88
-            // 
-            this.label88.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label88.ForeColor = System.Drawing.Color.White;
-            this.label88.Location = new System.Drawing.Point(126, 103);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(135, 16);
-            this.label88.TabIndex = 252;
-            this.label88.Text = "주행정지거리 (mm)";
-            this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label90
-            // 
-            this.label90.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label90.ForeColor = System.Drawing.Color.White;
-            this.label90.Location = new System.Drawing.Point(126, 85);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(135, 16);
-            this.label90.TabIndex = 251;
-            this.label90.Text = "대차거리 (mm)";
-            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label93
-            // 
-            this.label93.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label93.ForeColor = System.Drawing.Color.White;
-            this.label93.Location = new System.Drawing.Point(126, 67);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(135, 16);
-            this.label93.TabIndex = 249;
-            this.label93.Text = "Rx Time (ms)";
-            this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Front_Collision_RxTime
-            // 
-            this.lbl_Front_Collision_RxTime.BackColor = System.Drawing.Color.White;
-            this.lbl_Front_Collision_RxTime.Location = new System.Drawing.Point(264, 67);
-            this.lbl_Front_Collision_RxTime.Name = "lbl_Front_Collision_RxTime";
-            this.lbl_Front_Collision_RxTime.Size = new System.Drawing.Size(129, 16);
-            this.lbl_Front_Collision_RxTime.TabIndex = 248;
-            this.lbl_Front_Collision_RxTime.Text = "120";
-            this.lbl_Front_Collision_RxTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // c
-            // 
-            this.c.BackColor = System.Drawing.Color.White;
-            this.c.Location = new System.Drawing.Point(264, 85);
-            this.c.Name = "c";
-            this.c.Size = new System.Drawing.Size(129, 16);
-            this.c.TabIndex = 246;
-            this.c.Text = "3850";
-            this.c.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label83
-            // 
-            this.label83.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label83.ForeColor = System.Drawing.Color.White;
-            this.label83.Location = new System.Drawing.Point(46, 49);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(78, 124);
-            this.label83.TabIndex = 245;
-            this.label83.Text = "전방 대차";
-            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveRearAreaInfo_RegionSt_0
-            // 
-            this.lbl_DriveRearAreaInfo_RegionSt_0.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveRearAreaInfo_RegionSt_0.Location = new System.Drawing.Point(254, 265);
-            this.lbl_DriveRearAreaInfo_RegionSt_0.Name = "lbl_DriveRearAreaInfo_RegionSt_0";
-            this.lbl_DriveRearAreaInfo_RegionSt_0.Size = new System.Drawing.Size(94, 16);
-            this.lbl_DriveRearAreaInfo_RegionSt_0.TabIndex = 780;
-            this.lbl_DriveRearAreaInfo_RegionSt_0.Text = "후방 Region 1";
-            this.lbl_DriveRearAreaInfo_RegionSt_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveRearAreaInfo_RegionSt_1
-            // 
-            this.lbl_DriveRearAreaInfo_RegionSt_1.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveRearAreaInfo_RegionSt_1.Location = new System.Drawing.Point(254, 283);
-            this.lbl_DriveRearAreaInfo_RegionSt_1.Name = "lbl_DriveRearAreaInfo_RegionSt_1";
-            this.lbl_DriveRearAreaInfo_RegionSt_1.Size = new System.Drawing.Size(94, 16);
-            this.lbl_DriveRearAreaInfo_RegionSt_1.TabIndex = 779;
-            this.lbl_DriveRearAreaInfo_RegionSt_1.Text = "후방 Region 2";
-            this.lbl_DriveRearAreaInfo_RegionSt_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveRearAreaInfo_RegionSt_2
-            // 
-            this.lbl_DriveRearAreaInfo_RegionSt_2.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveRearAreaInfo_RegionSt_2.Location = new System.Drawing.Point(254, 301);
-            this.lbl_DriveRearAreaInfo_RegionSt_2.Name = "lbl_DriveRearAreaInfo_RegionSt_2";
-            this.lbl_DriveRearAreaInfo_RegionSt_2.Size = new System.Drawing.Size(94, 16);
-            this.lbl_DriveRearAreaInfo_RegionSt_2.TabIndex = 778;
-            this.lbl_DriveRearAreaInfo_RegionSt_2.Text = "후방 Region 3";
-            this.lbl_DriveRearAreaInfo_RegionSt_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveRearAreaInfo_Region_0
-            // 
-            this.lbl_DriveRearAreaInfo_Region_0.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveRearAreaInfo_Region_0.Location = new System.Drawing.Point(307, 228);
-            this.lbl_DriveRearAreaInfo_Region_0.Name = "lbl_DriveRearAreaInfo_Region_0";
-            this.lbl_DriveRearAreaInfo_Region_0.Size = new System.Drawing.Size(91, 16);
-            this.lbl_DriveRearAreaInfo_Region_0.TabIndex = 271;
-            this.lbl_DriveRearAreaInfo_Region_0.Text = "후방 Region 1";
-            this.lbl_DriveRearAreaInfo_Region_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveRearAreaInfo_Region_1
-            // 
-            this.lbl_DriveRearAreaInfo_Region_1.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveRearAreaInfo_Region_1.Location = new System.Drawing.Point(307, 246);
-            this.lbl_DriveRearAreaInfo_Region_1.Name = "lbl_DriveRearAreaInfo_Region_1";
-            this.lbl_DriveRearAreaInfo_Region_1.Size = new System.Drawing.Size(91, 16);
-            this.lbl_DriveRearAreaInfo_Region_1.TabIndex = 270;
-            this.lbl_DriveRearAreaInfo_Region_1.Text = "후방 Region 2";
-            this.lbl_DriveRearAreaInfo_Region_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_DriveRearAreaInfo_Region_2
-            // 
-            this.lbl_DriveRearAreaInfo_Region_2.BackColor = System.Drawing.Color.White;
-            this.lbl_DriveRearAreaInfo_Region_2.Location = new System.Drawing.Point(307, 264);
-            this.lbl_DriveRearAreaInfo_Region_2.Name = "lbl_DriveRearAreaInfo_Region_2";
-            this.lbl_DriveRearAreaInfo_Region_2.Size = new System.Drawing.Size(91, 16);
-            this.lbl_DriveRearAreaInfo_Region_2.TabIndex = 269;
-            this.lbl_DriveRearAreaInfo_Region_2.Text = "후방 Region 3";
-            this.lbl_DriveRearAreaInfo_Region_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Coll_Start
-            // 
-            this.lbl_Coll_Start.BackColor = System.Drawing.Color.White;
-            this.lbl_Coll_Start.Location = new System.Drawing.Point(215, 156);
-            this.lbl_Coll_Start.Name = "lbl_Coll_Start";
-            this.lbl_Coll_Start.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Coll_Start.TabIndex = 275;
-            this.lbl_Coll_Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label65
-            // 
-            this.label65.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(39, 156);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(173, 16);
-            this.label65.TabIndex = 274;
-            this.label65.Text = "충돌방지 출발거리 (mm)";
-            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Coll_Stop
-            // 
-            this.lbl_Coll_Stop.BackColor = System.Drawing.Color.White;
-            this.lbl_Coll_Stop.Location = new System.Drawing.Point(215, 138);
-            this.lbl_Coll_Stop.Name = "lbl_Coll_Stop";
-            this.lbl_Coll_Stop.Size = new System.Drawing.Size(125, 16);
-            this.lbl_Coll_Stop.TabIndex = 273;
-            this.lbl_Coll_Stop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label101
-            // 
-            this.label101.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label101.ForeColor = System.Drawing.Color.White;
-            this.label101.Location = new System.Drawing.Point(39, 138);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(173, 16);
-            this.label101.TabIndex = 272;
-            this.label101.Text = "충돌방지 정지거리 (mm)";
-            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form_RTVSt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -6974,12 +5545,6 @@ namespace VEXI
             this.groupBox5.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
-            this.tc_JobStatus.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -7014,8 +5579,6 @@ namespace VEXI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tc_JobStatus;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_Drive_Destination;
         private System.Windows.Forms.Label lbl_Drive_Speed;
@@ -7041,34 +5604,6 @@ namespace VEXI
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label369;
-        private System.Windows.Forms.Label lbl_Feed2_jobStep;
-        private System.Windows.Forms.Label label371;
-        private System.Windows.Forms.Label lbl_Feed2_jobSt;
-        private System.Windows.Forms.Label label373;
-        private System.Windows.Forms.Label lbl_Feed2_To;
-        private System.Windows.Forms.Label label375;
-        private System.Windows.Forms.Label lbl_Feed2_From;
-        private System.Windows.Forms.Label label377;
-        private System.Windows.Forms.Label lbl_Feed2_TaskIndex;
-        private System.Windows.Forms.Label lbl_Feed2_Cmd;
-        private System.Windows.Forms.Label lbl_Feed2_Job;
-        private System.Windows.Forms.Label label381;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label350;
-        private System.Windows.Forms.Label lbl_Feed1_jobStep;
-        private System.Windows.Forms.Label label349;
-        private System.Windows.Forms.Label lbl_Feed1_jobSt;
-        private System.Windows.Forms.Label label346;
-        private System.Windows.Forms.Label lbl_Feed1_To;
-        private System.Windows.Forms.Label label345;
-        private System.Windows.Forms.Label lbl_Feed1_From;
-        private System.Windows.Forms.Label label342;
-        private System.Windows.Forms.Label lbl_Feed1_TaskIndex;
-        private System.Windows.Forms.Label lbl_Feed1_Cmd;
-        private System.Windows.Forms.Label lbl_Feed1_Job;
-        private System.Windows.Forms.Label label338;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Panel panel4;
@@ -7249,16 +5784,6 @@ namespace VEXI
         private System.Windows.Forms.Label label178;
         private System.Windows.Forms.Label lbl_DriveSt2_1;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.ListView lv_TaskJob;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Label lbl_TaskJobSt;
-        private System.Windows.Forms.Label lbl_TaskJobNumber;
-        private System.Windows.Forms.Label label383;
         private System.Windows.Forms.Label lbl_Feed1_Speed;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Feed2_Speed;
@@ -7328,28 +5853,6 @@ namespace VEXI
         private System.Windows.Forms.Label lbl_WCS14_StatusRx_Count;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_SensorIndex;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_AreaType;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_AreaNo;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label lbl_DriveFrontAreaInfo_Region_0;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_NextArea;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_PrevArea;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_MaxSpeed;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_EndMM;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_StartMM;
-        private System.Windows.Forms.Label lbl_DriveFrontAreaInfo_Region_1;
-        private System.Windows.Forms.Label lbl_DriveFrontAreaInfo_Region_2;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label label79;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lbl_RTV_RailType;
@@ -7363,64 +5866,12 @@ namespace VEXI
         private System.Windows.Forms.Label lbl_DriveFrontAreaInfo_RegionSt_1;
         private System.Windows.Forms.Label lbl_DriveFrontAreaInfo_RegionSt_2;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_AreaType_5;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_AreaType_2;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_AreaType_3;
-        private System.Windows.Forms.Label lbl_DriveAreaInfo_AreaType_4;
-        private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label lbl_DriveBarcodeErrCount;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label lbl_Drive_CurrentStation_Feed2;
         private System.Windows.Forms.Label lbl_Drive_CurrentStation_Feed1;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label lbl_Feed2_Station;
-        private System.Windows.Forms.Label lbl_Feed1_Station;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.Label lbl_Feed2_Station_Direction;
-        private System.Windows.Forms.Label lbl_Feed1_Station_Direction;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label lbl_Feed2_Station_InputCan;
-        private System.Windows.Forms.Label lbl_Feed1_Station_InputCan;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label lbl_Feed2_Station_OutputCan;
-        private System.Windows.Forms.Label lbl_Feed1_Station_OutputCan;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button btnBarCodeErrCountInit;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Label lbl_Rear_Collision_AreaType;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label lbl_Rear_Collision_MyAreaType;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.Label lbl_Front_Collision_MyAreaType;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Label lbl_Front_Collision_AreaType;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Label lbl_Rear_Collision_RTVID;
-        private System.Windows.Forms.Label lbl_Rear_Collision_StopDistance;
-        private System.Windows.Forms.Label lbl_Rear_Collision_StartDistance;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.Label label115;
-        private System.Windows.Forms.Label lbl_Rear_Collision_RxTime;
-        private System.Windows.Forms.Label lbl_Rear_Collision_GapDistance;
-        private System.Windows.Forms.Label label121;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label lbl_Front_Collision_RTVID;
-        private System.Windows.Forms.Label lbl_Front_Collision_StopDistance;
-        private System.Windows.Forms.Label lbl_Front_Collision_StartDistance;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label lbl_Front_Collision_RxTime;
-        private System.Windows.Forms.Label c;
-        private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label lbl_OSt_37;
         private System.Windows.Forms.Label lbl_O_Title_37;
         private System.Windows.Forms.Label lbl_OSt_36;
@@ -7516,12 +5967,5 @@ namespace VEXI
         private System.Windows.Forms.Label lbl_DriveRearAreaInfo_RegionSt_0;
         private System.Windows.Forms.Label lbl_DriveRearAreaInfo_RegionSt_1;
         private System.Windows.Forms.Label lbl_DriveRearAreaInfo_RegionSt_2;
-        private System.Windows.Forms.Label lbl_DriveRearAreaInfo_Region_0;
-        private System.Windows.Forms.Label lbl_DriveRearAreaInfo_Region_1;
-        private System.Windows.Forms.Label lbl_DriveRearAreaInfo_Region_2;
-        private System.Windows.Forms.Label lbl_Coll_Start;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label lbl_Coll_Stop;
-        private System.Windows.Forms.Label label101;
     }
 }

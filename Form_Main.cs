@@ -113,11 +113,11 @@ namespace VEXI
                 IsAdmin = (args[1].ToUpper() == "AW");
             }
 
-            MenuItem_Graph.Visible = false; //GR
-            MenuItem_RunTime.Visible = false; //RT
-            menu_EventLog.Visible = false;  //EL
-            menu_DebugLog.Visible = false; //DL
-            menu_ViewCommData.Visible = false; //CD
+            //MenuItem_Graph.Visible = false; //GR
+            //MenuItem_RunTime.Visible = false; //RT
+            //menu_EventLog.Visible = false;  //EL
+            //menu_DebugLog.Visible = false; //DL
+            //menu_ViewCommData.Visible = false; //CD
             //menu_RackInitial.Visible = IsAdmin;
 
             // 통신객체 구성
@@ -1025,7 +1025,7 @@ namespace VEXI
             MessageBoxButtons buttons = MessageBoxButtons.OK;
 
             
-
+            /*
             if (rbCommSerial.Checked)
             {
                 if (Port_Combox.SelectedIndex == -1)
@@ -1039,6 +1039,8 @@ namespace VEXI
                 }
 
             }
+            */
+            /*
             else if (rbCommUDP.Checked)
             {
                 if (edDevIP.Text.Trim() == "")
@@ -1075,6 +1077,7 @@ namespace VEXI
             
             CheckSelectedDevice();
             SaveSystemConfig();
+            */
         }
 
         private void Display_CommSt()
@@ -1980,7 +1983,7 @@ namespace VEXI
                                 {
                                     if (!form_RTV_CTL.IsDisposed)
                                     {
-                                        form_RTV_CTL.Display_JobCtrlRes(PaketObj.GetDataBytes());
+                                        //form_RTV_CTL.Display_JobCtrlRes(PaketObj.GetDataBytes());
                                     }
                                 }
                             }
@@ -3299,7 +3302,7 @@ namespace VEXI
             pnUDPConnectType.Visible = ((COMMDataManager.SelectDestDevType == ConstClass.TYPE_RTV) || (COMMDataManager.SelectDestDevType == ConstClass.TYPE_EMS));
             if (!pnUDPConnectType.Visible)
             {
-                rb_WCConnect.Checked = true;
+                //rb_WCConnect.Checked = true;
             }
 
             if (cbDevID.SelectedIndex >= 0)
@@ -3310,8 +3313,8 @@ namespace VEXI
                     COMMDataManager.SelectDestDevID = 0xFF;
                     if (pnUDPConnectType.Visible)
                     {
-                        if (rb_2Connect.Checked) edDevIP.Text = "192.168.100.101";
-                        if (rb_5Connect.Checked) edDevIP.Text = "192.168.100.151";
+                        //if (rb_2Connect.Checked) edDevIP.Text = "192.168.100.101";
+                        //if (rb_5Connect.Checked) edDevIP.Text = "192.168.100.151";
                     }
                 }
                 else
@@ -3322,11 +3325,11 @@ namespace VEXI
                     {
                         if (rb_2Connect.Checked)
                         {
-                            edDevIP.Text = "192.168.100." + (100 + COMMDataManager.SelectDestDevID).ToString();
+                          //  edDevIP.Text = "192.168.100." + (100 + COMMDataManager.SelectDestDevID).ToString();
                         }
                         if (rb_5Connect.Checked)
                         {
-                            edDevIP.Text = "192.168.100." + (150 + COMMDataManager.SelectDestDevID).ToString();
+                         //   edDevIP.Text = "192.168.100." + (150 + COMMDataManager.SelectDestDevID).ToString();
                         }
                     }
                 }
@@ -3355,13 +3358,14 @@ namespace VEXI
                 case ConstClass.TYPE_SRM:
                     MenuItem_basicSt.Enabled = true;
                     menu_DevSt.Enabled = true;
-                    MenuItem_DevLog.Enabled = true;
-                    menu_Debug.Enabled = true;
-                    MenuItem_OpInfo.Enabled = true;
-                    MenuItem_OpInfo.Visible = true;
-                    MenuItem_InvertorInfo.Enabled = true;
-                    MenuItem_Graph.Enabled = true;
+                    //MenuItem_DevLog.Enabled = true;
+                    //menu_Debug.Enabled = true;
+                    //MenuItem_OpInfo.Enabled = true;
+                    //MenuItem_OpInfo.Visible = true;
+                    //MenuItem_InvertorInfo.Enabled = true;
+                    //MenuItem_Graph.Enabled = true;
                     ToolStripMenuItem.Enabled = true;
+                    /*
                     menu_DevBaseConfig.Enabled = true;
                     menu_DEV_IO_Config.Enabled = true;
                     menu_CtrlParameter.Enabled = true;
@@ -3372,7 +3376,7 @@ namespace VEXI
                     menu_ForParameter.Visible = true;
                     menu_ForParameter.Text = "1.6. 포크드라이브 설정";
                     menu_RackBase.Text = "1.7. 위치 설정";
-
+                    
                     menu_TotalSetLoad.Enabled = true;
                     menu_InvertorParameter.Enabled = true;
                     menu_InvertorParameter.Visible = true;
@@ -3382,19 +3386,22 @@ namespace VEXI
                     menu_NoRackSet.Enabled = true;
                     menu_NoRackSet.Visible = true;
                     menu_SpecialRackSet.Enabled = true;
-                    menu_SpecialRackSet.Visible = true;
+                    menu_SpecialRackSet.Visible = true
+                    */
+                    ;
                     toolStripMenuItem2.Enabled = true;
                     break;
                 case ConstClass.TYPE_RTV:
                     MenuItem_basicSt.Enabled = true;
                     menu_DevSt.Enabled = true;
-                    MenuItem_DevLog.Enabled = true;
-                    menu_Debug.Enabled = true;
-                    MenuItem_OpInfo.Enabled = false; //미해당
-                    MenuItem_OpInfo.Visible = false; //미해당
-                    MenuItem_InvertorInfo.Enabled = true; 
-                    MenuItem_Graph.Enabled = true;
+                   // MenuItem_DevLog.Enabled = true;
+                   // menu_Debug.Enabled = true;
+                   // MenuItem_OpInfo.Enabled = false; //미해당
+                   // MenuItem_OpInfo.Visible = false; //미해당
+                   // MenuItem_InvertorInfo.Enabled = true; 
+                    //MenuItem_Graph.Enabled = true;
                     ToolStripMenuItem.Enabled = true;
+                    /*
                     menu_DevBaseConfig.Enabled = true;
                     menu_DEV_IO_Config.Enabled = true;
                     menu_CtrlParameter.Enabled = true;
@@ -3405,6 +3412,7 @@ namespace VEXI
                     menu_ForParameter.Visible = true;
                     menu_ForParameter.Text = "1.6. 피딩드라이브 설정";
                     menu_RackBase.Text = "1.7. 위치 설정";
+                    
 
                     menu_TotalSetLoad.Enabled = true; 
                     menu_InvertorParameter.Enabled = false; //미해당
@@ -3416,18 +3424,20 @@ namespace VEXI
                     menu_NoRackSet.Visible = false; //미해당
                     menu_SpecialRackSet.Enabled = false; //미해당
                     menu_SpecialRackSet.Visible = false; //미해당
+                    */
                     toolStripMenuItem2.Enabled = true;
                     break;
                 case ConstClass.TYPE_EMS:
                     MenuItem_basicSt.Enabled = true;
                     menu_DevSt.Enabled = true;
-                    MenuItem_DevLog.Enabled = true;
-                    menu_Debug.Enabled = true;
-                    MenuItem_OpInfo.Enabled = false; //미해당
-                    MenuItem_OpInfo.Visible = false; //미해당
-                    MenuItem_InvertorInfo.Enabled = true;
-                    MenuItem_Graph.Enabled = true;
+                   // MenuItem_DevLog.Enabled = true;
+                   // menu_Debug.Enabled = true;
+                   // MenuItem_OpInfo.Enabled = false; //미해당
+                   // MenuItem_OpInfo.Visible = false; //미해당
+                   // MenuItem_InvertorInfo.Enabled = true;
+                    //MenuItem_Graph.Enabled = true;
                     ToolStripMenuItem.Enabled = true;
+                    /*
                     menu_DevBaseConfig.Enabled = true;
                     menu_DEV_IO_Config.Enabled = true;
                     menu_CtrlParameter.Enabled = true;
@@ -3448,6 +3458,7 @@ namespace VEXI
                     menu_NoRackSet.Visible = false; //미해당
                     menu_SpecialRackSet.Enabled = false; //미해당
                     menu_SpecialRackSet.Visible = false; //미해당
+                    */
                     toolStripMenuItem2.Enabled = true;
                     break;
             }
@@ -3602,11 +3613,11 @@ namespace VEXI
 
             if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0xFF)
             {
-                label1.BackColor = label4.BackColor;
+               // label1.BackColor = label4.BackColor;
 
             } else
             {
-                label1.BackColor = System.Drawing.Color.Yellow;
+      //          label1.BackColor = System.Drawing.Color.Yellow;
             }
 
 
@@ -4216,10 +4227,10 @@ namespace VEXI
                 }
                 if (COMMDataManager.COMM_Mode == ConstClass.COMM_UDP)
                 {
-                    if (rb_WCConnect.Checked)
-                    {
-                        IniControl.WriteIni(CONFIG_FILE, "COMM", "UDP_IP", COMMDataManager.UDPIP);
-                    }
+                 //   if (rb_WCConnect.Checked)
+                  //  {
+                   //     IniControl.WriteIni(CONFIG_FILE, "COMM", "UDP_IP", COMMDataManager.UDPIP);
+                   // }
                 }
             }
             IniControl.WriteIni(CONFIG_FILE, "COMM", "SelectDevType", COMMDataManager.SelectDestDevType);
@@ -4237,19 +4248,19 @@ namespace VEXI
 
             switch (TmpComMode)
             {
-                case ConstClass.COMM_SERIAL: rbCommSerial.Checked = true; break;
-                case ConstClass.COMM_UDP: rbCommUDP.Checked = true; break;
+             //   case ConstClass.COMM_SERIAL: rbCommSerial.Checked = true; break;
+             //   case ConstClass.COMM_UDP: rbCommUDP.Checked = true; break;
             }
 
             if (TmpSerialPort != "")
             {
-                int TmpIndex = Port_Combox.Items.IndexOf(TmpSerialPort);
-                Port_Combox.SelectedIndex = TmpIndex;
+            //    int TmpIndex = Port_Combox.Items.IndexOf(TmpSerialPort);
+            //    Port_Combox.SelectedIndex = TmpIndex;
             }
 
             WCIP = TmpUDPIP;
-            rb_WCConnect.Checked = true;
-            edDevIP.Text = TmpUDPIP;
+            //rb_WCConnect.Checked = true;
+           // edDevIP.Text = TmpUDPIP;
 
             switch (TmpSelectDevType)
             {
@@ -4390,14 +4401,14 @@ namespace VEXI
 
             string[] PortNames = SerialPort.GetPortNames();  // 포트 검색.
 
-            int backupindex = Port_Combox.SelectedIndex;
-            Port_Combox.Items.Clear();
+          //  int backupindex = Port_Combox.SelectedIndex;
+          //  Port_Combox.Items.Clear();
             foreach (string portnumber in PortNames)
             {
-                Port_Combox.Items.Add(portnumber);          // 검색한 포트를 콤보박스에 입력. 
+            //    Port_Combox.Items.Add(portnumber);          // 검색한 포트를 콤보박스에 입력. 
             }
 
-            Port_Combox.SelectedIndex = backupindex;
+           // Port_Combox.SelectedIndex = backupindex;
         }
 
         #endregion
@@ -4443,13 +4454,14 @@ namespace VEXI
         {
             if (pnUDPConnectType.Visible)
             {
-                if ((rb_WCConnect.Checked))
-                {
-                    edDevIP.Text = WCIP;
-                }
-            } else
+               // if ((rb_WCConnect.Checked))
+               // {
+             //       edDevIP.Text = WCIP;
+                //}
+            } 
+            else
             {
-                edDevIP.Text = WCIP;
+              //   edDevIP.Text = WCIP;
             }
         }
 
@@ -4461,11 +4473,11 @@ namespace VEXI
                 {
                     if (cbDevID.SelectedIndex == (cbDevID.Items.Count - 1))
                     {
-                        edDevIP.Text = "192.168.100.101";
+                     //   edDevIP.Text = "192.168.100.101";
                     }
                     else
                     {
-                        edDevIP.Text = "192.168.100." + (100 + COMMDataManager.SelectDestDevID).ToString();
+                    //    edDevIP.Text = "192.168.100." + (100 + COMMDataManager.SelectDestDevID).ToString();
                     }
                 }
             }
@@ -4479,11 +4491,11 @@ namespace VEXI
                 {
                     if (cbDevID.SelectedIndex == (cbDevID.Items.Count - 1))
                     {
-                        edDevIP.Text = "192.168.100.151";
+                      //  edDevIP.Text = "192.168.100.151";
                     }
                     else
                     {
-                        edDevIP.Text = "192.168.100." + (150 + COMMDataManager.SelectDestDevID).ToString();
+                     //   edDevIP.Text = "192.168.100." + (150 + COMMDataManager.SelectDestDevID).ToString();
                     }
                 }
             }
@@ -4581,8 +4593,8 @@ namespace VEXI
 
             if (dateDiff.Seconds >= 2)
             {
-                edAdmin.Visible = true;
-                edAdmin.Text = "";
+                //edAdmin.Visible = true;
+                //edAdmin.Text = "";
             }
         }
 
@@ -4600,6 +4612,7 @@ namespace VEXI
         {
             if (e.KeyCode == Keys.Enter)
             {
+                /*
                 if (edAdmin.Text == "GR")
                 {
                     MenuItem_Graph.Visible = true;
@@ -4662,8 +4675,8 @@ namespace VEXI
                     menu_DebugLog.Visible = false;
                     menu_ViewCommData.Visible = false;
                 }
-
-                edAdmin.Visible = false;
+                */
+                //edAdmin.Visible = false;
             }
         }
 
@@ -4717,6 +4730,11 @@ namespace VEXI
 
         private void label9_Click(object sender, EventArgs e)
         {
+        }
+
+        private void edAdmin_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

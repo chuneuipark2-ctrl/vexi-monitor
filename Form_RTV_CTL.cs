@@ -26,10 +26,12 @@ namespace VEXI
         {
             InitializeComponent();
             EditComboxBox = new ComboBox[] { null,
-                                             Lv_cb_Column1,
+            /*                                 Lv_cb_Column1,
                                              Lv_cb_Column3,
                                              Lv_cb_Column4,
-                                             Lv_cb_Column5};
+                                             Lv_cb_Column5
+            */
+                };
         }
 
 
@@ -37,27 +39,27 @@ namespace VEXI
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Hide_AllEdit();
+            //Hide_AllEdit();
             this.Text = "장비 운전 조작(" + tabControl1.SelectedTab.Text + ")";
         }
 
         private void btn_LoadDevTaskList_Click(object sender, EventArgs e)
         {
-            Hide_AllEdit();
+            //Hide_AllEdit();
             if ((form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) && (form_Main.COMMDataManager.CommSt != 0))
             {
-                Display_Sub_TaskList_Ctrl(false);
+              //  Display_Sub_TaskList_Ctrl(false);
             }
             else
             {
-                Display_Ctrl_Init();
+               // Display_Ctrl_Init();
             }
         }
 
         private void btn_TaskInit_Click(object sender, EventArgs e)
         {
-            Hide_AllEdit();
-            Display_Ctrl_Init();
+            //Hide_AllEdit();
+            //Display_Ctrl_Init();
 
         }
 
@@ -135,9 +137,9 @@ namespace VEXI
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                lbl_JobCtrlRes1.Visible = false;
-                lbl_JobCtrlRes2.Visible = false;
-                Do_Semi_MoveCMD_Ctrl(bt.Tag.ToString());
+                //lbl_JobCtrlRes1.Visible = false;
+                //lbl_JobCtrlRes2.Visible = false;
+                //Do_Semi_MoveCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
@@ -148,10 +150,10 @@ namespace VEXI
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "적재 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                lbl_JobCtrlRes1.Visible = false;
-                lbl_JobCtrlRes2.Visible = false;
+                //lbl_JobCtrlRes1.Visible = false;
+                //lbl_JobCtrlRes2.Visible = false;
 
-                Do_Semi_LoadCMD_Ctrl(bt.Tag.ToString());
+                //Do_Semi_LoadCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
@@ -162,10 +164,10 @@ namespace VEXI
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "이재 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                lbl_JobCtrlRes1.Visible = false;
-                lbl_JobCtrlRes2.Visible = false;
+                //lbl_JobCtrlRes1.Visible = false;
+                //lbl_JobCtrlRes2.Visible = false;
 
-                Do_Semi_UnLoadCMD_Ctrl(bt.Tag.ToString());
+                //Do_Semi_UnLoadCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
@@ -176,10 +178,10 @@ namespace VEXI
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "스테이션간 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                lbl_JobCtrlRes1.Visible = false;
-                lbl_JobCtrlRes2.Visible = false;
+                //lbl_JobCtrlRes1.Visible = false;
+                //lbl_JobCtrlRes2.Visible = false;
 
-                Do_Semi_StoSCMD_Ctrl(bt.Tag.ToString());
+                //Do_Semi_StoSCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
@@ -190,20 +192,21 @@ namespace VEXI
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "목적지 스테이션 변경 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
-                lbl_JobCtrlRes1.Visible = false;
-                lbl_JobCtrlRes2.Visible = false;
+                //lbl_JobCtrlRes1.Visible = false;
+                //lbl_JobCtrlRes2.Visible = false;
 
-                Do_Semi_ChangeSCMD_Ctrl(bt.Tag.ToString());
+             //   Do_Semi_ChangeSCMD_Ctrl(bt.Tag.ToString());
             }
         }
 
 
         private void btn_TaskSet_Click(object sender, EventArgs e)
         {
-            lbl_JobCtrlRes1.Visible = false;
-            lbl_JobCtrlRes2.Visible = false;
+            //lbl_JobCtrlRes1.Visible = false;
+            //lbl_JobCtrlRes2.Visible = false;
 
-            Hide_AllEdit();
+            //Hide_AllEdit();
+            /*
             if (lv_TaskJob_Ctrl.Items.Count == 20)
             {
                 if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Task 작업리스트를 전송하시겠습니까? (안전에 주의하세요)"))
@@ -215,23 +218,26 @@ namespace VEXI
             {
                 form_Main.GlobalObj.MsgBox_Info("전송할 Task 작업리스트가 작성되지 않았습니다.", "I");
             }
+            */
+
         }
 
         private void btn_Taskbtn_TaskCancelEdit_Click(object sender, EventArgs e)
         {
-            Hide_AllEdit();
+            //Hide_AllEdit();
             if ((form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) && (form_Main.COMMDataManager.CommSt != 0))
             {
-                Display_Sub_TaskList_Ctrl(true);
+              //  Display_Sub_TaskList_Ctrl(true);
             }
             else
             {
-                Display_Ctrl_SelectedInit();
+                //Display_Ctrl_SelectedInit();
             }
         }
         private void lv_TaskJob_Ctrl_DoubleClick(object sender, EventArgs e)
         {
             bool once = false;
+            /*
             if (lv_TaskJob_Ctrl.SelectedItems.Count == 1)
             {
                 for (byte i = 0; i <= (lv_TaskJob_Ctrl.Columns.Count - 1); i++)
@@ -251,10 +257,13 @@ namespace VEXI
                     }
                 }
             }
+            */
+
         }
 
         private void lv_TaskJob_Ctrl_Enter(object sender, EventArgs e)
         {
+            /*
             for (byte i = 0; i <= (lv_TaskJob_Ctrl.Columns.Count - 1); i++)
             {
                 if (EditComboxBox[i] != null)
@@ -262,8 +271,10 @@ namespace VEXI
                     EditComboxBox[i].Visible = false;
                 }
             }
+            */
         }
 
+        /*
         private void lv_TaskJob_Ctrl_MouseUp(object sender, MouseEventArgs e)
         {
             lv_Item = this.lv_TaskJob_Ctrl.GetItemAt(e.X, e.Y);
@@ -763,6 +774,8 @@ namespace VEXI
             form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, rtv_REC_Job_CTRL);
         }
 
+        */
+
         private void Do_Ctrl_DelWork(byte TmpCMD2, byte CtrlData)
         {
             form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_53, CtrlData);
@@ -810,8 +823,8 @@ namespace VEXI
             {
                 Display_RTV_BasicSt();
                 Display_Feed_St();
-                Display_Sub_FeedJob();
-                Display_Sub_TaskList_St();
+                //Display_Sub_FeedJob();
+              //Display_Sub_TaskList_St();
             }
             else
             {
@@ -1006,6 +1019,7 @@ namespace VEXI
             }
         }
 
+        /*
 
         private unsafe void Display_Sub_FeedJob()
         {
@@ -1132,6 +1146,8 @@ namespace VEXI
 
         }
 
+        */
+
         private void Display_St_Init()
         {
             //Display_RTV_BasicSt 내 갱신 컴포넌트들
@@ -1171,26 +1187,26 @@ namespace VEXI
             lbl_Feed2_Pos.Text = "";
             lbl_Feed2_Dest.Text = "";
             //Display_Sub_TaskList
-            lbl_TaskJobNumber.Text = "";
-            lbl_TaskJobSt.Text = "";
-            lv_TaskJob_St.Items.Clear();
+            //lbl_TaskJobNumber.Text = "";
+            //lbl_TaskJobSt.Text = "";
+            //lv_TaskJob_St.Items.Clear();
 
             //Display_Sub_FeedJob
-            lbl_Feed1_Job.Text = "";
-            lbl_Feed1_TaskIndex.Text = "";
-            lbl_Feed1_Cmd.Text = "";
-            lbl_Feed1_From.Text = "";
-            lbl_Feed1_To.Text = "";
-            lbl_Feed1_jobSt.Text = "";
-            lbl_Feed1_jobStep.Text = "";
+            //lbl_Feed1_Job.Text = "";
+            //lbl_Feed1_TaskIndex.Text = "";
+            //lbl_Feed1_Cmd.Text = "";
+            //lbl_Feed1_From.Text = "";
+            //lbl_Feed1_To.Text = "";
+            //lbl_Feed1_jobSt.Text = "";
+            //lbl_Feed1_jobStep.Text = "";
 
-            lbl_Feed2_Job.Text = "";
-            lbl_Feed2_TaskIndex.Text = "";
-            lbl_Feed2_Cmd.Text = "";
-            lbl_Feed2_From.Text = "";
-            lbl_Feed2_To.Text = "";
-            lbl_Feed2_jobSt.Text = "";
-            lbl_Feed2_jobStep.Text = "";
+            //lbl_Feed2_Job.Text = "";
+            //lbl_Feed2_TaskIndex.Text = "";
+            //lbl_Feed2_Cmd.Text = "";
+            //lbl_Feed2_From.Text = "";
+            //lbl_Feed2_To.Text = "";
+            //lbl_Feed2_jobSt.Text = "";
+            //lbl_Feed2_jobStep.Text = "";
         }
 
         #endregion

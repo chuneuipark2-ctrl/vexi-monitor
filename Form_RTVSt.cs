@@ -216,6 +216,8 @@ namespace VEXI
 
         #region 기능함수
 
+        
+        /*
         private unsafe void Display_Sub_FeedJob()
         {
             fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt)
@@ -324,6 +326,12 @@ namespace VEXI
                 }
             }
         }
+        
+        */
+
+
+        /*
+
         private unsafe void Display_Sub_TaskList()
         {
             if (lv_TaskJob.Items.Count == 0)
@@ -385,6 +393,7 @@ namespace VEXI
                 }
             }
         }
+        */
         private unsafe void Display_Sub_DIO()
         {
             byte SelectDIindex = 0;
@@ -795,12 +804,13 @@ namespace VEXI
             lbl_Feed2_Speed.Text = "";
             lbl_Feed2_DestSpeed.Text = "";
 
-            //Display_Sub_TaskList
+            /*
+            Display_Sub_TaskList
             lbl_TaskJobNumber.Text = "";
             lbl_TaskJobSt.Text = "";
             lv_TaskJob.Items.Clear();
 
-            //Display_Sub_FeedJob
+            Display_Sub_FeedJob
             lbl_Feed1_Job.Text = "";
             lbl_Feed1_TaskIndex.Text = "";
             lbl_Feed1_Cmd.Text = "";
@@ -816,7 +826,7 @@ namespace VEXI
             lbl_Feed2_To.Text = "";
             lbl_Feed2_jobSt.Text = "";
             lbl_Feed2_jobStep.Text = "";
-
+            */
             //Display_Sub_DIO
             for (byte i = 1; i <= 38; i++)
             {
@@ -907,6 +917,7 @@ namespace VEXI
 
 
             //Display_AreaSpeedInfo
+            /*
             lbl_DriveAreaInfo_AreaNo.Text = "";
             lbl_DriveAreaInfo_AreaType.Text = "";
             lbl_DriveAreaInfo_StartMM.Text = "";
@@ -956,6 +967,7 @@ namespace VEXI
             lbl_Rear_Collision_StartDistance.Text = "";
             lbl_Rear_Collision_AreaType.Text = "";
             lbl_Rear_Collision_MyAreaType.Text = "";
+            */
         }
 
         private unsafe void Display_UpperSystem()
@@ -1158,6 +1170,7 @@ namespace VEXI
             }
         }
 
+        /*
         private unsafe void Display_Collision()
         {
             fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt)
@@ -1220,7 +1233,9 @@ namespace VEXI
                 }
             }
         }
+        */
 
+        /*
         private unsafe void Display_AreaSpeedInfo()
         {
             fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt)
@@ -1402,6 +1417,7 @@ namespace VEXI
             }
            
         }
+        */
 
         private unsafe void Display_RTV_BasicSt()
         {
@@ -2199,12 +2215,12 @@ namespace VEXI
                 Display_RTV_BasicSt();
                 Display_Feed_St();
                 Display_Drive_St();
-                Display_Sub_FeedJob();
-                Display_Sub_TaskList();
+                //Display_Sub_FeedJob();
+                //Display_Sub_TaskList();
                 Display_Sub_DIO();
                 Display_RemocongKey_St();
-                Display_AreaSpeedInfo();
-                Display_Collision();
+                //Display_AreaSpeedInfo();
+                //Display_Collision();
                 Display_UpperSystem();
             } else
             {
@@ -2251,6 +2267,16 @@ namespace VEXI
         }
 
         private void rb_DIO_DigitalOut_3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_IO_Title_14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_IO_Title_1_Click(object sender, EventArgs e)
         {
 
         }

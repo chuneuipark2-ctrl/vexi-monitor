@@ -550,5 +550,8 @@
   <ItemGroup>
     <None Include="Resources\hyundai_ci.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\현대무벡스주식회사CI_영문Color1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,6 +21,9 @@ namespace VEXI
         private static VEXI_DEFS.RTV_REC_JobCTRL rtv_REC_Job_CTRL;
         private static VEXI_DEFS.TRTV_REC_JobCTRLRES rtv_REC_Job_CTRLRes;
 
+        /// <summary>MouseDown에서 전제조건을 통과해 Do_JogCtrl(구동)을 보낸 경우에만 true. MouseUp에서는 정지 패킷을 이 경우에만 송신.</summary>
+        private bool _rtvManualJogPressArmed;
+        private byte _rtvManualJogArmedTag;
 
         public Form_RTV_CTL()
         {
@@ -75,12 +78,52 @@ namespace VEXI
             return 1;
         }
 
+        /// <summary>주행·피딩1·피딩2·동시 조그 수동명령 공통 전제. Display_RTV_BasicSt와 동일 비트 해석.</summary>
+        private unsafe bool TryValidateRtvManualJogPreconditions(out string failureDetail)
+        {
+            var sb = new StringBuilder();
+
+            if (!form_Main.COMMDataManager.DevRec.Flag_In_DevStatus)
+                sb.AppendLine("· 장비 상태 정보가 수신되지 않았습니다.");
+            if (form_Main.COMMDataManager.CommSt == 0)
+                sb.AppendLine("· 통신이 연결되어 있지 않습니다.");
+
+            fixed (VEXI_DEFS.TRTV_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt)
+            {
+                if (Global_Class.BitStatus(DevSt->DevSt_2, 6))
+                    sb.AppendLine("· 장비 모드 스위치: '자동'이어야 합니다. (현재: 수동)");
+                if (!Global_Class.BitStatus(DevSt->DevMode, 1))
+                    sb.AppendLine("· 장비 S/W 모드: '수동모드'이어야 합니다.");
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 0))
+                    sb.AppendLine("· 시작 상태: 'OFF'이어야 합니다. (현재: ON)");
+                if (Global_Class.BitStatus(DevSt->DevSt_2, 7))
+                    sb.AppendLine("· 비상정지 스위치: 'OFF'이어야 합니다. (현재: ON)");
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 1))
+                    sb.AppendLine("· 비상정지: '정상'이어야 합니다.");
+            }
+
+            if (sb.Length == 0)
+            {
+                failureDetail = null;
+                return true;
+            }
+
+            failureDetail = "수동 명령을 실행할 수 없습니다. 미충족 항목:\r\n\r\n" + sb.ToString().TrimEnd();
+            return false;
+        }
+
         private void btn_UP_LowSpeed_MouseUp(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
             if (bt == null) return;
 
             byte jogTag = Convert.ToByte(bt.Tag.ToString());
+
+            if (!_rtvManualJogPressArmed || _rtvManualJogArmedTag != jogTag)
+                return;
+
+            _rtvManualJogPressArmed = false;
+
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = RtvManualJog_LowSpeedRefFromTag(jogTag);
             // 손 뗌: CtrlTypeValue=0, before=직전 Tag → Do_JogCtrl에서 정지용 CMD2_80(필요 시 이중 송신) 경로.
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = jogTag;
@@ -88,12 +131,23 @@ namespace VEXI
             form_Main.Do_JogCtrl();
         }
 
-        private void btn_UP_LowSpeed_MouseDown(object sender, MouseEventArgs e)
+        private unsafe void btn_UP_LowSpeed_MouseDown(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
             if (bt == null) return;
 
             byte jogTag = Convert.ToByte(bt.Tag.ToString());
+
+            if (!TryValidateRtvManualJogPreconditions(out string failMsg))
+            {
+                _rtvManualJogPressArmed = false;
+                form_Main.GlobalObj.MsgBox_Info(failMsg, "W");
+                return;
+            }
+
+            _rtvManualJogPressArmed = true;
+            _rtvManualJogArmedTag = jogTag;
+
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = RtvManualJog_LowSpeedRefFromTag(jogTag);
             // 누름: CtrlTypeValue=Tag(11 주행저속전진 … 75 동시고속우 등) → Drive/Fork1/Fork2/CtrlFlag로 매핑됨.
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = jogTag;

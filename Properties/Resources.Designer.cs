@@ -79,5 +79,15 @@ namespace VEXI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 현대무벡스주식회사CI_영문Color {
+            get {
+                object obj = ResourceManager.GetObject("현대무벡스주식회사CI_영문Color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -30,7 +30,9 @@ namespace VEXI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.panel92 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnQuickCtrl = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ErrRest = new System.Windows.Forms.Button();
@@ -74,15 +76,14 @@ namespace VEXI
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.DPTimer = new System.Windows.Forms.Timer(this.components);
             this.Loggingtimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel92.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnQuickCtrl.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnCommSetting.SuspendLayout();
             this.pnUDPConnectType.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel92
@@ -101,6 +102,16 @@ namespace VEXI
             this.panel92.Size = new System.Drawing.Size(354, 2890);
             this.panel92.TabIndex = 17;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VEXI.Properties.Resources.현대무벡스주식회사CI_영문Color;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(322, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 329;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnQuickCtrl
             // 
             this.pnQuickCtrl.Controls.Add(this.button1);
@@ -108,8 +119,8 @@ namespace VEXI
             this.pnQuickCtrl.Controls.Add(this.btn_DevMode_SetupOn);
             this.pnQuickCtrl.Controls.Add(this.btn_StopEmergency);
             this.pnQuickCtrl.Controls.Add(this.btn_Stop);
-            this.pnQuickCtrl.Location = new System.Drawing.Point(7, 980);
-            this.pnQuickCtrl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnQuickCtrl.Location = new System.Drawing.Point(22, 1001);
+            this.pnQuickCtrl.Margin = new System.Windows.Forms.Padding(4);
             this.pnQuickCtrl.Name = "pnQuickCtrl";
             this.pnQuickCtrl.Size = new System.Drawing.Size(217, 291);
             this.pnQuickCtrl.TabIndex = 328;
@@ -121,7 +132,7 @@ namespace VEXI
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(9, 104);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 42);
             this.button1.TabIndex = 332;
@@ -136,7 +147,7 @@ namespace VEXI
             this.btn_ErrRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ErrRest.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_ErrRest.Location = new System.Drawing.Point(9, 14);
-            this.btn_ErrRest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ErrRest.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ErrRest.Name = "btn_ErrRest";
             this.btn_ErrRest.Size = new System.Drawing.Size(199, 42);
             this.btn_ErrRest.TabIndex = 331;
@@ -151,7 +162,7 @@ namespace VEXI
             this.btn_DevMode_SetupOn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_DevMode_SetupOn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_DevMode_SetupOn.Location = new System.Drawing.Point(9, 58);
-            this.btn_DevMode_SetupOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DevMode_SetupOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_SetupOn.Name = "btn_DevMode_SetupOn";
             this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(199, 42);
             this.btn_DevMode_SetupOn.TabIndex = 330;
@@ -167,7 +178,7 @@ namespace VEXI
             this.btn_StopEmergency.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_StopEmergency.ForeColor = System.Drawing.Color.Red;
             this.btn_StopEmergency.Location = new System.Drawing.Point(9, 159);
-            this.btn_StopEmergency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_StopEmergency.Margin = new System.Windows.Forms.Padding(4);
             this.btn_StopEmergency.Name = "btn_StopEmergency";
             this.btn_StopEmergency.Size = new System.Drawing.Size(199, 72);
             this.btn_StopEmergency.TabIndex = 327;
@@ -182,7 +193,7 @@ namespace VEXI
             this.btn_Stop.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Stop.ForeColor = System.Drawing.Color.Red;
             this.btn_Stop.Location = new System.Drawing.Point(9, 237);
-            this.btn_Stop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Stop.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Stop.Name = "btn_Stop";
             this.btn_Stop.Size = new System.Drawing.Size(199, 42);
             this.btn_Stop.TabIndex = 325;
@@ -403,7 +414,7 @@ namespace VEXI
             this.pnCommSetting.Controls.Add(this.cbDevID);
             this.pnCommSetting.Controls.Add(this.label2);
             this.pnCommSetting.Location = new System.Drawing.Point(1, 206);
-            this.pnCommSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnCommSetting.Margin = new System.Windows.Forms.Padding(4);
             this.pnCommSetting.Name = "pnCommSetting";
             this.pnCommSetting.Size = new System.Drawing.Size(241, 172);
             this.pnCommSetting.TabIndex = 33;
@@ -413,7 +424,7 @@ namespace VEXI
             this.pnUDPConnectType.Controls.Add(this.rb_5Connect);
             this.pnUDPConnectType.Controls.Add(this.rb_2Connect);
             this.pnUDPConnectType.Location = new System.Drawing.Point(9, 4);
-            this.pnUDPConnectType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnUDPConnectType.Margin = new System.Windows.Forms.Padding(4);
             this.pnUDPConnectType.Name = "pnUDPConnectType";
             this.pnUDPConnectType.Size = new System.Drawing.Size(227, 81);
             this.pnUDPConnectType.TabIndex = 347;
@@ -422,7 +433,7 @@ namespace VEXI
             // 
             this.rb_5Connect.AutoSize = true;
             this.rb_5Connect.Location = new System.Drawing.Point(119, 44);
-            this.rb_5Connect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rb_5Connect.Margin = new System.Windows.Forms.Padding(4);
             this.rb_5Connect.Name = "rb_5Connect";
             this.rb_5Connect.Size = new System.Drawing.Size(90, 25);
             this.rb_5Connect.TabIndex = 2;
@@ -434,7 +445,7 @@ namespace VEXI
             // 
             this.rb_2Connect.AutoSize = true;
             this.rb_2Connect.Location = new System.Drawing.Point(4, 44);
-            this.rb_2Connect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rb_2Connect.Margin = new System.Windows.Forms.Padding(4);
             this.rb_2Connect.Name = "rb_2Connect";
             this.rb_2Connect.Size = new System.Drawing.Size(105, 25);
             this.rb_2Connect.TabIndex = 1;
@@ -463,7 +474,7 @@ namespace VEXI
             "EMS",
             "0xFF"});
             this.cbDevType.Location = new System.Drawing.Point(16, 114);
-            this.cbDevType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDevType.Margin = new System.Windows.Forms.Padding(4);
             this.cbDevType.Name = "cbDevType";
             this.cbDevType.Size = new System.Drawing.Size(98, 29);
             this.cbDevType.TabIndex = 335;
@@ -556,7 +567,7 @@ namespace VEXI
             "80",
             "ANY"});
             this.cbDevID.Location = new System.Drawing.Point(123, 114);
-            this.cbDevID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDevID.Margin = new System.Windows.Forms.Padding(4);
             this.cbDevID.Name = "cbDevID";
             this.cbDevID.Size = new System.Drawing.Size(85, 29);
             this.cbDevID.TabIndex = 337;
@@ -576,7 +587,7 @@ namespace VEXI
             // btnCommClose
             // 
             this.btnCommClose.Location = new System.Drawing.Point(127, 459);
-            this.btnCommClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCommClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnCommClose.Name = "btnCommClose";
             this.btnCommClose.Size = new System.Drawing.Size(113, 51);
             this.btnCommClose.TabIndex = 346;
@@ -611,7 +622,7 @@ namespace VEXI
             // btnCommOpen
             // 
             this.btnCommOpen.Location = new System.Drawing.Point(6, 459);
-            this.btnCommOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCommOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnCommOpen.Name = "btnCommOpen";
             this.btnCommOpen.Size = new System.Drawing.Size(113, 51);
             this.btnCommOpen.TabIndex = 333;
@@ -644,6 +655,7 @@ namespace VEXI
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItem_Devmonitoring_User,
@@ -663,7 +675,7 @@ namespace VEXI
             this.MenuItem_basicSt,
             this.menu_DevSt});
             this.MenuItem_Devmonitoring_User.Name = "MenuItem_Devmonitoring_User";
-            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(164, 50);
+            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(164, 29);
             this.MenuItem_Devmonitoring_User.Text = "A. 장치 모니터링";
             // 
             // MenuItem_basicSt
@@ -683,7 +695,7 @@ namespace VEXI
             // ToolStripMenuItem
             // 
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(163, 50);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(163, 29);
             this.ToolStripMenuItem.Text = "B. 장비 운전조작";
             this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -698,8 +710,8 @@ namespace VEXI
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(125, 50);
-            this.toolStripMenuItem2.Text = "F. 출력 시험";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 29);
+            this.toolStripMenuItem2.Text = "C. 출력 시험";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // DPTimer
@@ -712,16 +724,6 @@ namespace VEXI
             this.Loggingtimer.Interval = 50;
             this.Loggingtimer.Tick += new System.EventHandler(this.Loggingtimer_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VEXI.Properties.Resources.현대무벡스주식회사CI_영문Color;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(322, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 329;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -729,9 +731,10 @@ namespace VEXI
             this.ClientSize = new System.Drawing.Size(4978, 2923);
             this.Controls.Add(this.panel92);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1451, 910);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -739,6 +742,7 @@ namespace VEXI
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel92.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnQuickCtrl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -748,7 +752,6 @@ namespace VEXI
             this.pnUDPConnectType.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

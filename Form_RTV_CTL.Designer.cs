@@ -127,7 +127,7 @@ namespace VEXI
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(88, 24);
             this.tabControl1.Location = new System.Drawing.Point(0, 352);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1373, 702);
@@ -151,9 +151,9 @@ namespace VEXI
             this.tab_Manual.Controls.Add(this.label1);
             this.tab_Manual.Controls.Add(this.groupBox1);
             this.tab_Manual.Location = new System.Drawing.Point(4, 28);
-            this.tab_Manual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tab_Manual.Margin = new System.Windows.Forms.Padding(4);
             this.tab_Manual.Name = "tab_Manual";
-            this.tab_Manual.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tab_Manual.Padding = new System.Windows.Forms.Padding(4);
             this.tab_Manual.Size = new System.Drawing.Size(1365, 670);
             this.tab_Manual.TabIndex = 0;
             this.tab_Manual.Text = "A. 수동 운전명령";
@@ -179,9 +179,9 @@ namespace VEXI
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Location = new System.Drawing.Point(491, 460);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(850, 111);
             this.groupBox2.TabIndex = 171;
             this.groupBox2.TabStop = false;
@@ -189,7 +189,7 @@ namespace VEXI
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(651, 30);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(166, 58);
             this.button5.TabIndex = 28;
@@ -202,7 +202,7 @@ namespace VEXI
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(454, 30);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(166, 58);
             this.button6.TabIndex = 27;
@@ -216,7 +216,7 @@ namespace VEXI
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(227, 30);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(166, 58);
             this.button7.TabIndex = 26;
@@ -230,7 +230,7 @@ namespace VEXI
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(30, 30);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(166, 58);
             this.button8.TabIndex = 25;
@@ -245,7 +245,7 @@ namespace VEXI
             // 
             this.btn_SetRef_Drive.Enabled = false;
             this.btn_SetRef_Drive.Location = new System.Drawing.Point(356, 33);
-            this.btn_SetRef_Drive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SetRef_Drive.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SetRef_Drive.Name = "btn_SetRef_Drive";
             this.btn_SetRef_Drive.Size = new System.Drawing.Size(107, 76);
             this.btn_SetRef_Drive.TabIndex = 169;
@@ -336,9 +336,9 @@ namespace VEXI
             this.groupBox9.Controls.Add(this.btn_Feed2_Right);
             this.groupBox9.Controls.Add(this.btn_Feed2_Left);
             this.groupBox9.Location = new System.Drawing.Point(923, 140);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox9.Size = new System.Drawing.Size(419, 254);
             this.groupBox9.TabIndex = 47;
             this.groupBox9.TabStop = false;
@@ -346,7 +346,7 @@ namespace VEXI
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(224, 159);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(166, 58);
             this.button3.TabIndex = 32;
@@ -360,7 +360,7 @@ namespace VEXI
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(27, 159);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(166, 58);
             this.button4.TabIndex = 31;
@@ -386,7 +386,7 @@ namespace VEXI
             // btn_Feed2_Right
             // 
             this.btn_Feed2_Right.Location = new System.Drawing.Point(224, 30);
-            this.btn_Feed2_Right.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Feed2_Right.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Feed2_Right.Name = "btn_Feed2_Right";
             this.btn_Feed2_Right.Size = new System.Drawing.Size(166, 58);
             this.btn_Feed2_Right.TabIndex = 26;
@@ -400,7 +400,7 @@ namespace VEXI
             // btn_Feed2_Left
             // 
             this.btn_Feed2_Left.Location = new System.Drawing.Point(27, 30);
-            this.btn_Feed2_Left.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Feed2_Left.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Feed2_Left.Name = "btn_Feed2_Left";
             this.btn_Feed2_Left.Size = new System.Drawing.Size(166, 58);
             this.btn_Feed2_Left.TabIndex = 25;
@@ -432,9 +432,9 @@ namespace VEXI
             this.groupBox8.Controls.Add(this.btn_Feed1_Right);
             this.groupBox8.Controls.Add(this.btn_Feed1_Left);
             this.groupBox8.Location = new System.Drawing.Point(491, 140);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox8.Size = new System.Drawing.Size(419, 254);
             this.groupBox8.TabIndex = 45;
             this.groupBox8.TabStop = false;
@@ -454,7 +454,7 @@ namespace VEXI
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(227, 159);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 58);
             this.button1.TabIndex = 28;
@@ -468,7 +468,7 @@ namespace VEXI
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(30, 159);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(166, 58);
             this.button2.TabIndex = 27;
@@ -482,7 +482,7 @@ namespace VEXI
             // btn_Feed1_Right
             // 
             this.btn_Feed1_Right.Location = new System.Drawing.Point(227, 30);
-            this.btn_Feed1_Right.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Feed1_Right.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Feed1_Right.Name = "btn_Feed1_Right";
             this.btn_Feed1_Right.Size = new System.Drawing.Size(166, 58);
             this.btn_Feed1_Right.TabIndex = 26;
@@ -496,7 +496,7 @@ namespace VEXI
             // btn_Feed1_Left
             // 
             this.btn_Feed1_Left.Location = new System.Drawing.Point(30, 30);
-            this.btn_Feed1_Left.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Feed1_Left.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Feed1_Left.Name = "btn_Feed1_Left";
             this.btn_Feed1_Left.Size = new System.Drawing.Size(166, 58);
             this.btn_Feed1_Left.TabIndex = 25;
@@ -528,9 +528,9 @@ namespace VEXI
             this.groupBox1.Controls.Add(this.btn_Forward_MiddleSpeed);
             this.groupBox1.Controls.Add(this.btn_Forward_LowSpeed);
             this.groupBox1.Location = new System.Drawing.Point(23, 198);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(454, 332);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
@@ -550,7 +550,7 @@ namespace VEXI
             // btn_Backward_MiddleSpeed
             // 
             this.btn_Backward_MiddleSpeed.Location = new System.Drawing.Point(263, 178);
-            this.btn_Backward_MiddleSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Backward_MiddleSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Backward_MiddleSpeed.Name = "btn_Backward_MiddleSpeed";
             this.btn_Backward_MiddleSpeed.Size = new System.Drawing.Size(166, 86);
             this.btn_Backward_MiddleSpeed.TabIndex = 4;
@@ -564,7 +564,7 @@ namespace VEXI
             // btn_Backward_LowSpeed
             // 
             this.btn_Backward_LowSpeed.Location = new System.Drawing.Point(27, 178);
-            this.btn_Backward_LowSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Backward_LowSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Backward_LowSpeed.Name = "btn_Backward_LowSpeed";
             this.btn_Backward_LowSpeed.Size = new System.Drawing.Size(166, 86);
             this.btn_Backward_LowSpeed.TabIndex = 4;
@@ -578,7 +578,7 @@ namespace VEXI
             // btn_Forward_MiddleSpeed
             // 
             this.btn_Forward_MiddleSpeed.Location = new System.Drawing.Point(263, 76);
-            this.btn_Forward_MiddleSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Forward_MiddleSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Forward_MiddleSpeed.Name = "btn_Forward_MiddleSpeed";
             this.btn_Forward_MiddleSpeed.Size = new System.Drawing.Size(166, 86);
             this.btn_Forward_MiddleSpeed.TabIndex = 5;
@@ -592,7 +592,7 @@ namespace VEXI
             // btn_Forward_LowSpeed
             // 
             this.btn_Forward_LowSpeed.Location = new System.Drawing.Point(27, 76);
-            this.btn_Forward_LowSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Forward_LowSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Forward_LowSpeed.Name = "btn_Forward_LowSpeed";
             this.btn_Forward_LowSpeed.Size = new System.Drawing.Size(166, 86);
             this.btn_Forward_LowSpeed.TabIndex = 5;
@@ -607,7 +607,7 @@ namespace VEXI
             // 
             this.btn_Dev_StartOn.Enabled = false;
             this.btn_Dev_StartOn.Location = new System.Drawing.Point(33, 9);
-            this.btn_Dev_StartOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Dev_StartOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Dev_StartOn.Name = "btn_Dev_StartOn";
             this.btn_Dev_StartOn.Size = new System.Drawing.Size(124, 58);
             this.btn_Dev_StartOn.TabIndex = 23;
@@ -619,9 +619,8 @@ namespace VEXI
             // 
             // btn_Dev_StartOff
             // 
-            this.btn_Dev_StartOff.Enabled = false;
             this.btn_Dev_StartOff.Location = new System.Drawing.Point(33, 76);
-            this.btn_Dev_StartOff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Dev_StartOff.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Dev_StartOff.Name = "btn_Dev_StartOff";
             this.btn_Dev_StartOff.Size = new System.Drawing.Size(124, 58);
             this.btn_Dev_StartOff.TabIndex = 24;
@@ -639,7 +638,7 @@ namespace VEXI
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1373, 352);
             this.panel1.TabIndex = 0;
@@ -663,7 +662,7 @@ namespace VEXI
             this.tabControl2.Controls.Add(this.tabPage1);
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Location = new System.Drawing.Point(607, 81);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(747, 256);
@@ -681,9 +680,9 @@ namespace VEXI
             this.tabPage1.Controls.Add(this.btn_DevMode_ForceOff);
             this.tabPage1.Controls.Add(this.btn_Dev_AlarmReset);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(739, 224);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "AA. 제어";
@@ -691,7 +690,7 @@ namespace VEXI
             // btn_DevMode_AutoOn
             // 
             this.btn_DevMode_AutoOn.Location = new System.Drawing.Point(344, 9);
-            this.btn_DevMode_AutoOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DevMode_AutoOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_AutoOn.Name = "btn_DevMode_AutoOn";
             this.btn_DevMode_AutoOn.Size = new System.Drawing.Size(159, 44);
             this.btn_DevMode_AutoOn.TabIndex = 40;
@@ -704,7 +703,7 @@ namespace VEXI
             // btn_DevMode_SetupOn
             // 
             this.btn_DevMode_SetupOn.Location = new System.Drawing.Point(344, 112);
-            this.btn_DevMode_SetupOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DevMode_SetupOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_SetupOn.Name = "btn_DevMode_SetupOn";
             this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(159, 44);
             this.btn_DevMode_SetupOn.TabIndex = 46;
@@ -717,7 +716,7 @@ namespace VEXI
             // btn_DevMode_ManualOn
             // 
             this.btn_DevMode_ManualOn.Location = new System.Drawing.Point(344, 60);
-            this.btn_DevMode_ManualOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DevMode_ManualOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_ManualOn.Name = "btn_DevMode_ManualOn";
             this.btn_DevMode_ManualOn.Size = new System.Drawing.Size(159, 44);
             this.btn_DevMode_ManualOn.TabIndex = 42;
@@ -730,7 +729,7 @@ namespace VEXI
             // btn_DevMode_ForceOn
             // 
             this.btn_DevMode_ForceOn.Location = new System.Drawing.Point(344, 165);
-            this.btn_DevMode_ForceOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DevMode_ForceOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_ForceOn.Name = "btn_DevMode_ForceOn";
             this.btn_DevMode_ForceOn.Size = new System.Drawing.Size(159, 44);
             this.btn_DevMode_ForceOn.TabIndex = 44;
@@ -743,7 +742,7 @@ namespace VEXI
             // btn_DevMode_ForceOff
             // 
             this.btn_DevMode_ForceOff.Location = new System.Drawing.Point(513, 165);
-            this.btn_DevMode_ForceOff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DevMode_ForceOff.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_ForceOff.Name = "btn_DevMode_ForceOff";
             this.btn_DevMode_ForceOff.Size = new System.Drawing.Size(159, 44);
             this.btn_DevMode_ForceOff.TabIndex = 45;
@@ -756,7 +755,7 @@ namespace VEXI
             // btn_Dev_AlarmReset
             // 
             this.btn_Dev_AlarmReset.Location = new System.Drawing.Point(33, 147);
-            this.btn_Dev_AlarmReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Dev_AlarmReset.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Dev_AlarmReset.Name = "btn_Dev_AlarmReset";
             this.btn_Dev_AlarmReset.Size = new System.Drawing.Size(124, 58);
             this.btn_Dev_AlarmReset.TabIndex = 40;
@@ -781,9 +780,9 @@ namespace VEXI
             this.tabPage2.Controls.Add(this.label177);
             this.tabPage2.Controls.Add(this.label178);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(739, 224);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BB. 주행 위치";
@@ -936,9 +935,9 @@ namespace VEXI
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label92);
             this.groupBox3.Location = new System.Drawing.Point(16, 80);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(557, 255);
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
@@ -1170,7 +1169,7 @@ namespace VEXI
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_RTV_CTL";

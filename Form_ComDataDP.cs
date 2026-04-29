@@ -47,6 +47,7 @@ namespace VEXI
         public void Display_RxData(bool CRCOK, byte[] PaketBytes, byte RevCRC1, byte RevCRC2, byte RevETX)
         {
             if (cbStopRefresh.Checked) return;
+            if (!listBox1.IsHandleCreated) return;
             if (cbNoPollingData.Checked)
             {
                 if ((PaketBytes[11] == ConstClass.CMD1_80) || (PaketBytes[11] == ConstClass.CMD1_81))
@@ -75,6 +76,7 @@ namespace VEXI
                     //디버그 모드에서는 컨트롤이 자신이 만든 스레드가 아닌 다른 스레드에 의해서 호출되면 에러가 나기때문에invoke
                     if (listBox1.InvokeRequired)
                     {
+                        if (!listBox1.IsHandleCreated) return;
                         if (CRCOK)
                         {
                             if (!InOnce)
@@ -163,6 +165,7 @@ namespace VEXI
         public void Display_TxData(byte[] PaketBytes)
         {
             if (cbStopRefresh.Checked) return;
+            if (!listBox1.IsHandleCreated) return;
             if (cbNoPollingData.Checked)
             {
                 if ((PaketBytes[11] == ConstClass.CMD1_00) || (PaketBytes[11] == ConstClass.CMD1_01))
@@ -189,6 +192,7 @@ namespace VEXI
                     //디버그 모드에서는 컨트롤이 자신이 만든 스레드가 아닌 다른 스레드에 의해서 호출되면 에러가 나서 아래처럼 해결
                     if (listBox1.InvokeRequired)
                     {
+                        if (!listBox1.IsHandleCreated) return;
                         if (!InOnce)
                         {
                             
@@ -231,6 +235,7 @@ namespace VEXI
 
         public void Display_Debug(string catpionStr, string DebugStr)
         {
+            if (!listBox1.IsHandleCreated) return;
             if (listBox1.InvokeRequired)
             {
                 listBox1.Invoke(new MethodInvoker(delegate

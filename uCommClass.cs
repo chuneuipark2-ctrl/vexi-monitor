@@ -632,6 +632,11 @@ namespace VEXI
             packetTimer.Interval = 20;
             packetTimer.Tick += new EventHandler(EventPacketTimer);
             packetTimer.Enabled = true;
+
+            // 조그 상태 기본: 유휴(0xFF). 0/0이면 OnCheckJogCtrl이 매 주기 잘못된 정지 프레임을 만들 수 있음.
+            DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0xFF;
+            DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_OLD = 0xFF;
+            DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = 0;
         }
 
         ~TCOMMDataManager()
@@ -1228,6 +1233,7 @@ namespace VEXI
                     PollingRec.TxRepeatCtrlCheckTime = DateTime.Now;
                 }
                 ts = DateTime.Now - PollingRec.TxRepeatCtrlCheckTime;
+                // 조그 유지: 약 200ms마다 Form_Main.Do_JogCtrl 등록 핸들러 호출 → CMD2_80 재전송(MCU가 주기 수신을 요구할 때 대응).
                 if (ts.TotalMilliseconds >= 200)
                 {
                     PollingRec.TxRepeatCtrlCheckTime = DateTime.Now;
@@ -3216,8 +3222,9 @@ namespace VEXI
                     {
                         OnPacketSended(CommMode, TmpData);
                     }
+                    return true;
                 }
-                return true;
+                return false;
             }
             catch
             {

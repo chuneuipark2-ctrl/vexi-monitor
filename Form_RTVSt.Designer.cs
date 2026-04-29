@@ -1058,7 +1058,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1576, 156);
+            this.panel1.Size = new System.Drawing.Size(1540, 156);
             this.panel1.TabIndex = 53;
             // 
             // groupBox9
@@ -1224,7 +1224,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 156);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1576, 739);
+            this.panel2.Size = new System.Drawing.Size(1540, 689);
             this.panel2.TabIndex = 56;
             // 
             // panel3
@@ -1236,7 +1236,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(418, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(703, 739);
+            this.panel3.Size = new System.Drawing.Size(703, 689);
             this.panel3.TabIndex = 58;
             // 
             // panel5
@@ -1436,7 +1436,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.panel5.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel5.Location = new System.Drawing.Point(0, 45);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(703, 694);
+            this.panel5.Size = new System.Drawing.Size(703, 644);
             this.panel5.TabIndex = 609;
             // 
             // lbl_OSt_38
@@ -3777,7 +3777,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(418, 739);
+            this.tabControl1.Size = new System.Drawing.Size(418, 689);
             this.tabControl1.TabIndex = 57;
             // 
             // tabPage1
@@ -3878,8 +3878,8 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(410, 713);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(410, 663);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "주행 / 피딩";
             // 
@@ -4858,7 +4858,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(410, 713);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "리모컨";
@@ -5035,7 +5035,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             this.tabPage5.Controls.Add(this.groupBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(410, 713);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "WCS / 지상반";
@@ -5514,7 +5514,7 @@ base는 나의 부모(기본 Form 클래스)를 의미합니다. "내가 챙길 
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1576, 895);
+            this.ClientSize = new System.Drawing.Size(1540, 845);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

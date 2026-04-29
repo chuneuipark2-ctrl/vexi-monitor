@@ -63,12 +63,27 @@ namespace VEXI
 
         }
 
+        // RTV 주행·피딩 조그: Designer에서 MouseDown/Up → 본 핸들러. 버튼 Tag 문자열이 Manual_DEV_CtrlRec의 조그 종류 번호가 됨.
+        // → Form_Main.Do_JogCtrl()이 TDEV_ManualCtrl로 바꾼 뒤 CMD1_00+CMD2_80(문서상 0x0080 수동명령)으로 송신 큐에1 적재.
+
+        /// <summary>TDEV_ManualCtrl.LowSpeed_Ref. RTV: 1=저속·동시저속 등, 2=주행중속(13·14)·포크고속(34·35·44·45·74·75). 펌웨어 표와 불일치 시 여기만 조정.</summary>
+        private static byte RtvManualJog_LowSpeedRefFromTag(byte jogTag)
+        {
+            if (jogTag == 13 || jogTag == 14) return 2;
+            if (jogTag == 34 || jogTag == 35 || jogTag == 44 || jogTag == 45) return 2;
+            if (jogTag == 74 || jogTag == 75) return 2;
+            return 1;
+        }
+
         private void btn_UP_LowSpeed_MouseUp(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
             if (bt == null) return;
 
-            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = Convert.ToByte(bt.Tag.ToString());
+            byte jogTag = Convert.ToByte(bt.Tag.ToString());
+            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = RtvManualJog_LowSpeedRefFromTag(jogTag);
+            // 손 뗌: CtrlTypeValue=0, before=직전 Tag → Do_JogCtrl에서 정지용 CMD2_80(필요 시 이중 송신) 경로.
+            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = jogTag;
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0;
             form_Main.Do_JogCtrl();
         }
@@ -78,7 +93,10 @@ namespace VEXI
             Button bt = sender as Button;
             if (bt == null) return;
 
-            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = Convert.ToByte(bt.Tag.ToString());
+            byte jogTag = Convert.ToByte(bt.Tag.ToString());
+            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef = RtvManualJog_LowSpeedRefFromTag(jogTag);
+            // 누름: CtrlTypeValue=Tag(11 주행저속전진 … 75 동시고속우 등) → Drive/Fork1/Fork2/CtrlFlag로 매핑됨.
+            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = jogTag;
             form_Main.Do_JogCtrl();
         }
 
@@ -1249,6 +1267,7 @@ namespace VEXI
 
         private void Form_RTV_CTL_Deactivate(object sender, EventArgs e)
         {
+            // 다른 화면으로 포커스가 나갈 때 조그가 켜져 있으면 한 번 Do_JogCtrl 호출로 정지 쪽 처리.
             if ((form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0) &&
                 (form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0xFF))
             {

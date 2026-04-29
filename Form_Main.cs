@@ -128,6 +128,7 @@ namespace VEXI
             COMMDataManager.OnDebugging += OnMainDebugging;
             COMMDataManager.OnPacketReceived += OnMainPacketReceived;
             COMMDataManager.OnPacketSended += OnMainPacketSended;
+            // 송신 폴링(uCommClass, 약 200ms)에서 호출 — 조그 중 CMD2_80 유지. Do_JogCtrl 주석 참고.
             COMMDataManager.OnCheckJogCtrl += Do_JogCtrl;
 
 
@@ -140,6 +141,9 @@ namespace VEXI
 
             //Setup.ini 에서 환경설정 내용 불러오기
             LoadSystemConfig();
+
+            // INI에 IP·장치가 있으면 시작 시 UDP 오픈(조그/폴링이 CommSt!=0을 요구). 실패해도 무시.
+            TryConnectUdpFromCurrentSettings(false);
 
             //UDP 통신 Thread 1개 생성
             Create_Thread(1);
@@ -188,6 +192,38 @@ namespace VEXI
         {
             CheckSelectedDevice();
             SaveSystemConfig();
+        }
+
+        private void UpdateWifiDeviceIP()
+        {
+            if (!pnUDPConnectType.Visible)
+            {
+                return;
+            }
+
+            int baseAddress;
+            if (rb_2Connect.Checked)
+            {
+                baseAddress = 100;
+            }
+            else if (rb_5Connect.Checked)
+            {
+                baseAddress = 150;
+            }
+            else
+            {
+                return;
+            }
+
+            int hostId = 1;
+            if ((cbDevID.SelectedIndex >= 0) && (cbDevID.SelectedIndex < (cbDevID.Items.Count - 1)))
+            {
+                hostId = COMMDataManager.SelectDestDevID;
+            }
+
+            // Main 폼에는 WiFi 접속용 IP 입력 컨트롤이 edDevIP로 존재하지 않을 수 있어
+            // 여기서는 실제 접속 로직이 참조하는 값(WCIP)만 갱신한다.
+            WCIP = "192.168.100." + (baseAddress + hostId).ToString();
         }
 
         private void btn_RefreshComPort_Click(object sender, EventArgs e)
@@ -1014,70 +1050,81 @@ namespace VEXI
             }
         }
 
-        private void btnCommOpen_Click(object sender, EventArgs e)
+        /// <summary>INI·UI의 WCIP로 UDP 오픈. 이미 열려 있으면 true. showErrors false면 검증 실패 시 메시지 없이 false.</summary>
+        private bool TryConnectUdpFromCurrentSettings(bool showErrors)
         {
-            //통신열기
-            //Serial 이나 UDP냐에 따라서 처리
-            
-            IPAddress DevIP;
-            string PortNum;
-            string caption = "Warnning";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-
-            
-            /*
-            if (rbCommSerial.Checked)
+            if (COMMDataManager.CommSt != 0)
             {
-                if (Port_Combox.SelectedIndex == -1)
-                {
-                    MessageBox.Show(this, "통신 포트를 설정하여야 합니다", caption, buttons, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    PortNum = Port_Combox.Items[Port_Combox.SelectedIndex].ToString();
-                    COMMDataManager.SetCommMode(ConstClass.COMM_SERIAL, PortNum, "", 0);
-                }
-
+                return true;
             }
-            */
-            /*
-            else if (rbCommUDP.Checked)
+
+            IPAddress devIp;
+            const string caption = "Warnning";
+            const MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+            if (pnUDPConnectType.Visible)
             {
-                if (edDevIP.Text.Trim() == "")
+                if (!rb_2Connect.Checked && !rb_5Connect.Checked)
+                {
+                    rb_2Connect.Checked = true;
+                }
+                UpdateWifiDeviceIP();
+            }
+
+            string targetIp = WCIP != null ? WCIP.Trim() : "";
+            if (targetIp == "")
+            {
+                if (showErrors)
                 {
                     MessageBox.Show(this, "IP를 설정하여야 합니다", caption, buttons, MessageBoxIcon.Warning);
                 }
-                else
+                return false;
+            }
+
+            if (!Global_Class.UTIL_IsValid_IP(targetIp, out devIp))
+            {
+                if (showErrors)
                 {
-                    if (!Global_Class.UTIL_IsValid_IP(edDevIP.Text, out DevIP))
-                    {
-                        MessageBox.Show(this, "IP를 설정하여야 합니다", caption, buttons, MessageBoxIcon.Warning);
-                        
-                    }
-                    else
-                    {
-                        //COMMDataManager.SetCommMode(ConstClass.COMM_UDP, "", edDevIP.Text, Convert.ToUInt16(textBox1.Text));
-                        if (pnUDPConnectType.Visible)
-                        {
-                            COMMDataManager.RemotePort = ConstClass.WIFIConnect_PORT;
-                        } else
-                        {
-                            COMMDataManager.RemotePort = ConstClass.MCUConnect_PORT;
-                        }
-                        COMMDataManager.SetCommMode(ConstClass.COMM_UDP, "", edDevIP.Text, 8000);
-                    }
+                    MessageBox.Show(this, "IP를 설정하여야 합니다", caption, buttons, MessageBoxIcon.Warning);
                 }
+                return false;
+            }
+
+            if (pnUDPConnectType.Visible)
+            {
+                COMMDataManager.RemotePort = ConstClass.WIFIConnect_PORT;
             }
             else
             {
-                MessageBox.Show(this, "통신방식을 선택하여야 합니다", caption, buttons, MessageBoxIcon.Warning);
+                COMMDataManager.RemotePort = ConstClass.MCUConnect_PORT;
             }
 
+            COMMDataManager.SetCommMode(ConstClass.COMM_UDP, "", targetIp, 8000);
             Display_CommSt();
-            
+            return true;
+        }
+
+        private void btnCommOpen_Click(object sender, EventArgs e)
+        {
+            const string caption = "Warnning";
+            const MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+            if (pnUDPConnectType.Visible)
+            {
+                if (!rb_2Connect.Checked && !rb_5Connect.Checked)
+                {
+                    MessageBox.Show(this, "2.4G 또는 5G 연결을 선택하여야 합니다", caption, buttons, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            if (!TryConnectUdpFromCurrentSettings(true))
+            {
+                return;
+            }
+
             CheckSelectedDevice();
             SaveSystemConfig();
-            */
         }
 
         private void Display_CommSt()
@@ -3311,33 +3358,18 @@ namespace VEXI
                 if (cbDevID.SelectedIndex == (cbDevID.Items.Count - 1))
                 {
                     COMMDataManager.SelectDestDevID = 0xFF;
-                    if (pnUDPConnectType.Visible)
-                    {
-                        //if (rb_2Connect.Checked) edDevIP.Text = "192.168.100.101";
-                        //if (rb_5Connect.Checked) edDevIP.Text = "192.168.100.151";
-                    }
                 }
                 else
                 {
                     COMMDataManager.SelectDestDevID = Convert.ToByte(cbDevID.SelectedIndex + 1);
-
-                    if (pnUDPConnectType.Visible)
-                    {
-                        if (rb_2Connect.Checked)
-                        {
-                          //  edDevIP.Text = "192.168.100." + (100 + COMMDataManager.SelectDestDevID).ToString();
-                        }
-                        if (rb_5Connect.Checked)
-                        {
-                         //   edDevIP.Text = "192.168.100." + (150 + COMMDataManager.SelectDestDevID).ToString();
-                        }
-                    }
                 }
             }
             else
             {
                 COMMDataManager.SelectDestDevID = 1;
             }
+
+            UpdateWifiDeviceIP();
 
             switch (COMMDataManager.SelectDestDevType)
             {
@@ -3607,6 +3639,15 @@ namespace VEXI
             }
             
         }
+
+        /*!
+         * 수동 조그 → 송신(프로토콜 문서 "0x0080 수동명령"과 대응).
+         * - UI(Form_RTV_CTL 등)가 Manual_DEV_CtrlRec에 CtrlTypeValue·LowSpeedRef를 넣고 호출.
+         * - 문서의 0080은 보통 CMD1=0x00, CMD2=0x80 두 바이트로 표기한 것이며, 본문은 TDEV_ManualCtrl(dev_REC_ManualCtrl) 직렬화.
+         * - MouseDown: CtrlTypeValue=버튼 Tag(11·12·…). MouseUp: CtrlTypeValue=0, CtrlTypeValue_before=방금 Tag → 정지용 프레임.
+         * - CtrlTypeValue==0 분기에서 IStwice이면 송신 큐 비운 뒤 CMD2_80을 두 번 연속 넣음(정지/전환 시퀀스).
+         * - 누르고 있는 동안은 uCommClass에서 약 200ms마다 OnCheckJogCtrl→본 함수로 동일 조그 재전송.
+         */
         public unsafe void Do_JogCtrl()
         {
             bool IStwice = false;
@@ -3623,14 +3664,14 @@ namespace VEXI
 
             if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0xFF) return;
 
-
-            if (COMMDataManager.UserDataCount > 0)
+            if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0 &&
+                COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before == 0)
             {
-                if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_OLD)
-                {
-                    return;
-                }
+                return;
             }
+
+            // 송신 큐에 데이터가 있어도 동일 조그 코드 재전송 허용(누르고 있는 동안 200ms 폴링·MCU 유지용).
+            // 예전 UserDataCount==vOld 차단은 통신 정상인데도 조그가 막히는 경우가 있어 제거함.
 
             COMMDataManager.RefreshTxRepeatCtrlCheckTime();
 
@@ -3779,14 +3820,15 @@ namespace VEXI
                         DevCtrl->Fork1 = 13;
                         DevCtrl->Fork2 = 13;
                         break;
-                    default: return;
+                    default:
+                        return;
                 }
             }
 
-            //통신장애인 경우에는 수동구동명령은 날리지 않는다
-            if ((!COMMDataManager.ISCOMM_ResponsGood) && (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0)) return; 
+            // ISCOMM_ResponsGood 차단 제거: UDP는 열렸는데 폴링 타이밍만 어긋나 조그가 막히는 현장 대응.
+            // CommSt==0 이면 ADD_TxUserData는 큐에 넣지 않음 — 시작 시 자동 UDP 연결(TryConnectUdpFromCurrentSettings) 권장.
 
-
+            // TYPE_02·CMD1_00·CMD2_0x80 + 바디 길이는 ADD_TxUserData 내부에서 Marshal.SizeOf(TDEV_ManualCtrl) 기준으로 헤더에 설정됨.
             if (IStwice)
             {
                 COMMDataManager.ADD_TxUserDataBeforeClear(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, COMMDataManager.DevRec.dev_REC_ManualCtrl);
@@ -4471,14 +4513,7 @@ namespace VEXI
             {
                 if (rb_2Connect.Checked)
                 {
-                    if (cbDevID.SelectedIndex == (cbDevID.Items.Count - 1))
-                    {
-                     //   edDevIP.Text = "192.168.100.101";
-                    }
-                    else
-                    {
-                    //    edDevIP.Text = "192.168.100." + (100 + COMMDataManager.SelectDestDevID).ToString();
-                    }
+                    UpdateWifiDeviceIP();
                 }
             }
         }
@@ -4489,14 +4524,7 @@ namespace VEXI
             {
                 if (rb_5Connect.Checked)
                 {
-                    if (cbDevID.SelectedIndex == (cbDevID.Items.Count - 1))
-                    {
-                      //  edDevIP.Text = "192.168.100.151";
-                    }
-                    else
-                    {
-                     //   edDevIP.Text = "192.168.100." + (150 + COMMDataManager.SelectDestDevID).ToString();
-                    }
+                    UpdateWifiDeviceIP();
                 }
             }
         }
@@ -4733,6 +4761,16 @@ namespace VEXI
         }
 
         private void edAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_SelectDev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_ResponseDevType_Click(object sender, EventArgs e)
         {
 
         }

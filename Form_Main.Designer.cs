@@ -31,7 +31,6 @@ namespace VEXI
         {
             this.components = new System.ComponentModel.Container();
             this.panel92 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnQuickCtrl = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ErrRest = new System.Windows.Forms.Button();
@@ -76,7 +75,6 @@ namespace VEXI
             this.DPTimer = new System.Windows.Forms.Timer(this.components);
             this.Loggingtimer = new System.Windows.Forms.Timer(this.components);
             this.panel92.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnQuickCtrl.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,7 +88,6 @@ namespace VEXI
             this.panel92.AutoScroll = true;
             this.panel92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel92.Controls.Add(this.pictureBox1);
             this.panel92.Controls.Add(this.pnQuickCtrl);
             this.panel92.Controls.Add(this.panel3);
             this.panel92.Controls.Add(this.panel2);
@@ -98,21 +95,8 @@ namespace VEXI
             this.panel92.Location = new System.Drawing.Point(0, 24);
             this.panel92.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel92.Name = "panel92";
-            this.panel92.Size = new System.Drawing.Size(288, 1331);
+            this.panel92.Size = new System.Drawing.Size(288, 821);
             this.panel92.TabIndex = 17;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::VEXI.Properties.Resources.현대무벡스CI_영문Color;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
             // 
             // pnQuickCtrl
             // 
@@ -332,6 +316,7 @@ namespace VEXI
             this.lbl_ResponseDevType.TabIndex = 340;
             this.lbl_ResponseDevType.Text = "---";
             this.lbl_ResponseDevType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ResponseDevType.Click += new System.EventHandler(this.lbl_ResponseDevType_Click);
             this.lbl_ResponseDevType.DoubleClick += new System.EventHandler(this.lbl_ResponseDevType_DoubleClick);
             // 
             // label10
@@ -578,6 +563,7 @@ namespace VEXI
             this.lbl_SelectDev.TabIndex = 343;
             this.lbl_SelectDev.Text = "----";
             this.lbl_SelectDev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_SelectDev.Click += new System.EventHandler(this.lbl_SelectDev_Click);
             // 
             // lblCommStatus
             // 
@@ -633,7 +619,7 @@ namespace VEXI
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(2691, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1540, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -697,7 +683,7 @@ namespace VEXI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2691, 1355);
+            this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.panel92);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -709,7 +695,6 @@ namespace VEXI
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel92.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnQuickCtrl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -769,7 +754,6 @@ namespace VEXI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_ResponseDevFW;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

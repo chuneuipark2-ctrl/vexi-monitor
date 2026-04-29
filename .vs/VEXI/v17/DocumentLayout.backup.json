@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|c:\\users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_rtv_ctl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_rtv_ctl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_rtv_ctl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_rtv_ctl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_rtvst.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_rtvst.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form_RTV_CTL.cs",
+              "DocumentMoniker": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTV_CTL.cs",
+              "RelativeDocumentMoniker": "Form_RTV_CTL.cs",
+              "ToolTip": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTV_CTL.cs",
+              "RelativeToolTip": "Form_RTV_CTL.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T02:58:33.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form_RTV_CTL.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTV_CTL.cs",
+              "RelativeDocumentMoniker": "Form_RTV_CTL.cs",
+              "ToolTip": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTV_CTL.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_RTV_CTL.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T01:32:50.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form_RTVSt.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTVSt.cs",
+              "RelativeDocumentMoniker": "Form_RTVSt.cs",
+              "ToolTip": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTVSt.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_RTVSt.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T01:30:58.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form_Main.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_Main.cs",
+              "RelativeDocumentMoniker": "Form_Main.cs",
+              "ToolTip": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_Main.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_Main.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T00:40:18.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form_Main.cs",
+              "DocumentMoniker": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_Main.cs",
+              "RelativeDocumentMoniker": "Form_Main.cs",
+              "ToolTip": "C:\\Users\\hmx_elec\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_Main.cs",
+              "RelativeToolTip": "Form_Main.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwBoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T00:41:49.426Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

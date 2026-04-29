@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\wbin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,15 +43,20 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\wbin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup>
+    <InheritedListViewPath Condition="Exists('$(MSBuildThisFileDirectory)lib\InheritedListView.dll')">$(MSBuildThisFileDirectory)lib\InheritedListView.dll</InheritedListViewPath>
+    <InheritedListViewPath Condition="'$(InheritedListViewPath)' == '' and Exists('..\UserComponent\InheritedListView\InheritedListView\bin\Debug\InheritedListView.dll')">..\UserComponent\InheritedListView\InheritedListView\bin\Debug\InheritedListView.dll</InheritedListViewPath>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InheritedListView">
-      <HintPath>..\UserComponent\InheritedListView\InheritedListView\bin\Debug\InheritedListView.dll</HintPath>
+    <Reference Include="InheritedListView" Condition="'$(InheritedListViewPath)' != ''">
+      <HintPath>$(InheritedListViewPath)</HintPath>
+      <Private>true</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -343,6 +348,9 @@
     <Compile Include="frameLogin.Designer.cs">
       <DependentUpon>frameLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="InheritedListViewFallback.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ListViewNumberColumnSorter.cs" />
     <Compile Include="LvScrollSyncclass.cs" />
     <Compile Include="Program.cs" />
@@ -527,7 +535,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\돋보기.bmp" />
+    <None Include="Resources\magnifying_glass.bmp" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -540,7 +548,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\현대무벡스CI_영문Color.png" />
+    <None Include="Resources\hyundai_ci.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

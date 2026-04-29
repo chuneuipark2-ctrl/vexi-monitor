@@ -6711,7 +6711,10 @@ public static string[,] RTV_DI_Names =
 
         #region 수동운전 지령 구조체
         /*!
-         * 프로토콜 "0x0080 수동명령" 참조
+         * 프로토콜 "0x0080 수동명령" 참조 — 송신 시 CMD1=0x00, CMD2=0x80 과 함께 본 구조체를 바디로 직렬화(Form_Main.Do_JogCtrl → ADD_TxUserData).
+         * CtrlFlag[0]: 축 선택 비트 — 주행 0x01, 승강 0x02, Fork1 0x04, Fork2 0x08, 동시 0x0C 등(Do_JogCtrl switch와 동일).
+         * Drive / Updown / Fork1 / Fork2: 문서의 축별 방향·속도 단계 코드(Do_JogCtrl의 case 숫자).
+         * LowSpeed_Ref: 수동 속도 프로파일 번호(RTV는 Form_RTV_CTL.RtvManualJog_LowSpeedRefFromTag에서 설정).
          */
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct TDEV_ManualCtrl
@@ -6774,10 +6777,12 @@ public static string[,] RTV_DI_Names =
         /*! 서브 구조체 */
         public struct TManual_DEV_CtrlBuf
         {
-            // 0 : 정지
+            // CtrlTypeValue / CtrlTypeValue_before: UI 버튼 Tag와 동일한 조그 종류 번호 → Do_JogCtrl에서 TDEV_ManualCtrl로 변환.
+            // 0 : 정지(MouseUp에서 CtrlTypeValue=0, before=직전 Tag)
             // 11 : 저속전진 12 : 저속후진 13 : 중속전진 14 : 중속후진
             // 21 : 저속상승 22 : 저속하강 23 : 중속상승 24 : 중속하강
             // 31 : Fork1 중심 32 : Fork1 좌 33 : Fork1 우
+            // RTV Form: Fork1 고속 34·35, Fork2 저속 42·43·고속 44·45, 동시 72~75 등 확장(Do_JogCtrl case 참고).
             // 41 : Fork2 중심 42 : Fork2 좌 43 : Fork2 우
             public byte CtrlTypeValue_OLD;
             public byte CtrlTypeValue;

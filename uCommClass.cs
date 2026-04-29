@@ -593,7 +593,8 @@ namespace VEXI
         private EndPoint RemotePoint = new IPEndPoint(IPAddress.Any, ConstClass.MCUConnect_PORT);
         private EndPoint RecvRemotePoint = new IPEndPoint(IPAddress.Any, ConstClass.MCUConnect_PORT);
         IAsyncResult AsyncResult_UDP;
-
+        /// <summary>BeginReceiveFrom 직후 Sck과 동일 참조. StopComm에서 Sck=null 후에도 EndReceiveFrom에 필요.</summary>
+        private Socket _udpPendingRecvSocket;
 
         private ushort _RemtePort; 
 
@@ -1066,11 +1067,15 @@ namespace VEXI
                 fSerialPort.Close();
             }
 
-            if (Sck != null)
+            lock (UDPlockObject)
             {
-                Sck.Shutdown(SocketShutdown.Both);
-                Sck.Close();
-                Sck = null;
+                if (Sck != null)
+                {
+                    try { Sck.Shutdown(SocketShutdown.Both); } catch { }
+                    try { Sck.Close(); } catch { }
+                    Sck = null;
+                }
+                // AsyncResult_UDP / _udpPendingRecvSocket 은 IOCP 콜백에서 EndReceiveFrom 후 정리
             }
             PollingRec.ReceiveTime = DateTime.MinValue;
             UserTxDataList.Clear();
@@ -1088,11 +1093,14 @@ namespace VEXI
                     }
                     break;
                 case ConstClass.COMM_UDP:
-                    if (Sck != null)
+                    lock (UDPlockObject)
                     {
-                        Sck.Shutdown(SocketShutdown.Both);
-                        Sck.Close();
-                        Sck = null;
+                        if (Sck != null)
+                        {
+                            try { Sck.Shutdown(SocketShutdown.Both); } catch { }
+                            try { Sck.Close(); } catch { }
+                            Sck = null;
+                        }
                     }
                     break;
             }
@@ -1109,6 +1117,7 @@ namespace VEXI
                 case ConstClass.COMM_UDP:
 
                     UDPReadFlag = 0;
+                    _udpPendingRecvSocket = null;
                     ((IPEndPoint)RemotePoint).Address = IPAddress.Parse(TmpRemoteIP);
                     ((IPEndPoint)RemotePoint).Port = (int)_RemtePort;
 
@@ -3168,38 +3177,42 @@ namespace VEXI
 
         public void UDP_Read()
         {
-            //if (Sck.IsBound)
-            if (Sck != null)
+            lock (UDPlockObject)
             {
+                if (Sck == null || !Sck.IsBound)
+                    return;
 
-                if (Sck.IsBound)
+                if (UDPReadCallBack == null)
+                    UDPReadCallBack = new AsyncCallback(MessageCallBack);
+
+                ((IPEndPoint)RecvRemotePoint).Address = ((IPEndPoint)RemotePoint).Address;
+                ((IPEndPoint)RecvRemotePoint).Port = (int)_RemtePort;
+
+                // 미완료 IAsyncResult에서 EndReceiveFrom은 블로킹 → UDPlockObject를 잡은 채로 대기하면
+                // UI 스레드 StopComm()과 교착(끊기 시 멈춤)이 난다. 완료된 것만 동기 마무리.
+                if (AsyncResult_UDP != null)
                 {
-                    if (UDPReadCallBack == null)
-                    {
-                        UDPReadCallBack = new AsyncCallback(MessageCallBack);
-                    }
-
-                    ((IPEndPoint)RecvRemotePoint).Address = ((IPEndPoint)RemotePoint).Address;
-                    ((IPEndPoint)RecvRemotePoint).Port = (int)_RemtePort;
-
-
-                    if (AsyncResult_UDP != null)
-                    {
-                        Do_SckReadEnd(AsyncResult_UDP, false);
-                    }
-
-                    try
-                    {
-                        
-                        UDPReadFlag = 1;
-                        AsyncResult_UDP = Sck.BeginReceiveFrom(Readbuffer, 0, Readbuffer.Length, SocketFlags.None,
-                                              ref RecvRemotePoint, UDPReadCallBack, Readbuffer);
-                    }
-                    catch (Exception exp)
-                    {
-                    }
+                    if (!AsyncResult_UDP.IsCompleted)
+                        return;
+                    Do_SckReadEnd(AsyncResult_UDP, false);
                 }
 
+                try
+                {
+                    if (AsyncResult_UDP != null)
+                        return;
+
+                    UDPReadFlag = 1;
+                    AsyncResult_UDP = Sck.BeginReceiveFrom(Readbuffer, 0, Readbuffer.Length, SocketFlags.None,
+                                          ref RecvRemotePoint, UDPReadCallBack, Readbuffer);
+                    _udpPendingRecvSocket = Sck;
+                }
+                catch
+                {
+                    UDPReadFlag = 0;
+                    AsyncResult_UDP = null;
+                    _udpPendingRecvSocket = null;
+                }
             }
         }
 
@@ -3235,40 +3248,41 @@ namespace VEXI
 
         unsafe private void Do_SckReadEnd(IAsyncResult aResult, bool isCallback)
         {
+            if (aResult == null)
+                return;
+
             lock (UDPlockObject)
             {
-                if (UDPReadFlag == 1)
+                if (!isCallback && UDPReadFlag != 1)
+                    return;
+
+                Socket recvSock = _udpPendingRecvSocket ?? Sck;
+
+                try
                 {
-                    try
+                    if (recvSock == null)
+                        return;
+
+                    int size = recvSock.EndReceiveFrom(aResult, ref RecvRemotePoint);
+
+                    if (size > 0)
                     {
-                        if (Sck != null)
-                        {
-
-                            int size = Sck.EndReceiveFrom(aResult, ref RecvRemotePoint);
-
-
-                            if (size > 0)
-                            {
-
-                                UDPReadFlag = 2;
-                                //IPEndPoint remoteIpEndPoint = RecvRemotePoint as IPEndPoint;
-                                TStreamBufClass TmpStreamBufClass;
-
-                                TmpStreamBufClass = this.Get_StreamBufClass(ConstClass.COMM_UDP);
-
-                                if (TmpStreamBufClass != null)
-                                {
-                                    TmpStreamBufClass.Writebytes((byte[])aResult.AsyncState, (ushort)size);
-                                }
-                            }
-                            
-
-                            AsyncResult_UDP = null;
-
-                        }
+                        UDPReadFlag = 2;
+                        TStreamBufClass TmpStreamBufClass = this.Get_StreamBufClass(ConstClass.COMM_UDP);
+                        if (TmpStreamBufClass != null)
+                            TmpStreamBufClass.Writebytes((byte[])aResult.AsyncState, (ushort)size);
                     }
-                    catch (Exception exp)
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    if (object.ReferenceEquals(AsyncResult_UDP, aResult))
                     {
+                        AsyncResult_UDP = null;
+                        _udpPendingRecvSocket = null;
+                        UDPReadFlag = 0;
                     }
                 }
             }

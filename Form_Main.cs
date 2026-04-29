@@ -133,7 +133,8 @@ namespace VEXI
 
 
             //연결장치 컴포넌트 초기화
-            cbDevType.SelectedIndex = 0;
+            if (!ClientApp.IsDeviceTypeLocked)
+                cbDevType.SelectedIndex = 0;
             cbDevID.SelectedIndex = 0;
 
             //시리얼포트리스트 구성 갱신
@@ -141,6 +142,7 @@ namespace VEXI
 
             //Setup.ini 에서 환경설정 내용 불러오기
             LoadSystemConfig();
+            ApplyFixedClientCommunicationUi();
 
             // INI에 IP·장치가 있으면 시작 시 UDP 오픈(조그/폴링이 CommSt!=0을 요구). 실패해도 무시.
             TryConnectUdpFromCurrentSettings(false);
@@ -172,6 +174,8 @@ namespace VEXI
 
         private void cbDevType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ClientApp.IsDeviceTypeLocked)
+                return;
             CheckSelectedDevice();
             SaveSystemConfig();
         }
@@ -3327,23 +3331,28 @@ namespace VEXI
         private void CheckSelectedDevice()
         {
             byte OLD_SelectDestDevType = COMMDataManager.SelectDestDevType;
-            switch (cbDevType.SelectedIndex)
+            if (ClientApp.IsDeviceTypeLocked)
+                COMMDataManager.SelectDestDevType = ClientApp.FixedDeviceType;
+            else
             {
-                case 0:
-                    COMMDataManager.SelectDestDevType = ConstClass.TYPE_SRM;
-                    break;
-                case 1:
-                    COMMDataManager.SelectDestDevType = ConstClass.TYPE_RTV;
-                    break;
-                case 2:
-                    COMMDataManager.SelectDestDevType = ConstClass.TYPE_EMS;
-                    break;
-                case 3:
-                    COMMDataManager.SelectDestDevType = 0xFF;
-                    break;
-                default:
-                    COMMDataManager.SelectDestDevType = ConstClass.TYPE_SRM;
-                    break;
+                switch (cbDevType.SelectedIndex)
+                {
+                    case 0:
+                        COMMDataManager.SelectDestDevType = ConstClass.TYPE_SRM;
+                        break;
+                    case 1:
+                        COMMDataManager.SelectDestDevType = ConstClass.TYPE_RTV;
+                        break;
+                    case 2:
+                        COMMDataManager.SelectDestDevType = ConstClass.TYPE_EMS;
+                        break;
+                    case 3:
+                        COMMDataManager.SelectDestDevType = 0xFF;
+                        break;
+                    default:
+                        COMMDataManager.SelectDestDevType = ConstClass.TYPE_SRM;
+                        break;
+                }
             }
 
             pnUDPConnectType.Visible = ((COMMDataManager.SelectDestDevType == ConstClass.TYPE_RTV) || (COMMDataManager.SelectDestDevType == ConstClass.TYPE_EMS));
@@ -4285,7 +4294,9 @@ namespace VEXI
             int TmpComMode = IniControl.ReadInteger(CONFIG_FILE, "COMM", "ComMode", ConstClass.COMM_SERIAL);
             string TmpSerialPort = IniControl.ReadString(CONFIG_FILE, "COMM", "Serial_Port", "");
             string TmpUDPIP = IniControl.ReadString(CONFIG_FILE, "COMM", "UDP_IP", COMMDataManager.UDPIP);
-            int TmpSelectDevType = IniControl.ReadInteger(CONFIG_FILE, "COMM", "SelectDevType", ConstClass.TYPE_SRM);
+            int TmpSelectDevType = ClientApp.IsDeviceTypeLocked
+                ? ClientApp.FixedDeviceType
+                : IniControl.ReadInteger(CONFIG_FILE, "COMM", "SelectDevType", ConstClass.TYPE_SRM);
             int TmpSelectDevID = IniControl.ReadInteger(CONFIG_FILE, "COMM", "SelectDevID", 1);
 
             switch (TmpComMode)
@@ -4335,6 +4346,18 @@ namespace VEXI
             }
             
             CheckSelectedDevice();
+        }
+
+        /// <summary>RTV/EMS 전용 빌드: 장치 타입 선택 숨김, 창 제목 정리.</summary>
+        private void ApplyFixedClientCommunicationUi()
+        {
+            if (!ClientApp.IsDeviceTypeLocked)
+                return;
+            cbDevType.Visible = false;
+            cbDevType.Enabled = false;
+            label2.Visible = false;
+            if (!string.IsNullOrEmpty(ClientApp.FixedDeviceTypeName))
+                this.Text = ClientApp.FixedDeviceTypeName + " IO TEST";
         }
 
         public void Debug_Insert(string msg)

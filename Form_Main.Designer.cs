@@ -432,24 +432,24 @@ namespace VEXI
             // rb_5Connect
             // 
             this.rb_5Connect.AutoSize = true;
-            this.rb_5Connect.Location = new System.Drawing.Point(172, 44);
+            this.rb_5Connect.Location = new System.Drawing.Point(172, 31);
             this.rb_5Connect.Margin = new System.Windows.Forms.Padding(4);
             this.rb_5Connect.Name = "rb_5Connect";
             this.rb_5Connect.Size = new System.Drawing.Size(90, 25);
             this.rb_5Connect.TabIndex = 2;
-            this.rb_5Connect.Text = "5G 연결";
+            this.rb_5Connect.Text = "EP 연결";
             this.rb_5Connect.UseVisualStyleBackColor = true;
             this.rb_5Connect.CheckedChanged += new System.EventHandler(this.rb_5Connect_CheckedChanged);
             // 
             // rb_2Connect
             // 
             this.rb_2Connect.AutoSize = true;
-            this.rb_2Connect.Location = new System.Drawing.Point(22, 44);
+            this.rb_2Connect.Location = new System.Drawing.Point(22, 32);
             this.rb_2Connect.Margin = new System.Windows.Forms.Padding(4);
             this.rb_2Connect.Name = "rb_2Connect";
-            this.rb_2Connect.Size = new System.Drawing.Size(105, 25);
+            this.rb_2Connect.Size = new System.Drawing.Size(89, 25);
             this.rb_2Connect.TabIndex = 1;
-            this.rb_2Connect.Text = "2.4G 연결";
+            this.rb_2Connect.Text = "AP 연결";
             this.rb_2Connect.UseVisualStyleBackColor = true;
             this.rb_2Connect.CheckedChanged += new System.EventHandler(this.rb_2Connect_CheckedChanged);
             // 
@@ -660,8 +660,8 @@ namespace VEXI
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItem_Devmonitoring_User,
             this.ToolStripMenuItem,
-            this.menu_AllWIndowsClose,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.menu_AllWIndowsClose});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(4978, 33);

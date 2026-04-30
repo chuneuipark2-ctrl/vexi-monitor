@@ -50,8 +50,8 @@ namespace VEXI
 
         // ASCII
         public const char U_NUL = '\u0000';
-        public const char U_LF = '\x000A';
-        public const char U_CR = '\x000D';
+        public const char U_LF = '\x000A'; //Line Feed 줄바꿈
+        public const char U_CR = '\x000D'; //Carriage Return 커서르 제일앞으로 이동
 
 
         // UDP Port
@@ -69,89 +69,105 @@ namespace VEXI
         public const byte TYPE_EMS = 0x50;  // EMS
         public const byte TYPE_SRM = 0x60;  // SRM
 
+
+        /*
+         Command1과 Command2를 조합해서 명령을쏜다.
+         프로토콜 EXCEL에 COMMAND1 번과 COMMAND2번을 조합해서 COMMAND를 만든다고 나와있다.
+        */
+
+
         // 통신 : CMD
-        public const byte GUICMD = 0x01;
-        public const byte CMD1_00 = 0x00;
-        public const byte CMD1_80 = 0x80;
-        public const byte CMD1_C0 = 0xC0;
-        public const byte CMD1_40 = 0x40;
-        public const byte CMD1_01 = CMD1_00 | GUICMD;
+        
+        /// <summary>
+        /// 명령 1파트
+        /// </summary>
+        public const byte GUICMD = 0x01; 
+        public const byte CMD1_00 = 0x00; //요청
+        public const byte CMD1_80 = 0x80; //응답
+        public const byte CMD1_C0 = 0xC0; //보고
+        public const byte CMD1_40 = 0x40; //보고확인
+        public const byte CMD1_01 = CMD1_00 | GUICMD; 
         public const byte CMD1_81 = CMD1_80 | GUICMD;
         public const byte CMD1_C1 = CMD1_C0 | GUICMD;
         public const byte CMD1_41 = CMD1_40 | GUICMD;
 
-        public const byte CMD2_10 = 0x10;
-        public const byte CMD2_11 = 0x11;
-        public const byte CMD2_12 = 0x12;
-        public const byte CMD2_13 = 0x13;
-        public const byte CMD2_14 = 0x14;
-        public const byte CMD2_15 = 0x15;
-        public const byte CMD2_16 = 0x16;
 
-        public const byte CMD2_20 = 0x20;
-        public const byte CMD2_21 = 0x21;
-        public const byte CMD2_22 = 0x22;
-        public const byte CMD2_23 = 0x23;
-        public const byte CMD2_24 = 0x24;
-        public const byte CMD2_25 = 0x25;
-        public const byte CMD2_26 = 0x26;
+        /// <summary>
+        /// 명령 2파트
+        /// </summary>
 
-        public const byte CMD2_30 = 0x30;
-        public const byte CMD2_31 = 0x31;
-        public const byte CMD2_32 = 0x32;
-        public const byte CMD2_34 = 0x34;
-        public const byte CMD2_35 = 0x35;
+        public const byte CMD2_10 = 0x10; // 기본정보 상태 SRM, RTV, EMS
+        public const byte CMD2_11 = 0x11; // 기본정보 제어 SRM, RTV, EMS
+        public const byte CMD2_12 = 0x12; // TEST 상태 SRM, RTV, EMS
+        public const byte CMD2_13 = 0x13; // TEST 제어 SRM, RTV, EMS
+        public const byte CMD2_14 = 0x14; // FUNC 제어 SRM, RTV, EMS
+        public const byte CMD2_15 = 0x15; // 그래프 데이터 조회 SRM, RTV, EMS
+        public const byte CMD2_16 = 0x16; // 출력 수동 제어 SRM, RTV, EMS
+
+        public const byte CMD2_20 = 0x20; // 다운로드 시작 SRM, RTV, EMS
+        public const byte CMD2_21 = 0x21; // 다운로드 데이터 SRM, RTV, EMS
+        public const byte CMD2_22 = 0x22; // 다운로드 확인 SRM, RTV, EMS
+        public const byte CMD2_23 = 0x23; // MCU I/O 형상 상태
+        public const byte CMD2_24 = 0x24; // MCU I/O 형상 설정
+        public const byte CMD2_25 = 0x25; // 장치고유설정 상태 SRM
+        public const byte CMD2_26 = 0x26; // 장치고유설정 제어 SRM
+
+        public const byte CMD2_30 = 0x30; // 상태요구(상태정보, 운행정보, 인버터 정보) SRM, RTV
+        public const byte CMD2_31 = 0x31; // 운행정보 SRM, RTV
+        public const byte CMD2_32 = 0x32; // 인버터 정보 SRM, RTV
+        public const byte CMD2_34 = 0x34; // 알람로그 정보 SRM, RTV
+        public const byte CMD2_35 = 0x35; // 알람로그 삭제 SRM, RTV
         public const byte CMD2_36 = 0x36;
         public const byte CMD2_37 = 0x37;
         public const byte CMD2_3D = 0x3D;
 
-        public const byte CMD2_40 = 0x40;
-        public const byte CMD2_41 = 0x41;
-        public const byte CMD2_44 = 0x44;
+        public const byte CMD2_40 = 0x40; // 반송 지령 [구분작업](이동, LOAD, UNLOAD) SRM, RTV
+        public const byte CMD2_41 = 0x41; // 반송 지령 [반송작업](이동, 입고, 출고, 랙간이동, 스테이션 이동) SRM, RTV
+        public const byte CMD2_44 = 0x44; // 원점설정
 
-        public const byte CMD2_50 = 0x50;
-        public const byte CMD2_51 = 0x51;
-        public const byte CMD2_52 = 0x52;
-        public const byte CMD2_53 = 0x53;
-        public const byte CMD2_54 = 0x54;
-        public const byte CMD2_55 = 0x55;
-        public const byte CMD2_56 = 0x56;
-        public const byte CMD2_57 = 0x57;
-        public const byte CMD2_58 = 0x58;
-        public const byte CMD2_59 = 0x59;
+        public const byte CMD2_50 = 0x50; // 시작 SRM, RTV
+        public const byte CMD2_51 = 0x51; // 홈복귀 SRM, RTV
+        public const byte CMD2_52 = 0x52; // 이상리셋 SRM, RTV
+        public const byte CMD2_53 = 0x53; // 작업삭제 SRM, RTV
+        public const byte CMD2_54 = 0x54; // 정지 SRM, RTV
+        public const byte CMD2_55 = 0x55; // 비상정지 SRM, RTV
+        public const byte CMD2_56 = 0x56; // 일시정지 SRM, RTV
+        public const byte CMD2_57 = 0x57; // 복구(일시정지) SRM, RTV
+        public const byte CMD2_58 = 0x58; // 모드 설정 SRM, RTV
+        public const byte CMD2_59 = 0x59; // 보수위치 이동 SRM, RTV
 
         public const byte CMD2_60 = 0x60;
         public const byte CMD2_61 = 0x61;
         public const byte CMD2_62 = 0x62;
         public const byte CMD2_63 = 0x63;
 
-        public const byte CMD2_80 = 0x80;
+        public const byte CMD2_80 = 0x80; // 원점확인, 수동명령 SRM, RTV
 
-        public const byte CMD2_90 = 0x90;
-        public const byte CMD2_91 = 0x91;
-        public const byte CMD2_94 = 0x94;
-        public const byte CMD2_95 = 0x95;
-        public const byte CMD2_96 = 0x96;
-        public const byte CMD2_97 = 0x97;
-        public const byte CMD2_98 = 0x98;
-        public const byte CMD2_99 = 0x99;
-        public const byte CMD2_9A = 0x9A;
-        public const byte CMD2_9B = 0x9B;
-        public const byte CMD2_9C = 0x9C;
-        public const byte CMD2_9D = 0x9D;
-        public const byte CMD2_9E = 0x9E;
-        public const byte CMD2_9F = 0x9F;
+        public const byte CMD2_90 = 0x90; // 인버터 파라미터 설정 조회 SRM
+        public const byte CMD2_91 = 0x91; // 인버터 파라미터 설정 변경 SRM
+        public const byte CMD2_94 = 0x94; // 렉설정조회 SRM, 레일설정 조회 RTV
+        public const byte CMD2_95 = 0x95; // 렉설정 변경 SRM, 레일설정 변경 RTV
+        public const byte CMD2_96 = 0x96; // 셀 오프셋 조회 SRM
+        public const byte CMD2_97 = 0x97; // 셀 오프셋 변경 SRM
+        public const byte CMD2_98 = 0x98; // 스테이션 설정 조회 SRM, RTV
+        public const byte CMD2_99 = 0x99; // 스테이션 설정 변경 SRM, RTV
+        public const byte CMD2_9A = 0x9A; // 구간 주행 설정 조회 RTV
+        public const byte CMD2_9B = 0x9B; // 구간 주행 설정 변경 RTV
+        public const byte CMD2_9C = 0x9C; // 금지렉 설정조회 SRM
+        public const byte CMD2_9D = 0x9D; // 금지렉 설정 변경 SRM
+        public const byte CMD2_9E = 0x9E; // 스페셜렉 설정 조회 SRM
+        public const byte CMD2_9F = 0x9F; // 스페셜렉 설정 변경 SRM
 
 
-        public const byte CMD2_A0 = 0xA0;
-        public const byte CMD2_A1 = 0xA1;
-        public const byte CMD2_A2 = 0xA2;
-        public const byte CMD2_A3 = 0xA3;
-        public const byte CMD2_A4 = 0xA4;
-        public const byte CMD2_A5 = 0xA5;
-        public const byte CMD2_A6 = 0xA6;
-        public const byte CMD2_A7 = 0xA7;
-        public const byte CMD2_A8 = 0xA8;
+        public const byte CMD2_A0 = 0xA0; // 설정 초기화 SRM
+        public const byte CMD2_A1 = 0xA1; // 제어설정 조회 SRM
+        public const byte CMD2_A2 = 0xA2; // 제어설정 변경 SRMM
+        public const byte CMD2_A3 = 0xA3; // 주행 드라이브 설정 조회 SRM, RTV
+        public const byte CMD2_A4 = 0xA4; // 주행 드라이브 설정 변경 SRM, RTV
+        public const byte CMD2_A5 = 0xA5; // 승강 드라이브 설정 조회 SRM
+        public const byte CMD2_A6 = 0xA6; // 승강 드라이브 설정 변경 SRM, RTV
+        public const byte CMD2_A7 = 0xA7; // 포크 드라이브 설정 조회 SRM 피딩 드라이브 설정 조회 RTV
+        public const byte CMD2_A8 = 0xA8; // 포크 드라이브 설정 변경 SRM 피딩 드라이브 설정 변경 RTV
 
 
         //반송 지령 CMD

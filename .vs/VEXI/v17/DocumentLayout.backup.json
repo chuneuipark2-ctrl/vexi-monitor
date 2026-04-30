@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|c:\\users\\ce-park\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_rtv_ctl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_rtv_ctl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_rtvconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_rtvconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\form_rtvdriveparam_speed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{297D093B-CA20-4994-96DB-8CAA76DC1AF3}|VEXI.csproj|solutionrelative:form_rtvdriveparam_speed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form_Main.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_Main.cs",
+              "RelativeDocumentMoniker": "Form_Main.cs",
+              "ToolTip": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_Main.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_Main.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T04:47:59.158Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form_RTVDriveParam_Speed.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTVDriveParam_Speed.cs",
+              "RelativeDocumentMoniker": "Form_RTVDriveParam_Speed.cs",
+              "ToolTip": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTVDriveParam_Speed.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_RTVDriveParam_Speed.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T04:54:23.63Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form_RTVConfig.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTVConfig.cs",
+              "RelativeDocumentMoniker": "Form_RTVConfig.cs",
+              "ToolTip": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTVConfig.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_RTVConfig.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T04:54:21.317Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form_RTV_CTL.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTV_CTL.cs",
+              "RelativeDocumentMoniker": "Form_RTV_CTL.cs",
+              "ToolTip": "C:\\Users\\CE-PARK\\source\\repos\\chuneuipark2-ctrl\\vexi-monitor\\Form_RTV_CTL.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Form_RTV_CTL.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T04:54:17.375Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

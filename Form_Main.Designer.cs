@@ -105,9 +105,9 @@ namespace VEXI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::VEXI.Properties.Resources.현대무벡스주식회사CI_영문Color;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(322, 31);
+            this.pictureBox1.Size = new System.Drawing.Size(322, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 329;
             this.pictureBox1.TabStop = false;
@@ -119,10 +119,10 @@ namespace VEXI
             this.pnQuickCtrl.Controls.Add(this.btn_DevMode_SetupOn);
             this.pnQuickCtrl.Controls.Add(this.btn_StopEmergency);
             this.pnQuickCtrl.Controls.Add(this.btn_Stop);
-            this.pnQuickCtrl.Location = new System.Drawing.Point(22, 1001);
+            this.pnQuickCtrl.Location = new System.Drawing.Point(11, 1001);
             this.pnQuickCtrl.Margin = new System.Windows.Forms.Padding(4);
             this.pnQuickCtrl.Name = "pnQuickCtrl";
-            this.pnQuickCtrl.Size = new System.Drawing.Size(217, 291);
+            this.pnQuickCtrl.Size = new System.Drawing.Size(323, 291);
             this.pnQuickCtrl.TabIndex = 328;
             this.pnQuickCtrl.Visible = false;
             // 
@@ -131,10 +131,10 @@ namespace VEXI
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(9, 104);
+            this.button1.Location = new System.Drawing.Point(17, 104);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 42);
+            this.button1.Size = new System.Drawing.Size(289, 42);
             this.button1.TabIndex = 332;
             this.button1.Tag = "0";
             this.button1.Text = "Manual 모드 설정";
@@ -146,10 +146,10 @@ namespace VEXI
             this.btn_ErrRest.BackColor = System.Drawing.Color.White;
             this.btn_ErrRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ErrRest.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_ErrRest.Location = new System.Drawing.Point(9, 14);
+            this.btn_ErrRest.Location = new System.Drawing.Point(17, 14);
             this.btn_ErrRest.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ErrRest.Name = "btn_ErrRest";
-            this.btn_ErrRest.Size = new System.Drawing.Size(199, 42);
+            this.btn_ErrRest.Size = new System.Drawing.Size(289, 42);
             this.btn_ErrRest.TabIndex = 331;
             this.btn_ErrRest.Tag = "";
             this.btn_ErrRest.Text = "Alarm Reset";
@@ -161,10 +161,10 @@ namespace VEXI
             this.btn_DevMode_SetupOn.BackColor = System.Drawing.Color.White;
             this.btn_DevMode_SetupOn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_DevMode_SetupOn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_DevMode_SetupOn.Location = new System.Drawing.Point(9, 58);
+            this.btn_DevMode_SetupOn.Location = new System.Drawing.Point(17, 58);
             this.btn_DevMode_SetupOn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DevMode_SetupOn.Name = "btn_DevMode_SetupOn";
-            this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(199, 42);
+            this.btn_DevMode_SetupOn.Size = new System.Drawing.Size(289, 42);
             this.btn_DevMode_SetupOn.TabIndex = 330;
             this.btn_DevMode_SetupOn.Tag = "1";
             this.btn_DevMode_SetupOn.Text = "Setup 모드 설정";
@@ -177,10 +177,10 @@ namespace VEXI
             this.btn_StopEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_StopEmergency.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_StopEmergency.ForeColor = System.Drawing.Color.Red;
-            this.btn_StopEmergency.Location = new System.Drawing.Point(9, 159);
+            this.btn_StopEmergency.Location = new System.Drawing.Point(17, 159);
             this.btn_StopEmergency.Margin = new System.Windows.Forms.Padding(4);
             this.btn_StopEmergency.Name = "btn_StopEmergency";
-            this.btn_StopEmergency.Size = new System.Drawing.Size(199, 72);
+            this.btn_StopEmergency.Size = new System.Drawing.Size(289, 72);
             this.btn_StopEmergency.TabIndex = 327;
             this.btn_StopEmergency.Text = "비상정지 (E.Stop)";
             this.btn_StopEmergency.UseVisualStyleBackColor = false;
@@ -192,10 +192,10 @@ namespace VEXI
             this.btn_Stop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Stop.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Stop.ForeColor = System.Drawing.Color.Red;
-            this.btn_Stop.Location = new System.Drawing.Point(9, 237);
+            this.btn_Stop.Location = new System.Drawing.Point(17, 237);
             this.btn_Stop.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Stop.Name = "btn_Stop";
-            this.btn_Stop.Size = new System.Drawing.Size(199, 42);
+            this.btn_Stop.Size = new System.Drawing.Size(289, 42);
             this.btn_Stop.TabIndex = 325;
             this.btn_Stop.Text = "정지 (Stop)";
             this.btn_Stop.UseVisualStyleBackColor = false;
@@ -221,7 +221,7 @@ namespace VEXI
             this.panel3.Location = new System.Drawing.Point(11, 78);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(251, 340);
+            this.panel3.Size = new System.Drawing.Size(326, 340);
             this.panel3.TabIndex = 324;
             // 
             // lbl_ResponseDevFW
@@ -231,7 +231,7 @@ namespace VEXI
             this.lbl_ResponseDevFW.Location = new System.Drawing.Point(104, 153);
             this.lbl_ResponseDevFW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ResponseDevFW.Name = "lbl_ResponseDevFW";
-            this.lbl_ResponseDevFW.Size = new System.Drawing.Size(134, 26);
+            this.lbl_ResponseDevFW.Size = new System.Drawing.Size(201, 26);
             this.lbl_ResponseDevFW.TabIndex = 348;
             this.lbl_ResponseDevFW.Text = "---";
             this.lbl_ResponseDevFW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,7 +257,7 @@ namespace VEXI
             this.lbl_DevErrorCode.Location = new System.Drawing.Point(10, 296);
             this.lbl_DevErrorCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DevErrorCode.Name = "lbl_DevErrorCode";
-            this.lbl_DevErrorCode.Size = new System.Drawing.Size(229, 32);
+            this.lbl_DevErrorCode.Size = new System.Drawing.Size(296, 32);
             this.lbl_DevErrorCode.TabIndex = 346;
             this.lbl_DevErrorCode.Tag = "6013";
             this.lbl_DevErrorCode.Text = "장애 상태";
@@ -268,12 +268,12 @@ namespace VEXI
             // 
             this.lbl_DevError.BackColor = System.Drawing.Color.Gray;
             this.lbl_DevError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_DevError.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_DevError.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DevError.ForeColor = System.Drawing.Color.Black;
             this.lbl_DevError.Location = new System.Drawing.Point(10, 267);
             this.lbl_DevError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DevError.Name = "lbl_DevError";
-            this.lbl_DevError.Size = new System.Drawing.Size(229, 28);
+            this.lbl_DevError.Size = new System.Drawing.Size(296, 28);
             this.lbl_DevError.TabIndex = 345;
             this.lbl_DevError.Tag = "6013";
             this.lbl_DevError.Text = "정상 상태";
@@ -285,10 +285,10 @@ namespace VEXI
             this.lbl_SetUpMode.BackColor = System.Drawing.Color.Yellow;
             this.lbl_SetUpMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SetUpMode.ForeColor = System.Drawing.Color.Black;
-            this.lbl_SetUpMode.Location = new System.Drawing.Point(129, 228);
+            this.lbl_SetUpMode.Location = new System.Drawing.Point(153, 228);
             this.lbl_SetUpMode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_SetUpMode.Name = "lbl_SetUpMode";
-            this.lbl_SetUpMode.Size = new System.Drawing.Size(110, 36);
+            this.lbl_SetUpMode.Size = new System.Drawing.Size(153, 36);
             this.lbl_SetUpMode.TabIndex = 344;
             this.lbl_SetUpMode.Text = "셋업 모드";
             this.lbl_SetUpMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,7 +302,7 @@ namespace VEXI
             this.lbl_DevForceMode.Location = new System.Drawing.Point(11, 228);
             this.lbl_DevForceMode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DevForceMode.Name = "lbl_DevForceMode";
-            this.lbl_DevForceMode.Size = new System.Drawing.Size(110, 36);
+            this.lbl_DevForceMode.Size = new System.Drawing.Size(134, 36);
             this.lbl_DevForceMode.TabIndex = 343;
             this.lbl_DevForceMode.Text = "강제 모드";
             this.lbl_DevForceMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -312,11 +312,11 @@ namespace VEXI
             // 
             this.lbl_ReceviceGood.BackColor = System.Drawing.Color.Gray;
             this.lbl_ReceviceGood.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_ReceviceGood.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_ReceviceGood.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ReceviceGood.Location = new System.Drawing.Point(11, 195);
             this.lbl_ReceviceGood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ReceviceGood.Name = "lbl_ReceviceGood";
-            this.lbl_ReceviceGood.Size = new System.Drawing.Size(228, 28);
+            this.lbl_ReceviceGood.Size = new System.Drawing.Size(295, 28);
             this.lbl_ReceviceGood.TabIndex = 342;
             this.lbl_ReceviceGood.Tag = "6013";
             this.lbl_ReceviceGood.Text = "통신 상태";
@@ -329,7 +329,7 @@ namespace VEXI
             this.lbl_ResponseDevID.Location = new System.Drawing.Point(104, 124);
             this.lbl_ResponseDevID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ResponseDevID.Name = "lbl_ResponseDevID";
-            this.lbl_ResponseDevID.Size = new System.Drawing.Size(134, 26);
+            this.lbl_ResponseDevID.Size = new System.Drawing.Size(201, 26);
             this.lbl_ResponseDevID.TabIndex = 341;
             this.lbl_ResponseDevID.Text = "---";
             this.lbl_ResponseDevID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,7 +341,7 @@ namespace VEXI
             this.lbl_ResponseDevType.Location = new System.Drawing.Point(104, 96);
             this.lbl_ResponseDevType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ResponseDevType.Name = "lbl_ResponseDevType";
-            this.lbl_ResponseDevType.Size = new System.Drawing.Size(134, 26);
+            this.lbl_ResponseDevType.Size = new System.Drawing.Size(201, 26);
             this.lbl_ResponseDevType.TabIndex = 340;
             this.lbl_ResponseDevType.Text = "---";
             this.lbl_ResponseDevType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,7 +381,7 @@ namespace VEXI
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(249, 72);
+            this.label9.Size = new System.Drawing.Size(324, 72);
             this.label9.TabIndex = 7;
             this.label9.Tag = "";
             this.label9.Text = "연결 장치 정보";
@@ -402,7 +402,7 @@ namespace VEXI
             this.panel2.Location = new System.Drawing.Point(11, 430);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(249, 551);
+            this.panel2.Size = new System.Drawing.Size(324, 551);
             this.panel2.TabIndex = 322;
             // 
             // pnCommSetting
@@ -416,7 +416,7 @@ namespace VEXI
             this.pnCommSetting.Location = new System.Drawing.Point(1, 206);
             this.pnCommSetting.Margin = new System.Windows.Forms.Padding(4);
             this.pnCommSetting.Name = "pnCommSetting";
-            this.pnCommSetting.Size = new System.Drawing.Size(241, 172);
+            this.pnCommSetting.Size = new System.Drawing.Size(305, 172);
             this.pnCommSetting.TabIndex = 33;
             // 
             // pnUDPConnectType
@@ -426,13 +426,13 @@ namespace VEXI
             this.pnUDPConnectType.Location = new System.Drawing.Point(9, 4);
             this.pnUDPConnectType.Margin = new System.Windows.Forms.Padding(4);
             this.pnUDPConnectType.Name = "pnUDPConnectType";
-            this.pnUDPConnectType.Size = new System.Drawing.Size(227, 81);
+            this.pnUDPConnectType.Size = new System.Drawing.Size(292, 81);
             this.pnUDPConnectType.TabIndex = 347;
             // 
             // rb_5Connect
             // 
             this.rb_5Connect.AutoSize = true;
-            this.rb_5Connect.Location = new System.Drawing.Point(119, 44);
+            this.rb_5Connect.Location = new System.Drawing.Point(172, 44);
             this.rb_5Connect.Margin = new System.Windows.Forms.Padding(4);
             this.rb_5Connect.Name = "rb_5Connect";
             this.rb_5Connect.Size = new System.Drawing.Size(90, 25);
@@ -444,7 +444,7 @@ namespace VEXI
             // rb_2Connect
             // 
             this.rb_2Connect.AutoSize = true;
-            this.rb_2Connect.Location = new System.Drawing.Point(4, 44);
+            this.rb_2Connect.Location = new System.Drawing.Point(22, 44);
             this.rb_2Connect.Margin = new System.Windows.Forms.Padding(4);
             this.rb_2Connect.Name = "rb_2Connect";
             this.rb_2Connect.Size = new System.Drawing.Size(105, 25);
@@ -456,10 +456,10 @@ namespace VEXI
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(127, 90);
+            this.label3.Location = new System.Drawing.Point(175, 90);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 338;
             this.label3.Text = "장치 ID";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -476,7 +476,7 @@ namespace VEXI
             this.cbDevType.Location = new System.Drawing.Point(16, 114);
             this.cbDevType.Margin = new System.Windows.Forms.Padding(4);
             this.cbDevType.Name = "cbDevType";
-            this.cbDevType.Size = new System.Drawing.Size(98, 29);
+            this.cbDevType.Size = new System.Drawing.Size(124, 29);
             this.cbDevType.TabIndex = 335;
             this.cbDevType.SelectedIndexChanged += new System.EventHandler(this.cbDevType_SelectedIndexChanged);
             // 
@@ -566,10 +566,10 @@ namespace VEXI
             "79",
             "80",
             "ANY"});
-            this.cbDevID.Location = new System.Drawing.Point(123, 114);
+            this.cbDevID.Location = new System.Drawing.Point(175, 114);
             this.cbDevID.Margin = new System.Windows.Forms.Padding(4);
             this.cbDevID.Name = "cbDevID";
-            this.cbDevID.Size = new System.Drawing.Size(85, 29);
+            this.cbDevID.Size = new System.Drawing.Size(111, 29);
             this.cbDevID.TabIndex = 337;
             this.cbDevID.SelectedIndexChanged += new System.EventHandler(this.cbDevID_SelectedIndexChanged);
             // 
@@ -579,17 +579,17 @@ namespace VEXI
             this.label2.Location = new System.Drawing.Point(24, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 336;
             this.label2.Text = "장치 타입";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCommClose
             // 
-            this.btnCommClose.Location = new System.Drawing.Point(127, 459);
+            this.btnCommClose.Location = new System.Drawing.Point(176, 459);
             this.btnCommClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnCommClose.Name = "btnCommClose";
-            this.btnCommClose.Size = new System.Drawing.Size(113, 51);
+            this.btnCommClose.Size = new System.Drawing.Size(128, 51);
             this.btnCommClose.TabIndex = 346;
             this.btnCommClose.Text = "끊기";
             this.btnCommClose.UseVisualStyleBackColor = true;
@@ -601,7 +601,7 @@ namespace VEXI
             this.lbl_SelectDev.Location = new System.Drawing.Point(6, 177);
             this.lbl_SelectDev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_SelectDev.Name = "lbl_SelectDev";
-            this.lbl_SelectDev.Size = new System.Drawing.Size(234, 24);
+            this.lbl_SelectDev.Size = new System.Drawing.Size(298, 24);
             this.lbl_SelectDev.TabIndex = 343;
             this.lbl_SelectDev.Text = "----";
             this.lbl_SelectDev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -614,7 +614,7 @@ namespace VEXI
             this.lblCommStatus.Location = new System.Drawing.Point(6, 140);
             this.lblCommStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCommStatus.Name = "lblCommStatus";
-            this.lblCommStatus.Size = new System.Drawing.Size(236, 32);
+            this.lblCommStatus.Size = new System.Drawing.Size(300, 32);
             this.lblCommStatus.TabIndex = 335;
             this.lblCommStatus.Text = "COMM OFF";
             this.lblCommStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -624,7 +624,7 @@ namespace VEXI
             this.btnCommOpen.Location = new System.Drawing.Point(6, 459);
             this.btnCommOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnCommOpen.Name = "btnCommOpen";
-            this.btnCommOpen.Size = new System.Drawing.Size(113, 51);
+            this.btnCommOpen.Size = new System.Drawing.Size(139, 51);
             this.btnCommOpen.TabIndex = 333;
             this.btnCommOpen.Text = "통신 연결";
             this.btnCommOpen.UseVisualStyleBackColor = true;
@@ -639,7 +639,7 @@ namespace VEXI
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(247, 77);
+            this.label5.Size = new System.Drawing.Size(322, 77);
             this.label5.TabIndex = 7;
             this.label5.Tag = "";
             this.label5.Text = "통신설정";

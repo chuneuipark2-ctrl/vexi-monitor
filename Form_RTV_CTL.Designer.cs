@@ -613,7 +613,7 @@ namespace VEXI
             this.btn_Dev_StartOn.TabIndex = 23;
             this.btn_Dev_StartOn.TabStop = false;
             this.btn_Dev_StartOn.Tag = "1";
-            this.btn_Dev_StartOn.Text = "시작 ON";
+            this.btn_Dev_StartOn.Text = "WCS ON";
             this.btn_Dev_StartOn.UseVisualStyleBackColor = true;
             this.btn_Dev_StartOn.Click += new System.EventHandler(this.btn_Dev_StartOn_Click);
             // 
@@ -626,7 +626,7 @@ namespace VEXI
             this.btn_Dev_StartOff.TabIndex = 24;
             this.btn_Dev_StartOff.TabStop = false;
             this.btn_Dev_StartOff.Tag = "0";
-            this.btn_Dev_StartOff.Text = "시작 OFF";
+            this.btn_Dev_StartOff.Text = "WCS OFF";
             this.btn_Dev_StartOff.UseVisualStyleBackColor = true;
             this.btn_Dev_StartOff.Click += new System.EventHandler(this.btn_Dev_StartOn_Click);
             // 

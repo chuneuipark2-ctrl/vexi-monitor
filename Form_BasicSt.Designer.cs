@@ -89,9 +89,6 @@ namespace VEXI
             this.lbl_ModeSW_3 = new System.Windows.Forms.Label();
             this.lbl_ModeSW_2 = new System.Windows.Forms.Label();
             this.lbl_ModeSW_1 = new System.Windows.Forms.Label();
-            this.lbl_Link3_5 = new System.Windows.Forms.Label();
-            this.lbl_Link3_4 = new System.Windows.Forms.Label();
-            this.lbl_Link3_3 = new System.Windows.Forms.Label();
             this.lbl_Link2_7 = new System.Windows.Forms.Label();
             this.lbl_Link2_6 = new System.Windows.Forms.Label();
             this.lbl_Link2_5 = new System.Windows.Forms.Label();
@@ -119,11 +116,14 @@ namespace VEXI
             this.lbl_IDSW = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lbl_ModeSW_0 = new System.Windows.Forms.Label();
+            this.lbl_Link3_5 = new System.Windows.Forms.Label();
+            this.lbl_Link3_4 = new System.Windows.Forms.Label();
+            this.lbl_Link3_3 = new System.Windows.Forms.Label();
             this.lbl_Link3_2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lbl_Link3_7 = new System.Windows.Forms.Label();
             this.lbl_Link3_0 = new System.Windows.Forms.Label();
             this.lbl_Link3_1 = new System.Windows.Forms.Label();
-            this.lbl_Link3_7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pnMacUse_1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -139,9 +139,10 @@ namespace VEXI
             this.label3.BackColor = System.Drawing.SystemColors.Highlight;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(21, 22);
+            this.label3.Location = new System.Drawing.Point(30, 33);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 38);
+            this.label3.Size = new System.Drawing.Size(187, 57);
             this.label3.TabIndex = 3;
             this.label3.Text = "IP";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,9 +150,10 @@ namespace VEXI
             // lblDevIP_1
             // 
             this.lblDevIP_1.BackColor = System.Drawing.Color.White;
-            this.lblDevIP_1.Location = new System.Drawing.Point(156, 22);
+            this.lblDevIP_1.Location = new System.Drawing.Point(223, 33);
+            this.lblDevIP_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevIP_1.Name = "lblDevIP_1";
-            this.lblDevIP_1.Size = new System.Drawing.Size(128, 14);
+            this.lblDevIP_1.Size = new System.Drawing.Size(183, 21);
             this.lblDevIP_1.TabIndex = 10;
             this.lblDevIP_1.Text = "label11";
             this.lblDevIP_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,9 +161,10 @@ namespace VEXI
             // lblSystemTimeUTC
             // 
             this.lblSystemTimeUTC.BackColor = System.Drawing.Color.White;
-            this.lblSystemTimeUTC.Location = new System.Drawing.Point(158, 147);
+            this.lblSystemTimeUTC.Location = new System.Drawing.Point(226, 220);
+            this.lblSystemTimeUTC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSystemTimeUTC.Name = "lblSystemTimeUTC";
-            this.lblSystemTimeUTC.Size = new System.Drawing.Size(148, 24);
+            this.lblSystemTimeUTC.Size = new System.Drawing.Size(211, 36);
             this.lblSystemTimeUTC.TabIndex = 9;
             this.lblSystemTimeUTC.Text = "9999/99/99 99:99:99";
             this.lblSystemTimeUTC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,9 +172,10 @@ namespace VEXI
             // lblFWVersion
             // 
             this.lblFWVersion.BackColor = System.Drawing.Color.White;
-            this.lblFWVersion.Location = new System.Drawing.Point(158, 116);
+            this.lblFWVersion.Location = new System.Drawing.Point(226, 174);
+            this.lblFWVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFWVersion.Name = "lblFWVersion";
-            this.lblFWVersion.Size = new System.Drawing.Size(148, 24);
+            this.lblFWVersion.Size = new System.Drawing.Size(211, 36);
             this.lblFWVersion.TabIndex = 8;
             this.lblFWVersion.Text = "label13";
             this.lblFWVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,9 +183,10 @@ namespace VEXI
             // lblPVersion
             // 
             this.lblPVersion.BackColor = System.Drawing.Color.White;
-            this.lblPVersion.Location = new System.Drawing.Point(158, 86);
+            this.lblPVersion.Location = new System.Drawing.Point(226, 129);
+            this.lblPVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPVersion.Name = "lblPVersion";
-            this.lblPVersion.Size = new System.Drawing.Size(148, 24);
+            this.lblPVersion.Size = new System.Drawing.Size(211, 36);
             this.lblPVersion.TabIndex = 7;
             this.lblPVersion.Text = "label14";
             this.lblPVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,18 +207,22 @@ namespace VEXI
             this.groupBox1.Controls.Add(this.lblDevIP_1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(12, 401);
+            this.groupBox1.Location = new System.Drawing.Point(17, 602);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 259);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(449, 388);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Network Setting (EtherNet 1)";
             // 
             // btnCtrl_Network_1
             // 
-            this.btnCtrl_Network_1.Location = new System.Drawing.Point(49, 225);
+            this.btnCtrl_Network_1.Enabled = false;
+            this.btnCtrl_Network_1.Location = new System.Drawing.Point(70, 338);
+            this.btnCtrl_Network_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCtrl_Network_1.Name = "btnCtrl_Network_1";
-            this.btnCtrl_Network_1.Size = new System.Drawing.Size(190, 23);
+            this.btnCtrl_Network_1.Size = new System.Drawing.Size(271, 34);
             this.btnCtrl_Network_1.TabIndex = 28;
             this.btnCtrl_Network_1.TabStop = false;
             this.btnCtrl_Network_1.Tag = "21";
@@ -226,9 +235,10 @@ namespace VEXI
             this.pnMacUse_1.Controls.Add(this.label10);
             this.pnMacUse_1.Controls.Add(this.edDevMAC__1);
             this.pnMacUse_1.Controls.Add(this.lblDevMAC__1);
-            this.pnMacUse_1.Location = new System.Drawing.Point(6, 158);
+            this.pnMacUse_1.Location = new System.Drawing.Point(9, 237);
+            this.pnMacUse_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnMacUse_1.Name = "pnMacUse_1";
-            this.pnMacUse_1.Size = new System.Drawing.Size(293, 55);
+            this.pnMacUse_1.Size = new System.Drawing.Size(419, 82);
             this.pnMacUse_1.TabIndex = 14;
             this.pnMacUse_1.Visible = false;
             // 
@@ -237,9 +247,10 @@ namespace VEXI
             this.label10.BackColor = System.Drawing.SystemColors.Highlight;
             this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(15, 9);
+            this.label10.Location = new System.Drawing.Point(21, 14);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 38);
+            this.label10.Size = new System.Drawing.Size(187, 57);
             this.label10.TabIndex = 24;
             this.label10.Text = "MAC";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,18 +258,20 @@ namespace VEXI
             // edDevMAC__1
             // 
             this.edDevMAC__1.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevMAC__1.Location = new System.Drawing.Point(148, 26);
+            this.edDevMAC__1.Location = new System.Drawing.Point(211, 39);
+            this.edDevMAC__1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevMAC__1.Name = "edDevMAC__1";
-            this.edDevMAC__1.Size = new System.Drawing.Size(133, 21);
+            this.edDevMAC__1.Size = new System.Drawing.Size(188, 28);
             this.edDevMAC__1.TabIndex = 26;
             this.edDevMAC__1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDevMAC__1
             // 
             this.lblDevMAC__1.BackColor = System.Drawing.Color.White;
-            this.lblDevMAC__1.Location = new System.Drawing.Point(150, 9);
+            this.lblDevMAC__1.Location = new System.Drawing.Point(214, 14);
+            this.lblDevMAC__1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevMAC__1.Name = "lblDevMAC__1";
-            this.lblDevMAC__1.Size = new System.Drawing.Size(128, 14);
+            this.lblDevMAC__1.Size = new System.Drawing.Size(183, 21);
             this.lblDevMAC__1.TabIndex = 25;
             this.lblDevMAC__1.Text = "label11";
             this.lblDevMAC__1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,9 +279,10 @@ namespace VEXI
             // lblDevMAC_1
             // 
             this.lblDevMAC_1.BackColor = System.Drawing.Color.White;
-            this.lblDevMAC_1.Location = new System.Drawing.Point(156, 166);
+            this.lblDevMAC_1.Location = new System.Drawing.Point(223, 249);
+            this.lblDevMAC_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevMAC_1.Name = "lblDevMAC_1";
-            this.lblDevMAC_1.Size = new System.Drawing.Size(128, 24);
+            this.lblDevMAC_1.Size = new System.Drawing.Size(183, 36);
             this.lblDevMAC_1.TabIndex = 27;
             this.lblDevMAC_1.Text = "label11";
             this.lblDevMAC_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,9 +290,10 @@ namespace VEXI
             // edDevGateway_1
             // 
             this.edDevGateway_1.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevGateway_1.Location = new System.Drawing.Point(154, 133);
+            this.edDevGateway_1.Location = new System.Drawing.Point(220, 200);
+            this.edDevGateway_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevGateway_1.Name = "edDevGateway_1";
-            this.edDevGateway_1.Size = new System.Drawing.Size(133, 21);
+            this.edDevGateway_1.Size = new System.Drawing.Size(188, 28);
             this.edDevGateway_1.TabIndex = 23;
             this.edDevGateway_1.Tag = "01";
             this.edDevGateway_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -289,9 +304,10 @@ namespace VEXI
             this.label6.BackColor = System.Drawing.SystemColors.Highlight;
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(21, 166);
+            this.label6.Location = new System.Drawing.Point(30, 249);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 24);
+            this.label6.Size = new System.Drawing.Size(187, 36);
             this.label6.TabIndex = 26;
             this.label6.Text = "MAC";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,9 +315,10 @@ namespace VEXI
             // lblDevGateway_1
             // 
             this.lblDevGateway_1.BackColor = System.Drawing.Color.White;
-            this.lblDevGateway_1.Location = new System.Drawing.Point(156, 116);
+            this.lblDevGateway_1.Location = new System.Drawing.Point(223, 174);
+            this.lblDevGateway_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevGateway_1.Name = "lblDevGateway_1";
-            this.lblDevGateway_1.Size = new System.Drawing.Size(128, 14);
+            this.lblDevGateway_1.Size = new System.Drawing.Size(183, 21);
             this.lblDevGateway_1.TabIndex = 22;
             this.lblDevGateway_1.Text = "label11";
             this.lblDevGateway_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -311,9 +328,10 @@ namespace VEXI
             this.label7.BackColor = System.Drawing.SystemColors.Highlight;
             this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(21, 116);
+            this.label7.Location = new System.Drawing.Point(30, 174);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 38);
+            this.label7.Size = new System.Drawing.Size(187, 57);
             this.label7.TabIndex = 21;
             this.label7.Text = "Gateway";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,9 +339,10 @@ namespace VEXI
             // edDevSubnet_1
             // 
             this.edDevSubnet_1.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevSubnet_1.Location = new System.Drawing.Point(154, 85);
+            this.edDevSubnet_1.Location = new System.Drawing.Point(220, 128);
+            this.edDevSubnet_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevSubnet_1.Name = "edDevSubnet_1";
-            this.edDevSubnet_1.Size = new System.Drawing.Size(133, 21);
+            this.edDevSubnet_1.Size = new System.Drawing.Size(188, 28);
             this.edDevSubnet_1.TabIndex = 20;
             this.edDevSubnet_1.Tag = "01";
             this.edDevSubnet_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -332,9 +351,10 @@ namespace VEXI
             // lblDevSubnet_1
             // 
             this.lblDevSubnet_1.BackColor = System.Drawing.Color.White;
-            this.lblDevSubnet_1.Location = new System.Drawing.Point(156, 68);
+            this.lblDevSubnet_1.Location = new System.Drawing.Point(223, 102);
+            this.lblDevSubnet_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevSubnet_1.Name = "lblDevSubnet_1";
-            this.lblDevSubnet_1.Size = new System.Drawing.Size(128, 14);
+            this.lblDevSubnet_1.Size = new System.Drawing.Size(183, 21);
             this.lblDevSubnet_1.TabIndex = 19;
             this.lblDevSubnet_1.Text = "label11";
             this.lblDevSubnet_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -344,9 +364,10 @@ namespace VEXI
             this.label8.BackColor = System.Drawing.SystemColors.Highlight;
             this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(21, 68);
+            this.label8.Location = new System.Drawing.Point(30, 102);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 38);
+            this.label8.Size = new System.Drawing.Size(187, 57);
             this.label8.TabIndex = 18;
             this.label8.Text = "SubNet Mask";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -354,9 +375,10 @@ namespace VEXI
             // edDevIP_1
             // 
             this.edDevIP_1.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevIP_1.Location = new System.Drawing.Point(154, 39);
+            this.edDevIP_1.Location = new System.Drawing.Point(220, 58);
+            this.edDevIP_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevIP_1.Name = "edDevIP_1";
-            this.edDevIP_1.Size = new System.Drawing.Size(133, 21);
+            this.edDevIP_1.Size = new System.Drawing.Size(188, 28);
             this.edDevIP_1.TabIndex = 17;
             this.edDevIP_1.Tag = "01";
             this.edDevIP_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -375,9 +397,11 @@ namespace VEXI
             this.groupBox2.Controls.Add(this.lblFWVersion);
             this.groupBox2.Controls.Add(this.lblPVersion);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(17, 18);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(331, 215);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(473, 322);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Version && Time";
@@ -387,9 +411,10 @@ namespace VEXI
             this.label13.BackColor = System.Drawing.SystemColors.Highlight;
             this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(21, 57);
+            this.label13.Location = new System.Drawing.Point(30, 86);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(131, 24);
+            this.label13.Size = new System.Drawing.Size(187, 36);
             this.label13.TabIndex = 29;
             this.label13.Text = "Boot Version";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -397,18 +422,20 @@ namespace VEXI
             // lblBootVersion
             // 
             this.lblBootVersion.BackColor = System.Drawing.Color.White;
-            this.lblBootVersion.Location = new System.Drawing.Point(158, 56);
+            this.lblBootVersion.Location = new System.Drawing.Point(226, 84);
+            this.lblBootVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBootVersion.Name = "lblBootVersion";
-            this.lblBootVersion.Size = new System.Drawing.Size(148, 24);
+            this.lblBootVersion.Size = new System.Drawing.Size(211, 36);
             this.lblBootVersion.TabIndex = 28;
             this.lblBootVersion.Text = "label14";
             this.lblBootVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnDevicereset
             // 
-            this.BtnDevicereset.Location = new System.Drawing.Point(23, 24);
+            this.BtnDevicereset.Location = new System.Drawing.Point(33, 36);
+            this.BtnDevicereset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnDevicereset.Name = "BtnDevicereset";
-            this.BtnDevicereset.Size = new System.Drawing.Size(146, 23);
+            this.BtnDevicereset.Size = new System.Drawing.Size(209, 34);
             this.BtnDevicereset.TabIndex = 27;
             this.BtnDevicereset.TabStop = false;
             this.BtnDevicereset.Tag = "10";
@@ -418,9 +445,11 @@ namespace VEXI
             // 
             // btnSystemTimeUTC
             // 
-            this.btnSystemTimeUTC.Location = new System.Drawing.Point(159, 178);
+            this.btnSystemTimeUTC.Enabled = false;
+            this.btnSystemTimeUTC.Location = new System.Drawing.Point(227, 267);
+            this.btnSystemTimeUTC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSystemTimeUTC.Name = "btnSystemTimeUTC";
-            this.btnSystemTimeUTC.Size = new System.Drawing.Size(146, 23);
+            this.btnSystemTimeUTC.Size = new System.Drawing.Size(209, 34);
             this.btnSystemTimeUTC.TabIndex = 25;
             this.btnSystemTimeUTC.TabStop = false;
             this.btnSystemTimeUTC.Tag = "20";
@@ -433,9 +462,10 @@ namespace VEXI
             this.label9.BackColor = System.Drawing.SystemColors.Highlight;
             this.label9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(21, 148);
+            this.label9.Location = new System.Drawing.Point(30, 222);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 54);
+            this.label9.Size = new System.Drawing.Size(187, 81);
             this.label9.TabIndex = 24;
             this.label9.Text = "System Time";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -445,9 +475,10 @@ namespace VEXI
             this.label11.BackColor = System.Drawing.SystemColors.Highlight;
             this.label11.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(21, 117);
+            this.label11.Location = new System.Drawing.Point(30, 176);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 24);
+            this.label11.Size = new System.Drawing.Size(187, 36);
             this.label11.TabIndex = 23;
             this.label11.Text = "Firmware Version";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -457,9 +488,10 @@ namespace VEXI
             this.label12.BackColor = System.Drawing.SystemColors.Highlight;
             this.label12.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(21, 87);
+            this.label12.Location = new System.Drawing.Point(30, 130);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 24);
+            this.label12.Size = new System.Drawing.Size(187, 36);
             this.label12.TabIndex = 22;
             this.label12.Text = "Protocol Version";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -480,18 +512,22 @@ namespace VEXI
             this.groupBox3.Controls.Add(this.lblDevIP_2);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox3.Location = new System.Drawing.Point(336, 401);
+            this.groupBox3.Location = new System.Drawing.Point(480, 602);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(314, 259);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(449, 388);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Network Setting (EtherNet 2)";
             // 
             // btnCtrl_Network_2
             // 
-            this.btnCtrl_Network_2.Location = new System.Drawing.Point(49, 225);
+            this.btnCtrl_Network_2.Enabled = false;
+            this.btnCtrl_Network_2.Location = new System.Drawing.Point(70, 338);
+            this.btnCtrl_Network_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCtrl_Network_2.Name = "btnCtrl_Network_2";
-            this.btnCtrl_Network_2.Size = new System.Drawing.Size(190, 23);
+            this.btnCtrl_Network_2.Size = new System.Drawing.Size(271, 34);
             this.btnCtrl_Network_2.TabIndex = 28;
             this.btnCtrl_Network_2.TabStop = false;
             this.btnCtrl_Network_2.Tag = "23";
@@ -504,9 +540,10 @@ namespace VEXI
             this.pnMacUse_2.Controls.Add(this.label1);
             this.pnMacUse_2.Controls.Add(this.edDevMAC__2);
             this.pnMacUse_2.Controls.Add(this.lblDevMAC__2);
-            this.pnMacUse_2.Location = new System.Drawing.Point(6, 158);
+            this.pnMacUse_2.Location = new System.Drawing.Point(9, 237);
+            this.pnMacUse_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnMacUse_2.Name = "pnMacUse_2";
-            this.pnMacUse_2.Size = new System.Drawing.Size(293, 55);
+            this.pnMacUse_2.Size = new System.Drawing.Size(419, 82);
             this.pnMacUse_2.TabIndex = 14;
             this.pnMacUse_2.Visible = false;
             // 
@@ -515,9 +552,10 @@ namespace VEXI
             this.label1.BackColor = System.Drawing.SystemColors.Highlight;
             this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 9);
+            this.label1.Location = new System.Drawing.Point(21, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 38);
+            this.label1.Size = new System.Drawing.Size(187, 57);
             this.label1.TabIndex = 24;
             this.label1.Text = "MAC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -525,18 +563,20 @@ namespace VEXI
             // edDevMAC__2
             // 
             this.edDevMAC__2.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevMAC__2.Location = new System.Drawing.Point(148, 26);
+            this.edDevMAC__2.Location = new System.Drawing.Point(211, 39);
+            this.edDevMAC__2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevMAC__2.Name = "edDevMAC__2";
-            this.edDevMAC__2.Size = new System.Drawing.Size(133, 21);
+            this.edDevMAC__2.Size = new System.Drawing.Size(188, 28);
             this.edDevMAC__2.TabIndex = 26;
             this.edDevMAC__2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDevMAC__2
             // 
             this.lblDevMAC__2.BackColor = System.Drawing.Color.White;
-            this.lblDevMAC__2.Location = new System.Drawing.Point(150, 9);
+            this.lblDevMAC__2.Location = new System.Drawing.Point(214, 14);
+            this.lblDevMAC__2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevMAC__2.Name = "lblDevMAC__2";
-            this.lblDevMAC__2.Size = new System.Drawing.Size(128, 14);
+            this.lblDevMAC__2.Size = new System.Drawing.Size(183, 21);
             this.lblDevMAC__2.TabIndex = 25;
             this.lblDevMAC__2.Text = "label11";
             this.lblDevMAC__2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -544,9 +584,10 @@ namespace VEXI
             // lblDevMAC_2
             // 
             this.lblDevMAC_2.BackColor = System.Drawing.Color.White;
-            this.lblDevMAC_2.Location = new System.Drawing.Point(156, 166);
+            this.lblDevMAC_2.Location = new System.Drawing.Point(223, 249);
+            this.lblDevMAC_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevMAC_2.Name = "lblDevMAC_2";
-            this.lblDevMAC_2.Size = new System.Drawing.Size(128, 24);
+            this.lblDevMAC_2.Size = new System.Drawing.Size(183, 36);
             this.lblDevMAC_2.TabIndex = 27;
             this.lblDevMAC_2.Text = "label11";
             this.lblDevMAC_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -554,9 +595,10 @@ namespace VEXI
             // edDevGateway_2
             // 
             this.edDevGateway_2.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevGateway_2.Location = new System.Drawing.Point(154, 133);
+            this.edDevGateway_2.Location = new System.Drawing.Point(220, 200);
+            this.edDevGateway_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevGateway_2.Name = "edDevGateway_2";
-            this.edDevGateway_2.Size = new System.Drawing.Size(133, 21);
+            this.edDevGateway_2.Size = new System.Drawing.Size(188, 28);
             this.edDevGateway_2.TabIndex = 23;
             this.edDevGateway_2.Tag = "01";
             this.edDevGateway_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -567,9 +609,10 @@ namespace VEXI
             this.label5.BackColor = System.Drawing.SystemColors.Highlight;
             this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 166);
+            this.label5.Location = new System.Drawing.Point(30, 249);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 24);
+            this.label5.Size = new System.Drawing.Size(187, 36);
             this.label5.TabIndex = 26;
             this.label5.Text = "MAC";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -577,9 +620,10 @@ namespace VEXI
             // lblDevGateway_2
             // 
             this.lblDevGateway_2.BackColor = System.Drawing.Color.White;
-            this.lblDevGateway_2.Location = new System.Drawing.Point(156, 116);
+            this.lblDevGateway_2.Location = new System.Drawing.Point(223, 174);
+            this.lblDevGateway_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevGateway_2.Name = "lblDevGateway_2";
-            this.lblDevGateway_2.Size = new System.Drawing.Size(128, 14);
+            this.lblDevGateway_2.Size = new System.Drawing.Size(183, 21);
             this.lblDevGateway_2.TabIndex = 22;
             this.lblDevGateway_2.Text = "label11";
             this.lblDevGateway_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -589,9 +633,10 @@ namespace VEXI
             this.label14.BackColor = System.Drawing.SystemColors.Highlight;
             this.label14.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(21, 116);
+            this.label14.Location = new System.Drawing.Point(30, 174);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(131, 38);
+            this.label14.Size = new System.Drawing.Size(187, 57);
             this.label14.TabIndex = 21;
             this.label14.Text = "Gateway";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -599,9 +644,10 @@ namespace VEXI
             // edDevSubnet_2
             // 
             this.edDevSubnet_2.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevSubnet_2.Location = new System.Drawing.Point(154, 85);
+            this.edDevSubnet_2.Location = new System.Drawing.Point(220, 128);
+            this.edDevSubnet_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevSubnet_2.Name = "edDevSubnet_2";
-            this.edDevSubnet_2.Size = new System.Drawing.Size(133, 21);
+            this.edDevSubnet_2.Size = new System.Drawing.Size(188, 28);
             this.edDevSubnet_2.TabIndex = 20;
             this.edDevSubnet_2.Tag = "01";
             this.edDevSubnet_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -610,9 +656,10 @@ namespace VEXI
             // lblDevSubnet_2
             // 
             this.lblDevSubnet_2.BackColor = System.Drawing.Color.White;
-            this.lblDevSubnet_2.Location = new System.Drawing.Point(156, 68);
+            this.lblDevSubnet_2.Location = new System.Drawing.Point(223, 102);
+            this.lblDevSubnet_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevSubnet_2.Name = "lblDevSubnet_2";
-            this.lblDevSubnet_2.Size = new System.Drawing.Size(128, 14);
+            this.lblDevSubnet_2.Size = new System.Drawing.Size(183, 21);
             this.lblDevSubnet_2.TabIndex = 19;
             this.lblDevSubnet_2.Text = "label11";
             this.lblDevSubnet_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -622,9 +669,10 @@ namespace VEXI
             this.label16.BackColor = System.Drawing.SystemColors.Highlight;
             this.label16.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(21, 68);
+            this.label16.Location = new System.Drawing.Point(30, 102);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(131, 38);
+            this.label16.Size = new System.Drawing.Size(187, 57);
             this.label16.TabIndex = 18;
             this.label16.Text = "SubNet Mask";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -632,9 +680,10 @@ namespace VEXI
             // edDevIP_2
             // 
             this.edDevIP_2.BackColor = System.Drawing.Color.LightCyan;
-            this.edDevIP_2.Location = new System.Drawing.Point(154, 39);
+            this.edDevIP_2.Location = new System.Drawing.Point(220, 58);
+            this.edDevIP_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edDevIP_2.Name = "edDevIP_2";
-            this.edDevIP_2.Size = new System.Drawing.Size(133, 21);
+            this.edDevIP_2.Size = new System.Drawing.Size(188, 28);
             this.edDevIP_2.TabIndex = 17;
             this.edDevIP_2.Tag = "01";
             this.edDevIP_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -643,9 +692,10 @@ namespace VEXI
             // lblDevIP_2
             // 
             this.lblDevIP_2.BackColor = System.Drawing.Color.White;
-            this.lblDevIP_2.Location = new System.Drawing.Point(156, 22);
+            this.lblDevIP_2.Location = new System.Drawing.Point(223, 33);
+            this.lblDevIP_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevIP_2.Name = "lblDevIP_2";
-            this.lblDevIP_2.Size = new System.Drawing.Size(128, 14);
+            this.lblDevIP_2.Size = new System.Drawing.Size(183, 21);
             this.lblDevIP_2.TabIndex = 10;
             this.lblDevIP_2.Text = "label11";
             this.lblDevIP_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,9 +705,10 @@ namespace VEXI
             this.label18.BackColor = System.Drawing.SystemColors.Highlight;
             this.label18.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(21, 22);
+            this.label18.Location = new System.Drawing.Point(30, 33);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(131, 38);
+            this.label18.Size = new System.Drawing.Size(187, 57);
             this.label18.TabIndex = 3;
             this.label18.Text = "IP";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -675,9 +726,11 @@ namespace VEXI
             this.groupBox5.Controls.Add(this.lblProjectNo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox5.Location = new System.Drawing.Point(12, 233);
+            this.groupBox5.Location = new System.Drawing.Point(17, 350);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(331, 156);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(473, 234);
             this.groupBox5.TabIndex = 19;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "장치관리ID";
@@ -685,10 +738,11 @@ namespace VEXI
             // edHOGINum
             // 
             this.edHOGINum.BackColor = System.Drawing.Color.LightCyan;
-            this.edHOGINum.Location = new System.Drawing.Point(218, 80);
+            this.edHOGINum.Location = new System.Drawing.Point(311, 120);
+            this.edHOGINum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edHOGINum.MaxLength = 3;
             this.edHOGINum.Name = "edHOGINum";
-            this.edHOGINum.Size = new System.Drawing.Size(90, 21);
+            this.edHOGINum.Size = new System.Drawing.Size(127, 28);
             this.edHOGINum.TabIndex = 36;
             this.edHOGINum.Tag = "00";
             this.edHOGINum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -697,9 +751,10 @@ namespace VEXI
             // lblHOGINum
             // 
             this.lblHOGINum.BackColor = System.Drawing.Color.White;
-            this.lblHOGINum.Location = new System.Drawing.Point(130, 81);
+            this.lblHOGINum.Location = new System.Drawing.Point(186, 122);
+            this.lblHOGINum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHOGINum.Name = "lblHOGINum";
-            this.lblHOGINum.Size = new System.Drawing.Size(85, 20);
+            this.lblHOGINum.Size = new System.Drawing.Size(121, 30);
             this.lblHOGINum.TabIndex = 35;
             this.lblHOGINum.Text = "label11";
             this.lblHOGINum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -709,9 +764,10 @@ namespace VEXI
             this.label4.BackColor = System.Drawing.SystemColors.Highlight;
             this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 81);
+            this.label4.Location = new System.Drawing.Point(26, 122);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 21);
+            this.label4.Size = new System.Drawing.Size(157, 32);
             this.label4.TabIndex = 34;
             this.label4.Text = "호기번호";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -719,10 +775,11 @@ namespace VEXI
             // edGroupNum
             // 
             this.edGroupNum.BackColor = System.Drawing.Color.LightCyan;
-            this.edGroupNum.Location = new System.Drawing.Point(218, 51);
+            this.edGroupNum.Location = new System.Drawing.Point(311, 76);
+            this.edGroupNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edGroupNum.MaxLength = 2;
             this.edGroupNum.Name = "edGroupNum";
-            this.edGroupNum.Size = new System.Drawing.Size(90, 21);
+            this.edGroupNum.Size = new System.Drawing.Size(127, 28);
             this.edGroupNum.TabIndex = 33;
             this.edGroupNum.Tag = "";
             this.edGroupNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -730,18 +787,21 @@ namespace VEXI
             // lblGroupNum
             // 
             this.lblGroupNum.BackColor = System.Drawing.Color.White;
-            this.lblGroupNum.Location = new System.Drawing.Point(130, 51);
+            this.lblGroupNum.Location = new System.Drawing.Point(186, 76);
+            this.lblGroupNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupNum.Name = "lblGroupNum";
-            this.lblGroupNum.Size = new System.Drawing.Size(85, 20);
+            this.lblGroupNum.Size = new System.Drawing.Size(121, 30);
             this.lblGroupNum.TabIndex = 32;
             this.lblGroupNum.Text = "label11";
             this.lblGroupNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnManageIDSet
             // 
-            this.btnManageIDSet.Location = new System.Drawing.Point(105, 118);
+            this.btnManageIDSet.Enabled = false;
+            this.btnManageIDSet.Location = new System.Drawing.Point(150, 177);
+            this.btnManageIDSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageIDSet.Name = "btnManageIDSet";
-            this.btnManageIDSet.Size = new System.Drawing.Size(134, 28);
+            this.btnManageIDSet.Size = new System.Drawing.Size(191, 42);
             this.btnManageIDSet.TabIndex = 27;
             this.btnManageIDSet.TabStop = false;
             this.btnManageIDSet.Tag = "25";
@@ -754,9 +814,10 @@ namespace VEXI
             this.label15.BackColor = System.Drawing.SystemColors.Highlight;
             this.label15.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(18, 51);
+            this.label15.Location = new System.Drawing.Point(26, 76);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(110, 21);
+            this.label15.Size = new System.Drawing.Size(157, 32);
             this.label15.TabIndex = 31;
             this.label15.Text = "그룹번호";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -764,10 +825,11 @@ namespace VEXI
             // edProjectNo
             // 
             this.edProjectNo.BackColor = System.Drawing.Color.LightCyan;
-            this.edProjectNo.Location = new System.Drawing.Point(218, 20);
+            this.edProjectNo.Location = new System.Drawing.Point(311, 30);
+            this.edProjectNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edProjectNo.MaxLength = 6;
             this.edProjectNo.Name = "edProjectNo";
-            this.edProjectNo.Size = new System.Drawing.Size(90, 21);
+            this.edProjectNo.Size = new System.Drawing.Size(127, 28);
             this.edProjectNo.TabIndex = 30;
             this.edProjectNo.Tag = "";
             this.edProjectNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -775,9 +837,10 @@ namespace VEXI
             // lblProjectNo
             // 
             this.lblProjectNo.BackColor = System.Drawing.Color.White;
-            this.lblProjectNo.Location = new System.Drawing.Point(130, 21);
+            this.lblProjectNo.Location = new System.Drawing.Point(186, 32);
+            this.lblProjectNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProjectNo.Name = "lblProjectNo";
-            this.lblProjectNo.Size = new System.Drawing.Size(85, 20);
+            this.lblProjectNo.Size = new System.Drawing.Size(121, 30);
             this.lblProjectNo.TabIndex = 29;
             this.lblProjectNo.Text = "label11";
             this.lblProjectNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -787,9 +850,10 @@ namespace VEXI
             this.label20.BackColor = System.Drawing.SystemColors.Highlight;
             this.label20.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(18, 21);
+            this.label20.Location = new System.Drawing.Point(26, 32);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(110, 21);
+            this.label20.Size = new System.Drawing.Size(157, 32);
             this.label20.TabIndex = 28;
             this.label20.Text = "Project No";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -827,9 +891,11 @@ namespace VEXI
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.lbl_ModeSW_0);
             this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox6.Location = new System.Drawing.Point(359, 12);
+            this.groupBox6.Location = new System.Drawing.Point(513, 18);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(589, 367);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Size = new System.Drawing.Size(841, 550);
             this.groupBox6.TabIndex = 20;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "스위치 상태 && LINK 상태";
@@ -837,9 +903,10 @@ namespace VEXI
             // lbl_ModeSW_3
             // 
             this.lbl_ModeSW_3.BackColor = System.Drawing.Color.White;
-            this.lbl_ModeSW_3.Location = new System.Drawing.Point(305, 24);
+            this.lbl_ModeSW_3.Location = new System.Drawing.Point(436, 36);
+            this.lbl_ModeSW_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ModeSW_3.Name = "lbl_ModeSW_3";
-            this.lbl_ModeSW_3.Size = new System.Drawing.Size(45, 20);
+            this.lbl_ModeSW_3.Size = new System.Drawing.Size(64, 30);
             this.lbl_ModeSW_3.TabIndex = 54;
             this.lbl_ModeSW_3.Text = "3";
             this.lbl_ModeSW_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -847,9 +914,10 @@ namespace VEXI
             // lbl_ModeSW_2
             // 
             this.lbl_ModeSW_2.BackColor = System.Drawing.Color.White;
-            this.lbl_ModeSW_2.Location = new System.Drawing.Point(257, 24);
+            this.lbl_ModeSW_2.Location = new System.Drawing.Point(367, 36);
+            this.lbl_ModeSW_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ModeSW_2.Name = "lbl_ModeSW_2";
-            this.lbl_ModeSW_2.Size = new System.Drawing.Size(45, 20);
+            this.lbl_ModeSW_2.Size = new System.Drawing.Size(64, 30);
             this.lbl_ModeSW_2.TabIndex = 53;
             this.lbl_ModeSW_2.Text = "2";
             this.lbl_ModeSW_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -857,57 +925,23 @@ namespace VEXI
             // lbl_ModeSW_1
             // 
             this.lbl_ModeSW_1.BackColor = System.Drawing.Color.White;
-            this.lbl_ModeSW_1.Location = new System.Drawing.Point(209, 24);
+            this.lbl_ModeSW_1.Location = new System.Drawing.Point(299, 36);
+            this.lbl_ModeSW_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ModeSW_1.Name = "lbl_ModeSW_1";
-            this.lbl_ModeSW_1.Size = new System.Drawing.Size(45, 20);
+            this.lbl_ModeSW_1.Size = new System.Drawing.Size(64, 30);
             this.lbl_ModeSW_1.TabIndex = 52;
             this.lbl_ModeSW_1.Text = "1";
             this.lbl_ModeSW_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Link3_5
-            // 
-            this.lbl_Link3_5.BackColor = System.Drawing.Color.Yellow;
-            this.lbl_Link3_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_Link3_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_5.Location = new System.Drawing.Point(18, 30);
-            this.lbl_Link3_5.Name = "lbl_Link3_5";
-            this.lbl_Link3_5.Size = new System.Drawing.Size(167, 20);
-            this.lbl_Link3_5.TabIndex = 51;
-            this.lbl_Link3_5.Text = "HMI UpLink";
-            this.lbl_Link3_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Link3_4
-            // 
-            this.lbl_Link3_4.BackColor = System.Drawing.Color.Yellow;
-            this.lbl_Link3_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_Link3_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_4.Location = new System.Drawing.Point(18, 144);
-            this.lbl_Link3_4.Name = "lbl_Link3_4";
-            this.lbl_Link3_4.Size = new System.Drawing.Size(167, 20);
-            this.lbl_Link3_4.TabIndex = 50;
-            this.lbl_Link3_4.Text = "MX-DSP #2 UpLink";
-            this.lbl_Link3_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Link3_3
-            // 
-            this.lbl_Link3_3.BackColor = System.Drawing.Color.Yellow;
-            this.lbl_Link3_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_Link3_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_3.Location = new System.Drawing.Point(18, 86);
-            this.lbl_Link3_3.Name = "lbl_Link3_3";
-            this.lbl_Link3_3.Size = new System.Drawing.Size(167, 20);
-            this.lbl_Link3_3.TabIndex = 49;
-            this.lbl_Link3_3.Text = "MX-DSP #1 UpLink";
-            this.lbl_Link3_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Link2_7
             // 
             this.lbl_Link2_7.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_7.Location = new System.Drawing.Point(408, 275);
+            this.lbl_Link2_7.Location = new System.Drawing.Point(583, 412);
+            this.lbl_Link2_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_7.Name = "lbl_Link2_7";
-            this.lbl_Link2_7.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_7.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_7.TabIndex = 48;
             this.lbl_Link2_7.Text = "EtherCAT Slave16 Link";
             this.lbl_Link2_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -917,9 +951,10 @@ namespace VEXI
             this.lbl_Link2_6.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_6.Location = new System.Drawing.Point(408, 247);
+            this.lbl_Link2_6.Location = new System.Drawing.Point(583, 370);
+            this.lbl_Link2_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_6.Name = "lbl_Link2_6";
-            this.lbl_Link2_6.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_6.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_6.TabIndex = 47;
             this.lbl_Link2_6.Text = "EtherCAT Slave15 Link";
             this.lbl_Link2_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -929,9 +964,10 @@ namespace VEXI
             this.lbl_Link2_5.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_5.Location = new System.Drawing.Point(408, 219);
+            this.lbl_Link2_5.Location = new System.Drawing.Point(583, 328);
+            this.lbl_Link2_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_5.Name = "lbl_Link2_5";
-            this.lbl_Link2_5.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_5.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_5.TabIndex = 46;
             this.lbl_Link2_5.Text = "EtherCAT Slave14 Link";
             this.lbl_Link2_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -941,9 +977,10 @@ namespace VEXI
             this.lbl_Link2_4.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_4.Location = new System.Drawing.Point(408, 191);
+            this.lbl_Link2_4.Location = new System.Drawing.Point(583, 286);
+            this.lbl_Link2_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_4.Name = "lbl_Link2_4";
-            this.lbl_Link2_4.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_4.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_4.TabIndex = 45;
             this.lbl_Link2_4.Text = "EtherCAT Slave13 Link";
             this.lbl_Link2_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -953,9 +990,10 @@ namespace VEXI
             this.lbl_Link2_3.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_3.Location = new System.Drawing.Point(408, 163);
+            this.lbl_Link2_3.Location = new System.Drawing.Point(583, 244);
+            this.lbl_Link2_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_3.Name = "lbl_Link2_3";
-            this.lbl_Link2_3.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_3.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_3.TabIndex = 44;
             this.lbl_Link2_3.Text = "EtherCAT Slave12 Link";
             this.lbl_Link2_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -965,9 +1003,10 @@ namespace VEXI
             this.lbl_Link2_2.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_2.Location = new System.Drawing.Point(408, 135);
+            this.lbl_Link2_2.Location = new System.Drawing.Point(583, 202);
+            this.lbl_Link2_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_2.Name = "lbl_Link2_2";
-            this.lbl_Link2_2.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_2.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_2.TabIndex = 43;
             this.lbl_Link2_2.Text = "EtherCAT Slave11 Link";
             this.lbl_Link2_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -977,9 +1016,10 @@ namespace VEXI
             this.lbl_Link2_1.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_1.Location = new System.Drawing.Point(408, 107);
+            this.lbl_Link2_1.Location = new System.Drawing.Point(583, 160);
+            this.lbl_Link2_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_1.Name = "lbl_Link2_1";
-            this.lbl_Link2_1.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_1.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_1.TabIndex = 42;
             this.lbl_Link2_1.Text = "EtherCAT Slave10 Link";
             this.lbl_Link2_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -989,9 +1029,10 @@ namespace VEXI
             this.lbl_Link2_0.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link2_0.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link2_0.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link2_0.Location = new System.Drawing.Point(408, 79);
+            this.lbl_Link2_0.Location = new System.Drawing.Point(583, 118);
+            this.lbl_Link2_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link2_0.Name = "lbl_Link2_0";
-            this.lbl_Link2_0.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link2_0.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link2_0.TabIndex = 41;
             this.lbl_Link2_0.Text = "EtherCAT Slave9 Link";
             this.lbl_Link2_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1001,9 +1042,10 @@ namespace VEXI
             this.lbl_Link1_7.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_7.Location = new System.Drawing.Point(224, 275);
+            this.lbl_Link1_7.Location = new System.Drawing.Point(320, 412);
+            this.lbl_Link1_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_7.Name = "lbl_Link1_7";
-            this.lbl_Link1_7.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_7.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_7.TabIndex = 40;
             this.lbl_Link1_7.Text = "EtherCAT Slave8 Link";
             this.lbl_Link1_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1013,9 +1055,10 @@ namespace VEXI
             this.lbl_Link1_6.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_6.Location = new System.Drawing.Point(224, 247);
+            this.lbl_Link1_6.Location = new System.Drawing.Point(320, 370);
+            this.lbl_Link1_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_6.Name = "lbl_Link1_6";
-            this.lbl_Link1_6.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_6.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_6.TabIndex = 39;
             this.lbl_Link1_6.Text = "EtherCAT Slave7 Link";
             this.lbl_Link1_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1025,9 +1068,10 @@ namespace VEXI
             this.lbl_Link1_5.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_5.Location = new System.Drawing.Point(224, 219);
+            this.lbl_Link1_5.Location = new System.Drawing.Point(320, 328);
+            this.lbl_Link1_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_5.Name = "lbl_Link1_5";
-            this.lbl_Link1_5.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_5.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_5.TabIndex = 38;
             this.lbl_Link1_5.Text = "EtherCAT Slave6 Link";
             this.lbl_Link1_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1037,9 +1081,10 @@ namespace VEXI
             this.lbl_Link1_4.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_4.Location = new System.Drawing.Point(224, 191);
+            this.lbl_Link1_4.Location = new System.Drawing.Point(320, 286);
+            this.lbl_Link1_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_4.Name = "lbl_Link1_4";
-            this.lbl_Link1_4.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_4.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_4.TabIndex = 37;
             this.lbl_Link1_4.Text = "EtherCAT Slave5 Link";
             this.lbl_Link1_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1049,9 +1094,10 @@ namespace VEXI
             this.lbl_Link1_3.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_3.Location = new System.Drawing.Point(224, 163);
+            this.lbl_Link1_3.Location = new System.Drawing.Point(320, 244);
+            this.lbl_Link1_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_3.Name = "lbl_Link1_3";
-            this.lbl_Link1_3.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_3.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_3.TabIndex = 36;
             this.lbl_Link1_3.Text = "EtherCAT Slave4 Link";
             this.lbl_Link1_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1061,9 +1107,10 @@ namespace VEXI
             this.lbl_Link1_2.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_2.Location = new System.Drawing.Point(224, 135);
+            this.lbl_Link1_2.Location = new System.Drawing.Point(320, 202);
+            this.lbl_Link1_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_2.Name = "lbl_Link1_2";
-            this.lbl_Link1_2.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_2.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_2.TabIndex = 35;
             this.lbl_Link1_2.Text = "EtherCAT Slave3 Link";
             this.lbl_Link1_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1073,9 +1120,10 @@ namespace VEXI
             this.lbl_Link1_1.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_1.Location = new System.Drawing.Point(224, 107);
+            this.lbl_Link1_1.Location = new System.Drawing.Point(320, 160);
+            this.lbl_Link1_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_1.Name = "lbl_Link1_1";
-            this.lbl_Link1_1.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_1.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_1.TabIndex = 34;
             this.lbl_Link1_1.Text = "EtherCAT Slave2 Link";
             this.lbl_Link1_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1085,9 +1133,10 @@ namespace VEXI
             this.lbl_Link1_0.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link1_0.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link1_0.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link1_0.Location = new System.Drawing.Point(224, 79);
+            this.lbl_Link1_0.Location = new System.Drawing.Point(320, 118);
+            this.lbl_Link1_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link1_0.Name = "lbl_Link1_0";
-            this.lbl_Link1_0.Size = new System.Drawing.Size(160, 20);
+            this.lbl_Link1_0.Size = new System.Drawing.Size(229, 30);
             this.lbl_Link1_0.TabIndex = 33;
             this.lbl_Link1_0.Text = "EtherCAT Slave1 Link";
             this.lbl_Link1_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1097,9 +1146,10 @@ namespace VEXI
             this.lbl_Link0_7.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_7.Location = new System.Drawing.Point(24, 249);
+            this.lbl_Link0_7.Location = new System.Drawing.Point(34, 374);
+            this.lbl_Link0_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_7.Name = "lbl_Link0_7";
-            this.lbl_Link0_7.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_7.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_7.TabIndex = 32;
             this.lbl_Link0_7.Text = "SSI Link";
             this.lbl_Link0_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1109,9 +1159,10 @@ namespace VEXI
             this.lbl_Link0_6.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_6.Location = new System.Drawing.Point(24, 221);
+            this.lbl_Link0_6.Location = new System.Drawing.Point(34, 332);
+            this.lbl_Link0_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_6.Name = "lbl_Link0_6";
-            this.lbl_Link0_6.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_6.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_6.TabIndex = 31;
             this.lbl_Link0_6.Text = "CAN Link";
             this.lbl_Link0_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1121,9 +1172,10 @@ namespace VEXI
             this.lbl_Link0_5.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_5.Location = new System.Drawing.Point(24, 193);
+            this.lbl_Link0_5.Location = new System.Drawing.Point(34, 290);
+            this.lbl_Link0_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_5.Name = "lbl_Link0_5";
-            this.lbl_Link0_5.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_5.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_5.TabIndex = 30;
             this.lbl_Link0_5.Text = "RS-485/422 Link";
             this.lbl_Link0_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1133,9 +1185,10 @@ namespace VEXI
             this.lbl_Link0_4.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_4.Location = new System.Drawing.Point(24, 165);
+            this.lbl_Link0_4.Location = new System.Drawing.Point(34, 248);
+            this.lbl_Link0_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_4.Name = "lbl_Link0_4";
-            this.lbl_Link0_4.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_4.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_4.TabIndex = 29;
             this.lbl_Link0_4.Text = "RS-232(TML) Link";
             this.lbl_Link0_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1145,9 +1198,10 @@ namespace VEXI
             this.lbl_Link0_3.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_3.Location = new System.Drawing.Point(24, 137);
+            this.lbl_Link0_3.Location = new System.Drawing.Point(34, 206);
+            this.lbl_Link0_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_3.Name = "lbl_Link0_3";
-            this.lbl_Link0_3.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_3.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_3.TabIndex = 27;
             this.lbl_Link0_3.Text = "Debug Link";
             this.lbl_Link0_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1157,9 +1211,10 @@ namespace VEXI
             this.lbl_Link0_1.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_1.Location = new System.Drawing.Point(24, 109);
+            this.lbl_Link0_1.Location = new System.Drawing.Point(34, 164);
+            this.lbl_Link0_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_1.Name = "lbl_Link0_1";
-            this.lbl_Link0_1.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_1.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_1.TabIndex = 26;
             this.lbl_Link0_1.Text = "Ethernet2(FPGA) Link";
             this.lbl_Link0_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1169,9 +1224,10 @@ namespace VEXI
             this.lbl_Link0_0.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link0_0.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link0_0.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link0_0.Location = new System.Drawing.Point(24, 81);
+            this.lbl_Link0_0.Location = new System.Drawing.Point(34, 122);
+            this.lbl_Link0_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link0_0.Name = "lbl_Link0_0";
-            this.lbl_Link0_0.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link0_0.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link0_0.TabIndex = 25;
             this.lbl_Link0_0.Text = "Ethernet1(MCU) Link";
             this.lbl_Link0_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1181,9 +1237,10 @@ namespace VEXI
             this.label2.BackColor = System.Drawing.SystemColors.Highlight;
             this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 48);
+            this.label2.Location = new System.Drawing.Point(34, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 20);
+            this.label2.Size = new System.Drawing.Size(187, 30);
             this.label2.TabIndex = 24;
             this.label2.Text = "ID 스위치";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1191,9 +1248,10 @@ namespace VEXI
             // lbl_IDSW
             // 
             this.lbl_IDSW.BackColor = System.Drawing.Color.White;
-            this.lbl_IDSW.Location = new System.Drawing.Point(161, 47);
+            this.lbl_IDSW.Location = new System.Drawing.Point(230, 70);
+            this.lbl_IDSW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_IDSW.Name = "lbl_IDSW";
-            this.lbl_IDSW.Size = new System.Drawing.Size(80, 20);
+            this.lbl_IDSW.Size = new System.Drawing.Size(114, 30);
             this.lbl_IDSW.TabIndex = 23;
             this.lbl_IDSW.Text = "label14";
             this.lbl_IDSW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1203,9 +1261,10 @@ namespace VEXI
             this.label21.BackColor = System.Drawing.SystemColors.Highlight;
             this.label21.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(24, 25);
+            this.label21.Location = new System.Drawing.Point(34, 38);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(131, 20);
+            this.label21.Size = new System.Drawing.Size(187, 30);
             this.label21.TabIndex = 22;
             this.label21.Text = "모드 스위치";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1213,21 +1272,62 @@ namespace VEXI
             // lbl_ModeSW_0
             // 
             this.lbl_ModeSW_0.BackColor = System.Drawing.Color.White;
-            this.lbl_ModeSW_0.Location = new System.Drawing.Point(161, 24);
+            this.lbl_ModeSW_0.Location = new System.Drawing.Point(230, 36);
+            this.lbl_ModeSW_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ModeSW_0.Name = "lbl_ModeSW_0";
-            this.lbl_ModeSW_0.Size = new System.Drawing.Size(45, 20);
+            this.lbl_ModeSW_0.Size = new System.Drawing.Size(64, 30);
             this.lbl_ModeSW_0.TabIndex = 7;
             this.lbl_ModeSW_0.Text = "0";
             this.lbl_ModeSW_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Link3_5
+            // 
+            this.lbl_Link3_5.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_Link3_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_Link3_5.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Link3_5.Location = new System.Drawing.Point(26, 45);
+            this.lbl_Link3_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Link3_5.Name = "lbl_Link3_5";
+            this.lbl_Link3_5.Size = new System.Drawing.Size(239, 30);
+            this.lbl_Link3_5.TabIndex = 51;
+            this.lbl_Link3_5.Text = "HMI UpLink";
+            this.lbl_Link3_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Link3_4
+            // 
+            this.lbl_Link3_4.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_Link3_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_Link3_4.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Link3_4.Location = new System.Drawing.Point(26, 216);
+            this.lbl_Link3_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Link3_4.Name = "lbl_Link3_4";
+            this.lbl_Link3_4.Size = new System.Drawing.Size(239, 30);
+            this.lbl_Link3_4.TabIndex = 50;
+            this.lbl_Link3_4.Text = "MX-DSP #2 UpLink";
+            this.lbl_Link3_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Link3_3
+            // 
+            this.lbl_Link3_3.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_Link3_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_Link3_3.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Link3_3.Location = new System.Drawing.Point(26, 129);
+            this.lbl_Link3_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Link3_3.Name = "lbl_Link3_3";
+            this.lbl_Link3_3.Size = new System.Drawing.Size(239, 30);
+            this.lbl_Link3_3.TabIndex = 49;
+            this.lbl_Link3_3.Text = "MX-DSP #1 UpLink";
+            this.lbl_Link3_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Link3_2
             // 
             this.lbl_Link3_2.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link3_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link3_2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_2.Location = new System.Drawing.Point(18, 52);
+            this.lbl_Link3_2.Location = new System.Drawing.Point(26, 78);
+            this.lbl_Link3_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link3_2.Name = "lbl_Link3_2";
-            this.lbl_Link3_2.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link3_2.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link3_2.TabIndex = 55;
             this.lbl_Link3_2.Text = "HMI DownLink";
             this.lbl_Link3_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1241,21 +1341,37 @@ namespace VEXI
             this.groupBox4.Controls.Add(this.lbl_Link3_5);
             this.groupBox4.Controls.Add(this.lbl_Link3_3);
             this.groupBox4.Controls.Add(this.lbl_Link3_4);
-            this.groupBox4.Location = new System.Drawing.Point(667, 402);
+            this.groupBox4.Location = new System.Drawing.Point(953, 603);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(205, 258);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(293, 387);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "HMI/DSP/GMC Link";
+            // 
+            // lbl_Link3_7
+            // 
+            this.lbl_Link3_7.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_Link3_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_Link3_7.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Link3_7.Location = new System.Drawing.Point(26, 303);
+            this.lbl_Link3_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Link3_7.Name = "lbl_Link3_7";
+            this.lbl_Link3_7.Size = new System.Drawing.Size(239, 30);
+            this.lbl_Link3_7.TabIndex = 58;
+            this.lbl_Link3_7.Text = "GMC Link";
+            this.lbl_Link3_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Link3_0
             // 
             this.lbl_Link3_0.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link3_0.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link3_0.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_0.Location = new System.Drawing.Point(18, 108);
+            this.lbl_Link3_0.Location = new System.Drawing.Point(26, 162);
+            this.lbl_Link3_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link3_0.Name = "lbl_Link3_0";
-            this.lbl_Link3_0.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link3_0.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link3_0.TabIndex = 56;
             this.lbl_Link3_0.Text = "MX-DSP #1 DownLink";
             this.lbl_Link3_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1265,30 +1381,19 @@ namespace VEXI
             this.lbl_Link3_1.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Link3_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Link3_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_1.Location = new System.Drawing.Point(18, 165);
+            this.lbl_Link3_1.Location = new System.Drawing.Point(26, 248);
+            this.lbl_Link3_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Link3_1.Name = "lbl_Link3_1";
-            this.lbl_Link3_1.Size = new System.Drawing.Size(167, 20);
+            this.lbl_Link3_1.Size = new System.Drawing.Size(239, 30);
             this.lbl_Link3_1.TabIndex = 57;
             this.lbl_Link3_1.Text = "MX-DSP #2 DownLink";
             this.lbl_Link3_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_Link3_7
-            // 
-            this.lbl_Link3_7.BackColor = System.Drawing.Color.Yellow;
-            this.lbl_Link3_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_Link3_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Link3_7.Location = new System.Drawing.Point(18, 202);
-            this.lbl_Link3_7.Name = "lbl_Link3_7";
-            this.lbl_Link3_7.Size = new System.Drawing.Size(167, 20);
-            this.lbl_Link3_7.TabIndex = 58;
-            this.lbl_Link3_7.Text = "GMC Link";
-            this.lbl_Link3_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form_BasicSt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 673);
+            this.ClientSize = new System.Drawing.Size(1370, 1010);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
@@ -1297,6 +1402,7 @@ namespace VEXI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_BasicSt";

@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <VEXI_CLIENT Condition="'$(VEXI_CLIENT)' == ''">RTV</VEXI_CLIENT>
+    <VEXI_CLIENT Condition="'$(VEXI_CLIENT)' == ''">EMS</VEXI_CLIENT>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,7 +36,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\wbin\$(Configuration)_$(VEXI_CLIENT)\</OutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)wbin\$(Configuration)_$(VEXI_CLIENT)\</OutputPath>
     <DefineConstants>DEBUG;TRACE;VEXI_CLIENT_$(VEXI_CLIENT)</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,15 +46,15 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\wbin\$(Configuration)_$(VEXI_CLIENT)\</OutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)wbin\$(Configuration)_$(VEXI_CLIENT)\</OutputPath>
     <DefineConstants>TRACE;VEXI_CLIENT_$(VEXI_CLIENT)</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <!-- EMS_TEST_VEXI 전용: 외부 저장소(형제 폴더) 경로 참조 없음. 확장 컨트롤 DLL은 이 프로젝트의 lib\ 아래에만 둔다. -->
   <PropertyGroup>
     <InheritedListViewPath Condition="Exists('$(MSBuildThisFileDirectory)lib\InheritedListView.dll')">$(MSBuildThisFileDirectory)lib\InheritedListView.dll</InheritedListViewPath>
-    <InheritedListViewPath Condition="'$(InheritedListViewPath)' == '' and Exists('..\UserComponent\InheritedListView\InheritedListView\bin\Debug\InheritedListView.dll')">..\UserComponent\InheritedListView\InheritedListView\bin\Debug\InheritedListView.dll</InheritedListViewPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InheritedListView" Condition="'$(InheritedListViewPath)' != ''">

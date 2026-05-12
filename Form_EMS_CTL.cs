@@ -15,10 +15,11 @@ namespace VEXI
     {
         public Form_Main form_Main;
 
-        private static VEXI_DEFS.TEMS_REC_TaskJobCTRL ems_REC_TaskJob_CTRL;
-        private static VEXI_DEFS.EMS_REC_JobCTRL ems_REC_Job_CTRL;
         private static VEXI_DEFS.TEMS_REC_JobCTRLRES ems_REC_Job_CTRLRes;
         private static VEXI_DEFS.TDEV_ManualCtrl ems_REC_ManualCtrl;
+
+        private bool _emsManualJogPressArmed;
+        private byte _emsManualJogArmedTag;
 
 
 
@@ -33,6 +34,12 @@ namespace VEXI
         {
             Button bt = sender as Button;
             if (bt == null) return;
+
+            if (!TryValidateEmsManualMotionPreconditions(out string failMsg))
+            {
+                form_Main.GlobalObj.MsgBox_Info(failMsg, "W");
+                return;
+            }
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Chucking 이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
@@ -52,12 +59,13 @@ namespace VEXI
             }
 
             this.Text = "장비 운전 조작(" + tabControl1.SelectedTab.Text + ")";
-            toolTip1.SetToolTip(lblLastWorkNum_woZero, "더블클릭 시 작업번호로 복사됨");
             Display_DevSt();
         }
 
         private void Form_EMS_CTL_Deactivate(object sender, EventArgs e)
         {
+            _emsManualJogPressArmed = false;
+
             if ((form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0) &&
                 (form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue != 0xFF))
             {
@@ -76,9 +84,16 @@ namespace VEXI
             Button bt = sender as Button;
             if (bt == null) return;
 
-            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = Convert.ToByte(bt.Tag.ToString());
+            byte jogTag = Convert.ToByte(bt.Tag.ToString());
+
+            if (!_emsManualJogPressArmed || _emsManualJogArmedTag != jogTag)
+                return;
+
+            _emsManualJogPressArmed = false;
+
+            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = jogTag;
             form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0;
-            
+
             form_Main.Do_JogCtrl();
         }
 
@@ -88,7 +103,19 @@ namespace VEXI
             Button bt = sender as Button;
             if (bt == null) return;
 
-            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = Convert.ToByte(bt.Tag.ToString());
+            byte jogTag = Convert.ToByte(bt.Tag.ToString());
+
+            if (!TryValidateEmsManualMotionPreconditions(out string failMsg, false, jogTag))
+            {
+                _emsManualJogPressArmed = false;
+                form_Main.GlobalObj.MsgBox_Info(failMsg, "W");
+                return;
+            }
+
+            _emsManualJogPressArmed = true;
+            _emsManualJogArmedTag = jogTag;
+
+            form_Main.COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = jogTag;
             form_Main.Do_JogCtrl();
         }
 
@@ -96,6 +123,13 @@ namespace VEXI
         {
             Button bt = sender as Button;
             if (bt == null) return;
+
+            if (!TryValidateEmsManualMotionPreconditions(out string failMsg, true))
+            {
+                form_Main.GlobalObj.MsgBox_Info(failMsg, "W");
+                return;
+            }
+
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "원점을 설정하시겠습니까?"))
             {
                 form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_44, Convert.ToByte(bt.Tag.ToString()));
@@ -150,97 +184,73 @@ namespace VEXI
             }
         }
 
-        private void btn_Move_Station1_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Station 이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
-            {
-                lbl_JobCtrlRes.Visible = false;
-                Do_Semi_MoveStationCMD_Ctrl();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Position 이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
-            {
-                lbl_JobCtrlRes.Visible = false;
-                Do_Semi_MovePositionCMD_Ctrl();
-            }
-        }
-
-        private void btn_Load_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Loading 명령을 전송하시겠습니까? (안전에 주의하세요)"))
-            {
-                lbl_JobCtrlRes.Visible = false;
-                Do_Semi_LoadingCMD_Ctrl();
-            }
-
-        }
-
-        private void btn_UnLoad_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Unloading 명령을 전송하시겠습니까? (안전에 주의하세요)"))
-            {
-                lbl_JobCtrlRes.Visible = false;
-                Do_Semi_UnloadingCMD_Ctrl();
-            }
-
-        }
-
-        private void btn_SToS_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "스테이션간 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
-            {
-                lbl_JobCtrlRes.Visible = false;
-                Do_Semi_StoSCMD_Ctrl();
-            }
-        }
-
-        private void btn_ChangeS_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "목적지 스테이션 변경 반송 명령을 전송하시겠습니까? (안전에 주의하세요)"))
-            {
-                lbl_JobCtrlRes.Visible = false;
-                Do_Semi_ChangeSCMD_Ctrl();
-            }
-        }
-
-
-        private void btn_DelWork_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "작업을 삭제하시겠습니까"))
-            {
-                Do_Ctrl_DelWork(ConstClass.CMD2_53, 0x01);
-            }
-        }
-
-
-
         #endregion
 
         #region 기능함수
+
+        /// <summary>EMS 수동 조그·Chucking·원점설정 등 공통 전제. Display_EMS_St의 주행/승강 St_2 bit2 = 원점확인과 동일.</summary>
+        /// <param name="skipAxisOriginCheck">true이면 주행·승강 원점확인 비트를 검사하지 않음(원점 설정 CMD2_44 등).</param>
+        /// <param name="jogTagForOriginCheck">조그 Tag: 11~14 주행만, 21~24 승강만, 그 외(Catch/Chuck 등)는 주행+승강 모두, null은 Chucking 위치이동 등 양축 필요로 간주.</param>
+        private unsafe bool TryValidateEmsManualMotionPreconditions(out string failureDetail, bool skipAxisOriginCheck = false, byte? jogTagForOriginCheck = null)
+        {
+            var sb = new StringBuilder();
+
+            if (form_Main.COMMDataManager.CommSt == 0)
+                sb.AppendLine("· 통신이 두절된 상태입니다.");
+            if (!form_Main.COMMDataManager.DevRec.Flag_In_DevStatus)
+                sb.AppendLine("· 장비 상태 정보가 수신되지 않았습니다.");
+
+            fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.ems_REC_EMSSt)
+            {
+                if (!Global_Class.BitStatus(DevSt->DevMode, 1))
+                    sb.AppendLine("· 수동 모드가 아닙니다.");
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 0))
+                    sb.AppendLine("· WCS ON 상태입니다. (상위 명령 수신 모드에서는 수동 조작을 사용할 수 없습니다.)");
+                if (Global_Class.BitStatus(DevSt->DevSt_2, 7))
+                    sb.AppendLine("· 비상정지 스위치가 ON입니다.");
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 1))
+                    sb.AppendLine("· 비상정지 상태입니다.");
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 2))
+                    sb.AppendLine("· 장비 경고 알람이 있습니다.");
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 3))
+                    sb.AppendLine("· 장비 에러(알람)가 발생했습니다.");
+
+                if (!skipAxisOriginCheck)
+                {
+                    bool needDriveOrigin = true;
+                    bool needLiftOrigin = true;
+                    if (jogTagForOriginCheck.HasValue)
+                    {
+                        byte t = jogTagForOriginCheck.Value;
+                        if (t == 11 || t == 12 || t == 13 || t == 14)
+                        {
+                            needDriveOrigin = true;
+                            needLiftOrigin = false;
+                        }
+                        else if (t == 21 || t == 22 || t == 23 || t == 24)
+                        {
+                            needDriveOrigin = false;
+                            needLiftOrigin = true;
+                        }
+                    }
+
+                    if (needDriveOrigin && !Global_Class.BitStatus(DevSt->Drive_DisPosition.St_2, 2))
+                        sb.AppendLine("· 주행 원점이 확인되지 않았습니다.");
+                    if (needLiftOrigin && !Global_Class.BitStatus(DevSt->Lift_DisPosition.St_2, 2))
+                        sb.AppendLine("· 승강 원점이 확인되지 않았습니다.");
+                }
+            }
+
+            if (sb.Length == 0)
+            {
+                failureDetail = null;
+                return true;
+            }
+
+            failureDetail = "수동 명령을 실행할 수 없습니다. 미충족 항목:\r\n\r\n" + sb.ToString().TrimEnd();
+            return false;
+        }
+
         private unsafe void Do_Chucking_Position_Ctrl(byte CtrlValue)
         {
             
@@ -254,150 +264,6 @@ namespace VEXI
 
             }
             form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, ems_REC_ManualCtrl);
-        }
-
-
-        private unsafe void Do_Semi_ChangeSCMD_Ctrl()
-        {
-            fixed (VEXI_DEFS.EMS_REC_JobCTRL* DevCtrl = &ems_REC_Job_CTRL)
-            {
-                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.EMS_REC_JobCTRL)));
-
-                DevCtrl->OptionFlag = 0x00;
-                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
-                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
-                if (cbJobOption_2.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x04);
-
-                DevCtrl->CMD = ConstClass.SEMI_ChangeS;
-
-                //DevCtrl->Work_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
-                DevCtrl->Work_Num = (UInt32)Global_Class.UTIL_StrToUInt32Def(edChangeS_WorkNum.Text, form_Main.COMMDataManager.Random_WorkNum_AndInc);
-                edChangeS_WorkNum.Text = DevCtrl->Work_Num.ToString();
-                DevCtrl->Work_From.Station = (byte)numed_ChangeS_FromS.Value;
-                DevCtrl->Work_To.Station = (byte)numed_ChangeS_ToS.Value;
-                DevCtrl->Chucking_Width = (byte)(cbItem_chuckingW.SelectedIndex + 1);
-                DevCtrl->Loading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_LoadingH.Text, 0);
-                DevCtrl->UnLoading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_UnLoadingH.Text, 0);
-
-            }
-            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, ems_REC_Job_CTRL);
-        }
-
-        private unsafe void Do_Semi_StoSCMD_Ctrl()
-        {
-            fixed (VEXI_DEFS.EMS_REC_JobCTRL* DevCtrl = &ems_REC_Job_CTRL)
-            {
-                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.EMS_REC_JobCTRL)));
-                DevCtrl->OptionFlag = 0x00;
-                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
-                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
-                if (cbJobOption_2.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x04);
-
-                DevCtrl->CMD = ConstClass.SEMI_StoS;
-
-                DevCtrl->Work_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
-                DevCtrl->Work_From.Station = (byte)numed_StoS_FromS.Value;
-                DevCtrl->Work_To.Station = (byte)numed_StoS_ToS.Value;
-                DevCtrl->Chucking_Width = (byte)(cbItem_chuckingW.SelectedIndex + 1);
-                DevCtrl->Loading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_LoadingH.Text, 0);
-                DevCtrl->UnLoading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_UnLoadingH.Text, 0);
-            }
-            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, ems_REC_Job_CTRL);
-        }
-
-
-        private unsafe void Do_Semi_UnloadingCMD_Ctrl()
-        {
-            fixed (VEXI_DEFS.EMS_REC_JobCTRL* DevCtrl = &ems_REC_Job_CTRL)
-            {
-                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.EMS_REC_JobCTRL)));
-                DevCtrl->OptionFlag = 0x00;
-                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
-                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
-                if (cbJobOption_2.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x04);
-
-                DevCtrl->CMD = ConstClass.SEMI_TaskUnLoading;
-
-                DevCtrl->Work_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
-                DevCtrl->Work_To.Station = (byte)numed_UnLoadS.Value;
-                DevCtrl->Chucking_Width = (byte)(cbItem_chuckingW.SelectedIndex + 1);
-                DevCtrl->Loading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_LoadingH.Text, 0);
-                DevCtrl->UnLoading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_UnLoadingH.Text, 0);
-            }
-            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, ems_REC_Job_CTRL);
-        }
-
-
-        private unsafe void Do_Semi_LoadingCMD_Ctrl()
-        {
-            fixed (VEXI_DEFS.EMS_REC_JobCTRL* DevCtrl = &ems_REC_Job_CTRL)
-            {
-                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.EMS_REC_JobCTRL)));
-                DevCtrl->OptionFlag = 0x00;
-                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
-                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
-                if (cbJobOption_2.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x04);
-
-                DevCtrl->CMD = ConstClass.SEMI_TaskLoading;
-
-                DevCtrl->Work_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
-                DevCtrl->Work_To.Station = (byte)numed_LoadS.Value;
-                DevCtrl->Chucking_Width = (byte)(cbItem_chuckingW.SelectedIndex + 1);
-                DevCtrl->Loading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_LoadingH.Text, 0);
-                DevCtrl->UnLoading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_UnLoadingH.Text, 0);
-            }
-            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, ems_REC_Job_CTRL);
-        }
-
-        private unsafe void Do_Semi_MoveStationCMD_Ctrl()
-
-        {
-            fixed (VEXI_DEFS.EMS_REC_JobCTRL* DevCtrl = &ems_REC_Job_CTRL)
-            {
-                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.EMS_REC_JobCTRL)));
-
-                DevCtrl->OptionFlag = 0x00;
-                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
-                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
-                if (cbJobOption_2.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x04);
-
-                DevCtrl->CMD = ConstClass.SEMI_MOVE;
-
-                DevCtrl->Work_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
-                DevCtrl->Work_To.Station = (byte)numed_Station_Move_S.Value; ;
-                DevCtrl->Chucking_Width = (byte)(cbItem_chuckingW.SelectedIndex + 1);
-                DevCtrl->Loading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_LoadingH.Text, 0);
-                DevCtrl->UnLoading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_UnLoadingH.Text, 0);
-            }
-            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, ems_REC_Job_CTRL);            
-        }
-
-        private unsafe void Do_Semi_MovePositionCMD_Ctrl()
-
-        {
-            fixed (VEXI_DEFS.EMS_REC_JobCTRL* DevCtrl = &ems_REC_Job_CTRL)
-            {
-                Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.EMS_REC_JobCTRL)));
-
-                DevCtrl->OptionFlag = 0x00;
-                if (cbJobOption_0.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x01);
-                if (cbJobOption_1.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x02);
-                if (cbJobOption_2.Checked) DevCtrl->OptionFlag = (byte)(DevCtrl->OptionFlag | 0x04);
-
-                DevCtrl->CMD = ConstClass.SEMI_MOVE;
-
-                DevCtrl->Work_Num = form_Main.COMMDataManager.Random_WorkNum_AndInc;
-                DevCtrl->Work_To.Position = (byte)numed_Position_Move_S.Value; ;
-                DevCtrl->Chucking_Width = (byte)(cbItem_chuckingW.SelectedIndex + 1);
-                DevCtrl->Loading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_LoadingH.Text, 0);
-                DevCtrl->UnLoading_height = (UInt16)Global_Class.UTIL_StrToUInt32Def(edItem_UnLoadingH.Text, 0);
-            }
-            form_Main.COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_41, ems_REC_Job_CTRL);
-        }
-
-        private void Do_Ctrl_DelWork(byte TmpCMD2, byte CtrlData)
-        {
-            form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_53, CtrlData);
         }
 
         public void Display_DevCommSt()
@@ -451,17 +317,6 @@ namespace VEXI
         public void Display_JobCtrlRes(byte[] Data)
         {
             ems_REC_Job_CTRLRes = (VEXI_DEFS.TEMS_REC_JobCTRLRES)Global_Class.UTIL_BytesToStructure(Data, typeof(VEXI_DEFS.TEMS_REC_JobCTRLRES));
-
-            lbl_JobCtrlRes.Visible = (ems_REC_Job_CTRLRes.ResultRes != 0);
-
-            switch (ems_REC_Job_CTRLRes.Work_ResultRes)
-            {
-                case 31: lbl_JobCtrlRes.Text = string.Format("{0}", (ems_REC_Job_CTRLRes.Work_ResultRes)) + " 작업코드 이상"; break;
-                case 33: lbl_JobCtrlRes.Text = string.Format("{0}", (ems_REC_Job_CTRLRes.Work_ResultRes)) + " 작업수행중"; break;
-                case 34: lbl_JobCtrlRes.Text = string.Format("{0}", (ems_REC_Job_CTRLRes.Work_ResultRes)) + " 장애 상태"; break;
-                case 35: lbl_JobCtrlRes.Text = string.Format("{0}", (ems_REC_Job_CTRLRes.Work_ResultRes)) + " 시작 OFF"; break;
-                default : lbl_JobCtrlRes.Text = string.Format("{0}", (ems_REC_Job_CTRLRes.Work_ResultRes)) + " Unknown Nack"; break;
-            }
         }
         
 
@@ -481,22 +336,6 @@ namespace VEXI
             lbl_Dev_Start.Text = "";
             lbl_Dev_InvertorConn.Text = "";
             lbl_Dev_Error.Text = "";
-
-
-            lbl_Work_Job.Text = "";
-            lbl_Work_Cmd.Text = "";
-            lbl_Work_From.Text = "";
-            lbl_Work_To.Text = "";
-            lbl_Work_jobSt.Text = "";
-            lbl_Work_jobStep.Text = "";
-            lblItem_chuckingW.Text = "";
-            lblItem_LoadingH.Text = "";
-            lblItem_UnLoadingH.Text = "";
-            lbl_Move_Job.Text = "";
-            lbl_Move_Cmd.Text = "";
-            lbl_Move_To.Text = "";
-            lbl_Move_jobSt.Text = "";
-            lbl_Move_jobStep.Text = "";
 
             lbl_Drive_Pos.Text = "";
             lbl_Drive_Dest.Text = "";
@@ -542,8 +381,6 @@ namespace VEXI
             lbl_CageAction.Text = "";
             lbl_CageMoveTargetNo.Text = "";
 
-            lblLastWorkNum_woZero.Text = "";
-
             lblVersion.BackColor = Color.White;
             lblSystemTimeUTC.BackColor = Color.White;
             lbl_DevMode_Auto.BackColor = Color.White;
@@ -556,22 +393,6 @@ namespace VEXI
             lbl_Dev_Start.BackColor = Color.White;
             lbl_Dev_InvertorConn.BackColor = Color.White;
             lbl_Dev_Error.BackColor = Color.White;
-
-
-            lbl_Work_Job.BackColor = Color.White;
-            lbl_Work_Cmd.BackColor = Color.White;
-            lbl_Work_From.BackColor = Color.White;
-            lbl_Work_To.BackColor = Color.White;
-            lbl_Work_jobSt.BackColor = Color.White;
-            lbl_Work_jobStep.BackColor = Color.White;
-            lblItem_chuckingW.BackColor = Color.White;
-            lblItem_LoadingH.BackColor = Color.White;
-            lblItem_UnLoadingH.BackColor = Color.White;
-            lbl_Move_Job.BackColor = Color.White;
-            lbl_Move_Cmd.BackColor = Color.White;
-            lbl_Move_To.BackColor = Color.White;
-            lbl_Move_jobSt.BackColor = Color.White;
-            lbl_Move_jobStep.BackColor = Color.White;
 
             lbl_Drive_Pos.BackColor = Color.White;
             lbl_Drive_Dest.BackColor = Color.White;
@@ -737,74 +558,8 @@ namespace VEXI
 
         }
 
-        private unsafe void Display_EMS_JobSt()
+        private void Display_EMS_JobSt()
         {
-            fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.ems_REC_EMSSt)
-            {
-                //Flag_In_XXXX 는 해당 데이터가 수신된 적이 있는지에 대한 변수임
-                //if (form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) //호출하는데서 체크하는 걸로 수정함
-                {
-                    if (DevSt->Work_Job.Item_Do_Status == 4)
-                    {
-                        lbl_Work_Job.Text = string.Format("{0} (완료)", DevSt->Work_Job.Item_JobNumber);
-                    }
-                    else
-                    {
-                        lbl_Work_Job.Text = string.Format("{0}", DevSt->Work_Job.Item_JobNumber);
-                    }
-
-                    if (DevSt->Work_Job.Item_JobNumber != 0)
-                    {
-                        lblLastWorkNum_woZero.Text = string.Format("{0}", DevSt->Work_Job.Item_JobNumber);
-                    }
-
-
-                    lbl_Work_Cmd.Text = Global_Class.UTIL_GetJobTextAsValue(DevSt->Work_Job.Item_CMD_Code);
-                    lbl_Work_From.Text = string.Format("S{0}-P{1}", DevSt->Work_Job.Item_From.Station
-                                                          , DevSt->Work_Job.Item_From.Position);
-                    lbl_Work_To.Text = string.Format("S{0}-P{1}", DevSt->Work_Job.Item_To.Station
-                                                      , DevSt->Work_Job.Item_To.Position);
-                    switch (DevSt->Work_Job.Item_Do_Status)
-                    {
-                        case 0: lbl_Work_jobSt.Text = "지령없음"; break;
-                        case 2: lbl_Work_jobSt.Text = "수행중"; break;
-                        case 3: lbl_Work_jobSt.Text = "실패"; break;
-                        case 4: lbl_Work_jobSt.Text = "완료"; break;
-                        default: lbl_Work_jobSt.Text = string.Format("0x{0:X2}", DevSt->Work_Job.Item_Do_Status); break;
-                    }
-
-                    lbl_Work_jobStep.Text = Global_Class.UTIL_GetEMSJobStepTextAsValue(DevSt->Work_Job.Item_Do_Step);
-                    lblItem_chuckingW.Text = string.Format("{0}", DevSt->Work_Job.Chucking_Width);
-                    lblItem_LoadingH.Text = string.Format("{0}", DevSt->Work_Job.Loading_height);
-                    lblItem_UnLoadingH.Text = string.Format("{0}", DevSt->Work_Job.UnLoading_height);
-
-
-                    if (DevSt->Move_Job.Item_Do_Status == 4)
-                    {
-                        lbl_Move_Job.Text = string.Format("{0} (완료)", DevSt->Move_Job.Item_JobNumber);
-                    }
-                    else
-                    {
-                        lbl_Move_Job.Text = string.Format("{0}", DevSt->Move_Job.Item_JobNumber);
-                    }
-
-                    lbl_Move_Cmd.Text = Global_Class.UTIL_GetJobTextAsValue(DevSt->Move_Job.Item_CMD_Code);
-
-                    lbl_Move_To.Text = string.Format("S{0}-P{1}", DevSt->Move_Job.Item_To.Station
-                                                      , DevSt->Move_Job.Item_To.Position);
-                    switch (DevSt->Move_Job.Item_Do_Status)
-                    {
-                        case 0: lbl_Move_jobSt.Text = "지령없음"; break;
-                        case 2: lbl_Move_jobSt.Text = "수행중"; break;
-                        case 3: lbl_Move_jobSt.Text = "실패"; break;
-                        case 4: lbl_Move_jobSt.Text = "완료"; break;
-                        default: lbl_Move_jobSt.Text = string.Format("0x{0:X2}", DevSt->Move_Job.Item_Do_Status); break;
-                    }
-
-                    lbl_Move_jobStep.Text = Global_Class.UTIL_GetEMSJobStepTextAsValue(DevSt->Move_Job.Item_Do_Step);
-
-                }
-            }
         }
 
         private unsafe void Display_EMS_St()
@@ -1161,75 +916,5 @@ namespace VEXI
             }
         }
         #endregion
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDemoTest_Start_Click(object sender, EventArgs e)
-        {
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "데모운전을 시작하시겠습니까?"))
-            {
-                byte[] Data = { 0x00, 0x00 };
-                if (rbDemoTest_1.Checked)
-                {
-                    Data[0] = 0x01;
-                }
-                else if (rbDemoTest_2.Checked)
-                {
-                    Data[0] = 0x02;
-                }
-                else
-                {
-                    Data[0] = 0x03;
-                }
-                form_Main.Do_Ctrl_Cmd_withbytes(ConstClass.CMD1_01, ConstClass.CMD2_60, Data);
-            }
-        }
-
-        private void btnDemoTest_Stop_Click(object sender, EventArgs e)
-        {
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "데모운전을 중지하시겠습니까?"))
-            {
-                byte[] Data = { 0x00, 0x00 };
-                form_Main.Do_Ctrl_Cmd_withbytes(ConstClass.CMD1_01, ConstClass.CMD2_60, Data);
-            }
-        }
-
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLastWorkNum_woZero_DoubleClick(object sender, EventArgs e)
-        {
-            edChangeS_WorkNum.Text = lblLastWorkNum_woZero.Text;
-        }
-
-        private void tab_Change_Station_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_DoneWork_L1_Click(object sender, EventArgs e)
-        {
-            Button bt = sender as Button;
-            if (bt == null) return;
-            if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "강제 완료 처리하시겠습니까?"))
-            {
-                form_Main.Do_Ctrl_Cmd_withOnebyte(ConstClass.CMD1_00, ConstClass.CMD2_63, Convert.ToByte(bt.Tag.ToString()));
-            }
-        }
     }
 }

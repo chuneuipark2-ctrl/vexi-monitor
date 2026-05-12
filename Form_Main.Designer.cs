@@ -1,7 +1,7 @@
 ﻿
 namespace VEXI
 {
-    partial class Form_Main
+    public partial class Form_Main
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -72,8 +72,8 @@ namespace VEXI
             this.MenuItem_basicSt = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_DevSt = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_AllWIndowsClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_AllWIndowsClose = new System.Windows.Forms.ToolStripMenuItem();
             this.DPTimer = new System.Windows.Forms.Timer(this.components);
             this.Loggingtimer = new System.Windows.Forms.Timer(this.components);
             this.panel92.SuspendLayout();
@@ -699,6 +699,13 @@ namespace VEXI
             this.ToolStripMenuItem.Text = "B. 장비 운전조작";
             this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 29);
+            this.toolStripMenuItem2.Text = "C. 출력 시험";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // menu_AllWIndowsClose
             // 
             this.menu_AllWIndowsClose.Name = "menu_AllWIndowsClose";
@@ -706,13 +713,6 @@ namespace VEXI
             this.menu_AllWIndowsClose.Text = "창 닫기";
             this.menu_AllWIndowsClose.Visible = false;
             this.menu_AllWIndowsClose.Click += new System.EventHandler(this.menu_AllWIndowsClose_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 29);
-            this.toolStripMenuItem2.Text = "C. 출력 시험";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // DPTimer
             // 
@@ -738,7 +738,7 @@ namespace VEXI
             this.MinimumSize = new System.Drawing.Size(1451, 910);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RTV IO TEST";
+            this.Text = "EMS IO TEST";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel92.ResumeLayout(false);

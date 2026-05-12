@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO.Ports;
 using System.IO;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace VEXI
         public VEXI_DEFS.TRTV_ToTalFile RTV_ToTalFile = new VEXI_DEFS.TRTV_ToTalFile();
         public VEXI_DEFS.TEMS_ToTalFile EMS_ToTalFile = new VEXI_DEFS.TEMS_ToTalFile();
         public Global_Class GlobalObj = new Global_Class();
-        public TCOMMDataManager COMMDataManager = new TCOMMDataManager(Application.StartupPath);
+        /// <summary>디자이너 로드 시 SerialPort/Timer 생성으로 호스트가 깨지는 것을 막기 위해 런타임에만 할당한다.</summary>
+        public TCOMMDataManager COMMDataManager;
         public List<Thread> ThreadList = new List<Thread>();
         public List<int> GLoopCnt = new List<int>();
         public List<int> GLoopCnt_backup = new List<int>();
@@ -89,11 +91,17 @@ namespace VEXI
 
             //GlobalObj 객체에 기본 폴더 셋팅
             GlobalObj.RootDIR = Application.StartupPath;
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+                COMMDataManager = new TCOMMDataManager(Application.StartupPath);
         }
 
         #region 컴포넌트 이벤트
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            if (COMMDataManager == null)
+                return;
+
             //setup.ini 파일 경로
 
             CONFIG_FILE = Application.StartupPath + "\\CONFIG\\Setup.ini";

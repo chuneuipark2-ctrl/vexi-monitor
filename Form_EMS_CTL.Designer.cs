@@ -592,6 +592,7 @@ namespace VEXI
             this.button2.Tag = "32";
             this.button2.Text = "(M) 중속 Catch";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -606,6 +607,7 @@ namespace VEXI
             this.btn_UnCatch.Tag = "33";
             this.btn_UnCatch.Text = "(L) 저속 Uncatch";
             this.btn_UnCatch.UseVisualStyleBackColor = true;
+            this.btn_UnCatch.Click += new System.EventHandler(this.btn_UnCatch_Click);
             this.btn_UnCatch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_UnCatch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -620,6 +622,7 @@ namespace VEXI
             this.btn_Catch.Tag = "31";
             this.btn_Catch.Text = "(L) 저속 Catch";
             this.btn_Catch.UseVisualStyleBackColor = true;
+            this.btn_Catch.Click += new System.EventHandler(this.btn_Catch_Click);
             this.btn_Catch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Catch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -689,6 +692,7 @@ namespace VEXI
             this.btn_Backward_MiddleSpeed.Tag = "14";
             this.btn_Backward_MiddleSpeed.Text = "중속 후진 (M-BACK)";
             this.btn_Backward_MiddleSpeed.UseVisualStyleBackColor = true;
+            this.btn_Backward_MiddleSpeed.Click += new System.EventHandler(this.btn_Backward_MiddleSpeed_Click);
             this.btn_Backward_MiddleSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Backward_MiddleSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -744,6 +748,7 @@ namespace VEXI
             this.btn_UP_LowSpeed.Tag = "21";
             this.btn_UP_LowSpeed.Text = "저속 상승 (L-UP)";
             this.btn_UP_LowSpeed.UseVisualStyleBackColor = true;
+            this.btn_UP_LowSpeed.Click += new System.EventHandler(this.btn_UP_LowSpeed_Click);
             this.btn_UP_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_UP_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -758,6 +763,7 @@ namespace VEXI
             this.btn_DOWN_LowSpeed.Tag = "22";
             this.btn_DOWN_LowSpeed.Text = "저속 하강 (L-DN)";
             this.btn_DOWN_LowSpeed.UseVisualStyleBackColor = true;
+            this.btn_DOWN_LowSpeed.Click += new System.EventHandler(this.btn_DOWN_LowSpeed_Click);
             this.btn_DOWN_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_DOWN_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -772,6 +778,7 @@ namespace VEXI
             this.btn_Backward_LowSpeed.Tag = "12";
             this.btn_Backward_LowSpeed.Text = "저속 후진 (L-BACK)";
             this.btn_Backward_LowSpeed.UseVisualStyleBackColor = true;
+            this.btn_Backward_LowSpeed.Click += new System.EventHandler(this.btn_Backward_LowSpeed_Click);
             this.btn_Backward_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Backward_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -786,6 +793,7 @@ namespace VEXI
             this.btn_Forward_LowSpeed.Tag = "11";
             this.btn_Forward_LowSpeed.Text = "저속 전진 (L-FWD)";
             this.btn_Forward_LowSpeed.UseVisualStyleBackColor = true;
+            this.btn_Forward_LowSpeed.Click += new System.EventHandler(this.btn_Forward_LowSpeed_Click);
             this.btn_Forward_LowSpeed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseDown);
             this.btn_Forward_LowSpeed.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_UP_LowSpeed_MouseUp);
             // 
@@ -828,6 +836,7 @@ namespace VEXI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1326, 374);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox3
             // 
@@ -1151,6 +1160,7 @@ namespace VEXI
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "AA. 제어";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // btn_Dev_Maintance
             // 

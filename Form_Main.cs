@@ -3623,10 +3623,10 @@ namespace VEXI
                             //현재의 장치의 모드값을 제어 구조체에 반영하고 나서 제어값을 만들어야 한다.
                             byte[] ctrlValue = { 0, 0 };
 
-                            if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 0)) ctrlValue[0] = 2;
-                            else if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 1)) ctrlValue[0] = 0;
-                            else if (Global_Class.BitStatus(COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode, 3)) ctrlValue[0] = 1;
-                            if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 2)) ctrlValue[1] |= 0x01;
+                            if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 0)) ctrlValue[0] = 2; //자동모드일때
+                            else if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 1)) ctrlValue[0] = 0; //수동모드일때
+                            else if (Global_Class.BitStatus(COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode, 3)) ctrlValue[0] = 1; //셋업모드일때 RTVst는 이상한데? EMSSt로 바꿔야할듯??
+                            if (Global_Class.BitStatus(COMMDataManager.DevRec.ems_REC_EMSSt.DevMode, 2)) ctrlValue[1] |= 0x01; //강제모드일때
 
 
                             switch (CtrlData)

@@ -30,16 +30,18 @@ namespace VEXI
 
 
         #region 컴포넌트 이벤트
-        private void Btn_Chucking_Home_Click(object sender, EventArgs e)
+        private void Btn_Chucking_Home_Click(object sender, EventArgs e) //홈처킹 버튼 클릭 하면
         {
             Button bt = sender as Button;
             if (bt == null) return;
 
-            if (!TryValidateEmsManualMotionPreconditions(out string failMsg))
+            /*
+            if (!TryValidateEmsManualMotionPreconditions(out string failMsg))//주행과 승강원점은 필요없음. 홈처킹은 홈처킹이지
             {
                 form_Main.GlobalObj.MsgBox_Info(failMsg, "W");
                 return;
             }
+            */
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "Chucking 이동 명령을 전송하시겠습니까? (안전에 주의하세요)"))
             {
@@ -124,11 +126,13 @@ namespace VEXI
             Button bt = sender as Button;
             if (bt == null) return;
 
+            /*
             if (!TryValidateEmsManualMotionPreconditions(out string failMsg, true))
             {
                 form_Main.GlobalObj.MsgBox_Info(failMsg, "W");
                 return;
             }
+            */
 
             if (form_Main.GlobalObj.MsgBox_Confirm_OKCancel(this, "원점을 설정하시겠습니까?"))
             {
@@ -190,30 +194,75 @@ namespace VEXI
 
         /// <summary>EMS 수동 조그·Chucking·원점설정 등 공통 전제. Display_EMS_St의 주행/승강 St_2 bit2 = 원점확인과 동일.</summary>
         /// <param name="skipAxisOriginCheck">true이면 주행·승강 원점확인 비트를 검사하지 않음(원점 설정 CMD2_44 등).</param>
-        /// <param name="jogTagForOriginCheck">조그 Tag: 11~14 주행만, 21~24 승강만, 그 외(Catch/Chuck 등)는 주행+승강 모두, null은 Chucking 위치이동 등 양축 필요로 간주.</param>
-        private unsafe bool TryValidateEmsManualMotionPreconditions(out string failureDetail, bool skipAxisOriginCheck = false, byte? jogTagForOriginCheck = null)
-        {
-            var sb = new StringBuilder();
+        /// <param name="jogTagForOriginCheck">조그 Tag: 11~14 주행만, 21~24 승강만, 31~34 Chuck Catch/Uncatch(저·중속)은 주행·승강 원점 미검사, 그 외는 주행+승강 모두, null은 Chucking 위치이동 등 양축 필요로 간주.</param>
+        /// 
 
-            if (form_Main.COMMDataManager.CommSt == 0)
-                sb.AppendLine("· 통신이 두절된 상태입니다.");
-            if (!form_Main.COMMDataManager.DevRec.Flag_In_DevStatus)
-                sb.AppendLine("· 장비 상태 정보가 수신되지 않았습니다.");
+
+
+
+        //-----------------------------------------------------------------------------------------------------------//
+
+        // 메뉴얼 모드 동작코드 //
+        // 수동모드 동작조건
+        /*
+         1. 비상정지 버튼이 눌려있지 않을 것
+         2. 장치에 알람이 떠있지 않을 것
+         3. 통신상태가 정상일 것
+         4. 시작 OFF 상태일것 = WCS OFF 상태일것
+      
+         
+         */
+
+
+
+        private unsafe bool TryValidateEmsManualMotionPreconditions(out string failureDetail, bool skipAxisOriginCheck = false, byte? jogTagForOriginCheck = null)
+
+        // unsafe: 이 함수 내부에서 포인터를 사용한다는 의미 C# 관리형 메모리에서 벗어나, 장비데이터 구조체의 주소에 직접접근해서 빠르게 상태를 읽어옴
+        // bool 형태로 반환(true 수동명령 장비로 전송해도 좋음), (false 수동명령 인가불가)
+        // out string failureDetail: 수동명령 불가 시, 실패 사유 문자열이 담기는 변수. 수동명령 가능 시 null이 담김.(out 키워드 덕분에 외부에서 이문자열ㅇ르 받아 사용자 팝업메세지 띄울수 있음)
+        // skipAxisOriginCheck: 선택적 매개변수이며, 기본값은 false(원점 검사 수행),  
+      
+
+
+
+        //해당함수 조건,
+        //failureDetail은 EMS 수동 조작(조그, Chucking 위치 이동, 원점 설정 등) 공통의 전제조건임.
+        //실패 시 false 반환과 함께 failureDetail에 실패 사유 문자열이 담김. 성공 시 true 반환과 함께 failureDetail은 null.
+
+        //skipaxisorigincheck는
+        //주행/승강 원점 확인 비트 검사 여부. 원점 설정 명령 등에서 사용. 조그의 경우, 특정 축만 조그하는 경우
+        //(jogTagForOriginCheck로 구분) 해당 축의 원점 확인 비트만 검사하도록 함. (예: 주행 조그는 승강 원점 확인 비트는 검사하지 않음)
+
+
+        {
+            var sb = new StringBuilder(); //에러 메세지를 모으기 위한 스트링빌더
+
+            if (form_Main.COMMDataManager.CommSt == 0 || !form_Main.COMMDataManager.DevRec.Flag_In_DevStatus) //통신이 끊어진 경우 또는 장비로부터 정보가 수신되지 않은 경우
+                sb.AppendLine("· 통신이 두절되었거나 상태정보가 수신되지 않았습니다.");
+            
 
             fixed (VEXI_DEFS.TEMS_StatusRes* DevSt = &form_Main.COMMDataManager.DevRec.ems_REC_EMSSt)
+                //fixed 명령으로 포인터를 쓸 떄 메모리가 도망가지 못하게 고정*(메모리 점유)
+                //폼메인,통신데이터메니저,디바이스레코드에 ems_rec_emsst라는 주소값을 DevST 포인터 변수에 담는다.
+                //EMS 상태블록(ems_REC_EMSSt -> Tems_StatusRes) 안의 비트를 여기서는 DevSt 포인터로 TEMS_StatusRes 필드만 읽는다.
+
+
+
             {
-                if (!Global_Class.BitStatus(DevSt->DevMode, 1))
+                if (!Global_Class.BitStatus(DevSt->DevMode, 1)) // DevSt는 주소값이다. 주소값이 가르키는 메모리 주소로 이동해서 DevMode 값을 가져온다
+                                                                // DevMode의 bit1이 0이면 수동모드가 아님 
+                                                                // if문 전체가 1이면 수동명령 불가니까 안에가 0이되면 명령불가. 
                     sb.AppendLine("· 수동 모드가 아닙니다.");
-                if (Global_Class.BitStatus(DevSt->DevSt_1, 0))
+                if (Global_Class.BitStatus(DevSt->DevSt_1, 0)) //DevST1은 프로토콜 엑셀표에 정의 되있으며 0번은 시작상태 on/off르 말한다. 0이면 off 1이면 on
                     sb.AppendLine("· WCS ON 상태입니다. (상위 명령 수신 모드에서는 수동 조작을 사용할 수 없습니다.)");
-                if (Global_Class.BitStatus(DevSt->DevSt_2, 7))
+                if (Global_Class.BitStatus(DevSt->DevSt_2, 7)|| Global_Class.BitStatus(DevSt->DevSt_1, 1)) // 0이면 안눌림 1이면 눌림
                     sb.AppendLine("· 비상정지 스위치가 ON입니다.");
-                if (Global_Class.BitStatus(DevSt->DevSt_1, 1))
-                    sb.AppendLine("· 비상정지 상태입니다.");
-                if (Global_Class.BitStatus(DevSt->DevSt_1, 2))
-                    sb.AppendLine("· 장비 경고 알람이 있습니다.");
-                if (Global_Class.BitStatus(DevSt->DevSt_1, 3))
-                    sb.AppendLine("· 장비 에러(알람)가 발생했습니다.");
+                if (!(Global_Class.BitStatus(DevSt->DevMode, 1) && Global_Class.BitStatus(DevSt->DevMode, 2)))
+                {
+                    if (Global_Class.BitStatus(DevSt->DevSt_1, 2) || Global_Class.BitStatus(DevSt->DevSt_1, 3))
+                        sb.AppendLine("· 장비 경고 알람이 있습니다.");
+                }
+             
 
                 if (!skipAxisOriginCheck)
                 {
@@ -232,6 +281,11 @@ namespace VEXI
                             needDriveOrigin = false;
                             needLiftOrigin = true;
                         }
+                        else if (t == 31 || t == 32 || t == 33 || t == 34)
+                        {
+                            needDriveOrigin = false;
+                            needLiftOrigin = false;
+                        }
                     }
 
                     if (needDriveOrigin && !Global_Class.BitStatus(DevSt->Drive_DisPosition.St_2, 2))
@@ -241,7 +295,7 @@ namespace VEXI
                 }
             }
 
-            if (sb.Length == 0)
+            if (sb.Length == 0)//에러메세지가 없으면 failureDetail에 null을 반환해서 에러가 없는 상태를 만들고 함수에서는 true를 반환
             {
                 failureDetail = null;
                 return true;
@@ -250,6 +304,9 @@ namespace VEXI
             failureDetail = "수동 명령을 실행할 수 없습니다. 미충족 항목:\r\n\r\n" + sb.ToString().TrimEnd();
             return false;
         }
+
+        //-----------------------------------------------------------------------------------------------------------//
+
 
         private unsafe void Do_Chucking_Position_Ctrl(byte CtrlValue)
         {
@@ -916,5 +973,55 @@ namespace VEXI
             }
         }
         #endregion
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Catch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_UnCatch_Click(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Backward_MiddleSpeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Forward_LowSpeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Backward_LowSpeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_UP_LowSpeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_DOWN_LowSpeed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

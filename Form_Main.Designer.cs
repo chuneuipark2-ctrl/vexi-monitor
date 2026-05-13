@@ -96,10 +96,10 @@ namespace VEXI
             this.panel92.Controls.Add(this.panel3);
             this.panel92.Controls.Add(this.panel2);
             this.panel92.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel92.Location = new System.Drawing.Point(0, 33);
+            this.panel92.Location = new System.Drawing.Point(0, 36);
             this.panel92.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panel92.Name = "panel92";
-            this.panel92.Size = new System.Drawing.Size(354, 2890);
+            this.panel92.Size = new System.Drawing.Size(354, 2887);
             this.panel92.TabIndex = 17;
             // 
             // pictureBox1
@@ -664,7 +664,7 @@ namespace VEXI
             this.menu_AllWIndowsClose});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(4978, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(4978, 36);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -675,7 +675,7 @@ namespace VEXI
             this.MenuItem_basicSt,
             this.menu_DevSt});
             this.MenuItem_Devmonitoring_User.Name = "MenuItem_Devmonitoring_User";
-            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(164, 29);
+            this.MenuItem_Devmonitoring_User.Size = new System.Drawing.Size(164, 32);
             this.MenuItem_Devmonitoring_User.Text = "A. 장치 모니터링";
             // 
             // MenuItem_basicSt
@@ -695,14 +695,14 @@ namespace VEXI
             // ToolStripMenuItem
             // 
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(163, 29);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(163, 32);
             this.ToolStripMenuItem.Text = "B. 장비 운전조작";
             this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 29);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 32);
             this.toolStripMenuItem2.Text = "C. 출력 시험";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -738,7 +738,7 @@ namespace VEXI
             this.MinimumSize = new System.Drawing.Size(1451, 910);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EMS IO TEST";
+            this.Text = "DOJOG";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel92.ResumeLayout(false);

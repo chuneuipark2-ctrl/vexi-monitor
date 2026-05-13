@@ -1793,6 +1793,7 @@ namespace VEXI
                     btnSet.Enabled = ((form_Main.COMMDataManager.DevRec.rtv_REC_RTVSt.DevMode & 0x08) != 0);
                     break;
             }
+     
         }
 
         private bool Is_AllValue()

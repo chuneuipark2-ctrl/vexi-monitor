@@ -3665,22 +3665,33 @@ namespace VEXI
          * - CtrlTypeValue==0 분기에서 IStwice이면 송신 큐 비운 뒤 CMD2_80을 두 번 연속 넣음(정지/전환 시퀀스).
          * - 누르고 있는 동안은 uCommClass에서 약 200ms마다 OnCheckJogCtrl→본 함수로 동일 조그 재전송.
          */
-        public unsafe void Do_JogCtrl()
+        public unsafe void Do_JogCtrl() // 'unsafe'는 메모리 주소에 직접 접근하겠다는 선언임
         {
-            bool IStwice = false;
+            bool IStwice = false; // 정지 명령일 때 데이터를 두 번 보낼지 결정하는 깃발 변수
 
-            if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0xFF)
+
+            // ------- [1단계 : 현재상태가 유효한지 확인]-------
+
+            if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0xFF) 
             {
+
+                //0xFF는 '아무것도 안 함 ' 상태이며, 배경색 변경코드를 주석처리해놓음
+
                // label1.BackColor = label4.BackColor;
 
             } else
             {
+                // 무언가 동작중이라면 노란색으로 표시하려던 흔적
       //          label1.BackColor = System.Drawing.Color.Yellow;
             }
 
 
+
+            // 아무명령도 없으면(0XFF)면 그냥 함수를 종료
             if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0xFF) return;
 
+
+            // 현재도 정지(0) 명령이고, 직전에도 정지(0)였따면 굳이 또 정지 명령을 보낼 필요가 없으니 함수 종료
             if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0 &&
                 COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before == 0)
             {
@@ -3690,75 +3701,83 @@ namespace VEXI
             // 송신 큐에 데이터가 있어도 동일 조그 코드 재전송 허용(누르고 있는 동안 200ms 폴링·MCU 유지용).
             // 예전 UserDataCount==vOld 차단은 통신 정상인데도 조그가 막히는 경우가 있어 제거함.
 
+            //------- [2단계 : 통신준비]-------
+
+            //통신타이머를 최신화해서 연결 유지
             COMMDataManager.RefreshTxRepeatCtrlCheckTime();
 
+
+            // 현재 동작 값을 OLD 변수에 저장.
             COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_OLD = COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue;
 
+            // ------ [3단계 : 편지 내용 작성 준비(메모리 고정)]-------
+            // 구조체(데이터 주머니)의 주소를 고정시켜서 PC가 마음대로 옮기지 못하게 한다.
 
             fixed (VEXI_DEFS.TDEV_ManualCtrl* DevCtrl = &COMMDataManager.DevRec.dev_REC_ManualCtrl)
             {
-
+                //보낼 편지지를 깨끗하게 지운다(0으ㅡ로 초기화)
                 Global_Class.UTIL_Byteptr_clear((byte*)DevCtrl, Marshal.SizeOf(typeof(VEXI_DEFS.TDEV_ManualCtrl)));
 
                 byte CtrlTypeValue = COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue;
                 byte CtrlTypeValue_before = COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before;
 
-
+                // 장비의 이동 속도를 설정값에서 가져와 편지에 적는다.
                 DevCtrl->LowSpeed_Ref = COMMDataManager.DevRec.Manual_DEV_CtrlRec.LowSpeedRef;
 
-
+                //------- [4단계 : 동작별 판단]-------
                 switch (CtrlTypeValue)
                 {
-                    case 0:
-                        switch (CtrlTypeValue_before)
+                    case 0:// [정지 령] 사용자가 버튼에서 손 뗏을때
+                        switch (CtrlTypeValue_before)// 방금의 동작상태가 어떤것인지 확인
                         {
-                            case 11: DevCtrl->CtrlFlag[0] = 0x01; break;
-                            case 12: DevCtrl->CtrlFlag[0] = 0x01; break;
-                            case 13: DevCtrl->CtrlFlag[0] = 0x01; break;
-                            case 14: DevCtrl->CtrlFlag[0] = 0x01; break;
-                            case 21: DevCtrl->CtrlFlag[0] = 0x02; break;
-                            case 22: DevCtrl->CtrlFlag[0] = 0x02; break;
-                            case 23: DevCtrl->CtrlFlag[0] = 0x02; break;
-                            case 24: DevCtrl->CtrlFlag[0] = 0x02; break;
-                            case 31: DevCtrl->CtrlFlag[0] = 0x04; break;
-                            case 32: DevCtrl->CtrlFlag[0] = 0x04; break;
-                            case 33: DevCtrl->CtrlFlag[0] = 0x04; break;
-                            case 34: DevCtrl->CtrlFlag[0] = 0x04; break;
-                            case 35: DevCtrl->CtrlFlag[0] = 0x04; break;
-                            case 41: DevCtrl->CtrlFlag[0] = 0x08; break;
-                            case 42: DevCtrl->CtrlFlag[0] = 0x08; break;
-                            case 43: DevCtrl->CtrlFlag[0] = 0x08; break;
-                            case 44: DevCtrl->CtrlFlag[0] = 0x08; break;
-                            case 45: DevCtrl->CtrlFlag[0] = 0x08; break;
-                            case 72: DevCtrl->CtrlFlag[0] = 0x0C; break;
-                            case 73: DevCtrl->CtrlFlag[0] = 0x0C; break;
-                            case 74: DevCtrl->CtrlFlag[0] = 0x0C; break;
-                            case 75: DevCtrl->CtrlFlag[0] = 0x0C; break;
-                            default: DevCtrl->CtrlFlag[0] = 0x0F; break;
+                            case 11: DevCtrl->CtrlFlag[0] = 0x01; break; // 주행중 이었으면 주행 정지 비트를 켠다
+                            case 12: DevCtrl->CtrlFlag[0] = 0x01; break; // 주행중 이었으면 주행 정지 비트를 켠다
+                            case 13: DevCtrl->CtrlFlag[0] = 0x01; break; // 주행중 이었으면 주행 정지 비트를 켠다
+                            case 14: DevCtrl->CtrlFlag[0] = 0x01; break; // 주행중 이었으면 주행 정지 비트를 켠다
+                            case 21: DevCtrl->CtrlFlag[0] = 0x02; break; // 승강중 이었으면 승강 정지 비트를 켠다
+                            case 22: DevCtrl->CtrlFlag[0] = 0x02; break; // 승강중 이었으면 승강 정지 비트를 켠다
+                            case 23: DevCtrl->CtrlFlag[0] = 0x02; break; // 승강중 이었으면 승강 정지 비트를 켠다
+                            case 24: DevCtrl->CtrlFlag[0] = 0x02; break; // 승강중 이었으면 승강 정지 비트를 켠다
+                            case 31: DevCtrl->CtrlFlag[0] = 0x04; break; // 포크1 작동 중이었음면 포크1 정지
+                            case 32: DevCtrl->CtrlFlag[0] = 0x04; break; // 포크1 작동 중이었음면 포크1 정지
+                            case 33: DevCtrl->CtrlFlag[0] = 0x04; break; // 포크1 작동 중이었음면 포크1 정지
+                            case 34: DevCtrl->CtrlFlag[0] = 0x04; break; // 포크1 작동 중이었음면 포크1 정지
+                            case 35: DevCtrl->CtrlFlag[0] = 0x04; break; // 포크1 작동 중이었음면 포크1 정지
+                            case 41: DevCtrl->CtrlFlag[0] = 0x08; break; // 포크2 작동 중이었으면 포크 2 정지
+                            case 42: DevCtrl->CtrlFlag[0] = 0x08; break; // 포크2 작동 중이었으면 포크 2 정지
+                            case 43: DevCtrl->CtrlFlag[0] = 0x08; break; // 포크2 작동 중이었으면 포크 2 정지
+                            case 44: DevCtrl->CtrlFlag[0] = 0x08; break; // 포크2 작동 중이었으면 포크 2 정지
+                            case 45: DevCtrl->CtrlFlag[0] = 0x08; break; // 포크2 작동 중이었으면 포크 2 정지
+                            case 72: DevCtrl->CtrlFlag[0] = 0x0C; break; // 둘다 움직였따면 둘다정지
+                            case 73: DevCtrl->CtrlFlag[0] = 0x0C; break; // 둘다 움직였따면 둘다정지
+                            case 74: DevCtrl->CtrlFlag[0] = 0x0C; break; // 둘다 움직였따면 둘다정지
+                            case 75: DevCtrl->CtrlFlag[0] = 0x0C; break; // 둘다 움직였따면 둘다정지
+                            default: DevCtrl->CtrlFlag[0] = 0x0F; break; // 그외엔 모두정지
                         }
-                        IStwice = true;
+                        IStwice = true; // 정지명령을 두번보내 프로그램상 씹히는 경우를 방지한다.
                         break;
-                    case 11:
+                        // 동작명령에 대한 정의
+                    case 11:  // 전진
                         DevCtrl->CtrlFlag[0] = 0x01;
                         DevCtrl->Drive = 1;
                         break;
-                    case 12:
+                    case 12: // 후진
                         DevCtrl->CtrlFlag[0] = 0x01;
                         DevCtrl->Drive = 2;
                         break;
-                    case 13:
+                    case 13: 
                         DevCtrl->CtrlFlag[0] = 0x01;
                         DevCtrl->Drive = 11;
                         break;
-                    case 14:
+                    case 14: 
                         DevCtrl->CtrlFlag[0] = 0x01;
                         DevCtrl->Drive = 12;
                         break;
-                    case 21:
+                    case 21: // 상승 
                         DevCtrl->CtrlFlag[0] = 0x02;
                         DevCtrl->Updown = 1;
                         break;
-                    case 22:
+                    case 22: // 하강
                         DevCtrl->CtrlFlag[0] = 0x02;
                         DevCtrl->Updown = 2;
                         break;
@@ -3770,7 +3789,7 @@ namespace VEXI
                         DevCtrl->CtrlFlag[0] = 0x02;
                         DevCtrl->Updown = 12;
                         break;
-                    case 31:
+                    case 31: // 포크1 동작
                         DevCtrl->CtrlFlag[0] = 0x04;
                         DevCtrl->Fork1 = 1;
                         break;
@@ -3778,11 +3797,11 @@ namespace VEXI
                         DevCtrl->CtrlFlag[0] = 0x04;
                         DevCtrl->Fork1 = 2;
                         break;
-                    case 33:
+                    case 33: 
                         DevCtrl->CtrlFlag[0] = 0x04;
                         DevCtrl->Fork1 = 3;
                         break;
-                    case 34:
+                    case 34: // 장비 타입(EMS 여부)에 따라 포크 번호가 다를 떄의 예외 처리
                         DevCtrl->CtrlFlag[0] = 0x04;
                         if (COMMDataManager.RX_DestDevType == ConstClass.TYPE_EMS)
                         {
@@ -3793,7 +3812,7 @@ namespace VEXI
                             DevCtrl->Fork1 = 12;
                         }
                         break;
-                    case 35:
+                    case 35: 
                         DevCtrl->CtrlFlag[0] = 0x04;
                         DevCtrl->Fork1 = 13;
                         break;
@@ -3817,7 +3836,7 @@ namespace VEXI
                         DevCtrl->CtrlFlag[0] = 0x0C;
                         DevCtrl->Fork2 = 13;
                         break;
-                    case 72:
+                    case 72: // 포크 1, 2 동시 동작
                         DevCtrl->CtrlFlag[0] = 0x0C;
                         DevCtrl->Fork1 = 2;
                         DevCtrl->Fork2 = 2;
@@ -3836,8 +3855,8 @@ namespace VEXI
                         DevCtrl->CtrlFlag[0] = 0x0C;
                         DevCtrl->Fork1 = 13;
                         DevCtrl->Fork2 = 13;
-                        break;
-                    default:
+                        break; 
+                    default: // 정의 안됬으면 걍무시
                         return;
                 }
             }
@@ -3846,21 +3865,32 @@ namespace VEXI
             // CommSt==0 이면 ADD_TxUserData는 큐에 넣지 않음 — 시작 시 자동 UDP 연결(TryConnectUdpFromCurrentSettings) 권장.
 
             // TYPE_02·CMD1_00·CMD2_0x80 + 바디 길이는 ADD_TxUserData 내부에서 Marshal.SizeOf(TDEV_ManualCtrl) 기준으로 헤더에 설정됨.
-            if (IStwice)
+
+
+            // ----- --- [5단계 : 편지 보내기 (데이터 송신)]-------
+
+            if (IStwice)// 정지 명령이라서 두번 보내야 한다면?
             {
+                // 큐(QUEUE)를 한번 비우고 보내는 특별 전송 메소드 사용
                 COMMDataManager.ADD_TxUserDataBeforeClear(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, COMMDataManager.DevRec.dev_REC_ManualCtrl);
+                //한번더 발송
                 COMMDataManager.ADD_TxUserData           (ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, COMMDataManager.DevRec.dev_REC_ManualCtrl);
-            } else
+            } else // 일반동작 명령이라면?
             {
+                //한번만 큐에 넣음
                 COMMDataManager.ADD_TxUserData(ConstClass.TYPE_02, 0x00, ConstClass.CMD1_00, ConstClass.CMD2_80, COMMDataManager.DevRec.dev_REC_ManualCtrl);
             }
-            
+
+            // --------- [6단계 : 마무리 및 상태 업데이트] ---------
+
             if (COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue == 0)
             {
+                // 방금 보낸게 '정지'였다면 상태를 '아무것도 안 함(0XFF)로 초기화
                 COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue = 0xFF;
                 COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_OLD = 0xFF;
             } else
             {
+                // 동작 중이었따면 '현재 값'을 '이전 값'으로 저장해서 다음 루프 떄 참고하게한다.
                 COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue_before = COMMDataManager.DevRec.Manual_DEV_CtrlRec.CtrlTypeValue;
             }
         }

@@ -6733,19 +6733,55 @@ public static string[,] RTV_DI_Names =
          * LowSpeed_Ref: 수동 속도 프로파일 번호(RTV는 Form_RTV_CTL.RtvManualJog_LowSpeedRefFromTag에서 설정).
          */
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
+
+        /*
+         질문하신 Do_JogCtrl() 함수에서 unsafe와 fixed를 사용해 메모리를 직접 만졌죠? 그때 사용하는 구조체가 이 설정을 가지고 있을 겁니다.
+
+C#
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct TDEV_ManualCtrl {
+    public byte Drive;   // 1바이트
+    public byte Updown;  // 1바이트
+    // ... 이런 식으로 1바이트씩 딱딱 붙어서 기계한테 전달됨
+}
+결론: 이 코드가 없다면 C#이 변수 사이에 빈 공간을 넣거나 순서를 바꿔버려서, 기계(MCU)가 "전진" 신호를 받았는데 "집게발"을 움직이는 식의 통신 오류가 발생할 수 있습니다. 그걸 막아주는 방어막 같은 코드입니다!
+         
+         */
+
+
         public struct TDEV_ManualCtrl
         {
-            public fixed byte CtrlFlag[2];
-            public byte Drive;
-            public byte Updown;
-            public byte Fork1;
-            public byte Fork2;
-            public byte PositionMove;
-            public fixed byte Reserved[8];
+            public fixed byte CtrlFlag[2]; //제어플래그 1 
+            /*
+             bit 0 주행, 저속 정위치 기준
+             bit 1 승강
+             bit 2 Fork1
+             bit 3 Fork2
+             bit 4 위치이동
+             bit 5 포크1 I/O 제어
+             bit 6 포크2 I/O 제어
+             bit 7 예약값
+             */
+            /*
+             bit 0 예약값
+             bit 1 예약값
+             bit 2 예약값
+             bit 3 예약값
+             bit 4 예약값
+             bit 5 예약값
+             bit 6 예약값
+             bit 7 예약값
+             */
+            public byte Drive; // SRM, RTV, EMS 공통으로 0:정지, 1:저속전진, 11:중속전진, 2:저속후진, 12:중속후진
+            public byte Updown; // SRM, EMS 0: 정지 1:저속상승, 11:중속상승, 2:저속하강 12:중속하강
+            public byte Fork1; // SRM 0:정지, 1:중앙이동, 2:좌이동, 3:우이동
+            public byte Fork2; // SRM 0:정지, 1:중앙이동, 2:좌이동, 3:우이동
+            public byte PositionMove; // EMS 1: MOVE HOME 2: MOVE 1포지션 3: MOVE 2 포지션 ~ , 10: MOVE 9 포지션
+            public fixed byte Reserved[8];//EMS 예약바이트
             //public byte Fork_Ref;
-            public byte Fork1_IOCtrl;
-            public byte Fork2_IOCtrl;
-            public byte LowSpeed_Ref;
+            public byte Fork1_IOCtrl; // SRM 1: 동작
+            public byte Fork2_IOCtrl; // SRM 1: 동작
+            public byte LowSpeed_Ref; // SRM 저속정위치 기준 1: 포크1 (좌), 2: 포크1 (우) , 3: 포크2(좌), 4: 포크2 (우)
         }
         #endregion
 
@@ -6807,8 +6843,8 @@ public static string[,] RTV_DI_Names =
             public byte LowSpeedRef;
         }
 
-        public unsafe struct TDEV_REC
-        {
+        public unsafe struct TDEV_REC//Total DEVice RECord 의 약자같음
+        {   
             //Flag 변수는 필요에 의해 선언한다
             //해당 타입의 응답이 있었는지 유무를 확인하여서 뭔가를 해주어야 하는 경우
             public bool Flag_In_DevStatus;
